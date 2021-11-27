@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
 import './App.css';
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  Grid,
+  Link,
+  Typography,
+} from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{marginTop: '64px'}}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                JSON
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
+                易于人阅读和编写。同时也易于机器解析和生成。
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Link href={'/json'}>JSON</Link>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
