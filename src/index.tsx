@@ -4,11 +4,21 @@ import './index.css';
 import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 import {CssBaseline} from '@mui/material';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Json from './pages/Json';
+import PageNotFound from './pages/PageNotFound';
+
 ReactDOM.render(
   <React.StrictMode>
     <React.Fragment>
       <CssBaseline />
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<App />} />
+          <Route path="json" element={<Json />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </React.Fragment>
   </React.StrictMode>,
   document.getElementById('root')
