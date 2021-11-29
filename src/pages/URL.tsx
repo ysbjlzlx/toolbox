@@ -4,7 +4,7 @@ import {Box, Container, TextField} from '@mui/material';
 import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
 
 export default function URL() {
-  const [url, setUrl] = useState<String>();
+  const [url, setUrl] = useState<string>();
   const [encodedUrl, setEncodedUrl] = useState<String>();
 
   const handleURLChange = (event: any) => {
@@ -29,7 +29,9 @@ export default function URL() {
           variant={'outlined'}
           fullWidth
           InputProps={{
-            endAdornment: <ContentCopyAdornment content={url} />,
+            endAdornment: (
+              <ContentCopyAdornment content={url} success={console.log} />
+            ),
           }}
         />
       </Box>
