@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Box, Container, TextField} from '@mui/material';
 
+import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
+
 export default function URL() {
   const [url, setUrl] = useState<String>();
   const [encodedUrl, setEncodedUrl] = useState<String>();
@@ -26,6 +28,9 @@ export default function URL() {
           rows={3}
           variant={'outlined'}
           fullWidth
+          InputProps={{
+            endAdornment: <ContentCopyAdornment content={url} />,
+          }}
         />
       </Box>
 

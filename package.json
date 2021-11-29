@@ -15,6 +15,7 @@
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "clipboard-copy": "^4.0.1",
     "gts": "^3.1.0",
     "jsoneditor": "^9.5.7",
     "react": "^17.0.2",
