@@ -7,6 +7,7 @@ import {CssBaseline} from '@mui/material';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Json from './pages/Json';
 import PageNotFound from './pages/PageNotFound';
+import URL from './pages/URL';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Routes>
           <Route index element={<App />} />
           <Route path="json" element={<Json />} />
+          <Route path="url" element={<URL />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
