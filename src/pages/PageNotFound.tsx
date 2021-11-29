@@ -1,10 +1,10 @@
 import React from 'react';
-import {Box, Typography} from '@mui/material';
+import {Container, Typography} from '@mui/material';
 
 export default function PageNotFound() {
   return (
-    <Box>
+    <Container>
       <Typography>Page Not Found.</Typography>
-    </Box>
+    </Container>
   );
 }
