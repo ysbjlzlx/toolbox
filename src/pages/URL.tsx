@@ -29,9 +29,7 @@ export default function URL() {
           variant={'outlined'}
           fullWidth
           InputProps={{
-            endAdornment: (
-              <ContentCopyAdornment content={url} success={console.log} />
-            ),
+            endAdornment: <ContentCopyAdornment content={url} />,
           }}
         />
       </Box>

@@ -1,36 +1,36 @@
 import React, {useState} from 'react';
 import {IconButton, InputAdornment, Snackbar} from '@mui/material';
 import {ContentCopy} from '@mui/icons-material';
-
-import clipboardCopy from 'clipboard-copy';
+// @ts-ignore
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 interface Props {
-  content: string | null | undefined;
-  success?: Function | null | undefined;
+  content?: string | undefined;
+  onCopy?: Function | undefined;
 }
 
-export default function ContentCopyAdornment(props: Props) {
+export default function ContentCopyAdornment({content, onCopy}: Props) {
   const [open, setOpen] = useState<boolean>(false);
-  const handleClick = () => {
-    if (typeof props.content === 'string') {
-      clipboardCopy(props.content).then(() => {
-        if (typeof props.success === 'function') {
-          props.success();
-          setOpen(true);
-        }
-      });
+  const handleOnCopy = (text: string, result: DataTransfer) => {
+    setOpen(true);
+    if (onCopy) {
+      onCopy(text, result);
     }
   };
+
   const handleClose = () => {
-    setOpen(false);
+    setOpen(!open);
   };
   return (
     <React.Fragment>
-      <InputAdornment position={'end'}>
-        <IconButton aria-label={'Copy content'} onClick={handleClick}>
-          <ContentCopy />
-        </IconButton>
-      </InputAdornment>
+      <CopyToClipboard text={content} onCopy={handleOnCopy}>
+        <InputAdornment position={'end'}>
+          <IconButton aria-label={'Copy content'}>
+            <ContentCopy />
+          </IconButton>
+        </InputAdornment>
+      </CopyToClipboard>
+
       <Snackbar
         open={open}
         onClose={handleClose}
