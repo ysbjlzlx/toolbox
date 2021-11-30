@@ -1,19 +1,34 @@
-import React, {useState, useEffect} from 'react';
-import {Box, Container, TextField} from '@mui/material';
+import React, {useState} from 'react';
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  TextField,
+  Typography,
+} from '@mui/material';
 
 import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
+import ContentCopyButton from '../compontents/ContentCopyButton';
 
 export default function URL() {
-  const [uri, setUri] = useState<string>();
-  const [encodedURI, setEncodedURI] = useState<string>();
-  const [encodedURIComponent, setEncodedURIComponent] = useState<string>();
+  const [uri, setUri] = useState<string>('');
+  const [encodedURI, setEncodedURI] = useState<string>('');
 
-  useEffect(() => {
-    if (uri) {
-      setEncodedURI(encodeURI(uri));
-      setEncodedURIComponent(encodeURIComponent(uri));
-    }
-  }, [uri]);
+  const handleEncodeURI = function () {
+    setEncodedURI(encodeURI(uri));
+  };
+
+  const handleEncodeURIComponent = function () {
+    setEncodedURI(encodeURIComponent(uri));
+  };
+
+  const handleDecodeURIComponent = function () {
+    setEncodedURI(decodeURIComponent(uri));
+  };
 
   return (
     <Container>
@@ -26,7 +41,7 @@ export default function URL() {
             setUri(e.target.value);
           }}
           multiline
-          rows={3}
+          minRows={3}
           variant={'outlined'}
           fullWidth
           InputProps={{
@@ -34,34 +49,30 @@ export default function URL() {
           }}
         />
       </Box>
-
       <Box mt={2}>
-        <TextField
-          type={'text'}
-          label={'encodeURI'}
-          value={encodedURI}
-          onChange={e => {
-            setEncodedURI(e.target.value);
-          }}
-          multiline
-          rows={3}
-          variant={'outlined'}
-          fullWidth
-        />
+        <ButtonGroup>
+          <Button variant={'outlined'} onClick={handleEncodeURI}>
+            链接参数编码
+          </Button>
+          <Button variant={'outlined'} onClick={handleEncodeURIComponent}>
+            全链接编码
+          </Button>
+          <Button variant={'outlined'} onClick={handleDecodeURIComponent}>
+            链接解码
+          </Button>
+        </ButtonGroup>
       </Box>
       <Box mt={2}>
-        <TextField
-          type={'text'}
-          label={'encodeURIComponent'}
-          value={encodedURIComponent}
-          onChange={e => {
-            setEncodedURIComponent(e.target.value);
-          }}
-          multiline
-          rows={3}
-          variant={'outlined'}
-          fullWidth
-        />
+        <Card>
+          <CardContent>
+            <Typography sx={{wordWrap: 'break-word', paddingTop: 2, pb: 2}}>
+              {encodedURI}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <ContentCopyButton text={encodedURI} />
+          </CardActions>
+        </Card>
       </Box>
     </Container>
   );
