@@ -1,20 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Box, Container, TextField} from '@mui/material';
 
 import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
 
 export default function URL() {
-  const [url, setUrl] = useState<string>();
-  const [encodedUrl, setEncodedUrl] = useState<String>();
+  const [uri, setUri] = useState<string>();
+  const [encodedURI, setEncodedURI] = useState<string>();
+  const [encodedURIComponent, setEncodedURIComponent] = useState<string>();
 
-  const handleURLChange = (event: any) => {
-    setUrl(event.target.value);
-    console.log(event);
-  };
-
-  const handleEncodedURLChange = (event: any) => {
-    setEncodedUrl(event.target.value);
-  };
+  useEffect(() => {
+    if (uri) {
+      setEncodedURI(encodeURI(uri));
+      setEncodedURIComponent(encodeURIComponent(uri));
+    }
+  }, [uri]);
 
   return (
     <Container>
@@ -22,14 +21,16 @@ export default function URL() {
         <TextField
           type={'text'}
           label={'URL'}
-          value={url}
-          onChange={handleURLChange}
+          value={uri}
+          onChange={e => {
+            setUri(e.target.value);
+          }}
           multiline
           rows={3}
           variant={'outlined'}
           fullWidth
           InputProps={{
-            endAdornment: <ContentCopyAdornment content={url} />,
+            endAdornment: <ContentCopyAdornment content={uri} />,
           }}
         />
       </Box>
@@ -37,9 +38,25 @@ export default function URL() {
       <Box mt={2}>
         <TextField
           type={'text'}
-          label={'encodeURL'}
-          value={encodedUrl}
-          onChange={handleEncodedURLChange}
+          label={'encodeURI'}
+          value={encodedURI}
+          onChange={e => {
+            setEncodedURI(e.target.value);
+          }}
+          multiline
+          rows={3}
+          variant={'outlined'}
+          fullWidth
+        />
+      </Box>
+      <Box mt={2}>
+        <TextField
+          type={'text'}
+          label={'encodeURIComponent'}
+          value={encodedURIComponent}
+          onChange={e => {
+            setEncodedURIComponent(e.target.value);
+          }}
           multiline
           rows={3}
           variant={'outlined'}
