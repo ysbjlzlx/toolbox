@@ -37,7 +37,8 @@ function App() {
                 URL
               </Typography>
               <Typography variant="body2" color="text.secondary">
-
+                URL(Uniform Resource Locator)
+                统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。
               </Typography>
             </CardContent>
             <CardActions>
