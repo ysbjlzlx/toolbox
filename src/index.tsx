@@ -4,7 +4,7 @@ import './index.css';
 import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 import {CssBaseline} from '@mui/material';
-import {Routes, Route, HashRouter} from 'react-router-dom';
+import {Routes, Route, HashRouter, BrowserRouter} from 'react-router-dom';
 import Json from './pages/Json';
 import PageNotFound from './pages/PageNotFound';
 import URL from './pages/URL';
@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <React.Fragment>
       <CssBaseline />
-      <HashRouter basename={process.env.PUBLIC_URL} >
+      <BrowserRouter>
         <Routes>
           <Route index element={<App />} />
           <Route path="json" element={<Json />} />
@@ -22,7 +22,7 @@ ReactDOM.render(
           <Route path="markdown" element={<Markdown />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </React.Fragment>
   </React.StrictMode>,
   document.getElementById('root')
