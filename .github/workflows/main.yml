@@ -19,7 +19,7 @@ jobs:
 
       - name: Install
         run: npm install
-        
+
       - name: Build
         run: npm run build
 
@@ -28,5 +28,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          publish_branch: gh-pages  # default: gh-pages
+          publish_branch: build  # default: gh-pages
 
