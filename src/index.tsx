@@ -4,7 +4,7 @@ import './index.css';
 import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 import {CssBaseline} from '@mui/material';
-import {Routes, Route, HashRouter, BrowserRouter} from 'react-router-dom';
+import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import Json from './pages/Json';
 import PageNotFound from './pages/PageNotFound';
 import URL from './pages/URL';
