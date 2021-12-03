@@ -9,6 +9,7 @@ import {
   Link,
   Typography,
 } from '@mui/material';
+import {Link as RouterLink} from 'react-router-dom';
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link href={'/json'}>JSON</Link>
+              <Link component={RouterLink} to={'/json'}>
+                JSON
+              </Link>
             </CardActions>
           </Card>
         </Grid>
@@ -42,7 +45,9 @@ function App() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link href={'/url'}>URL</Link>
+              <Link component={RouterLink} to={'/url'}>
+                URL
+              </Link>
             </CardActions>
           </Card>
         </Grid>
@@ -53,11 +58,14 @@ function App() {
                 Markdown
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
+                Markdown
+                是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
               </Typography>
             </CardContent>
             <CardActions>
-              <Link href={'/markdown'}>Markdown</Link>
+              <Link component={RouterLink} to={'/markdown'}>
+                Markdown
+              </Link>
             </CardActions>
           </Card>
         </Grid>
