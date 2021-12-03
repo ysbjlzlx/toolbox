@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <React.Fragment>
       <CssBaseline />
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL} >
         <Routes>
           <Route index element={<App />} />
           <Route path="json" element={<Json />} />
