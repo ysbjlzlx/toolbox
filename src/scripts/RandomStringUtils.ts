@@ -1,5 +1,5 @@
 import {random as randomInt} from './Random';
-import _ from 'lodash';
+import * as _ from 'lodash';
 
 // prettier-ignore
 export const NUMERIC_CHARS:string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
