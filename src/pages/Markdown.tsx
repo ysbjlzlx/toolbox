@@ -4,6 +4,7 @@ import {Editor, rootCtx} from '@milkdown/core';
 import {ReactEditor, useEditor} from '@milkdown/react';
 import {nord} from '@milkdown/theme-nord';
 import {commonmark} from '@milkdown/preset-commonmark';
+import {history} from '@milkdown/plugin-history';
 
 export default function Markdown() {
   const editor = useEditor(root => {
@@ -12,7 +13,8 @@ export default function Markdown() {
         ctx.set(rootCtx, root);
       })
       .use(nord)
-      .use(commonmark);
+      .use(commonmark)
+      .use(history);
   });
   return (
     <Container sx={{pt: 2}}>
