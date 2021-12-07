@@ -16,6 +16,14 @@ const random = function (length: number): string {
   return generator(length, true, true, true, false);
 };
 
+const randomAlphabetic = function (length: number): string {
+  return generator(length, false, true, true, false);
+};
+
+const randomNumber = function (length: number): string {
+  return generator(length, true, false, false, false);
+};
+
 const generator = function (
   length: number,
   numeric: boolean = true,
@@ -51,4 +59,4 @@ const generator = function (
   return str;
 };
 
-export {random};
+export {random, randomAlphabetic, randomNumber};
