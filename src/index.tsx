@@ -9,6 +9,7 @@ import Json from './pages/Json';
 import PageNotFound from './pages/PageNotFound';
 import URL from './pages/URL';
 import Markdown from './pages/Markdown';
+import Random from './pages/Random';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route path="json" element={<Json />} />
           <Route path="url" element={<URL />} />
           <Route path="markdown" element={<Markdown />} />
+          <Route path="random" element={<Random />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
