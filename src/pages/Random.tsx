@@ -1,17 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Box,
+  Button,
+  ButtonGroup,
   Checkbox,
   Container,
   FormControlLabel,
   FormGroup,
-  Paper,
+  Slider,
   TextField,
 } from '@mui/material';
 
 import {Block} from '../compontents/Block';
+import {Refresh} from '@mui/icons-material';
+import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
+import {generator} from '../scripts/RandomStringUtils';
 
 export default function Random() {
+  const [randomString, setRandomString] = useState<string>('');
+  const [numeric, setNumeric] = useState<boolean>(true);
+  const [upperCase, setUpperCase] = useState<boolean>(true);
+  const [lowerCase, setLowerCase] = useState<boolean>(true);
+  const [symbol, setSymbol] = useState<boolean>(false);
+  const [length, setLength] = useState<number>(8);
+  const refresh = () => {
+    const varchar = generator(length, numeric, lowerCase, upperCase, symbol);
+    setRandomString(varchar);
+  };
+
+  useEffect(refresh, [length, numeric, upperCase, lowerCase, symbol]);
+
   const label = {inputProps: {'aria-label': 'Checkbox demo'}};
 
   return (
@@ -21,20 +39,78 @@ export default function Random() {
           <FormControlLabel
             control={<Checkbox {...label} defaultChecked />}
             label={'数字'}
-          />
-          <FormControlLabel
-            control={<Checkbox {...label} defaultChecked />}
-            label={'大写字母'}
+            value={numeric}
+            onChange={() => {
+              setNumeric(!numeric);
+            }}
           />
           <FormControlLabel
             control={<Checkbox {...label} defaultChecked />}
             label={'小写字母'}
+            value={lowerCase}
+            onChange={() => {
+              setLowerCase(!lowerCase);
+            }}
           />
-          <FormControlLabel control={<Checkbox {...label} />} label={'字符'} />
+          <FormControlLabel
+            control={<Checkbox {...label} defaultChecked />}
+            label={'大写字母'}
+            value={upperCase}
+            onChange={() => {
+              setUpperCase(!upperCase);
+            }}
+          />
+          <FormControlLabel
+            control={<Checkbox {...label} />}
+            label={'字符'}
+            value={symbol}
+            onChange={() => {
+              setSymbol(!symbol);
+            }}
+          />
         </FormGroup>
+        <Box sx={{mt: 3}}>
+          <Slider
+            defaultValue={8}
+            valueLabelDisplay={'on'}
+            value={length}
+            min={6}
+            max={64}
+            step={1}
+            marks={[
+              {value: 6, label: '6'},
+              {value: 8, label: '8'},
+              {value: 16, label: '16'},
+              {value: 32, label: '32'},
+              {value: 64, label: '64'},
+            ]}
+            onChange={(event, value) => {
+              if (typeof value === 'number') {
+                setLength(value);
+              }
+            }}
+          />
+        </Box>
 
-        <Box sx={{px: 2, mt: 2}}>
-          <TextField variant={'outlined'} fullWidth />
+        <Box sx={{mt: 2}}>
+          <TextField
+            variant={'outlined'}
+            value={randomString}
+            InputProps={{
+              endAdornment: <ContentCopyAdornment content={randomString} />,
+            }}
+            onChange={event => {
+              setRandomString(event.target.value);
+            }}
+            fullWidth
+          />
+        </Box>
+        <Box sx={{mt: 2}}>
+          <ButtonGroup>
+            <Button startIcon={<Refresh />} onClick={refresh}>
+              刷新
+            </Button>
+          </ButtonGroup>
         </Box>
       </Block>
     </Container>

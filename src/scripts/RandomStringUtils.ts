@@ -2,13 +2,13 @@ import {random as randomInt} from './Random';
 import * as _ from 'lodash';
 
 // prettier-ignore
-export const NUMERIC_CHARS:string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+export const NUMERIC_CHARS: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // prettier-ignore
-export const LOWERCASE_CHARS:string[] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+export const LOWERCASE_CHARS: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 // prettier-ignore
-export const UPPERCASE_CHARS:string[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+export const UPPERCASE_CHARS: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 // prettier-ignore
-export const SYMBOL_CHARS:string[] = ["!", "@", "#", "$", "%", "^", "&", "*"];
+export const SYMBOL_CHARS: string[] = ['!', '@', '#', '$', '%', '^', '&', '*'];
 
 const EMPTY_CHAR = '';
 
@@ -59,4 +59,4 @@ const generator = function (
   return str;
 };
 
-export {random, randomAlphabetic, randomNumber};
+export {random, randomAlphabetic, randomNumber, generator};
