@@ -31,6 +31,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
+    "lint": "prettier --write src --ignore-unknown",
     "prepare": "husky install"
   },
   "eslintConfig": {
