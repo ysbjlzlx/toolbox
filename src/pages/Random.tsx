@@ -38,7 +38,7 @@ export default function Random() {
         <FormGroup row>
           <FormControlLabel
             control={<Checkbox {...label} defaultChecked />}
-            label={'数字'}
+            label={'数字 0 ～ 9'}
             value={numeric}
             onChange={() => {
               setNumeric(!numeric);
@@ -46,7 +46,7 @@ export default function Random() {
           />
           <FormControlLabel
             control={<Checkbox {...label} defaultChecked />}
-            label={'小写字母'}
+            label={'小写字母 a ~ z'}
             value={lowerCase}
             onChange={() => {
               setLowerCase(!lowerCase);
@@ -54,7 +54,7 @@ export default function Random() {
           />
           <FormControlLabel
             control={<Checkbox {...label} defaultChecked />}
-            label={'大写字母'}
+            label={'大写字母 A ~ Z'}
             value={upperCase}
             onChange={() => {
               setUpperCase(!upperCase);
@@ -62,12 +62,13 @@ export default function Random() {
           />
           <FormControlLabel
             control={<Checkbox {...label} />}
-            label={'字符'}
+            label={'符号'}
             value={symbol}
             onChange={() => {
               setSymbol(!symbol);
             }}
           />
+          <TextField value={'!@#$%^&*'} size={'small'} />
         </FormGroup>
         <Box sx={{mt: 3}}>
           <Slider
