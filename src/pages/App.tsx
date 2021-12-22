@@ -69,6 +69,23 @@ function App() {
             </CardActions>
           </Card>
         </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Random
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                生成包含数字、小写字母、大写字母、符号的随机字符串
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Link component={RouterLink} to={'/random'}>
+                Random
+              </Link>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
     </Container>
   );
