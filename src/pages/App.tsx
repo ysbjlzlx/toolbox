@@ -86,6 +86,23 @@ function App() {
             </CardActions>
           </Card>
         </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Base64
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Base64 编码、解码
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Link component={RouterLink} to={'/base64'}>
+                Base64
+              </Link>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
     </Container>
   );
