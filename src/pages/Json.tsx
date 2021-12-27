@@ -5,8 +5,10 @@ import JSONEditor, {JSONEditorOptions} from 'jsoneditor';
 import 'jsoneditor/dist/jsoneditor.css';
 
 const options: JSONEditorOptions = {
+  modes: ['code', 'view'],
   language: 'zh-CN',
   mode: 'code',
+  search: true,
 };
 
 export default function Json() {
