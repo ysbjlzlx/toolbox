@@ -11,6 +11,7 @@ const Input = styled('input')({
 export default function Excel() {
   const [columns, setColumns] = useState([]);
   const [rows, setRows] = useState([]);
+  const [pageSize, setPageSize] = useState(10);
 
   const onUpload = (event: ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.files);
@@ -33,11 +34,15 @@ export default function Excel() {
             // @ts-ignore
             for (const [key, value] of Object.entries(rows[0])) {
               console.log(`${key}: ${value}`);
+              // @ts-ignore
+              setColumns(columns => [
+                ...columns,
+                {field: key, headerName: key},
+              ]);
             }
           }
           // @ts-ignore
           setRows(rows);
-          console.log(firstSheet['!ref']);
           /* DO SOMETHING WITH workbook HERE */
         };
 
@@ -71,10 +76,11 @@ export default function Excel() {
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={10}
+          pageSize={pageSize}
           rowsPerPageOptions={[10, 20, 50, 100]}
           disableSelectionOnClick
           autoHeight
+          onPageSizeChange={pageSize1 => setPageSize(pageSize1)}
         />
       </Box>
     </Container>
