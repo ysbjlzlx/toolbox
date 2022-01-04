@@ -11,6 +11,7 @@ import URL from './pages/URL';
 import Markdown from './pages/Markdown';
 import Random from './pages/Random';
 import Base64 from './pages/Base64';
+import Excel from './pages/Excel';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
           <Route path="markdown" element={<Markdown />} />
           <Route path="random" element={<Random />} />
           <Route path="base64" element={<Base64 />} />
+          <Route path="excel" element={<Excel />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
