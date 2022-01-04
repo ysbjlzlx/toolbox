@@ -1,17 +1,54 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useState, useRef, useEffect} from 'react';
 import {Box, Container, Typography, Button} from '@mui/material';
 import xlsx from 'xlsx';
 import {styled} from '@mui/material/styles';
-import {DataGrid} from '@mui/x-data-grid';
+import FileSaver from 'file-saver';
+
+import JSONEditor, {JSONEditorOptions} from 'jsoneditor';
+
+import 'jsoneditor/dist/jsoneditor.css';
 
 const Input = styled('input')({
   display: 'none',
 });
 
+const options: JSONEditorOptions = {
+  modes: ['code', 'view'],
+  language: 'zh-CN',
+  mode: 'code',
+  search: true,
+};
+
 export default function Excel() {
-  const [columns, setColumns] = useState([]);
-  const [rows, setRows] = useState([]);
-  const [pageSize, setPageSize] = useState(10);
+  const jsonViewerRef = useRef<HTMLDivElement>();
+  const [jsonViewer, setJsonViewer] = useState<JSONEditor>();
+  const [result, setResult] = useState({});
+
+  useEffect(() => {
+    if (jsonViewerRef.current) {
+      setJsonViewer(new JSONEditor(jsonViewerRef.current, options));
+    }
+  }, []);
+  useEffect(() => {
+    if (jsonViewer && result) {
+      jsonViewer.set(result);
+    }
+  }, [jsonViewer, result]);
+
+  const save = () => {
+    if (!jsonViewer) {
+      return;
+    }
+    const content = jsonViewer.getText();
+    if (content === '{}' || content === '') {
+      return;
+    }
+    const t = Date.now();
+    const file = new File([content], t + '.json', {
+      type: 'text/plain;charset=utf-8',
+    });
+    FileSaver.saveAs(file);
+  };
 
   const onUpload = (event: ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.files);
@@ -30,20 +67,8 @@ export default function Excel() {
           console.log(workbook);
           const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
           const rows = xlsx.utils.sheet_to_json(firstSheet) || [];
-          if (rows) {
-            // @ts-ignore
-            for (const [key, value] of Object.entries(rows[0])) {
-              console.log(`${key}: ${value}`);
-              // @ts-ignore
-              setColumns(columns => [
-                ...columns,
-                {field: key, headerName: key},
-              ]);
-            }
-          }
-          // @ts-ignore
-          setRows(rows);
-          /* DO SOMETHING WITH workbook HERE */
+          setResult(rows);
+          // save(JSON.stringify(rows));
         };
 
         const file = files.item(i);
@@ -71,18 +96,9 @@ export default function Excel() {
             上传 Excel
           </Button>
         </label>
+        <Button onClick={save}>下载为 JSON 文件</Button>
       </Box>
-      <Box sx={{mt: 2}}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={pageSize}
-          rowsPerPageOptions={[10, 20, 50, 100]}
-          disableSelectionOnClick
-          autoHeight
-          onPageSizeChange={pageSize1 => setPageSize(pageSize1)}
-        />
-      </Box>
+      <Box sx={{mt: 2, height: '90vh'}} ref={jsonViewerRef} />
     </Container>
   );
 }
