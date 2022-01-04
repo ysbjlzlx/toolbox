@@ -15,6 +15,7 @@
     "@milkdown/utils": "^5.2.0",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.2",
+    "@mui/x-data-grid": "^5.2.1",
     "crypto-js": "^4.1.1",
     "gts": "^3.1.0",
     "jsoneditor": "^9.5.9",
