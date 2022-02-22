@@ -68,7 +68,7 @@ export default function Random() {
               setSymbol(!symbol);
             }}
           />
-          <TextField value={'!@#$%^&*'} size={'small'} />
+          <TextField label={'符号'} value={'!@#$%^&*'} size={'small'} />
         </FormGroup>
         <Box sx={{mt: 3}}>
           <Slider
@@ -96,6 +96,7 @@ export default function Random() {
         <Box sx={{mt: 2}}>
           <TextField
             variant={'outlined'}
+            label={'随机结果'}
             value={randomString}
             InputProps={{
               endAdornment: <ContentCopyAdornment content={randomString} />,

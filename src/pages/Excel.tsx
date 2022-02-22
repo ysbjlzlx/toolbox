@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState, useRef, useEffect} from 'react';
 import {Box, Container, Typography, Button} from '@mui/material';
-import xlsx from 'xlsx';
+import * as xlsx from 'xlsx';
 import {styled} from '@mui/material/styles';
 import FileSaver from 'file-saver';
 
