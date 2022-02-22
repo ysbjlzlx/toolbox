@@ -8,6 +8,8 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
-  dynamicImport: {},
+  dynamicImport: {
+    loading: '@/Loading',
+  },
   mfsu: {},
 });
