@@ -8,4 +8,6 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
+  dynamicImport: {},
+  mfsu: {},
 });
