@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
+import {CssBaseline} from '@mui/material';
 
 const BaseLayout: FC = ({children}) => {
   return (
