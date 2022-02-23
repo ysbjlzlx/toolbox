@@ -1,13 +1,10 @@
 import React, {FC} from 'react';
-import {Box, CssBaseline} from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const BaseLayout: FC = ({children}) => {
   return (
     <React.StrictMode>
-      <React.Fragment>
-        <CssBaseline />
-        <Box>{children}</Box>
-      </React.Fragment>
+      <CssBaseline children={children} />
     </React.StrictMode>
   );
 };
