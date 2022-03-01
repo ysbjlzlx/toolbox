@@ -14,6 +14,7 @@ export default [
       {path: 'random', component: '@/pages/Random', title: 'Random - Toolbox'},
       {path: '/base64', component: '@/pages/Base64', title: 'Base64 - Toolbox'},
       {path: '/excel', component: '@/pages/Excel', title: 'Excel - Toolbox'},
+      {path: '/hash', component: '@/pages/Hash', title: 'Hash - Toolbox'},
     ],
   },
 ];
