@@ -19,7 +19,7 @@ export default function QrCode(): ReactElement {
 
   return (
     <Container sx={{mt: 5}}>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
           <TextField
             label={'文本'}
