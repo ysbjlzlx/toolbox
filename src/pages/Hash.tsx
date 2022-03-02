@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useEffect } from 'react';
 import { Container, TextField } from '@mui/material';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
-import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
+import ContentCopyAdornment from '../components/ContentCopyAdornment';
 
 type HashResult = {
   md5?: string;

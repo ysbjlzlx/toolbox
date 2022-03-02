@@ -11,9 +11,9 @@ import {
   TextField,
 } from '@mui/material';
 
-import { Block } from '../compontents/Block';
+import { Block } from '../components/Block';
 import { Refresh } from '@mui/icons-material';
-import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
+import ContentCopyAdornment from '../components/ContentCopyAdornment';
 import { generator } from '../scripts/RandomStringUtils';
 
 export default function Random() {

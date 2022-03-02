@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Box, TextField, ButtonGroup, Button } from '@mui/material';
 import { enc } from 'crypto-js';
-import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
+import ContentCopyAdornment from '../components/ContentCopyAdornment';
 
 export default function Base64() {
   const [plain, setPlain] = useState('');

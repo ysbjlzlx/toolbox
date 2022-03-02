@@ -11,8 +11,8 @@ import {
   Typography,
 } from '@mui/material';
 
-import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
-import ContentCopyButton from '../compontents/ContentCopyButton';
+import ContentCopyAdornment from '../components/ContentCopyAdornment';
+import ContentCopyButton from '../components/ContentCopyButton';
 
 export default function URL() {
   const [uri, setUri] = useState<string>('');
