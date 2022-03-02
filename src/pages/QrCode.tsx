@@ -1,5 +1,5 @@
 import React, {ReactElement, useRef, useEffect, useState} from 'react';
-import {Box, Container, Grid, Stack, TextField} from '@mui/material';
+import {Container, Grid, TextField} from '@mui/material';
 import QRCode from 'qrcode';
 
 export default function QrCode(): ReactElement {
