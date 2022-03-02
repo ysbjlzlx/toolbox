@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -37,7 +37,7 @@ export default function URL() {
           type={'text'}
           label={'URL'}
           value={uri}
-          onChange={e => {
+          onChange={(e) => {
             setUri(e.target.value);
           }}
           multiline
@@ -65,7 +65,7 @@ export default function URL() {
       <Box mt={2}>
         <Card>
           <CardContent>
-            <Typography sx={{wordWrap: 'break-word', paddingTop: 2, pb: 2}}>
+            <Typography sx={{ wordWrap: 'break-word', paddingTop: 2, pb: 2 }}>
               {encodedURI}
             </Typography>
           </CardContent>

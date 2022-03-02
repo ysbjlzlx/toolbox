@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {Container, Box, TextField, ButtonGroup, Button} from '@mui/material';
-import {enc} from 'crypto-js';
+import React, { useState } from 'react';
+import { Container, Box, TextField, ButtonGroup, Button } from '@mui/material';
+import { enc } from 'crypto-js';
 import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
 
 export default function Base64() {
@@ -16,24 +16,24 @@ export default function Base64() {
   };
   return (
     <Container>
-      <Box sx={{mt: 2}}>
+      <Box sx={{ mt: 2 }}>
         <TextField
           label={'文本'}
           value={plain}
-          onChange={event => {
+          onChange={(event) => {
             setPlain(event.target.value);
           }}
           fullWidth
           multiline
         />
       </Box>
-      <Box sx={{mt: 2}}>
+      <Box sx={{ mt: 2 }}>
         <ButtonGroup>
           <Button onClick={encode}>编码</Button>
           <Button onClick={decode}>解码</Button>
         </ButtonGroup>
       </Box>
-      <Box sx={{mt: 2}}>
+      <Box sx={{ mt: 2 }}>
         <TextField
           label={'结果'}
           value={target}

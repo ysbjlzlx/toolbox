@@ -1,8 +1,12 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+
 **/*.md
 **/*.svg
 **/*.ejs
 **/*.html
 package.json
-.umi
-.umi-production
-.umi-test

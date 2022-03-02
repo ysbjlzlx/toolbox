@@ -1,15 +1,7 @@
 import React from 'react';
 import './App.css';
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Container,
-  Grid,
-  Link,
-  Typography,
-} from '@mui/material';
-import {Link as RouterLink} from 'react-router-dom';
+import { Card, CardActions, CardContent, Container, Grid, Link, Typography } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 export type Application = {
   name: string;
@@ -40,7 +32,7 @@ const application: Application[] = [
   {
     name: 'Base 64',
     desc: 'Base64 编码、解码',
-    href: '/base 64',
+    href: '/base64',
   },
   {
     name: 'Excel',
@@ -60,10 +52,10 @@ const application: Application[] = [
 ];
 
 function App() {
-  const item = ({applications}: {applications: Application[]}) => {
-    return applications.map(application => {
+  const item = ({ applications }: { applications: Application[] }) => {
+    return applications.map((application) => {
       return (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} key={application.name}>
           <Card>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -84,9 +76,9 @@ function App() {
     });
   };
   return (
-    <Container style={{marginTop: '64px'}}>
+    <Container style={{ marginTop: '64px' }}>
       <Grid container spacing={2}>
-        {item({applications: application})}
+        {item({ applications: application })}
       </Grid>
     </Container>
   );

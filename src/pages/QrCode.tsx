@@ -1,30 +1,34 @@
-import React, {ReactElement, useRef, useEffect, useState} from 'react';
-import {Container, Grid, TextField} from '@mui/material';
+import React, { ReactElement, useRef, useEffect, useState, useMemo, useLayoutEffect } from 'react';
+import { Container, Grid, TextField } from '@mui/material';
 import QRCode from 'qrcode';
 
 export default function QrCode(): ReactElement {
   const [text, setText] = useState<string>('');
   const qrcodeContainer = useRef<HTMLCanvasElement>(null);
   const divContainer = useRef<HTMLDivElement>(null);
-  const options = {
-    width: qrcodeContainer.current?.width,
-  };
+
+  const options = useMemo(() => {
+    return { width: 128 };
+  }, []);
+  useLayoutEffect(() => {
+    options.width = divContainer.current?.offsetWidth || 128;
+  }, [options]);
+
   useEffect(() => {
     if (!text || text === '') {
       return;
     }
-    options.width = divContainer.current?.offsetWidth;
     QRCode.toCanvas(qrcodeContainer.current, text, options);
-  }, [text]);
+  }, [text, options]);
 
   return (
-    <Container sx={{mt: 5}}>
+    <Container sx={{ mt: 5 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
           <TextField
             label={'文本'}
             value={text}
-            onChange={event => {
+            onChange={(event) => {
               setText(event.target.value);
             }}
             rows={9}

@@ -1,3 +1,5 @@
+const fabric = require('@umijs/fabric');
+
 module.exports = {
-  ...require('gts/.prettierrc.json'),
+  ...fabric.prettier,
 };

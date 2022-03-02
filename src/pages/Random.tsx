@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -11,10 +11,10 @@ import {
   TextField,
 } from '@mui/material';
 
-import {Block} from '../compontents/Block';
-import {Refresh} from '@mui/icons-material';
+import { Block } from '../compontents/Block';
+import { Refresh } from '@mui/icons-material';
 import ContentCopyAdornment from '../compontents/ContentCopyAdornment';
-import {generator} from '../scripts/RandomStringUtils';
+import { generator } from '../scripts/RandomStringUtils';
 
 export default function Random() {
   const [randomString, setRandomString] = useState<string>('');
@@ -30,11 +30,11 @@ export default function Random() {
 
   useEffect(refresh, [length, numeric, upperCase, lowerCase, symbol]);
 
-  const label = {inputProps: {'aria-label': 'Checkbox demo'}};
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   return (
     <Container>
-      <Block sx={{mt: 2}}>
+      <Block sx={{ mt: 2 }}>
         <FormGroup row>
           <FormControlLabel
             control={<Checkbox {...label} defaultChecked />}
@@ -70,7 +70,7 @@ export default function Random() {
           />
           <TextField label={'符号'} value={'!@#$%^&*'} size={'small'} />
         </FormGroup>
-        <Box sx={{mt: 3}}>
+        <Box sx={{ mt: 3 }}>
           <Slider
             defaultValue={8}
             valueLabelDisplay={'on'}
@@ -79,11 +79,11 @@ export default function Random() {
             max={64}
             step={1}
             marks={[
-              {value: 6, label: '6'},
-              {value: 8, label: '8'},
-              {value: 16, label: '16'},
-              {value: 32, label: '32'},
-              {value: 64, label: '64'},
+              { value: 6, label: '6' },
+              { value: 8, label: '8' },
+              { value: 16, label: '16' },
+              { value: 32, label: '32' },
+              { value: 64, label: '64' },
             ]}
             onChange={(event, value) => {
               if (typeof value === 'number') {
@@ -93,7 +93,7 @@ export default function Random() {
           />
         </Box>
 
-        <Box sx={{mt: 2}}>
+        <Box sx={{ mt: 2 }}>
           <TextField
             variant={'outlined'}
             label={'随机结果'}
@@ -101,13 +101,13 @@ export default function Random() {
             InputProps={{
               endAdornment: <ContentCopyAdornment content={randomString} />,
             }}
-            onChange={event => {
+            onChange={(event) => {
               setRandomString(event.target.value);
             }}
             fullWidth
           />
         </Box>
-        <Box sx={{mt: 2}}>
+        <Box sx={{ mt: 2 }}>
           <ButtonGroup>
             <Button startIcon={<Refresh />} onClick={refresh}>
               刷新

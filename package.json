@@ -1,23 +1,9 @@
 {
+  "name": "toolbox",
+  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "start": "umi dev",
-    "build": "umi build",
-    "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "prepare": "husky install"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "**/*": [
-      "prettier --write --ignore-unknown"
-    ]
-  },
   "dependencies": {
+    "@craco/craco": "^7.0.0-alpha.3",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@milkdown/core": "^5.5.0",
@@ -27,36 +13,71 @@
     "@milkdown/theme-nord": "^5.5.0",
     "@milkdown/utils": "^5.5.0",
     "@mui/icons-material": "^5.4.4",
-    "@mui/material": "^5.4.4",
-    "crypto-js": "^4.1.1",
-    "file-saver": "^2.0.5",
-    "gts": "^3.1.0",
-    "jsoneditor": "^9.7.2",
-    "lodash": "^4.17.21",
-    "qrcode": "^1.5.0",
-    "react": "17.x",
-    "react-copy-to-clipboard": "^5.0.4",
-    "react-dom": "^17.0.2",
-    "umi": "^3.5.21",
-    "xlsx": "^0.18.2"
-  },
-  "devDependencies": {
+    "@mui/material": "^5.4.3",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.0",
+    "crypto-js": "^4.1.1",
+    "file-saver": "^2.0.5",
+    "jsoneditor": "^9.7.2",
+    "lodash": "^4.17.21",
+    "mobx-react": "^7.3.0",
+    "prop-types": "^15.8.1",
+    "qrcode": "^1.5.0",
+    "react": "^17.0.2",
+    "react-copy-to-clipboard": "^5.0.4",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.5.5",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.2"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "prettier": "prettier ./src --write --ignore-unknown"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
     "@types/crypto-js": "^4.1.1",
     "@types/file-saver": "^2.0.5",
+    "@types/jest": "^27.4.1",
     "@types/jsoneditor": "^9.5.1",
     "@types/lodash": "^4.14.179",
+    "@types/node": "^17.0.21",
     "@types/qrcode": "^1.4.2",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "@umijs/preset-react": "^1.8.30",
-    "@umijs/test": "^3.5.21",
+    "@umijs/fabric": "^2.10.2",
     "husky": "^7.0.4",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.5.1",
-    "typescript": "^4.6.2",
-    "yorkie": "^2.0.0"
+    "lint-staged": "^12.3.4",
+    "prettier": "2.5.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "prettier --write --ignore-unknown",
+    "*.{ts,tsx}": "prettier --parser typescript --write --ignore-unknown",
+    "*.{css,md}": "prettier --write --ignore-unknown"
   }
 }
