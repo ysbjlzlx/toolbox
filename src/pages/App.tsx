@@ -49,6 +49,11 @@ const application: Application[] = [
     desc: '为字符串生成对应的 QRCode 图片',
     href: '/qrcode',
   },
+  {
+    name: 'CodeFormatter',
+    desc: '代码格式化，目前支持：JSON、JSON5',
+    href: '/code-formatter',
+  },
 ];
 
 function App() {
