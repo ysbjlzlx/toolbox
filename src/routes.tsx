@@ -12,6 +12,7 @@ const Base64 = lazy(() => import('./pages/Base64'));
 const Excel = lazy(() => import('./pages/Excel'));
 const Hash = lazy(() => import('./pages/Hash'));
 const QRCode = lazy(() => import('./pages/QrCode'));
+const CodeFormatter = lazy(() => import('./pages/CodeFormatter'));
 
 export default function Routes() {
   return useRoutes([
@@ -31,5 +32,9 @@ export default function Routes() {
     { path: '/excel', element: <Suspense fallback={<Loading />} children={<Excel />} /> },
     { path: '/hash', element: <Suspense fallback={<Loading />} children={<Hash />} /> },
     { path: '/qrcode', element: <Suspense fallback={<Loading />} children={<QRCode />} /> },
+    {
+      path: '/code-formatter',
+      element: <Suspense fallback={<Loading />} children={<CodeFormatter />} />,
+    },
   ]);
 }
