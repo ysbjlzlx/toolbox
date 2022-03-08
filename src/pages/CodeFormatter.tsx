@@ -72,11 +72,9 @@ const CodeFormatter = () => {
             <FormControlLabel
               control={
                 <Checkbox
-                  value={options.wrap}
+                  checked={options.wrap}
                   onChange={(event) => {
-                    setOptions((options) => {
-                      return { ...options, wrap: event.target.checked };
-                    });
+                    setOptions({ ...options, wrap: event.target.checked });
                   }}
                 />
               }
