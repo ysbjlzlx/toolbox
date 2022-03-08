@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import AceEditor from 'react-ace';
 import prettier from 'prettier/standalone';
@@ -20,26 +20,18 @@ import {
 
 const CodeFormatter = () => {
   const [code, setCode] = useState<string>('');
-  const [type, setType] = useState<string>('json5');
-  const [model, setModel] = useState<string>('json5');
-  useEffect(() => {
-    setModel(type);
-  }, [type, model]);
+  const [model, setModel] = useState<string>('json');
   const options = {
-    enableBasicAutocompletion: false,
-    enableLiveAutocompletion: true,
-    enableSnippets: false,
+    useWorker: false,
     showLineNumbers: true,
     tabSize: 2,
   };
   const onChange = (newValue: string) => {
-    console.log(newValue);
     setCode(newValue);
   };
   const onPrettier = () => {
-    console.log(code);
     const prettierStr = prettier.format(code, {
-      parser: type,
+      parser: model,
       plugins: [prettierBabelPlugin],
     });
     setCode(prettierStr);
@@ -56,9 +48,9 @@ const CodeFormatter = () => {
                 labelId="type-select-label"
                 label={'类型'}
                 variant={'outlined'}
-                value={type}
+                value={model}
                 onChange={(event) => {
-                  setType(event.target.value);
+                  setModel(event.target.value);
                 }}
               >
                 <MenuItem value={'json'}>JSON</MenuItem>
