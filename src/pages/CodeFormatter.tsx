@@ -10,22 +10,27 @@ import 'ace-builds/src-noconflict/theme-monokai';
 import {
   Box,
   Button,
+  Checkbox,
   Container,
   FormControl,
+  FormControlLabel,
   InputLabel,
   MenuItem,
   Select,
   Stack,
 } from '@mui/material';
+import { AceOptions } from 'react-ace/types';
 
 const CodeFormatter = () => {
-  const [code, setCode] = useState<string>('');
-  const [model, setModel] = useState<string>('json');
-  const options = {
+  const [options, setOptions] = useState<AceOptions>({
     useWorker: false,
     showLineNumbers: true,
     tabSize: 2,
-  };
+    wrap: true,
+  });
+  const [code, setCode] = useState<string>('');
+  const [model, setModel] = useState<string>('json');
+
   const onChange = (newValue: string) => {
     setCode(newValue);
   };
@@ -59,11 +64,24 @@ const CodeFormatter = () => {
             </FormControl>
           </Box>
           <Box>
-            <FormControl>
-              <Button variant={'contained'} onClick={onPrettier}>
-                格式化
-              </Button>
-            </FormControl>
+            <Button variant={'contained'} onClick={onPrettier}>
+              格式化
+            </Button>
+          </Box>
+          <Box>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  value={options.wrap}
+                  onChange={(event) => {
+                    setOptions((options) => {
+                      return { ...options, wrap: event.target.checked };
+                    });
+                  }}
+                />
+              }
+              label="自动换行"
+            />
           </Box>
         </Stack>
       </Box>
