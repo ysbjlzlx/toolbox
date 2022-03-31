@@ -24,8 +24,8 @@
  * Copyright (c) 2011-2022 Jos de Jong, http://jsoneditoronline.org
  *
  * @author  Jos de Jong, <wjosdejong@gmail.com>
- * @version 9.7.3
- * @date    2022-03-04
+ * @version 9.7.4
+ * @date    2022-03-15
  */
 
 /** @license URI.js v4.4.1 (c) 2011 Gary Court. License: http://github.com/garycourt/uri-js */
