@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
+import Layout from './layouts/Index';
 
 import Loading from './pages/Loading';
 
@@ -21,20 +22,23 @@ export default function Routes() {
       index: true,
       element: <Suspense fallback={<Loading />} children={<App />} />,
     },
-    { path: '/json', element: <Suspense fallback={<Loading />} children={<Json />} /> },
-    { path: '/url', element: <Suspense fallback={<Loading />} children={<URL />} /> },
     {
-      path: '/markdown',
-      element: <Suspense fallback={<Loading />} children={<Markdown />} />,
-    },
-    { path: '/random', element: <Suspense fallback={<Loading />} children={<Random />} /> },
-    { path: '/base64', element: <Suspense fallback={<Loading />} children={<Base64 />} /> },
-    { path: '/excel', element: <Suspense fallback={<Loading />} children={<Excel />} /> },
-    { path: '/hash', element: <Suspense fallback={<Loading />} children={<Hash />} /> },
-    { path: '/qrcode', element: <Suspense fallback={<Loading />} children={<QRCode />} /> },
-    {
-      path: '/code-formatter',
-      element: <Suspense fallback={<Loading />} children={<CodeFormatter />} />,
+      path: '/',
+      element: <Layout />,
+      children: [
+        { path: '/json', element: <Suspense fallback={<Loading />} children={<Json />} /> },
+        { path: '/url', element: <Suspense fallback={<Loading />} children={<URL />} /> },
+        { path: '/markdown', element: <Suspense fallback={<Loading />} children={<Markdown />} /> },
+        { path: '/random', element: <Suspense fallback={<Loading />} children={<Random />} /> },
+        { path: '/base64', element: <Suspense fallback={<Loading />} children={<Base64 />} /> },
+        { path: '/excel', element: <Suspense fallback={<Loading />} children={<Excel />} /> },
+        { path: '/hash', element: <Suspense fallback={<Loading />} children={<Hash />} /> },
+        { path: '/qrcode', element: <Suspense fallback={<Loading />} children={<QRCode />} /> },
+        {
+          path: '/code-formatter',
+          element: <Suspense fallback={<Loading />} children={<CodeFormatter />} />,
+        },
+      ],
     },
   ]);
 }
