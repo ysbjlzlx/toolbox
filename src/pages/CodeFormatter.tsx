@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-import AceEditor from 'react-ace';
 import prettier from 'prettier/standalone';
 import prettierBabelPlugin from 'prettier/parser-babel';
 
-import 'ace-builds/src-noconflict/mode-json5';
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/theme-monokai';
-import 'ace-builds/webpack-resolver';
+import AceEditor from 'react-ace';
+import 'ace-builds/src-min-noconflict/mode-json5';
+import 'ace-builds/src-min-noconflict/mode-json';
+import 'ace-builds/src-min-noconflict/theme-monokai';
+import 'ace-builds/src-min-noconflict/ext-searchbox';
+
 import {
   Box,
   Button,
