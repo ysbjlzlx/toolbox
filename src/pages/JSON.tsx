@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 
 // @ts-ignore
 import { JSONEditor } from 'svelte-jsoneditor/dist/jsoneditor.js';
