@@ -7,6 +7,7 @@ import prettierBabelPlugin from 'prettier/parser-babel';
 import 'ace-builds/src-noconflict/mode-json5';
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-monokai';
+import 'ace-builds/webpack-resolver';
 import {
   Box,
   Button,
