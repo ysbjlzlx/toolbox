@@ -16,11 +16,7 @@ const JSONBeta: FC = () => {
     }
   }, []);
 
-  return (
-    <Container>
-      <Box ref={editorRef} height="98vh" />
-    </Container>
-  );
+  return <Box ref={editorRef} height="100%" />;
 };
 
 export default JSONBeta;
