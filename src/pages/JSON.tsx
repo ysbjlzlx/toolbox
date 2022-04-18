@@ -9,7 +9,10 @@ const JSONBeta: FC = () => {
 
   useEffect(() => {
     if (editorRef.current) {
-      new JSONEditor({ target: editorRef.current, props: { mode: 'code' } });
+      new JSONEditor({
+        target: editorRef.current,
+        props: { mode: 'code', content: { text: '{}' } },
+      });
     }
   }, []);
 
