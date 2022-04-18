@@ -3,6 +3,8 @@ import { useRoutes } from 'react-router-dom';
 import Layout from './layouts/Index';
 
 import Loading from './pages/Loading';
+import NextLayout from './layouts/NextLayout';
+import Demo from './pages/Demo';
 
 const App = lazy(() => import('./pages/App'));
 const JSON = lazy(() => import('./pages/JSON'));
@@ -39,6 +41,11 @@ export default function Routes() {
           element: <Suspense fallback={<Loading />} children={<CodeFormatter />} />,
         },
       ],
+    },
+    {
+      path: '/demo',
+      element: <NextLayout />,
+      children: [{ index: true, element: <Demo /> }],
     },
   ]);
 }
