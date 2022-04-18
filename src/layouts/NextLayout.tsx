@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -12,6 +12,8 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/Inbox';
 
 import './next-layout.css';
+
+import { apps } from '../models/Apps';
 
 const NextLayout: FC = () => {
   const drawerWidth = 200;
@@ -35,14 +37,15 @@ const NextLayout: FC = () => {
       >
         <Box sx={{ flexGrow: 1, width: `${drawerWidth}px`, bgcolor: 'background.paper' }}>
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-              </ListItemButton>
-            </ListItem>
+            {apps.map((app) => {
+              return (
+                <ListItem disablePadding key={app.name}>
+                  <ListItemButton component={Link} to={app.href}>
+                    <ListItemText primary={app.name} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
           </List>
         </Box>
       </Drawer>

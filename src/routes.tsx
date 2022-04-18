@@ -26,7 +26,7 @@ export default function Routes() {
     },
     {
       path: '/',
-      element: <Layout />,
+      element: <NextLayout />,
       children: [
         { path: '/json', element: <Suspense fallback={<Loading />} children={<JSON />} /> },
         { path: '/url', element: <Suspense fallback={<Loading />} children={<URL />} /> },
