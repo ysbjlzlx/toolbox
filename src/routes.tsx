@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router-dom';
 import Layout from './layouts/Index';
 
 import Loading from './pages/Loading';
+import JSONBeta from './pages/JSONBeta';
 
 const App = lazy(() => import('./pages/App'));
 const Json = lazy(() => import('./pages/Json'));
@@ -27,6 +28,7 @@ export default function Routes() {
       element: <Layout />,
       children: [
         { path: '/json', element: <Suspense fallback={<Loading />} children={<Json />} /> },
+        { path: '/json-beta', element: <JSONBeta /> },
         { path: '/url', element: <Suspense fallback={<Loading />} children={<URL />} /> },
         { path: '/markdown', element: <Suspense fallback={<Loading />} children={<Markdown />} /> },
         { path: '/random', element: <Suspense fallback={<Loading />} children={<Random />} /> },

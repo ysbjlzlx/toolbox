@@ -7,7 +7,7 @@ const NavBar: FC = () => {
     <Grid container direction="row" spacing={2}>
       {apps.map((app) => {
         return (
-          <Grid item>
+          <Grid item key={app.name}>
             <Link underline="none" title={app.desc} href={app.href}>
               {app.name}
             </Link>
