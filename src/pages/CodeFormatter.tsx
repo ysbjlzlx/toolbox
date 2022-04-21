@@ -46,7 +46,7 @@ const CodeFormatter = () => {
 
   return (
     <Box sx={{ height: '100%' }}>
-      <Box sx={{ pt: 2, pb: 1 }}>
+      <Box sx={{ pt: 2, pb: 1, pl: 1 }}>
         <Stack direction={'row'} alignItems={'center'} spacing={2}>
           <Box>
             <FormControl>
