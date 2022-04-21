@@ -29,6 +29,7 @@ const CodeFormatter = () => {
     showLineNumbers: true,
     tabSize: 2,
     wrap: true,
+    fontSize: 14,
   });
   const [code, setCode] = useState<string>('');
   const [model, setModel] = useState<string>('json');
@@ -45,8 +46,8 @@ const CodeFormatter = () => {
   };
 
   return (
-    <Container sx={{ mt: 2 }}>
-      <Box>
+    <Box sx={{ height: '100%' }}>
+      <Box sx={{ pt: 2, pb: 1 }}>
         <Stack direction={'row'} alignItems={'center'} spacing={2}>
           <Box>
             <FormControl>
@@ -85,19 +86,18 @@ const CodeFormatter = () => {
           </Box>
         </Stack>
       </Box>
-      <Box sx={{ mt: 1 }}>
-        <AceEditor
-          width={'100%'}
-          mode={model}
-          theme="monokai"
-          onChange={onChange}
-          name="UNIQUE_ID_OF_DIV"
-          setOptions={options}
-          editorProps={{ $blockScrolling: true }}
-          value={code}
-        />
-      </Box>
-    </Container>
+      <AceEditor
+        width="100%"
+        height="calc(100% - 80px)"
+        mode={model}
+        theme="monokai"
+        onChange={onChange}
+        name="UNIQUE_ID_OF_DIV"
+        setOptions={options}
+        editorProps={{ $blockScrolling: true }}
+        value={code}
+      />
+    </Box>
   );
 };
 
