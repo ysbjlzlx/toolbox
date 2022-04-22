@@ -11,7 +11,7 @@ const JSONBeta: FC = () => {
     if (editorRef.current) {
       new JSONEditor({
         target: editorRef.current,
-        props: { mode: 'code', content: { text: '{}' } },
+        props: { mode: 'code', content: { text: '' } },
       });
     }
   }, []);
