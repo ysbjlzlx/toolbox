@@ -29,6 +29,7 @@ const CodeFormatter = () => {
     tabSize: 2,
     wrap: true,
     fontSize: 14,
+    theme: 'ace/theme/monokai',
   });
   const [code, setCode] = useState<string>('');
   const [model, setModel] = useState<string>('json');
@@ -89,7 +90,6 @@ const CodeFormatter = () => {
         width="100%"
         height="calc(100% - 80px)"
         mode={model}
-        theme="monokai"
         onChange={onChange}
         name="UNIQUE_ID_OF_DIV"
         setOptions={options}
