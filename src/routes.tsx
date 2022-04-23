@@ -15,6 +15,7 @@ const Hash = lazy(() => import('./pages/Hash'));
 const QRCode = lazy(() => import('./pages/QrCode'));
 const CodeFormatter = lazy(() => import('./pages/CodeFormatter'));
 const Code = lazy(() => import('./pages/Code'));
+const JSON2Yaml = lazy(() => import('./pages/JSON2Yaml'));
 
 export default function Routes() {
   return useRoutes([
@@ -40,6 +41,10 @@ export default function Routes() {
           element: <Suspense fallback={<Loading />} children={<CodeFormatter />} />,
         },
         { path: '/code', element: <Suspense fallback={<Loading />} children={<Code />} /> },
+        {
+          path: '/json2yaml',
+          element: <Suspense fallback={<Loading />} children={<JSON2Yaml />} />,
+        },
       ],
     },
   ]);
