@@ -3,3 +3,8 @@ body,
 #root {
   height: 100%;
 }
+
+ul.MuiList-root li.MuiListItem-root > a.active {
+  color: white;
+  background-color: #1976d2;
+}

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -38,7 +38,7 @@ const NextLayout: FC = () => {
             {apps.map((app) => {
               return (
                 <ListItem disablePadding key={app.name}>
-                  <ListItemButton component={Link} to={app.href}>
+                  <ListItemButton component={NavLink} to={app.href}>
                     <ListItemText primary={app.name} />
                   </ListItemButton>
                 </ListItem>
