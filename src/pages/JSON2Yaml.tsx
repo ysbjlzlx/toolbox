@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Box, Button, ButtonGroup, Grid } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
@@ -15,14 +15,14 @@ import prettierBabelPlugin from 'prettier/parser-babel';
 const JSON2Yaml: FC = () => {
   const [json, setJson] = useState<string>('');
   const [yaml, setYaml] = useState<string>('');
-  const [jsonOptions, setJsonOptions] = useState<AceOptions>({
+  const [jsonOptions] = useState<AceOptions>({
     useWorker: false,
     showLineNumbers: true,
     tabSize: 2,
     wrap: true,
     fontSize: 14,
   });
-  const [yamlOptions, setYamlOptions] = useState<AceOptions>({
+  const [yamlOptions] = useState<AceOptions>({
     useWorker: false,
     showLineNumbers: true,
     tabSize: 2,
@@ -76,7 +76,7 @@ const JSON2Yaml: FC = () => {
       <Grid container sx={{ height: '100%' }}>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
           <Box>
-            JSON <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
+            <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
           </Box>
           <AceEditor
             placeholder="JSON"
@@ -85,12 +85,12 @@ const JSON2Yaml: FC = () => {
             onChange={setJson}
             mode="json"
             width="100%"
-            height="100%"
+            height="calc(100% - 37px)"
           />
         </Grid>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
           <Box>
-            YAML <Button onClick={yaml2jsonButClick}>YAML =&gt; JSON</Button>
+            <Button onClick={yaml2jsonButClick}>YAML =&gt; JSON</Button>
           </Box>
           <AceEditor
             placeholder="YAML"
@@ -99,7 +99,7 @@ const JSON2Yaml: FC = () => {
             onChange={setYaml}
             mode="yaml"
             width="100%"
-            height="100%"
+            height="calc(100% - 37px)"
           />
         </Grid>
       </Grid>

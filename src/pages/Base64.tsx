@@ -25,6 +25,7 @@ export default function Base64() {
           }}
           fullWidth
           multiline
+          minRows={5}
         />
       </Box>
       <Box sx={{ mt: 2 }}>
@@ -39,6 +40,7 @@ export default function Base64() {
           value={target}
           fullWidth
           multiline
+          minRows={5}
           InputProps={{
             endAdornment: <ContentCopyAdornment content={target} />,
           }}

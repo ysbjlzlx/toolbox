@@ -10,6 +10,11 @@ export const apps: Application[] = [
     href: '/json',
   },
   {
+    name: 'JSON2YAML',
+    desc: 'JSON 与 Yaml 格式相互转化',
+    href: '/json2yaml',
+  },
+  {
     name: 'URL',
     desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
     href: '/url',
