@@ -24,11 +24,12 @@ export default function Random() {
   const [symbol, setSymbol] = useState<boolean>(false);
   const [length, setLength] = useState<number>(8);
   const refresh = () => {
-    const varchar = generator(length, numeric, lowerCase, upperCase, symbol);
+    const varchar = generator(length, numeric, lowerCase, upperCase, symbol, symbolChars);
     setRandomString(varchar);
   };
+  const [symbolChars, setSymbolChars] = useState<string>('!@#$%^&*');
 
-  useEffect(refresh, [length, numeric, upperCase, lowerCase, symbol]);
+  useEffect(refresh, [length, numeric, upperCase, lowerCase, symbol, symbolChars]);
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -68,7 +69,14 @@ export default function Random() {
               setSymbol(!symbol);
             }}
           />
-          <TextField label={'符号'} value={'!@#$%^&*'} size={'small'} />
+          <TextField
+            label={'符号'}
+            value={symbolChars}
+            onChange={(event) => {
+              setSymbolChars(event.target.value);
+            }}
+            size={'small'}
+          />
         </FormGroup>
         <Box sx={{ mt: 3 }}>
           <Slider

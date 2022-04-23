@@ -1,4 +1,4 @@
-import {random as randomInt} from './Random';
+import { random as randomInt } from './Random';
 import * as _ from 'lodash';
 
 // prettier-ignore
@@ -29,7 +29,8 @@ const generator = function (
   numeric: boolean = true,
   lowercase: boolean = true,
   uppercase: boolean = true,
-  symbol: boolean = false
+  symbol: boolean = false,
+  symbolChars: string = '!@#$%^&*',
 ): string {
   if (typeof length == 'undefined' || length == null || length <= 0) {
     return EMPTY_CHAR;
@@ -44,8 +45,8 @@ const generator = function (
   if (uppercase) {
     chars = chars.concat(UPPERCASE_CHARS);
   }
-  if (symbol) {
-    chars = chars.concat(SYMBOL_CHARS);
+  if (symbol && symbolChars) {
+    chars = chars.concat(symbolChars.split(''));
   }
   if (chars.length < 1) {
     return EMPTY_CHAR;
@@ -59,4 +60,4 @@ const generator = function (
   return str;
 };
 
-export {random, randomAlphabetic, randomNumber, generator};
+export { random, randomAlphabetic, randomNumber, generator };
