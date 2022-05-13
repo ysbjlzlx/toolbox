@@ -33,7 +33,7 @@ const NextLayout: FC = () => {
           },
         }}
       >
-        <Box sx={{ flexGrow: 1, width: `${drawerWidth}px`, bgcolor: 'background.paper' }}>
+        <Box sx={{ flexGrow: 1, width: `${drawerWidth}px`, backgroundColor: 'background.paper' }}>
           <List>
             {apps.map((app) => {
               return (
