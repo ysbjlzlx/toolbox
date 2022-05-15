@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -14,15 +16,22 @@ import './next-layout.css';
 import { apps } from '../models/Apps';
 
 const NextLayout: FC = () => {
-  const drawerWidth = 200;
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  const [drawerWidth, setDrawerWidth] = useState<number>(200);
+  useEffect(() => {
+    if (matches) {
+      setDrawerWidth(200);
+    } else {
+      setDrawerWidth(0);
+    }
+  }, [matches]);
+
   return (
     <Box sx={{ display: 'flex', height: '100%' }}>
       <Drawer
-        open={true}
-        variant="permanent"
-        ModalProps={{
-          keepMounted: true,
-        }}
+        open={matches}
+        variant="persistent"
         anchor="left"
         sx={{
           width: drawerWidth,
