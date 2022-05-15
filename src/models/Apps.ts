@@ -1,4 +1,3 @@
-import { SvgIcon } from '@mui/material';
 import {
   Code,
   Compress,
@@ -8,6 +7,7 @@ import {
   Link,
   QrCode,
   Shuffle,
+  SvgIconComponent,
   SyncAlt,
   TableView,
   Tag,
@@ -17,7 +17,7 @@ export type Application = {
   name: string;
   desc: string;
   href: string;
-  icon?: null | typeof SvgIcon;
+  icon?: null | SvgIconComponent;
 };
 export const apps: Application[] = [
   {
