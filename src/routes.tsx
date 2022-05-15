@@ -16,6 +16,7 @@ const QRCode = lazy(() => import('./pages/QrCode'));
 const CodeFormatter = lazy(() => import('./pages/CodeFormatter'));
 const Code = lazy(() => import('./pages/Code'));
 const JSON2Yaml = lazy(() => import('./pages/JSON2Yaml'));
+const Placeholder = lazy(() => import('./pages/Placeholder'));
 
 export default function Routes() {
   return useRoutes([
@@ -44,6 +45,10 @@ export default function Routes() {
         {
           path: '/json2yaml',
           element: <Suspense fallback={<Loading />} children={<JSON2Yaml />} />,
+        },
+        {
+          path: '/placeholder',
+          element: <Suspense fallback={<Loading />} children={<Placeholder />} />,
         },
       ],
     },

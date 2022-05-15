@@ -54,4 +54,9 @@ export const apps: Application[] = [
     desc: '代码格式化，目前支持：JSON、JSON5',
     href: '/code-formatter',
   },
+  {
+    name: 'Placeholder',
+    desc: '快速便捷生成占位图',
+    href: '/placeholder',
+  },
 ];
