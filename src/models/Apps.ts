@@ -81,7 +81,7 @@ export const apps: Application[] = [
     icon: Code,
   },
   {
-    name: 'Placeholder',
+    name: 'Placeholder Image',
     desc: '快速便捷生成占位图',
     href: '/placeholder',
     icon: Image,
