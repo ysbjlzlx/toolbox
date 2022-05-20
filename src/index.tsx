@@ -4,14 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
 
 import reportWebVitals from './reportWebVitals';
-import Routes from './routes';
+import Router from './router';
 
 ReactDOM.render(
   <React.StrictMode>
     <React.Fragment>
       <CssBaseline />
       <BrowserRouter>
-        <Routes />
+        <Router />
       </BrowserRouter>
     </React.Fragment>
   </React.StrictMode>,
