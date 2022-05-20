@@ -3,14 +3,17 @@ import { Box, Button, Grid } from '@mui/material';
 
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
-import 'ace-builds/src-min-noconflict/mode-json';
-import 'ace-builds/src-min-noconflict/mode-yaml';
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import YAML from 'yaml';
 
 import prettier from 'prettier/standalone';
 import parserYaml from 'prettier/parser-yaml';
 import prettierBabelPlugin from 'prettier/parser-babel';
+
+import YAML from 'yaml';
+
+import 'ace-builds/src-min-noconflict/mode-json';
+import 'ace-builds/src-min-noconflict/mode-yaml';
+import 'ace-builds/src-min-noconflict/ext-searchbox';
+import 'ace-builds/src-min-noconflict/theme-textmate';
 
 const JSON2Yaml: FC = () => {
   const [json, setJson] = useState<string>('');
@@ -79,6 +82,7 @@ const JSON2Yaml: FC = () => {
             <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
           </Box>
           <AceEditor
+            theme="textmate"
             placeholder="JSON"
             setOptions={jsonOptions}
             value={json}
@@ -93,6 +97,7 @@ const JSON2Yaml: FC = () => {
             <Button onClick={yaml2jsonButClick}>YAML =&gt; JSON</Button>
           </Box>
           <AceEditor
+            theme="textmate"
             placeholder="YAML"
             setOptions={yamlOptions}
             value={yaml}
