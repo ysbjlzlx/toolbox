@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useRef } from 'react';
 
+import { basicSetup } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
-import { basicSetup } from '@codemirror/basic-setup';
 import { json } from '@codemirror/lang-json';
 import { Box } from '@mui/material';
 import { oneDarkTheme } from '@codemirror/theme-one-dark';
