@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
+import { FC, useEffect, useRef } from 'react';
 
 // @ts-ignore
 import { JSONEditor } from 'svelte-jsoneditor/dist/jsoneditor.js';
@@ -9,6 +9,7 @@ const JSONBeta: FC = () => {
 
   useEffect(() => {
     if (editorRef.current) {
+      // @ts-ignore
       new JSONEditor({
         target: editorRef.current,
         props: { mode: 'code', content: { text: '' } },
