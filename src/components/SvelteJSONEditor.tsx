@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { useEffect, useRef } from 'react';
 
-import { JSONEditor } from 'svelte-jsoneditor/dist/jsoneditor';
+import { JSONEditor } from 'svelte-jsoneditor/dist/jsoneditor.js';
 import { JSONEditorPropsOptional } from 'svelte-jsoneditor/types';
 
 const SvelteJSONEditor = (props: JSONEditorPropsOptional) => {
@@ -9,15 +9,16 @@ const SvelteJSONEditor = (props: JSONEditorPropsOptional) => {
   const editorRef = useRef<JSONEditor>();
 
   useEffect(() => {
-    editorRef.current = new JSONEditor({
-      // @ts-ignore
+    const options = {
       target: containerRef.current,
       props: {},
-    });
+    };
+    // @ts-ignore
+    editorRef.current = new JSONEditor(options);
+
     return () => {
       // destroy editor
       if (editorRef.current) {
-        console.log('destroy editor');
         editorRef.current.destroy();
         editorRef.current = void 0;
       }

@@ -1,23 +1,9 @@
-import { Box } from '@mui/material';
-import { FC, useEffect, useRef } from 'react';
+import { FC } from 'react';
 
-// @ts-ignore
-import { JSONEditor } from 'svelte-jsoneditor/dist/jsoneditor.js';
+import SvelteJSONEditor from '../components/SvelteJSONEditor';
 
 const JSONBeta: FC = () => {
-  const editorRef = useRef<HTMLDivElement>();
-
-  useEffect(() => {
-    if (editorRef.current) {
-      // @ts-ignore
-      new JSONEditor({
-        target: editorRef.current,
-        props: { mode: 'code', content: { text: '' } },
-      });
-    }
-  }, []);
-
-  return <Box ref={editorRef} height="100%" />;
+  return <SvelteJSONEditor mode="code" content={{ text: '' }} />;
 };
 
 export default JSONBeta;
