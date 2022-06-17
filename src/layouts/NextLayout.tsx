@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { FC, useEffect, useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -42,7 +42,7 @@ const NextLayout: FC = () => {
           },
         }}
       >
-        <Box sx={{ flexGrow: 1, width: `${drawerWidth}px`, backgroundColor: 'background.paper' }}>
+        <Box sx={{ flexGrow: 1, backgroundColor: 'background.paper' }}>
           <List>
             {apps.map((app) => {
               return (
