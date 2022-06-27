@@ -5,5 +5,5 @@ body,
 }
 
 ul.MuiList-root li.MuiListItem-root > a.active {
-  background-color: rgba(25, 118, 210, 0.08);
+  background-color: rgba(25 118 210 / 8%);
 }
