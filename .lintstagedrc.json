@@ -1,0 +1,6 @@
+{
+  "*.{js(x),ts(x)}": "lint",
+  "*.{js,jsx}": "prettier --write --ignore-unknown",
+  "*.{ts,tsx}": "prettier --parser typescript --write --ignore-unknown",
+  "*.{css,md}": "prettier --write --ignore-unknown"
+}
