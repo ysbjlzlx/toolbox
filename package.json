@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "prettier": "prettier ./src --write --ignore-unknown",
-    "lint": "eslint ./src"
+    "lint:js": "eslint ./src"
   },
   "dependencies": {
     "@codemirror/commands": "^6.0.0",
@@ -26,6 +26,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "^14.2.0",
+    "@umijs/lint": "^4.0.2",
     "ace-builds": "^1.6.0",
     "axios": "^0.27.2",
     "codemirror": "^6.0.0",
@@ -65,7 +66,6 @@
     "eslint": "^8.18.0",
     "eslint-config-react-app": "^7.0.1",
     "husky": "^8.0.1",
-    "jest": "^28.1.1",
     "lint-staged": "^13.0.2",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
