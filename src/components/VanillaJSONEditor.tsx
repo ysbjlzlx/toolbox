@@ -1,10 +1,9 @@
 import { Box } from '@mui/material';
 import { useEffect, useRef } from 'react';
 
-import { JSONEditor } from 'svelte-jsoneditor/dist/jsoneditor.js';
-import { JSONEditorPropsOptional } from 'svelte-jsoneditor/types';
+import { JSONEditor, JSONEditorPropsOptional } from 'vanilla-jsoneditor';
 
-const SvelteJSONEditor = (props: JSONEditorPropsOptional) => {
+const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
   const containerRef = useRef<HTMLDivElement>();
   const editorRef = useRef<JSONEditor>();
 
@@ -34,4 +33,4 @@ const SvelteJSONEditor = (props: JSONEditorPropsOptional) => {
   return <Box ref={containerRef} height="100%" />;
 };
 
-export default SvelteJSONEditor;
+export default VanillaJSONEditor;

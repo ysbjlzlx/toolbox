@@ -1,9 +1,9 @@
 import { FC } from 'react';
-
-import SvelteJSONEditor from '../components/SvelteJSONEditor';
+import { Mode } from 'vanilla-jsoneditor';
+import VanillaJSONEditor from '../components/VanillaJSONEditor';
 
 const JSONBeta: FC = () => {
-  return <SvelteJSONEditor mode="code" content={{ text: '' }} />;
+  return <VanillaJSONEditor mode={Mode.text} content={{ text: '' }} />;
 };
 
 export default JSONBeta;
