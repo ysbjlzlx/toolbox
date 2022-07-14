@@ -86,4 +86,10 @@ export const apps: Application[] = [
     href: '/placeholder',
     icon: Image,
   },
+  {
+    name: 'BSON ObjectID',
+    desc: 'BSON',
+    href: '/bson-objectid',
+    icon: Code,
+  },
 ];

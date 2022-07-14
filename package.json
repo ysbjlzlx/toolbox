@@ -24,11 +24,9 @@
     "@hookform/resolvers": "^2.9.1",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "12.1.5",
-    "@testing-library/user-event": "^14.2.0",
     "ace-builds": "^1.6.0",
     "axios": "^0.27.2",
+    "bson-objectid": "^2.0.3",
     "codemirror": "^6.0.0",
     "crypto-js": "^4.1.1",
     "file-saver": "^2.0.5",
@@ -54,6 +52,9 @@
     "yaml": "^2.1.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^14.2.3",
     "@types/crypto-js": "^4.1.1",
     "@types/file-saver": "^2.0.5",
     "@types/jest": "^28.1.1",

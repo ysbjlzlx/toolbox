@@ -1,8 +1,8 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 
-import Loading from '../pages/Loading';
 import NextLayout from '../layouts/NextLayout';
+import Loading from '../pages/Loading';
 
 const App = lazy(() => import('../pages/App'));
 const JSON = lazy(() => import('../pages/JSON'));
@@ -17,6 +17,7 @@ const CodeFormatter = lazy(() => import('../pages/CodeFormatter'));
 const Code = lazy(() => import('../pages/Code'));
 const JSON2Yaml = lazy(() => import('../pages/JSON2Yaml'));
 const Placeholder = lazy(() => import('../pages/Placeholder'));
+const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
 
 const routes: RouteObject[] = [
   {
@@ -48,6 +49,10 @@ const routes: RouteObject[] = [
       {
         path: '/placeholder',
         element: <Suspense fallback={<Loading />} children={<Placeholder />} />,
+      },
+      {
+        path: '/bson-objectid',
+        element: <Suspense fallback={<Loading />} children={<BSONObjectID />} />,
       },
     ],
   },
