@@ -1,6 +1,6 @@
-import React, { ReactElement, useRef, useEffect, useState, useMemo, useLayoutEffect } from 'react';
 import { Container, Grid, TextField } from '@mui/material';
 import QRCode from 'qrcode';
+import { ReactElement, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 export default function QrCode(): ReactElement {
   const [text, setText] = useState<string>('');
