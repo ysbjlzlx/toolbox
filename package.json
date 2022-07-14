@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "prettier": "prettier ./src --write --ignore-unknown",
-    "lint:js": "eslint ./src",
+    "lint:js": "eslint src",
     "lint:style": "stylelint \"src/**/*.css\""
   },
   "dependencies": {
