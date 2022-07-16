@@ -1,19 +1,9 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Checkbox,
-  Container,
-  FormControlLabel,
-  FormGroup,
-  Slider,
-  TextField,
-} from '@mui/material';
+import { Box, Checkbox, Container, FormControlLabel, FormGroup, Slider, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 
-import { Refresh } from '@mui/icons-material';
 import { Block } from '../components/Block';
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
+import RefreshAdornment from '../components/RefreshAdornment';
 import { generator, GeneratorOptions } from '../scripts/RandomStringUtils';
 
 export default function Random() {
@@ -23,6 +13,7 @@ export default function Random() {
   const [lowerCase, setLowerCase] = useState<boolean>(true);
   const [symbol, setSymbol] = useState<boolean>(false);
   const [length, setLength] = useState<number>(8);
+  const [symbolChars, setSymbolChars] = useState<string>('!@#$%^&*');
   const [options, setOptions] = useState<GeneratorOptions>({});
   useEffect(() => {
     setOptions({
@@ -31,19 +22,18 @@ export default function Random() {
       lowercase: lowerCase,
       uppercase: upperCase,
       symbol: symbol,
-      symbolChars: '!@#$%^&*',
+      symbolChars: symbolChars,
     });
-  }, [length, numeric, lowerCase, upperCase, symbol]);
+  }, [length, numeric, lowerCase, upperCase, symbol, symbolChars]);
 
   const refresh = () => {
     const varchar = generator(options);
     setRandomString(varchar);
   };
-  const [symbolChars, setSymbolChars] = useState<string>('!@#$%^&*');
 
   useEffect(refresh, [length, numeric, upperCase, lowerCase, symbol, symbolChars, options]);
 
-  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+  const label = { inputProps: { 'aria-label': 'Checkbox' } };
 
   return (
     <Container>
@@ -119,20 +109,18 @@ export default function Random() {
             label="随机结果"
             value={randomString}
             InputProps={{
-              endAdornment: <ContentCopyAdornment content={randomString} />,
+              endAdornment: (
+                <>
+                  <RefreshAdornment onClick={refresh} />
+                  <ContentCopyAdornment content={randomString} />
+                </>
+              ),
             }}
             onChange={(event) => {
               setRandomString(event.target.value);
             }}
             fullWidth
           />
-        </Box>
-        <Box sx={{ mt: 2 }}>
-          <ButtonGroup>
-            <Button startIcon={<Refresh />} onClick={refresh}>
-              刷新
-            </Button>
-          </ButtonGroup>
         </Box>
       </Block>
     </Container>
