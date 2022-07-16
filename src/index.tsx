@@ -1,19 +1,19 @@
+import { CssBaseline } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@mui/material';
 
 import reportWebVitals from './reportWebVitals';
 import Router from './router';
 
 ReactDOM.render(
   <React.StrictMode>
-    <React.Fragment>
+    <>
       <CssBaseline />
       <BrowserRouter>
         <Router />
       </BrowserRouter>
-    </React.Fragment>
+    </>
   </React.StrictMode>,
   document.getElementById('root'),
 );

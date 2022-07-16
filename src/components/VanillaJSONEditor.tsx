@@ -19,7 +19,7 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
       // destroy editor
       if (editorRef.current) {
         editorRef.current.destroy();
-        editorRef.current = void 0;
+        editorRef.current = undefined;
       }
     };
   }, []);

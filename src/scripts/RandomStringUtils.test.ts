@@ -1,4 +1,4 @@
-import {random, randomAlphabetic, randomNumber} from './RandomStringUtils';
+import { random, randomAlphabetic, randomNumber } from './RandomStringUtils';
 
 test('RandomStringUtils random', () => {
   const length = 16;

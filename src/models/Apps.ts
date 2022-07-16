@@ -13,12 +13,12 @@ import {
   Tag,
 } from '@mui/icons-material';
 
-export type Application = {
+export interface Application {
   name: string;
   desc: string;
   href: string;
   icon?: null | SvgIconComponent;
-};
+}
 export const apps: Application[] = [
   {
     name: 'JSON',

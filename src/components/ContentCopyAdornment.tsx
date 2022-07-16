@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { IconButton, InputAdornment, Snackbar } from '@mui/material';
 import { ContentCopy } from '@mui/icons-material';
+import { IconButton, InputAdornment, Snackbar } from '@mui/material';
+import { useState } from 'react';
 // @ts-ignore
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
@@ -22,16 +22,16 @@ export default function ContentCopyAdornment({ content, onCopy }: Props) {
     setOpen(!open);
   };
   return (
-    <React.Fragment>
+    <>
       <CopyToClipboard text={content} onCopy={handleOnCopy}>
-        <InputAdornment position={'end'}>
-          <IconButton aria-label={'Copy content'}>
+        <InputAdornment position="end">
+          <IconButton aria-label="Copy content">
             <ContentCopy />
           </IconButton>
         </InputAdornment>
       </CopyToClipboard>
 
-      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000} message={'复制成功'} />
-    </React.Fragment>
+      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000} message="复制成功" />
+    </>
   );
 }

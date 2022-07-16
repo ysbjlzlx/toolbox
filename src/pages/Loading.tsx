@@ -1,15 +1,8 @@
-import React from 'react';
 import { Box, CircularProgress, Stack } from '@mui/material';
 
 export default function Loading() {
   return (
-    <Stack
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-      spacing={2}
-      sx={{ height: '100vh' }}
-    >
+    <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ height: '100vh' }}>
       <Box>
         <CircularProgress />
       </Box>

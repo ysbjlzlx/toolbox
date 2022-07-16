@@ -1,11 +1,10 @@
-import React from 'react';
-import './App.css';
 import { Card, CardActions, CardContent, Container, Grid, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import './App.css';
 
-import { apps, Application } from '../models/Apps';
+import { Application, apps } from '../models/Apps';
 
-function App() {
+const App = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
@@ -36,6 +35,6 @@ function App() {
       </Grid>
     </Container>
   );
-}
+};
 
 export default App;

@@ -1,14 +1,14 @@
-import React, { ReactElement, useState, useEffect } from 'react';
 import { Container, TextField } from '@mui/material';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
+import { ReactElement, useEffect, useState } from 'react';
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
 
-type HashResult = {
+interface HashResult {
   md5?: string;
   sha1?: string;
   sha256?: string;
   sha512?: string;
-};
+}
 
 const Hash = (): ReactElement => {
   const defaultHashResult: HashResult = {
@@ -36,50 +36,50 @@ const Hash = (): ReactElement => {
   return (
     <Container>
       <TextField
-        label={'原文'}
+        label="原文"
         value={plainText}
         onChange={(event) => {
           setPlainText(event.target.value);
         }}
         helperText={plainText.length || ''}
         fullWidth
-        margin={'normal'}
+        margin="normal"
       />
       <TextField
-        label={'MD5'}
+        label="MD5"
         value={hashResult?.md5}
         fullWidth
-        margin={'normal'}
+        margin="normal"
         InputProps={{
           endAdornment: <ContentCopyAdornment content={hashResult?.md5} />,
         }}
         helperText={hashResult?.md5?.length || ''}
       />
       <TextField
-        label={'SHA1'}
+        label="SHA1"
         value={hashResult?.sha1}
         fullWidth
-        margin={'normal'}
+        margin="normal"
         InputProps={{
           endAdornment: <ContentCopyAdornment content={hashResult?.sha1} />,
         }}
         helperText={hashResult?.sha1?.length || ''}
       />
       <TextField
-        label={'SHA256'}
+        label="SHA256"
         value={hashResult?.sha256}
         fullWidth
-        margin={'normal'}
+        margin="normal"
         InputProps={{
           endAdornment: <ContentCopyAdornment content={hashResult?.sha256} />,
         }}
         helperText={hashResult?.sha256?.length || ''}
       />
       <TextField
-        label={'SHA512'}
+        label="SHA512"
         value={hashResult?.sha512}
         fullWidth
-        margin={'normal'}
+        margin="normal"
         InputProps={{
           endAdornment: <ContentCopyAdornment content={hashResult?.sha512} />,
         }}

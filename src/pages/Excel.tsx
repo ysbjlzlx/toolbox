@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useState } from 'react';
-import { Box, Container, Typography, Button } from '@mui/material';
-import * as xlsx from 'xlsx';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import FileSaver from 'file-saver';
+import { ChangeEvent, useState } from 'react';
+import * as xlsx from 'xlsx';
 
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
@@ -62,17 +62,11 @@ export default function Excel() {
   return (
     <Container>
       <Box sx={{ mt: 2 }}>
-        <Typography variant={'h2'}>Excel 转 JSON</Typography>
+        <Typography variant="h2">Excel 转 JSON</Typography>
       </Box>
       <Box sx={{ mt: 2 }}>
         <label htmlFor="contained-button-file">
-          <Input
-            accept=".xls,.xlsx,.csv"
-            id="contained-button-file"
-            multiple
-            type="file"
-            onChange={onUpload}
-          />
+          <Input accept=".xls,.xlsx,.csv" id="contained-button-file" multiple type="file" onChange={onUpload} />
           <Button variant="contained" component="span">
             上传 Excel
           </Button>

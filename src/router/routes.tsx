@@ -23,36 +23,119 @@ const routes: RouteObject[] = [
   {
     path: '/',
     index: true,
-    element: <Suspense fallback={<Loading />} children={<App />} />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <App />
+      </Suspense>
+    ),
   },
   {
     path: '/',
     element: <NextLayout />,
     children: [
-      { path: '/json', element: <Suspense fallback={<Loading />} children={<JSON />} /> },
-      { path: '/url', element: <Suspense fallback={<Loading />} children={<URL />} /> },
-      { path: '/markdown', element: <Suspense fallback={<Loading />} children={<Markdown />} /> },
-      { path: '/random', element: <Suspense fallback={<Loading />} children={<Random />} /> },
-      { path: '/base64', element: <Suspense fallback={<Loading />} children={<Base64 />} /> },
-      { path: '/excel', element: <Suspense fallback={<Loading />} children={<Excel />} /> },
-      { path: '/hash', element: <Suspense fallback={<Loading />} children={<Hash />} /> },
-      { path: '/qrcode', element: <Suspense fallback={<Loading />} children={<QRCode />} /> },
+      {
+        path: '/json',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <JSON />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/url',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <URL />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/markdown',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Markdown />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/random',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Random />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/base64',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Base64 />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/excel',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Excel />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/hash',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Hash />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/qrcode',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <QRCode />
+          </Suspense>
+        ),
+      },
       {
         path: '/code-formatter',
-        element: <Suspense fallback={<Loading />} children={<CodeFormatter />} />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <CodeFormatter />
+          </Suspense>
+        ),
       },
-      { path: '/code', element: <Suspense fallback={<Loading />} children={<Code />} /> },
+      {
+        path: '/code',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Code />
+          </Suspense>
+        ),
+      },
       {
         path: '/json2yaml',
-        element: <Suspense fallback={<Loading />} children={<JSON2Yaml />} />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <JSON2Yaml />
+          </Suspense>
+        ),
       },
       {
         path: '/placeholder',
-        element: <Suspense fallback={<Loading />} children={<Placeholder />} />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Placeholder />
+          </Suspense>
+        ),
       },
       {
         path: '/bson-objectid',
-        element: <Suspense fallback={<Loading />} children={<BSONObjectID />} />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <BSONObjectID />
+          </Suspense>
+        ),
       },
     ],
   },

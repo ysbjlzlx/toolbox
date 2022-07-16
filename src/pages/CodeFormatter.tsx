@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import prettier from 'prettier/standalone';
 import prettierBabelPlugin from 'prettier/parser-babel';
+import prettier from 'prettier/standalone';
 
-import AceEditor from 'react-ace';
-import 'ace-builds/src-min-noconflict/mode-json5';
-import 'ace-builds/src-min-noconflict/mode-json';
-import 'ace-builds/src-min-noconflict/theme-monokai';
 import 'ace-builds/src-min-noconflict/ext-searchbox';
+import 'ace-builds/src-min-noconflict/mode-json';
+import 'ace-builds/src-min-noconflict/mode-json5';
+import 'ace-builds/src-min-noconflict/theme-monokai';
+import AceEditor from 'react-ace';
 
 import {
   Box,
@@ -48,26 +48,26 @@ const CodeFormatter = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box sx={{ pt: 2, pb: 1, pl: 1 }}>
-        <Stack direction={'row'} alignItems={'center'} spacing={2}>
+        <Stack direction="row" alignItems="center" spacing={2}>
           <Box>
             <FormControl>
               <InputLabel id="type-select-label">类型</InputLabel>
               <Select
                 labelId="type-select-label"
-                label={'类型'}
-                variant={'outlined'}
+                label="类型"
+                variant="outlined"
                 value={model}
                 onChange={(event) => {
                   setModel(event.target.value);
                 }}
               >
-                <MenuItem value={'json'}>JSON</MenuItem>
-                <MenuItem value={'json5'}>JSON5</MenuItem>
+                <MenuItem value="json">JSON</MenuItem>
+                <MenuItem value="json5">JSON5</MenuItem>
               </Select>
             </FormControl>
           </Box>
           <Box>
-            <Button variant={'contained'} onClick={onPrettier}>
+            <Button variant="contained" onClick={onPrettier}>
               格式化
             </Button>
           </Box>

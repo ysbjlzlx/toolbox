@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
-import App from './App';
 import { Instance, types } from 'mobx-state-tree';
+import App from './App';
 
 const RootStore = types.model({
   app: types.optional(App, {}),

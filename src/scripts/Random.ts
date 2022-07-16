@@ -6,9 +6,9 @@
  * @return {number}
  */
 export function random(min: number, max: number): number {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+  const ceilMin = Math.ceil(min);
+  const ceilMax = Math.floor(max);
+  return Math.floor(Math.random() * (ceilMax - ceilMin)) + ceilMin;
 }
 
 /**
@@ -19,7 +19,7 @@ export function random(min: number, max: number): number {
  * @return {number}
  */
 export function randomInclusive(min: number, max: number): number {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  const ceilMin = Math.ceil(min);
+  const ceilMax = Math.floor(max);
+  return Math.floor(Math.random() * (ceilMax - ceilMin + 1)) + ceilMin;
 }

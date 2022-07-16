@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -10,6 +9,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import { useState } from 'react';
 
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
 import ContentCopyButton from '../components/ContentCopyButton';
@@ -34,15 +34,15 @@ export default function URL() {
     <Container>
       <Box mt={2}>
         <TextField
-          type={'text'}
-          label={'URL'}
+          type="text"
+          label="URL"
           value={uri}
           onChange={(e) => {
             setUri(e.target.value);
           }}
           multiline
           minRows={3}
-          variant={'outlined'}
+          variant="outlined"
           fullWidth
           InputProps={{
             endAdornment: <ContentCopyAdornment content={uri} />,
@@ -51,13 +51,13 @@ export default function URL() {
       </Box>
       <Box mt={2}>
         <ButtonGroup>
-          <Button variant={'outlined'} onClick={handleEncodeURI}>
+          <Button variant="outlined" onClick={handleEncodeURI}>
             链接参数编码
           </Button>
-          <Button variant={'outlined'} onClick={handleEncodeURIComponent}>
+          <Button variant="outlined" onClick={handleEncodeURIComponent}>
             全链接编码
           </Button>
-          <Button variant={'outlined'} onClick={handleDecodeURIComponent}>
+          <Button variant="outlined" onClick={handleDecodeURIComponent}>
             链接解码
           </Button>
         </ButtonGroup>
@@ -65,9 +65,7 @@ export default function URL() {
       <Box mt={2}>
         <Card>
           <CardContent>
-            <Typography sx={{ wordWrap: 'break-word', paddingTop: 2, pb: 2 }}>
-              {encodedURI}
-            </Typography>
+            <Typography sx={{ wordWrap: 'break-word', paddingTop: 2, pb: 2 }}>{encodedURI}</Typography>
           </CardContent>
           <CardActions disableSpacing>
             <ContentCopyButton text={encodedURI} />

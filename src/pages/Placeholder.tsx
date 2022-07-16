@@ -1,4 +1,3 @@
-import React, { FC, useEffect, useState } from 'react';
 import {
   Box,
   Container,
@@ -11,16 +10,17 @@ import {
   Select,
   TextField,
 } from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
+import { FC, useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
-type PlaceholderConfig = {
+interface PlaceholderConfig {
   width: number;
   height: number;
   suffix: string;
   bgColor: null | string;
   textColor: null | string;
   text: null | string;
-};
+}
 
 const defaultValues = {
   width: 150,
@@ -41,7 +41,7 @@ const Placeholder: FC = () => {
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
   const [imgList, setImgList] = useState<Array<string>>([]);
   const { register, handleSubmit, control } = useForm({
-    defaultValues: defaultValues,
+    defaultValues,
   });
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Placeholder: FC = () => {
     }
     host = host + '/' + config.bgColor?.substring(1);
     host = host + '/' + config.textColor?.substring(1);
-    if (config.text && '' !== config.text) {
+    if (config.text && config.text !== '') {
       host = host + '?text=' + encodeURIComponent(config.text);
     }
     host = host + config.suffix;
@@ -72,7 +72,7 @@ const Placeholder: FC = () => {
     }
     host = host + '/' + config.bgColor?.substring(1);
     host = host + '/' + config.textColor?.substring(1);
-    if (config.text && '' !== config.text) {
+    if (config.text && config.text !== '') {
       host = host + '?text=' + encodeURIComponent(config.text);
     }
     return host + config.suffix;
@@ -82,14 +82,14 @@ const Placeholder: FC = () => {
       <form onChange={handleSubmit(setPlaceholderConfig)}>
         <Grid container spacing={2}>
           <Grid item xs={4}>
-            <TextField type={'number'} label={'宽度'} fullWidth {...register('width')} />
+            <TextField type="number" label="宽度" fullWidth {...register('width')} />
           </Grid>
           <Grid item xs={4}>
-            <TextField type={'number'} label={'高度'} fullWidth {...register('height')} />
+            <TextField type="number" label="高度" fullWidth {...register('height')} />
           </Grid>
           <Grid item xs={4}>
             <Controller
-              name={'suffix'}
+              name="suffix"
               control={control}
               render={({ field }) => {
                 return (
@@ -97,7 +97,7 @@ const Placeholder: FC = () => {
                     <InputLabel>后缀名</InputLabel>
                     <Select
                       {...field}
-                      label={'后缀名'}
+                      label="后缀名"
                       onChange={(event) => {
                         setPlaceholderConfig({ ...placeholderConfig, suffix: event.target.value });
                       }}
@@ -118,13 +118,13 @@ const Placeholder: FC = () => {
         </Grid>
         <Grid container spacing={2} sx={{ mt: 1 }}>
           <Grid item xs={4}>
-            <TextField label={'背景颜色'} fullWidth {...register('bgColor')} disabled />
+            <TextField label="背景颜色" fullWidth {...register('bgColor')} disabled />
           </Grid>
           <Grid item xs={4}>
-            <TextField label={'文本颜色'} fullWidth {...register('textColor')} disabled />
+            <TextField label="文本颜色" fullWidth {...register('textColor')} disabled />
           </Grid>
           <Grid item xs={4}>
-            <TextField label={'文本'} fullWidth {...register('text')} />
+            <TextField label="文本" fullWidth {...register('text')} />
           </Grid>
         </Grid>
       </form>

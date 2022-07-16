@@ -1,18 +1,18 @@
-import React, { FC, useState } from 'react';
 import { Box, Button, Grid } from '@mui/material';
+import { FC, useState } from 'react';
 
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 
-import prettier from 'prettier/standalone';
-import parserYaml from 'prettier/parser-yaml';
 import prettierBabelPlugin from 'prettier/parser-babel';
+import parserYaml from 'prettier/parser-yaml';
+import prettier from 'prettier/standalone';
 
 import YAML from 'yaml';
 
+import 'ace-builds/src-min-noconflict/ext-searchbox';
 import 'ace-builds/src-min-noconflict/mode-json';
 import 'ace-builds/src-min-noconflict/mode-yaml';
-import 'ace-builds/src-min-noconflict/ext-searchbox';
 import 'ace-builds/src-min-noconflict/theme-textmate';
 
 const JSON2Yaml: FC = () => {

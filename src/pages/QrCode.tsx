@@ -26,7 +26,7 @@ export default function QrCode(): ReactElement {
       <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
           <TextField
-            label={'文本'}
+            label="文本"
             value={text}
             onChange={(event) => {
               setText(event.target.value);

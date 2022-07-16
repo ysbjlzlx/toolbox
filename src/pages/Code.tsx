@@ -1,11 +1,11 @@
-import React, { FC, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
-import { basicSetup } from 'codemirror';
-import { EditorState } from '@codemirror/state';
-import { EditorView } from '@codemirror/view';
 import { json } from '@codemirror/lang-json';
-import { Box } from '@mui/material';
+import { EditorState } from '@codemirror/state';
 import { oneDarkTheme } from '@codemirror/theme-one-dark';
+import { EditorView } from '@codemirror/view';
+import { Box } from '@mui/material';
+import { basicSetup } from 'codemirror';
 
 const Code: FC = () => {
   const Editor = useRef<HTMLDivElement>();
@@ -23,8 +23,9 @@ const Code: FC = () => {
       extensions: [basicSetup, json(), oneDarkTheme, customTheme],
     });
 
+    // eslint-disable-next-line no-new
     new EditorView({
-      state: state,
+      state,
       parent: Editor.current,
     });
   }, []);
