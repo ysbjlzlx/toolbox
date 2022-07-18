@@ -12,7 +12,8 @@
     "prettier:write": "prettier src --write --ignore-unknown",
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
-    "stylelint": "stylelint \"src/**/*.css\""
+    "stylelint": "stylelint src/**/*.css",
+    "stylelint:fix": "stylelint --fix src/**/*.css"
   },
   "dependencies": {
     "@codemirror/commands": "^6.0.0",
@@ -65,7 +66,6 @@
     "@types/qrcode": "^1.4.2",
     "@types/react": "17.0.47",
     "@types/react-dom": "17.0.17",
-    "@umijs/lint": "^4.0.7",
     "eslint": "^8.18.0",
     "eslint-config-alloy": "^4.6.2",
     "eslint-config-react-app": "^7.0.1",
@@ -75,6 +75,7 @@
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
     "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0",
     "typescript": "^4.7.4"
   },
   "browserslist": {
