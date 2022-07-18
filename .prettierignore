@@ -5,8 +5,5 @@ coverage
 # Ignore all HTML files:
 *.html
 
-**/*.md
 **/*.svg
 **/*.ejs
-**/*.html
-package.json

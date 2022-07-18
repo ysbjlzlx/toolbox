@@ -3,17 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
     "eject": "react-scripts eject",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
     "prepare": "husky install",
     "prettier": "prettier src --ignore-unknown",
     "prettier:write": "prettier src --write --ignore-unknown",
-    "eslint": "eslint src",
-    "eslint:fix": "eslint src --fix",
+    "start": "craco start",
     "stylelint": "stylelint src/**/*.css",
-    "stylelint:fix": "stylelint --fix src/**/*.css"
+    "stylelint:fix": "stylelint --fix src/**/*.css",
+    "test": "craco test"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
     "@codemirror/commands": "^6.0.0",
@@ -77,17 +89,5 @@
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0",
     "typescript": "^4.7.4"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

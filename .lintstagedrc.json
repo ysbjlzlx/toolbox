@@ -1,11 +1,15 @@
 {
   "*.{js,jsx}": [
-    "eslint src",
+    "eslint src --fix",
     "prettier --write --ignore-unknown"
   ],
   "*.{ts,tsx}": [
-    "eslint src",
+    "eslint src --fix",
     "prettier --parser typescript --write --ignore-unknown"
   ],
-  "*.{css,md}": "prettier --write --ignore-unknown"
+  "*.md": "prettier --parser markdown --write --ignore-unknown",
+  "*.css": [
+    "stylelint src/**/*.css",
+    "prettier --write --ignore-unknown"
+  ]
 }

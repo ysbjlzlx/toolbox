@@ -1,3 +1,3 @@
 # Toolbox
 
-* https://toolbox.fanfou.dev
+- https://toolbox.fanfou.dev
