@@ -1,14 +1,3 @@
-import { useState } from 'react';
-
-import prettierBabelPlugin from 'prettier/parser-babel';
-import prettier from 'prettier/standalone';
-
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import 'ace-builds/src-min-noconflict/mode-json';
-import 'ace-builds/src-min-noconflict/mode-json5';
-import 'ace-builds/src-min-noconflict/theme-monokai';
-import AceEditor from 'react-ace';
-
 import {
   Box,
   Button,
@@ -20,7 +9,16 @@ import {
   Select,
   Stack,
 } from '@mui/material';
+import prettierBabelPlugin from 'prettier/parser-babel';
+import prettier from 'prettier/standalone';
+import { useState } from 'react';
+import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
+
+import 'ace-builds/src-min-noconflict/ext-searchbox';
+import 'ace-builds/src-min-noconflict/mode-json';
+import 'ace-builds/src-min-noconflict/mode-json5';
+import 'ace-builds/src-min-noconflict/theme-monokai';
 
 const CodeFormatter = () => {
   const [options, setOptions] = useState<AceOptions>({
