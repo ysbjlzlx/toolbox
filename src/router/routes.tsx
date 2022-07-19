@@ -18,6 +18,7 @@ const Code = lazy(() => import('../pages/Code'));
 const JSON2Yaml = lazy(() => import('../pages/JSON2Yaml'));
 const Placeholder = lazy(() => import('../pages/Placeholder'));
 const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
+const DocEditor = lazy(() => import('../pages/DocEditor'));
 
 const routes: RouteObject[] = [
   {
@@ -134,6 +135,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <BSONObjectID />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/doc-editor',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <DocEditor />
           </Suspense>
         ),
       },
