@@ -10,17 +10,13 @@ import {
   Select,
   TextField,
 } from '@mui/material';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-interface PlaceholderConfig {
-  width: number;
-  height: number;
-  suffix: string;
-  bgColor: null | string;
-  textColor: null | string;
-  text: null | string;
-}
+import { PlaceholderConfig } from '../components/placeholder';
+import DummyImage from '../components/placeholder/DummyImage';
+import HrefLuImage from '../components/placeholder/HrefLuImage';
+import PlaceholderImage from '../components/placeholder/PlaceholderImage';
 
 const defaultValues = {
   width: 150,
@@ -37,46 +33,12 @@ const suffixOptions = [
   { label: '.gif', value: '.gif' },
 ];
 
-const Placeholder: FC = () => {
+const PlaceholderImg: FC = () => {
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
-  const [imgList, setImgList] = useState<Array<string>>([]);
   const { register, handleSubmit, control } = useForm({
     defaultValues,
   });
 
-  useEffect(() => {
-    const v = viaPlaceholder(placeholderConfig);
-    const d = dummyImage(placeholderConfig);
-    setImgList([v, d]);
-  }, [placeholderConfig]);
-
-  const viaPlaceholder = (config: PlaceholderConfig) => {
-    let host = 'https://via.placeholder.com';
-    host = host + '/' + config.width;
-    if (config.height) {
-      host = host + 'x' + config.height;
-    }
-    host = host + '/' + config.bgColor?.substring(1);
-    host = host + '/' + config.textColor?.substring(1);
-    if (config.text && config.text !== '') {
-      host = host + '?text=' + encodeURIComponent(config.text);
-    }
-    host = host + config.suffix;
-    return host;
-  };
-  const dummyImage = (config: PlaceholderConfig) => {
-    let host = 'https://dummyimage.com';
-    host = host + '/' + config.width;
-    if (config.height) {
-      host = host + 'x' + config.height;
-    }
-    host = host + '/' + config.bgColor?.substring(1);
-    host = host + '/' + config.textColor?.substring(1);
-    if (config.text && config.text !== '') {
-      host = host + '?text=' + encodeURIComponent(config.text);
-    }
-    return host + config.suffix;
-  };
   return (
     <Container sx={{ mt: 2 }}>
       <form onChange={handleSubmit(setPlaceholderConfig)}>
@@ -130,24 +92,20 @@ const Placeholder: FC = () => {
       </form>
 
       <Box sx={{ mt: 2 }}>
-        <ImageList>
-          {imgList.map((item) => (
-            <ImageListItem key={item}>
-              <img
-                style={{
-                  width: `${placeholderConfig.width}px`,
-                  height: `${placeholderConfig.height}px`,
-                }}
-                alt={placeholderConfig.text || 'placeholder'}
-                src={item}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
+        <ImageList cols={3}>
+          <ImageListItem key={0}>
+            <PlaceholderImage {...placeholderConfig} />
+          </ImageListItem>
+          <ImageListItem key={1}>
+            <DummyImage {...placeholderConfig} />
+          </ImageListItem>
+          <ImageListItem key={2}>
+            <HrefLuImage {...placeholderConfig} />
+          </ImageListItem>
         </ImageList>
       </Box>
     </Container>
   );
 };
 
-export default Placeholder;
+export default PlaceholderImg;

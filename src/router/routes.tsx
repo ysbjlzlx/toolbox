@@ -16,7 +16,7 @@ const QRCode = lazy(() => import('../pages/QrCode'));
 const CodeFormatter = lazy(() => import('../pages/CodeFormatter'));
 const Code = lazy(() => import('../pages/Code'));
 const JSON2Yaml = lazy(() => import('../pages/JSON2Yaml'));
-const Placeholder = lazy(() => import('../pages/Placeholder'));
+const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 
