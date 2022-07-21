@@ -1,16 +1,5 @@
-import {
-  Box,
-  Container,
-  FormControl,
-  Grid,
-  ImageList,
-  ImageListItem,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from '@mui/material';
-import { FC, useState } from 'react';
+import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
+import React, { FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { PlaceholderConfig } from '../components/placeholder';
@@ -19,12 +8,12 @@ import HrefLuImage from '../components/placeholder/HrefLuImage';
 import PlaceholderImage from '../components/placeholder/PlaceholderImage';
 
 const defaultValues = {
-  width: 150,
-  height: 150,
+  width: 320,
+  height: 320,
   suffix: '.png',
   bgColor: '#cccccc',
   textColor: '#969696',
-  text: '',
+  text: 'img',
 };
 
 const suffixOptions = [
@@ -33,7 +22,37 @@ const suffixOptions = [
   { label: '.gif', value: '.gif' },
 ];
 
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
 const PlaceholderImg: FC = () => {
+  const [provider, setProvider] = useState<number>(0);
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
   const { register, handleSubmit, control } = useForm({
     defaultValues,
@@ -90,19 +109,21 @@ const PlaceholderImg: FC = () => {
           </Grid>
         </Grid>
       </form>
-
-      <Box sx={{ mt: 2 }}>
-        <ImageList cols={3}>
-          <ImageListItem key={0}>
-            <PlaceholderImage {...placeholderConfig} />
-          </ImageListItem>
-          <ImageListItem key={1}>
-            <DummyImage {...placeholderConfig} />
-          </ImageListItem>
-          <ImageListItem key={2}>
-            <HrefLuImage {...placeholderConfig} />
-          </ImageListItem>
-        </ImageList>
+      <Box>
+        <Tabs value={provider} onChange={(e, value) => setProvider(value)} aria-label="basic tabs example">
+          <Tab label="iph.href.lu" {...a11yProps(0)} />
+          <Tab label="via.placeholder.com" {...a11yProps(1)} />
+          <Tab label="dummyimage.com" {...a11yProps(2)} />
+        </Tabs>
+        <TabPanel value={provider} index={0}>
+          <HrefLuImage {...placeholderConfig} />
+        </TabPanel>
+        <TabPanel value={provider} index={1}>
+          <PlaceholderImage {...placeholderConfig} />
+        </TabPanel>
+        <TabPanel value={provider} index={2}>
+          <DummyImage {...placeholderConfig} />
+        </TabPanel>
       </Box>
     </Container>
   );

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import Image from 'mui-image';
 import { useEffect, useState } from 'react';
 import { PlaceholderConfig } from './index';
 
@@ -12,7 +13,7 @@ const defaultConfig: PlaceholderConfig = {
 };
 
 const DummyImage = (input: PlaceholderConfig) => {
-  const [imgUrl, setImgUrl] = useState<string>();
+  const [imgUrl, setImgUrl] = useState<string>('');
   const [config, setConfig] = useState<PlaceholderConfig>(defaultConfig);
 
   useEffect(() => {
@@ -53,13 +54,10 @@ const DummyImage = (input: PlaceholderConfig) => {
   }, [config]);
 
   return (
-    <img
-      style={{
-        width: `${config.width}px`,
-        height: `${config.height}px`,
-      }}
-      alt={config.text || 'placeholder img'}
+    <Image
       src={imgUrl}
+      style={{ width: `${config.width}px`, height: `${config.height}px` }}
+      alt={config.text || 'placeholder img'}
     />
   );
 };
