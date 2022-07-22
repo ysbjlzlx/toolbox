@@ -105,6 +105,7 @@ const PlaceholderImg: FC = () => {
                 setPlaceholderConfig({ ...placeholderConfig, bgColor: val });
               }}
               label="背景颜色"
+              picker="GithubPicker"
               fullWidth
             />
           </Grid>
@@ -116,6 +117,7 @@ const PlaceholderImg: FC = () => {
                 setPlaceholderConfig({ ...placeholderConfig, textColor: color });
               }}
               label="文字颜色"
+              picker="TwitterPicker"
               fullWidth
             />
           </Grid>
