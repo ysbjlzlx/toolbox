@@ -1,6 +1,12 @@
-import { Box } from '@mui/material';
+import { Box, TextField } from '@mui/material';
+import { GithubPicker } from 'react-color';
 const InputColorPicker = () => {
-  return <Box> </Box>;
+  return (
+    <Box>
+      <TextField />
+      <GithubPicker />
+    </Box>
+  );
 };
 
 export default InputColorPicker;
