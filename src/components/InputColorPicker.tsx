@@ -6,7 +6,7 @@ interface InputColorPickerProps {
   colorPicker: GithubPickerProps;
 }
 
-const InputColorPicker = () => {
+const InputColorPicker = (props: InputColorPickerProps) => {
   return (
     <Box>
       <TextField />
