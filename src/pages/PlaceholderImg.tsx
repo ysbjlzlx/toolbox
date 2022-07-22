@@ -1,20 +1,8 @@
-import {
-  Box,
-  Container,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Popover,
-  Select,
-  Tab,
-  Tabs,
-  TextField,
-} from '@mui/material';
+import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
 import React, { FC, useState } from 'react';
-import { GithubPicker } from 'react-color';
 import { Controller, useForm } from 'react-hook-form';
 
+import InputColorPicker from '../components/InputColorPicker';
 import { PlaceholderConfig } from '../components/placeholder';
 import DummyImage from '../components/placeholder/DummyImage';
 import HrefLuImage from '../components/placeholder/HrefLuImage';
@@ -66,12 +54,8 @@ function a11yProps(index: number) {
 
 const PlaceholderImg: FC = () => {
   const [provider, setProvider] = useState<number>(0);
-  const [bgColorPicker, setBgColorPicker] = useState<boolean>(false);
-  const [bgColorAnchorEl, setBgColorAnchorEl] = useState(null);
-  const [textColorPicker, setTextColorPicker] = useState<boolean>(false);
-  const [textColorAnchorEl, setTextColorAnchorEl] = useState(null);
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
-  const { register, handleSubmit, control, setValue } = useForm({ defaultValues });
+  const { register, handleSubmit, control, getValues, setValue } = useForm({ defaultValues });
 
   return (
     <Container sx={{ mt: 2 }}>
@@ -114,69 +98,26 @@ const PlaceholderImg: FC = () => {
         </Grid>
         <Grid container spacing={2} sx={{ mt: 1 }}>
           <Grid item xs={4}>
-            <TextField
+            <InputColorPicker
+              value={getValues('bgColor')}
+              onChange={(val: string) => {
+                setValue('bgColor', val);
+                setPlaceholderConfig({ ...placeholderConfig, bgColor: val });
+              }}
               label="背景颜色"
               fullWidth
-              {...register('bgColor')}
-              onClick={(e) => {
-                // @ts-ignore
-                setBgColorAnchorEl(e.currentTarget);
-                setBgColorPicker(true);
-              }}
             />
-            <Popover
-              open={bgColorPicker}
-              anchorEl={bgColorAnchorEl}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-              onClose={() => {
-                setBgColorAnchorEl(null);
-                setBgColorPicker(false);
-              }}
-            >
-              <Box sx={{ mt: '6px' }}>
-                <GithubPicker
-                  color={placeholderConfig.bgColor || ''}
-                  onChange={(color) => {
-                    setValue('bgColor', color.hex);
-                    setPlaceholderConfig({ ...placeholderConfig, bgColor: color.hex });
-                    setBgColorPicker(false);
-                  }}
-                />
-              </Box>
-            </Popover>
           </Grid>
           <Grid item xs={4}>
-            <TextField
-              label="文本颜色"
+            <InputColorPicker
+              value={getValues('textColor')}
+              onChange={(color: string) => {
+                setValue('textColor', color);
+                setPlaceholderConfig({ ...placeholderConfig, textColor: color });
+              }}
+              label="文字颜色"
               fullWidth
-              {...register('textColor')}
-              onClick={(e) => {
-                // @ts-ignore
-                setTextColorAnchorEl(e.currentTarget);
-                setTextColorPicker(true);
-              }}
-              onFocus={() => {}}
             />
-            <Popover
-              open={textColorPicker}
-              anchorEl={textColorAnchorEl}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-              onClose={() => {
-                setTextColorAnchorEl(null);
-                setTextColorPicker(false);
-              }}
-            >
-              <Box sx={{ mt: '6px' }}>
-                <GithubPicker
-                  color={placeholderConfig.textColor || ''}
-                  onChange={(color) => {
-                    setValue('textColor', color.hex);
-                    setPlaceholderConfig({ ...placeholderConfig, textColor: color.hex });
-                    setTextColorPicker(false);
-                  }}
-                />
-              </Box>
-            </Popover>
           </Grid>
           <Grid item xs={4}>
             <TextField label="文本" fullWidth {...register('text')} />

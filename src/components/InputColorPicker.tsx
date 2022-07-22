@@ -1,18 +1,34 @@
-import { Box, TextField, TextFieldProps } from '@mui/material';
-import { GithubPicker, GithubPickerProps } from 'react-color';
+import { Box, Popover, TextField } from '@mui/material';
+import { bindPopover, bindTrigger, usePopupState } from 'material-ui-popup-state/hooks';
+import { GithubPicker } from 'react-color';
 
 interface InputColorPickerProps {
-  textField: TextFieldProps;
-  colorPicker: GithubPickerProps;
+  value: string;
+  onChange: (val: string) => void;
+  label?: string;
+  fullWidth?: boolean;
 }
 
-const InputColorPicker = (props: InputColorPickerProps) => {
+const InputColorPicker = ({ value, onChange, ...otherProps }: InputColorPickerProps) => {
+  const popupState = usePopupState({
+    variant: 'popover',
+    popupId: 'demoPopover',
+  });
+
   return (
     <Box>
-      <TextField />
-      <GithubPicker />
+      <TextField
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        {...otherProps}
+        {...bindTrigger(popupState)}
+      />
+      <Popover {...bindPopover(popupState)} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+        <Box sx={{ mt: '6px' }}>
+          <GithubPicker color={value} onChangeComplete={(color) => onChange(color.hex)} />
+        </Box>
+      </Popover>
     </Box>
   );
 };
-
 export default InputColorPicker;
