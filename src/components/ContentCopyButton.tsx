@@ -10,7 +10,7 @@ interface Props {
 export default function ContentCopyButton({ text }: Props) {
   const [open, setOpen] = useState(false);
 
-  const btn = useCallback((node) => {
+  const btn = useCallback((node: HTMLButtonElement) => {
     if (node === null) {
       return;
     }
