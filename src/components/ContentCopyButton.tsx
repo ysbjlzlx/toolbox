@@ -1,8 +1,7 @@
 import { ContentCopy } from '@mui/icons-material';
 import { IconButton, Snackbar } from '@mui/material';
-import { useState } from 'react';
-// @ts-ignore
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import ClipboardJS from 'clipboard';
+import { useCallback, useState } from 'react';
 
 interface Props {
   text?: string | undefined;
@@ -10,18 +9,27 @@ interface Props {
 
 export default function ContentCopyButton({ text }: Props) {
   const [open, setOpen] = useState(false);
+
+  const btn = useCallback((node) => {
+    if (node === null) {
+      return;
+    }
+    const clipboard = new ClipboardJS(node);
+    clipboard.on('success', (e) => {
+      setOpen(true);
+    });
+    clipboard.on('error', (e) => {
+      console.error(e);
+    });
+
+    return clipboard;
+  }, []);
+
   return (
     <>
-      <CopyToClipboard
-        text={text}
-        onCopy={() => {
-          setOpen(true);
-        }}
-      >
-        <IconButton aria-label="Copy content">
-          <ContentCopy />
-        </IconButton>
-      </CopyToClipboard>
+      <IconButton ref={btn} data-clipboard-text={text} aria-label="Copy content">
+        <ContentCopy />
+      </IconButton>
 
       <Snackbar open={open} onClose={() => setOpen(false)} autoHideDuration={3000} message="复制成功" />
     </>
