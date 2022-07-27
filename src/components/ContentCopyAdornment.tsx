@@ -1,37 +1,38 @@
 import { ContentCopy } from '@mui/icons-material';
 import { IconButton, InputAdornment, Snackbar } from '@mui/material';
-import { useState } from 'react';
-// @ts-ignore
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import ClipboardJS from 'clipboard';
+import { useEffect, useRef, useState } from 'react';
 
 interface Props {
   content?: string | undefined;
-  onCopy?: Function | undefined;
+  onSuccess?: Function | undefined;
 }
 
-export default function ContentCopyAdornment({ content, onCopy }: Props) {
+export default function ContentCopyAdornment({ content, onSuccess }: Props) {
+  const btn = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState<boolean>(false);
-  const handleOnCopy = (text: string, result: DataTransfer) => {
-    setOpen(true);
-    if (onCopy) {
-      onCopy(text, result);
-    }
-  };
 
-  const handleClose = () => {
-    setOpen(!open);
-  };
+  useEffect(() => {
+    if (btn.current) {
+      const clipboard = new ClipboardJS(btn.current);
+      clipboard.on('success', (e) => {
+        setOpen(true);
+      });
+      clipboard.on('error', (e) => {
+        console.error(e);
+      });
+    }
+  }, []);
+
   return (
     <>
-      <CopyToClipboard text={content} onCopy={handleOnCopy}>
-        <InputAdornment position="end">
-          <IconButton aria-label="Copy content">
-            <ContentCopy />
-          </IconButton>
-        </InputAdornment>
-      </CopyToClipboard>
+      <InputAdornment position="end">
+        <IconButton ref={btn} data-clipboard-text={content} aria-label="Copy content">
+          <ContentCopy />
+        </IconButton>
+      </InputAdornment>
 
-      <Snackbar open={open} onClose={handleClose} autoHideDuration={3000} message="复制成功" />
+      <Snackbar open={open} onClose={() => setOpen(false)} autoHideDuration={3000} message="复制成功" />
     </>
   );
 }
