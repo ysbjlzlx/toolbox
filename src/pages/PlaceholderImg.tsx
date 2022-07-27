@@ -1,5 +1,5 @@
 import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
-import React, { FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import InputColorPicker from '../components/InputColorPicker';
@@ -100,9 +100,9 @@ const PlaceholderImg: FC = () => {
           <Grid item xs={4}>
             <InputColorPicker
               value={getValues('bgColor')}
-              onChange={(val: string) => {
-                setValue('bgColor', val);
-                setPlaceholderConfig({ ...placeholderConfig, bgColor: val });
+              onChange={(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+                setValue('bgColor', event.target.value);
+                setPlaceholderConfig({ ...placeholderConfig, bgColor: event.target.value });
               }}
               label="背景颜色"
               picker="GithubPicker"
@@ -112,9 +112,9 @@ const PlaceholderImg: FC = () => {
           <Grid item xs={4}>
             <InputColorPicker
               value={getValues('textColor')}
-              onChange={(color: string) => {
-                setValue('textColor', color);
-                setPlaceholderConfig({ ...placeholderConfig, textColor: color });
+              onChange={(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+                setValue('textColor', event.target.value);
+                setPlaceholderConfig({ ...placeholderConfig, textColor: event.target.value });
               }}
               label="文字颜色"
               picker="TwitterPicker"
