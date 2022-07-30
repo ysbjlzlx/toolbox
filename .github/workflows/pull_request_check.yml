@@ -1,9 +1,6 @@
-name: GitHub Pages
+name: Pull request check
 
 on:
-  push:
-    branches:
-      - master # Set a branch name to trigger deployment
   pull_request:
 
 jobs:
@@ -22,11 +19,3 @@ jobs:
         run: |
           npm ci
           npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: build # default: gh-pages
-
