@@ -1,12 +1,19 @@
 import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
-import React, { ChangeEvent, FC, useState } from 'react';
+import { styled } from '@mui/material/styles';
+import React, { FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import InputColorPicker from '../components/InputColorPicker';
+import ColorPickerAdornment from '../components/ColorPickerAdornment';
 import { PlaceholderConfig } from '../components/placeholder';
 import DummyImage from '../components/placeholder/DummyImage';
 import HrefLuImage from '../components/placeholder/HrefLuImage';
 import PlaceholderImage from '../components/placeholder/PlaceholderImage';
+
+const ColorTextField = styled(TextField)({
+  '& .MuiOutlinedInput-root .MuiOutlinedInput-input': {
+    textTransform: 'uppercase',
+  },
+});
 
 const defaultValues = {
   width: 320,
@@ -98,27 +105,39 @@ const PlaceholderImg: FC = () => {
         </Grid>
         <Grid container spacing={2} sx={{ mt: 1 }}>
           <Grid item xs={4}>
-            <InputColorPicker
-              value={getValues('bgColor')}
-              onChange={(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-                setValue('bgColor', event.target.value);
-                setPlaceholderConfig({ ...placeholderConfig, bgColor: event.target.value });
-              }}
+            <ColorTextField
               label="背景颜色"
-              picker="GithubPicker"
               fullWidth
+              {...register('bgColor')}
+              InputProps={{
+                endAdornment: (
+                  <ColorPickerAdornment
+                    value={getValues('bgColor')}
+                    onChange={(color) => {
+                      setValue('bgColor', color);
+                      setPlaceholderConfig({ ...placeholderConfig, bgColor: color });
+                    }}
+                  />
+                ),
+              }}
             />
           </Grid>
           <Grid item xs={4}>
-            <InputColorPicker
-              value={getValues('textColor')}
-              onChange={(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-                setValue('textColor', event.target.value);
-                setPlaceholderConfig({ ...placeholderConfig, textColor: event.target.value });
-              }}
-              label="文字颜色"
-              picker="TwitterPicker"
+            <ColorTextField
+              label="文本颜色"
               fullWidth
+              {...register('textColor')}
+              InputProps={{
+                endAdornment: (
+                  <ColorPickerAdornment
+                    value={getValues('textColor')}
+                    onChange={(color) => {
+                      setValue('textColor', color);
+                      setPlaceholderConfig({ ...placeholderConfig, textColor: color });
+                    }}
+                  />
+                ),
+              }}
             />
           </Grid>
           <Grid item xs={4}>
