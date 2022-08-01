@@ -3,6 +3,5 @@
   "extends": [
     "config:base"
   ],
-  "branchName": "develop",
   "dependencyDashboard": true
 }
