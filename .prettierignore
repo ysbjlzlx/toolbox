@@ -2,8 +2,5 @@
 build
 coverage
 
-# Ignore all HTML files:
-*.html
-
 **/*.svg
 **/*.ejs
