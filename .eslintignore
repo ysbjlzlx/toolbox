@@ -1,1 +1,3 @@
 *.css
+src/service-worker.ts
+src/serviceWorkerRegistration.ts
