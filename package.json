@@ -52,7 +52,7 @@
     "material-ui-popup-state": "4.0.1",
     "mobx": "6.6.1",
     "mobx-react-lite": "3.4.0",
-    "mobx-state-tree": "5.1.5",
+    "mobx-state-tree": "5.1.6",
     "mui-image": "1.0.7",
     "prop-types": "15.8.1",
     "qrcode": "1.5.1",
