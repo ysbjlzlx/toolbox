@@ -38,7 +38,7 @@
     "@emotion/styled": "11.10.0",
     "@hookform/resolvers": "2.9.7",
     "@mui/icons-material": "5.8.4",
-    "@mui/material": "5.10.0",
+    "@mui/material": "5.10.1",
     "@tinymce/tinymce-react": "4.2.0",
     "ace-builds": "1.9.5",
     "axios": "0.27.2",
