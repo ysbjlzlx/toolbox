@@ -41,6 +41,7 @@
     "@mui/material": "5.10.1",
     "@tinymce/tinymce-react": "4.2.0",
     "ace-builds": "1.9.6",
+    "ahooks": "3.7.0",
     "axios": "0.27.2",
     "bson-objectid": "2.0.3",
     "clipboard": "2.0.11",
