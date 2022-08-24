@@ -1,9 +1,9 @@
 import { KeyBinding } from '@codemirror/view';
 
 const formatJson: KeyBinding = {
-  key: 'Alt+Shift+l',
-  run: (view) => {
-    console.log('aaa');
+  key: 'Alt-Shift-f',
+  run: (editor) => {
+    console.log(editor);
     return true;
   },
 };
