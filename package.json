@@ -40,7 +40,7 @@
     "@mui/icons-material": "5.10.2",
     "@mui/material": "5.10.2",
     "@tinymce/tinymce-react": "4.2.0",
-    "ace-builds": "1.9.6",
+    "ace-builds": "1.10.0",
     "ahooks": "3.7.0",
     "axios": "0.27.2",
     "bson-objectid": "2.0.3",
