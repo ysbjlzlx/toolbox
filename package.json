@@ -51,9 +51,6 @@
     "joi": "17.6.0",
     "lodash": "4.17.21",
     "material-ui-popup-state": "4.0.2",
-    "mobx": "6.6.1",
-    "mobx-react-lite": "3.4.0",
-    "mobx-state-tree": "5.1.6",
     "mui-image": "1.0.7",
     "prop-types": "15.8.1",
     "qrcode": "1.5.1",
@@ -81,7 +78,8 @@
     "workbox-strategies": "6.5.4",
     "workbox-streams": "6.5.4",
     "xlsx": "0.18.5",
-    "yaml": "2.1.1"
+    "yaml": "2.1.1",
+    "zustand": "4.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.16.5",
