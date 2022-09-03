@@ -11,6 +11,7 @@ import {
   SyncAlt,
   TableView,
   Tag,
+  Timer,
 } from '@mui/icons-material';
 
 export interface Application {
@@ -19,6 +20,7 @@ export interface Application {
   href: string;
   icon?: null | SvgIconComponent;
 }
+
 export const apps: Application[] = [
   {
     name: 'JSON',
@@ -91,5 +93,11 @@ export const apps: Application[] = [
     desc: 'BSON',
     href: '/bson-objectid',
     icon: Code,
+  },
+  {
+    name: '时间戳（Timestamp）',
+    desc: '时间戳（Timestamp）',
+    href: '/timestamp',
+    icon: Timer,
   },
 ];

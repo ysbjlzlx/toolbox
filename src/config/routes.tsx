@@ -19,6 +19,7 @@ const JSON2Yaml = lazy(() => import('../pages/JSON2Yaml'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
+const Timestamp = lazy(() => import('../pages/Timestamp'));
 
 const routes: RouteObject[] = [
   {
@@ -143,6 +144,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <DocEditor />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/timestamp',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Timestamp />
           </Suspense>
         ),
       },
