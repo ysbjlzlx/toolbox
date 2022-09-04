@@ -39,7 +39,7 @@
     "@hookform/resolvers": "2.9.7",
     "@mantine/core": "5.2.5",
     "@mantine/dates": "5.2.5",
-    "@mantine/hooks": "5.2.4",
+    "@mantine/hooks": "5.2.5",
     "@mui/icons-material": "5.10.3",
     "@mui/material": "5.10.3",
     "@tinymce/tinymce-react": "4.2.0",
