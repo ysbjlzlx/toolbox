@@ -38,7 +38,7 @@
     "@emotion/styled": "11.10.4",
     "@hookform/resolvers": "2.9.7",
     "@mantine/core": "5.2.5",
-    "@mantine/dates": "5.2.4",
+    "@mantine/dates": "5.2.5",
     "@mantine/hooks": "5.2.4",
     "@mui/icons-material": "5.10.3",
     "@mui/material": "5.10.3",
