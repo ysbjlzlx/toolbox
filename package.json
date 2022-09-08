@@ -41,7 +41,7 @@
     "@mantine/dates": "5.2.5",
     "@mantine/hooks": "5.2.5",
     "@mui/icons-material": "5.10.3",
-    "@mui/material": "5.10.3",
+    "@mui/material": "5.10.4",
     "@tinymce/tinymce-react": "4.2.0",
     "ace-builds": "1.10.0",
     "ahooks": "3.7.0",
