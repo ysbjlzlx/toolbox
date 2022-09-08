@@ -68,7 +68,7 @@
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
     "remark-gfm": "3.0.1",
-    "vanilla-jsoneditor": "0.7.0",
+    "vanilla-jsoneditor": "0.7.1",
     "web-vitals": "3.0.1",
     "workbox-background-sync": "6.5.4",
     "workbox-broadcast-update": "6.5.4",
