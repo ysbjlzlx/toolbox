@@ -68,7 +68,7 @@ specifiers:
   stylelint-config-standard: 28.0.0
   typescript: 4.7.4
   vanilla-jsoneditor: 0.7.4
-  web-vitals: 3.0.1
+  web-vitals: 3.0.2
   workbox-background-sync: 6.5.4
   workbox-broadcast-update: 6.5.4
   workbox-cacheable-response: 6.5.4
@@ -128,7 +128,7 @@ dependencies:
   react-scripts: 5.0.1_n7mqr4n4gswjc26jfdbklgbjf4
   remark-gfm: 3.0.1
   vanilla-jsoneditor: 0.7.4
-  web-vitals: 3.0.1
+  web-vitals: 3.0.2
   workbox-background-sync: 6.5.4
   workbox-broadcast-update: 6.5.4
   workbox-cacheable-response: 6.5.4
@@ -12487,8 +12487,8 @@ packages:
       minimalistic-assert: 1.0.1
     dev: false
 
-  /web-vitals/3.0.1:
-    resolution: {integrity: sha512-n8LgBynM5BU4C8ZMiTWPu6zbv31AfPnuNXEjWClvPWD5g8h2WkcecR0EtAiQaiMcj1iG0LADyHndR+MKYu5Zog==}
+  /web-vitals/3.0.2:
+    resolution: {integrity: sha512-YygzeCdGpNrCHIjW14AI4SxMX2IcONhDvwhHc9KswCIixfSeVl08WdKDfzZaypq2ynRIG3lzGO3CO5dXYzc9+w==}
     dev: false
 
   /webidl-conversions/4.0.2:
