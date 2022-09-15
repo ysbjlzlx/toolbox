@@ -26,7 +26,7 @@ specifiers:
   '@types/lodash': 4.14.185
   '@types/mui-image': 1.0.1
   '@types/node': 18.6.1
-  '@types/prettier': ^2.7.0
+  '@types/prettier': 2.7.0
   '@types/qrcode': 1.5.0
   '@types/react': 18.0.20
   '@types/react-color': 3.0.6
@@ -49,7 +49,7 @@ specifiers:
   lodash: 4.17.21
   material-ui-popup-state: 4.0.2
   mui-image: 1.0.7
-  otpauth: 8.0.2
+  otpauth: 8.0.3
   prettier: 2.7.1
   prettier-plugin-organize-imports: 3.1.1
   prettier-plugin-packagejson: 2.2.18
@@ -115,7 +115,7 @@ dependencies:
   lodash: 4.17.21
   material-ui-popup-state: 4.0.2_af5ln35zuaotaffazii6n6bke4
   mui-image: 1.0.7_jcb2m6cpbfrnwbo7urltqlx3bu
-  otpauth: 8.0.2
+  otpauth: 8.0.3
   prop-types: 15.8.1
   qrcode: 1.5.1
   react: 18.2.0
@@ -9349,8 +9349,8 @@ packages:
       type-check: 0.4.0
       word-wrap: 1.2.3
 
-  /otpauth/8.0.2:
-    resolution: {integrity: sha512-Hj5IvDdhte1dmjBkWZ3K8DfQVt4LQycd4mtRVyRTWtYiXuqaDSF4+d7UDPqZO/JRWXDktEmDHqymA+hHj9NEqQ==}
+  /otpauth/8.0.3:
+    resolution: {integrity: sha512-5abBweT/POpMdVuM0Zk/tvlTHw8Kc8606XX/w8QNLRBDib+FVpseAx12Z21/iVIeCrJOgCY1dBuLS057IOdybw==}
     dependencies:
       jssha: 3.2.0
     dev: false
