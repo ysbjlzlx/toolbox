@@ -59,7 +59,7 @@ specifiers:
   react-ace: 10.1.0
   react-color: 2.19.3
   react-dom: 18.2.0
-  react-hook-form: 7.35.0
+  react-hook-form: 7.36.1
   react-markdown: 8.0.3
   react-router-dom: 6.4.0
   react-scripts: 5.0.1
@@ -94,7 +94,7 @@ dependencies:
   '@craco/craco': 7.0.0-alpha.7_zwu2x23xhbnd7ehdhlbo5peh2y
   '@emotion/react': 11.10.4_axxkdcpdr7up57umjkldobkynm
   '@emotion/styled': 11.10.4_sn4wuyy54zwps25tv4w7lbiz6i
-  '@hookform/resolvers': 2.9.8_react-hook-form@7.35.0
+  '@hookform/resolvers': 2.9.8_react-hook-form@7.36.1
   '@mantine/core': 5.3.1_x426wtfxzkv7g4kfcqgit377lu
   '@mantine/dates': 5.3.1_naek3e2nabll3pmpd4ihw6wz64
   '@mantine/hooks': 5.3.1_react@18.2.0
@@ -122,7 +122,7 @@ dependencies:
   react-ace: 10.1.0_biqbaboplfbrettd7655fr4n2y
   react-color: 2.19.3_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-hook-form: 7.35.0_react@18.2.0
+  react-hook-form: 7.36.1_react@18.2.0
   react-markdown: 8.0.3_w5j4k42lgipnm43s3brx6h3c34
   react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_n7mqr4n4gswjc26jfdbklgbjf4
@@ -1902,12 +1902,12 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
-  /@hookform/resolvers/2.9.8_react-hook-form@7.35.0:
+  /@hookform/resolvers/2.9.8_react-hook-form@7.36.1:
     resolution: {integrity: sha512-iVVjH0USq+1TqDdGkWe2M1x7Wn5OFPgVRo7CbWFsXTqqXqCaZtZcnzJu+UhljCWbthFWxWGXKLGYUDPZ04oVvQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.35.0_react@18.2.0
+      react-hook-form: 7.36.1_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.10.4:
@@ -9879,8 +9879,8 @@ packages:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
     dev: false
 
-  /react-hook-form/7.35.0_react@18.2.0:
-    resolution: {integrity: sha512-9CYdOed+Itbiu5VMVxW0PK9mBR3f0gDGJcZEyUSm0eJbDymQ913TRs2gHcQZZmfTC+rtxyDFRuelMxx/+xwMcw==}
+  /react-hook-form/7.36.1_react@18.2.0:
+    resolution: {integrity: sha512-EbYYkCG2p8ywe7ikOH2l02lAFMrrrslZi1I8fqd8ifDGNAkhomHZQzQsP6ksvzrWBKntRe8b5L5L7Zsd+Gm02Q==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
