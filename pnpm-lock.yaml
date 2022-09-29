@@ -44,7 +44,7 @@ specifiers:
   eslint-config-react-app: 7.0.1
   file-saver: 2.0.5
   husky: 8.0.1
-  joi: 17.6.0
+  joi: 17.6.2
   lint-staged: 13.0.3
   lodash: 4.17.21
   material-ui-popup-state: 4.0.2
@@ -111,7 +111,7 @@ dependencies:
   crypto-js: 4.1.1
   dayjs: 1.11.5
   file-saver: 2.0.5
-  joi: 17.6.0
+  joi: 17.6.2
   lodash: 4.17.21
   material-ui-popup-state: 4.0.2_af5ln35zuaotaffazii6n6bke4
   mui-image: 1.0.7_hnp3nlwxsobkbxdnocb6cap5vi
@@ -7447,8 +7447,8 @@ packages:
       - ts-node
       - utf-8-validate
 
-  /joi/17.6.0:
-    resolution: {integrity: sha512-OX5dG6DTbcr/kbMFj0KGYxuew69HPcAE3K/sZpEV2nP6e/j/C0HV+HNiBPCASxdx5T7DMoa0s8UeHWMnb6n2zw==}
+  /joi/17.6.2:
+    resolution: {integrity: sha512-+gqqdh1xc1wb+Lor0J9toqgeReyDOCqOdG8QSdRcEvwrcRiFQZneUCGKjFjuyBWUb3uaFOgY56yMaZ5FIc+H4w==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
