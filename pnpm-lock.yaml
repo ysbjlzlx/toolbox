@@ -23,7 +23,7 @@ specifiers:
   '@types/crypto-js': 4.1.1
   '@types/file-saver': 2.0.5
   '@types/jest': 29.1.1
-  '@types/lodash': 4.14.185
+  '@types/lodash': 4.14.186
   '@types/mui-image': 1.0.1
   '@types/node': 18.6.1
   '@types/prettier': 2.7.1
@@ -152,7 +152,7 @@ devDependencies:
   '@types/crypto-js': 4.1.1
   '@types/file-saver': 2.0.5
   '@types/jest': 29.1.1
-  '@types/lodash': 4.14.185
+  '@types/lodash': 4.14.186
   '@types/mui-image': 1.0.1
   '@types/node': 18.6.1
   '@types/prettier': 2.7.1
@@ -3149,8 +3149,8 @@ packages:
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  /@types/lodash/4.14.185:
-    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
+  /@types/lodash/4.14.186:
+    resolution: {integrity: sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==}
     dev: true
 
   /@types/mdast/3.0.10:
