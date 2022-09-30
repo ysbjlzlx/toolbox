@@ -5,7 +5,6 @@ import NextLayout from '../layouts/NextLayout';
 import Loading from '../pages/Loading';
 
 const App = lazy(() => import('../pages/App'));
-const JSON = lazy(() => import('../pages/JSON'));
 const URL = lazy(() => import('../pages/URL'));
 const Markdown = lazy(() => import('../pages/Markdown'));
 const Random = lazy(() => import('../pages/Random'));
@@ -21,6 +20,7 @@ const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
 const Totp = lazy(() => import('../pages/Totp'));
+const Json = lazy(() => import('../pages/json/index'));
 
 const routes: RouteObject[] = [
   {
@@ -40,7 +40,7 @@ const routes: RouteObject[] = [
         path: '/json',
         element: (
           <Suspense fallback={<Loading />}>
-            <JSON />
+            <Json />
           </Suspense>
         ),
       },
