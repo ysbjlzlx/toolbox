@@ -28,11 +28,11 @@
     ]
   },
   "dependencies": {
-    "@codemirror/commands": "6.1.0",
+    "@codemirror/commands": "6.1.1",
     "@codemirror/lang-json": "6.0.0",
     "@codemirror/state": "6.1.2",
     "@codemirror/theme-one-dark": "6.1.0",
-    "@codemirror/view": "6.2.5",
+    "@codemirror/view": "6.3.0",
     "@craco/craco": "7.0.0-alpha.7",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
