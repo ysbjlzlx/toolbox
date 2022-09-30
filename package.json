@@ -97,7 +97,7 @@
     "@types/lodash": "4.14.185",
     "@types/mui-image": "1.0.1",
     "@types/node": "18.6.1",
-    "@types/prettier": "2.7.0",
+    "@types/prettier": "2.7.1",
     "@types/qrcode": "1.5.0",
     "@types/react": "18.0.20",
     "@types/react-color": "3.0.6",
