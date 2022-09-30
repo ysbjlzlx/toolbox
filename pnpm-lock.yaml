@@ -67,7 +67,7 @@ specifiers:
   stylelint: 14.12.1
   stylelint-config-standard: 28.0.0
   typescript: 4.7.4
-  vanilla-jsoneditor: 0.7.4
+  vanilla-jsoneditor: 0.7.9
   web-vitals: 3.0.2
   workbox-background-sync: 6.5.4
   workbox-broadcast-update: 6.5.4
@@ -127,7 +127,7 @@ dependencies:
   react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_n7mqr4n4gswjc26jfdbklgbjf4
   remark-gfm: 3.0.1
-  vanilla-jsoneditor: 0.7.4
+  vanilla-jsoneditor: 0.7.9
   web-vitals: 3.0.2
   workbox-background-sync: 6.5.4
   workbox-broadcast-update: 6.5.4
@@ -11681,8 +11681,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vanilla-jsoneditor/0.7.4:
-    resolution: {integrity: sha512-d70bo0VsoVymF2TaaExlVapbZonGsgTeovPr/RlT0m+u+RGnQ4wdfv7owEftzqhHqChb7pBo2lIyG46x4g0gmQ==}
+  /vanilla-jsoneditor/0.7.9:
+    resolution: {integrity: sha512-fJWXBWxYhODJrC6jLJ1E/PfQh1g07T5sZt6yf2p8tLPhk+412eS4WBMBfs6A9dZ3te9/cN5G/HhGs9Q6tx8Nlw==}
     dev: false
 
   /vary/1.1.2:
