@@ -44,7 +44,7 @@
     "@mui/material": "5.10.6",
     "@mui/system": "5.10.6",
     "@tinymce/tinymce-react": "4.2.0",
-    "ace-builds": "1.11.1",
+    "ace-builds": "1.11.2",
     "ahooks": "3.7.1",
     "axios": "0.27.2",
     "bson-objectid": "2.0.3",
