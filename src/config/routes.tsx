@@ -19,7 +19,7 @@ const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
-const Totp = lazy(() => import('../pages/Totp'));
+const Totp = lazy(() => import('../pages/totp'));
 const Json = lazy(() => import('../pages/json/index'));
 
 const routes: RouteObject[] = [
