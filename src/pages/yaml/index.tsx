@@ -33,7 +33,7 @@ const Yaml = () => {
         </Tabs>
       </div>
 
-      <TabPanel value={currentTab} index={0} sx={{ height: `calc(100% - ${tabWrapperHeight}px)` }}>
+      <TabPanel value={currentTab} index={0} sx={{ height: `calc(100% - ${tabWrapperHeight}px - 1px)` }}>
         <YamlToJson />
       </TabPanel>
     </>

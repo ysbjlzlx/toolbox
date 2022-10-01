@@ -60,7 +60,7 @@ const JsonToYaml: FC = () => {
       <Box>
         <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
       </Box>
-      <Grid container sx={{ height: '100%' }}>
+      <Grid container sx={{ height: 'calc(100% - 37px)' }}>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
@@ -70,7 +70,7 @@ const JsonToYaml: FC = () => {
             onChange={setJson}
             mode="json"
             width="100%"
-            height="calc(100% - 37px)"
+            height="100%"
           />
         </Grid>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
@@ -82,7 +82,7 @@ const JsonToYaml: FC = () => {
             onChange={setYaml}
             mode="yaml"
             width="100%"
-            height="calc(100% - 37px)"
+            height="100%"
           />
         </Grid>
       </Grid>

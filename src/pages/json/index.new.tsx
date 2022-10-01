@@ -43,11 +43,11 @@ const Json = () => {
         <Tabs.Tab value="json-to-yaml"> Json To Yaml </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="json-editor" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 5px)`, marginTop: 5 }}>
+      <Tabs.Panel value="json-editor" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 6px)`, marginTop: 5 }}>
         <JSON />
       </Tabs.Panel>
 
-      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperHeight}px)` }}>
+      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 1px)` }}>
         <JsonToYaml />
       </Tabs.Panel>
     </Tabs>
