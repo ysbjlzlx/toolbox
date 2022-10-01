@@ -20,7 +20,7 @@ const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
 const Totp = lazy(() => import('../pages/totp'));
 
-const Json = lazy(() => import('../pages/json/index'));
+const Json = lazy(() => import('../pages/json/index.new'));
 const Yaml = lazy(() => import('../pages/yaml/index'));
 
 const routes: RouteObject[] = [

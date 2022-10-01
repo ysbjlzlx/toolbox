@@ -17,10 +17,13 @@ const Json = () => {
     }
   }, []);
 
-  const setTabSearchParam = (name: string) => {
-    searchParams.set('tab', name);
-    setSearchParams(searchParams);
-  };
+  const setTabSearchParam = useCallback(
+    (name: string) => {
+      searchParams.set('tab', name);
+      setSearchParams(searchParams);
+    },
+    [searchParams, setSearchParams],
+  );
 
   useEffect(() => {
     let tab = searchParams.get('tab');
@@ -35,7 +38,7 @@ const Json = () => {
         setCurrentTab(0);
         break;
     }
-  }, [searchParams]);
+  }, [searchParams, setTabSearchParam]);
 
   const a11yProps = (index: number) => {
     return {
