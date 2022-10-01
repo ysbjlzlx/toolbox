@@ -33,6 +33,9 @@ const JsonToYaml: FC = () => {
   });
 
   const json2yaml = (value: string): string => {
+    if (!value || value === '') {
+      return value;
+    }
     try {
       return prettier.format(YAML.stringify(JSON.parse(value)), {
         parser: 'yaml',
