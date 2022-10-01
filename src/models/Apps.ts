@@ -35,6 +35,18 @@ export const apps: Application[] = [
     icon: SyncAlt,
   },
   {
+    name: 'BSON ObjectID',
+    desc: 'BSON',
+    href: '/bson-object-id',
+    icon: Code,
+  },
+  {
+    name: 'CodeFormatter',
+    desc: '代码格式化，目前支持：JSON、JSON5',
+    href: '/code-formatter',
+    icon: Code,
+  },
+  {
     name: 'URL',
     desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
     href: '/url',
@@ -77,22 +89,10 @@ export const apps: Application[] = [
     icon: QrCode,
   },
   {
-    name: 'CodeFormatter',
-    desc: '代码格式化，目前支持：JSON、JSON5',
-    href: '/code-formatter',
-    icon: Code,
-  },
-  {
     name: 'Placeholder Image',
     desc: '快速便捷生成占位图',
     href: '/placeholder',
     icon: Image,
-  },
-  {
-    name: 'BSON ObjectID',
-    desc: 'BSON',
-    href: '/bson-objectid',
-    icon: Code,
   },
   {
     name: '时间戳（Timestamp）',

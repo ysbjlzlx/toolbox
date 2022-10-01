@@ -4,7 +4,6 @@ import { FC, useState } from 'react';
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 
-import prettierBabelPlugin from 'prettier/parser-babel';
 import parserYaml from 'prettier/parser-yaml';
 import prettier from 'prettier/standalone';
 
@@ -49,38 +48,17 @@ const JsonToYaml: FC = () => {
     }
   };
 
-  const yaml2json = (value: string): string => {
-    try {
-      const s = JSON.stringify(YAML.parse(value));
-      return prettier.format(s, {
-        parser: 'json',
-        plugins: [prettierBabelPlugin],
-      });
-    } catch (e) {
-      if (e instanceof SyntaxError) {
-        console.warn(e);
-      } else {
-        console.warn(e);
-      }
-      return '';
-    }
-  };
-
   const json2yamlBtnClick = () => {
     setYaml(json2yaml(json));
   };
 
-  const yaml2jsonButClick = () => {
-    setJson(yaml2json(yaml));
-  };
-
   return (
     <Box sx={{ height: '100%' }}>
+      <Box>
+        <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
+      </Box>
       <Grid container sx={{ height: '100%' }}>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
-          <Box>
-            <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
-          </Box>
           <AceEditor
             theme="textmate"
             placeholder="JSON"
@@ -93,9 +71,6 @@ const JsonToYaml: FC = () => {
           />
         </Grid>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
-          <Box>
-            <Button onClick={yaml2jsonButClick}>YAML =&gt; JSON</Button>
-          </Box>
           <AceEditor
             theme="textmate"
             placeholder="YAML"

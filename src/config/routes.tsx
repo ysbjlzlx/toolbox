@@ -15,7 +15,7 @@ const QRCode = lazy(() => import('../pages/QrCode'));
 const CodeFormatter = lazy(() => import('../pages/CodeFormatter'));
 const Code = lazy(() => import('../pages/code'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
-const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
+const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
 const Totp = lazy(() => import('../pages/totp'));
@@ -134,7 +134,7 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: '/bson-objectid',
+        path: '/bson-object-id',
         element: (
           <Suspense fallback={<Loading />}>
             <BSONObjectID />
