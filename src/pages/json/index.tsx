@@ -2,8 +2,8 @@ import { Tab, Tabs } from '@mui/material';
 import React, { useCallback, useState } from 'react';
 
 import TabPanel from '../../components/TabPanel';
-import JSON from '../JSON';
-import JSON2Yaml from '../JSON2Yaml';
+import JSON from './JsonEditor';
+import JsonToYaml from './JsonToYaml';
 
 const Json = () => {
   const [currentTab, setCurrentTab] = useState<number>(0);
@@ -38,7 +38,7 @@ const Json = () => {
       </TabPanel>
 
       <TabPanel value={currentTab} index={1} sx={{ height: `calc(100% - ${tabWrapperHeight}px)` }}>
-        <JSON2Yaml />
+        <JsonToYaml />
       </TabPanel>
     </>
   );
