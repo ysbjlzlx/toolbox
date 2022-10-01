@@ -15,7 +15,7 @@ import 'ace-builds/src-min-noconflict/mode-json';
 import 'ace-builds/src-min-noconflict/mode-yaml';
 import 'ace-builds/src-min-noconflict/theme-textmate';
 
-const JSON2Yaml: FC = () => {
+const YamlToJson: FC = () => {
   const [json, setJson] = useState<string>('');
   const [yaml, setYaml] = useState<string>('');
   const [jsonOptions] = useState<AceOptions>({
@@ -112,4 +112,4 @@ const JSON2Yaml: FC = () => {
   );
 };
 
-export default JSON2Yaml;
+export default YamlToJson;

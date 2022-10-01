@@ -29,9 +29,9 @@ export const apps: Application[] = [
     icon: DataObject,
   },
   {
-    name: 'JSON2YAML',
-    desc: 'JSON 与 Yaml 格式相互转化',
-    href: '/json2yaml',
+    name: 'Yaml',
+    desc: 'Yaml 格式处理',
+    href: '/yaml',
     icon: SyncAlt,
   },
   {

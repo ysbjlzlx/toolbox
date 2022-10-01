@@ -10,7 +10,9 @@ const Json = () => {
   const [tabWrapperHeight, setTabWrapperHeight] = useState<number>(48);
 
   const tabWrapperRef = useCallback((node: HTMLDivElement) => {
-    setTabWrapperHeight(node.clientHeight);
+    if (node) {
+      setTabWrapperHeight(node.clientHeight);
+    }
   }, []);
 
   const a11yProps = (index: number) => {

@@ -14,13 +14,14 @@ const Hash = lazy(() => import('../pages/Hash'));
 const QRCode = lazy(() => import('../pages/QrCode'));
 const CodeFormatter = lazy(() => import('../pages/CodeFormatter'));
 const Code = lazy(() => import('../pages/code'));
-const JSON2Yaml = lazy(() => import('../pages/json/JsonToYaml'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/BSONObjectID'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
 const Totp = lazy(() => import('../pages/totp'));
+
 const Json = lazy(() => import('../pages/json/index'));
+const Yaml = lazy(() => import('../pages/yaml/index'));
 
 const routes: RouteObject[] = [
   {
@@ -41,6 +42,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Json />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/yaml',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Yaml />
           </Suspense>
         ),
       },
@@ -113,14 +122,6 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Code />
-          </Suspense>
-        ),
-      },
-      {
-        path: '/json2yaml',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <JSON2Yaml />
           </Suspense>
         ),
       },
