@@ -70,7 +70,7 @@
     "react-scripts": "5.0.1",
     "remark-gfm": "3.0.1",
     "vanilla-jsoneditor": "0.7.9",
-    "web-vitals": "3.0.2",
+    "web-vitals": "3.0.3",
     "workbox-background-sync": "6.5.4",
     "workbox-broadcast-update": "6.5.4",
     "workbox-cacheable-response": "6.5.4",
