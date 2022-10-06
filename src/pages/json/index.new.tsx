@@ -1,5 +1,6 @@
 import { Tabs, TabsValue } from '@mantine/core';
 import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
 import JSON from './JsonEditor';
@@ -9,6 +10,7 @@ const Json = () => {
   const [currentTab, setCurrentTab] = useState<string>('json-editor');
   const [tabWrapperHeight, setTabWrapperHeight] = useState<number>(48);
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
 
   const tabWrapperRef = useCallback((node: HTMLDivElement) => {
     if (node) {
@@ -39,7 +41,7 @@ const Json = () => {
   return (
     <Tabs variant="outline" radius="md" value={currentTab} onTabChange={handleChange} sx={{ height: '100%' }}>
       <Tabs.List ref={tabWrapperRef}>
-        <Tabs.Tab value="json-editor"> Json Editor </Tabs.Tab>
+        <Tabs.Tab value="json-editor"> {t('JSON Editor')} </Tabs.Tab>
         <Tabs.Tab value="json-to-yaml"> Json To Yaml </Tabs.Tab>
       </Tabs.List>
 

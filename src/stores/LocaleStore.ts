@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { defaultLocale, defaultMessages } from '../config/locale';
+import { defaultLocale } from '../config/locale';
 
 interface LocaleStore {
   locale: string;
@@ -10,7 +10,7 @@ interface LocaleStore {
 
 const useLocaleStore = create<LocaleStore>()((set) => ({
   locale: localStorage.getItem('locale') || defaultLocale,
-  messages: defaultMessages,
+  messages: {},
   setLocale: (val) =>
     set(() => {
       localStorage.setItem('locale', val);

@@ -1,5 +1,6 @@
 import { Tab, Tabs } from '@mui/material';
 import React, { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
 import TabPanel from '../../components/TabPanel';
@@ -10,6 +11,7 @@ const Json = () => {
   const [currentTab, setCurrentTab] = useState<number>(0);
   const [tabWrapperHeight, setTabWrapperHeight] = useState<number>(48);
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
 
   const tabWrapperRef = useCallback((node: HTMLDivElement) => {
     if (node) {
@@ -63,8 +65,8 @@ const Json = () => {
     <>
       <div ref={tabWrapperRef}>
         <Tabs value={currentTab} onChange={handleChange} aria-label="json tab panel">
-          <Tab label="Json Editor" {...a11yProps(0)} />
-          <Tab label="Json To Yaml" {...a11yProps(1)} />
+          <Tab label={t('JSON Editor')} {...a11yProps(0)} />
+          <Tab label="JSON To Yaml" {...a11yProps(1)} />
         </Tabs>
       </div>
 
