@@ -33,7 +33,7 @@
     "@codemirror/state": "6.1.2",
     "@codemirror/theme-one-dark": "6.1.0",
     "@codemirror/view": "6.3.0",
-    "@craco/craco": "7.0.0-alpha.7",
+    "@craco/craco": "7.0.0-alpha.8",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@hookform/resolvers": "2.9.8",
