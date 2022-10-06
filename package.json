@@ -93,7 +93,7 @@
     "@testing-library/user-event": "14.4.3",
     "@types/crypto-js": "4.1.1",
     "@types/file-saver": "2.0.5",
-    "@types/jest": "29.1.1",
+    "@types/jest": "29.1.2",
     "@types/lodash": "4.14.186",
     "@types/mui-image": "1.0.1",
     "@types/node": "18.7.23",
