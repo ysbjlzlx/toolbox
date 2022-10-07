@@ -33,7 +33,7 @@ specifiers:
   '@types/react-dom': 18.0.6
   ace-builds: 1.11.2
   ahooks: 3.7.1
-  axios: 1.0.0
+  axios: 1.1.0
   bson-objectid: 2.0.3
   clipboard: 2.0.11
   codemirror: 6.0.1
@@ -44,9 +44,9 @@ specifiers:
   eslint-config-react-app: 7.0.1
   file-saver: 2.0.5
   husky: 8.0.1
-  i18next: ^21.10.0
-  i18next-browser-languagedetector: ^6.1.6
-  i18next-http-backend: ^1.4.4
+  i18next: 21.10.0
+  i18next-browser-languagedetector: 6.1.6
+  i18next-http-backend: 1.4.4
   joi: 17.6.2
   lint-staged: 13.0.3
   lodash: 4.17.21
@@ -63,7 +63,7 @@ specifiers:
   react-color: 2.19.3
   react-dom: 18.2.0
   react-hook-form: 7.37.0
-  react-i18next: ^11.18.6
+  react-i18next: 11.18.6
   react-markdown: 8.0.3
   react-router-dom: 6.4.2
   react-scripts: 5.0.1
@@ -108,7 +108,7 @@ dependencies:
   '@tinymce/tinymce-react': 4.2.0_biqbaboplfbrettd7655fr4n2y
   ace-builds: 1.11.2
   ahooks: 3.7.1_react@18.2.0
-  axios: 1.0.0
+  axios: 1.1.0
   bson-objectid: 2.0.3
   clipboard: 2.0.11
   codemirror: 6.0.1_@lezer+common@1.0.1
@@ -3926,8 +3926,8 @@ packages:
     resolution: {integrity: sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==}
     engines: {node: '>=4'}
 
-  /axios/1.0.0:
-    resolution: {integrity: sha512-SsHsGFN1qNPFT5QhSoSD37SHDfGyLSW5AESmyLk2JeCMHv5g0I9g0Hz/zQHx2KNe0jGXh2q2hAm7OdkXm360CA==}
+  /axios/1.1.0:
+    resolution: {integrity: sha512-hsJgcqz4JY7f+HZ4cWTrPZ6tZNCNFPTRx1MjRqu/hbpgpHdSCUpLVuplc+jE/h7dOvyANtw/ERA3HC2Rz/QoMg==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0

@@ -12,6 +12,7 @@ export const initOptions: InitOptions = {
   // if you're using a language detector, do not define the lng option
   fallbackLng: {
     default: ['en'],
+    zh: ['zh-Hans'],
     'zh-CN': ['zh-Hans'],
   },
   interpolation: {
