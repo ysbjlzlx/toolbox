@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import JSON5 from 'json5';
+import _ from 'lodash';
 import { useEffect, useState } from 'react';
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
@@ -17,6 +18,7 @@ export interface GridElement extends ReactDataSheet.Cell<GridElement, number | s
 
 const JsonToExcel = () => {
   const [json, setJson] = useState<string>('{}');
+  const [data, setData] = useState<GridElement[][]>([]);
   const [jsonOptions] = useState<AceOptions>({
     useWorker: false,
     showLineNumbers: true,
@@ -28,7 +30,29 @@ const JsonToExcel = () => {
     try {
       const result = JSON5.parse(json);
       console.log(result);
-      console.log(Array.isArray(result));
+      if (Array.isArray(result)) {
+        let columns: any[] = [];
+        result.forEach((item) => {
+          const keys = Object.keys(item);
+          keys.forEach((key) => {
+            columns.push({ value: key, readOnly: true });
+          });
+        });
+        columns = _.uniqWith(columns, (a, b) => {
+          return a.value === b.value;
+        });
+
+        const rows: any[] = [];
+        result.forEach((item) => {
+          const row = columns.map((column) => {
+            const value = item[column.value] || null;
+            return { value, readOnly: true };
+          });
+          rows.push(row);
+        });
+        // @ts-ignore
+        setData([columns, ...rows]);
+      }
     } catch (e) {
       if (e instanceof SyntaxError) {
         console.error(e.message);
@@ -49,6 +73,9 @@ const JsonToExcel = () => {
           width="100%"
           height="100%"
         />
+      </Box>
+      <Box sx={{ mt: 3, width: '100%' }}>
+        <ReactDataSheet data={data} valueRenderer={(cel) => cel.value} />
       </Box>
     </Box>
   );
