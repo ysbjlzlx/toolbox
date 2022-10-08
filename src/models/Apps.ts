@@ -29,8 +29,8 @@ export const apps: Application[] = [
     icon: DataObject,
   },
   {
-    name: 'Yaml',
-    desc: 'Yaml 格式处理',
+    name: 'YAML',
+    desc: 'YAML 格式处理',
     href: '/yaml',
     icon: SyncAlt,
   },
