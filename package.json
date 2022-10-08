@@ -54,7 +54,7 @@
     "dayjs": "1.11.5",
     "file-saver": "2.0.5",
     "i18next": "21.10.0",
-    "i18next-browser-languagedetector": "6.1.6",
+    "i18next-browser-languagedetector": "6.1.8",
     "i18next-http-backend": "1.4.4",
     "joi": "17.6.2",
     "lodash": "4.17.21",
