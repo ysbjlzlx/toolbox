@@ -9,7 +9,7 @@ specifiers:
   '@craco/craco': 7.0.0-alpha.8
   '@emotion/react': 11.10.4
   '@emotion/styled': 11.10.4
-  '@hookform/resolvers': 2.9.8
+  '@hookform/resolvers': 2.9.10
   '@mantine/core': 5.5.4
   '@mantine/dates': 5.5.4
   '@mantine/hooks': 5.5.4
@@ -98,7 +98,7 @@ dependencies:
   '@craco/craco': 7.0.0-alpha.8_u3dy5fzrunjh42uig47axcwvpy
   '@emotion/react': 11.10.4_msyv5sllghxdhcqrv627wahqgi
   '@emotion/styled': 11.10.4_3hd6nwy3r2wumq5zfueojfsowa
-  '@hookform/resolvers': 2.9.8_react-hook-form@7.37.0
+  '@hookform/resolvers': 2.9.10_react-hook-form@7.37.0
   '@mantine/core': 5.5.4_46jyd4tz2lts7aqjdwe2gnr2n4
   '@mantine/dates': 5.5.4_77mcgelljxyonuixz5lsq6z3im
   '@mantine/hooks': 5.5.4_react@18.2.0
@@ -1904,8 +1904,8 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
-  /@hookform/resolvers/2.9.8_react-hook-form@7.37.0:
-    resolution: {integrity: sha512-iVVjH0USq+1TqDdGkWe2M1x7Wn5OFPgVRo7CbWFsXTqqXqCaZtZcnzJu+UhljCWbthFWxWGXKLGYUDPZ04oVvQ==}
+  /@hookform/resolvers/2.9.10_react-hook-form@7.37.0:
+    resolution: {integrity: sha512-JIL1DgJIlH9yuxcNGtyhsWX/PgNltz+5Gr6+8SX9fhXc/hPbEIk6wPI82nhgvp3uUb6ZfAM5mqg/x7KR7NAb+A==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:

@@ -36,7 +36,7 @@
     "@craco/craco": "7.0.0-alpha.8",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
-    "@hookform/resolvers": "2.9.8",
+    "@hookform/resolvers": "2.9.10",
     "@mantine/core": "5.5.4",
     "@mantine/dates": "5.5.4",
     "@mantine/hooks": "5.5.4",
