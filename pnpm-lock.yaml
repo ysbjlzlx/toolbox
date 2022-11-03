@@ -45,7 +45,7 @@ specifiers:
   file-saver: 2.0.5
   husky: 8.0.1
   i18next: 22.0.4
-  i18next-browser-languagedetector: 7.0.0
+  i18next-browser-languagedetector: 7.0.1
   i18next-http-backend: 2.0.1
   joi: 17.7.0
   json5: ^2.2.1
@@ -118,7 +118,7 @@ dependencies:
   dayjs: 1.11.6
   file-saver: 2.0.5
   i18next: 22.0.4
-  i18next-browser-languagedetector: 7.0.0
+  i18next-browser-languagedetector: 7.0.1
   i18next-http-backend: 2.0.1
   joi: 17.7.0
   json5: 2.2.1
@@ -6573,8 +6573,8 @@ packages:
     hasBin: true
     dev: true
 
-  /i18next-browser-languagedetector/7.0.0:
-    resolution: {integrity: sha512-RrH7z5/DbhzhgCLDFIKXBTZlb2aXi38ZHa5e5oZaPt9zGLWmgAX49mzkQL/E7R6Y9fTE8QbZFuyMV0ronu4H/Q==}
+  /i18next-browser-languagedetector/7.0.1:
+    resolution: {integrity: sha512-Pa5kFwaczXJAeHE56CHG2aWzFBMJNUNghf0Pm4SwSrEMps/PTKqW90EYWlIvhuYStf3Sn1K0vw+gH3+TLdkH1g==}
     dependencies:
       '@babel/runtime': 7.20.1
     dev: false
