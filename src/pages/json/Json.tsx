@@ -40,17 +40,14 @@ const Json = () => {
   };
 
   return (
-    <Tabs
-      variant="outline"
-      radius="md"
-      value={currentTab}
-      onTabChange={handleChange}
-      sx={{ height: '100%', paddingTop: '8px' }}
-    >
-      <Tabs.List ref={tabWrapperRef} sx={{ paddingLeft: '8px' }}>
+    <Tabs radius="md" value={currentTab} onTabChange={handleChange} sx={{ height: '100%' }}>
+      <Tabs.List ref={tabWrapperRef}>
         <Tabs.Tab value="json-editor"> {t('JSON Editor')} </Tabs.Tab>
         <Tabs.Tab value="json-to-yaml"> {t('JSON to YAML')} </Tabs.Tab>
-        <Tabs.Tab value="json-to-excel"> {t('JSON to Excel')} </Tabs.Tab>
+        <Tabs.Tab value="json-to-excel" disabled>
+          {' '}
+          {t('JSON to Excel')}{' '}
+        </Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="json-editor" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 6px)`, marginTop: 5 }}>
