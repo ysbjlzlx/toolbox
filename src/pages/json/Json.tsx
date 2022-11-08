@@ -1,9 +1,11 @@
-import { Tabs, TabsValue } from '@mantine/core';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { Box, Tab } from '@mui/material';
 import { useSize } from 'ahooks';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
+import * as React from 'react';
 import JSON from './JsonEditor';
 import JsonToExcel from './JsonToExcel';
 import JsonToYaml from './JsonToYaml';
@@ -30,36 +32,42 @@ const Json = () => {
     }
   }, [searchParams, setSearchParams]);
 
-  const handleChange = (value: TabsValue) => {
+  const handleChange = (_event: React.SyntheticEvent, value: string) => {
     setCurrentTab(value || 'json-editor');
     setTabSearchParam(value || 'json-editor');
   };
 
   return (
-    <Tabs radius="md" value={currentTab} onTabChange={handleChange} sx={{ height: '100%' }}>
-      <Tabs.List ref={tabWrapperRef}>
-        <Tabs.Tab value="json-editor"> {t('JSON Editor')} </Tabs.Tab>
-        <Tabs.Tab value="json-to-yaml"> {t('JSON to YAML')} </Tabs.Tab>
-        <Tabs.Tab value="json-to-excel" disabled>
-          {t('JSON to Excel')}
-        </Tabs.Tab>
-      </Tabs.List>
+    <TabContext value={currentTab}>
+      <Box ref={tabWrapperRef}>
+        <TabList onChange={handleChange}>
+          <Tab value="json-editor" label={t('JSON Editor')} />
+          <Tab value="json-to-yaml" label={t('JSON to YAML')} />
+          <Tab value="json-to-excel" label={t('JSON to Excel')} disabled />
+        </TabList>
+      </Box>
 
-      <Tabs.Panel
+      <TabPanel
         value="json-editor"
-        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 7px)`, marginTop: 5 }}
+        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 7px)`, padding: 0, paddingTop: '5px' }}
       >
         <JSON />
-      </Tabs.Panel>
+      </TabPanel>
 
-      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)` }}>
+      <TabPanel
+        value="json-to-yaml"
+        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)`, padding: 0 }}
+      >
         <JsonToYaml />
-      </Tabs.Panel>
+      </TabPanel>
 
-      <Tabs.Panel value="json-to-excel" sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)` }}>
+      <TabPanel
+        value="json-to-excel"
+        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)`, padding: 0 }}
+      >
         <JsonToExcel />
-      </Tabs.Panel>
-    </Tabs>
+      </TabPanel>
+    </TabContext>
   );
 };
 
