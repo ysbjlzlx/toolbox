@@ -45,15 +45,18 @@ const Json = () => {
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="json-editor" sx={{ height: `calc(100% - ${tabWrapperSize?.height}px - 7px)`, marginTop: 5 }}>
+      <Tabs.Panel
+        value="json-editor"
+        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 7px)`, marginTop: 5 }}
+      >
         <JSON />
       </Tabs.Panel>
 
-      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperSize?.height}px - 2px)` }}>
+      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)` }}>
         <JsonToYaml />
       </Tabs.Panel>
 
-      <Tabs.Panel value="json-to-excel" sx={{ height: `calc(100% - ${tabWrapperSize?.height}px - 2px)` }}>
+      <Tabs.Panel value="json-to-excel" sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)` }}>
         <JsonToExcel />
       </Tabs.Panel>
     </Tabs>
