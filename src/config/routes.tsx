@@ -22,6 +22,7 @@ const Totp = lazy(() => import('../pages/totp'));
 
 const Json = lazy(() => import('../pages/json/Json'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
+const Bson = lazy(() => import('../pages/bson/Bson'));
 
 const routes: RouteObject[] = [
   {
@@ -130,6 +131,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Placeholder />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/bson',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Bson />
           </Suspense>
         ),
       },
