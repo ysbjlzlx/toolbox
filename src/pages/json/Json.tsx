@@ -1,5 +1,6 @@
 import { Tabs, TabsValue } from '@mantine/core';
-import { useCallback, useEffect, useState } from 'react';
+import { useSize } from 'ahooks';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
@@ -8,16 +9,11 @@ import JsonToExcel from './JsonToExcel';
 import JsonToYaml from './JsonToYaml';
 
 const Json = () => {
+  const tabWrapperRef = useRef(null);
   const [currentTab, setCurrentTab] = useState<string>('json-editor');
-  const [tabWrapperHeight, setTabWrapperHeight] = useState<number>(48);
   const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
-
-  const tabWrapperRef = useCallback((node: HTMLDivElement) => {
-    if (node) {
-      setTabWrapperHeight(node.clientHeight);
-    }
-  }, []);
+  const tabWrapperSize = useSize(tabWrapperRef);
 
   const setTabSearchParam = (name: string) => {
     searchParams.set('tab', name);
@@ -45,20 +41,19 @@ const Json = () => {
         <Tabs.Tab value="json-editor"> {t('JSON Editor')} </Tabs.Tab>
         <Tabs.Tab value="json-to-yaml"> {t('JSON to YAML')} </Tabs.Tab>
         <Tabs.Tab value="json-to-excel" disabled>
-          {' '}
-          {t('JSON to Excel')}{' '}
+          {t('JSON to Excel')}
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="json-editor" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 6px)`, marginTop: 5 }}>
+      <Tabs.Panel value="json-editor" sx={{ height: `calc(100% - ${tabWrapperSize?.height}px - 7px)`, marginTop: 5 }}>
         <JSON />
       </Tabs.Panel>
 
-      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 1px)` }}>
+      <Tabs.Panel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperSize?.height}px - 2px)` }}>
         <JsonToYaml />
       </Tabs.Panel>
 
-      <Tabs.Panel value="json-to-excel" sx={{ height: `calc(100% - ${tabWrapperHeight}px - 1px)` }}>
+      <Tabs.Panel value="json-to-excel" sx={{ height: `calc(100% - ${tabWrapperSize?.height}px - 2px)` }}>
         <JsonToExcel />
       </Tabs.Panel>
     </Tabs>
