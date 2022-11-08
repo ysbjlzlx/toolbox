@@ -6,7 +6,7 @@ specifiers:
   '@codemirror/state': 6.1.2
   '@codemirror/theme-one-dark': 6.1.0
   '@codemirror/view': 6.4.1
-  '@craco/craco': 7.0.0-alpha.9
+  '@craco/craco': 7.0.0
   '@emotion/react': 11.10.5
   '@emotion/styled': 11.10.5
   '@hookform/resolvers': 2.9.10
@@ -97,7 +97,7 @@ dependencies:
   '@codemirror/state': 6.1.2
   '@codemirror/theme-one-dark': 6.1.0
   '@codemirror/view': 6.4.1
-  '@craco/craco': 7.0.0-alpha.9_kt74pemflrumd2flnfrknngbpe
+  '@craco/craco': 7.0.0_kt74pemflrumd2flnfrknngbpe
   '@emotion/react': 11.10.5_2scysrxwib2hw4krhjq3y5g66y
   '@emotion/styled': 11.10.5_uu44l56k3pbqwrxegjnjizf3xq
   '@hookform/resolvers': 2.9.10_react-hook-form@7.39.1
@@ -1539,8 +1539,8 @@ packages:
       w3c-keyname: 2.2.6
     dev: false
 
-  /@craco/craco/7.0.0-alpha.9_kt74pemflrumd2flnfrknngbpe:
-    resolution: {integrity: sha512-Yg3GlE7VrVsCJUs33CbBDjqmyMfXb1aVTrPkXIFNn1mg0b6xj8dl1jFcJDAYnzgU57nP3QYKOVD4pEU5AaZ18A==}
+  /@craco/craco/7.0.0_kt74pemflrumd2flnfrknngbpe:
+    resolution: {integrity: sha512-OyjL9zpURB6Ha1HO62Hlt27Xd7UYJ8DRiBNuE4DBB8Ue0iQ9q/xsv3ze7ROm6gCZqV6I2Gxjnq0EHCCye+4xDQ==}
     engines: {node: '>=6'}
     hasBin: true
     peerDependencies:
