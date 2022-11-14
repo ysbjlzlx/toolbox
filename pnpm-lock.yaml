@@ -28,7 +28,7 @@ specifiers:
   '@types/qrcode': 1.5.0
   '@types/react': 18.0.25
   '@types/react-color': 3.0.6
-  '@types/react-dom': 18.0.8
+  '@types/react-dom': 18.0.9
   ace-builds: 1.13.0
   ahooks: 3.7.2
   axios: 1.1.3
@@ -167,7 +167,7 @@ devDependencies:
   '@types/qrcode': 1.5.0
   '@types/react': 18.0.25
   '@types/react-color': 3.0.6
-  '@types/react-dom': 18.0.8
+  '@types/react-dom': 18.0.9
   eslint: 8.27.0
   eslint-config-alloy: 4.7.0_ymkbr3nuo4vvn3qsoxelgqgmve
   eslint-config-react-app: 7.0.1_2zj57cnzkaaqicw4docgvousvi
@@ -2777,7 +2777,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.19.0
       '@testing-library/dom': 8.17.1
-      '@types/react-dom': 18.0.8
+      '@types/react-dom': 18.0.9
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: true
@@ -3075,8 +3075,8 @@ packages:
       '@types/reactcss': 1.2.6
     dev: true
 
-  /@types/react-dom/18.0.8:
-    resolution: {integrity: sha512-C3GYO0HLaOkk9dDAz3Dl4sbe4AKUGTCfFIZsz3n/82dPNN8Du533HzKatDxeUYWu24wJgMP1xICqkWk1YOLOIw==}
+  /@types/react-dom/18.0.9:
+    resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
     dependencies:
       '@types/react': 18.0.25
     dev: true
