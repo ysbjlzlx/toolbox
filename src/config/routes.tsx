@@ -19,6 +19,7 @@ const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
 const Totp = lazy(() => import('../pages/totp'));
+const Writer = lazy(() => import('../pages/Writer'));
 
 const Json = lazy(() => import('../pages/json/Json'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
@@ -171,6 +172,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Totp />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/writer',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Writer />
           </Suspense>
         ),
       },
