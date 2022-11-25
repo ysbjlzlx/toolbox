@@ -47,7 +47,7 @@ specifiers:
   i18next-http-backend: 2.0.1
   joi: 17.7.0
   json5: 2.2.1
-  lint-staged: 13.0.3
+  lint-staged: 13.0.4
   lodash: 4.17.21
   material-ui-popup-state: 4.1.0
   mui-image: 1.0.7
@@ -172,7 +172,7 @@ devDependencies:
   eslint-config-alloy: 4.7.0_ztfmxltscbocptsunnndxrywma
   eslint-config-react-app: 7.0.1_tw4qyq5zwfhp7y576edxbyjb7i
   husky: 8.0.2
-  lint-staged: 13.0.3
+  lint-staged: 13.0.4
   prettier: 2.7.1
   prettier-plugin-organize-imports: 3.2.0_wbcyan4knibwiqrg7345gyo3qi
   prettier-plugin-packagejson: 2.3.0_prettier@2.7.1
@@ -4370,8 +4370,8 @@ packages:
     engines: {node: '>= 12'}
     dev: false
 
-  /commander/9.4.0:
-    resolution: {integrity: sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==}
+  /commander/9.4.1:
+    resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==}
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
@@ -7515,31 +7515,25 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  /lilconfig/2.0.5:
-    resolution: {integrity: sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==}
-    engines: {node: '>=10'}
-    dev: true
-
   /lilconfig/2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
-    dev: false
 
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  /lint-staged/13.0.3:
-    resolution: {integrity: sha512-9hmrwSCFroTSYLjflGI8Uk+GWAwMB4OlpU4bMJEAT5d/llQwtYKoim4bLOyLCuWFAhWEupE0vkIFqtw/WIsPug==}
+  /lint-staged/13.0.4:
+    resolution: {integrity: sha512-HxlHCXoYRsq9QCby5wFozmZW00hMs/9e3l+/dz6Qr8Kle4UH0kJTdABAbqhzG+3pcG6QjL9kz7NgGBfph+a5dw==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
       cli-truncate: 3.1.0
       colorette: 2.0.19
-      commander: 9.4.0
+      commander: 9.4.1
       debug: 4.3.4
       execa: 6.1.0
-      lilconfig: 2.0.5
-      listr2: 4.0.5
+      lilconfig: 2.0.6
+      listr2: 5.0.5
       micromatch: 4.0.5
       normalize-path: 3.0.0
       object-inspect: 1.12.2
@@ -7551,9 +7545,9 @@ packages:
       - supports-color
     dev: true
 
-  /listr2/4.0.5:
-    resolution: {integrity: sha512-juGHV1doQdpNT3GSTs9IUN43QJb7KHdF9uqg7Vufs/tG9VTzpFphqF4pm/ICdAABGQxsyNn9CiYA3StkI6jpwA==}
-    engines: {node: '>=12'}
+  /listr2/5.0.5:
+    resolution: {integrity: sha512-DpBel6fczu7oQKTXMekeprc0o3XDgGMkD7JNYyX+X0xbwK+xgrx9dcyKoXKqpLSUvAWfmoePS7kavniOcq3r4w==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
       enquirer: '>= 2.3.0 < 3'
     peerDependenciesMeta:
