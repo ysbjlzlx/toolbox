@@ -45,7 +45,7 @@ specifiers:
   husky: 8.0.2
   i18next: 22.0.6
   i18next-browser-languagedetector: 7.0.1
-  i18next-http-backend: 2.0.1
+  i18next-http-backend: 2.0.2
   joi: 17.7.0
   json5: 2.2.1
   lint-staged: 13.0.4
@@ -54,7 +54,7 @@ specifiers:
   mui-image: 1.0.7
   otpauth: 9.0.2
   prettier: 2.8.0
-  prettier-plugin-organize-imports: 3.2.0
+  prettier-plugin-organize-imports: 3.2.1
   prettier-plugin-packagejson: 2.3.0
   prop-types: 15.8.1
   qrcode: 1.5.1
@@ -118,7 +118,7 @@ dependencies:
   highlight.js: 11.7.0
   i18next: 22.0.6
   i18next-browser-languagedetector: 7.0.1
-  i18next-http-backend: 2.0.1
+  i18next-http-backend: 2.0.2
   joi: 17.7.0
   json5: 2.2.1
   lodash: 4.17.21
@@ -178,7 +178,7 @@ devDependencies:
   husky: 8.0.2
   lint-staged: 13.0.4
   prettier: 2.8.0
-  prettier-plugin-organize-imports: 3.2.0_brpckf4sz23pco3jyty2eys3iq
+  prettier-plugin-organize-imports: 3.2.1_brpckf4sz23pco3jyty2eys3iq
   prettier-plugin-packagejson: 2.3.0_prettier@2.8.0
   stylelint: 14.15.0
   stylelint-config-standard: 29.0.0_stylelint@14.15.0
@@ -6422,8 +6422,8 @@ packages:
       '@babel/runtime': 7.20.1
     dev: false
 
-  /i18next-http-backend/2.0.1:
-    resolution: {integrity: sha512-kzvSkOT3yhVijumDlp8/TgD1v07lYdFXsf5YYbB7Yu+K2S6PO0lKgZ4c/fyFcAKWiAiTjt9uVecBAbnJjKzhOw==}
+  /i18next-http-backend/2.0.2:
+    resolution: {integrity: sha512-TFiIqitZEc8+jyca31EW5ef5PjUYtUGGfL8c8FJwiiHguq5OQTqoR3mxpKqaCPiikg+cxSgXtNA2gZPCu0aryQ==}
     dependencies:
       cross-fetch: 3.1.5
     transitivePeerDependencies:
@@ -9568,8 +9568,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier-plugin-organize-imports/3.2.0_brpckf4sz23pco3jyty2eys3iq:
-    resolution: {integrity: sha512-jeZ13YVKgXYCzkuwnoR6saKxJmdRYWMxS2G/su1V3qDWqTo1Q5iSoTblBxsXXAmomXfPqa/uA7YCK0/S86KLOQ==}
+  /prettier-plugin-organize-imports/3.2.1_brpckf4sz23pco3jyty2eys3iq:
+    resolution: {integrity: sha512-bty7C2Ecard5EOXirtzeCAqj4FU4epeuWrQt/Z+sh8UVEpBlBZ3m3KNPz2kFu7KgRTQx/C9o4/TdquPD1jOqjQ==}
     peerDependencies:
       '@volar/vue-language-plugin-pug': ^1.0.4
       '@volar/vue-typescript': ^1.0.4
