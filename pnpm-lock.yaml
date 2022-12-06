@@ -31,7 +31,7 @@ specifiers:
   '@types/react-dom': 18.0.9
   ace-builds: 1.13.1
   ahooks: 3.7.2
-  axios: 1.2.0
+  axios: 1.2.1
   bson-objectid: 2.0.4
   clipboard: 2.0.11
   codemirror: 6.0.1
@@ -108,7 +108,7 @@ dependencies:
   '@tinymce/tinymce-react': 4.2.0_biqbaboplfbrettd7655fr4n2y
   ace-builds: 1.13.1
   ahooks: 3.7.2_react@18.2.0
-  axios: 1.2.0
+  axios: 1.2.1
   bson-objectid: 2.0.4
   clipboard: 2.0.11
   codemirror: 6.0.1_@lezer+common@1.0.1
@@ -3783,8 +3783,8 @@ packages:
     resolution: {integrity: sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==}
     engines: {node: '>=4'}
 
-  /axios/1.2.0:
-    resolution: {integrity: sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw==}
+  /axios/1.2.1:
+    resolution: {integrity: sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
