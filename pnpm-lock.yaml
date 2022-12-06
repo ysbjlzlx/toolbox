@@ -65,7 +65,7 @@ specifiers:
   react-dom: 18.2.0
   react-hook-form: 7.39.5
   react-i18next: 12.0.0
-  react-markdown: 8.0.3
+  react-markdown: 8.0.4
   react-quill: 2.0.0
   react-router-dom: 6.4.3
   react-scripts: 5.0.1
@@ -134,7 +134,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.39.5_react@18.2.0
   react-i18next: 12.0.0_nger6pvrp5hnzeykouhwqmsdti
-  react-markdown: 8.0.3_kzbn2opkn2327fwg5yzwzya5o4
+  react-markdown: 8.0.4_kzbn2opkn2327fwg5yzwzya5o4
   react-quill: 2.0.0_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_trwom7flbqawx7244jqw7mms6i
@@ -9926,8 +9926,8 @@ packages:
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  /react-markdown/8.0.3_kzbn2opkn2327fwg5yzwzya5o4:
-    resolution: {integrity: sha512-We36SfqaKoVNpN1QqsZwWSv/OZt5J15LNgTLWynwAN5b265hrQrsjMtlRNwUvS+YyR3yDM8HpTNc4pK9H/Gc0A==}
+  /react-markdown/8.0.4_kzbn2opkn2327fwg5yzwzya5o4:
+    resolution: {integrity: sha512-2oxHa6oDxc1apg/Gnc1Goh06t3B617xeywqI/92wmDV9FELI6ayRkwge7w7DoEqM0gRpZGTNU6xQG+YpJISnVg==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
