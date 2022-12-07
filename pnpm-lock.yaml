@@ -64,7 +64,7 @@ specifiers:
   react-datasheet: ^1.4.12
   react-dom: 18.2.0
   react-hook-form: 7.40.0
-  react-i18next: 12.0.0
+  react-i18next: 12.1.1
   react-markdown: 8.0.4
   react-quill: 2.0.0
   react-router-dom: 6.4.4
@@ -133,7 +133,7 @@ dependencies:
   react-datasheet: 1.4.12_v2m5e27vhdewzwhryxwfaorcca
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.40.0_react@18.2.0
-  react-i18next: 12.0.0_xp3tcnypqfah7nlbdog3oni4pe
+  react-i18next: 12.1.1_xp3tcnypqfah7nlbdog3oni4pe
   react-markdown: 8.0.4_kzbn2opkn2327fwg5yzwzya5o4
   react-quill: 2.0.0_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.4.4_biqbaboplfbrettd7655fr4n2y
@@ -1424,6 +1424,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.10
+    dev: false
 
   /@babel/runtime/7.20.6:
     resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
@@ -1753,7 +1754,7 @@ packages:
       '@babel/core': 7.19.1
       '@babel/helper-module-imports': 7.18.6
       '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.19.1
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       '@emotion/hash': 0.9.0
       '@emotion/memoize': 0.8.0
       '@emotion/serialize': 1.1.1
@@ -2754,7 +2755,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       '@types/aria-query': 4.2.2
       aria-query: 5.0.2
       chalk: 4.1.2
@@ -9903,8 +9904,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-i18next/12.0.0_xp3tcnypqfah7nlbdog3oni4pe:
-    resolution: {integrity: sha512-/O7N6aIEAl1FaWZBNvhdIo9itvF/MO/nRKr9pYqRc9LhuC1u21SlfwpiYQqvaeNSEW3g3qUXLREOWMt+gxrWbg==}
+  /react-i18next/12.1.1_xp3tcnypqfah7nlbdog3oni4pe:
+    resolution: {integrity: sha512-mFdieOI0LDy84q3JuZU6Aou1DoWW2fhapcTGeBS8+vWSJuViuoCLQAMYSb0QoHhXS8B0WKUOPpx4cffAP7r/aA==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -9916,7 +9917,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       html-parse-stringify: 3.0.1
       i18next: 22.0.8
       react: 18.2.0
