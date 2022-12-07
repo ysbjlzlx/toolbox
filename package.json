@@ -32,7 +32,7 @@
     "@codemirror/lang-json": "6.0.1",
     "@codemirror/state": "6.1.4",
     "@codemirror/theme-one-dark": "6.1.0",
-    "@codemirror/view": "6.6.0",
+    "@codemirror/view": "6.7.0",
     "@craco/craco": "7.0.0",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
