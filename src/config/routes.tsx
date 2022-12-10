@@ -12,7 +12,6 @@ const Base64 = lazy(() => import('../pages/Base64'));
 const Excel = lazy(() => import('../pages/Excel'));
 const Hash = lazy(() => import('../pages/Hash'));
 const QRCode = lazy(() => import('../pages/QrCode'));
-const CodeFormatter = lazy(() => import('../pages/CodeFormatter'));
 const Code = lazy(() => import('../pages/code'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
@@ -20,6 +19,7 @@ const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../pages/Timestamp'));
 const Totp = lazy(() => import('../pages/totp'));
 const Writer = lazy(() => import('../pages/Writer'));
+const Formatter = lazy(() => import('../pages/formatter'));
 
 const Json = lazy(() => import('../pages/json/Json'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
@@ -115,7 +115,7 @@ const routes: RouteObject[] = [
         path: '/code-formatter',
         element: (
           <Suspense fallback={<Loading />}>
-            <CodeFormatter />
+            <Formatter />
           </Suspense>
         ),
       },
@@ -180,6 +180,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Writer />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/formatter',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Formatter />
           </Suspense>
         ),
       },
