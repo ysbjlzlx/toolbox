@@ -52,6 +52,7 @@ specifiers:
   json5: 2.2.1
   lint-staged: 13.1.0
   lodash: 4.17.21
+  lossless-json: ^2.0.3
   material-ui-popup-state: 4.1.0
   mui-image: 1.0.7
   otpauth: 9.0.2
@@ -126,6 +127,7 @@ dependencies:
   joi: 17.7.0
   json5: 2.2.1
   lodash: 4.17.21
+  lossless-json: 2.0.3
   material-ui-popup-state: 4.1.0_lskpmcsdi7ipu6qpuapyu56ihm
   mui-image: 1.0.7_klzbasrqfhqlpvyhcmm7xzh6na
   otpauth: 9.0.2
@@ -8229,6 +8231,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+
+  /lossless-json/2.0.3:
+    resolution: {integrity: sha512-xJGerQgHtqZfS5LunFil3ft0Q2wVwYtUxbIbTfBar/c7DfW98G+a0fl2JzjLcTYF07SdIb/q5yDEbXNXojkW6g==}
+    dev: false
 
   /lower-case/2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}

@@ -1,13 +1,10 @@
 import { Box, Button, Grid } from '@mui/material';
+import JSON5 from 'json5';
 import { FC, useState } from 'react';
-
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
-
-import parserYaml from 'prettier/parser-yaml';
-import prettier from 'prettier/standalone';
-
 import YAML from 'yaml';
+import { format, parser } from '../../utils/formatter';
 
 import 'ace-builds/src-min-noconflict/ext-searchbox';
 import 'ace-builds/src-min-noconflict/mode-json';
@@ -36,19 +33,8 @@ const JsonToYaml: FC = () => {
     if (!value || value === '') {
       return value;
     }
-    try {
-      return prettier.format(YAML.stringify(JSON.parse(value)), {
-        parser: 'yaml',
-        plugins: [parserYaml],
-      });
-    } catch (e) {
-      if (e instanceof SyntaxError) {
-        console.warn(e);
-      } else {
-        console.warn(e);
-      }
-      return '';
-    }
+    console.log(JSON5.parse(value));
+    return format(YAML.stringify(JSON5.parse(value)), 'yaml' as parser);
   };
 
   const json2yamlBtnClick = () => {
@@ -68,7 +54,7 @@ const JsonToYaml: FC = () => {
             setOptions={jsonOptions}
             value={json}
             onChange={setJson}
-            mode="json"
+            mode="json5"
             width="100%"
             height="100%"
           />
