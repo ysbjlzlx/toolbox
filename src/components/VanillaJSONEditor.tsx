@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import * as LosslessJSON from 'lossless-json';
 import { useEffect, useRef } from 'react';
 
 import { JSONEditor, JSONEditorPropsOptional } from 'vanilla-jsoneditor';
@@ -26,7 +27,8 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
 
   useEffect(() => {
     if (editorRef.current) {
-      editorRef.current?.updateProps(props);
+      // @ts-ignore
+      editorRef.current?.updateProps({ ...props, parser: LosslessJSON });
     }
   }, [props]);
 
