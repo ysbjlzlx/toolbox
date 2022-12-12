@@ -14,13 +14,19 @@ const JSONBeta: FC = () => {
   const [jsonStorage, setJsonStorage] = useLocalStorageState<any>('json', { defaultValue });
 
   const resolveMode = (): Mode | undefined => {
-    if (jsonStorage && jsonStorage.mode === 'text') {
+    if (jsonStorage === undefined || jsonStorage === null) {
       return Mode.text;
     }
-    if (jsonStorage && jsonStorage.mode === 'tree') {
-      return Mode.tree;
+    switch (jsonStorage.mode) {
+      case 'text':
+        return Mode.text;
+      case 'tree':
+        return Mode.tree;
+      case 'table':
+        return Mode.table;
+      default:
+        return Mode.text;
     }
-    return Mode.text;
   };
 
   const onChange = (content: Content) => {
