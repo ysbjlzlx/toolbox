@@ -1,5 +1,9 @@
 lockfileVersion: 5.4
 
+overrides:
+  react: 18.2.0
+  react-dom: 18.2.0
+
 specifiers:
   '@ant-design/pro-components': 2.3.47
   '@codemirror/commands': 6.1.2
