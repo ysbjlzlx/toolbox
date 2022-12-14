@@ -17,16 +17,7 @@ const JSONBeta: FC = () => {
     if (jsonStorage === undefined || jsonStorage === null) {
       return Mode.text;
     }
-    switch (jsonStorage.mode) {
-      case 'text':
-        return Mode.text;
-      case 'tree':
-        return Mode.tree;
-      case 'table':
-        return Mode.table;
-      default:
-        return Mode.text;
-    }
+    return jsonStorage.mode as Mode;
   };
 
   const onChange = (content: Content) => {

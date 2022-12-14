@@ -1,6 +1,6 @@
 {
   "name": "toolbox",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "craco build",
@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "@ant-design/pro-components": "^2.3.46",
+    "@ant-design/pro-components": "2.3.47",
     "@codemirror/commands": "6.1.2",
     "@codemirror/lang-json": "6.0.1",
     "@codemirror/state": "6.1.4",
@@ -38,14 +38,14 @@
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@hookform/resolvers": "2.9.10",
-    "@mui/icons-material": "5.10.16",
-    "@mui/lab": "5.0.0-alpha.111",
-    "@mui/material": "5.10.17",
-    "@mui/system": "5.10.17",
+    "@mui/icons-material": "5.11.0",
+    "@mui/lab": "5.0.0-alpha.112",
+    "@mui/material": "5.11.0",
+    "@mui/system": "5.11.0",
     "@tinymce/tinymce-react": "4.2.0",
-    "ace-builds": "1.13.2",
+    "ace-builds": "1.14.0",
     "ahooks": "3.7.2",
-    "antd": "5.0.6",
+    "antd": "5.0.7",
     "axios": "1.2.1",
     "bson-objectid": "2.0.4",
     "clipboard": "2.0.11",
@@ -54,14 +54,14 @@
     "dayjs": "1.11.7",
     "file-saver": "2.0.5",
     "highlight.js": "^11.7.0",
-    "i18next": "22.4.3",
+    "i18next": "22.4.5",
     "i18next-browser-languagedetector": "7.0.1",
     "i18next-http-backend": "2.1.0",
     "joi": "17.7.0",
     "json5": "2.2.1",
     "lodash": "4.17.21",
     "lossless-json": "^2.0.3",
-    "material-ui-popup-state": "4.1.0",
+    "material-ui-popup-state": "5.0.3",
     "mui-image": "1.0.7",
     "otpauth": "9.0.2",
     "prop-types": "15.8.1",
@@ -78,7 +78,7 @@
     "react-router-dom": "6.4.5",
     "react-scripts": "5.0.1",
     "remark-gfm": "3.0.1",
-    "vanilla-jsoneditor": "0.11.2",
+    "vanilla-jsoneditor": "0.11.4",
     "web-vitals": "3.1.0",
     "workbox-background-sync": "6.5.4",
     "workbox-broadcast-update": "6.5.4",
@@ -105,7 +105,7 @@
     "@types/jest": "29.2.4",
     "@types/lodash": "4.14.191",
     "@types/mui-image": "1.0.1",
-    "@types/node": "18.11.13",
+    "@types/node": "18.11.15",
     "@types/prettier": "2.7.1",
     "@types/qrcode": "1.5.0",
     "@types/react": "18.0.26",
@@ -122,5 +122,15 @@
     "stylelint": "14.16.0",
     "stylelint-config-standard": "29.0.0",
     "typescript": "4.9.4"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   }
 }
