@@ -1,4 +1,4 @@
-import { QrcodeOutlined } from '@ant-design/icons';
+import { LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
 import { Route } from '@ant-design/pro-layout/lib/typing';
 import {
   Code,
@@ -6,7 +6,6 @@ import {
   DataObject,
   Drafts,
   Image,
-  Link,
   Shuffle,
   SyncAlt,
   TableView,
@@ -45,7 +44,7 @@ export const route: Route = {
       name: 'URL',
       desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
       path: '/url',
-      icon: <Link />,
+      icon: <LinkOutlined />,
     },
     {
       name: 'Markdown',
@@ -88,7 +87,6 @@ export const route: Route = {
       desc: '快速便捷生成占位图',
       path: '/placeholder',
       icon: <Image />,
-      component: () => import('../pages/PlaceholderImg'),
     },
     {
       name: '时间戳（Timestamp）',
