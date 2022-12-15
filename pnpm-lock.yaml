@@ -57,7 +57,7 @@ specifiers:
   lint-staged: 13.1.0
   lodash: 4.17.21
   lossless-json: ^2.0.3
-  material-ui-popup-state: 5.0.3
+  material-ui-popup-state: 5.0.4
   mui-image: 1.0.7
   otpauth: 9.0.2
   prettier: 2.8.1
@@ -132,7 +132,7 @@ dependencies:
   json5: 2.2.1
   lodash: 4.17.21
   lossless-json: 2.0.3
-  material-ui-popup-state: 5.0.3_lskpmcsdi7ipu6qpuapyu56ihm
+  material-ui-popup-state: 5.0.4_lskpmcsdi7ipu6qpuapyu56ihm
   mui-image: 1.0.7_ixucot2td736pmyhn4hhblee3q
   otpauth: 9.0.2
   prop-types: 15.8.1
@@ -1759,6 +1759,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
+    dev: false
 
   /@babel/runtime/7.20.6:
     resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
@@ -3153,7 +3154,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       '@types/aria-query': 4.2.2
       aria-query: 5.0.2
       chalk: 4.1.2
@@ -8296,8 +8297,8 @@ packages:
     resolution: {integrity: sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==}
     dev: false
 
-  /material-ui-popup-state/5.0.3_lskpmcsdi7ipu6qpuapyu56ihm:
-    resolution: {integrity: sha512-AdlAEDmOAQ3BZMnNfyKD5CL+aNMb8zd5tDZWG5Ykx3vcuPbaL6SPjJ5kWuWXrJvapL9I8wwxaYhV4gt3tZmyOA==}
+  /material-ui-popup-state/5.0.4_lskpmcsdi7ipu6qpuapyu56ihm:
+    resolution: {integrity: sha512-QdlKHiKv498UNsH3zpQNJ7SN9RYiEjR5MSJIg+a9gqCp43G0A8fo1r0kmX1qFTLGTfYKgXix5RANJkNTujWtxA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
