@@ -3,11 +3,12 @@ import { ProLayout } from '@ant-design/pro-layout';
 import { ProConfigProvider } from '@ant-design/pro-provider';
 import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+
 import { route as defaultProps } from './defaultProps';
 
 const NextLayout = () => {
   const navigate = useNavigate();
-  const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
+  const [settings, setSetting] = useState<Partial<ProSettings>>({
     fixSiderbar: true,
     layout: 'side',
     splitMenus: false,
