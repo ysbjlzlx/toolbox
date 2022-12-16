@@ -58,7 +58,7 @@
     "i18next-browser-languagedetector": "7.0.1",
     "i18next-http-backend": "2.1.0",
     "joi": "17.7.0",
-    "json5": "2.2.1",
+    "json5": "2.2.2",
     "lodash": "4.17.21",
     "lossless-json": "^2.0.3",
     "material-ui-popup-state": "5.0.4",
