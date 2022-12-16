@@ -53,7 +53,7 @@ specifiers:
   i18next-browser-languagedetector: 7.0.1
   i18next-http-backend: 2.1.0
   joi: 17.7.0
-  json5: 2.2.1
+  json5: 2.2.2
   lint-staged: 13.1.0
   lodash: 4.17.21
   lossless-json: ^2.0.3
@@ -129,7 +129,7 @@ dependencies:
   i18next-browser-languagedetector: 7.0.1
   i18next-http-backend: 2.1.0
   joi: 17.7.0
-  json5: 2.2.1
+  json5: 2.2.2
   lodash: 4.17.21
   lossless-json: 2.0.3
   material-ui-popup-state: 5.0.4_lskpmcsdi7ipu6qpuapyu56ihm
@@ -571,7 +571,7 @@ packages:
       convert-source-map: 1.8.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
-      json5: 2.2.1
+      json5: 2.2.2
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
@@ -3035,7 +3035,7 @@ packages:
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
     dependencies:
       ejs: 3.1.8
-      json5: 2.2.1
+      json5: 2.2.2
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.7
     dev: false
@@ -8011,8 +8011,8 @@ packages:
     dependencies:
       minimist: 1.2.6
 
-  /json5/2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
+  /json5/2.2.2:
+    resolution: {integrity: sha512-46Tk9JiOL2z7ytNQWFLpj99RZkVgeHf87yGQKsIkaPz1qSH9UczKH1rO7K3wgRselo0tYMUNfecYpm/p1vC7tQ==}
     engines: {node: '>=6'}
     hasBin: true
 
@@ -8148,7 +8148,7 @@ packages:
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 2.2.1
+      json5: 2.2.2
     dev: false
 
   /loader-utils/3.2.0:
