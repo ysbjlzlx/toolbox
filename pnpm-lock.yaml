@@ -70,7 +70,7 @@ specifiers:
   react-color: 2.19.3
   react-datasheet: ^1.4.12
   react-dom: 18.2.0
-  react-hook-form: 7.40.0
+  react-hook-form: 7.41.0
   react-i18next: 12.1.1
   react-markdown: 8.0.4
   react-quill: 2.0.0
@@ -108,7 +108,7 @@ dependencies:
   '@craco/craco': 7.0.0_zwg5rintsvblhoc32ymc2tprkq
   '@emotion/react': 11.10.5_pmaosjctysffvwoa2bzwzfzfyi
   '@emotion/styled': 11.10.5_kygljwgwjno6ku3pktibmse44m
-  '@hookform/resolvers': 2.9.10_react-hook-form@7.40.0
+  '@hookform/resolvers': 2.9.10_react-hook-form@7.41.0
   '@mui/icons-material': 5.11.0_2q3lgv2yds5td5xef72rojpyny
   '@mui/lab': 5.0.0-alpha.112_m7xadb5s7hzouh2xm4du5wnkju
   '@mui/material': 5.11.0_lskpmcsdi7ipu6qpuapyu56ihm
@@ -142,7 +142,7 @@ dependencies:
   react-color: 2.19.3_react@18.2.0
   react-datasheet: 1.4.12_v2m5e27vhdewzwhryxwfaorcca
   react-dom: 18.2.0_react@18.2.0
-  react-hook-form: 7.40.0_react@18.2.0
+  react-hook-form: 7.41.0_react@18.2.0
   react-i18next: 12.1.1_ewanii43wbrufvukcu3uzq3hsy
   react-markdown: 8.0.4_kzbn2opkn2327fwg5yzwzya5o4
   react-quill: 2.0.0_biqbaboplfbrettd7655fr4n2y
@@ -2258,12 +2258,12 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
-  /@hookform/resolvers/2.9.10_react-hook-form@7.40.0:
+  /@hookform/resolvers/2.9.10_react-hook-form@7.41.0:
     resolution: {integrity: sha512-JIL1DgJIlH9yuxcNGtyhsWX/PgNltz+5Gr6+8SX9fhXc/hPbEIk6wPI82nhgvp3uUb6ZfAM5mqg/x7KR7NAb+A==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.40.0_react@18.2.0
+      react-hook-form: 7.41.0_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
@@ -10974,8 +10974,8 @@ packages:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
     dev: false
 
-  /react-hook-form/7.40.0_react@18.2.0:
-    resolution: {integrity: sha512-0rokdxMPJs0k9bvFtY6dbcSydyNhnZNXCR49jgDr/aR03FDHFOK6gfh8ccqB3fl696Mk7lqh04xdm+agqWXKSw==}
+  /react-hook-form/7.41.0_react@18.2.0:
+    resolution: {integrity: sha512-u1cHOXujr+AsNBoeCtcCuRwPh87mXAgKtXqd3qTCBgNFYzVZLXjYgLcynORpAgqhe24r5scucR8+6gfWaXBtHQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
