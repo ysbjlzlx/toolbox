@@ -1,6 +1,7 @@
-import { Box, Checkbox, Container, FormControlLabel, FormGroup, Slider, TextField } from '@mui/material';
+import { Box, Container, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 
+import { Checkbox, Col, Form, Input, Row, Slider } from 'antd';
 import { Block } from '../components/Block';
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
 import RefreshAdornment from '../components/RefreshAdornment';
@@ -38,70 +39,79 @@ export default function Random() {
   return (
     <Container>
       <Block sx={{ mt: 2 }}>
-        <FormGroup row>
-          <FormControlLabel
-            control={<Checkbox {...label} defaultChecked />}
-            label="数字 0 ～ 9"
-            value={numeric}
-            onChange={() => {
-              setNumeric(!numeric);
-            }}
-          />
-          <FormControlLabel
-            control={<Checkbox {...label} defaultChecked />}
-            label="小写字母 a ~ z"
-            value={lowerCase}
-            onChange={() => {
-              setLowerCase(!lowerCase);
-            }}
-          />
-          <FormControlLabel
-            control={<Checkbox {...label} defaultChecked />}
-            label="大写字母 A ~ Z"
-            value={upperCase}
-            onChange={() => {
-              setUpperCase(!upperCase);
-            }}
-          />
-          <FormControlLabel
-            control={<Checkbox {...label} />}
-            label="符号"
-            value={symbol}
-            onChange={() => {
-              setSymbol(!symbol);
-            }}
-          />
-          <TextField
-            label="符号"
-            value={symbolChars}
-            onChange={(event) => {
-              setSymbolChars(event.target.value);
-            }}
-            size="small"
-          />
-        </FormGroup>
-        <Box sx={{ mt: 3 }}>
-          <Slider
-            defaultValue={8}
-            valueLabelDisplay="on"
-            value={length}
-            min={6}
-            max={64}
-            step={1}
-            marks={[
-              { value: 6, label: '6' },
-              { value: 8, label: '8' },
-              { value: 16, label: '16' },
-              { value: 32, label: '32' },
-              { value: 64, label: '64' },
-            ]}
-            onChange={(event, value) => {
-              if (typeof value === 'number') {
-                setLength(value);
-              }
-            }}
-          />
-        </Box>
+        <Form layout="horizontal">
+          <Row>
+            <Col span={24}>
+              <Form.Item>
+                <Checkbox
+                  checked={numeric}
+                  onChange={() => {
+                    setNumeric(!numeric);
+                  }}
+                >
+                  数字 0 ～ 9
+                </Checkbox>
+              </Form.Item>
+              <Form.Item>
+                <Checkbox
+                  checked={lowerCase}
+                  onChange={() => {
+                    setLowerCase(!lowerCase);
+                  }}
+                >
+                  小写字母 a ~ z
+                </Checkbox>
+              </Form.Item>
+              <Form.Item>
+                <Checkbox
+                  checked={upperCase}
+                  onChange={() => {
+                    setUpperCase(!upperCase);
+                  }}
+                >
+                  大写字母 A ~ Z
+                </Checkbox>
+              </Form.Item>
+              <Form.Item>
+                <Checkbox
+                  checked={symbol}
+                  onChange={() => {
+                    setSymbol(!symbol);
+                  }}
+                >
+                  符号
+                </Checkbox>
+              </Form.Item>
+              <Form.Item>
+                <Input
+                  disabled={!symbol}
+                  value={symbolChars}
+                  onChange={(event) => {
+                    setSymbolChars(event.target.value);
+                  }}
+                />
+              </Form.Item>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24}>
+              <Form.Item>
+                <Slider
+                  value={length}
+                  min={6}
+                  max={64}
+                  step={1}
+                  marks={{ 6: '6', 8: '8', 16: '16', 32: '32', 64: '64' }}
+                  onChange={(value) => {
+                    if (typeof value === 'number') {
+                      setLength(value);
+                    }
+                  }}
+                />
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
 
         <Box sx={{ mt: 2 }}>
           <TextField
