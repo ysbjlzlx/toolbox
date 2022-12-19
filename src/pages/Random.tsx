@@ -1,9 +1,8 @@
-import { Container } from '@mui/material';
 import { useEffect, useState } from 'react';
 
+import { PageContainer } from '@ant-design/pro-layout';
 import { Refresh } from '@mui/icons-material';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider } from 'antd';
-import { Block } from '../components/Block';
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
 import { generator, GeneratorOptions } from '../scripts/RandomStringUtils';
 
@@ -27,21 +26,17 @@ export default function Random() {
   };
 
   const onValuesChange = (changedValues: any, allValues: GeneratorOptions) => {
-    console.log(changedValues);
-    console.log(allValues);
-    const varchar = generator(allValues);
-    setRandomString(varchar);
+    refresh(allValues);
   };
 
   const onFinish = (values: GeneratorOptions) => {
-    console.log(values);
     refresh(values);
   };
 
   return (
-    <Container>
-      <Block sx={{ mt: 2 }}>
-        <Form layout="horizontal" initialValues={initialOptions} onValuesChange={onValuesChange} onFinish={onFinish}>
+    <PageContainer title={false} style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}>
+      <Form layout="horizontal" initialValues={initialOptions} onValuesChange={onValuesChange} onFinish={onFinish}>
+        <Card actions={[<Button key="1" htmlType="submit" icon={<Refresh />} />]}>
           <Row>
             <Col span={4}>
               <Form.Item name="numeric" valuePropName="checked">
@@ -83,17 +78,15 @@ export default function Random() {
           <Row>
             <Col span={24}>
               <Form.Item>
-                <Card actions={[<Button key="1" htmlType="submit" icon={<Refresh />} />]}>
-                  <Input.Group compact>
-                    <Input value={randomString} style={{ width: 'calc(100% - 60px)' }} />
-                    <ContentCopyAdornment content={randomString} />
-                  </Input.Group>
-                </Card>
+                <Input.Group compact>
+                  <Input value={randomString} style={{ width: 'calc(100% - 60px)' }} />
+                  <ContentCopyAdornment content={randomString} />
+                </Input.Group>
               </Form.Item>
             </Col>
           </Row>
-        </Form>
-      </Block>
-    </Container>
+        </Card>
+      </Form>
+    </PageContainer>
   );
 }
