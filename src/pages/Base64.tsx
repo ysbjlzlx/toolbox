@@ -1,4 +1,5 @@
 import { Box, Button, ButtonGroup, Container, TextField } from '@mui/material';
+import { Input } from 'antd';
 import { enc } from 'crypto-js';
 import { useState } from 'react';
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
@@ -17,16 +18,14 @@ export default function Base64() {
   return (
     <Container>
       <Box sx={{ mt: 2 }}>
-        <TextField
-          label="文本"
+        <Input.TextArea
           value={plain}
           onChange={(event) => {
             setPlain(event.target.value);
           }}
-          fullWidth
-          multiline
-          minRows={5}
-          maxRows={10}
+          placeholder="文本"
+          autoSize={{ minRows: 5, maxRows: 10 }}
+          showCount
         />
       </Box>
       <Box sx={{ mt: 2 }}>

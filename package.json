@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^4.8.0",
     "@ant-design/pro-components": "2.3.47",
     "@codemirror/commands": "6.1.2",
     "@codemirror/lang-json": "6.0.1",
@@ -35,6 +36,7 @@
     "@codemirror/theme-one-dark": "6.1.0",
     "@codemirror/view": "6.7.1",
     "@craco/craco": "7.0.0",
+    "@emotion/css": "^11.10.5",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@hookform/resolvers": "2.9.10",
@@ -54,7 +56,7 @@
     "dayjs": "1.11.7",
     "file-saver": "2.0.5",
     "highlight.js": "^11.7.0",
-    "i18next": "22.4.5",
+    "i18next": "22.4.6",
     "i18next-browser-languagedetector": "7.0.1",
     "i18next-http-backend": "2.1.0",
     "joi": "17.7.0",
