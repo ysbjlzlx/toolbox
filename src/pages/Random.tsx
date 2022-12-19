@@ -83,7 +83,7 @@ export default function Random() {
           <Row>
             <Col span={24}>
               <Form.Item>
-                <Card actions={[<Button key="1" htmlType="submit" icon={<Refresh fontSize="small" />} />]}>
+                <Card actions={[<Button key="1" htmlType="submit" icon={<Refresh />} />]}>
                   <Input.Group compact>
                     <Input value={randomString} style={{ width: 'calc(100% - 60px)' }} />
                     <ContentCopyAdornment content={randomString} />
