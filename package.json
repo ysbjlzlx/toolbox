@@ -46,7 +46,7 @@
     "@mui/system": "5.11.0",
     "@tinymce/tinymce-react": "4.2.0",
     "ace-builds": "1.14.0",
-    "ahooks": "3.7.3",
+    "ahooks": "3.7.4",
     "antd": "5.1.0",
     "axios": "1.2.1",
     "bson-objectid": "2.0.4",
