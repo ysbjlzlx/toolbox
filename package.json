@@ -121,7 +121,7 @@
     "prettier": "2.8.1",
     "prettier-plugin-organize-imports": "3.2.1",
     "prettier-plugin-packagejson": "2.3.0",
-    "stylelint": "14.16.0",
+    "stylelint": "14.16.1",
     "stylelint-config-standard": "29.0.0",
     "typescript": "4.9.4"
   },
