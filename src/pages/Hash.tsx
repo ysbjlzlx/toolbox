@@ -1,7 +1,7 @@
-import { Container, TextField } from '@mui/material';
+import { Container } from '@mui/material';
+import { Input, Space } from 'antd';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
 import { ReactElement, useEffect, useState } from 'react';
-import ContentCopyAdornment from '../components/ContentCopyAdornment';
 
 interface HashResult {
   md5?: string;
@@ -35,56 +35,21 @@ const Hash = (): ReactElement => {
   }, [plainText]);
   return (
     <Container>
-      <TextField
-        label="原文"
-        value={plainText}
-        onChange={(event) => {
-          setPlainText(event.target.value);
-        }}
-        helperText={plainText.length || ''}
-        fullWidth
-        margin="normal"
-      />
-      <TextField
-        label="MD5"
-        value={hashResult?.md5}
-        fullWidth
-        margin="normal"
-        InputProps={{
-          endAdornment: <ContentCopyAdornment content={hashResult?.md5} />,
-        }}
-        helperText={hashResult?.md5?.length || ''}
-      />
-      <TextField
-        label="SHA1"
-        value={hashResult?.sha1}
-        fullWidth
-        margin="normal"
-        InputProps={{
-          endAdornment: <ContentCopyAdornment content={hashResult?.sha1} />,
-        }}
-        helperText={hashResult?.sha1?.length || ''}
-      />
-      <TextField
-        label="SHA256"
-        value={hashResult?.sha256}
-        fullWidth
-        margin="normal"
-        InputProps={{
-          endAdornment: <ContentCopyAdornment content={hashResult?.sha256} />,
-        }}
-        helperText={hashResult?.sha256?.length || ''}
-      />
-      <TextField
-        label="SHA512"
-        value={hashResult?.sha512}
-        fullWidth
-        margin="normal"
-        InputProps={{
-          endAdornment: <ContentCopyAdornment content={hashResult?.sha512} />,
-        }}
-        helperText={hashResult?.sha512?.length || ''}
-      />
+      <Space direction="vertical" style={{ display: 'flex' }} size="large">
+        <Input.TextArea
+          value={plainText}
+          rows={2}
+          placeholder="原文"
+          onChange={(event: any) => {
+            setPlainText(event.target.value);
+          }}
+          showCount
+        />
+        <Input value={hashResult?.md5} addonBefore="MD5" showCount />
+        <Input value={hashResult?.sha1} addonBefore="SHA1" showCount />
+        <Input value={hashResult?.sha256} addonBefore="SHA256" showCount />
+        <Input value={hashResult?.sha512} addonBefore="SHA512" showCount />
+      </Space>
     </Container>
   );
 };
