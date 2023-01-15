@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "@ant-design/icons": "^4.8.0",
+    "@ant-design/icons": "^5.0.0",
     "@ant-design/pro-components": "2.3.52",
     "@codemirror/commands": "6.1.2",
     "@codemirror/lang-json": "6.0.1",
