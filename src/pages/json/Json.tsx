@@ -49,15 +49,12 @@ const Json = () => {
 
       <TabPanel
         value="json-editor"
-        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 7px)`, padding: 0, paddingTop: '5px' }}
+        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px)`, padding: 0, paddingTop: '5px' }}
       >
         <JSON />
       </TabPanel>
 
-      <TabPanel
-        value="json-to-yaml"
-        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)`, padding: 0 }}
-      >
+      <TabPanel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px)`, padding: 0 }}>
         <JsonToYaml />
       </TabPanel>
 
