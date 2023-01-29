@@ -2,9 +2,12 @@ name: Pull request check
 
 on:
   pull_request:
+  push:
+    branches:
+      - develop
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -12,12 +15,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm build
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn build

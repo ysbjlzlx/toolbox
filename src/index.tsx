@@ -1,11 +1,10 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { ConfigProvider } from 'antd';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import './aio/i18n';
 import Router from './aio/Router';
-import globalTheme from './config/global-theme';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
@@ -13,12 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={globalTheme}>
-      <CssBaseline />
+    <ConfigProvider>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
-    </ThemeProvider>
+    </ConfigProvider>
   </React.StrictMode>,
 );
 

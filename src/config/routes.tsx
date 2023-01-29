@@ -12,7 +12,6 @@ const Base64 = lazy(() => import('../pages/Base64'));
 const Excel = lazy(() => import('../pages/Excel'));
 const Hash = lazy(() => import('../pages/Hash'));
 const QRCode = lazy(() => import('../pages/QrCode'));
-const Code = lazy(() => import('../pages/code'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
@@ -116,14 +115,6 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Formatter />
-          </Suspense>
-        ),
-      },
-      {
-        path: '/code',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Code />
           </Suspense>
         ),
       },
