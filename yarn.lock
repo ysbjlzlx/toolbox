@@ -12147,10 +12147,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-jsoneditor@0.14.3:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/vanilla-jsoneditor/-/vanilla-jsoneditor-0.14.3.tgz#e9856205309935c0ec3963fd164c4f0d832dbc15"
-  integrity sha512-uQ69OSoi4TjD0uHa6aT/JV/yUwHElSjECGVjOtBD3bJxN4zqN+gy8fx9soHRH644jPatT/yvQy6sL4xshGZjVg==
+vanilla-jsoneditor@0.14.4:
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/vanilla-jsoneditor/-/vanilla-jsoneditor-0.14.4.tgz#7dcd2942a4a184058cf6875fe938002256d51ca8"
+  integrity sha512-4YeIkrfCxhSmgOYpFPyGIMEX6yxAN3oj4Dz1v+lTan5NH/5k9YjulWUX9JVphiEWFqoMIwtOs038FOXn6n19jA==
 
 vary@~1.1.2:
   version "1.1.2"
