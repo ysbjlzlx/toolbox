@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "5.0.1",
-    "@ant-design/pro-components": "2.3.54",
+    "@ant-design/pro-components": "2.3.57",
     "@craco/craco": "7.0.0",
     "@emotion/css": "^11.10.5",
     "@emotion/react": "11.10.6",
