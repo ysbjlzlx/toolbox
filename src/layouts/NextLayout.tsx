@@ -43,8 +43,10 @@ const NextLayout = () => {
           menuItemRender={(item, dom) => (
             <div
               onClick={() => {
-                navigate(item.path || '/welcome');
-                setPathname(item.path || '/welcome');
+                if (item.disabled !== true) {
+                  navigate(item.path || '/welcome');
+                  setPathname(item.path || '/welcome');
+                }
               }}
             >
               {dom}

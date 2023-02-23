@@ -18,7 +18,7 @@ export const route: Route = {
   children: [
     {
       name: 'JSON',
-      icon: <DataObject />,
+      icon: <DataObject fontSize="small" />,
       children: [
         {
           name: 'JSON 编辑器',

@@ -28,15 +28,6 @@ const Bson = lazy(() => import('../pages/bson/Bson'));
 
 const routes: RouteObject[] = [
   {
-    path: '/',
-    index: true,
-    element: (
-      <Suspense fallback={<Loading />}>
-        <App />
-      </Suspense>
-    ),
-  },
-  {
     path: '/json',
     element: <NextLayout />,
     children: [
@@ -70,6 +61,14 @@ const routes: RouteObject[] = [
     path: '/',
     element: <NextLayout />,
     children: [
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <App />
+          </Suspense>
+        ),
+      },
       {
         path: '/yaml',
         element: (
