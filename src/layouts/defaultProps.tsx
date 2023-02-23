@@ -18,27 +18,22 @@ export const route: Route = {
   children: [
     {
       name: 'JSON',
-      desc: 'JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。',
-      path: '/json',
       icon: <DataObject />,
       children: [
         {
           name: 'JSON 编辑器',
-          desc: 'JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。',
           path: '/json/json-editor',
-          icon: <DataObject />,
+          key: '/json/json-editor',
         },
         {
           name: 'JSON To YAML',
-          desc: 'JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。',
           path: '/json/json-to-yaml',
-          icon: <DataObject />,
+          key: '/json/json-to-yaml',
         },
         {
           name: 'JSON To Excel',
-          desc: 'JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。',
           path: '/json/json-to-excel',
-          icon: <DataObject />,
+          key: '/json/json-to-excel',
           disabled: true,
         },
       ],

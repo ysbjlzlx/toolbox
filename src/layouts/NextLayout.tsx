@@ -1,13 +1,14 @@
 import type { ProSettings } from '@ant-design/pro-layout';
 import { ProLayout } from '@ant-design/pro-layout';
 import { ProConfigProvider } from '@ant-design/pro-provider';
-import { useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import { route as defaultProps } from './defaultProps';
 
 const NextLayout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [settings, setSetting] = useState<Partial<ProSettings>>({
     fixSiderbar: true,
     layout: 'side',
@@ -19,6 +20,10 @@ const NextLayout = () => {
   });
 
   const [pathname, setPathname] = useState('/list/sub-page/sub-sub-page1');
+
+  useEffect(() => {
+    setPathname(location.pathname);
+  }, [location]);
   return (
     <div
       id="test-pro-layout"
