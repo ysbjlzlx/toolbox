@@ -21,6 +21,7 @@ const Writer = lazy(() => import('../pages/Writer'));
 const Formatter = lazy(() => import('../pages/formatter'));
 
 const JsonEditor = lazy(() => import('../pages/json/JsonEditor'));
+const Json = lazy(() => import('../pages/json/Json'));
 const JsonToYaml = lazy(() => import('../pages/json/JsonToYaml'));
 const JsonToExcel = lazy(() => import('../pages/json/JsonToExcel'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
@@ -35,7 +36,7 @@ const routes: RouteObject[] = [
         path: 'json-editor',
         element: (
           <Suspense fallback={<Loading />}>
-            <JsonEditor />
+            <Json />
           </Suspense>
         ),
       },
