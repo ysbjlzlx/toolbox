@@ -2,15 +2,15 @@ import { Tabs } from 'antd';
 import { Tab } from 'rc-tabs/lib/interface';
 import { useState } from 'react';
 
-import JSON from './JsonEditor';
+import JsonEditor from './JsonEditor';
 
 const Json = () => {
   // {{ height: `calc(100% - ${tabWrapperSize?.height || 48}px)`, padding: 0, paddingTop: '5px' }}
   const item: Tab = {
     key: 'json',
-    label: 'JSON',
+    label: 'JSON Editor',
     closable: false,
-    children: <JSON />,
+    children: <JsonEditor />,
     style: {
       height: `calc(100vh - 56px)`,
     },
