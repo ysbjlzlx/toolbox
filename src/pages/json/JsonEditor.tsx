@@ -1,25 +1,45 @@
+import { useLocalStorageState } from 'ahooks';
 import { FC } from 'react';
 import { Content, Mode } from 'vanilla-jsoneditor';
 
 import VanillaJSONEditor from '../../components/VanillaJSONEditor';
-import useJsonEditorStore from '../../stores/JsonEditorStore';
 
 const JSONBeta: FC = () => {
-  const { mode, content, setMode, setContent } = useJsonEditorStore();
+  const defaultValue = {
+    mode: 'text',
+    content: {
+      text: '',
+    },
+  };
+  const [jsonStorage, setJsonStorage] = useLocalStorageState<any>('json', { defaultValue });
 
   const resolveMode = (): Mode | undefined => {
-    return mode;
+    if (jsonStorage === undefined || jsonStorage === null) {
+      return Mode.text;
+    }
+    return jsonStorage.mode as Mode;
   };
 
   const onChange = (content: Content) => {
-    setContent(content);
+    setJsonStorage((oldValue: any) => {
+      return { ...oldValue, content: content };
+    });
   };
 
   const onChangMode = (mode: Mode) => {
-    setMode(mode);
+    setJsonStorage((oldValue: any) => {
+      return { ...oldValue, mode: mode };
+    });
   };
 
-  return <VanillaJSONEditor mode={resolveMode()} content={content} onChange={onChange} onChangeMode={onChangMode} />;
+  return (
+    <VanillaJSONEditor
+      mode={resolveMode()}
+      content={jsonStorage.content}
+      onChange={onChange}
+      onChangeMode={onChangMode}
+    />
+  );
 };
 
 export default JSONBeta;
