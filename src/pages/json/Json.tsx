@@ -1,24 +1,35 @@
 import { Tabs } from 'antd';
 import { Tab } from 'rc-tabs/lib/interface';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
+import { useLocalStorageState } from 'ahooks';
+import _ from 'lodash';
 import * as React from 'react';
 import JsonEditor from './JsonEditor';
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Json = () => {
+  const [jsonTabs, setJsonTabs] = useLocalStorageState<string[]>(`json-tabs`, { defaultValue: ['0'] });
   // {{ height: `calc(100% - ${tabWrapperSize?.height || 48}px)`, padding: 0, paddingTop: '5px' }}
-  const item: Tab = {
-    key: '0',
-    label: 'JSON Editor',
-    closable: false,
-    children: <JsonEditor />,
-    style: {
-      height: `calc(100vh - 56px)`,
-    },
-  };
+
   const [activeKey, setActiveKey] = useState<string>('0');
-  const [items, setItems] = useState<Tab[]>([item]);
+  const [items, setItems] = useState<Tab[]>([]);
+
+  useEffect(() => {
+    const item = jsonTabs.map((idx, i) => {
+      return {
+        key: idx,
+        label: 'JSON Editor - ' + idx,
+        closable: i !== 0,
+        children: <JsonEditor idx={idx} />,
+        style: {
+          height: `calc(100vh - 56px)`,
+        },
+      };
+    });
+    setActiveKey(item[0].key);
+    setItems(item);
+  }, [jsonTabs]);
 
   const onChange = (activeKey: string) => {
     setActiveKey(activeKey);
@@ -41,7 +52,7 @@ const Json = () => {
     const newPanes = [...items];
     newPanes.push({
       label: 'JSON Editor - ' + newActiveKey,
-      children: <JsonEditor />,
+      children: <JsonEditor idx={newActiveKey} />,
       key: newActiveKey,
       style: {
         height: `calc(100vh - 56px)`,
@@ -49,9 +60,18 @@ const Json = () => {
     });
     setItems(newPanes);
     setActiveKey(newActiveKey);
+    setJsonTabs((oldValue: any) => {
+      return [...oldValue, newActiveKey];
+    });
   };
 
   const remove = (targetKey: TargetKey) => {
+    localStorage.removeItem(`json-${targetKey}`);
+    const item = _.remove(jsonTabs, (idx) => {
+      return idx !== targetKey;
+    });
+    console.log(item);
+    setJsonTabs(item);
     let newActiveKey = activeKey;
     let lastIndex = -1;
     items.forEach((item, i) => {
