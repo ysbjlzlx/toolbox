@@ -12,7 +12,7 @@ interface JsonEditorStore {
 const useJsonEditorStore = create<JsonEditorStore>()(
   persist(
     (set) => ({
-      mode: 'text' as Mode,
+      mode: Mode.text,
       content: { text: '' },
       setMode: (val: Mode) =>
         set(() => {
