@@ -43,52 +43,24 @@ const Json = () => {
   };
 
   const add = () => {
-    const keys = items.map((i) => {
-      return Number(i.key);
+    const keys = jsonTabs.map((i) => {
+      return Number(i);
     });
     const maxKey = Math.max(...keys);
 
     const newActiveKey = `${maxKey + 1}`;
-    const newPanes = [...items];
-    newPanes.push({
-      label: 'JSON Editor - ' + newActiveKey,
-      children: <JsonEditor idx={newActiveKey} />,
-      key: newActiveKey,
-      style: {
-        height: `calc(100vh - 56px)`,
-      },
-    });
-    setItems(newPanes);
-    setActiveKey(newActiveKey);
+
     setJsonTabs((oldValue: any) => {
       return [...oldValue, newActiveKey];
     });
   };
 
   const remove = (targetKey: TargetKey) => {
-    localStorage.removeItem(`json-${targetKey}`);
     const item = _.remove(jsonTabs, (idx) => {
       return idx !== targetKey;
     });
-    console.log(item);
     setJsonTabs(item);
-    let newActiveKey = activeKey;
-    let lastIndex = -1;
-    items.forEach((item, i) => {
-      if (item.key === targetKey) {
-        lastIndex = i - 1;
-      }
-    });
-    const newPanes = items.filter((item) => item.key !== targetKey);
-    if (newPanes.length && newActiveKey === targetKey) {
-      if (lastIndex >= 0) {
-        newActiveKey = newPanes[lastIndex].key;
-      } else {
-        newActiveKey = newPanes[0].key;
-      }
-    }
-    setItems(newPanes);
-    setActiveKey(newActiveKey);
+    localStorage.removeItem(`json-${targetKey}`);
   };
 
   return <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />;
