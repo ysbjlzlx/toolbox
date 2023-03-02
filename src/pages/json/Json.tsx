@@ -10,7 +10,7 @@ import JsonEditor from './JsonEditor';
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Json = () => {
   const [jsonTabs, setJsonTabs] = useLocalStorageState<string[]>(`json-tabs`, { defaultValue: ['0'] });
-  const [activeKey, setActiveKey] = useState<string>('0');
+  const [activeKey, setActiveKey] = useLocalStorageState<string>('json-tabs-active-key', { defaultValue: '0' });
   const [items, setItems] = useState<Tab[]>([]);
 
   useEffect(() => {
