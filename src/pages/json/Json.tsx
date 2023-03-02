@@ -30,7 +30,7 @@ const Json = () => {
     }
 
     setItems(item);
-  }, [jsonTabs, activeKey]);
+  }, [jsonTabs, activeKey, setActiveKey]);
 
   const onChange = (activeKey: string) => {
     setActiveKey(activeKey);
