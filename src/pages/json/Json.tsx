@@ -18,7 +18,7 @@ const Json = () => {
       return {
         key: idx,
         label: 'JSON Editor - ' + idx,
-        closable: i !== 0,
+        closable: jsonTabs.length > 1,
         children: <JsonEditor idx={idx} />,
         style: {
           height: `calc(100vh - 56px)`,
