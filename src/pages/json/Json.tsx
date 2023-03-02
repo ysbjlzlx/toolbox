@@ -25,9 +25,12 @@ const Json = () => {
         },
       };
     });
-    setActiveKey(item[0].key);
+    if (_.indexOf(jsonTabs, activeKey) === -1) {
+      setActiveKey(item[0].key);
+    }
+
     setItems(item);
-  }, [jsonTabs]);
+  }, [jsonTabs, activeKey]);
 
   const onChange = (activeKey: string) => {
     setActiveKey(activeKey);
