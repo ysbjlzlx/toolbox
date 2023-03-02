@@ -1,10 +1,10 @@
+import { useLocalStorageState } from 'ahooks';
 import { Tabs } from 'antd';
+import _ from 'lodash';
 import { Tab } from 'rc-tabs/lib/interface';
+import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import { useLocalStorageState } from 'ahooks';
-import _ from 'lodash';
-import * as React from 'react';
 import JsonEditor from './JsonEditor';
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
@@ -56,9 +56,7 @@ const Json = () => {
   };
 
   const remove = (targetKey: TargetKey) => {
-    const item = _.remove(jsonTabs, (idx) => {
-      return idx !== targetKey;
-    });
+    const item = _.without(jsonTabs, String(targetKey));
     setJsonTabs(item);
     localStorage.removeItem(`json-${targetKey}`);
   };
