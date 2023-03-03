@@ -4,14 +4,19 @@ import { Content, Mode } from 'vanilla-jsoneditor';
 
 import VanillaJSONEditor from '../../components/VanillaJSONEditor';
 
-const JSONBeta: FC = () => {
+interface Props {
+  idx?: string;
+}
+
+const JSONBeta: FC<Props> = (props) => {
   const defaultValue = {
     mode: 'text',
     content: {
       text: '',
     },
   };
-  const [jsonStorage, setJsonStorage] = useLocalStorageState<any>('json', { defaultValue });
+  const idx = props?.idx || '0';
+  const [jsonStorage, setJsonStorage] = useLocalStorageState<any>(`json-${idx}`, { defaultValue });
 
   const resolveMode = (): Mode | undefined => {
     if (jsonStorage === undefined || jsonStorage === null) {

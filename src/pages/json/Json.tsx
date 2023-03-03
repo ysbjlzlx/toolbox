@@ -1,71 +1,69 @@
-import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Box, Tab } from '@mui/material';
-import { useSize } from 'ahooks';
-import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
-
+import { Tabs } from 'antd';
+import _ from 'lodash';
+import { Tab } from 'rc-tabs/lib/interface';
 import * as React from 'react';
-import JSON from './JsonEditor';
-import JsonToExcel from './JsonToExcel';
-import JsonToYaml from './JsonToYaml';
+import { useEffect, useState } from 'react';
 
+import useJsonTabStore from '../../stores/JsonTabStore';
+import JsonEditor from './JsonEditor';
+
+type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Json = () => {
-  const tabWrapperRef = useRef(null);
-  const [currentTab, setCurrentTab] = useState<string>('json-editor');
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { t } = useTranslation();
-  const tabWrapperSize = useSize(tabWrapperRef);
-
-  const setTabSearchParam = (name: string) => {
-    searchParams.set('tab', name);
-    setSearchParams(searchParams);
-  };
+  const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
+  const [items, setItems] = useState<Tab[]>([]);
 
   useEffect(() => {
-    let tab = searchParams.get('tab');
-    if (!tab) {
-      searchParams.set('tab', 'json-editor');
-      setSearchParams(searchParams);
-    } else {
-      setCurrentTab(tab);
+    const item = jsonTabs.map((idx, i) => {
+      return {
+        key: idx,
+        label: 'JSON Editor - ' + idx,
+        closable: true,
+        children: <JsonEditor idx={idx} />,
+        style: {
+          height: `calc(100vh - 56px)`,
+        },
+      };
+    });
+    if (_.indexOf(jsonTabs, activeKey) === -1) {
+      setActiveKey(item[0].key);
     }
-  }, [searchParams, setSearchParams]);
 
-  const handleChange = (_event: React.SyntheticEvent, value: string) => {
-    setCurrentTab(value || 'json-editor');
-    setTabSearchParam(value || 'json-editor');
+    setItems(item);
+  }, [jsonTabs, activeKey, setActiveKey]);
+
+  const onChange = (activeKey: string) => {
+    setActiveKey(activeKey);
+  };
+  const onEdit = (targetKey: React.MouseEvent | React.KeyboardEvent | string, action: 'add' | 'remove') => {
+    if (action === 'add') {
+      add();
+    } else {
+      remove(targetKey);
+    }
   };
 
-  return (
-    <TabContext value={currentTab}>
-      <Box ref={tabWrapperRef}>
-        <TabList onChange={handleChange}>
-          <Tab value="json-editor" label={t('JSON Editor')} />
-          <Tab value="json-to-yaml" label={t('JSON to YAML')} />
-          <Tab value="json-to-excel" label={t('JSON to Excel')} disabled />
-        </TabList>
-      </Box>
+  const add = () => {
+    let newActiveKey = '0';
+    if (jsonTabs && jsonTabs.length > 0) {
+      const keys = jsonTabs.map((i) => {
+        return Number(i);
+      });
+      const maxKey = Math.max(...keys);
 
-      <TabPanel
-        value="json-editor"
-        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px)`, padding: 0, paddingTop: '5px' }}
-      >
-        <JSON />
-      </TabPanel>
+      newActiveKey = `${maxKey + 1}`;
+    }
+    addJsonTab(newActiveKey);
+  };
 
-      <TabPanel value="json-to-yaml" sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px)`, padding: 0 }}>
-        <JsonToYaml />
-      </TabPanel>
+  const remove = (targetKey: TargetKey) => {
+    removeJsonTab(String(targetKey));
+    localStorage.removeItem(`json-${targetKey}`);
+    if (jsonTabs && jsonTabs.length <= 1) {
+      addJsonTab('0');
+    }
+  };
 
-      <TabPanel
-        value="json-to-excel"
-        sx={{ height: `calc(100% - ${tabWrapperSize?.height || 48}px - 2px)`, padding: 0 }}
-      >
-        <JsonToExcel />
-      </TabPanel>
-    </TabContext>
-  );
+  return <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />;
 };
 
 export default Json;

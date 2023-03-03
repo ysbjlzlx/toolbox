@@ -20,29 +20,53 @@ const Totp = lazy(() => import('../pages/totp'));
 const Writer = lazy(() => import('../pages/Writer'));
 const Formatter = lazy(() => import('../pages/formatter'));
 
+const JsonEditor = lazy(() => import('../pages/json/JsonEditor'));
 const Json = lazy(() => import('../pages/json/Json'));
+const JsonToYaml = lazy(() => import('../pages/json/JsonToYaml'));
+const JsonToExcel = lazy(() => import('../pages/json/JsonToExcel'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
 const Bson = lazy(() => import('../pages/bson/Bson'));
 
 const routes: RouteObject[] = [
   {
-    path: '/',
-    index: true,
-    element: (
-      <Suspense fallback={<Loading />}>
-        <App />
-      </Suspense>
-    ),
+    path: '/json',
+    element: <NextLayout />,
+    children: [
+      {
+        path: 'json-editor',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Json />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'json-to-yaml',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <JsonToYaml />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'json-to-excel',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <JsonToExcel />
+          </Suspense>
+        ),
+      },
+    ],
   },
   {
     path: '/',
     element: <NextLayout />,
     children: [
       {
-        path: '/json',
+        index: true,
         element: (
           <Suspense fallback={<Loading />}>
-            <Json />
+            <App />
           </Suspense>
         ),
       },
