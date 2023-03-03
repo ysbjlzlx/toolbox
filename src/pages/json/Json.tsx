@@ -18,7 +18,7 @@ const Json = () => {
       return {
         key: idx,
         label: 'JSON Editor - ' + idx,
-        closable: jsonTabs.length > 1,
+        closable: true,
         children: <JsonEditor idx={idx} />,
         style: {
           height: `calc(100vh - 56px)`,
@@ -44,12 +44,15 @@ const Json = () => {
   };
 
   const add = () => {
-    const keys = jsonTabs.map((i) => {
-      return Number(i);
-    });
-    const maxKey = Math.max(...keys);
+    let newActiveKey = '0';
+    if (jsonTabs && jsonTabs.length > 0) {
+      const keys = jsonTabs.map((i) => {
+        return Number(i);
+      });
+      const maxKey = Math.max(...keys);
 
-    const newActiveKey = `${maxKey + 1}`;
+      newActiveKey = `${maxKey + 1}`;
+    }
 
     setJsonTabs((oldValue: any) => {
       return [...oldValue, newActiveKey];
@@ -57,7 +60,10 @@ const Json = () => {
   };
 
   const remove = (targetKey: TargetKey) => {
-    const item = _.without(jsonTabs, String(targetKey));
+    let item = _.without(jsonTabs, String(targetKey));
+    if (item && item.length === 0) {
+      item = ['0'];
+    }
     setJsonTabs(item);
     localStorage.removeItem(`json-${targetKey}`);
   };
