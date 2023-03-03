@@ -1,16 +1,15 @@
-import { useLocalStorageState } from 'ahooks';
 import { Tabs } from 'antd';
 import _ from 'lodash';
 import { Tab } from 'rc-tabs/lib/interface';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
+import useJsonTabStore from '../../stores/JsonTabStore';
 import JsonEditor from './JsonEditor';
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Json = () => {
-  const [jsonTabs, setJsonTabs] = useLocalStorageState<string[]>(`json-tabs`, { defaultValue: ['0'] });
-  const [activeKey, setActiveKey] = useLocalStorageState<string>('json-tabs-active-key', { defaultValue: '0' });
+  const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
   const [items, setItems] = useState<Tab[]>([]);
 
   useEffect(() => {
@@ -53,19 +52,15 @@ const Json = () => {
 
       newActiveKey = `${maxKey + 1}`;
     }
-
-    setJsonTabs((oldValue: any) => {
-      return [...oldValue, newActiveKey];
-    });
+    addJsonTab(newActiveKey);
   };
 
   const remove = (targetKey: TargetKey) => {
-    let item = _.without(jsonTabs, String(targetKey));
-    if (item && item.length === 0) {
-      item = ['0'];
-    }
-    setJsonTabs(item);
+    removeJsonTab(String(targetKey));
     localStorage.removeItem(`json-${targetKey}`);
+    if (jsonTabs && jsonTabs.length <= 1) {
+      addJsonTab('0');
+    }
   };
 
   return <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />;
