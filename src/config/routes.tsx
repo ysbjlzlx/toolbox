@@ -20,7 +20,6 @@ const Totp = lazy(() => import('../pages/totp'));
 const Writer = lazy(() => import('../pages/Writer'));
 const Formatter = lazy(() => import('../pages/formatter'));
 
-const JsonEditor = lazy(() => import('../pages/json/JsonEditor'));
 const Json = lazy(() => import('../pages/json/Json'));
 const JsonToYaml = lazy(() => import('../pages/json/JsonToYaml'));
 const JsonToExcel = lazy(() => import('../pages/json/JsonToExcel'));

@@ -8,6 +8,7 @@ import { format, parser } from '../../utils/formatter';
 import 'ace-builds/src-min-noconflict/ext-searchbox';
 import 'ace-builds/src-min-noconflict/mode-json';
 import 'ace-builds/src-min-noconflict/mode-json5';
+import 'ace-builds/src-min-noconflict/mode-yaml';
 import 'ace-builds/src-min-noconflict/theme-monokai';
 
 const Formatter = () => {
@@ -54,6 +55,7 @@ const Formatter = () => {
               options={[
                 { label: 'JSON', value: 'json' },
                 { label: 'JSON5', value: 'json5' },
+                { label: 'YAML', value: 'yaml' },
               ]}
               style={{ width: 100 }}
             />
