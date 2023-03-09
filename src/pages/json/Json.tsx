@@ -25,7 +25,8 @@ const Json = () => {
       };
     });
     if (_.indexOf(jsonTabs, activeKey) === -1) {
-      setActiveKey(item[0].key);
+      const lastItem = _.last(item);
+      setActiveKey(lastItem?.key || '0');
     }
 
     setItems(item);
@@ -53,6 +54,7 @@ const Json = () => {
       newActiveKey = `${maxKey + 1}`;
     }
     addJsonTab(newActiveKey);
+    setActiveKey(newActiveKey);
   };
 
   const remove = (targetKey: TargetKey) => {
