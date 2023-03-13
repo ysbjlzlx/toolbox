@@ -94,20 +94,20 @@
     rc-resize-observer "^1.0.0"
     rc-util "^5.4.0"
 
-"@ant-design/pro-components@2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@ant-design/pro-components/-/pro-components-2.4.0.tgz#3cbe31ae709e31ccd48d04e74f0dc89edea389e4"
-  integrity sha512-aiIvD62UX8rsuQYlosiU8dQ8L9kVWKzmaVP9gAJnQLJvCBgHW9jT8gZxQ5ZvouYRzhd6Evlca14Hz5gSbn43mw==
+"@ant-design/pro-components@2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/pro-components/-/pro-components-2.4.1.tgz#bcad569e245b007300bb5932094ecb679e84a385"
+  integrity sha512-pn4x11HH0DptA3X6niXuQc2KKULzDSDeYL+R2YwZz3LY+E5uDdkZqPkDSUQGYRsL71cZONszhwvMcmH1QG5S6w==
   dependencies:
     "@ant-design/pro-card" "^2.3.0"
     "@ant-design/pro-descriptions" "^2.2.0"
     "@ant-design/pro-field" "^2.5.0"
     "@ant-design/pro-form" "^2.8.0"
-    "@ant-design/pro-layout" "^7.10.0"
-    "@ant-design/pro-list" "^2.3.0"
+    "@ant-design/pro-layout" "^7.10.1"
+    "@ant-design/pro-list" "^2.3.1"
     "@ant-design/pro-provider" "^2.6.0"
     "@ant-design/pro-skeleton" "^2.1.0"
-    "@ant-design/pro-table" "^3.5.0"
+    "@ant-design/pro-table" "^3.5.1"
     "@ant-design/pro-utils" "^2.7.0"
     "@babel/runtime" "^7.16.3"
 
@@ -161,10 +161,10 @@
     use-json-comparison "^1.0.5"
     use-media-antd-query "^1.1.0"
 
-"@ant-design/pro-layout@^7.10.0":
-  version "7.10.0"
-  resolved "https://registry.yarnpkg.com/@ant-design/pro-layout/-/pro-layout-7.10.0.tgz#9ed89e9a56b976ec34eba4e6d33de1afa92e354a"
-  integrity sha512-Dg+9/1IKbLJzFGcaRcOJn/T7D6y/1GQuTibHhcRHEHds54HT4VbyVT6Q6YhsSKdafAXzXgnr7vn/yg/9gdGneA==
+"@ant-design/pro-layout@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/pro-layout/-/pro-layout-7.10.1.tgz#d1f2d28a3a1c9c54c6c472d605d2679afc857950"
+  integrity sha512-1XJgsdpNXmx+0hlSIaVBrZ9v7lBbO1AB+5RdTD5LOGNjHECqMkc7B8cIN4awLDtGvGQTbHBJKogTJolHi65ZBQ==
   dependencies:
     "@ant-design/icons" "^5.0.0"
     "@ant-design/pro-provider" "^2.6.0"
@@ -183,15 +183,15 @@
     use-media-antd-query "^1.1.0"
     warning "^4.0.3"
 
-"@ant-design/pro-list@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@ant-design/pro-list/-/pro-list-2.3.0.tgz#b48c5e81729d5c7a4e563208ccd5d3a3751bfb53"
-  integrity sha512-yJAktTx+jqNXOyzApNezndClK8pwr/krGcC+87BsAGVkjmxPIB1wb4USZd/Ld6nUAq+2hfxJNG1S9c3w15uDeQ==
+"@ant-design/pro-list@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/pro-list/-/pro-list-2.3.1.tgz#f3cac0c1f8381524bc4af35f9887cecc96239096"
+  integrity sha512-reAXvoamrqOWzzwCkDTHrzKllbQCUoiXJlwSaJ0Ubn8T6hQo2WLyVrjLqO63/19KAzcTPZJk+PECOgQcl3enHQ==
   dependencies:
     "@ant-design/icons" "^5.0.0"
     "@ant-design/pro-card" "^2.3.0"
     "@ant-design/pro-field" "^2.5.0"
-    "@ant-design/pro-table" "^3.5.0"
+    "@ant-design/pro-table" "^3.5.1"
     "@babel/runtime" "^7.18.0"
     classnames "^2.2.6"
     dayjs "^1.11.4"
@@ -218,10 +218,10 @@
     "@babel/runtime" "^7.18.0"
     use-media-antd-query "^1.1.0"
 
-"@ant-design/pro-table@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@ant-design/pro-table/-/pro-table-3.5.0.tgz#70ec705cdb50f4572002cd1f0510772f23255eed"
-  integrity sha512-3BTNgksKIvseZs+CeNL35SCY1IChAkiB3mC6KbzcUe5BSiZ2DetSJuGsPiM/t1xF74Tmw2ry5PFeZ4OWT9LRkQ==
+"@ant-design/pro-table@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/pro-table/-/pro-table-3.5.1.tgz#2060bc0e3bbc3887e66d5d0cf55d1da3ca5025ed"
+  integrity sha512-ootQ2WBhTMhJjSDSwOvCqn0J7d07mDP2/DZU365rfs3w9OCnzNn61p8K8zP8+QMd60s5lNNXFSVcg5x40zktJQ==
   dependencies:
     "@ant-design/icons" "^5.0.0"
     "@ant-design/pro-card" "^2.3.0"
