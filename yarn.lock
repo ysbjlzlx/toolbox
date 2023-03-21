@@ -8907,10 +8907,10 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-otpauth@9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/otpauth/-/otpauth-9.0.2.tgz#5f369bdeb74513fb6c0f25c5ae5ac6b3780ebc89"
-  integrity sha512-0TzpkJYg24VvIK3/K91HKpTtMlwm73UoThhcGY8fZsXcwHDrqf008rfdOjj3NnQuyuT11+vHyyO//qRzi6OZ9A==
+otpauth@9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/otpauth/-/otpauth-9.1.0.tgz#f3a925b85260f184743572a702ac5a789bfacaef"
+  integrity sha512-jCyasxSSeH/G7S5An4+tN0NTGDg87gJlsVRCoBSP9JlCbDpFeDlCwlkFEqFBWChyHYCqZvNTttgdnZUvLoZIxQ==
   dependencies:
     jssha "~3.3.0"
 
