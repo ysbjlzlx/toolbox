@@ -8018,10 +8018,10 @@ material-colors@^1.2.1:
   resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
-material-ui-popup-state@5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/material-ui-popup-state/-/material-ui-popup-state-5.0.5.tgz#67a4f195ffda2c8e3639dc129b42ac9e3baecbd4"
-  integrity sha512-ZFEazmfaeDOeG5KFOfwEpzlL0HlRE1tVqwGkSuSMhGlz9/apAHfixIBR3oIJYVroTcgdUmBtKcS01QqEq/rg0A==
+material-ui-popup-state@5.0.7:
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/material-ui-popup-state/-/material-ui-popup-state-5.0.7.tgz#623cc570ff1f32894ef093ffbae2987fe99c58f1"
+  integrity sha512-oIMqFOdF+779pWmt9yHmbZ2ViIvHQvkiYHrdfR5cNUTiiMkPqWyBA5tW38oGWVyyO4zz8X4jz6mn1Sw5OuSeWQ==
   dependencies:
     "@babel/runtime" "^7.20.6"
     "@mui/material" "^5.0.0"
