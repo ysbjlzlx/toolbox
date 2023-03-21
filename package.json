@@ -113,7 +113,7 @@
     "eslint-config-react-app": "7.0.1",
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
-    "prettier": "2.8.5",
+    "prettier": "2.8.6",
     "prettier-plugin-organize-imports": "3.2.2",
     "prettier-plugin-packagejson": "2.4.3",
     "stylelint": "15.3.0",
