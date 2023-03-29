@@ -1,24 +1,13 @@
-import { LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
+import { FileImageOutlined, LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
 import { Route } from '@ant-design/pro-layout/lib/typing';
-import {
-  Code,
-  Compress,
-  DataObject,
-  Drafts,
-  Image,
-  Shuffle,
-  SyncAlt,
-  TableView,
-  Tag,
-  Timer,
-} from '@mui/icons-material';
+import { Code, Compress, DataObject, Drafts, Shuffle, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
 export const route: Route = {
   path: '/',
   children: [
     {
       name: 'JSON',
-      icon: <DataObject fontSize="small" />,
+      icon: <DataObject fontSize="inherit" />,
       children: [
         {
           name: 'JSON 编辑器',
@@ -42,19 +31,19 @@ export const route: Route = {
       name: 'YAML',
       desc: 'YAML 格式处理',
       path: '/yaml',
-      icon: <SyncAlt />,
+      icon: <SyncAlt fontSize="inherit" />,
     },
     {
       name: 'BSON ObjectID',
       desc: 'BSON',
       path: '/bson-object-id',
-      icon: <Code />,
+      icon: <Code fontSize="inherit" />,
     },
     {
       name: 'CodeFormatter',
       desc: '代码格式化，目前支持：JSON、JSON5',
       path: '/code-formatter',
-      icon: <Code />,
+      icon: <Code fontSize="inherit" />,
     },
     {
       name: 'URL',
@@ -66,31 +55,31 @@ export const route: Route = {
       name: 'Markdown',
       desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
       path: '/markdown',
-      icon: <Drafts />,
+      icon: <Drafts fontSize="inherit" />,
     },
     {
       name: 'Random',
       desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
       path: '/random',
-      icon: <Shuffle />,
+      icon: <Shuffle fontSize="inherit" />,
     },
     {
       name: 'Base 64',
       desc: 'Base64 编码、解码',
       path: '/base64',
-      icon: <Compress />,
+      icon: <Compress fontSize="inherit" />,
     },
     {
       name: 'Excel',
       desc: 'Excel 转 JSON',
       path: '/excel',
-      icon: <TableView />,
+      icon: <TableView fontSize="inherit" />,
     },
     {
       name: 'Hash',
       desc: '计算 MD5、SHA1、SHA256、SHA512 哈希值',
       path: '/hash',
-      icon: <Tag />,
+      icon: <Tag fontSize="inherit" />,
     },
     {
       name: 'QRCode',
@@ -102,13 +91,13 @@ export const route: Route = {
       name: 'Placeholder Image',
       desc: '快速便捷生成占位图',
       path: '/placeholder',
-      icon: <Image />,
+      icon: <FileImageOutlined />,
     },
     {
       name: '时间戳（Timestamp）',
       desc: '时间戳（Timestamp）',
       path: '/timestamp',
-      icon: <Timer />,
+      icon: <Timer fontSize="inherit" />,
     },
   ],
 };
