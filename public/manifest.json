@@ -4,13 +4,38 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 48x48 32x32 24x24 16x16",
+      "sizes": "48x48",
       "type": "image/x-icon"
+    },
+    {
+      "src": "icons/icon-x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/icon-x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "icons/icon-x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/icon-x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
     },
     {
       "src": "icons/icon-x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
     },
     {
       "src": "icons/icon-x512.png",
