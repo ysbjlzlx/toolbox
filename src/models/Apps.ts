@@ -25,7 +25,7 @@ export const apps: Application[] = [
   {
     name: 'JSON',
     desc: 'JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。',
-    href: '/json',
+    href: '/json/json-editor',
     icon: DataObject,
   },
   {
