@@ -56,7 +56,7 @@
     "joi": "17.9.2",
     "json5": "2.2.3",
     "lodash": "4.17.21",
-    "lossless-json": "2.0.8",
+    "lossless-json": "2.0.9",
     "material-ui-popup-state": "5.0.8",
     "mui-image": "1.0.7",
     "otpauth": "9.1.1",
