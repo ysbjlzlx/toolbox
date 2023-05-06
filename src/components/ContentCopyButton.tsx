@@ -1,8 +1,6 @@
-import { ContentCopy } from '@mui/icons-material';
-import { IconButton } from '@mui/material';
-import { message } from 'antd';
-import ClipboardJS from 'clipboard';
-import { useCallback } from 'react';
+import { CopyOutlined } from '@ant-design/icons';
+import { Button, message } from 'antd';
+import copy from 'copy-to-clipboard';
 
 interface Props {
   text?: string | undefined;
@@ -11,33 +9,25 @@ interface Props {
 export default function ContentCopyButton({ text }: Props) {
   const [messageApi, contextHolder] = message.useMessage();
 
-  const btn = useCallback(
-    (node: HTMLButtonElement) => {
-      if (node === null) {
-        return;
-      }
-      const clipboard = new ClipboardJS(node);
-      clipboard.on('success', (e) => {
-        messageApi.open({
-          type: 'success',
-          content: '复制成功',
-        });
-      });
-      clipboard.on('error', (e) => {
-        console.error(e);
-      });
-
-      return clipboard;
-    },
-    [messageApi],
-  );
-
   return (
     <>
       {contextHolder}
-      <IconButton ref={btn} data-clipboard-text={text} aria-label="Copy content">
-        <ContentCopy />
-      </IconButton>
+      <Button
+        shape="circle"
+        icon={<CopyOutlined />}
+        onClick={() => {
+          copy(text || '', {
+            format: 'text/plain',
+            onCopy: (clipboardData: object) => {
+              console.log(clipboardData);
+              messageApi.open({
+                type: 'success',
+                content: '复制成功',
+              });
+            },
+          });
+        }}
+      />
     </>
   );
 }
