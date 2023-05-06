@@ -1,8 +1,8 @@
-import { Box, Button, ButtonGroup, Container, TextField } from '@mui/material';
-import { Input } from 'antd';
+import { Box, Container } from '@mui/material';
+import { Button, Input, Space } from 'antd';
 import { enc } from 'crypto-js';
 import { useState } from 'react';
-import ContentCopyAdornment from '../components/ContentCopyAdornment';
+import TextResultBox from '../components/TextResultBox';
 
 export default function Base64() {
   const [plain, setPlain] = useState('');
@@ -29,23 +29,13 @@ export default function Base64() {
         />
       </Box>
       <Box sx={{ mt: 2 }}>
-        <ButtonGroup>
+        <Space.Compact>
           <Button onClick={encode}>编码</Button>
           <Button onClick={decode}>解码</Button>
-        </ButtonGroup>
+        </Space.Compact>
       </Box>
       <Box sx={{ mt: 2 }}>
-        <TextField
-          label="结果"
-          value={target}
-          fullWidth
-          multiline
-          minRows={5}
-          maxRows={10}
-          InputProps={{
-            endAdornment: <ContentCopyAdornment content={target} />,
-          }}
-        />
+        <TextResultBox title="结果" text={target} />
       </Box>
     </Container>
   );
