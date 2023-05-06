@@ -1,4 +1,5 @@
-import { Box, Container } from '@mui/material';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Box } from '@mui/material';
 import { Button, Input, Space } from 'antd';
 import { enc } from 'crypto-js';
 import { useState } from 'react';
@@ -16,7 +17,7 @@ export default function Base64() {
     setTarget(str);
   };
   return (
-    <Container>
+    <PageContainer token={{ paddingInlinePageContainerContent: 10, paddingBlockPageContainerContent: 10 }}>
       <Box sx={{ mt: 2 }}>
         <Input.TextArea
           value={plain}
@@ -37,6 +38,6 @@ export default function Base64() {
       <Box sx={{ mt: 2 }}>
         <TextResultBox title="结果" text={target} />
       </Box>
-    </Container>
+    </PageContainer>
   );
 }
