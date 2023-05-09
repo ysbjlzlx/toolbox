@@ -60,7 +60,7 @@
     "lossless-json": "2.0.9",
     "material-ui-popup-state": "5.0.8",
     "mui-image": "1.0.7",
-    "otpauth": "9.1.1",
+    "otpauth": "9.1.2",
     "prop-types": "15.8.1",
     "qrcode": "1.5.3",
     "react": "18.2.0",
