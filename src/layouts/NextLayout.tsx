@@ -72,7 +72,7 @@ const NextLayout = () => {
           token={{
             pageContainer: {
               colorBgPageContainer: '#ffffff',
-              paddingInlinePageContainerContent: 0,
+              paddingInlinePageContainerContent: 10,
               paddingBlockPageContainerContent: 0,
             },
           }}

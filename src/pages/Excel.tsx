@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import FileSaver from 'file-saver';
 import { ChangeEvent, useState } from 'react';
@@ -7,6 +7,7 @@ import * as xlsx from 'xlsx';
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 
+import { PageContainer } from '@ant-design/pro-layout';
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-monokai';
 
@@ -60,10 +61,7 @@ export default function Excel() {
     }
   };
   return (
-    <Container>
-      <Box sx={{ mt: 2 }}>
-        <Typography variant="h2">Excel 转 JSON</Typography>
-      </Box>
+    <PageContainer title="Excel 转 JSON">
       <Box sx={{ mt: 2 }}>
         <label htmlFor="contained-button-file">
           <Input accept=".xls,.xlsx,.csv" id="contained-button-file" multiple type="file" onChange={onUpload} />
@@ -76,6 +74,6 @@ export default function Excel() {
       <Box sx={{ mt: 2 }}>
         <AceEditor mode="json" theme="monokai" width="100%" setOptions={options} value={result} />
       </Box>
-    </Container>
+    </PageContainer>
   );
 }
