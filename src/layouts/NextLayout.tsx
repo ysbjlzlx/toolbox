@@ -1,10 +1,9 @@
-import type { ProSettings } from '@ant-design/pro-layout';
-import { ProLayout } from '@ant-design/pro-layout';
-import { ProConfigProvider } from '@ant-design/pro-provider';
-import { useEffect, useState } from 'react';
+import type { ProSettings } from '@ant-design/pro-components';
+import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
+import { ReactNode, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
-import { route as defaultProps } from './defaultProps';
+import { menuData as defaultProps } from './defaultProps';
 
 const NextLayout = () => {
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ const NextLayout = () => {
           logo="/logo.svg"
           title="Toolbox"
           /* eslint-disable-next-line react/no-unstable-nested-components */
-          menuHeaderRender={(logo, title) => (
+          menuHeaderRender={(logo: ReactNode, title: ReactNode) => (
             <div
               id="customize_menu_header"
               style={{
@@ -58,7 +57,7 @@ const NextLayout = () => {
           menu={{ collapsedShowGroupTitle: true }}
           {...settings}
           /* eslint-disable-next-line react/no-unstable-nested-components */
-          menuItemRender={(item, dom) => (
+          menuItemRender={(item: MenuDataItem, dom: ReactNode) => (
             <div
               onClick={() => {
                 if (item.disabled !== true) {
