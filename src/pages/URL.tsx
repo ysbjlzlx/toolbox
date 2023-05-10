@@ -1,18 +1,9 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Card,
-  CardActions,
-  CardContent,
-  Container,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Box, Container, TextField } from '@mui/material';
 import { useState } from 'react';
 
+import { Button } from 'antd';
 import ContentCopyAdornment from '../components/ContentCopyAdornment';
-import ContentCopyButton from '../components/ContentCopyButton';
+import TextResultBox from '../components/TextResultBox';
 
 export default function URL() {
   const [uri, setUri] = useState<string>('');
@@ -50,27 +41,14 @@ export default function URL() {
         />
       </Box>
       <Box mt={2}>
-        <ButtonGroup>
-          <Button variant="outlined" onClick={handleEncodeURI}>
-            链接参数编码
-          </Button>
-          <Button variant="outlined" onClick={handleEncodeURIComponent}>
-            全链接编码
-          </Button>
-          <Button variant="outlined" onClick={handleDecodeURIComponent}>
-            链接解码
-          </Button>
-        </ButtonGroup>
+        <Button.Group>
+          <Button onClick={handleEncodeURI}>链接参数编码</Button>
+          <Button onClick={handleEncodeURIComponent}>全链接编码</Button>
+          <Button onClick={handleDecodeURIComponent}>链接解码</Button>
+        </Button.Group>
       </Box>
       <Box mt={2}>
-        <Card>
-          <CardContent>
-            <Typography sx={{ wordWrap: 'break-word', paddingTop: 2, pb: 2 }}>{encodedURI}</Typography>
-          </CardContent>
-          <CardActions disableSpacing>
-            <ContentCopyButton text={encodedURI} />
-          </CardActions>
-        </Card>
+        <TextResultBox title="结果" text={encodedURI} />
       </Box>
     </Container>
   );

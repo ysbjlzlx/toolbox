@@ -13,7 +13,6 @@ export default function ContentCopyButton({ text }: Props) {
     <>
       {contextHolder}
       <Button
-        shape="circle"
         icon={<CopyOutlined />}
         onClick={() => {
           copy(text || '', {
