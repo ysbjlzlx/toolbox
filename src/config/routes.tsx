@@ -13,12 +13,12 @@ const Base64 = lazy(() => import('../app/base64/page'));
 const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
 const QRCode = lazy(() => import('../app/qrcode/page'));
-const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
+const Placeholder = lazy(() => import('../app/placeholder/page'));
 const BSONObjectID = lazy(() => import('../app/bson-object-id/page'));
-const DocEditor = lazy(() => import('../pages/DocEditor'));
+const DocEditor = lazy(() => import('../app/doc-editor/page'));
 const Timestamp = lazy(() => import('../app/timestamp/page'));
 const Totp = lazy(() => import('../app/totp/page'));
-const Writer = lazy(() => import('../pages/Writer'));
+const Writer = lazy(() => import('../app/writer/page'));
 const Formatter = lazy(() => import('../app/code-formatter/page'));
 
 const Json = lazy(() => import('../app/json/json-editor/page'));

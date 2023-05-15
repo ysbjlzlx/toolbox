@@ -3,11 +3,11 @@ import { styled } from '@mui/material/styles';
 import React, { FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import ColorPickerAdornment from '../components/ColorPickerAdornment';
-import { PlaceholderConfig } from '../components/placeholder';
-import DummyImage from '../components/placeholder/DummyImage';
-import HrefLuImage from '../components/placeholder/HrefLuImage';
-import PlaceholderImage from '../components/placeholder/PlaceholderImage';
+import ColorPickerAdornment from '../../components/ColorPickerAdornment';
+import { PlaceholderConfig } from '../../components/placeholder';
+import DummyImage from '../../components/placeholder/DummyImage';
+import HrefLuImage from '../../components/placeholder/HrefLuImage';
+import PlaceholderImage from '../../components/placeholder/PlaceholderImage';
 
 const ColorTextField = styled(TextField)({
   '& .MuiOutlinedInput-root .MuiOutlinedInput-input': {

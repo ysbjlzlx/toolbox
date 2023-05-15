@@ -7,7 +7,7 @@ import 'highlight.js/styles/monokai-sublime.css';
 import ReactQuill, { ReactQuillProps } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-import CopyButtonWrapper from '../components/CopyButtonWrapper';
+import CopyButtonWrapper from '../../components/CopyButtonWrapper';
 
 const Writer = () => {
   const [value, setValue] = useState<string>('');
