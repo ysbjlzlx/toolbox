@@ -6,7 +6,7 @@ import Loading from '../pages/Loading';
 import PageNotFound from '../pages/PageNotFound';
 
 const App = lazy(() => import('../pages/App'));
-const URL = lazy(() => import('../pages/URL'));
+const URL = lazy(() => import('../app/url/page'));
 const Markdown = lazy(() => import('../pages/Markdown'));
 const Random = lazy(() => import('../pages/Random'));
 const Base64 = lazy(() => import('../pages/Base64'));
