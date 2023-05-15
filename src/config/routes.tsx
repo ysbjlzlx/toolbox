@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 
-import Loading from '../app/Loading';
+import Loading from '../app/loading';
 import NextLayout from '../layouts/NextLayout';
 import PageNotFound from '../pages/PageNotFound';
 
@@ -9,7 +9,7 @@ const App = lazy(() => import('../pages/App'));
 const URL = lazy(() => import('../app/url/page'));
 const Markdown = lazy(() => import('../pages/Markdown'));
 const Random = lazy(() => import('../pages/Random'));
-const Base64 = lazy(() => import('../pages/Base64'));
+const Base64 = lazy(() => import('../app/base64/page'));
 const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
 const QRCode = lazy(() => import('../pages/QrCode'));
