@@ -19,7 +19,7 @@ const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../app/timestamp/page'));
 const Totp = lazy(() => import('../pages/totp'));
 const Writer = lazy(() => import('../pages/Writer'));
-const Formatter = lazy(() => import('../pages/formatter'));
+const Formatter = lazy(() => import('../app/code-formatter/page'));
 
 const Json = lazy(() => import('../app/json/json-editor/page'));
 const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
