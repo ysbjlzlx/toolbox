@@ -24,7 +24,7 @@ const Formatter = lazy(() => import('../app/code-formatter/page'));
 const Json = lazy(() => import('../app/json/json-editor/page'));
 const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
 const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
-const Yaml = lazy(() => import('../pages/yaml/Yaml'));
+const Yaml = lazy(() => import('../app/yaml/page'));
 const Bson = lazy(() => import('../app/bson/page'));
 
 const routes: RouteObject[] = [

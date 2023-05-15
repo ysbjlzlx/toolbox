@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 
 import YamlToJson from './YamlToJson';
 
-const Yaml = () => {
+const Page = () => {
   const tabWrapperRef = useRef(null);
   const [currentTab, setCurrentTab] = useState<string>('0');
   const tabWrapperSize = useSize(tabWrapperRef);
@@ -29,4 +29,4 @@ const Yaml = () => {
   );
 };
 
-export default Yaml;
+export default Page;
