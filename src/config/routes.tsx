@@ -5,14 +5,14 @@ import Loading from '../app/loading';
 import NotFound from '../app/not-found';
 import NextLayout from '../layouts/NextLayout';
 
-const App = lazy(() => import('../pages/App'));
+const App = lazy(() => import('../app/page'));
 const URL = lazy(() => import('../app/url/page'));
-const Markdown = lazy(() => import('../pages/Markdown'));
+const Markdown = lazy(() => import('../app/markdown/page'));
 const Random = lazy(() => import('../app/random/page'));
 const Base64 = lazy(() => import('../app/base64/page'));
 const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
-const QRCode = lazy(() => import('../pages/QrCode'));
+const QRCode = lazy(() => import('../app/qrcode/page'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../app/bson-object-id/page'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));

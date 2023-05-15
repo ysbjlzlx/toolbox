@@ -4,9 +4,8 @@ import { Card } from 'antd';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Application, apps } from '../models/Apps';
-import './App.css';
 
-const App = () => {
+const Page = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
@@ -33,4 +32,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Page;

@@ -2,7 +2,7 @@ import { Container, Grid, TextField } from '@mui/material';
 import QRCode from 'qrcode';
 import { ReactElement, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-export default function QrCode(): ReactElement {
+export default function Page(): ReactElement {
   const [text, setText] = useState<string>('');
   const qrcodeContainer = useRef<HTMLCanvasElement>(null);
   const divContainer = useRef<HTMLDivElement>(null);
