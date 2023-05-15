@@ -1,9 +1,10 @@
-import { Container, Typography } from '@mui/material';
+import { PageContainer } from '@ant-design/pro-components';
+import { Typography } from 'antd';
 
 export default function PageNotFound() {
   return (
-    <Container>
+    <PageContainer>
       <Typography>Page Not Found.</Typography>
-    </Container>
+    </PageContainer>
   );
 }

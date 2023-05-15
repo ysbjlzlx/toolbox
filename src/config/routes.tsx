@@ -3,6 +3,7 @@ import { RouteObject } from 'react-router-dom';
 
 import NextLayout from '../layouts/NextLayout';
 import Loading from '../pages/Loading';
+import PageNotFound from '../pages/PageNotFound';
 
 const App = lazy(() => import('../pages/App'));
 const URL = lazy(() => import('../pages/URL'));
@@ -206,6 +207,14 @@ const routes: RouteObject[] = [
         ),
       },
     ],
+  },
+  {
+    path: '*',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <PageNotFound />
+      </Suspense>
+    ),
   },
 ];
 export default routes;
