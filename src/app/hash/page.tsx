@@ -10,7 +10,7 @@ interface HashResult {
   sha512?: string;
 }
 
-const Hash = (): ReactElement => {
+const Page = (): ReactElement => {
   const defaultHashResult: HashResult = {
     md5: '',
     sha1: '',
@@ -54,4 +54,4 @@ const Hash = (): ReactElement => {
   );
 };
 
-export default Hash;
+export default Page;
