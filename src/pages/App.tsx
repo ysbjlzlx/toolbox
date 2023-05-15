@@ -1,5 +1,6 @@
 import { Masonry } from '@mui/lab';
-import { Card, CardActions, CardContent, Container, Link, Typography } from '@mui/material';
+import { Container, Link } from '@mui/material';
+import { Card } from 'antd';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Application, apps } from '../models/Apps';
@@ -9,26 +10,22 @@ const App = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
-        <Card key={application.name}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+        <Card
+          key={application.name}
+          title={application.name}
+          actions={[
+            <Link component={RouterLink} to={application.href} key="0">
               {application.name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {application.desc}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Link component={RouterLink} to={application.href}>
-              {application.name}
-            </Link>
-          </CardActions>
+            </Link>,
+          ]}
+        >
+          {application.desc}
         </Card>
       );
     });
   };
   return (
-    <Container style={{ marginTop: '64px' }}>
+    <Container>
       <Masonry columns={4} spacing={8}>
         {item({ applications: apps })}
       </Masonry>
