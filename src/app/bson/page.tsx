@@ -3,9 +3,9 @@ import { Box, Tab } from '@mui/material';
 import { useSize } from 'ahooks';
 import React, { useRef, useState } from 'react';
 
-import BsonObjectId from './BsonObjectId';
+import BsonObjectId from '../bson-object-id/page';
 
-const Bson = () => {
+const Page = () => {
   const tabWrapperRef = useRef(null);
   const [currentTab, setCurrentTab] = useState<string>('0');
   const tabWrapperSize = useSize(tabWrapperRef);
@@ -29,4 +29,4 @@ const Bson = () => {
   );
 };
 
-export default Bson;
+export default Page;

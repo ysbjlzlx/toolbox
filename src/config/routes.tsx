@@ -14,10 +14,10 @@ const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
 const QRCode = lazy(() => import('../pages/QrCode'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
-const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
+const BSONObjectID = lazy(() => import('../app/bson-object-id/page'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
 const Timestamp = lazy(() => import('../app/timestamp/page'));
-const Totp = lazy(() => import('../pages/totp'));
+const Totp = lazy(() => import('../app/totp/page'));
 const Writer = lazy(() => import('../pages/Writer'));
 const Formatter = lazy(() => import('../app/code-formatter/page'));
 
@@ -25,7 +25,7 @@ const Json = lazy(() => import('../app/json/json-editor/page'));
 const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
 const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
-const Bson = lazy(() => import('../pages/bson/Bson'));
+const Bson = lazy(() => import('../app/bson/page'));
 
 const routes: RouteObject[] = [
   {

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import ContentCopyAdornment from '../../components/ContentCopyAdornment';
 import RefreshAdornment from '../../components/RefreshAdornment';
 
-const BsonObjectId = () => {
+const Page = () => {
   const [hexString, setHexString] = useState<string>('');
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const BsonObjectId = () => {
     </Container>
   );
 };
-export default BsonObjectId;
+export default Page;
