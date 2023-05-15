@@ -1,43 +1,25 @@
-import { Container, Grid, TextField } from '@mui/material';
-import QRCode from 'qrcode';
-import { ReactElement, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Container, Grid } from '@mui/material';
+import { Input, QRCode } from 'antd';
+import { ReactElement, useState } from 'react';
 
 export default function Page(): ReactElement {
   const [text, setText] = useState<string>('');
-  const qrcodeContainer = useRef<HTMLCanvasElement>(null);
-  const divContainer = useRef<HTMLDivElement>(null);
-
-  const options = useMemo(() => {
-    return { width: 128 };
-  }, []);
-  useLayoutEffect(() => {
-    options.width = divContainer.current?.offsetWidth || 128;
-  }, [options]);
-
-  useEffect(() => {
-    if (!text || text === '') {
-      return;
-    }
-    QRCode.toCanvas(qrcodeContainer.current, text, options);
-  }, [text, options]);
+  const { TextArea } = Input;
 
   return (
     <Container sx={{ mt: 5 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={9}>
-          <TextField
-            label="文本"
+          <TextArea
             value={text}
             onChange={(event) => {
               setText(event.target.value);
             }}
-            rows={9}
-            multiline
-            fullWidth
+            autoSize={{ minRows: 7, maxRows: 7 }}
           />
         </Grid>
-        <Grid item xs={12} md={3} ref={divContainer}>
-          <canvas ref={qrcodeContainer} />
+        <Grid item xs={12} md={3}>
+          <QRCode value={text || ''} />
         </Grid>
       </Grid>
     </Container>
