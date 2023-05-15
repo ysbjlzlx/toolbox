@@ -21,7 +21,7 @@ const options: AceOptions = {
   wrap: true,
 };
 
-export default function Excel() {
+export default function Page() {
   const [result, setResult] = useState<string>();
 
   const save = () => {

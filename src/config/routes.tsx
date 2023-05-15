@@ -10,7 +10,7 @@ const URL = lazy(() => import('../pages/URL'));
 const Markdown = lazy(() => import('../pages/Markdown'));
 const Random = lazy(() => import('../pages/Random'));
 const Base64 = lazy(() => import('../pages/Base64'));
-const Excel = lazy(() => import('../pages/Excel'));
+const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../pages/Hash'));
 const QRCode = lazy(() => import('../pages/QrCode'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
