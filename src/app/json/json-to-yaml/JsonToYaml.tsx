@@ -4,7 +4,7 @@ import { FC, useState } from 'react';
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
-import { format, parser } from '../../utils/formatter';
+import { format, parser } from '../../../utils/formatter';
 
 import 'ace-builds/src-min-noconflict/ext-searchbox';
 import 'ace-builds/src-min-noconflict/mode-json5';

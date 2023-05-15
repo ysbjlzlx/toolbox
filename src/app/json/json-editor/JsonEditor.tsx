@@ -2,7 +2,7 @@ import { useLocalStorageState } from 'ahooks';
 import { FC } from 'react';
 import { Content, Mode } from 'vanilla-jsoneditor';
 
-import VanillaJSONEditor from '../../components/VanillaJSONEditor';
+import VanillaJSONEditor from '../../../components/VanillaJSONEditor';
 
 interface Props {
   idx?: string;

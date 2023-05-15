@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Refresh } from '@mui/icons-material';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider } from 'antd';
-import ContentCopyAdornment from '../components/ContentCopyAdornment';
-import { generator, GeneratorOptions } from '../scripts/RandomStringUtils';
+import ContentCopyAdornment from '../../components/ContentCopyAdornment';
+import { generator, GeneratorOptions } from '../../scripts/RandomStringUtils';
 
 const initialOptions: GeneratorOptions = {
   numeric: true,
@@ -13,7 +13,7 @@ const initialOptions: GeneratorOptions = {
   symbol: false,
   symbolChars: '!@#$%^&*',
 };
-export default function Random() {
+export default function Page() {
   const [randomString, setRandomString] = useState<string>('');
 
   useEffect(() => {

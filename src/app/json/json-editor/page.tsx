@@ -4,11 +4,11 @@ import { Tab } from 'rc-tabs/lib/interface';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import useJsonTabStore from '../../stores/JsonTabStore';
+import useJsonTabStore from '../../../stores/JsonTabStore';
 import JsonEditor from './JsonEditor';
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
-const Json = () => {
+const Page = () => {
   const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
   const [items, setItems] = useState<Tab[]>([]);
 
@@ -68,4 +68,4 @@ const Json = () => {
   return <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />;
 };
 
-export default Json;
+export default Page;

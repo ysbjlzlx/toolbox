@@ -2,13 +2,13 @@ import { lazy, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 
 import Loading from '../app/loading';
+import NotFound from '../app/not-found';
 import NextLayout from '../layouts/NextLayout';
-import PageNotFound from '../pages/PageNotFound';
 
 const App = lazy(() => import('../pages/App'));
 const URL = lazy(() => import('../app/url/page'));
 const Markdown = lazy(() => import('../pages/Markdown'));
-const Random = lazy(() => import('../pages/Random'));
+const Random = lazy(() => import('../app/random/page'));
 const Base64 = lazy(() => import('../app/base64/page'));
 const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
@@ -16,14 +16,14 @@ const QRCode = lazy(() => import('../pages/QrCode'));
 const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
 const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
 const DocEditor = lazy(() => import('../pages/DocEditor'));
-const Timestamp = lazy(() => import('../pages/Timestamp'));
+const Timestamp = lazy(() => import('../app/timestamp/page'));
 const Totp = lazy(() => import('../pages/totp'));
 const Writer = lazy(() => import('../pages/Writer'));
 const Formatter = lazy(() => import('../pages/formatter'));
 
-const Json = lazy(() => import('../pages/json/Json'));
-const JsonToYaml = lazy(() => import('../pages/json/JsonToYaml'));
-const JsonToExcel = lazy(() => import('../pages/json/JsonToExcel'));
+const Json = lazy(() => import('../app/json/json-editor/page'));
+const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
+const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
 const Yaml = lazy(() => import('../pages/yaml/Yaml'));
 const Bson = lazy(() => import('../pages/bson/Bson'));
 
@@ -212,7 +212,7 @@ const routes: RouteObject[] = [
     path: '*',
     element: (
       <Suspense fallback={<Loading />}>
-        <PageNotFound />
+        <NotFound />
       </Suspense>
     ),
   },

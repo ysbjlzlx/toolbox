@@ -11,7 +11,7 @@ interface Current {
   date: string;
 }
 
-const Timestamp = () => {
+const Page = () => {
   const [current, setCurrent] = useState<Current>({
     second: dayjs().unix(),
     millisecond: dayjs().valueOf(),
@@ -87,4 +87,4 @@ const Timestamp = () => {
   );
 };
 
-export default Timestamp;
+export default Page;
