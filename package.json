@@ -72,7 +72,7 @@
     "react-i18next": "12.2.2",
     "react-markdown": "8.0.7",
     "react-quill": "2.0.0",
-    "react-router-dom": "6.11.1",
+    "react-router-dom": "6.11.2",
     "react-scripts": "5.0.1",
     "remark-gfm": "3.0.1",
     "vanilla-jsoneditor": "0.17.3",
