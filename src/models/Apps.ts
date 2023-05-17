@@ -29,6 +29,18 @@ export const apps: Application[] = [
     icon: DataObject,
   },
   {
+    name: 'URL',
+    desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
+    href: '/url',
+    icon: Link,
+  },
+  {
+    name: 'Markdown',
+    desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
+    href: '/markdown',
+    icon: Drafts,
+  },
+  {
     name: 'YAML',
     desc: 'YAML 格式处理',
     href: '/yaml',
@@ -45,18 +57,6 @@ export const apps: Application[] = [
     desc: '代码格式化，目前支持：JSON、JSON5',
     href: '/code-formatter',
     icon: Code,
-  },
-  {
-    name: 'URL',
-    desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
-    href: '/url',
-    icon: Link,
-  },
-  {
-    name: 'Markdown',
-    desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
-    href: '/markdown',
-    icon: Drafts,
   },
   {
     name: 'Random',
