@@ -25,7 +25,7 @@ const NextLayout = () => {
   }, [location]);
 
   const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
-    <a href="/" target="_self">
+    <a href="/" title="Logo">
       {logo}
       {title}
     </a>
