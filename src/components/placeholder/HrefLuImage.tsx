@@ -1,5 +1,6 @@
 import { Image } from 'antd';
 import { useEffect, useState } from 'react';
+import ImageWrapper from '../../app/placeholder/ImageWrapper';
 import { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
 
@@ -21,14 +22,7 @@ const HrefLuImage = (input: PlaceholderConfig) => {
   }, [config]);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'inherit',
-      }}
-    >
+    <ImageWrapper>
       <Image
         preview={false}
         src={imgUrl}
@@ -40,7 +34,7 @@ const HrefLuImage = (input: PlaceholderConfig) => {
         }}
         alt={config.text || 'placeholder img'}
       />
-    </div>
+    </ImageWrapper>
   );
 };
 
