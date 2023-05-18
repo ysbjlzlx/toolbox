@@ -1,8 +1,8 @@
 import { FileImageOutlined, LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
-import { Route } from '@ant-design/pro-layout/lib/typing';
+import type { MenuDataItem } from '@ant-design/pro-components';
 import { Code, Compress, DataObject, Drafts, Shuffle, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
-export const route: Route = {
+export const menuData: MenuDataItem = {
   path: '/',
   children: [
     {

@@ -1,30 +1,31 @@
 import { lazy, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 
+import Loading from '../app/loading';
+import NotFound from '../app/not-found';
 import NextLayout from '../layouts/NextLayout';
-import Loading from '../pages/Loading';
 
-const App = lazy(() => import('../pages/App'));
-const URL = lazy(() => import('../pages/URL'));
-const Markdown = lazy(() => import('../pages/Markdown'));
-const Random = lazy(() => import('../pages/Random'));
-const Base64 = lazy(() => import('../pages/Base64'));
-const Excel = lazy(() => import('../pages/Excel'));
-const Hash = lazy(() => import('../pages/Hash'));
-const QRCode = lazy(() => import('../pages/QrCode'));
-const Placeholder = lazy(() => import('../pages/PlaceholderImg'));
-const BSONObjectID = lazy(() => import('../pages/bson/BsonObjectId'));
-const DocEditor = lazy(() => import('../pages/DocEditor'));
-const Timestamp = lazy(() => import('../pages/Timestamp'));
-const Totp = lazy(() => import('../pages/totp'));
-const Writer = lazy(() => import('../pages/Writer'));
-const Formatter = lazy(() => import('../pages/formatter'));
+const App = lazy(() => import('../app/page'));
+const URL = lazy(() => import('../app/url/page'));
+const Markdown = lazy(() => import('../app/markdown/page'));
+const Random = lazy(() => import('../app/random/page'));
+const Base64 = lazy(() => import('../app/base64/page'));
+const Excel = lazy(() => import('../app/excel/page'));
+const Hash = lazy(() => import('../app/hash/page'));
+const QRCode = lazy(() => import('../app/qrcode/page'));
+const Placeholder = lazy(() => import('../app/placeholder/page'));
+const BSONObjectID = lazy(() => import('../app/bson-object-id/page'));
+const DocEditor = lazy(() => import('../app/doc-editor/page'));
+const Timestamp = lazy(() => import('../app/timestamp/page'));
+const Totp = lazy(() => import('../app/totp/page'));
+const Writer = lazy(() => import('../app/writer/page'));
+const Formatter = lazy(() => import('../app/code-formatter/page'));
 
-const Json = lazy(() => import('../pages/json/Json'));
-const JsonToYaml = lazy(() => import('../pages/json/JsonToYaml'));
-const JsonToExcel = lazy(() => import('../pages/json/JsonToExcel'));
-const Yaml = lazy(() => import('../pages/yaml/Yaml'));
-const Bson = lazy(() => import('../pages/bson/Bson'));
+const Json = lazy(() => import('../app/json/json-editor/page'));
+const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
+const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
+const Yaml = lazy(() => import('../app/yaml/page'));
+const Bson = lazy(() => import('../app/bson/page'));
 
 const routes: RouteObject[] = [
   {
@@ -206,6 +207,14 @@ const routes: RouteObject[] = [
         ),
       },
     ],
+  },
+  {
+    path: '*',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <NotFound />
+      </Suspense>
+    ),
   },
 ];
 export default routes;

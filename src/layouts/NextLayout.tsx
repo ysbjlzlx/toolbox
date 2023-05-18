@@ -1,10 +1,9 @@
-import type { ProSettings } from '@ant-design/pro-layout';
-import { ProLayout } from '@ant-design/pro-layout';
-import { ProConfigProvider } from '@ant-design/pro-provider';
-import { useEffect, useState } from 'react';
+import type { ProSettings } from '@ant-design/pro-components';
+import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
+import { ReactNode, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
-import { route as defaultProps } from './defaultProps';
+import { menuData as defaultProps } from './defaultProps';
 
 const NextLayout = () => {
   const navigate = useNavigate();
@@ -24,6 +23,25 @@ const NextLayout = () => {
   useEffect(() => {
     setPathname(location.pathname);
   }, [location]);
+
+  const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
+    <a href="/" title="Logo">
+      {logo}
+      {title}
+    </a>
+  );
+  const menuItemRender = (item: MenuDataItem, dom: ReactNode) => (
+    <div
+      onClick={() => {
+        if (item.disabled !== true) {
+          navigate(item.path || '/welcome');
+          setPathname(item.path || '/welcome');
+        }
+      }}
+    >
+      {dom}
+    </div>
+  );
   return (
     <div
       id="test-pro-layout"
@@ -35,45 +53,16 @@ const NextLayout = () => {
         <ProLayout
           logo="/logo.svg"
           title="Toolbox"
-          /* eslint-disable-next-line react/no-unstable-nested-components */
-          menuHeaderRender={(logo, title) => (
-            <div
-              id="customize_menu_header"
-              style={{
-                height: '32px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-              }}
-              onClick={() => {
-                window.open('/', '_self');
-              }}
-            >
-              {logo}
-              {title}
-            </div>
-          )}
+          menuHeaderRender={menuHeaderRender}
           route={defaultProps}
           location={{ pathname }}
           menu={{ collapsedShowGroupTitle: true }}
           {...settings}
-          /* eslint-disable-next-line react/no-unstable-nested-components */
-          menuItemRender={(item, dom) => (
-            <div
-              onClick={() => {
-                if (item.disabled !== true) {
-                  navigate(item.path || '/welcome');
-                  setPathname(item.path || '/welcome');
-                }
-              }}
-            >
-              {dom}
-            </div>
-          )}
+          menuItemRender={menuItemRender}
           token={{
             pageContainer: {
               colorBgPageContainer: '#ffffff',
-              paddingInlinePageContainerContent: 0,
+              paddingInlinePageContainerContent: 10,
               paddingBlockPageContainerContent: 0,
             },
           }}
