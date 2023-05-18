@@ -23,6 +23,13 @@ const NextLayout = () => {
   useEffect(() => {
     setPathname(location.pathname);
   }, [location]);
+
+  const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
+    <a href="/" target="_self">
+      {logo}
+      {title}
+    </a>
+  );
   return (
     <div
       id="test-pro-layout"
@@ -34,24 +41,7 @@ const NextLayout = () => {
         <ProLayout
           logo="/logo.svg"
           title="Toolbox"
-          /* eslint-disable-next-line react/no-unstable-nested-components */
-          menuHeaderRender={(logo: ReactNode, title: ReactNode) => (
-            <div
-              id="customize_menu_header"
-              style={{
-                height: '32px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-              }}
-              onClick={() => {
-                window.open('/', '_self');
-              }}
-            >
-              {logo}
-              {title}
-            </div>
-          )}
+          menuHeaderRender={menuHeaderRender}
           route={defaultProps}
           location={{ pathname }}
           menu={{ collapsedShowGroupTitle: true }}
