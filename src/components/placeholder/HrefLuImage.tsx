@@ -1,4 +1,4 @@
-import Image from 'mui-image';
+import { Image } from 'antd';
 import { useEffect, useState } from 'react';
 import { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
@@ -21,11 +21,26 @@ const HrefLuImage = (input: PlaceholderConfig) => {
   }, [config]);
 
   return (
-    <Image
-      src={imgUrl}
-      style={{ width: `${config.width}px`, height: `${config.height}px` }}
-      alt={config.text || 'placeholder img'}
-    />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'inherit',
+      }}
+    >
+      <Image
+        preview={false}
+        src={imgUrl}
+        width={config.width}
+        height={config.height}
+        style={{
+          width: `${config.width}px`,
+          height: `${config.height}px`,
+        }}
+        alt={config.text || 'placeholder img'}
+      />
+    </div>
   );
 };
 
