@@ -30,6 +30,18 @@ const NextLayout = () => {
       {title}
     </a>
   );
+  const menuItemRender = (item: MenuDataItem, dom: ReactNode) => (
+    <div
+      onClick={() => {
+        if (item.disabled !== true) {
+          navigate(item.path || '/welcome');
+          setPathname(item.path || '/welcome');
+        }
+      }}
+    >
+      {dom}
+    </div>
+  );
   return (
     <div
       id="test-pro-layout"
@@ -46,19 +58,7 @@ const NextLayout = () => {
           location={{ pathname }}
           menu={{ collapsedShowGroupTitle: true }}
           {...settings}
-          /* eslint-disable-next-line react/no-unstable-nested-components */
-          menuItemRender={(item: MenuDataItem, dom: ReactNode) => (
-            <div
-              onClick={() => {
-                if (item.disabled !== true) {
-                  navigate(item.path || '/welcome');
-                  setPathname(item.path || '/welcome');
-                }
-              }}
-            >
-              {dom}
-            </div>
-          )}
+          menuItemRender={menuItemRender}
           token={{
             pageContainer: {
               colorBgPageContainer: '#ffffff',
