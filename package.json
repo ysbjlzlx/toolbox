@@ -91,7 +91,7 @@
     "workbox-streams": "6.5.4",
     "xlsx": "0.18.5",
     "xml-formatter": "3.4.1",
-    "yaml": "2.3.0",
+    "yaml": "2.3.1",
     "zustand": "4.3.8"
   },
   "devDependencies": {
