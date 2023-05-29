@@ -120,7 +120,7 @@ const PlaceholderImg: FC = () => {
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormText label="文本" name="text" allowClear={false} />
+            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ style: { height: '42px' } }} />
           </Col>
         </Row>
       </ProForm>
