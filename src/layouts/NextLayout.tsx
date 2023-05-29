@@ -1,5 +1,6 @@
 import type { ProSettings } from '@ant-design/pro-components';
 import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
+import { ConfigProvider } from 'antd';
 import { ReactNode, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -50,27 +51,29 @@ const NextLayout = () => {
       }}
     >
       <ProConfigProvider hashed={false}>
-        <ProLayout
-          logo="/logo.svg"
-          title="Toolbox"
-          menuHeaderRender={menuHeaderRender}
-          route={defaultProps}
-          location={{ pathname }}
-          menu={{ collapsedShowGroupTitle: true }}
-          {...settings}
-          menuItemRender={menuItemRender}
-          token={{
-            pageContainer: {
-              colorBgPageContainer: '#ffffff',
-              paddingInlinePageContainerContent: 10,
-              paddingBlockPageContainerContent: 0,
-            },
-          }}
-        >
-          <div style={{ height: '100vh' }}>
-            <Outlet />
-          </div>
-        </ProLayout>
+        <ConfigProvider>
+          <ProLayout
+            logo="/logo.svg"
+            title="Toolbox"
+            menuHeaderRender={menuHeaderRender}
+            route={defaultProps}
+            location={{ pathname }}
+            menu={{ collapsedShowGroupTitle: true }}
+            {...settings}
+            menuItemRender={menuItemRender}
+            token={{
+              pageContainer: {
+                colorBgPageContainer: '#ffffff',
+                paddingInlinePageContainerContent: 10,
+                paddingBlockPageContainerContent: 0,
+              },
+            }}
+          >
+            <div style={{ height: '100vh' }}>
+              <Outlet />
+            </div>
+          </ProLayout>
+        </ConfigProvider>
       </ProConfigProvider>
     </div>
   );
