@@ -1,8 +1,8 @@
+import { ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import { Box, Container, Tab, Tabs } from '@mui/material';
 import { Col, ColorPicker, Form, Row } from 'antd';
 import React, { FC, useEffect, useState } from 'react';
 
-import { ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import { PlaceholderConfig } from '../../components/placeholder';
 import DummyImage from '../../components/placeholder/DummyImage';
 import HrefLuImage from '../../components/placeholder/HrefLuImage';
@@ -83,7 +83,7 @@ const PlaceholderImg: FC = () => {
             <ProFormDigit label="高度" name="height" />
           </Col>
           <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} />
+            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} allowClear={false} />
           </Col>
           <Col xs={24} sm={24} md={12} lg={8}>
             <ProFormText
@@ -120,7 +120,7 @@ const PlaceholderImg: FC = () => {
             />
           </Col>
           <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormText label="文本" name="text" />
+            <ProFormText label="文本" name="text" allowClear={false} />
           </Col>
         </Row>
       </ProForm>
