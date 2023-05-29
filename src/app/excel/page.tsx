@@ -2,7 +2,7 @@ import { Box, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import FileSaver from 'file-saver';
 import { ChangeEvent, useState } from 'react';
-import * as xlsx from 'xlsx';
+import * as XLSX from 'xlsx';
 
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
@@ -46,10 +46,10 @@ export default function Page() {
           }
           let data = e.target.result as ArrayBuffer;
           data = new Uint8Array(data);
-          const workbook = xlsx.read(data, { type: 'array' });
+          const workbook = XLSX.read(data, { type: 'array' });
           console.log(workbook);
           const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-          const rows = xlsx.utils.sheet_to_json(firstSheet) || [];
+          const rows = XLSX.utils.sheet_to_json(firstSheet) || [];
           setResult(JSON.stringify(rows, null, 2));
         };
 
