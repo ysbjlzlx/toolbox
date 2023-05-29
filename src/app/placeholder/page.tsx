@@ -1,5 +1,6 @@
-import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
+import { Box, Container, FormControl, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { Col, Row } from 'antd';
 import React, { FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -67,14 +68,14 @@ const PlaceholderImg: FC = () => {
   return (
     <Container sx={{ mt: 2 }}>
       <form onChange={handleSubmit(setPlaceholderConfig)}>
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
+        <Row gutter={[16, 16]}>
+          <Col span={8}>
             <TextField type="number" label="宽度" fullWidth {...register('width')} />
-          </Grid>
-          <Grid item xs={4}>
+          </Col>
+          <Col span={8}>
             <TextField type="number" label="高度" fullWidth {...register('height')} />
-          </Grid>
-          <Grid item xs={4}>
+          </Col>
+          <Col span={8}>
             <Controller
               name="suffix"
               control={control}
@@ -101,10 +102,9 @@ const PlaceholderImg: FC = () => {
                 );
               }}
             />
-          </Grid>
-        </Grid>
-        <Grid container spacing={2} sx={{ mt: 1 }}>
-          <Grid item xs={4}>
+          </Col>
+
+          <Col span={8}>
             <ColorTextField
               label="背景颜色"
               fullWidth
@@ -121,8 +121,8 @@ const PlaceholderImg: FC = () => {
                 ),
               }}
             />
-          </Grid>
-          <Grid item xs={4}>
+          </Col>
+          <Col span={8}>
             <ColorTextField
               label="文本颜色"
               fullWidth
@@ -139,11 +139,11 @@ const PlaceholderImg: FC = () => {
                 ),
               }}
             />
-          </Grid>
-          <Grid item xs={4}>
+          </Col>
+          <Col span={8}>
             <TextField label="文本" fullWidth {...register('text')} />
-          </Grid>
-        </Grid>
+          </Col>
+        </Row>
       </form>
       <Box>
         <Tabs value={provider} onChange={(e, value) => setProvider(value)} aria-label="basic tabs example">
