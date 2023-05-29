@@ -87,6 +87,7 @@ const PlaceholderImg: FC = () => {
                       {...field}
                       label="后缀名"
                       onChange={(event) => {
+                        setValue('suffix', event.target.value);
                         setPlaceholderConfig({ ...placeholderConfig, suffix: event.target.value });
                       }}
                     >
