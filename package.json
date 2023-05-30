@@ -126,7 +126,7 @@
       "typescript": "5.0.4"
     },
     "antd": {
-      "rc-menu": "9.8.4"
+      "rc-menu": "9.9.2"
     }
   }
 }
