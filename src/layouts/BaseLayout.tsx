@@ -1,8 +1,8 @@
 import type { ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
-import { ReactNode, useEffect, useState } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { FC, ReactNode } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 import { menuData as defaultProps } from './defaultProps';
 
@@ -16,15 +16,8 @@ const settings: Partial<ProSettings> = {
   siderMenuType: 'sub',
 };
 
-const BaseLayout = () => {
-  const navigate = useNavigate();
+const BaseLayout: FC = () => {
   const location = useLocation();
-
-  const [pathname, setPathname] = useState('/list/sub-page/sub-sub-page1');
-
-  useEffect(() => {
-    setPathname(location.pathname);
-  }, [location]);
 
   const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
     <a href="/" title="Logo">
@@ -32,25 +25,19 @@ const BaseLayout = () => {
       {title}
     </a>
   );
-  const menuItemRender = (item: MenuDataItem, dom: ReactNode) => (
-    <div
-      onClick={() => {
-        if (item.disabled !== true) {
-          navigate(item.path || '/welcome');
-          setPathname(item.path || '/welcome');
-        }
-      }}
-    >
-      {dom}
-    </div>
-  );
+  const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
+    if (item.disabled || item.path === undefined) {
+      return dom;
+    }
+    return <Link to={item.path}>{dom}</Link>;
+  };
 
   const proLayoutProps: ProLayoutProps = {
     logo: '/logo.svg',
     title: 'Toolbox',
     menuHeaderRender,
     menuItemRender,
-    location: { pathname },
+    location: location,
     route: defaultProps,
     token: {
       pageContainer: {
