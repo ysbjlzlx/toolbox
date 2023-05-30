@@ -124,6 +124,9 @@
   "overrides": {
     "react-scripts": {
       "typescript": "5.0.4"
+    },
+    "antd": {
+      "rc-menu": "9.8.4"
     }
   }
 }
