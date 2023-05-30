@@ -9,7 +9,7 @@
     "eslint:fix": "eslint src --fix",
     "prepare": "husky install",
     "prettier": "prettier src --ignore-unknown",
-    "prettier:write": "prettier src --write --ignore-unknown",
+    "prettier:fix": "prettier src --write --ignore-unknown",
     "start": "craco start",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
