@@ -1,6 +1,7 @@
+import { ReloadOutlined } from '@ant-design/icons';
 import { ProForm, ProFormText } from '@ant-design/pro-components';
 import { Box, Container } from '@mui/material';
-import { Form, Input } from 'antd';
+import { Button, Form, Input, Space } from 'antd';
 import dayjs from 'dayjs';
 import { ChangeEvent, useEffect, useState } from 'react';
 
@@ -21,6 +22,10 @@ const Page = () => {
 
   const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
+  };
+
+  const refreshInputDate = () => {
+    setInput(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   };
 
   useEffect(() => {
@@ -48,12 +53,15 @@ const Page = () => {
   return (
     <Container sx={{ pt: 2 }}>
       <Box sx={{ mb: 3 }}>
-        <Input
-          value={input}
-          onChange={inputOnChange}
-          placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
-          showCount
-        />
+        <Space.Compact style={{ width: '100%' }}>
+          <Input
+            value={input}
+            onChange={inputOnChange}
+            placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
+            showCount
+          />
+          <Button icon={<ReloadOutlined />} onClick={refreshInputDate} />
+        </Space.Compact>
       </Box>
       <ProForm form={form} grid={true} submitter={false}>
         <ProFormText name="date" label="日期时间" colProps={{ span: 12 }} allowClear={false} />
