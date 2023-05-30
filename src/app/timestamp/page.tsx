@@ -1,7 +1,11 @@
-import { Container, TextField } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import { ReloadOutlined } from '@ant-design/icons';
+import { ProForm, ProFormText } from '@ant-design/pro-components';
+import { Box, Container } from '@mui/material';
+import { Button, Form, Input, Space } from 'antd';
 import dayjs from 'dayjs';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
+
+import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '../../utils/validator';
 
 import 'dayjs/locale/zh-cn';
 
@@ -9,80 +13,62 @@ interface Current {
   second: number;
   millisecond: number;
   date: string;
+  dateWithMillisecond: string;
 }
 
 const Page = () => {
-  const [current, setCurrent] = useState<Current>({
-    second: dayjs().unix(),
-    millisecond: dayjs().valueOf(),
-    date: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-  });
+  const [form] = Form.useForm();
+  const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
 
-  const onSecondChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const second = Number.parseInt(event.target.value, 10);
-    setCurrent({
-      second: second,
-      millisecond: dayjs.unix(second).valueOf(),
-      date: dayjs.unix(second).format('YYYY-MM-DD HH:mm:ss'),
-    });
+  const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
   };
 
-  const onMillisecondChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const millisecond = Number.parseInt(event.target.value, 10);
-    setCurrent({
-      second: dayjs(millisecond).unix(),
-      millisecond: millisecond,
-      date: dayjs(millisecond).format('YYYY-MM-DD HH:mm:ss'),
-    });
+  const refreshInputDate = () => {
+    setInput(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   };
 
-  const onDateChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const instance = dayjs(event.target.value, 'YYYY-MM-DD HH:mm:ss');
-    setCurrent({
-      second: instance.unix(),
-      millisecond: instance.valueOf(),
-      date: event.target.value,
-    });
-  };
-
-  const secondDateString = () => {
-    return dayjs.unix(current.second).format('YYYY-MM-DD HH:mm:ss');
-  };
-
-  const millisecondDateString = () => {
-    return dayjs(current.millisecond).format('YYYY-MM-DD HH:mm:ss.SSS');
-  };
-
-  const dateStringSecond = () => {
-    return dayjs(current.date, 'YYYY-MM-DD HH:mm:ss').unix();
-  };
+  useEffect(() => {
+    let instance = dayjs();
+    if (isUnixSecond(input)) {
+      const second = Number.parseInt(input, 10);
+      instance = dayjs.unix(second);
+    } else if (isMillisecond(input)) {
+      const millisecond = Number.parseInt(input, 10);
+      instance = dayjs(millisecond);
+    } else if (isNumber(input)) {
+      const second = Number.parseInt(input, 10);
+      instance = dayjs.unix(second);
+    } else if (isDateStr(input, 'YYYY-MM-DD HH:mm:ss')) {
+      instance = dayjs(input, 'YYYY-MM-DD HH:mm:ss');
+    } else if (isDateStr(input, 'YYYY-MM-DD')) {
+      instance = dayjs(input, 'YYYY-MM-DD 00:00:00');
+    }
+    form.setFieldValue('second', instance.unix());
+    form.setFieldValue('millisecond', instance.valueOf());
+    form.setFieldValue('date', instance.format('YYYY-MM-DD HH:mm:ss'));
+    form.setFieldValue('dateWithMillisecond', instance.format('YYYY-MM-DD HH:mm:ss.SSS'));
+  }, [input, form]);
 
   return (
     <Container sx={{ pt: 2 }}>
-      <Grid container spacing={2}>
-        <Grid xs={6}>
-          <TextField type="number" label="时间戳（秒）" value={current?.second} onChange={onSecondChange} fullWidth />
-        </Grid>
-        <Grid xs={6}>
-          <TextField label="日期时间" value={secondDateString()} fullWidth />
-        </Grid>
-      </Grid>
-      <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid xs={6}>
-          <TextField label="时间戳（毫秒）" value={current?.millisecond} onChange={onMillisecondChange} fullWidth />
-        </Grid>
-        <Grid xs={6}>
-          <TextField label="日期时间" value={millisecondDateString()} fullWidth />
-        </Grid>
-      </Grid>
-      <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid xs={6}>
-          <TextField label="日期时间" value={current?.date} onChange={onDateChange} fullWidth />
-        </Grid>
-        <Grid xs={6}>
-          <TextField label="时间戳（秒）" value={dateStringSecond()} fullWidth />
-        </Grid>
-      </Grid>
+      <Box sx={{ mb: 3 }}>
+        <Space.Compact style={{ width: '100%' }}>
+          <Input
+            value={input}
+            onChange={inputOnChange}
+            placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
+            showCount
+          />
+          <Button icon={<ReloadOutlined />} onClick={refreshInputDate} />
+        </Space.Compact>
+      </Box>
+      <ProForm form={form} grid={true} submitter={false}>
+        <ProFormText name="date" label="日期时间" colProps={{ span: 12 }} allowClear={false} />
+        <ProFormText name="dateWithMillisecond" label="日期时间（毫秒）" colProps={{ span: 12 }} allowClear={false} />
+        <ProFormText name="second" label="时间戳（秒）" colProps={{ span: 12 }} allowClear={false} />
+        <ProFormText name="millisecond" label="时间戳（毫秒）" colProps={{ span: 12 }} allowClear={false} />
+      </ProForm>
     </Container>
   );
 };

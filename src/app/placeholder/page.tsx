@@ -1,19 +1,13 @@
-import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Tab, Tabs, TextField } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import React, { FC, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
+import { Box } from '@mui/material';
+import type { TabsProps } from 'antd';
+import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
+import { FC, useEffect, useState } from 'react';
 
-import ColorPickerAdornment from '../../components/ColorPickerAdornment';
 import { PlaceholderConfig } from '../../components/placeholder';
 import DummyImage from '../../components/placeholder/DummyImage';
 import HrefLuImage from '../../components/placeholder/HrefLuImage';
 import PlaceholderImage from '../../components/placeholder/PlaceholderImage';
-
-const ColorTextField = styled(TextField)({
-  '& .MuiOutlinedInput-root .MuiOutlinedInput-input': {
-    textTransform: 'uppercase',
-  },
-});
 
 const defaultValues = {
   width: 320,
@@ -30,138 +24,101 @@ const suffixOptions = [
   { label: '.gif', value: '.gif' },
 ];
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
 const PlaceholderImg: FC = () => {
-  const [provider, setProvider] = useState<number>(0);
+  const [form] = Form.useForm();
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
-  const { register, handleSubmit, control, getValues, setValue } = useForm({ defaultValues });
 
+  const bgColor = Form.useWatch('bgColor', { form, preserve: true });
+  const textColor = Form.useWatch('textColor', { form, preserve: true });
+
+  useEffect(() => {
+    const values = form.getFieldsValue();
+    setPlaceholderConfig(values);
+  }, [bgColor, form, textColor]);
+
+  const tabsProps: TabsProps = {
+    defaultActiveKey: 'HrefLuImage',
+    items: [
+      {
+        key: 'HrefLuImage',
+        label: 'iph.href.lu',
+        children: <HrefLuImage {...placeholderConfig} />,
+      },
+      {
+        key: 'PlaceholderImage',
+        label: 'via.placeholder.com',
+        children: <PlaceholderImage {...placeholderConfig} />,
+      },
+      {
+        key: 'DummyImage',
+        label: 'dummyimage.com',
+        children: <DummyImage {...placeholderConfig} />,
+      },
+    ],
+  };
   return (
-    <Container sx={{ mt: 2 }}>
-      <form onChange={handleSubmit(setPlaceholderConfig)}>
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <TextField type="number" label="宽度" fullWidth {...register('width')} />
-          </Grid>
-          <Grid item xs={4}>
-            <TextField type="number" label="高度" fullWidth {...register('height')} />
-          </Grid>
-          <Grid item xs={4}>
-            <Controller
-              name="suffix"
-              control={control}
-              render={({ field }) => {
-                return (
-                  <FormControl fullWidth>
-                    <InputLabel>后缀名</InputLabel>
-                    <Select
-                      {...field}
-                      label="后缀名"
-                      onChange={(event) => {
-                        setPlaceholderConfig({ ...placeholderConfig, suffix: event.target.value });
-                      }}
-                    >
-                      {suffixOptions.map((item) => {
-                        return (
-                          <MenuItem key={item.label} value={item.value}>
-                            {item.label}
-                          </MenuItem>
-                        );
-                      })}
-                    </Select>
-                  </FormControl>
-                );
-              }}
-            />
-          </Grid>
-        </Grid>
-        <Grid container spacing={2} sx={{ mt: 1 }}>
-          <Grid item xs={4}>
-            <ColorTextField
+    <PageContainer>
+      <ProForm
+        submitter={false}
+        form={form}
+        initialValues={defaultValues}
+        onValuesChange={(changedValues, values) => {
+          setPlaceholderConfig(values);
+        }}
+      >
+        <Row gutter={16}>
+          <Col xs={24} sm={24} md={12} lg={8}>
+            <ProFormDigit label="宽度" name="width" />
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={8}>
+            <ProFormDigit label="高度" name="height" />
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={8}>
+            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} allowClear={false} />
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={8}>
+            <ProFormText
               label="背景颜色"
-              fullWidth
-              {...register('bgColor')}
-              InputProps={{
-                endAdornment: (
-                  <ColorPickerAdornment
-                    value={getValues('bgColor')}
-                    onChange={(color) => {
-                      setValue('bgColor', color);
-                      setPlaceholderConfig({ ...placeholderConfig, bgColor: color });
+              name="bgColor"
+              fieldProps={{
+                suffix: (
+                  <ColorPicker
+                    value={bgColor}
+                    onChange={(value, hex) => {
+                      form.setFieldValue('bgColor', hex);
                     }}
                   />
                 ),
               }}
+              allowClear={false}
             />
-          </Grid>
-          <Grid item xs={4}>
-            <ColorTextField
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={8}>
+            <ProFormText
               label="文本颜色"
-              fullWidth
-              {...register('textColor')}
-              InputProps={{
-                endAdornment: (
-                  <ColorPickerAdornment
-                    value={getValues('textColor')}
-                    onChange={(color) => {
-                      setValue('textColor', color);
-                      setPlaceholderConfig({ ...placeholderConfig, textColor: color });
+              name="textColor"
+              fieldProps={{
+                suffix: (
+                  <ColorPicker
+                    value={textColor}
+                    onChange={(value, hex) => {
+                      form.setFieldValue('textColor', hex);
                     }}
                   />
                 ),
               }}
+              allowClear={false}
             />
-          </Grid>
-          <Grid item xs={4}>
-            <TextField label="文本" fullWidth {...register('text')} />
-          </Grid>
-        </Grid>
-      </form>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={8}>
+            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ style: { height: '42px' } }} />
+          </Col>
+        </Row>
+      </ProForm>
       <Box>
-        <Tabs value={provider} onChange={(e, value) => setProvider(value)} aria-label="basic tabs example">
-          <Tab label="iph.href.lu" {...a11yProps(0)} />
-          <Tab label="via.placeholder.com" {...a11yProps(1)} />
-          <Tab label="dummyimage.com" {...a11yProps(2)} />
-        </Tabs>
-        <TabPanel value={provider} index={0}>
-          <HrefLuImage {...placeholderConfig} />
-        </TabPanel>
-        <TabPanel value={provider} index={1}>
-          <PlaceholderImage {...placeholderConfig} />
-        </TabPanel>
-        <TabPanel value={provider} index={2}>
-          <DummyImage {...placeholderConfig} />
-        </TabPanel>
+        <Tabs {...tabsProps} />
       </Box>
-    </Container>
+    </PageContainer>
   );
 };
 

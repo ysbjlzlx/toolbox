@@ -1,8 +1,9 @@
-import { PageContainer } from '@ant-design/pro-layout';
+import { PageContainer } from '@ant-design/pro-components';
 import { Box } from '@mui/material';
 import { Button, Input, Space } from 'antd';
 import { enc } from 'crypto-js';
 import { useState } from 'react';
+
 import TextResultBox from '../../components/TextResultBox';
 
 export default function Page() {

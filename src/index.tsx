@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import 'antd/dist/reset.css';
-import './aio/i18n';
 import Router from './aio/Router';
+import './aio/i18n';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 

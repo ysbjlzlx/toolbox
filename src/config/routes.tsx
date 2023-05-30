@@ -3,7 +3,7 @@ import { RouteObject } from 'react-router-dom';
 
 import Loading from '../app/loading';
 import NotFound from '../app/not-found';
-import NextLayout from '../layouts/NextLayout';
+import BaseLayout from '../layouts/BaseLayout';
 
 const App = lazy(() => import('../app/page'));
 const URL = lazy(() => import('../app/url/page'));
@@ -30,7 +30,7 @@ const Bson = lazy(() => import('../app/bson/page'));
 const routes: RouteObject[] = [
   {
     path: '/json',
-    element: <NextLayout />,
+    element: <BaseLayout />,
     children: [
       {
         path: 'json-editor',
@@ -60,7 +60,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/',
-    element: <NextLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
