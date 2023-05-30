@@ -7,7 +7,7 @@ import * as XLSX from 'xlsx';
 import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 
-import { PageContainer } from '@ant-design/pro-layout';
+import { PageContainer } from '@ant-design/pro-components';
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-monokai';
 

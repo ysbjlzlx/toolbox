@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-
-import { PageContainer } from '@ant-design/pro-layout';
+import { PageContainer } from '@ant-design/pro-components';
 import { Refresh } from '@mui/icons-material';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider } from 'antd';
+import { useEffect, useState } from 'react';
+
 import ContentCopyAdornment from '../../components/ContentCopyAdornment';
 import { generator, GeneratorOptions } from '../../scripts/RandomStringUtils';
 
