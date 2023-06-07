@@ -26,6 +26,7 @@ const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
 const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
 const Yaml = lazy(() => import('../app/yaml/page'));
 const Bson = lazy(() => import('../app/bson/page'));
+const UidPage = lazy(() => import('../app/uid/page'));
 
 const routes: RouteObject[] = [
   {
@@ -203,6 +204,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Formatter />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/uid',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <UidPage />
           </Suspense>
         ),
       },
