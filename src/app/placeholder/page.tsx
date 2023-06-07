@@ -1,3 +1,5 @@
+'use client';
+
 import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import { Box } from '@mui/material';
 import type { TabsProps } from 'antd';

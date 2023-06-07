@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Grid } from '@mui/material';
 import { Input, QRCode } from 'antd';
 import { ReactElement, useState } from 'react';

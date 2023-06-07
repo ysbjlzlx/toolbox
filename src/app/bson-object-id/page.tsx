@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Container, TextField, Typography } from '@mui/material';
 import ObjectID from 'bson-objectid';
 import { useEffect, useState } from 'react';

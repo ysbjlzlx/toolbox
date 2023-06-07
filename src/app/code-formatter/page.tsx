@@ -1,3 +1,5 @@
+'use client';
+
 import { Box } from '@mui/material';
 import { Button, Checkbox, Form, Select } from 'antd';
 import { useState } from 'react';

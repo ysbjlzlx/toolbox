@@ -1,3 +1,5 @@
+'use client';
+
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab } from '@mui/material';
 import { useSize } from 'ahooks';

@@ -1,3 +1,5 @@
+'use client';
+
 import { useLocalStorageState } from 'ahooks';
 import { FC } from 'react';
 import { Content, Mode } from 'vanilla-jsoneditor';

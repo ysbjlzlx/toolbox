@@ -1,3 +1,5 @@
+'use client';
+
 import { Tabs } from 'antd';
 import _ from 'lodash';
 import { Tab } from 'rc-tabs/lib/interface';

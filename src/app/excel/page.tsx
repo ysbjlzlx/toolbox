@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import FileSaver from 'file-saver';

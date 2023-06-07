@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Grid } from '@mui/material';
 import { useState } from 'react';
 import AceEditor from 'react-ace';
