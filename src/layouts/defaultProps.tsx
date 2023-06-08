@@ -34,10 +34,9 @@ export const menuData: MenuDataItem = {
       icon: <SyncAlt fontSize="inherit" />,
     },
     {
-      name: 'BSON ObjectID',
-      desc: 'BSON',
-      path: '/bson-object-id',
+      name: '生成器（Generator）',
       icon: <Code fontSize="inherit" />,
+      children: [{ name: 'ID', path: '/generator/id' }],
     },
     {
       name: 'CodeFormatter',
