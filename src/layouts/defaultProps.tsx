@@ -1,6 +1,6 @@
-import { FileImageOutlined, LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
+import { LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
 import type { MenuDataItem } from '@ant-design/pro-components';
-import { Code, Compress, DataObject, Drafts, Shuffle, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
+import { Code, Compress, DataObject, Drafts, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
 export const menuData: MenuDataItem = {
   path: '/',
@@ -34,16 +34,27 @@ export const menuData: MenuDataItem = {
       icon: <SyncAlt fontSize="inherit" />,
     },
     {
-      name: 'BSON ObjectID',
-      desc: 'BSON',
-      path: '/bson-object-id',
-      icon: <Code fontSize="inherit" />,
-    },
-    {
       name: 'CodeFormatter',
       desc: '代码格式化，目前支持：JSON、JSON5',
       path: '/code-formatter',
       icon: <Code fontSize="inherit" />,
+    },
+    {
+      name: '生成器（Generator）',
+      icon: <Code fontSize="inherit" />,
+      children: [
+        {
+          name: '随机字符串（String）',
+          desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
+          path: '/generator/string',
+        },
+        { name: 'ID', path: '/generator/id' },
+        {
+          name: 'Image',
+          desc: '快速便捷生成占位图',
+          path: '/generator/image',
+        },
+      ],
     },
     {
       name: 'URL',
@@ -56,12 +67,6 @@ export const menuData: MenuDataItem = {
       desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
       path: '/markdown',
       icon: <Drafts fontSize="inherit" />,
-    },
-    {
-      name: 'Random',
-      desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
-      path: '/random',
-      icon: <Shuffle fontSize="inherit" />,
     },
     {
       name: 'Base 64',
@@ -87,12 +92,7 @@ export const menuData: MenuDataItem = {
       path: '/qrcode',
       icon: <QrcodeOutlined />,
     },
-    {
-      name: 'Placeholder Image',
-      desc: '快速便捷生成占位图',
-      path: '/placeholder',
-      icon: <FileImageOutlined />,
-    },
+
     {
       name: '时间戳（Timestamp）',
       desc: '时间戳（Timestamp）',

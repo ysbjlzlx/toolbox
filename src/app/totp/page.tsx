@@ -1,3 +1,5 @@
+'use client';
+
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { useLocalStorageState } from 'ahooks';

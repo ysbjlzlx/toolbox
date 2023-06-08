@@ -1,3 +1,5 @@
+'use client';
+
 import { PageContainer } from '@ant-design/pro-components';
 import { Box } from '@mui/material';
 import { Button, Input, Space } from 'antd';

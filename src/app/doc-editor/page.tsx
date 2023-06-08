@@ -1,3 +1,5 @@
+'use client';
+
 import { Editor } from '@tinymce/tinymce-react';
 
 const DocEditor = () => {

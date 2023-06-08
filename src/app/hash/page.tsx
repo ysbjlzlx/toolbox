@@ -1,3 +1,5 @@
+'use client';
+
 import { Container } from '@mui/material';
 import { Input, Space } from 'antd';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';

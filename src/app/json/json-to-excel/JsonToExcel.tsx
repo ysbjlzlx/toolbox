@@ -1,3 +1,5 @@
+'use client';
+
 import { Box } from '@mui/material';
 import JSON5 from 'json5';
 import _ from 'lodash';

@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Button, Grid } from '@mui/material';
 import JSON5 from 'json5';
 import { FC, useState } from 'react';

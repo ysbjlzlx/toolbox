@@ -1,3 +1,5 @@
+'use client';
+
 import { ReloadOutlined } from '@ant-design/icons';
 import { ProForm, ProFormText } from '@ant-design/pro-components';
 import { Box, Container } from '@mui/material';

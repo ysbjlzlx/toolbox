@@ -8,13 +8,12 @@ import BaseLayout from '../layouts/BaseLayout';
 const App = lazy(() => import('../app/page'));
 const URL = lazy(() => import('../app/url/page'));
 const Markdown = lazy(() => import('../app/markdown/page'));
-const Random = lazy(() => import('../app/random/page'));
+const Random = lazy(() => import('../app/generator/string/page'));
 const Base64 = lazy(() => import('../app/base64/page'));
 const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
 const QRCode = lazy(() => import('../app/qrcode/page'));
-const Placeholder = lazy(() => import('../app/placeholder/page'));
-const BSONObjectID = lazy(() => import('../app/bson-object-id/page'));
+
 const DocEditor = lazy(() => import('../app/doc-editor/page'));
 const Timestamp = lazy(() => import('../app/timestamp/page'));
 const Totp = lazy(() => import('../app/totp/page'));
@@ -25,7 +24,9 @@ const Json = lazy(() => import('../app/json/json-editor/page'));
 const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
 const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
 const Yaml = lazy(() => import('../app/yaml/page'));
-const Bson = lazy(() => import('../app/bson/page'));
+
+const GeneratorIdPage = lazy(() => import('../app/generator/id/page'));
+const GeneratorImgPage = lazy(() => import('../app/generator/image/page'));
 
 const routes: RouteObject[] = [
   {
@@ -53,6 +54,36 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <JsonToExcel />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: '/generator',
+    element: <BaseLayout />,
+    children: [
+      {
+        path: '/generator/id',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <GeneratorIdPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'image',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <GeneratorImgPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'string',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Random />
           </Suspense>
         ),
       },
@@ -95,14 +126,6 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: '/random',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Random />
-          </Suspense>
-        ),
-      },
-      {
         path: '/base64',
         element: (
           <Suspense fallback={<Loading />}>
@@ -139,30 +162,6 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Formatter />
-          </Suspense>
-        ),
-      },
-      {
-        path: '/placeholder',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Placeholder />
-          </Suspense>
-        ),
-      },
-      {
-        path: '/bson',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Bson />
-          </Suspense>
-        ),
-      },
-      {
-        path: '/bson-object-id',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <BSONObjectID />
           </Suspense>
         ),
       },
