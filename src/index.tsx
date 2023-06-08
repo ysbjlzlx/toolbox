@@ -1,22 +1,22 @@
 import { ConfigProvider } from 'antd';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import 'antd/dist/reset.css';
-import Router from './aio/Router';
 import './aio/i18n';
+import routes from './config/routes';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
     <ConfigProvider>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </ConfigProvider>
   </React.StrictMode>,
 );
