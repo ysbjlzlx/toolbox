@@ -1,7 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { createId } from '@paralleldrive/cuid2';
 import { TwitterSnowflake } from '@sapphire/snowflake';
-import { Button, Segmented } from 'antd';
+import { Button, Col, Row, Segmented } from 'antd';
 import { SegmentedLabeledOption } from 'antd/es/segmented';
 import ObjectID from 'bson-objectid';
 import { nanoid } from 'nanoid';
@@ -57,13 +57,17 @@ const UidPage: FC = () => {
   }, [type]);
   return (
     <PageContainer>
-      <Segmented options={options} value={type} onChange={(value) => setType(value)} />
-      <div style={{ marginTop: '10px', marginBottom: '10px' }}>
-        <Button onClick={refresh}>刷新</Button>
-      </div>
-      <div style={{ marginTop: '10px' }}>
-        <TextResultBox title="结果" text={result} />
-      </div>
+      <Row justify="center">
+        <Col span={16}>
+          <Segmented block={true} options={options} value={type} onChange={(value) => setType(value)} />
+          <div style={{ marginTop: '10px', marginBottom: '10px' }}>
+            <Button onClick={refresh}>刷新</Button>
+          </div>
+          <div style={{ marginTop: '10px' }}>
+            <TextResultBox title="结果" text={result} />
+          </div>
+        </Col>
+      </Row>
     </PageContainer>
   );
 };
