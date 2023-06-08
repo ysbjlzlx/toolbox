@@ -1,6 +1,6 @@
 import { LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
 import type { MenuDataItem } from '@ant-design/pro-components';
-import { Code, Compress, DataObject, Drafts, Shuffle, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
+import { Code, Compress, DataObject, Drafts, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
 export const menuData: MenuDataItem = {
   path: '/',
@@ -37,6 +37,11 @@ export const menuData: MenuDataItem = {
       name: '生成器（Generator）',
       icon: <Code fontSize="inherit" />,
       children: [
+        {
+          name: '随机字符串（String）',
+          desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
+          path: '/generator/string',
+        },
         { name: 'ID', path: '/generator/id' },
         {
           name: 'Image',
@@ -62,12 +67,6 @@ export const menuData: MenuDataItem = {
       desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
       path: '/markdown',
       icon: <Drafts fontSize="inherit" />,
-    },
-    {
-      name: 'Random',
-      desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
-      path: '/random',
-      icon: <Shuffle fontSize="inherit" />,
     },
     {
       name: 'Base 64',

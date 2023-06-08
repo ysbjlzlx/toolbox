@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout';
 const App = lazy(() => import('../app/page'));
 const URL = lazy(() => import('../app/url/page'));
 const Markdown = lazy(() => import('../app/markdown/page'));
-const Random = lazy(() => import('../app/random/page'));
+const Random = lazy(() => import('../app/generator/string/page'));
 const Base64 = lazy(() => import('../app/base64/page'));
 const Excel = lazy(() => import('../app/excel/page'));
 const Hash = lazy(() => import('../app/hash/page'));
@@ -79,6 +79,14 @@ const routes: RouteObject[] = [
           </Suspense>
         ),
       },
+      {
+        path: 'string',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Random />
+          </Suspense>
+        ),
+      },
     ],
   },
   {
@@ -114,14 +122,6 @@ const routes: RouteObject[] = [
         element: (
           <Suspense fallback={<Loading />}>
             <Markdown />
-          </Suspense>
-        ),
-      },
-      {
-        path: '/random',
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Random />
           </Suspense>
         ),
       },
