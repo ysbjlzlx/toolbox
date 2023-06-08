@@ -34,6 +34,12 @@ export const menuData: MenuDataItem = {
       icon: <SyncAlt fontSize="inherit" />,
     },
     {
+      name: 'CodeFormatter',
+      desc: '代码格式化，目前支持：JSON、JSON5',
+      path: '/code-formatter',
+      icon: <Code fontSize="inherit" />,
+    },
+    {
       name: '生成器（Generator）',
       icon: <Code fontSize="inherit" />,
       children: [
@@ -49,12 +55,6 @@ export const menuData: MenuDataItem = {
           path: '/generator/image',
         },
       ],
-    },
-    {
-      name: 'CodeFormatter',
-      desc: '代码格式化，目前支持：JSON、JSON5',
-      path: '/code-formatter',
-      icon: <Code fontSize="inherit" />,
     },
     {
       name: 'URL',
