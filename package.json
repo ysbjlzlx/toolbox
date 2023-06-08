@@ -80,7 +80,7 @@
     "remark-gfm": "3.0.1",
     "ulid": "2.3.0",
     "uuid": "9.0.0",
-    "vanilla-jsoneditor": "0.17.4",
+    "vanilla-jsoneditor": "0.17.5",
     "web-vitals": "3.3.2",
     "workbox-background-sync": "7.0.0",
     "workbox-broadcast-update": "7.0.0",
