@@ -1,6 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { createId } from '@paralleldrive/cuid2';
 import { TwitterSnowflake } from '@sapphire/snowflake';
+import { useCounter } from 'ahooks';
 import { Button, Col, Row, Segmented } from 'antd';
 import { SegmentedLabeledOption } from 'antd/es/segmented';
 import ObjectID from 'bson-objectid';
@@ -15,6 +16,7 @@ import TextResultBox from '../../components/TextResultBox';
 const UidPage: FC = () => {
   const [type, setType] = useState<SegmentedValue>('cuid');
   const [result, setResult] = useState<string>('');
+  const [counter, { inc }] = useCounter(0);
 
   const options: (SegmentedRawOption | SegmentedLabeledOption)[] = [
     { label: 'Cuid2', value: 'cuid' },
@@ -24,21 +26,6 @@ const UidPage: FC = () => {
     { label: 'UUID', value: 'uuid' },
     { label: 'Snowflake ID', value: 'snowflakeid' },
   ];
-  const refresh = () => {
-    if (type === 'cuid') {
-      setResult(createId);
-    } else if (type === 'objectid') {
-      setResult(ObjectID().toHexString());
-    } else if (type === 'nanoid') {
-      setResult(nanoid());
-    } else if (type === 'ulid') {
-      setResult(ulid());
-    } else if (type === 'uuid') {
-      setResult(uuidv4());
-    } else if (type === 'snowflakeid') {
-      setResult(TwitterSnowflake.generate().toString());
-    }
-  };
 
   useEffect(() => {
     if (type === 'cuid') {
@@ -54,14 +41,14 @@ const UidPage: FC = () => {
     } else if (type === 'snowflakeid') {
       setResult(TwitterSnowflake.generate().toString());
     }
-  }, [type]);
+  }, [type, counter]);
   return (
     <PageContainer>
       <Row justify="center">
         <Col span={16}>
           <Segmented block={true} options={options} value={type} onChange={(value) => setType(value)} />
           <div style={{ marginTop: '10px', marginBottom: '10px' }}>
-            <Button onClick={refresh}>刷新</Button>
+            <Button onClick={() => inc()}>刷新</Button>
           </div>
           <div style={{ marginTop: '10px' }}>
             <TextResultBox title="结果" text={result} />
