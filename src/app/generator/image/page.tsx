@@ -6,10 +6,10 @@ import type { TabsProps } from 'antd';
 import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
 import { FC, useEffect, useState } from 'react';
 
-import { PlaceholderConfig } from '../../components/placeholder';
-import DummyImage from '../../components/placeholder/DummyImage';
-import HrefLuImage from '../../components/placeholder/HrefLuImage';
-import PlaceholderImage from '../../components/placeholder/PlaceholderImage';
+import { PlaceholderConfig } from '../../../components/placeholder';
+import DummyImage from '../../../components/placeholder/DummyImage';
+import HrefLuImage from '../../../components/placeholder/HrefLuImage';
+import PlaceholderImage from '../../../components/placeholder/PlaceholderImage';
 
 const defaultValues = {
   width: 320,

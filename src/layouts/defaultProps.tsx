@@ -1,4 +1,4 @@
-import { FileImageOutlined, LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
+import { LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { Code, Compress, DataObject, Drafts, Shuffle, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
@@ -36,7 +36,14 @@ export const menuData: MenuDataItem = {
     {
       name: '生成器（Generator）',
       icon: <Code fontSize="inherit" />,
-      children: [{ name: 'ID', path: '/generator/id' }],
+      children: [
+        { name: 'ID', path: '/generator/id' },
+        {
+          name: 'Image',
+          desc: '快速便捷生成占位图',
+          path: '/generator/image',
+        },
+      ],
     },
     {
       name: 'CodeFormatter',
@@ -86,12 +93,7 @@ export const menuData: MenuDataItem = {
       path: '/qrcode',
       icon: <QrcodeOutlined />,
     },
-    {
-      name: 'Placeholder Image',
-      desc: '快速便捷生成占位图',
-      path: '/placeholder',
-      icon: <FileImageOutlined />,
-    },
+
     {
       name: '时间戳（Timestamp）',
       desc: '时间戳（Timestamp）',

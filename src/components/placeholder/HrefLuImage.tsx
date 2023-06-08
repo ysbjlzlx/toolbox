@@ -1,6 +1,6 @@
 import { Image } from 'antd';
 import { useEffect, useState } from 'react';
-import ImageWrapper from '../../app/placeholder/ImageWrapper';
+import ImageWrapper from '../../app/generator/image/ImageWrapper';
 import { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
 
