@@ -1,17 +1,23 @@
 'use client';
 
+import { PageContainer } from '@ant-design/pro-components';
 import { Box, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import FileSaver from 'file-saver';
+import dynamic from 'next/dynamic';
 import { ChangeEvent, useState } from 'react';
+import { AceOptions } from 'react-ace/types';
 import * as XLSX from 'xlsx';
 
-import AceEditor from 'react-ace';
-import { AceOptions } from 'react-ace/types';
-
-import { PageContainer } from '@ant-design/pro-components';
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/theme-monokai';
+const AceEditor = dynamic(
+  async () => {
+    const ace = await import('react-ace');
+    await import('ace-builds/src-noconflict/mode-json');
+    await import('ace-builds/src-noconflict/theme-monokai');
+    return ace;
+  },
+  { ssr: false },
+);
 
 const Input = styled('input')({
   display: 'none',

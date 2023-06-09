@@ -1,18 +1,22 @@
 import { Box, Button, Grid } from '@mui/material';
-import { FC, useState } from 'react';
-
-import AceEditor from 'react-ace';
-import { AceOptions } from 'react-ace/types';
-
+import dynamic from 'next/dynamic';
 import prettierBabelPlugin from 'prettier/parser-babel';
 import prettier from 'prettier/standalone';
-
+import { FC, useState } from 'react';
+import { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import 'ace-builds/src-min-noconflict/mode-json';
-import 'ace-builds/src-min-noconflict/mode-yaml';
-import 'ace-builds/src-min-noconflict/theme-textmate';
+const AceEditor = dynamic(
+  async () => {
+    const ace = await import('react-ace');
+    await import('ace-builds/src-noconflict/ext-searchbox');
+    await import('ace-builds/src-noconflict/mode-json');
+    await import('ace-builds/src-noconflict/mode-yaml');
+    await import('ace-builds/src-noconflict/theme-textmate');
+    return ace;
+  },
+  { ssr: false },
+);
 
 const YamlToJson: FC = () => {
   const [json, setJson] = useState<string>('');
