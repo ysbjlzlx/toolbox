@@ -3,16 +3,24 @@
 import { Box } from '@mui/material';
 import JSON5 from 'json5';
 import _ from 'lodash';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 import ReactDataSheet from 'react-datasheet';
 
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import 'ace-builds/src-min-noconflict/mode-json5';
-import 'ace-builds/src-min-noconflict/mode-yaml';
-import 'ace-builds/src-min-noconflict/theme-textmate';
 import 'react-datasheet/lib/react-datasheet.css';
+
+const AceEditor = dynamic(
+  async () => {
+    const ace = await import('react-ace');
+    await import('ace-builds/src-noconflict/ext-searchbox');
+    await import('ace-builds/src-noconflict/mode-json5');
+    await import('ace-builds/src-noconflict/mode-yaml');
+    await import('ace-builds/src-noconflict/theme-textmate');
+    return ace;
+  },
+  { ssr: false },
+);
 
 export interface GridElement extends ReactDataSheet.Cell<GridElement, number | string | null> {
   value: number | string | null;

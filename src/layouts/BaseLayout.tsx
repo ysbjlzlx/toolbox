@@ -1,8 +1,11 @@
+'use client';
+
 import type { ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FC, ReactNode } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
 
 import { menuData as defaultProps } from './defaultProps';
 
@@ -16,8 +19,8 @@ const settings: Partial<ProSettings> = {
   siderMenuType: 'sub',
 };
 
-const BaseLayout: FC = () => {
-  const location = useLocation();
+const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
+  const pathname = usePathname();
 
   const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
     <a href="/" title="Logo">
@@ -29,7 +32,11 @@ const BaseLayout: FC = () => {
     if (item.disabled || item.path === undefined) {
       return dom;
     }
-    return <Link to={item.path}>{dom}</Link>;
+    return (
+      <Link href={item.path} prefetch={false}>
+        {dom}
+      </Link>
+    );
   };
 
   const proLayoutProps: ProLayoutProps = {
@@ -37,7 +44,7 @@ const BaseLayout: FC = () => {
     title: 'Toolbox',
     menuHeaderRender,
     menuItemRender,
-    location: location,
+    location: { pathname },
     route: defaultProps,
     token: {
       pageContainer: {
@@ -52,9 +59,7 @@ const BaseLayout: FC = () => {
     <ProConfigProvider hashed={false}>
       <ConfigProvider>
         <ProLayout {...proLayoutProps} {...settings}>
-          <div style={{ height: '100vh' }}>
-            <Outlet />
-          </div>
+          <div style={{ height: '100vh' }}>{children}</div>
         </ProLayout>
       </ConfigProvider>
     </ProConfigProvider>

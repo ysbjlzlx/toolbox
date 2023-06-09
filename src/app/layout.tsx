@@ -1,4 +1,4 @@
-import NextLayout from '@/layouts/NextLayout';
+import NextLayout from '@/layouts/BaseLayout';
 import { FC, ReactNode } from 'react';
 
 export const metadata = {
