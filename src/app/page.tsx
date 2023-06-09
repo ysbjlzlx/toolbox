@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Link } from '@mui/material';
 import { Card, Col, Row } from 'antd';
 import { Link as RouterLink } from 'react-router-dom';
