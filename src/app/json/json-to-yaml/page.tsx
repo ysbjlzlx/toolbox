@@ -2,16 +2,24 @@
 
 import { Box, Button, Grid } from '@mui/material';
 import JSON5 from 'json5';
+import dynamic from 'next/dynamic';
 import { FC, useState } from 'react';
-import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
+
 import { format, parser } from '../../../utils/formatter';
 
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import 'ace-builds/src-min-noconflict/mode-json5';
-import 'ace-builds/src-min-noconflict/mode-yaml';
-import 'ace-builds/src-min-noconflict/theme-textmate';
+const AceEditor = dynamic(
+  async () => {
+    const ace = await import('react-ace');
+    await import('ace-builds/src-noconflict/ext-searchbox');
+    await import('ace-builds/src-noconflict/mode-json5');
+    await import('ace-builds/src-noconflict/mode-yaml');
+    await import('ace-builds/src-noconflict/theme-textmate');
+    return ace;
+  },
+  { ssr: false },
+);
 
 const Page: FC = () => {
   const [json, setJson] = useState<string>('');
