@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, List, ListItem, ListItemText } from '@mui/material';
 import { TotpI } from './typings';
 

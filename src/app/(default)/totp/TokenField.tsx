@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, CircularProgress, TextField, Typography } from '@mui/material';
 import { useCountDown } from 'ahooks';
 import dayjs from 'dayjs';

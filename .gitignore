@@ -51,5 +51,6 @@ next-env.d.ts
 **/public/fallback-*.js
 **/public/precache.*.*.js.map
 **/public/sw.js.map
+**/public/service-worker.js.map
 **/public/workbox-*.js.map
 **/public/worker-*.js.map

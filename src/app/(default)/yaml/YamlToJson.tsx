@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Button, Grid } from '@mui/material';
 import dynamic from 'next/dynamic';
 import prettierBabelPlugin from 'prettier/parser-babel';

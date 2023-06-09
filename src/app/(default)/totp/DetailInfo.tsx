@@ -1,3 +1,5 @@
+'use client';
+
 import { Refresh as RefreshIcon } from '@mui/icons-material';
 import { Box, Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import * as OTPAuth from 'otpauth';

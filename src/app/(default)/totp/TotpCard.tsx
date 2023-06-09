@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, TextField } from '@mui/material';
 import { TOTP } from 'otpauth';
 import QRCode from 'qrcode';

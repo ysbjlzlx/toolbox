@@ -19,25 +19,26 @@ const settings: Partial<ProSettings> = {
   siderMenuType: 'sub',
 };
 
-const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
-  const pathname = usePathname();
-
-  const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
-    <Link href="/" title="Logo" prefetch={false}>
-      {logo}
-      {title}
+const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
+  if (item.disabled || item.path === undefined) {
+    return dom;
+  }
+  return (
+    <Link href={item.path} prefetch={false}>
+      {dom}
     </Link>
   );
-  const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
-    if (item.disabled || item.path === undefined) {
-      return dom;
-    }
-    return (
-      <Link href={item.path} prefetch={false}>
-        {dom}
-      </Link>
-    );
-  };
+};
+
+const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
+  <Link href="/" title="Logo" prefetch={false}>
+    {logo}
+    {title}
+  </Link>
+);
+
+const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
+  const pathname = usePathname();
 
   const proLayoutProps: ProLayoutProps = {
     logo: '/logo.svg',
