@@ -4,7 +4,7 @@ import { Container } from '@mui/material';
 import { Card, Col, Row } from 'antd';
 import Link from 'next/link';
 
-import { Application, apps } from '../models/Apps';
+import { Application, apps } from '@/models/Apps';
 
 const Page = () => {
   const item = ({ applications }: { applications: Application[] }) => {
