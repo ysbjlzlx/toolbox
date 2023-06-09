@@ -47,22 +47,28 @@ export const apps: Application[] = [
     icon: SyncAlt,
   },
   {
-    name: 'BSON ObjectID',
-    desc: 'BSON',
-    href: '/bson-object-id',
+    name: 'ID Generator',
+    desc: 'ID u生成器',
+    href: '/generator/id',
     icon: Code,
+  },
+  {
+    name: 'Random String Generator',
+    desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
+    href: '/generator/string',
+    icon: Shuffle,
+  },
+  {
+    name: 'Image Generator',
+    desc: '快速便捷生成占位图',
+    href: '/generator/image',
+    icon: Image,
   },
   {
     name: 'CodeFormatter',
     desc: '代码格式化，目前支持：JSON、JSON5',
     href: '/code-formatter',
     icon: Code,
-  },
-  {
-    name: 'Random',
-    desc: '生成包含数字、小写字母、大写字母、符号的随机字符串',
-    href: '/random',
-    icon: Shuffle,
   },
   {
     name: 'Base 64',
@@ -87,12 +93,6 @@ export const apps: Application[] = [
     desc: '为字符串生成对应的 QRCode 图片',
     href: '/qrcode',
     icon: QrCode,
-  },
-  {
-    name: 'Placeholder Image',
-    desc: '快速便捷生成占位图',
-    href: '/placeholder',
-    icon: Image,
   },
   {
     name: '时间戳（Timestamp）',
