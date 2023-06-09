@@ -45,6 +45,7 @@ next-env.d.ts
 ====== next-pwa ======
 **/public/precache.*.*.js
 **/public/sw.js
+**/public/service-worker.js
 **/public/workbox-*.js
 **/public/worker-*.js
 **/public/fallback-*.js
