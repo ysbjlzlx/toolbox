@@ -2,18 +2,26 @@
 
 import { Box } from '@mui/material';
 import { Button, Checkbox, Form, Select } from 'antd';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import AceEditor, { ICommand } from 'react-ace';
+import { ICommand } from 'react-ace';
 import { AceOptions } from 'react-ace/types';
+
 import { format, parser } from '../../utils/formatter';
 
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import 'ace-builds/src-min-noconflict/mode-json';
-import 'ace-builds/src-min-noconflict/mode-json5';
-import 'ace-builds/src-min-noconflict/mode-xml';
-import 'ace-builds/src-min-noconflict/mode-yaml';
-import 'ace-builds/src-min-noconflict/theme-monokai';
-
+const AceEditor = dynamic(
+  async () => {
+    const ace = await import('react-ace');
+    await import('ace-builds/src-noconflict/ext-searchbox');
+    await import('ace-builds/src-noconflict/mode-json');
+    await import('ace-builds/src-noconflict/mode-json5');
+    await import('ace-builds/src-noconflict/mode-xml');
+    await import('ace-builds/src-noconflict/mode-yaml');
+    await import('ace-builds/src-noconflict/theme-monokai');
+    return ace;
+  },
+  { ssr: false },
+);
 const Formatter = () => {
   const [options, setOptions] = useState<AceOptions>({
     useWorker: false,

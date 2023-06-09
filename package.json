@@ -8,7 +8,7 @@
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
     "next:build": "next build",
-    "next:dev": "next dev --turbo",
+    "next:dev": "next dev",
     "next:lint": "next lint",
     "next:start": "next start",
     "prepare": "husky install",
