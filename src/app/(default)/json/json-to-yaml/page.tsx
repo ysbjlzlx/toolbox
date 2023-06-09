@@ -7,7 +7,7 @@ import { FC, useState } from 'react';
 import { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
-import { format, parser } from '../../../utils/formatter';
+import { format, parser } from '../../../../utils/formatter';
 
 const AceEditor = dynamic(
   async () => {

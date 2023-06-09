@@ -3,7 +3,7 @@ import { TOTP } from 'otpauth';
 import QRCode from 'qrcode';
 import { useEffect, useMemo, useRef } from 'react';
 
-import ContentCopyAdornment from '../../components/ContentCopyAdornment';
+import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
 import TokenField from './TokenField';
 
 interface Props {

@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { ICommand } from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 
-import { format, parser } from '../../utils/formatter';
+import { format, parser } from '../../../utils/formatter';
 
 const AceEditor = dynamic(
   async () => {

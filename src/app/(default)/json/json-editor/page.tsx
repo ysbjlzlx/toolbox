@@ -6,8 +6,8 @@ import { Tab } from 'rc-tabs/lib/interface';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
+import useJsonTabStore from '@/stores/JsonTabStore';
 import dynamic from 'next/dynamic';
-import useJsonTabStore from '../../../stores/JsonTabStore';
 
 const JsonEditor = dynamic(() => import('./JsonEditor'), { ssr: false });
 

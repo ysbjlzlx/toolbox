@@ -6,7 +6,7 @@ import { Button, Input, Space } from 'antd';
 import { enc } from 'crypto-js';
 import { useState } from 'react';
 
-import TextResultBox from '../../components/TextResultBox';
+import TextResultBox from '../../../components/TextResultBox';
 
 export default function Page() {
   const [plain, setPlain] = useState('');

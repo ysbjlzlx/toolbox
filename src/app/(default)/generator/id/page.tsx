@@ -13,7 +13,7 @@ import { FC, useEffect, useState } from 'react';
 import { ulid } from 'ulid';
 import { v4 as uuidv4 } from 'uuid';
 
-import TextResultBox from '../../../components/TextResultBox';
+import TextResultBox from '../../../../components/TextResultBox';
 
 const UidPage: FC = () => {
   const [type, setType] = useState<SegmentedValue>('cuid');

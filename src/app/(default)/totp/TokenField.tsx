@@ -3,7 +3,7 @@ import { useCountDown } from 'ahooks';
 import dayjs from 'dayjs';
 import { TOTP } from 'otpauth';
 import { useEffect, useState } from 'react';
-import ContentCopyAdornment from '../../components/ContentCopyAdornment';
+import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
 
 interface Props {
   totp?: TOTP;

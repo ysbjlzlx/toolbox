@@ -5,8 +5,8 @@ import { Refresh } from '@mui/icons-material';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider } from 'antd';
 import { useEffect, useState } from 'react';
 
-import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
-import { generator, GeneratorOptions } from '../../../scripts/RandomStringUtils';
+import ContentCopyAdornment from '../../../../components/ContentCopyAdornment';
+import { generator, GeneratorOptions } from '../../../../scripts/RandomStringUtils';
 
 const initialOptions: GeneratorOptions = {
   numeric: true,

@@ -23,10 +23,10 @@ const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
   const pathname = usePathname();
 
   const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
-    <a href="/" title="Logo">
+    <Link href="/" title="Logo" prefetch={false}>
       {logo}
       {title}
-    </a>
+    </Link>
   );
   const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
     if (item.disabled || item.path === undefined) {

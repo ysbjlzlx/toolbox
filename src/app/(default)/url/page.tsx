@@ -4,8 +4,8 @@ import { Box, Container, TextField } from '@mui/material';
 import { useState } from 'react';
 
 import { Button } from 'antd';
-import ContentCopyAdornment from '../../components/ContentCopyAdornment';
-import TextResultBox from '../../components/TextResultBox';
+import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
+import TextResultBox from '../../../components/TextResultBox';
 
 export default function Page() {
   const [uri, setUri] = useState<string>('');
