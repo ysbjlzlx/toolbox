@@ -1,3 +1,5 @@
+'use client';
+
 import { PageContainer } from '@ant-design/pro-components';
 import { createId } from '@paralleldrive/cuid2';
 import { TwitterSnowflake } from '@sapphire/snowflake';

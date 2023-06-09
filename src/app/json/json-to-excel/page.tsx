@@ -18,7 +18,7 @@ export interface GridElement extends ReactDataSheet.Cell<GridElement, number | s
   value: number | string | null;
 }
 
-const JsonToExcel = () => {
+const Page = () => {
   const [json, setJson] = useState<string>('{}');
   const [data, setData] = useState<GridElement[][]>([]);
   const [jsonOptions] = useState<AceOptions>({
@@ -83,4 +83,4 @@ const JsonToExcel = () => {
   );
 };
 
-export default JsonToExcel;
+export default Page;

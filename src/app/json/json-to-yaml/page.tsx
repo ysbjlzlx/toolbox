@@ -13,7 +13,7 @@ import 'ace-builds/src-min-noconflict/mode-json5';
 import 'ace-builds/src-min-noconflict/mode-yaml';
 import 'ace-builds/src-min-noconflict/theme-textmate';
 
-const JsonToYaml: FC = () => {
+const Page: FC = () => {
   const [json, setJson] = useState<string>('');
   const [yaml, setYaml] = useState<string>('');
   const [jsonOptions] = useState<AceOptions>({
@@ -78,4 +78,4 @@ const JsonToYaml: FC = () => {
   );
 };
 
-export default JsonToYaml;
+export default Page;

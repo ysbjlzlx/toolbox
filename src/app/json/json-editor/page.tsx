@@ -6,8 +6,10 @@ import { Tab } from 'rc-tabs/lib/interface';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
+import dynamic from 'next/dynamic';
 import useJsonTabStore from '../../../stores/JsonTabStore';
-import JsonEditor from './JsonEditor';
+
+const JsonEditor = dynamic(() => import('./JsonEditor'), { ssr: false });
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Page = () => {

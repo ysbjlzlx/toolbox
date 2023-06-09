@@ -21,8 +21,8 @@ const Writer = lazy(() => import('../app/writer/page'));
 const Formatter = lazy(() => import('../app/code-formatter/page'));
 
 const Json = lazy(() => import('../app/json/json-editor/page'));
-const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/JsonToYaml'));
-const JsonToExcel = lazy(() => import('../app/json/json-to-excel/JsonToExcel'));
+const JsonToYaml = lazy(() => import('../app/json/json-to-yaml/page'));
+const JsonToExcel = lazy(() => import('../app/json/json-to-excel/page'));
 const Yaml = lazy(() => import('../app/yaml/page'));
 
 const GeneratorIdPage = lazy(() => import('../app/generator/id/page'));

@@ -1,15 +1,22 @@
 'use client';
 
 import { Box, Grid } from '@mui/material';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import AceEditor from 'react-ace';
 import { AceOptions } from 'react-ace/types';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-import 'ace-builds/src-min-noconflict/ext-searchbox';
-import 'ace-builds/src-min-noconflict/mode-markdown';
-import 'ace-builds/src-min-noconflict/theme-textmate';
+const AceEditor = dynamic(
+  async () => {
+    const ace = await import('react-ace');
+    await import('ace-builds/src-noconflict/ext-searchbox');
+    await import('ace-builds/src-noconflict/mode-markdown');
+    await import('ace-builds/src-noconflict/theme-textmate');
+    return ace;
+  },
+  { ssr: false },
+);
 
 export default function Markdown() {
   const [markdown, setMarkdown] = useState<string>('');
