@@ -4,7 +4,7 @@ import type { ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { FC, ReactNode } from 'react';
 
 import { menuData as defaultProps } from './defaultProps';
@@ -32,17 +32,12 @@ const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
 
 const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
   const pathname = usePathname();
-  const router = useRouter();
 
   const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
-    <div
-      onClick={() => {
-        router.push('/');
-      }}
-    >
+    <Link href={'/'} title={'logo'} prefetch={false}>
       {logo}
       {title}
-    </div>
+    </Link>
   );
 
   const proLayoutProps: ProLayoutProps = {
