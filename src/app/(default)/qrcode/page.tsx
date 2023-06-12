@@ -1,7 +1,7 @@
 'use client';
 
-import { Container, Grid } from '@mui/material';
-import { Input, QRCode } from 'antd';
+import { Container } from '@mui/material';
+import { Col, Input, QRCode, Row } from 'antd';
 import { ReactElement, useState } from 'react';
 
 export default function Page(): ReactElement {
@@ -10,8 +10,8 @@ export default function Page(): ReactElement {
 
   return (
     <Container sx={{ mt: 5 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={9}>
+      <Row gutter={8}>
+        <Col span={24} md={16}>
           <TextArea
             value={text}
             onChange={(event) => {
@@ -19,11 +19,12 @@ export default function Page(): ReactElement {
             }}
             autoSize={{ minRows: 7, maxRows: 7 }}
           />
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <QRCode value={text || ''} />
-        </Grid>
-      </Grid>
+        </Col>
+
+        <Col span={24} md={8}>
+          <QRCode value={text || 'toolbox.fanfou.dev'} />
+        </Col>
+      </Row>
     </Container>
   );
 }
