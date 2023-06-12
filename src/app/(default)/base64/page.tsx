@@ -9,6 +9,7 @@ import { SegmentedRawOption } from 'rc-segmented';
 import { useCallback, useState } from 'react';
 // @ts-ignore
 // @ts-ignore
+import basex from 'base-x';
 import bs58 from 'bs58';
 import bs58check from 'bs58check';
 
@@ -40,6 +41,8 @@ export default function Page() {
       const result = bs58.encode(Uint8Array.from(uint8array));
       console.log(bs58check.encode(uint8array));
       setTarget(result);
+      const base58 = basex('123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ');
+      console.log(base58.encode(uint8array));
     } else if ('base64' === type) {
       setTarget(enc.Base64.stringify(enc.Utf8.parse(plain)));
     }
