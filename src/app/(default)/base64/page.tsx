@@ -2,25 +2,56 @@
 
 import { PageContainer } from '@ant-design/pro-components';
 import { Box } from '@mui/material';
-import { Button, Input, Space } from 'antd';
+import { Button, Input, Segmented, Space } from 'antd';
+import { SegmentedLabeledOption } from 'antd/es/segmented';
 import { enc } from 'crypto-js';
-import { useState } from 'react';
+import { SegmentedRawOption } from 'rc-segmented';
+import { useCallback, useState } from 'react';
 
 import TextResultBox from '../../../components/TextResultBox';
 
+type BaseType = 'base16' | 'base32' | 'base64' | 'base85';
+
 export default function Page() {
-  const [plain, setPlain] = useState('');
-  const [target, setTarget] = useState('');
-  const encode = () => {
-    const str = enc.Base64.stringify(enc.Utf8.parse(plain));
-    setTarget(str);
-  };
-  const decode = () => {
-    const str = enc.Utf8.stringify(enc.Base64.parse(plain));
-    setTarget(str);
-  };
+  const [type, setType] = useState<BaseType>('base64');
+  const [plain, setPlain] = useState<string>('');
+  const [target, setTarget] = useState<string>('');
+
+  const segmentedOptions: (SegmentedRawOption | SegmentedLabeledOption)[] = [
+    { label: 'Base16', value: 'base16' },
+    { label: 'Base32', value: 'base32', disabled: true },
+    { label: 'Base64', value: 'base64' },
+    { label: 'Base85', value: 'base85', disabled: true },
+  ];
+
+  const encode = useCallback(() => {
+    if ('base16' === type) {
+      setTarget(enc.Hex.stringify(enc.Utf8.parse(plain)));
+    } else if ('base64' === type) {
+      setTarget(enc.Base64.stringify(enc.Utf8.parse(plain)));
+    }
+  }, [type, plain]);
+
+  const decode = useCallback(() => {
+    if ('base16' === type) {
+      setTarget(enc.Utf8.stringify(enc.Hex.parse(plain)));
+    } else if ('base64' === type) {
+      setTarget(enc.Utf8.stringify(enc.Base64.parse(plain)));
+    }
+  }, [type, plain]);
+
   return (
     <PageContainer token={{ paddingInlinePageContainerContent: 10, paddingBlockPageContainerContent: 10 }}>
+      <Box sx={{ mt: 2, mb: 2 }}>
+        <Segmented
+          block={true}
+          value={type}
+          options={segmentedOptions}
+          onChange={(value) => {
+            setType(value as BaseType);
+          }}
+        />
+      </Box>
       <Box sx={{ mt: 2 }}>
         <Input.TextArea
           value={plain}
