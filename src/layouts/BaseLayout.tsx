@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactNode } from 'react';
 
-import { menuData as defaultProps } from './defaultProps';
+import { menuData } from '@/layouts/defaultProps';
 
 const settings: Partial<ProSettings> = {
   fixSiderbar: true,
@@ -46,7 +46,11 @@ const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
     menuHeaderRender,
     menuItemRender,
     location: { pathname },
-    route: defaultProps,
+    menu: {
+      request: async (params, defaultMenuData) => {
+        return menuData;
+      },
+    },
     token: {
       pageContainer: {
         colorBgPageContainer: '#ffffff',
