@@ -27,6 +27,7 @@ export default function Page() {
   const encode = useCallback(() => {
     if ('base16' === type) {
       setTarget(enc.Hex.stringify(enc.Utf8.parse(plain)));
+    } else if ('base32' === type) {
     } else if ('base64' === type) {
       setTarget(enc.Base64.stringify(enc.Utf8.parse(plain)));
     }
@@ -35,6 +36,7 @@ export default function Page() {
   const decode = useCallback(() => {
     if ('base16' === type) {
       setTarget(enc.Utf8.stringify(enc.Hex.parse(plain)));
+    } else if ('base32' === type) {
     } else if ('base64' === type) {
       setTarget(enc.Utf8.stringify(enc.Base64.parse(plain)));
     }
