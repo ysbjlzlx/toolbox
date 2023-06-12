@@ -5,11 +5,12 @@ import { Box } from '@mui/material';
 import { Button, Input, Segmented, Space, message } from 'antd';
 import { SegmentedLabeledOption } from 'antd/es/segmented';
 import { enc } from 'crypto-js';
-import Joi from 'joi';
 import { SegmentedRawOption } from 'rc-segmented';
 import { useCallback, useState } from 'react';
 // @ts-ignore
-import Base58 from 'base58';
+// @ts-ignore
+import bs58 from 'bs58';
+import bs58check from 'bs58check';
 
 import TextResultBox from '../../../components/TextResultBox';
 
@@ -35,24 +36,22 @@ export default function Page() {
       setTarget(enc.Hex.stringify(enc.Utf8.parse(plain)));
     } else if ('base32' === type) {
     } else if ('base58' === type) {
-      try {
-        Joi.assert(plain, Joi.number());
-      } catch (e) {
-        messageApi.error('Base58 仅支持数字编码');
-        return;
-      }
-      setTarget(Base58.int_to_base58(plain));
+      const uint8array = new TextEncoder().encode(plain);
+      const result = bs58.encode(Uint8Array.from(uint8array));
+      console.log(bs58check.encode(uint8array));
+      setTarget(result);
     } else if ('base64' === type) {
       setTarget(enc.Base64.stringify(enc.Utf8.parse(plain)));
     }
-  }, [type, plain, messageApi]);
+  }, [type, plain]);
 
   const decode = useCallback(() => {
     if ('base16' === type) {
       setTarget(enc.Utf8.stringify(enc.Hex.parse(plain)));
     } else if ('base32' === type) {
     } else if ('base58' === type) {
-      setTarget(Base58.base58_to_int(plain));
+      const result = new TextDecoder().decode(bs58.decode(plain));
+      setTarget(result);
     } else if ('base64' === type) {
       setTarget(enc.Utf8.stringify(enc.Base64.parse(plain)));
     }
