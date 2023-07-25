@@ -38,7 +38,7 @@
     "@hookform/resolvers": "3.1.1",
     "@mui/icons-material": "5.14.1",
     "@mui/lab": "5.0.0-alpha.137",
-    "@mui/material": "5.14.1",
+    "@mui/material": "5.14.2",
     "@mui/system": "5.14.1",
     "@paralleldrive/cuid2": "2.2.1",
     "@sapphire/snowflake": "3.5.1",
