@@ -2,11 +2,11 @@
 
 import { PageContainer } from '@ant-design/pro-components';
 import { Refresh } from '@mui/icons-material';
-import { Button, Card, Checkbox, Col, Form, Input, Row, Slider } from 'antd';
+import { Button, Card, Checkbox, Col, Form, Input, Row, Slider, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
-import ContentCopyAdornment from '../../../../components/ContentCopyAdornment';
-import { generator, GeneratorOptions } from '../../../../scripts/RandomStringUtils';
+import ContentCopyAdornment from '@/components/ContentCopyAdornment';
+import { generator, GeneratorOptions } from '@/scripts/RandomStringUtils';
 
 const initialOptions: GeneratorOptions = {
   numeric: true,
@@ -80,10 +80,10 @@ export default function Page() {
           <Row>
             <Col span={24}>
               <Form.Item>
-                <Input.Group compact>
+                <Space.Compact>
                   <Input value={randomString} style={{ width: 'calc(100% - 60px)' }} />
                   <ContentCopyAdornment content={randomString} />
-                </Input.Group>
+                </Space.Compact>
               </Form.Item>
             </Col>
           </Row>
