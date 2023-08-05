@@ -1,7 +1,7 @@
 'use client';
 
+import { RetweetOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
-import { Refresh } from '@mui/icons-material';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
@@ -38,7 +38,7 @@ export default function Page() {
   return (
     <PageContainer title={false} style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}>
       <Form layout="horizontal" initialValues={initialOptions} onValuesChange={onValuesChange} onFinish={onFinish}>
-        <Card actions={[<Button key="1" htmlType="submit" icon={<Refresh />} />]}>
+        <Card actions={[<Button key="1" htmlType="submit" icon={<RetweetOutlined />} />]}>
           <Row>
             <Col span={4}>
               <Form.Item name="numeric" valuePropName="checked">
@@ -80,8 +80,8 @@ export default function Page() {
           <Row>
             <Col span={24}>
               <Form.Item>
-                <Space.Compact>
-                  <Input value={randomString} style={{ width: 'calc(100% - 60px)' }} />
+                <Space.Compact block={true}>
+                  <Input value={randomString} />
                   <ContentCopyAdornment content={randomString} />
                 </Space.Compact>
               </Form.Item>
