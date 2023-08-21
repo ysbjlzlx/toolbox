@@ -80,7 +80,7 @@
     "react-markdown": "8.0.7",
     "react-quill": "2.0.0",
     "remark-gfm": "3.0.1",
-    "serve": "14.2.0",
+    "serve": "14.2.1",
     "ulid": "2.3.0",
     "uuid": "9.0.0",
     "vanilla-jsoneditor": "0.17.10",
