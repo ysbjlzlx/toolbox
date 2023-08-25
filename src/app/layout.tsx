@@ -1,3 +1,4 @@
+import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import { FC, ReactNode } from 'react';
 
 export const metadata = {
@@ -8,7 +9,9 @@ export const metadata = {
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="zh">
-      <body>{children}</body>
+      <body>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 };

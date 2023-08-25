@@ -7,6 +7,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 
 import useJsonTabStore from '@/stores/JsonTabStore';
+import { PageContainer } from '@ant-design/pro-components';
 import dynamic from 'next/dynamic';
 
 const JsonEditor = dynamic(() => import('./JsonEditor'), { ssr: false });
@@ -17,7 +18,7 @@ const Page = () => {
   const [items, setItems] = useState<Tab[]>([]);
 
   useEffect(() => {
-    const item = jsonTabs.map((idx, i) => {
+    const item: Tab[] = jsonTabs.map((idx, i) => {
       return {
         key: idx,
         label: 'JSON Editor - ' + idx,
@@ -69,7 +70,18 @@ const Page = () => {
     }
   };
 
-  return <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />;
+  return (
+    <PageContainer title={false}>
+      <Tabs
+        type="editable-card"
+        onChange={onChange}
+        activeKey={activeKey}
+        onEdit={onEdit}
+        items={items}
+        style={{ height: '80vh' }}
+      />
+    </PageContainer>
+  );
 };
 
 export default Page;
