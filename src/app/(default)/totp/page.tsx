@@ -1,10 +1,10 @@
 'use client';
 
-import Grid from '@mui/material/Unstable_Grid2';
 import { Container } from '@mui/system';
 import { useLocalStorageState } from 'ahooks';
-
+import { Col, Row } from 'antd';
 import * as OTPAuth from 'otpauth';
+
 import AccountList from './AccountList';
 import DetailInfo from './DetailInfo';
 import { TotpI } from './typings';
@@ -29,14 +29,14 @@ const Totp = () => {
   console.log(OTPAuth.Secret.fromUTF8('ha'));
   return (
     <Container>
-      <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid xs={4}>
+      <Row>
+        <Col span={8}>
           <AccountList totps={totps} />
-        </Grid>
-        <Grid xs={8}>
+        </Col>
+        <Col span={16}>
           <DetailInfo />
-        </Grid>
-      </Grid>
+        </Col>
+      </Row>
     </Container>
   );
 };

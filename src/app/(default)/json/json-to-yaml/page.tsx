@@ -1,13 +1,15 @@
 'use client';
 
-import { Box, Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Box } from '@mui/system';
+import { Button } from 'antd';
 import JSON5 from 'json5';
 import dynamic from 'next/dynamic';
 import { FC, useState } from 'react';
 import { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
-import { format, parser } from '../../../../utils/formatter';
+import { format, parser } from '@/utils/formatter';
 
 const AceEditor = dynamic(
   async () => {
@@ -56,7 +58,9 @@ const Page: FC = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box>
-        <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
+        <Button type={'text'} onClick={json2yamlBtnClick}>
+          JSON =&gt; YAML
+        </Button>
       </Box>
       <Grid container sx={{ height: 'calc(100% - 37px)' }}>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>

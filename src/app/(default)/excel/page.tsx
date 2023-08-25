@@ -1,8 +1,8 @@
 'use client';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Box, Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Button } from '@mui/material';
+import { Box, styled } from '@mui/system';
 import FileSaver from 'file-saver';
 import dynamic from 'next/dynamic';
 import { ChangeEvent, useState } from 'react';
