@@ -1,11 +1,11 @@
 'use client';
 
-import { RetweetOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
 import ContentCopyAdornment from '@/components/ContentCopyAdornment';
+import Iconify from '@/components/Iconify';
 import { generator, GeneratorOptions } from '@/scripts/RandomStringUtils';
 
 const initialOptions: GeneratorOptions = {
@@ -38,7 +38,7 @@ export default function Page() {
   return (
     <PageContainer title={false} style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}>
       <Form layout="horizontal" initialValues={initialOptions} onValuesChange={onValuesChange} onFinish={onFinish}>
-        <Card actions={[<Button key="1" htmlType="submit" icon={<RetweetOutlined />} />]}>
+        <Card actions={[<Button key="1" htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />]}>
           <Row>
             <Col span={4}>
               <Form.Item name="numeric" valuePropName="checked">

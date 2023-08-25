@@ -1,4 +1,4 @@
-import { LinkOutlined, QrcodeOutlined } from '@ant-design/icons';
+import Iconify from '@/components/Iconify';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { Code, Compress, DataObject, Drafts, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
@@ -59,7 +59,7 @@ export const menuData: MenuDataItem[] = [
     name: 'URL',
     desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
     path: '/url',
-    icon: <LinkOutlined />,
+    icon: <Iconify icon="material-symbols:link" />,
   },
   {
     name: 'Markdown',
@@ -89,7 +89,7 @@ export const menuData: MenuDataItem[] = [
     name: 'QRCode',
     desc: '为字符串生成对应的 QRCode 图片',
     path: '/qrcode',
-    icon: <QrcodeOutlined />,
+    icon: <Iconify icon="material-symbols:qr-code" />,
   },
   {
     name: '时间戳（Timestamp）',

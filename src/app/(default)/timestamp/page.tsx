@@ -1,6 +1,5 @@
 'use client';
 
-import { ReloadOutlined } from '@ant-design/icons';
 import { ProForm, ProFormText } from '@ant-design/pro-components';
 import { Box, Container } from '@mui/material';
 import { Button, Form, Input, Space } from 'antd';
@@ -9,6 +8,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 
 import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '../../../utils/validator';
 
+import Iconify from '@/components/Iconify';
 import 'dayjs/locale/zh-cn';
 
 interface Current {
@@ -62,7 +62,7 @@ const Page = () => {
             placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
             showCount
           />
-          <Button icon={<ReloadOutlined />} onClick={refreshInputDate} />
+          <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
         </Space.Compact>
       </Box>
       <ProForm form={form} grid={true} submitter={false}>
