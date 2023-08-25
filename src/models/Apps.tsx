@@ -35,7 +35,7 @@ export const apps: Application[] = [
   },
   {
     name: 'ID Generator',
-    desc: 'ID u生成器',
+    desc: 'ID 生成器',
     href: '/generator/id',
     icon: <Iconify icon="material-symbols:code" />,
   },

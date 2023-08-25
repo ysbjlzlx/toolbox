@@ -4,8 +4,8 @@ import type { ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { FC, ReactNode } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { FC, ReactNode } from 'react';
 
 import { menuData } from '@/layouts/defaultProps';
 
@@ -32,19 +32,16 @@ const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
 
 const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
   const pathname = usePathname();
+  const router = useRouter();
 
-  const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
-    <Link href={'/'} title={'logo'} prefetch={false}>
-      {logo}
-      {title}
-    </Link>
-  );
-
+  const onMenuHeaderClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    router.push('/');
+  };
   const proLayoutProps: ProLayoutProps = {
     logo: '/logo.svg',
     title: 'Toolbox',
-    menuHeaderRender,
     menuItemRender,
+    onMenuHeaderClick,
     location: { pathname },
     menu: {
       request: async (params, defaultMenuData) => {

@@ -1,8 +1,8 @@
 'use client';
 
+import type { TabsProps } from 'antd';
 import { Tabs } from 'antd';
 import _ from 'lodash';
-import { Tab } from 'rc-tabs/lib/interface';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -15,10 +15,10 @@ const JsonEditor = dynamic(() => import('./JsonEditor'), { ssr: false });
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Page = () => {
   const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
-  const [items, setItems] = useState<Tab[]>([]);
+  const [items, setItems] = useState<TabsProps['items']>([]);
 
   useEffect(() => {
-    const item: Tab[] = jsonTabs.map((idx, i) => {
+    const item: TabsProps['items'] = jsonTabs.map((idx, i) => {
       return {
         key: idx,
         label: 'JSON Editor - ' + idx,
@@ -72,14 +72,7 @@ const Page = () => {
 
   return (
     <PageContainer title={false}>
-      <Tabs
-        type="editable-card"
-        onChange={onChange}
-        activeKey={activeKey}
-        onEdit={onEdit}
-        items={items}
-        style={{ height: '80vh' }}
-      />
+      <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />
     </PageContainer>
   );
 };
