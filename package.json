@@ -15,7 +15,8 @@
     "serve": "serve build",
     "start": "next start",
     "stylelint": "stylelint src/**/*.css",
-    "stylelint:fix": "stylelint --fix src/**/*.css"
+    "stylelint:fix": "stylelint --fix src/**/*.css",
+    "update": "npx npm-check-updates -u && npm install && npm run build"
   },
   "browserslist": {
     "production": [
@@ -91,7 +92,7 @@
     "zustand": "4.4.1"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/jest-dom": "6.1.2",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
     "@types/crypto-js": "4.1.1",
@@ -109,10 +110,10 @@
     "eslint": "8.47.0",
     "eslint-config-alloy": "5.1.1",
     "eslint-config-next": "13.4.19",
-    "eslint-config-prettier": "8.10.0",
+    "eslint-config-prettier": "9.0.0",
     "eslint-config-react-app": "7.0.1",
     "husky": "8.0.3",
-    "lint-staged": "13.3.0",
+    "lint-staged": "14.0.1",
     "prettier": "3.0.2",
     "prettier-plugin-organize-imports": "3.2.3",
     "prettier-plugin-packagejson": "2.4.5",
