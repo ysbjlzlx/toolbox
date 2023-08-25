@@ -1,4 +1,4 @@
-import { Refresh as RefreshIcon } from '@mui/icons-material';
+import Iconify from '@/components/Iconify';
 import { IconButton, InputAdornment } from '@mui/material';
 import { MouseEventHandler } from 'react';
 
@@ -10,7 +10,7 @@ const RefreshAdornment = ({ onClick }: Props) => {
   return (
     <InputAdornment position="end">
       <IconButton aria-label="Refresh hex" onClick={onClick}>
-        <RefreshIcon />
+        <Iconify icon="material-symbols:refresh" />
       </IconButton>
     </InputAdornment>
   );

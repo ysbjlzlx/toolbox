@@ -1,4 +1,4 @@
-import { ContentCopy } from '@mui/icons-material';
+import Iconify from '@/components/Iconify';
 import { IconButton, InputAdornment, Snackbar } from '@mui/material';
 import ClipboardJS from 'clipboard';
 import { useEffect, useRef, useState } from 'react';
@@ -28,7 +28,7 @@ export default function ContentCopyAdornment({ content, onSuccess }: Props) {
     <>
       <InputAdornment position="end">
         <IconButton ref={btn} data-clipboard-text={content} aria-label="Copy content">
-          <ContentCopy />
+          <Iconify icon="material-symbols:content-copy-outline" />
         </IconButton>
       </InputAdornment>
 

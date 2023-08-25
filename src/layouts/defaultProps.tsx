@@ -1,11 +1,10 @@
 import Iconify from '@/components/Iconify';
 import type { MenuDataItem } from '@ant-design/pro-components';
-import { Code, Compress, DataObject, Drafts, SyncAlt, TableView, Tag, Timer } from '@mui/icons-material';
 
 export const menuData: MenuDataItem[] = [
   {
     name: 'JSON',
-    icon: <DataObject fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:data-object" />,
     children: [
       {
         name: 'JSON 编辑器',
@@ -30,17 +29,17 @@ export const menuData: MenuDataItem[] = [
     name: 'YAML',
     desc: 'YAML 格式处理',
     path: '/yaml',
-    icon: <SyncAlt fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:sync-alt" />,
   },
   {
     name: 'CodeFormatter',
     desc: '代码格式化，目前支持：JSON、JSON5',
     path: '/code-formatter',
-    icon: <Code fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:code" />,
   },
   {
     name: '生成器（Generator）',
-    icon: <Code fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:code" />,
     children: [
       {
         name: '随机字符串（String）',
@@ -65,25 +64,25 @@ export const menuData: MenuDataItem[] = [
     name: 'Markdown',
     desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
     path: '/markdown',
-    icon: <Drafts fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:contract-edit-outline" />,
   },
   {
     name: 'Base 64',
     desc: 'Base64 编码、解码',
     path: '/base64',
-    icon: <Compress fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:compress" />,
   },
   {
     name: 'Excel',
     desc: 'Excel 转 JSON',
     path: '/excel',
-    icon: <TableView fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:table-chart-outline" />,
   },
   {
     name: 'Hash',
     desc: '计算 MD5、SHA1、SHA256、SHA512 哈希值',
     path: '/hash',
-    icon: <Tag fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:tag" />,
   },
   {
     name: 'QRCode',
@@ -95,6 +94,6 @@ export const menuData: MenuDataItem[] = [
     name: '时间戳（Timestamp）',
     desc: '时间戳（Timestamp）',
     path: '/timestamp',
-    icon: <Timer fontSize="inherit" />,
+    icon: <Iconify icon="material-symbols:av-timer" />,
   },
 ];
