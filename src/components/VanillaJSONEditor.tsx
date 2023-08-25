@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box } from '@mui/system';
 import * as LosslessJSON from 'lossless-json';
 import { useEffect, useRef } from 'react';
 

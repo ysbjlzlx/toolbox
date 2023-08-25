@@ -1,6 +1,6 @@
 'use client';
 
-import { Container } from '@mui/material';
+import { Container } from '@mui/system';
 import { Col, Input, QRCode, Row } from 'antd';
 import { ReactElement, useState } from 'react';
 

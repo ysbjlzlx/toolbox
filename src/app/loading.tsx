@@ -1,12 +1,13 @@
 'use client';
 
-import { Box, CircularProgress, Stack } from '@mui/material';
+import { Box, Stack } from '@mui/system';
+import { Spin } from 'antd';
 
 export default function Loading() {
   return (
     <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ height: '100vh' }}>
       <Box>
-        <CircularProgress />
+        <Spin />
       </Box>
       <Box>
         <div>加载中...</div>

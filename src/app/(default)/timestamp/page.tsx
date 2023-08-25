@@ -1,7 +1,7 @@
 'use client';
 
 import { ProForm, ProFormText } from '@ant-design/pro-components';
-import { Box, Container } from '@mui/material';
+import { Box, Container } from '@mui/system';
 import { Button, Form, Input, Space } from 'antd';
 import dayjs from 'dayjs';
 import { ChangeEvent, useEffect, useState } from 'react';

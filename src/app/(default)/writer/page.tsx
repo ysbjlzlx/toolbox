@@ -1,6 +1,6 @@
 'use client';
 
-import { Box } from '@mui/material';
+import { Box } from '@mui/system';
 import { useCallback, useState } from 'react';
 
 import hljs from 'highlight.js';

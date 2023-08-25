@@ -1,7 +1,7 @@
 'use client';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Box } from '@mui/material';
+import { Box } from '@mui/system';
 import { Button, Input, Segmented, Space, message } from 'antd';
 import { SegmentedLabeledOption } from 'antd/es/segmented';
 import { SegmentedRawOption } from 'rc-segmented';

@@ -1,7 +1,7 @@
 'use client';
 
-import { Container } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
+import { Container } from '@mui/system';
 import { useLocalStorageState } from 'ahooks';
 
 import * as OTPAuth from 'otpauth';

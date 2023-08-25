@@ -1,6 +1,6 @@
 'use client';
 
-import { Box } from '@mui/material';
+import { Box } from '@mui/system';
 import JSON5 from 'json5';
 import _ from 'lodash';
 import dynamic from 'next/dynamic';
