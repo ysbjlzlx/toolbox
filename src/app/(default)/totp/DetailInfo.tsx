@@ -1,10 +1,10 @@
 'use client';
 
-import { Refresh as RefreshIcon } from '@mui/icons-material';
 import { Box, Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import * as OTPAuth from 'otpauth';
 import { Controller, useForm } from 'react-hook-form';
 
+import Iconify from '@/components/Iconify';
 import { useState } from 'react';
 import TotpCard from './TotpCard';
 import { TotpI } from './typings';
@@ -45,7 +45,7 @@ const DetailInfo = () => {
                   endAdornment: (
                     <InputAdornment position="end">
                       <IconButton onClick={refreshSecret}>
-                        <RefreshIcon />
+                        <Iconify icon="material-symbols:refresh" />
                       </IconButton>
                     </InputAdornment>
                   ),

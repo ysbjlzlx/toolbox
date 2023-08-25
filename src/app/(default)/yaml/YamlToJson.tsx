@@ -2,7 +2,7 @@
 
 import { Box, Button, Grid } from '@mui/material';
 import dynamic from 'next/dynamic';
-import prettierBabelPlugin from 'prettier/parser-babel';
+import prettierBabelPlugin from 'prettier/plugins/babel';
 import prettier from 'prettier/standalone';
 import { FC, useState } from 'react';
 import { AceOptions } from 'react-ace/types';
@@ -38,7 +38,7 @@ const YamlToJson: FC = () => {
     fontSize: 14,
   });
 
-  const yaml2json = (value: string): string => {
+  const yaml2json = async (value: string): Promise<string> => {
     try {
       const s = JSON.stringify(YAML.parse(value));
       return prettier.format(s, {
@@ -56,7 +56,9 @@ const YamlToJson: FC = () => {
   };
 
   const yaml2jsonButClick = () => {
-    setJson(yaml2json(yaml));
+    yaml2json(yaml).then((result) => {
+      setJson(result);
+    });
   };
 
   return (

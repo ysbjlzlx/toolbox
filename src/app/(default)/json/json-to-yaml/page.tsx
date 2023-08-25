@@ -39,7 +39,7 @@ const Page: FC = () => {
     fontSize: 14,
   });
 
-  const json2yaml = (value: string): string => {
+  const json2yaml = async (value: string): Promise<string> => {
     if (!value || value === '') {
       return value;
     }
@@ -48,7 +48,9 @@ const Page: FC = () => {
   };
 
   const json2yamlBtnClick = () => {
-    setYaml(json2yaml(json));
+    json2yaml(json).then((result) => {
+      setYaml(result);
+    });
   };
 
   return (

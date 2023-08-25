@@ -1,4 +1,4 @@
-import PaletteIcon from '@mui/icons-material/Palette';
+import Iconify from '@/components/Iconify';
 import { Box, IconButton, InputAdornment, Popover } from '@mui/material';
 import { bindPopover, bindTrigger, usePopupState } from 'material-ui-popup-state/hooks';
 import { FC } from 'react';
@@ -18,7 +18,7 @@ const ColorPickerAdornment: FC<Props> = ({ value, onChange }) => {
     <>
       <InputAdornment position="end">
         <IconButton {...bindTrigger(popupState)}>
-          <PaletteIcon sx={{ color: value }} />
+          <Iconify icon="material-symbols:palette" />
         </IconButton>
       </InputAdornment>
       <Popover {...bindPopover(popupState)} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>

@@ -39,8 +39,9 @@ const Formatter = () => {
       name: 'formatter',
       bindKey: { win: 'Ctrl-Alt-L', mac: 'Command-Option-L' },
       exec: (editor) => {
-        const result = format(editor.getValue(), model as parser);
-        setCode(result);
+        format(editor.getValue(), model as parser).then((result) => {
+          setCode(result);
+        });
       },
     },
   ];
@@ -49,8 +50,9 @@ const Formatter = () => {
     setCode(newValue);
   };
   const onPrettier = (values: any) => {
-    const result = format(code, model as parser);
-    setCode(result);
+    format(code, model as parser).then((result) => {
+      setCode(result);
+    });
   };
 
   return (

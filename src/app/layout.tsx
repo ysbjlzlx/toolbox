@@ -1,4 +1,7 @@
+import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import { FC, ReactNode } from 'react';
+
+import 'antd/dist/reset.css';
 
 export const metadata = {
   title: 'Next.js',
@@ -8,7 +11,9 @@ export const metadata = {
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="zh">
-      <body>{children}</body>
+      <body>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 };

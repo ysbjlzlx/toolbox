@@ -4,10 +4,10 @@ import type { ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { FC, ReactNode } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { FC, ReactNode } from 'react';
 
-import { menuData as defaultProps } from './defaultProps';
+import { menuData } from '@/layouts/defaultProps';
 
 const settings: Partial<ProSettings> = {
   fixSiderbar: true,
@@ -30,23 +30,24 @@ const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
   );
 };
 
-const menuHeaderRender = (logo: ReactNode, title: ReactNode) => (
-  <Link href="/" title="Logo" prefetch={false}>
-    {logo}
-    {title}
-  </Link>
-);
-
 const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
   const pathname = usePathname();
+  const router = useRouter();
 
+  const onMenuHeaderClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    router.push('/');
+  };
   const proLayoutProps: ProLayoutProps = {
     logo: '/logo.svg',
     title: 'Toolbox',
-    menuHeaderRender,
     menuItemRender,
+    onMenuHeaderClick,
     location: { pathname },
-    route: defaultProps,
+    menu: {
+      request: async (params, defaultMenuData) => {
+        return menuData;
+      },
+    },
     token: {
       pageContainer: {
         colorBgPageContainer: '#ffffff',

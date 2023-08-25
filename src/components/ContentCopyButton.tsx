@@ -1,4 +1,4 @@
-import { CopyOutlined } from '@ant-design/icons';
+import Iconify from '@/components/Iconify';
 import { Button, message } from 'antd';
 import copy from 'copy-to-clipboard';
 
@@ -13,7 +13,7 @@ export default function ContentCopyButton({ text }: Props) {
     <>
       {contextHolder}
       <Button
-        icon={<CopyOutlined />}
+        icon={<Iconify icon="material-symbols:content-copy-outline" />}
         onClick={() => {
           copy(text || '', {
             format: 'text/plain',
