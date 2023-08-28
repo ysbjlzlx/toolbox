@@ -1,10 +1,10 @@
 'use client';
 
-import { Box } from '@mui/material';
+import { Box } from '@mui/system';
+import { Input, QRCode, Space } from 'antd';
 import { TOTP } from 'otpauth';
 
 import ContentCopyButton from '@/components/ContentCopyButton';
-import { Input, QRCode, Space } from 'antd';
 import TokenField from './TokenField';
 
 interface Props {

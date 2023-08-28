@@ -1,11 +1,11 @@
 'use client';
 
-import { Box, CircularProgress, TextField, Typography } from '@mui/material';
+import ContentCopyButton from '@/components/ContentCopyButton';
 import { useCountDown } from 'ahooks';
+import { Form, Input, Progress, Space } from 'antd';
 import dayjs from 'dayjs';
 import { TOTP } from 'otpauth';
 import { useEffect, useState } from 'react';
-import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
 
 interface Props {
   totp?: TOTP;
@@ -40,37 +40,26 @@ const TokenField = ({ totp }: Props) => {
     },
   });
 
+  const TokenProcess = () => {
+    return (
+      <Progress
+        type="circle"
+        percent={((30 - Math.round(countTime / 1000)) / 30) * 100}
+        format={() => {
+          return Math.round(countTime / 1000);
+        }}
+        size={20}
+      />
+    );
+  };
+
   return (
-    <TextField
-      label="Token"
-      value={token}
-      InputProps={{
-        endAdornment: (
-          <>
-            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-              <CircularProgress variant="determinate" value={((30 - Math.round(countTime / 1000)) / 30) * 100} />
-              <Box
-                sx={{
-                  top: 0,
-                  left: 0,
-                  bottom: 0,
-                  right: 0,
-                  position: 'absolute',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Typography variant="caption" component="div" color="text.secondary">
-                  {Math.round(countTime / 1000)}
-                </Typography>
-              </Box>
-            </Box>
-            <ContentCopyAdornment content={token} />
-          </>
-        ),
-      }}
-    />
+    <Form.Item label="Token">
+      <Space.Compact>
+        <Input value={token} addonAfter={<TokenProcess />} />
+        <ContentCopyButton text={token} />
+      </Space.Compact>
+    </Form.Item>
   );
 };
 export default TokenField;
