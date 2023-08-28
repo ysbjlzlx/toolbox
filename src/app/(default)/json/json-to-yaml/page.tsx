@@ -1,8 +1,7 @@
 'use client';
 
-import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
-import { Button } from 'antd';
+import { Button, Col, Row } from 'antd';
 import JSON5 from 'json5';
 import dynamic from 'next/dynamic';
 import { FC, useState } from 'react';
@@ -62,8 +61,8 @@ const Page: FC = () => {
           JSON =&gt; YAML
         </Button>
       </Box>
-      <Grid container sx={{ height: 'calc(100% - 37px)' }}>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+      <Row style={{ height: 'calc(100% - 37px)' }}>
+        <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
             placeholder="JSON"
@@ -74,8 +73,8 @@ const Page: FC = () => {
             width="100%"
             height="100%"
           />
-        </Grid>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+        </Col>
+        <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
             placeholder="YAML"
@@ -86,8 +85,8 @@ const Page: FC = () => {
             width="100%"
             height="100%"
           />
-        </Grid>
-      </Grid>
+        </Col>
+      </Row>
     </Box>
   );
 };
