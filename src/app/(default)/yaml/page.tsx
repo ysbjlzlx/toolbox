@@ -1,7 +1,8 @@
 'use client';
 
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Box, Tab } from '@mui/material';
+import { Tab } from '@mui/material';
+import { Box } from '@mui/system';
 import { useSize } from 'ahooks';
 import React, { useRef, useState } from 'react';
 
