@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, List, ListItem, ListItemText } from '@mui/material';
+import { Box } from '@mui/system';
+import { List } from 'antd';
 import { TotpI } from './typings';
 
 interface Props {
@@ -12,11 +13,7 @@ const AccountList = ({ totps }: Props) => {
     <Box>
       <List>
         {totps?.map((totp) => {
-          return (
-            <ListItem key={totp.secretKey}>
-              <ListItemText>ha</ListItemText>
-            </ListItem>
-          );
+          return <List.Item key={totp.secretKey}></List.Item>;
         })}
       </List>
     </Box>

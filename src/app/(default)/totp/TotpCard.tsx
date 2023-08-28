@@ -1,11 +1,10 @@
 'use client';
 
-import { Box, TextField } from '@mui/material';
+import { Box } from '@mui/material';
 import { TOTP } from 'otpauth';
-import QRCode from 'qrcode';
-import { useEffect, useMemo, useRef } from 'react';
 
-import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
+import ContentCopyButton from '@/components/ContentCopyButton';
+import { Input, QRCode, Space } from 'antd';
 import TokenField from './TokenField';
 
 interface Props {
@@ -13,32 +12,20 @@ interface Props {
 }
 
 const TotpCard = ({ totp }: Props) => {
-  const qrcodeContainer = useRef<HTMLCanvasElement>(null);
-  const options = useMemo(() => {
-    return { width: 128, height: 128 };
-  }, []);
-
-  useEffect(() => {
-    if (totp) {
-      QRCode.toCanvas(qrcodeContainer.current, totp.toString(), options);
-    }
-  }, [options, totp]);
   return (
     <Box>
-      <Box sx={options}>
-        <canvas ref={qrcodeContainer} />
+      <Box>
+        <QRCode value={totp?.toString() || '-'} style={{ width: 128, height: 128 }} />
       </Box>
       <Box sx={{ mt: 2 }}>
         <TokenField totp={totp} />
       </Box>
 
       <Box sx={{ mt: 2 }}>
-        <TextField
-          label="URI"
-          value={totp?.toString() || ''}
-          InputProps={{ endAdornment: <ContentCopyAdornment content={totp?.toString()} /> }}
-          fullWidth
-        />
+        <Space.Compact style={{ width: '100%' }}>
+          <Input value={totp?.toString() || ''} />
+          <ContentCopyButton text={totp?.toString()} />
+        </Space.Compact>
       </Box>
     </Box>
   );
