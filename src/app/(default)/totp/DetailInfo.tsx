@@ -1,66 +1,51 @@
 'use client';
 
-import { Box, Button, IconButton, InputAdornment, TextField } from '@mui/material';
+import { ProForm, ProFormProps, ProFormText } from '@ant-design/pro-components';
+import { Button, Form, Input, Space } from 'antd';
 import * as OTPAuth from 'otpauth';
-import { Controller, useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 import Iconify from '@/components/Iconify';
-import { useState } from 'react';
 import TotpCard from './TotpCard';
-import { TotpI } from './typings';
 
 const DetailInfo = () => {
+  const [form] = Form.useForm();
   const [instance, setInstance] = useState<OTPAuth.TOTP>();
-  const { register, handleSubmit, setValue, control } = useForm<TotpI>({ defaultValues: { secretKey: '' } });
 
   const refreshSecret = () => {
     const secret = new OTPAuth.Secret();
-    setValue('secretKey', secret.base32, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
-  };
-  const onSave = (data: TotpI) => {
-    const instance = new OTPAuth.TOTP({
-      issuer: data.issuer,
-      label: data.account,
-      secret: data.secretKey,
-    });
-    setInstance(instance);
+    form.setFieldValue('secret', secret.base32);
   };
 
+  const onFinish: ProFormProps['onFinish'] = async (formData): Promise<boolean | void> => {
+    console.log(formData);
+    const instance = new OTPAuth.TOTP({
+      issuer: formData.issuer,
+      label: formData.account,
+      secret: formData.secretKey,
+    });
+    setInstance(instance);
+
+    return true;
+  };
   return (
     <>
-      <form onSubmit={handleSubmit(onSave)}>
-        <TextField label="Issuer" {...register('issuer')} fullWidth required />
-        <Box sx={{ pt: 2 }}>
-          <TextField label="Account" {...register('account')} fullWidth />
-        </Box>
-        <Box sx={{ pt: 2 }}>
-          <Controller
-            control={control}
-            name="secretKey"
-            render={({ field }) => (
-              <TextField
-                label="Secret Key"
-                {...field}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton onClick={refreshSecret}>
-                        <Iconify icon="material-symbols:refresh" />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-                fullWidth
-                required
-              />
-            )}
-          />
-        </Box>
-        <Box sx={{ pt: 2, float: 'right' }}>
-          <Button>取消</Button>
-          <Button type="submit">保存</Button>
-        </Box>
-      </form>
+      <ProForm form={form} layout={'horizontal'} onFinish={onFinish}>
+        <ProFormText label={'Issuer'} name={'issuer'} required />
+        <ProFormText label={'Account'} name={'account'} />
+        <ProForm.Item shouldUpdate>
+          {(form) => {
+            return (
+              <ProForm.Item label={'Secret Key'} name={'secret'} required>
+                <Space.Compact style={{ width: '100%' }}>
+                  <Input value={form.getFieldValue('secret')} showCount />
+                  <Button icon={<Iconify icon={'material-symbols:refresh'} />} onClick={refreshSecret} />
+                </Space.Compact>
+              </ProForm.Item>
+            );
+          }}
+        </ProForm.Item>
+      </ProForm>
       <TotpCard totp={instance} />
     </>
   );
