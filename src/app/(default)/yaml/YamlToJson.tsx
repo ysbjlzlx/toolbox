@@ -1,6 +1,8 @@
 'use client';
 
-import { Box, Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Box } from '@mui/system';
+import { Button } from 'antd';
 import dynamic from 'next/dynamic';
 import prettierBabelPlugin from 'prettier/plugins/babel';
 import prettier from 'prettier/standalone';
@@ -64,7 +66,9 @@ const YamlToJson: FC = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box>
-        <Button onClick={yaml2jsonButClick}>YAML =&gt; JSON</Button>
+        <Button type={'text'} onClick={yaml2jsonButClick}>
+          YAML =&gt; JSON
+        </Button>
       </Box>
       <Grid container sx={{ height: 'calc(100% - 37px)' }}>
         <Grid item xs={12} md={6} sx={{ height: '100%' }}>
