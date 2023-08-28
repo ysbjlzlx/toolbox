@@ -44,7 +44,6 @@ const Page: FC = () => {
     if (!value || value === '') {
       return value;
     }
-    console.log(JSON5.parse(value));
     return format(YAML.stringify(JSON5.parse(value)), 'yaml' as parser);
   };
 
