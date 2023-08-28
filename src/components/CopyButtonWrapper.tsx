@@ -1,6 +1,6 @@
-import { Button, Snackbar } from '@mui/material';
+import { Button, message } from 'antd';
 import ClipboardJS from 'clipboard';
-import { FC, ReactNode, useLayoutEffect, useRef, useState } from 'react';
+import { FC, ReactNode, useLayoutEffect, useRef } from 'react';
 
 interface Props {
   text?: string | undefined;
@@ -8,14 +8,14 @@ interface Props {
 }
 
 const CopyButtonWrapper: FC<Props> = ({ text, children }: Props) => {
-  const [open, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
+  const [messageApi, contextHolder] = message.useMessage();
 
   useLayoutEffect(() => {
     if (btnRef?.current) {
       const clipboard = new ClipboardJS(btnRef.current);
       clipboard.on('success', (e) => {
-        setOpen(true);
+        messageApi.success('复制成功');
       });
       clipboard.on('error', (e) => {
         console.error(e);
@@ -23,15 +23,14 @@ const CopyButtonWrapper: FC<Props> = ({ text, children }: Props) => {
 
       // return clipboard;
     }
-  }, [btnRef]);
+  }, [btnRef, messageApi]);
 
   return (
     <>
-      <Button ref={btnRef} data-clipboard-text={text} aria-label="Copy content">
+      {contextHolder}
+      <Button type={'text'} ref={btnRef} data-clipboard-text={text} aria-label="Copy content">
         {children}
       </Button>
-
-      <Snackbar open={open} onClose={() => setOpen(false)} autoHideDuration={1500} message="复制成功" />
     </>
   );
 };
