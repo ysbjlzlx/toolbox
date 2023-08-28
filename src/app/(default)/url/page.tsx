@@ -1,10 +1,9 @@
 'use client';
 
-import { Box, Container, TextField } from '@mui/material';
+import { Box, Container } from '@mui/system';
 import { useState } from 'react';
 
-import { Button } from 'antd';
-import ContentCopyAdornment from '../../../components/ContentCopyAdornment';
+import { Button, Input } from 'antd';
 import TextResultBox from '../../../components/TextResultBox';
 
 export default function Page() {
@@ -26,19 +25,12 @@ export default function Page() {
   return (
     <Container>
       <Box mt={2}>
-        <TextField
-          type="text"
-          label="URL"
+        <Input.TextArea
+          rows={3}
           value={uri}
+          placeholder={'URL'}
           onChange={(e) => {
             setUri(e.target.value);
-          }}
-          multiline
-          minRows={3}
-          variant="outlined"
-          fullWidth
-          InputProps={{
-            endAdornment: <ContentCopyAdornment content={uri} />,
           }}
         />
       </Box>
