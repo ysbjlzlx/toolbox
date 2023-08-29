@@ -80,7 +80,7 @@
     "uuid": "9.0.0",
     "vanilla-jsoneditor": "0.18.2",
     "web-vitals": "3.4.0",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz",
     "xml-formatter": "3.5.0",
     "yaml": "2.3.2",
     "zustand": "4.4.1"
