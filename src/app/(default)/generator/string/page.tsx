@@ -4,7 +4,7 @@ import { PageContainer } from '@ant-design/pro-components';
 import { Button, Card, Checkbox, Col, Form, Input, Row, Slider, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
-import ContentCopyAdornment from '@/components/ContentCopyAdornment';
+import ContentCopyButton from '@/components/ContentCopyButton';
 import Iconify from '@/components/Iconify';
 import { generator, GeneratorOptions } from '@/scripts/RandomStringUtils';
 
@@ -82,7 +82,7 @@ export default function Page() {
               <Form.Item>
                 <Space.Compact block={true}>
                   <Input value={randomString} />
-                  <ContentCopyAdornment content={randomString} />
+                  <ContentCopyButton text={randomString} />
                 </Space.Compact>
               </Form.Item>
             </Col>

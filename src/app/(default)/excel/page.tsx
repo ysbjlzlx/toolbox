@@ -1,11 +1,11 @@
 'use client';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Box, Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, styled } from '@mui/system';
+import { Button, Space, Upload, UploadProps } from 'antd';
 import FileSaver from 'file-saver';
 import dynamic from 'next/dynamic';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { AceOptions } from 'react-ace/types';
 import * as XLSX from 'xlsx';
 
@@ -42,43 +42,48 @@ export default function Page() {
     });
     FileSaver.saveAs(file);
   };
+  const uploadProps: UploadProps = {
+    showUploadList: false,
+    beforeUpload: async (file) => {
+      return false;
+    },
+    onChange: (info) => {
+      const files = info.fileList;
+      if (files) {
+        for (let i = 0; i < files.length; i++) {
+          const fileReader = new FileReader();
+          fileReader.onload = (e: ProgressEvent<FileReader>) => {
+            if (!e.target) {
+              return;
+            }
+            let data = e.target.result as ArrayBuffer;
+            data = new Uint8Array(data);
+            const workbook = XLSX.read(data, { type: 'array' });
+            console.log(workbook);
+            const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            const rows = XLSX.utils.sheet_to_json(firstSheet) || [];
+            setResult(JSON.stringify(rows, null, 2));
+          };
 
-  const onUpload = (event: ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      for (let i = 0; i < files.length; i++) {
-        const fileReader = new FileReader();
-        fileReader.onload = (e: ProgressEvent<FileReader>) => {
-          if (!e.target) {
-            return;
+          const file = files[i];
+          if (file) {
+            fileReader.readAsArrayBuffer(file.originFileObj as File);
           }
-          let data = e.target.result as ArrayBuffer;
-          data = new Uint8Array(data);
-          const workbook = XLSX.read(data, { type: 'array' });
-          console.log(workbook);
-          const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-          const rows = XLSX.utils.sheet_to_json(firstSheet) || [];
-          setResult(JSON.stringify(rows, null, 2));
-        };
-
-        const file = files.item(i);
-        if (file) {
-          fileReader.readAsArrayBuffer(file);
         }
       }
-    }
+    },
   };
   return (
     <PageContainer title="Excel 转 JSON">
-      <Box sx={{ mt: 2 }}>
-        <label htmlFor="contained-button-file">
-          <Input accept=".xls,.xlsx,.csv" id="contained-button-file" multiple type="file" onChange={onUpload} />
-          <Button variant="contained" component="span">
-            上传 Excel
-          </Button>
-        </label>
-        <Button onClick={save}>下载为 JSON 文件</Button>
+      <Box>
+        <Space direction={'horizontal'}>
+          <Upload {...uploadProps}>
+            <Button type={'primary'}>上传 Excel</Button>
+          </Upload>
+          <Button onClick={save}>下载为 JSON 文件</Button>
+        </Space>
       </Box>
+
       <Box sx={{ mt: 2 }}>
         <AceEditor mode="json" theme="monokai" width="100%" setOptions={options} value={result} />
       </Box>

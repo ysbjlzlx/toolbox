@@ -2,6 +2,9 @@
 const nextConfig = {
   output: 'export',
   distDir: 'build',
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 };
 
 const withPWA = require('next-pwa')({

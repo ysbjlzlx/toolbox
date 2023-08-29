@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, Button, Grid } from '@mui/material';
+import { Box } from '@mui/system';
+import { Button, Col, Row } from 'antd';
 import dynamic from 'next/dynamic';
 import prettierBabelPlugin from 'prettier/plugins/babel';
 import prettier from 'prettier/standalone';
@@ -64,10 +65,12 @@ const YamlToJson: FC = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box>
-        <Button onClick={yaml2jsonButClick}>YAML =&gt; JSON</Button>
+        <Button type={'text'} onClick={yaml2jsonButClick}>
+          YAML =&gt; JSON
+        </Button>
       </Box>
-      <Grid container sx={{ height: 'calc(100% - 37px)' }}>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+      <Row style={{ height: 'calc(100% - 37px)' }}>
+        <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
             placeholder="YAML"
@@ -78,8 +81,8 @@ const YamlToJson: FC = () => {
             width="100%"
             height="100%"
           />
-        </Grid>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+        </Col>
+        <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
             placeholder="JSON"
@@ -90,8 +93,8 @@ const YamlToJson: FC = () => {
             width="100%"
             height="100%"
           />
-        </Grid>
-      </Grid>
+        </Col>
+      </Row>
     </Box>
   );
 };

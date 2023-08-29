@@ -1,6 +1,6 @@
 'use client';
 
-import { Container } from '@mui/material';
+import { Container } from '@mui/system';
 import { Card, Col, Row } from 'antd';
 import Link from 'next/link';
 

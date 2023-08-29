@@ -1,13 +1,14 @@
 'use client';
 
-import { Box, Button, Grid } from '@mui/material';
+import { Box } from '@mui/system';
+import { Button, Col, Row } from 'antd';
 import JSON5 from 'json5';
 import dynamic from 'next/dynamic';
 import { FC, useState } from 'react';
 import { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
-import { format, parser } from '../../../../utils/formatter';
+import { format, parser } from '@/utils/formatter';
 
 const AceEditor = dynamic(
   async () => {
@@ -43,7 +44,6 @@ const Page: FC = () => {
     if (!value || value === '') {
       return value;
     }
-    console.log(JSON5.parse(value));
     return format(YAML.stringify(JSON5.parse(value)), 'yaml' as parser);
   };
 
@@ -56,10 +56,12 @@ const Page: FC = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box>
-        <Button onClick={json2yamlBtnClick}>JSON =&gt; YAML</Button>
+        <Button type={'text'} onClick={json2yamlBtnClick}>
+          JSON =&gt; YAML
+        </Button>
       </Box>
-      <Grid container sx={{ height: 'calc(100% - 37px)' }}>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+      <Row style={{ height: 'calc(100% - 37px)' }}>
+        <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
             placeholder="JSON"
@@ -70,8 +72,8 @@ const Page: FC = () => {
             width="100%"
             height="100%"
           />
-        </Grid>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+        </Col>
+        <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
             theme="textmate"
             placeholder="YAML"
@@ -82,8 +84,8 @@ const Page: FC = () => {
             width="100%"
             height="100%"
           />
-        </Grid>
-      </Grid>
+        </Col>
+      </Row>
     </Box>
   );
 };

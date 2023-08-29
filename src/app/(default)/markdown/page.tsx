@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, Grid } from '@mui/material';
+import { Box } from '@mui/system';
+import { Col, Row } from 'antd';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { AceOptions } from 'react-ace/types';
@@ -28,9 +29,9 @@ export default function Markdown() {
     fontSize: 14,
   };
   return (
-    <Box sx={{ height: '100%' }}>
-      <Grid container sx={{ height: '100%' }}>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+    <Box sx={{ height: '100vh' }}>
+      <Row>
+        <Col xs={24} md={12} style={{ height: '100vh' }}>
           <AceEditor
             theme="textmate"
             placeholder="Input"
@@ -41,13 +42,13 @@ export default function Markdown() {
             width="100%"
             height="calc(100% - 37px)"
           />
-        </Grid>
-        <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+        </Col>
+        <Col xs={24} md={12} style={{ height: '100vh' }}>
           <Box height="calc(100% - 37px)" sx={{ width: '100%', px: 1 }}>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
           </Box>
-        </Grid>
-      </Grid>
+        </Col>
+      </Row>
     </Box>
   );
 }
