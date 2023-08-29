@@ -2,26 +2,22 @@
 
 import { Box } from '@mui/system';
 import { Button, Checkbox, Form, Select } from 'antd';
-import dynamic from 'next/dynamic';
+import type { SetStateAction } from 'react';
 import { useState } from 'react';
-import { ICommand } from 'react-ace';
-import { AceOptions } from 'react-ace/types';
+import type { ICommand } from 'react-ace';
+import AceEditor from 'react-ace';
+import type { AceOptions } from 'react-ace/types';
 
-import { format, parser } from '../../../utils/formatter';
+import 'ace-builds/src-noconflict/ext-searchbox';
+import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/mode-json5';
+import 'ace-builds/src-noconflict/mode-xml';
+import 'ace-builds/src-noconflict/mode-yaml';
+import 'ace-builds/src-noconflict/theme-monokai';
 
-const AceEditor = dynamic(
-  async () => {
-    const ace = await import('react-ace');
-    await import('ace-builds/src-noconflict/ext-searchbox');
-    await import('ace-builds/src-noconflict/mode-json');
-    await import('ace-builds/src-noconflict/mode-json5');
-    await import('ace-builds/src-noconflict/mode-xml');
-    await import('ace-builds/src-noconflict/mode-yaml');
-    await import('ace-builds/src-noconflict/theme-monokai');
-    return ace;
-  },
-  { ssr: false },
-);
+import type { parser } from '@/utils/formatter';
+import { format } from '@/utils/formatter';
+
 const Formatter = () => {
   const [options, setOptions] = useState<AceOptions>({
     useWorker: false,
@@ -39,7 +35,7 @@ const Formatter = () => {
       name: 'formatter',
       bindKey: { win: 'Ctrl-Alt-L', mac: 'Command-Option-L' },
       exec: (editor) => {
-        format(editor.getValue(), model as parser).then((result) => {
+        format(editor.getValue(), model as parser).then((result: SetStateAction<string>) => {
           setCode(result);
         });
       },
@@ -49,8 +45,8 @@ const Formatter = () => {
   const onChange = (newValue: string) => {
     setCode(newValue);
   };
-  const onPrettier = (values: any) => {
-    format(code, model as parser).then((result) => {
+  const onPrettier = () => {
+    format(code, model as parser).then((result: string) => {
       setCode(result);
     });
   };

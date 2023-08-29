@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['next/core-web-vitals', 'prettier'],
+  extends: ['alloy', 'alloy/typescript', 'alloy/react'],
   rules: {
     // your rules
   },

@@ -1,13 +1,13 @@
 'use client';
 
-import type { ProLayoutProps, ProSettings } from '@ant-design/pro-components';
-import { MenuDataItem, ProConfigProvider, ProLayout } from '@ant-design/pro-components';
+import type { MenuDataItem, ProLayoutProps, ProSettings } from '@ant-design/pro-components';
+import { ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import React, { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { menuData } from '@/layouts/defaultProps';
+import { Outlet } from 'react-router-dom';
 
 const settings: Partial<ProSettings> = {
   fixSiderbar: true,
@@ -23,28 +23,24 @@ const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
   if (item.disabled || item.path === undefined) {
     return dom;
   }
-  return (
-    <Link href={item.path} prefetch={false}>
-      {dom}
-    </Link>
-  );
+  return <Link to={item.path}>{dom}</Link>;
 };
 
-const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
-  const pathname = usePathname();
-  const router = useRouter();
+const BaseLayout: FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const onMenuHeaderClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    router.push('/');
+  const onMenuHeaderClick = () => {
+    navigate('/');
   };
   const proLayoutProps: ProLayoutProps = {
     logo: '/logo.svg',
     title: 'Toolbox',
     menuItemRender,
     onMenuHeaderClick,
-    location: { pathname },
+    location: location,
     menu: {
-      request: async (params, defaultMenuData) => {
+      request: async () => {
         return menuData;
       },
     },
@@ -61,7 +57,9 @@ const BaseLayout: FC<{ children: ReactNode }> = ({ children }) => {
     <ProConfigProvider hashed={false}>
       <ConfigProvider>
         <ProLayout {...proLayoutProps} {...settings}>
-          <div style={{ height: '100vh' }}>{children}</div>
+          <div style={{ height: '100vh' }}>
+            <Outlet />
+          </div>
         </ProLayout>
       </ConfigProvider>
     </ProConfigProvider>

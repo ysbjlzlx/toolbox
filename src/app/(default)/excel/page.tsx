@@ -1,27 +1,18 @@
 'use client';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Box, styled } from '@mui/system';
-import { Button, Space, Upload, UploadProps } from 'antd';
+import { Box } from '@mui/system';
+import type { UploadProps } from 'antd';
+import { Button, Space, Upload } from 'antd';
 import FileSaver from 'file-saver';
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import { AceOptions } from 'react-ace/types';
+import type { AceOptions } from 'react-ace/types';
 import * as XLSX from 'xlsx';
 
-const AceEditor = dynamic(
-  async () => {
-    const ace = await import('react-ace');
-    await import('ace-builds/src-noconflict/mode-json');
-    await import('ace-builds/src-noconflict/theme-monokai');
-    return ace;
-  },
-  { ssr: false },
-);
+import AceEditor from 'react-ace';
 
-const Input = styled('input')({
-  display: 'none',
-});
+import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/theme-monokai';
 
 const options: AceOptions = {
   useWorker: false,
@@ -44,30 +35,31 @@ export default function Page() {
   };
   const uploadProps: UploadProps = {
     showUploadList: false,
-    beforeUpload: async (file) => {
+    beforeUpload: async () => {
       return false;
     },
     onChange: (info) => {
       const files = info.fileList;
       if (files) {
-        for (let i = 0; i < files.length; i++) {
-          const fileReader = new FileReader();
-          fileReader.onload = (e: ProgressEvent<FileReader>) => {
-            if (!e.target) {
-              return;
+        for (const key in files) {
+          if (Object.prototype.hasOwnProperty.call(files, key)) {
+            const fileReader = new FileReader();
+            fileReader.onload = (e: ProgressEvent<FileReader>) => {
+              if (!e.target) {
+                return;
+              }
+              let data = e.target.result as ArrayBuffer;
+              data = new Uint8Array(data);
+              const workbook = XLSX.read(data, { type: 'array' });
+              console.log(workbook);
+              const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+              const rows = XLSX.utils.sheet_to_json(firstSheet) || [];
+              setResult(JSON.stringify(rows, null, 2));
+            };
+            const file = files[key];
+            if (file) {
+              fileReader.readAsArrayBuffer(file.originFileObj as File);
             }
-            let data = e.target.result as ArrayBuffer;
-            data = new Uint8Array(data);
-            const workbook = XLSX.read(data, { type: 'array' });
-            console.log(workbook);
-            const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-            const rows = XLSX.utils.sheet_to_json(firstSheet) || [];
-            setResult(JSON.stringify(rows, null, 2));
-          };
-
-          const file = files[i];
-          if (file) {
-            fileReader.readAsArrayBuffer(file.originFileObj as File);
           }
         }
       }
@@ -76,9 +68,9 @@ export default function Page() {
   return (
     <PageContainer title="Excel 转 JSON">
       <Box>
-        <Space direction={'horizontal'}>
+        <Space direction="horizontal">
           <Upload {...uploadProps}>
-            <Button type={'primary'}>上传 Excel</Button>
+            <Button type="primary">上传 Excel</Button>
           </Upload>
           <Button onClick={save}>下载为 JSON 文件</Button>
         </Space>

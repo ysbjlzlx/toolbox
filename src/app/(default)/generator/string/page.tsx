@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
 
 import ContentCopyButton from '@/components/ContentCopyButton';
 import Iconify from '@/components/Iconify';
-import { generator, GeneratorOptions } from '@/scripts/RandomStringUtils';
+import type { GeneratorOptions } from '@/scripts/RandomStringUtils';
+import { generator } from '@/scripts/RandomStringUtils';
 
 const initialOptions: GeneratorOptions = {
   numeric: true,
@@ -27,7 +28,7 @@ export default function Page() {
     setRandomString(varchar);
   };
 
-  const onValuesChange = (changedValues: any, allValues: GeneratorOptions) => {
+  const onValuesChange = (_: any, allValues: GeneratorOptions) => {
     refresh(allValues);
   };
 

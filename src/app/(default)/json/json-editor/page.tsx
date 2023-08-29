@@ -8,9 +8,8 @@ import { useEffect, useState } from 'react';
 
 import useJsonTabStore from '@/stores/JsonTabStore';
 import { PageContainer } from '@ant-design/pro-components';
-import dynamic from 'next/dynamic';
 
-const JsonEditor = dynamic(() => import('./JsonEditor'), { ssr: false });
+import JsonEditor from './JsonEditor.tsx';
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Page = () => {
@@ -18,7 +17,7 @@ const Page = () => {
   const [items, setItems] = useState<TabsProps['items']>([]);
 
   useEffect(() => {
-    const item: TabsProps['items'] = jsonTabs.map((idx, i) => {
+    const item: TabsProps['items'] = jsonTabs.map((idx) => {
       return {
         key: idx,
         label: 'JSON Editor - ' + idx,

@@ -2,24 +2,18 @@
 
 import { Box } from '@mui/system';
 import { Button, Col, Row } from 'antd';
-import dynamic from 'next/dynamic';
 import prettierBabelPlugin from 'prettier/plugins/babel';
 import prettier from 'prettier/standalone';
-import { FC, useState } from 'react';
-import { AceOptions } from 'react-ace/types';
+import type { FC } from 'react';
+import { useState } from 'react';
+import AceEditor from 'react-ace';
+import type { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
-const AceEditor = dynamic(
-  async () => {
-    const ace = await import('react-ace');
-    await import('ace-builds/src-noconflict/ext-searchbox');
-    await import('ace-builds/src-noconflict/mode-json');
-    await import('ace-builds/src-noconflict/mode-yaml');
-    await import('ace-builds/src-noconflict/theme-textmate');
-    return ace;
-  },
-  { ssr: false },
-);
+import 'ace-builds/src-noconflict/ext-searchbox';
+import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/mode-yaml';
+import 'ace-builds/src-noconflict/theme-textmate';
 
 const YamlToJson: FC = () => {
   const [json, setJson] = useState<string>('');
@@ -65,7 +59,7 @@ const YamlToJson: FC = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box>
-        <Button type={'text'} onClick={yaml2jsonButClick}>
+        <Button type="text" onClick={yaml2jsonButClick}>
           YAML =&gt; JSON
         </Button>
       </Box>

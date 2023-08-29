@@ -3,24 +3,19 @@
 import { Box } from '@mui/system';
 import { Button, Col, Row } from 'antd';
 import JSON5 from 'json5';
-import dynamic from 'next/dynamic';
-import { FC, useState } from 'react';
-import { AceOptions } from 'react-ace/types';
+import type { FC } from 'react';
+import { useState } from 'react';
+import AceEditor from 'react-ace';
+import type { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
-import { format, parser } from '@/utils/formatter';
+import 'ace-builds/src-noconflict/ext-searchbox';
+import 'ace-builds/src-noconflict/mode-json5';
+import 'ace-builds/src-noconflict/mode-yaml';
+import 'ace-builds/src-noconflict/theme-textmate';
 
-const AceEditor = dynamic(
-  async () => {
-    const ace = await import('react-ace');
-    await import('ace-builds/src-noconflict/ext-searchbox');
-    await import('ace-builds/src-noconflict/mode-json5');
-    await import('ace-builds/src-noconflict/mode-yaml');
-    await import('ace-builds/src-noconflict/theme-textmate');
-    return ace;
-  },
-  { ssr: false },
-);
+import type { parser } from '@/utils/formatter';
+import { format } from '@/utils/formatter';
 
 const Page: FC = () => {
   const [json, setJson] = useState<string>('');
@@ -56,7 +51,7 @@ const Page: FC = () => {
   return (
     <Box sx={{ height: '100%' }}>
       <Box>
-        <Button type={'text'} onClick={json2yamlBtnClick}>
+        <Button type="text" onClick={json2yamlBtnClick}>
           JSON =&gt; YAML
         </Button>
       </Box>

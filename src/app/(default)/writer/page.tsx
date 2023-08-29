@@ -6,13 +6,12 @@ import { useCallback, useState } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 
-import { ReactQuillProps } from 'react-quill';
+import type { ReactQuillProps } from 'react-quill';
+import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-import dynamic from 'next/dynamic';
 import CopyButtonWrapper from '../../../components/CopyButtonWrapper';
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 const Writer = () => {
   const [value, setValue] = useState<string>('');
 
@@ -24,7 +23,7 @@ const Writer = () => {
 
   const quillProps: ReactQuillProps = {
     // eslint-disable-next-line max-params
-    onChange: (value, delta, source, editor) => {
+    onChange: (value) => {
       setValue(value);
     },
     modules: {

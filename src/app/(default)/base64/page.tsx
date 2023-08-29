@@ -2,12 +2,13 @@
 
 import { PageContainer } from '@ant-design/pro-components';
 import { Box } from '@mui/system';
-import { Button, Input, Segmented, Space, message } from 'antd';
-import { SegmentedLabeledOption } from 'antd/es/segmented';
-import { SegmentedRawOption } from 'rc-segmented';
+import { Button, Input, Segmented, Space } from 'antd';
+import type { SegmentedLabeledOption } from 'antd/es/segmented';
+import type { SegmentedRawOption } from 'rc-segmented';
 import { useCallback, useState } from 'react';
 
-import { BaseType, decode as baseDecode, encode as baseEncode } from '@/lib/BaseEncoder';
+import type { BaseType } from '@/lib/BaseEncoder';
+import { decode as baseDecode, encode as baseEncode } from '@/lib/BaseEncoder';
 
 import TextResultBox from '../../../components/TextResultBox';
 
@@ -15,8 +16,6 @@ export default function Page() {
   const [type, setType] = useState<BaseType>('base-64');
   const [plain, setPlain] = useState<string>('');
   const [target, setTarget] = useState<string>('');
-
-  const [messageApi, contextHolder] = message.useMessage();
 
   const segmentedOptions: (SegmentedRawOption | SegmentedLabeledOption)[] = [
     { label: 'Base16', value: 'base-16' },
@@ -41,7 +40,6 @@ export default function Page() {
 
   return (
     <PageContainer token={{ paddingInlinePageContainerContent: 10, paddingBlockPageContainerContent: 10 }}>
-      {contextHolder}
       <Box sx={{ mt: 2, mb: 2 }}>
         <Segmented
           block={true}

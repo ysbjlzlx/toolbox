@@ -4,9 +4,10 @@ import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from
 import { Box } from '@mui/system';
 import type { TabsProps } from 'antd';
 import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
-import { FC, useEffect, useState } from 'react';
+import type { FC } from 'react';
+import { useEffect, useState } from 'react';
 
-import { PlaceholderConfig } from '../../../../components/placeholder';
+import type { PlaceholderConfig } from '../../../../components/placeholder';
 import DummyImage from '../../../../components/placeholder/DummyImage';
 import HrefLuImage from '../../../../components/placeholder/HrefLuImage';
 import PlaceholderImage from '../../../../components/placeholder/PlaceholderImage';
@@ -64,7 +65,7 @@ const PlaceholderImg: FC = () => {
         submitter={false}
         form={form}
         initialValues={defaultValues}
-        onValuesChange={(changedValues, values) => {
+        onValuesChange={(_, values) => {
           setPlaceholderConfig(values);
         }}
       >
@@ -86,7 +87,7 @@ const PlaceholderImg: FC = () => {
                 suffix: (
                   <ColorPicker
                     value={bgColor}
-                    onChange={(value, hex) => {
+                    onChange={(_, hex) => {
                       form.setFieldValue('bgColor', hex);
                     }}
                   />
@@ -103,7 +104,7 @@ const PlaceholderImg: FC = () => {
                 suffix: (
                   <ColorPicker
                     value={textColor}
-                    onChange={(value, hex) => {
+                    onChange={(_, hex) => {
                       form.setFieldValue('textColor', hex);
                     }}
                   />

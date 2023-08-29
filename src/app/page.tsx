@@ -2,9 +2,10 @@
 
 import { Container } from '@mui/system';
 import { Card, Col, Row } from 'antd';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { Application, apps } from '@/models/Apps';
+import type { Application } from '@/models/Apps';
+import { apps } from '@/models/Apps';
 
 const Page = () => {
   const item = ({ applications }: { applications: Application[] }) => {
@@ -15,7 +16,7 @@ const Page = () => {
             key={application.name}
             title={application.name}
             actions={[
-              <Link href={application.href} key="0" prefetch={false}>
+              <Link to={application.href} key="0">
                 {application.name}
               </Link>,
             ]}

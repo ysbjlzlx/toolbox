@@ -4,19 +4,13 @@ import { ProForm, ProFormText } from '@ant-design/pro-components';
 import { Box, Container } from '@mui/system';
 import { Button, Form, Input, Space } from 'antd';
 import dayjs from 'dayjs';
-import { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '../../../utils/validator';
 
 import Iconify from '@/components/Iconify';
 import 'dayjs/locale/zh-cn';
-
-interface Current {
-  second: number;
-  millisecond: number;
-  date: string;
-  dateWithMillisecond: string;
-}
 
 const Page = () => {
   const [form] = Form.useForm();
