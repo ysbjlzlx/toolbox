@@ -1,6 +1,7 @@
 import { Button, message } from 'antd';
 import ClipboardJS from 'clipboard';
-import { FC, ReactNode, useLayoutEffect, useRef } from 'react';
+import type { FC, ReactNode } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 interface Props {
   text?: string | undefined;
@@ -14,7 +15,7 @@ const CopyButtonWrapper: FC<Props> = ({ text, children }: Props) => {
   useLayoutEffect(() => {
     if (btnRef?.current) {
       const clipboard = new ClipboardJS(btnRef.current);
-      clipboard.on('success', (e) => {
+      clipboard.on('success', () => {
         messageApi.success('复制成功');
       });
       clipboard.on('error', (e) => {
@@ -28,7 +29,7 @@ const CopyButtonWrapper: FC<Props> = ({ text, children }: Props) => {
   return (
     <>
       {contextHolder}
-      <Button type={'text'} ref={btnRef} data-clipboard-text={text} aria-label="Copy content">
+      <Button type="text" ref={btnRef} data-clipboard-text={text} aria-label="Copy content">
         {children}
       </Button>
     </>

@@ -1,7 +1,7 @@
+import ImageWrapper from '@/pages/generator/image/ImageWrapper';
 import { Image } from 'antd';
 import { useEffect, useState } from 'react';
-import ImageWrapper from '../../app/(default)/generator/image/ImageWrapper';
-import { PlaceholderConfig } from './index';
+import type { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
 
 const HrefLuImage = (input: PlaceholderConfig) => {
