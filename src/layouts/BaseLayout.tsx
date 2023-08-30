@@ -1,5 +1,3 @@
-'use client';
-
 import type { MenuDataItem, ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { ProConfigProvider, ProLayout } from '@ant-design/pro-components';
 import { ConfigProvider } from 'antd';
