@@ -1,6 +1,7 @@
-import Image from 'mui-image';
+import { Image } from 'antd';
 import { useEffect, useState } from 'react';
-import { PlaceholderConfig } from './index';
+
+import type { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
 
 const PlaceholderImage = (input: PlaceholderConfig) => {
