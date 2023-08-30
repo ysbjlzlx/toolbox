@@ -16,5 +16,13 @@ export default defineConfig({
   build: {
     outDir: 'build',
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          ace: ['ace-builds', 'react-ace'],
+          jsoneditor: ['vanilla-jsoneditor'],
+        },
+      },
+    },
   },
 });
