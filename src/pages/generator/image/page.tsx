@@ -5,10 +5,10 @@ import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
-import type { PlaceholderConfig } from '../../../components/placeholder';
-import DummyImage from '../../../components/placeholder/DummyImage.tsx';
-import HrefLuImage from '../../../components/placeholder/HrefLuImage.tsx';
-import PlaceholderImage from '../../../components/placeholder/PlaceholderImage.tsx';
+import type { PlaceholderConfig } from '@/components/placeholder';
+import DummyImage from '@/components/placeholder/DummyImage.tsx';
+import HrefLuImage from '@/components/placeholder/HrefLuImage.tsx';
+import PlaceholderImage from '@/components/placeholder/PlaceholderImage.tsx';
 
 const defaultValues = {
   width: 320,
