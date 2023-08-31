@@ -14,6 +14,7 @@ import 'ace-builds/src-noconflict/theme-textmate';
 
 import type { parser } from '@/utils/formatter.ts';
 import { format } from '@/utils/formatter.ts';
+import { PageContainer } from '@ant-design/pro-components';
 
 const Page: FC = () => {
   const [json, setJson] = useState<string>('');
@@ -47,39 +48,41 @@ const Page: FC = () => {
   };
 
   return (
-    <Box sx={{ height: '100%' }}>
-      <Box>
-        <Button type="text" onClick={json2yamlBtnClick}>
-          JSON =&gt; YAML
-        </Button>
+    <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
+      <Box sx={{ height: '100vh' }}>
+        <Box>
+          <Button type="text" onClick={json2yamlBtnClick}>
+            JSON =&gt; YAML
+          </Button>
+        </Box>
+        <Row style={{ height: 'calc(100% - 37px)' }}>
+          <Col xs={24} md={12} style={{ height: '100%' }}>
+            <AceEditor
+              theme="textmate"
+              placeholder="JSON"
+              setOptions={jsonOptions}
+              value={json}
+              onChange={setJson}
+              mode="json5"
+              width="100%"
+              height="100%"
+            />
+          </Col>
+          <Col xs={24} md={12} style={{ height: '100%' }}>
+            <AceEditor
+              theme="textmate"
+              placeholder="YAML"
+              setOptions={yamlOptions}
+              value={yaml}
+              onChange={setYaml}
+              mode="yaml"
+              width="100%"
+              height="100%"
+            />
+          </Col>
+        </Row>
       </Box>
-      <Row style={{ height: 'calc(100% - 37px)' }}>
-        <Col xs={24} md={12} style={{ height: '100%' }}>
-          <AceEditor
-            theme="textmate"
-            placeholder="JSON"
-            setOptions={jsonOptions}
-            value={json}
-            onChange={setJson}
-            mode="json5"
-            width="100%"
-            height="100%"
-          />
-        </Col>
-        <Col xs={24} md={12} style={{ height: '100%' }}>
-          <AceEditor
-            theme="textmate"
-            placeholder="YAML"
-            setOptions={yamlOptions}
-            value={yaml}
-            onChange={setYaml}
-            mode="yaml"
-            width="100%"
-            height="100%"
-          />
-        </Col>
-      </Row>
-    </Box>
+    </PageContainer>
   );
 };
 
