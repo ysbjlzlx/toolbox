@@ -1,5 +1,6 @@
-import prettierBabelPlugin from 'prettier/plugins/babel';
-import parserYaml from 'prettier/plugins/yaml';
+import prettierPluginsBabel from 'prettier/plugins/babel';
+import prettierPluginsEstree from 'prettier/plugins/estree';
+import prettierPluginsYaml from 'prettier/plugins/yaml';
 import prettier from 'prettier/standalone';
 import xmlFormat from 'xml-formatter';
 
@@ -11,7 +12,7 @@ export const format = async (value: string, parser: parser) => {
   try {
     return await prettier.format(value, {
       parser,
-      plugins: [prettierBabelPlugin, parserYaml],
+      plugins: [prettierPluginsEstree, prettierPluginsBabel, prettierPluginsYaml],
     });
   } catch (e) {
     console.error(e);
