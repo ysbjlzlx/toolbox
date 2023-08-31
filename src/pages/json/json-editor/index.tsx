@@ -9,6 +9,8 @@ import { PageContainer } from '@ant-design/pro-components';
 
 import JsonEditor from './JsonEditor.tsx';
 
+import './index.css';
+
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Page = () => {
   const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
@@ -22,7 +24,7 @@ const Page = () => {
         closable: true,
         children: <JsonEditor idx={idx} />,
         style: {
-          height: `calc(100vh - 56px)`,
+          height: `calc(100vh - 36px)`,
         },
       };
     });
@@ -68,8 +70,8 @@ const Page = () => {
   };
 
   return (
-    <PageContainer title={false}>
-      <Tabs type="editable-card" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />
+    <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
+      <Tabs type="editable-card" size="small" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />
     </PageContainer>
   );
 };

@@ -32,6 +32,7 @@ export default function Page() {
     FileSaver.saveAs(file);
   };
   const uploadProps: UploadProps = {
+    accept: '.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel',
     showUploadList: false,
     beforeUpload: async () => {
       return false;

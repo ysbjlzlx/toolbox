@@ -1,6 +1,6 @@
 {
   "name": "toolbox",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "private": true,
   "scripts": {
     "build": "tsc && vite build",
@@ -74,7 +74,7 @@
     "remark-gfm": "3.0.1",
     "ulid": "2.3.0",
     "uuid": "9.0.0",
-    "vanilla-jsoneditor": "0.18.2",
+    "vanilla-jsoneditor": "0.18.3",
     "web-vitals": "3.4.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz",
     "xml-formatter": "3.5.0",
@@ -94,7 +94,7 @@
     "@types/prettier": "3.0.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "@types/uuid": "9.0.2",
+    "@types/uuid": "9.0.3",
     "@vitejs/plugin-react": "4.0.4",
     "eslint": "8.48.0",
     "eslint-config-alloy": "5.1.2",
