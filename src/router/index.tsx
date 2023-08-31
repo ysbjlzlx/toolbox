@@ -17,7 +17,7 @@ const GeneratorId = lazy(() => import('@/pages/generator/id/page'));
 const GeneratorImage = lazy(() => import('@/pages/generator/image/page'));
 const GeneratorString = lazy(() => import('@/pages/generator/string/page'));
 const Hash = lazy(() => import('@/pages/hash/page'));
-const JsonEditor = lazy(() => import('@/pages/json/json-editor/page'));
+const JsonEditor = lazy(() => import('@/pages/json/json-editor'));
 const JsonToExcel = lazy(() => import('@/pages/json/json-to-excel/page'));
 const JsonToYaml = lazy(() => import('@/pages/json/json-to-yaml/page'));
 const Markdown = lazy(() => import('@/pages/markdown/page'));

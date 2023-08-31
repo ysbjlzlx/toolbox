@@ -10,9 +10,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  optimizeDeps: {
-    include: ['@'],
-  },
   build: {
     outDir: 'build',
     sourcemap: true,
