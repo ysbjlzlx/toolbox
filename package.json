@@ -90,7 +90,7 @@
     "@types/crypto-js": "4.1.2",
     "@types/file-saver": "2.0.5",
     "@types/jest": "29.5.4",
-    "@types/lodash": "4.14.197",
+    "@types/lodash": "4.14.198",
     "@types/node": "20.5.9",
     "@types/prettier": "3.0.0",
     "@types/react": "18.2.21",
