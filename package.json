@@ -51,6 +51,7 @@
     "crypto-js": "4.1.1",
     "dayjs": "1.11.9",
     "file-saver": "2.0.5",
+    "groovy-beautify": "0.0.17",
     "highlight.js": "11.8.0",
     "i18next": "23.4.9",
     "i18next-browser-languagedetector": "7.1.0",

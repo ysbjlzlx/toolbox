@@ -7,6 +7,7 @@ import AceEditor from 'react-ace';
 import type { AceOptions } from 'react-ace/types';
 
 import 'ace-builds/src-noconflict/ext-searchbox';
+import 'ace-builds/src-noconflict/mode-groovy';
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/mode-json5';
 import 'ace-builds/src-noconflict/mode-xml';
@@ -64,6 +65,7 @@ const Formatter = () => {
                 { label: 'JSON5', value: 'json5' },
                 { label: 'YAML', value: 'yaml' },
                 { label: 'XML', value: 'xml' },
+                { label: 'Groovy', value: 'groovy' },
               ]}
               style={{ width: 100 }}
             />
