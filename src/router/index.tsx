@@ -10,7 +10,7 @@ import BaseLayout from '@/layouts/BaseLayout.tsx';
 /* eslint-disable react-refresh/only-export-components */
 const Index = lazy(() => import('@/pages/page'));
 const Base64 = lazy(() => import('@/pages/base64/page'));
-const CodeFormatter = lazy(() => import('@/pages/code-formatter/page'));
+const CodeFormatter = lazy(() => import('@/pages/code-formatter'));
 const DocEditor = lazy(() => import('@/pages/doc-editor/page'));
 const Excel = lazy(() => import('@/pages/excel/page'));
 const GeneratorId = lazy(() => import('@/pages/generator/id/page'));
