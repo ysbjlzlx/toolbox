@@ -20,8 +20,7 @@ const Hash = lazy(() => import('@/pages/hash/page'));
 const JsonEditor = lazy(() => import('@/pages/json/json-editor'));
 const JsonToExcel = lazy(() => import('@/pages/json/json-to-excel/page'));
 const JsonToYaml = lazy(() => import('@/pages/json/json-to-yaml/page'));
-const Markdown = lazy(() => import('@/pages/markdown/page'));
-const NextMarkdown = lazy(() => import('@/pages/markdown'));
+const Markdown = lazy(() => import('@/pages/markdown'));
 const Qrcode = lazy(() => import('@/pages/qrcode/page'));
 const Timestamp = lazy(() => import('@/pages/timestamp/page'));
 const Totp = lazy(() => import('@/pages/totp/page'));
@@ -95,10 +94,6 @@ const routes: RouteObject[] = [
       {
         path: '/markdown',
         element: lazyLoad(Markdown),
-      },
-      {
-        path: '/markdown/next',
-        element: lazyLoad(NextMarkdown),
       },
       {
         path: '/qrcode',
