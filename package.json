@@ -59,7 +59,7 @@
     "joi": "17.11.0",
     "json5": "2.2.3",
     "lodash": "4.17.21",
-    "lossless-json": "2.0.11",
+    "lossless-json": "3.0.1",
     "material-ui-popup-state": "5.0.10",
     "mui-image": "1.0.7",
     "nanoid": "5.0.2",
