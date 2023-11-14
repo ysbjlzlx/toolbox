@@ -1,0 +1,2 @@
+import{j as o}from"./index-c4fa426a.js";import{C as s}from"./ContentCopyButton-f234c9c9.js";import{C as a}from"./index-9a382637.js";import{I as n}from"./index-ad95881f.js";const x=({text:t,title:e})=>{const{TextArea:r}=n;return o.jsx(a,{title:e,extra:o.jsx(s,{text:t}),bodyStyle:{padding:"10px",paddingBottom:"20px"},hoverable:!1,children:o.jsx(r,{bordered:!0,autoSize:{minRows:5,maxRows:10},value:t,showCount:!0})})},d=x;export{d as T};
+//# sourceMappingURL=TextResultBox-9563e1c1.js.map
