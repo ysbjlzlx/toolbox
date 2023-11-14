@@ -1,4 +1,5 @@
-import { Content, Mode } from 'vanilla-jsoneditor';
+import type { Content } from 'vanilla-jsoneditor';
+import { Mode } from 'vanilla-jsoneditor';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 

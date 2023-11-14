@@ -10,7 +10,7 @@ import BaseLayout from '@/layouts/BaseLayout.tsx';
 /* eslint-disable react-refresh/only-export-components */
 const Index = lazy(() => import('@/pages/page'));
 const Base64 = lazy(() => import('@/pages/base64/page'));
-const CodeFormatter = lazy(() => import('@/pages/code-formatter/page'));
+const CodeFormatter = lazy(() => import('@/pages/code-formatter'));
 const DocEditor = lazy(() => import('@/pages/doc-editor/page'));
 const Excel = lazy(() => import('@/pages/excel/page'));
 const GeneratorId = lazy(() => import('@/pages/generator/id/page'));
@@ -20,7 +20,7 @@ const Hash = lazy(() => import('@/pages/hash/page'));
 const JsonEditor = lazy(() => import('@/pages/json/json-editor'));
 const JsonToExcel = lazy(() => import('@/pages/json/json-to-excel/page'));
 const JsonToYaml = lazy(() => import('@/pages/json/json-to-yaml/page'));
-const Markdown = lazy(() => import('@/pages/markdown/page'));
+const Markdown = lazy(() => import('@/pages/markdown'));
 const Qrcode = lazy(() => import('@/pages/qrcode/page'));
 const Timestamp = lazy(() => import('@/pages/timestamp/page'));
 const Totp = lazy(() => import('@/pages/totp/page'));
