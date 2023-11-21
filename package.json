@@ -34,7 +34,7 @@
     "@mui/system": "5.14.18",
     "@paralleldrive/cuid2": "2.2.2",
     "@sapphire/snowflake": "3.5.1",
-    "@tinymce/tinymce-react": "4.3.1",
+    "@tinymce/tinymce-react": "4.3.2",
     "ace-builds": "1.31.2",
     "ahooks": "3.7.8",
     "antd": "5.11.2",
