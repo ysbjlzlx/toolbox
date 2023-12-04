@@ -5,8 +5,9 @@ import dayjs from 'dayjs';
 import type { ChangeEvent } from 'react';
 import { useEffect, useState } from 'react';
 
-import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '../../utils/validator.ts';
+import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '@/utils/validator.ts';
 
+import ContentCopyButton from '@/components/ContentCopyButton.tsx';
 import Iconify from '@/components/Iconify';
 import 'dayjs/locale/zh-cn';
 
@@ -14,6 +15,7 @@ const Page = () => {
   const [form] = Form.useForm();
   const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
 
+  const dateStr = Form.useWatch('date', { form, preserve: true });
   const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
@@ -45,7 +47,7 @@ const Page = () => {
   }, [input, form]);
 
   return (
-    <Container sx={{ pt: 2 }}>
+    <Container sx={{ pt: 2 }} maxWidth="md">
       <Box sx={{ mb: 3 }}>
         <Space.Compact style={{ width: '100%' }}>
           <Input
@@ -57,11 +59,26 @@ const Page = () => {
           <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
         </Space.Compact>
       </Box>
-      <ProForm form={form} grid={true} submitter={false}>
-        <ProFormText name="date" label="日期时间" colProps={{ span: 12 }} allowClear={false} />
-        <ProFormText name="dateWithMillisecond" label="日期时间（毫秒）" colProps={{ span: 12 }} allowClear={false} />
-        <ProFormText name="second" label="时间戳（秒）" colProps={{ span: 12 }} allowClear={false} />
-        <ProFormText name="millisecond" label="时间戳（毫秒）" colProps={{ span: 12 }} allowClear={false} />
+      <ProForm
+        form={form}
+        grid={true}
+        submitter={false}
+        layout="horizontal"
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 20 }}
+      >
+        <ProFormText
+          name="date"
+          label="日期时间"
+          colProps={{ span: 24 }}
+          allowClear={false}
+          fieldProps={{
+            suffix: [<ContentCopyButton key="copy" text={dateStr} />],
+          }}
+        />
+        <ProFormText name="dateWithMillisecond" label="日期时间（毫秒）" colProps={{ span: 24 }} allowClear={false} />
+        <ProFormText name="second" label="时间戳（秒）" colProps={{ span: 24 }} allowClear={false} />
+        <ProFormText name="millisecond" label="时间戳（毫秒）" colProps={{ span: 24 }} allowClear={false} />
       </ProForm>
     </Container>
   );
