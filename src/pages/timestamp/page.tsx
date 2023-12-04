@@ -16,6 +16,9 @@ const Page = () => {
   const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
 
   const dateStr = Form.useWatch('date', { form, preserve: true });
+  const dateWithMillisecondStr = Form.useWatch('dateWithMillisecond', { form, preserve: true });
+  const secondStr = Form.useWatch('second', { form, preserve: true });
+  const millisecondStr = Form.useWatch('millisecond', { form, preserve: true });
   const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
@@ -76,9 +79,33 @@ const Page = () => {
             suffix: [<ContentCopyButton key="copy" text={dateStr} />],
           }}
         />
-        <ProFormText name="dateWithMillisecond" label="日期时间（毫秒）" colProps={{ span: 24 }} allowClear={false} />
-        <ProFormText name="second" label="时间戳（秒）" colProps={{ span: 24 }} allowClear={false} />
-        <ProFormText name="millisecond" label="时间戳（毫秒）" colProps={{ span: 24 }} allowClear={false} />
+        <ProFormText
+          name="dateWithMillisecond"
+          label="日期时间（毫秒）"
+          colProps={{ span: 24 }}
+          allowClear={false}
+          fieldProps={{
+            suffix: [<ContentCopyButton key="copy" text={dateWithMillisecondStr} />],
+          }}
+        />
+        <ProFormText
+          name="second"
+          label="时间戳（秒）"
+          colProps={{ span: 24 }}
+          allowClear={false}
+          fieldProps={{
+            suffix: [<ContentCopyButton key="copy" text={secondStr} />],
+          }}
+        />
+        <ProFormText
+          name="millisecond"
+          label="时间戳（毫秒）"
+          colProps={{ span: 24 }}
+          allowClear={false}
+          fieldProps={{
+            suffix: [<ContentCopyButton key="copy" text={millisecondStr} />],
+          }}
+        />
       </ProForm>
     </Container>
   );
