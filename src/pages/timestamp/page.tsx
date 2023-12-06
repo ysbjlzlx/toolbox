@@ -1,24 +1,26 @@
-import { ProForm, ProFormText } from '@ant-design/pro-components';
 import { Box, Container } from '@mui/system';
-import { Button, Form, Input, Space } from 'antd';
+import { Button, Input, Space } from 'antd';
 import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
 import type { ChangeEvent } from 'react';
 import { useEffect, useState } from 'react';
 
 import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '@/utils/validator.ts';
 
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
 import Iconify from '@/components/Iconify';
+import InputCopyable from '@/components/InputCopyable.tsx';
 import 'dayjs/locale/zh-cn';
 
-const Page = () => {
-  const [form] = Form.useForm();
-  const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
+interface TimestampVO {
+  tag: string;
+  value: string;
+}
 
-  const dateStr = Form.useWatch('date', { form, preserve: true });
-  const dateWithMillisecondStr = Form.useWatch('dateWithMillisecond', { form, preserve: true });
-  const secondStr = Form.useWatch('second', { form, preserve: true });
-  const millisecondStr = Form.useWatch('millisecond', { form, preserve: true });
+const Page = () => {
+  const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
+  const [timeList, setTimeList] = useState<TimestampVO[]>([]);
+
   const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
@@ -28,6 +30,9 @@ const Page = () => {
   };
 
   useEffect(() => {
+    dayjs.extend(utc);
+    dayjs.extend(timezone);
+    const tz = dayjs.tz.guess();
     let instance = dayjs();
     if (isUnixSecond(input)) {
       const second = Number.parseInt(input, 10);
@@ -43,11 +48,15 @@ const Page = () => {
     } else if (isDateStr(input, 'YYYY-MM-DD')) {
       instance = dayjs(input, 'YYYY-MM-DD 00:00:00');
     }
-    form.setFieldValue('second', instance.unix());
-    form.setFieldValue('millisecond', instance.valueOf());
-    form.setFieldValue('date', instance.format('YYYY-MM-DD HH:mm:ss'));
-    form.setFieldValue('dateWithMillisecond', instance.format('YYYY-MM-DD HH:mm:ss.SSS'));
-  }, [input, form]);
+    setTimeList([
+      { tag: 'Unix timestamp (Second)', value: instance.unix().toString() },
+      { tag: 'Timestamp (Millisecond)', value: instance.valueOf().toString() },
+      { tag: 'ISO 8601', value: instance.tz(tz).toISOString() },
+      { tag: 'ISO 9075', value: instance.tz(tz).format('YYYY-MM-DD HH:mm:ss') },
+      { tag: 'RFC 3339', value: instance.tz(tz).format('YYYY-MM-DDTHH:mm:ss.SSS[Z]') },
+      { tag: 'RFC 7231', value: instance.tz(tz).format('ddd, DD MMM YYYY HH:mm:ss [GMT]') },
+    ]);
+  }, [input]);
 
   return (
     <Container sx={{ pt: 2 }} maxWidth="md">
@@ -62,51 +71,11 @@ const Page = () => {
           <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
         </Space.Compact>
       </Box>
-      <ProForm
-        form={form}
-        grid={true}
-        submitter={false}
-        layout="horizontal"
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 20 }}
-      >
-        <ProFormText
-          name="date"
-          label="日期时间"
-          colProps={{ span: 24 }}
-          allowClear={false}
-          fieldProps={{
-            suffix: [<ContentCopyButton key="copy" text={dateStr} />],
-          }}
-        />
-        <ProFormText
-          name="dateWithMillisecond"
-          label="日期时间（毫秒）"
-          colProps={{ span: 24 }}
-          allowClear={false}
-          fieldProps={{
-            suffix: [<ContentCopyButton key="copy" text={dateWithMillisecondStr} />],
-          }}
-        />
-        <ProFormText
-          name="second"
-          label="时间戳（秒）"
-          colProps={{ span: 24 }}
-          allowClear={false}
-          fieldProps={{
-            suffix: [<ContentCopyButton key="copy" text={secondStr} />],
-          }}
-        />
-        <ProFormText
-          name="millisecond"
-          label="时间戳（毫秒）"
-          colProps={{ span: 24 }}
-          allowClear={false}
-          fieldProps={{
-            suffix: [<ContentCopyButton key="copy" text={millisecondStr} />],
-          }}
-        />
-      </ProForm>
+      <Box>
+        {timeList.map((timestampVO) => {
+          return <InputCopyable key={timestampVO.tag} {...timestampVO} />;
+        })}
+      </Box>
     </Container>
   );
 };
