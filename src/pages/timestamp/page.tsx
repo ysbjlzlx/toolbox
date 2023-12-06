@@ -20,6 +20,9 @@ interface TimestampVO {
 const Page = () => {
   const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   const [timeList, setTimeList] = useState<TimestampVO[]>([]);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  const tz = dayjs.tz.guess();
 
   const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -30,10 +33,10 @@ const Page = () => {
   };
 
   useEffect(() => {
-    dayjs.extend(utc);
-    dayjs.extend(timezone);
-    const tz = dayjs.tz.guess();
-    let instance = dayjs();
+    if (input === null || input === undefined || input === '') {
+      return;
+    }
+    let instance: dayjs.Dayjs;
     if (isUnixSecond(input)) {
       const second = Number.parseInt(input, 10);
       instance = dayjs.unix(second);
@@ -47,6 +50,8 @@ const Page = () => {
       instance = dayjs(input, 'YYYY-MM-DD HH:mm:ss');
     } else if (isDateStr(input, 'YYYY-MM-DD')) {
       instance = dayjs(input, 'YYYY-MM-DD 00:00:00');
+    } else {
+      instance = dayjs(input);
     }
     setTimeList([
       { tag: 'Unix timestamp (Second)', value: instance.unix().toString() },
@@ -56,7 +61,7 @@ const Page = () => {
       { tag: 'RFC 3339', value: instance.tz(tz).format('YYYY-MM-DDTHH:mm:ss.SSS[Z]') },
       { tag: 'RFC 7231', value: instance.tz(tz).format('ddd, DD MMM YYYY HH:mm:ss [GMT]') },
     ]);
-  }, [input]);
+  }, [input, tz]);
 
   return (
     <Container sx={{ pt: 2 }} maxWidth="md">
