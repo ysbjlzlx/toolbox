@@ -11,7 +11,9 @@ export const format = async (value: string, parser: parser) => {
     return groovyBeautify(value);
   }
   if (parser === 'xml') {
-    return xmlFormat(value);
+    return xmlFormat(value, {
+      collapseContent: true,
+    });
   }
   try {
     return await prettier.format(value, {
