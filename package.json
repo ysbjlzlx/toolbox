@@ -35,7 +35,7 @@
     "@paralleldrive/cuid2": "2.2.2",
     "@sapphire/snowflake": "3.5.2",
     "@tinymce/tinymce-react": "4.3.2",
-    "ace-builds": "1.32.0",
+    "ace-builds": "1.32.1",
     "ahooks": "3.7.8",
     "antd": "5.12.1",
     "ascii85": "1.0.2",
