@@ -16,6 +16,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          antd: ['antd'],
           ace: ['ace-builds', 'react-ace'],
           jsoneditor: ['vanilla-jsoneditor'],
         },
