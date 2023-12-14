@@ -1,6 +1,7 @@
 import { Box, Container } from '@mui/system';
 import { Button, Input, Space } from 'antd';
 import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import type { ChangeEvent } from 'react';
@@ -22,6 +23,7 @@ const Page = () => {
   const [timeList, setTimeList] = useState<TimestampVO[]>([]);
   dayjs.extend(utc);
   dayjs.extend(timezone);
+  dayjs.extend(localizedFormat);
   const tz = dayjs.tz.guess();
 
   const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -47,19 +49,20 @@ const Page = () => {
       const second = Number.parseInt(input, 10);
       instance = dayjs.unix(second);
     } else if (isDateStr(input, 'YYYY-MM-DD HH:mm:ss')) {
-      instance = dayjs(input, 'YYYY-MM-DD HH:mm:ss');
+      instance = dayjs(input, 'YYYY-MM-DD HH:mm:ss').tz(tz);
     } else if (isDateStr(input, 'YYYY-MM-DD')) {
       instance = dayjs(input, 'YYYY-MM-DD 00:00:00');
     } else {
       instance = dayjs(input);
     }
+    console.log(instance.toISOString());
     setTimeList([
       { tag: 'Unix timestamp (Second)', value: instance.unix().toString() },
       { tag: 'Timestamp (Millisecond)', value: instance.valueOf().toString() },
-      { tag: 'ISO 8601', value: instance.tz(tz).toISOString() },
-      { tag: 'ISO 9075', value: instance.tz(tz).format('YYYY-MM-DD HH:mm:ss') },
-      { tag: 'RFC 3339', value: instance.tz(tz).format('YYYY-MM-DDTHH:mm:ss.SSS[Z]') },
-      { tag: 'RFC 7231', value: instance.tz(tz).format('ddd, DD MMM YYYY HH:mm:ss [GMT]') },
+      { tag: 'ISO 8601', value: instance.toISOString() },
+      { tag: 'ISO 9075', value: instance.format('YYYY-MM-DD HH:mm:ss') },
+      { tag: 'RFC 3339', value: instance.format('YYYY-MM-DDTHH:mm:ss.SSSZ') },
+      { tag: 'RFC 7231', value: instance.format('dddd, MMMM D, YYYY h:mm A') },
     ]);
   }, [input, tz]);
 
