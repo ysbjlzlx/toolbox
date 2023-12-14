@@ -5,27 +5,15 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
-    "preview": "vite preview",
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
     "prepare": "husky install",
     "prettier": "prettier --ignore-unknown src ",
     "prettier:fix": "prettier --write --ignore-unknown src",
+    "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
     "update": "npx npm-check-updates -u && npm install && npm run build"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "dependencies": {
     "@ant-design/pro-components": "2.6.43",
@@ -109,7 +97,7 @@
     "stylelint": "16.0.2",
     "stylelint-config-standard": "35.0.0",
     "typescript": "5.3.3",
-    "vite": "4.5.1"
+    "vite": "5.0.8"
   },
   "overrides": {}
 }
