@@ -10,6 +10,7 @@ import '@/locale';
 
 import 'antd/dist/reset.css';
 import './globals.css';
+import './tailwind.css';
 
 const theme = createTheme({
   spacing: 8,

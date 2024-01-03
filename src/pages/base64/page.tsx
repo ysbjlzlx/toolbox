@@ -62,9 +62,9 @@ export default function Page() {
           <Button onClick={decode}>解码</Button>
         </Space.Compact>
       </Box>
-      <Box sx={{ mt: 2 }}>
+      <div className="mt-2">
         <TextResultBox title="结果" text={target} />
-      </Box>
+      </div>
     </PageContainer>
   );
 }
