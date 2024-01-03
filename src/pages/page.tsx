@@ -1,4 +1,3 @@
-import { Container } from '@mui/system';
 import { Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -26,9 +25,9 @@ const Page = () => {
     });
   };
   return (
-    <Container>
+    <div className="px-10 py-10">
       <Row gutter={[16, 8]}>{item({ applications: apps })}</Row>
-    </Container>
+    </div>
   );
 };
 
