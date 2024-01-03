@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { useState } from 'react';
 
 import { PageContainer } from '@ant-design/pro-components';
@@ -23,7 +22,7 @@ export default function Page() {
 
   return (
     <PageContainer title={false} className="container mx-auto">
-      <Box mt={2}>
+      <div className="mt-4">
         <Input.TextArea
           rows={3}
           value={uri}
@@ -32,17 +31,17 @@ export default function Page() {
             setUri(e.target.value);
           }}
         />
-      </Box>
-      <Box mt={2}>
+      </div>
+      <div className="mt-4">
         <Button.Group>
           <Button onClick={handleEncodeURI}>链接参数编码</Button>
           <Button onClick={handleEncodeURIComponent}>全链接编码</Button>
           <Button onClick={handleDecodeURIComponent}>链接解码</Button>
         </Button.Group>
-      </Box>
-      <Box mt={2}>
+      </div>
+      <div className="mt-4">
         <TextResultBox title="结果" text={encodedURI} />
-      </Box>
+      </div>
     </PageContainer>
   );
 }

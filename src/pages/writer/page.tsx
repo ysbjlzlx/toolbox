@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { useCallback, useState } from 'react';
 
 import hljs from 'highlight.js';
@@ -63,11 +62,11 @@ const Writer = () => {
   };
 
   return (
-    <Box>
-      <Box>
+    <div>
+      <div>
         <CopyButtonWrapper text={value}>复制源码</CopyButtonWrapper>
-      </Box>
-      <Box>
+      </div>
+      <div>
         <ReactQuill
           theme="snow"
           defaultValue={value}
@@ -76,8 +75,8 @@ const Writer = () => {
           onChange={quillProps.onChange}
           style={styles.quill}
         />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 export default Writer;

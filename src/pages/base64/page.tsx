@@ -1,5 +1,4 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
 import type { SegmentedProps } from 'antd';
 import { Button, Input, Segmented, Space } from 'antd';
 import { useCallback, useState } from 'react';
@@ -34,18 +33,17 @@ export default function Page() {
   }, [type, plain]);
 
   return (
-    <PageContainer token={{ paddingInlinePageContainerContent: 10, paddingBlockPageContainerContent: 10 }}>
-      <Box sx={{ mt: 2, mb: 2 }}>
-        <Segmented
-          block={true}
-          value={type}
-          options={segmentedOptions}
-          onChange={(value) => {
-            setType(value as BaseType);
-          }}
-        />
-      </Box>
-      <Box sx={{ mt: 2 }}>
+    <PageContainer title={false} className="container mx-auto">
+      <Segmented
+        block={true}
+        value={type}
+        options={segmentedOptions}
+        onChange={(value) => {
+          setType(value as BaseType);
+        }}
+        className="my-4"
+      />
+      <div className="mt-4">
         <Input.TextArea
           value={plain}
           onChange={(event) => {
@@ -55,14 +53,14 @@ export default function Page() {
           autoSize={{ minRows: 5, maxRows: 10 }}
           showCount
         />
-      </Box>
-      <Box sx={{ mt: 2 }}>
+      </div>
+      <div className="mt-4">
         <Space.Compact>
           <Button onClick={encode}>编码</Button>
           <Button onClick={decode}>解码</Button>
         </Space.Compact>
-      </Box>
-      <div className="mt-2">
+      </div>
+      <div className="mt-4">
         <TextResultBox title="结果" text={target} />
       </div>
     </PageContainer>

@@ -1,5 +1,4 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
 import type { UploadProps } from 'antd';
 import { Button, Space, Upload } from 'antd';
 import FileSaver from 'file-saver';
@@ -66,18 +65,16 @@ export default function Page() {
   };
   return (
     <PageContainer title="Excel 转 JSON">
-      <Box>
-        <Space direction="horizontal">
-          <Upload {...uploadProps}>
-            <Button type="primary">上传 Excel</Button>
-          </Upload>
-          <Button onClick={save}>下载为 JSON 文件</Button>
-        </Space>
-      </Box>
+      <Space direction="horizontal">
+        <Upload {...uploadProps}>
+          <Button type="primary">上传 Excel</Button>
+        </Upload>
+        <Button onClick={save}>下载为 JSON 文件</Button>
+      </Space>
 
-      <Box sx={{ mt: 2 }}>
+      <div className="mt-4">
         <AceEditor mode="json" theme="monokai" width="100%" setOptions={options} value={result} />
-      </Box>
+      </div>
     </PageContainer>
   );
 }

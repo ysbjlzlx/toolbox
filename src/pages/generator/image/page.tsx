@@ -1,5 +1,4 @@
 import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
 import type { TabsProps } from 'antd';
 import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
 import type { FC } from 'react';
@@ -58,7 +57,7 @@ const PlaceholderImg: FC = () => {
     ],
   };
   return (
-    <PageContainer>
+    <PageContainer className="container mx-auto">
       <ProForm
         submitter={false}
         form={form}
@@ -116,9 +115,9 @@ const PlaceholderImg: FC = () => {
           </Col>
         </Row>
       </ProForm>
-      <Box>
+      <div>
         <Tabs {...tabsProps} />
-      </Box>
+      </div>
     </PageContainer>
   );
 };

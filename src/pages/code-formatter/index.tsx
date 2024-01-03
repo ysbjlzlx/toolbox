@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { Button, Checkbox, Form, Select } from 'antd';
 import { useState } from 'react';
 import type { ICommand } from 'react-ace';
@@ -52,8 +51,8 @@ const CodeFormatter = () => {
 
   return (
     <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
-      <Box sx={{ height: '100vh' }}>
-        <Box sx={{ pt: 2, pb: 1, pl: 2 }}>
+      <div className="h-[100vh]">
+        <div className="py-4 pl-4">
           <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
             <Form.Item label="类型">
               <Select
@@ -87,7 +86,7 @@ const CodeFormatter = () => {
               </Button>
             </Form.Item>
           </Form>
-        </Box>
+        </div>
         <AceEditor
           width="100%"
           height="calc(100% - 56px)"
@@ -99,7 +98,7 @@ const CodeFormatter = () => {
           value={code}
           commands={commands}
         />
-      </Box>
+      </div>
     </PageContainer>
   );
 };

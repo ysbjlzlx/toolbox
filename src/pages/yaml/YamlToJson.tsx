@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { Button, Col, Row } from 'antd';
 import prettierBabelPlugin from 'prettier/plugins/babel';
 import prettier from 'prettier/standalone';
@@ -55,12 +54,12 @@ const YamlToJson: FC = () => {
   };
 
   return (
-    <Box sx={{ height: '100%' }}>
-      <Box>
+    <div className="h-full">
+      <div>
         <Button type="text" onClick={yaml2jsonButClick}>
           YAML =&gt; JSON
         </Button>
-      </Box>
+      </div>
       <Row style={{ height: 'calc(100% - 37px)' }}>
         <Col xs={24} md={12} style={{ height: '100%' }}>
           <AceEditor
@@ -87,7 +86,7 @@ const YamlToJson: FC = () => {
           />
         </Col>
       </Row>
-    </Box>
+    </div>
   );
 };
 

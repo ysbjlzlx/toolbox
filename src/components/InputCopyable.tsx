@@ -1,5 +1,4 @@
 import ContentCopyButton from '@/components/ContentCopyButton.tsx';
-import { Box } from '@mui/system';
 import { Input, Space } from 'antd';
 
 export interface Props {
@@ -9,12 +8,12 @@ export interface Props {
 
 const InputCopyable = (props: Props) => {
   return (
-    <Box sx={{ mt: 2, mb: 2 }}>
+    <div className="my-4">
       <Space.Compact block>
         <Input value={props.value || ''} addonBefore={props.tag} showCount />
         <ContentCopyButton text={props.value || ''} />
       </Space.Compact>
-    </Box>
+    </div>
   );
 };
 

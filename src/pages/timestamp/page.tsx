@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { Button, Input, Space } from 'antd';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
@@ -70,7 +69,7 @@ const Page = () => {
   return (
     <PageContainer title={false}>
       <div className="max-w-screen-sm mx-auto mt-10">
-        <Box sx={{ mb: 3 }}>
+        <div className="mb-6">
           <Space.Compact style={{ width: '100%' }}>
             <Input
               value={input}
@@ -80,12 +79,12 @@ const Page = () => {
             />
             <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
           </Space.Compact>
-        </Box>
-        <Box>
+        </div>
+        <div>
           {timeList.map((timestampVO) => {
             return <InputCopyable key={timestampVO.tag} {...timestampVO} />;
           })}
-        </Box>
+        </div>
       </div>
     </PageContainer>
   );

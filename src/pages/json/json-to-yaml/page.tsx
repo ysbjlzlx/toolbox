@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { Button, Col, Row } from 'antd';
 import JSON5 from 'json5';
 import type { FC } from 'react';
@@ -49,12 +48,12 @@ const Page: FC = () => {
 
   return (
     <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
-      <Box sx={{ height: '100vh' }}>
-        <Box>
+      <div className="h-[100vh]">
+        <div>
           <Button type="text" onClick={json2yamlBtnClick}>
             JSON =&gt; YAML
           </Button>
-        </Box>
+        </div>
         <Row style={{ height: 'calc(100% - 37px)' }}>
           <Col xs={24} md={12} style={{ height: '100%' }}>
             <AceEditor
@@ -81,7 +80,7 @@ const Page: FC = () => {
             />
           </Col>
         </Row>
-      </Box>
+      </div>
     </PageContainer>
   );
 };

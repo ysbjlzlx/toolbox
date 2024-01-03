@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { List } from 'antd';
 import type { TotpI } from './typings';
 
@@ -8,13 +7,13 @@ interface Props {
 
 const AccountList = ({ totps }: Props) => {
   return (
-    <Box>
+    <div>
       <List>
         {totps?.map((totp) => {
           return <List.Item key={totp.secretKey} />;
         })}
       </List>
-    </Box>
+    </div>
   );
 };
 
