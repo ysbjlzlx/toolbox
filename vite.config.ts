@@ -16,6 +16,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          'pro-components': ['@ant-design/pro-components'],
           antd: ['antd'],
           ace: ['ace-builds', 'react-ace'],
           jsoneditor: ['vanilla-jsoneditor'],
