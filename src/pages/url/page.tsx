@@ -22,7 +22,7 @@ export default function Page() {
   };
 
   return (
-    <PageContainer title={false}>
+    <PageContainer title={false} className="container mx-auto">
       <Box mt={2}>
         <Input.TextArea
           rows={3}
