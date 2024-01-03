@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 const pwaOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
+  includeAssets: ['logo.png', 'logo.svg', 'favicon.ico'],
   manifest: {
     name: 'Toolbox',
     short_name: 'Toolbox',
