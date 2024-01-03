@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/system';
+import { Box } from '@mui/system';
 import { Button, Input, Space } from 'antd';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
@@ -11,6 +11,7 @@ import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '@/utils/valida
 
 import Iconify from '@/components/Iconify';
 import InputCopyable from '@/components/InputCopyable.tsx';
+import { PageContainer } from '@ant-design/pro-components';
 import 'dayjs/locale/zh-cn';
 
 interface TimestampVO {
@@ -67,24 +68,26 @@ const Page = () => {
   }, [input, tz]);
 
   return (
-    <Container sx={{ pt: 2 }} maxWidth="md">
-      <Box sx={{ mb: 3 }}>
-        <Space.Compact style={{ width: '100%' }}>
-          <Input
-            value={input}
-            onChange={inputOnChange}
-            placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
-            showCount
-          />
-          <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
-        </Space.Compact>
-      </Box>
-      <Box>
-        {timeList.map((timestampVO) => {
-          return <InputCopyable key={timestampVO.tag} {...timestampVO} />;
-        })}
-      </Box>
-    </Container>
+    <PageContainer title={false}>
+      <div className="max-w-screen-sm mx-auto mt-10">
+        <Box sx={{ mb: 3 }}>
+          <Space.Compact style={{ width: '100%' }}>
+            <Input
+              value={input}
+              onChange={inputOnChange}
+              placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
+              showCount
+            />
+            <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
+          </Space.Compact>
+        </Box>
+        <Box>
+          {timeList.map((timestampVO) => {
+            return <InputCopyable key={timestampVO.tag} {...timestampVO} />;
+          })}
+        </Box>
+      </div>
+    </PageContainer>
   );
 };
 

@@ -1,6 +1,7 @@
-import { Box, Container } from '@mui/system';
+import { Box } from '@mui/system';
 import { useState } from 'react';
 
+import { PageContainer } from '@ant-design/pro-components';
 import { Button, Input } from 'antd';
 import TextResultBox from '../../components/TextResultBox.tsx';
 
@@ -21,7 +22,7 @@ export default function Page() {
   };
 
   return (
-    <Container>
+    <PageContainer title={false}>
       <Box mt={2}>
         <Input.TextArea
           rows={3}
@@ -42,6 +43,6 @@ export default function Page() {
       <Box mt={2}>
         <TextResultBox title="结果" text={encodedURI} />
       </Box>
-    </Container>
+    </PageContainer>
   );
 }

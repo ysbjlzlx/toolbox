@@ -1,4 +1,4 @@
-import { Container } from '@mui/system';
+import { PageContainer } from '@ant-design/pro-components';
 import { Col, Input, QRCode, Row } from 'antd';
 import type { ReactElement } from 'react';
 import { useState } from 'react';
@@ -8,7 +8,7 @@ export default function Page(): ReactElement {
   const { TextArea } = Input;
 
   return (
-    <Container sx={{ mt: 5 }}>
+    <PageContainer title={false} className="px-5 pt-5">
       <Row gutter={8}>
         <Col span={24} md={16}>
           <TextArea
@@ -24,6 +24,6 @@ export default function Page(): ReactElement {
           <QRCode value={text || 'toolbox.fanfou.dev'} />
         </Col>
       </Row>
-    </Container>
+    </PageContainer>
   );
 }

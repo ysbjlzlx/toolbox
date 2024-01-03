@@ -1,4 +1,4 @@
-import { Container } from '@mui/system';
+import { PageContainer } from '@ant-design/pro-components';
 import { useLocalStorageState } from 'ahooks';
 import { Col, Row } from 'antd';
 import * as OTPAuth from 'otpauth';
@@ -12,7 +12,7 @@ const Totp = () => {
 
   console.log(OTPAuth.Secret.fromUTF8('ha'));
   return (
-    <Container>
+    <PageContainer title={false}>
       <Row>
         <Col span={8}>
           <AccountList totps={totps} />
@@ -21,7 +21,7 @@ const Totp = () => {
           <DetailInfo />
         </Col>
       </Row>
-    </Container>
+    </PageContainer>
   );
 };
 export default Totp;

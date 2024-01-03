@@ -1,4 +1,4 @@
-import { Container } from '@mui/system';
+import { PageContainer } from '@ant-design/pro-components';
 import { Input, Space } from 'antd';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
 import type { ReactElement } from 'react';
@@ -35,7 +35,7 @@ const Page = (): ReactElement => {
     });
   }, [plainText]);
   return (
-    <Container>
+    <PageContainer>
       <Space direction="vertical" style={{ display: 'flex' }} size="large">
         <Input.TextArea
           value={plainText}
@@ -51,7 +51,7 @@ const Page = (): ReactElement => {
         <Input value={hashResult?.sha256} addonBefore="SHA256" showCount />
         <Input value={hashResult?.sha512} addonBefore="SHA512" showCount />
       </Space>
-    </Container>
+    </PageContainer>
   );
 };
 
