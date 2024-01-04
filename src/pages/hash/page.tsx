@@ -35,7 +35,7 @@ const Page = (): ReactElement => {
     });
   }, [plainText]);
   return (
-    <PageContainer>
+    <PageContainer title={false} className="max-w-screen-md mx-auto pt-4">
       <Space direction="vertical" style={{ display: 'flex' }} size="large">
         <Input.TextArea
           value={plainText}

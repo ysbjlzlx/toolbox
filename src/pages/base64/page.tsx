@@ -33,7 +33,7 @@ export default function Page() {
   }, [type, plain]);
 
   return (
-    <PageContainer title={false} className="container mx-auto">
+    <PageContainer title={false} className="max-w-screen-md mx-auto pt-4">
       <Segmented
         block={true}
         value={type}
@@ -41,7 +41,6 @@ export default function Page() {
         onChange={(value) => {
           setType(value as BaseType);
         }}
-        className="my-4"
       />
       <div className="mt-4">
         <Input.TextArea

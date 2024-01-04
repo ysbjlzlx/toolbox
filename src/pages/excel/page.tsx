@@ -64,7 +64,7 @@ export default function Page() {
     },
   };
   return (
-    <PageContainer title="Excel 转 JSON">
+    <PageContainer title="Excel 转 JSON" className="max-w-screen-md mx-auto pt-4">
       <Space direction="horizontal">
         <Upload {...uploadProps}>
           <Button type="primary">上传 Excel</Button>

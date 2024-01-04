@@ -57,7 +57,7 @@ const PlaceholderImg: FC = () => {
     ],
   };
   return (
-    <PageContainer className="container mx-auto">
+    <PageContainer className="max-w-screen-lg mx-auto">
       <ProForm
         submitter={false}
         form={form}

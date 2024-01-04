@@ -21,8 +21,8 @@ export default function Page() {
   };
 
   return (
-    <PageContainer title={false} className="container mx-auto">
-      <div className="mt-4">
+    <PageContainer title={false} className="max-w-screen-lg mx-auto pt-4">
+      <div>
         <Input.TextArea
           rows={3}
           value={uri}
