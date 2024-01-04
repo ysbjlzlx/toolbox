@@ -70,7 +70,7 @@ const Page = () => {
   };
 
   return (
-    <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
+    <PageContainer title={false} className="w-full">
       <Tabs type="editable-card" size="small" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />
     </PageContainer>
   );

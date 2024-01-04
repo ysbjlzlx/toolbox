@@ -45,7 +45,7 @@ const BaseLayout: FC = () => {
     token: {
       pageContainer: {
         colorBgPageContainer: '#ffffff',
-        paddingInlinePageContainerContent: 10,
+        paddingInlinePageContainerContent: 0,
         paddingBlockPageContainerContent: 0,
       },
     },
