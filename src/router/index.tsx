@@ -13,6 +13,7 @@ const Base64 = lazy(() => import('@/pages/base64/page'));
 const CodeFormatter = lazy(() => import('@/pages/code-formatter'));
 const DocEditor = lazy(() => import('@/pages/doc-editor/page'));
 const Excel = lazy(() => import('@/pages/excel/page'));
+const FormatConversion = lazy(() => import('@/pages/format-conversion/page'));
 const GeneratorId = lazy(() => import('@/pages/generator/id/page'));
 const GeneratorImage = lazy(() => import('@/pages/generator/image/page'));
 const GeneratorString = lazy(() => import('@/pages/generator/string/page'));
@@ -62,6 +63,10 @@ const routes: RouteObject[] = [
       {
         path: '/excel',
         element: lazyLoad(Excel),
+      },
+      {
+        path: '/format-conversion',
+        element: lazyLoad(FormatConversion),
       },
       {
         path: '/generator/id',
