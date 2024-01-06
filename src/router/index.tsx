@@ -27,7 +27,6 @@ const Timestamp = lazy(() => import('@/pages/timestamp/page'));
 const Totp = lazy(() => import('@/pages/totp/page'));
 const Url = lazy(() => import('@/pages/url/page'));
 const Writer = lazy(() => import('@/pages/writer/page'));
-const Yaml = lazy(() => import('@/pages/yaml/page'));
 /* eslint-enable react-refresh/only-export-components */
 
 const lazyLoad = (Component: LazyExoticComponent<FC>) => {
@@ -119,10 +118,6 @@ const routes: RouteObject[] = [
       {
         path: '/writer',
         element: lazyLoad(Writer),
-      },
-      {
-        path: '/yaml',
-        element: lazyLoad(Yaml),
       },
     ],
   },

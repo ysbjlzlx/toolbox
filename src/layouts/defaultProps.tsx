@@ -25,12 +25,6 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
-    name: 'YAML',
-    desc: 'YAML 格式处理',
-    path: '/yaml',
-    icon: <Iconify icon="material-symbols:sync-alt" />,
-  },
-  {
     name: '格式转换',
     desc: 'JSON, YAML 等格式转换',
     path: '/format-conversion',
