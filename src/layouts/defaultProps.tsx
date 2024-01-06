@@ -31,7 +31,7 @@ export const menuData: MenuDataItem[] = [
     icon: <Iconify icon="material-symbols:sync-alt" />,
   },
   {
-    name: '格式转换（开发中）',
+    name: '格式转换',
     desc: 'JSON, YAML 等格式转换',
     path: '/format-conversion',
     icon: <Iconify icon="material-symbols:sync-alt" />,

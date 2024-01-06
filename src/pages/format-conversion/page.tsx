@@ -7,9 +7,10 @@ import AceEditor from 'react-ace';
 import type { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
+import Iconify from '@/components/Iconify';
 import { format } from '@/utils/formatter.ts';
 
-import Iconify from '@/components/Iconify';
+import 'ace-builds/src-noconflict/ext-searchbox';
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/mode-yaml';
 import 'ace-builds/src-noconflict/theme-monokai';
@@ -23,12 +24,14 @@ const options: AceOptions = {
   useWorker: false,
   tabSize: 2,
   wrap: true,
+  showLineNumbers: true,
 };
 
 const targetAceEditorOptions: AceOptions = {
   useWorker: false,
   tabSize: 2,
   wrap: true,
+  showLineNumbers: true,
 };
 const FormatConversionPage = () => {
   const [sourceType, setSourceType] = useState<string>('json');
