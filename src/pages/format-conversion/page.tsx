@@ -1,6 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import type { SelectProps } from 'antd';
 import { Button, Card, Col, Row, Select } from 'antd';
+import XML from 'fast-xml-parser';
 import * as LosslessJSON from 'lossless-json';
 import { useState } from 'react';
 import AceEditor from 'react-ace';
@@ -12,12 +13,14 @@ import { format } from '@/utils/formatter.ts';
 
 import 'ace-builds/src-noconflict/ext-searchbox';
 import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/mode-xml';
 import 'ace-builds/src-noconflict/mode-yaml';
 import 'ace-builds/src-noconflict/theme-monokai';
 
 const CodeTypeOptions: SelectProps['options'] = [
   { label: 'JSON', value: 'json' },
   { label: 'YAML', value: 'yaml' },
+  { label: 'XML', value: 'xml' },
 ];
 
 const options: AceOptions = {
@@ -57,25 +60,40 @@ const FormatConversionPage = () => {
         sourceObj = LosslessJSON.parse(sourceValue, null, LosslessJSON.parseNumberAndBigInt);
       } else if (sourceType === 'yaml') {
         sourceObj = YAML.parse(sourceValue, { intAsBigInt: true });
+      } else if (sourceType === 'xml') {
+        const xmlParser = new XML.XMLParser();
+        sourceObj = xmlParser.parse(sourceValue);
       }
     } catch (e) {
       alert(e);
     }
 
     // 设置 target
-    if (targetType === 'yaml') {
-      format(YAML.stringify(sourceObj), 'yaml').then((val) => {
-        setTargetValue(val);
-      });
-    } else if (targetType === 'json') {
-      format(LosslessJSON.stringify(sourceObj) || '', 'json').then((val) => {
-        setTargetValue(val);
-      });
+    try {
+      if (targetType === 'yaml') {
+        format(YAML.stringify(sourceObj), 'yaml').then((val) => {
+          setTargetValue(val);
+        });
+      } else if (targetType === 'json') {
+        format(LosslessJSON.stringify(sourceObj) || '', 'json').then((val) => {
+          setTargetValue(val);
+        });
+      } else if (targetType === 'xml') {
+        const xmlBuilder = new XML.XMLBuilder({
+          ignoreAttributes: false,
+          format: true,
+          oneListGroup: true,
+          suppressEmptyNode: true,
+        });
+        setTargetValue(xmlBuilder.build(sourceObj));
+      }
+    } catch (e) {
+      alert(e);
     }
   };
   return (
-    <PageContainer title={false}>
-      <div className="max-w-screen-xl mx-auto p-4 h-screen bg-gray-50">
+    <PageContainer title={false} className="bg-gray-50">
+      <div className="max-w-screen-xl mx-auto p-4 h-screen">
         <Card>
           <Row gutter={16}>
             <Col span={4}>
