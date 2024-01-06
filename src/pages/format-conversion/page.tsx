@@ -93,41 +93,43 @@ const FormatConversionPage = () => {
   };
   return (
     <PageContainer title={false} className="bg-gray-50">
-      <div className="max-w-screen-xl mx-auto p-4 h-screen">
+      <div className="h-[calc(100vh-56px)] md:h-screen max-w-screen-xl mx-auto p-4">
         <Card>
-          <Row gutter={16}>
-            <Col span={4}>
+          <Row gutter={{ xs: 8, sm: 8, md: 16 }}>
+            <Col span={8} sm={6} md={4}>
               <Select options={CodeTypeOptions} value={sourceType} onSelect={setSourceType} className="w-full" />
             </Col>
             <Col>
               <Button icon={<Iconify icon="material-symbols:sync-alt" />} onClick={onClickSyncAltBtn} />
             </Col>
-            <Col span={4}>
+            <Col span={8} sm={6} md={4}>
               <Select options={CodeTypeOptions} value={targetType} onSelect={setTargetType} className="w-full" />
             </Col>
-            <Col>
+            <Col span={4} sm={4} md={2}>
               <Button onClick={onClickConversionBtn}>转换</Button>
             </Col>
           </Row>
         </Card>
-        <Row className="mt-4" gutter={16}>
-          <Col span={12}>
+        <Row className="mt-4" gutter={[16, 16]}>
+          <Col span={24} sm={12}>
             <AceEditor
               mode={sourceType}
               theme="monokai"
               width="100%"
-              height="calc(100vh - 130px)"
+              height=""
+              className="h-[calc(100vh-186px)] md:h-[calc(100vh-130px)]"
               setOptions={options}
               value={sourceValue}
               onChange={setSourceValue}
             />
           </Col>
-          <Col span={12}>
+          <Col span={24} sm={12}>
             <AceEditor
               mode={targetType}
               theme="monokai"
               width="100%"
-              height="calc(100vh - 130px)"
+              height=""
+              className="h-[calc(100vh-186px)] md:h-[calc(100vh-130px)]"
               setOptions={targetAceEditorOptions}
               value={targetValue}
               onChange={setTargetValue}
