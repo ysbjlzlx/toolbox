@@ -12,11 +12,6 @@ export const menuData: MenuDataItem[] = [
         key: '/json/json-editor',
       },
       {
-        name: 'JSON To YAML',
-        path: '/json/json-to-yaml',
-        key: '/json/json-to-yaml',
-      },
-      {
         name: 'JSON To Excel',
         path: '/json/json-to-excel',
         key: '/json/json-to-excel',
