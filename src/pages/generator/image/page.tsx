@@ -1,6 +1,6 @@
 import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import type { TabsProps } from 'antd';
-import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
+import { Card, ColorPicker, Form, Tabs } from 'antd';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
@@ -57,26 +57,20 @@ const PlaceholderImg: FC = () => {
     ],
   };
   return (
-    <PageContainer className="max-w-screen-lg mx-auto">
-      <ProForm
-        submitter={false}
-        form={form}
-        initialValues={defaultValues}
-        onValuesChange={(_, values) => {
-          setPlaceholderConfig(values);
-        }}
-      >
-        <Row gutter={16}>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormDigit label="宽度" name="width" />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormDigit label="高度" name="height" />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} allowClear={false} />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
+    <PageContainer title={false} className="mx-auto max-w-screen-lg pt-4">
+      <Card>
+        <ProForm
+          submitter={false}
+          form={form}
+          initialValues={defaultValues}
+          onValuesChange={(_, values) => {
+            setPlaceholderConfig(values);
+          }}
+        >
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <ProFormDigit label="宽度" name="width" fieldProps={{ className: 'h-12 leading-[3rem]' }} />
+            <ProFormDigit label="高度" name="height" fieldProps={{ className: 'h-12 leading-[3rem]' }} />
+            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} allowClear={false} className="h-12" />
             <ProFormText
               label="背景颜色"
               name="bgColor"
@@ -92,8 +86,6 @@ const PlaceholderImg: FC = () => {
               }}
               allowClear={false}
             />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
             <ProFormText
               label="文本颜色"
               name="textColor"
@@ -109,15 +101,13 @@ const PlaceholderImg: FC = () => {
               }}
               allowClear={false}
             />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
             <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ style: { height: '42px' } }} />
-          </Col>
-        </Row>
-      </ProForm>
-      <div>
-        <Tabs {...tabsProps} />
-      </div>
+          </div>
+        </ProForm>
+        <div>
+          <Tabs {...tabsProps} />
+        </div>
+      </Card>
     </PageContainer>
   );
 };
