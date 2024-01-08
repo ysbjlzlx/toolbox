@@ -111,25 +111,25 @@ const FormatConversionPage = () => {
           </Row>
         </Card>
         <Row className="mt-4" gutter={[16, 16]}>
-          <Col span={24} sm={12}>
+          <Col span={24} md={12}>
             <AceEditor
               mode={sourceType}
               theme="monokai"
               width="100%"
               height=""
-              className="h-[calc(100vh-186px)] md:h-[calc(100vh-130px)]"
+              className="h-[calc(50vh-100px)] md:h-[calc(100vh-130px)]"
               setOptions={options}
               value={sourceValue}
               onChange={setSourceValue}
             />
           </Col>
-          <Col span={24} sm={12}>
+          <Col span={24} md={12}>
             <AceEditor
               mode={targetType}
               theme="monokai"
               width="100%"
               height=""
-              className="h-[calc(100dvh-186px)] md:h-[calc(100dvh-130px)]"
+              className="h-[calc(50dvh-100px)] md:h-[calc(100dvh-130px)]"
               setOptions={targetAceEditorOptions}
               value={targetValue}
               onChange={setTargetValue}
