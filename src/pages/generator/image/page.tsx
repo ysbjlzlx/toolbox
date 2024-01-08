@@ -101,7 +101,7 @@ const PlaceholderImg: FC = () => {
               }}
               allowClear={false}
             />
-            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ style: { height: '42px' } }} />
+            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ rootClassName: 'h-12' }} />
           </div>
         </ProForm>
         <div>
