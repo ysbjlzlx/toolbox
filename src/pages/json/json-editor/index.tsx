@@ -23,9 +23,7 @@ const Page = () => {
         label: 'JSON Editor - ' + idx,
         closable: true,
         children: <JsonEditor idx={idx} />,
-        style: {
-          height: `calc(100vh - 36px)`,
-        },
+        className: 'h-[calc(100vh-112px)] md:h-[calc(100vh-56px)]',
       };
     });
     if (_.indexOf(jsonTabs, activeKey) === -1) {
