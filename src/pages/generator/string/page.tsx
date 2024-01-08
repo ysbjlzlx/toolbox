@@ -1,9 +1,9 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Checkbox, Col, Form, Input, Row, Slider, Space } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Slider } from 'antd';
 import { useEffect, useState } from 'react';
 
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
 import Iconify from '@/components/Iconify';
+import InputCopyable from '@/components/InputCopyable.tsx';
 import type { GeneratorOptions } from '@/scripts/RandomStringUtils.ts';
 import { generator } from '@/scripts/RandomStringUtils.ts';
 
@@ -35,57 +35,36 @@ export default function Page() {
   };
 
   return (
-    <PageContainer title={false} style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}>
+    <PageContainer title={false} className="mx-auto max-w-screen-lg px-4 pt-4">
       <Form layout="horizontal" initialValues={initialOptions} onValuesChange={onValuesChange} onFinish={onFinish}>
         <Card actions={[<Button key="1" htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />]}>
-          <Row>
-            <Col span={4}>
-              <Form.Item name="numeric" valuePropName="checked">
-                <Checkbox>数字 0 ～ 9</Checkbox>
+          <div className="grid grid-cols-1 sm:grid-cols-12">
+            <Form.Item name="numeric" valuePropName="checked" className="sm:col-span-6">
+              <Checkbox>数字 0 ～ 9</Checkbox>
+            </Form.Item>
+            <Form.Item name="lowercase" valuePropName="checked" className="sm:col-span-6">
+              <Checkbox>小写字母 a ~ z</Checkbox>
+            </Form.Item>
+            <Form.Item name="uppercase" valuePropName="checked" className="sm:col-span-6">
+              <Checkbox>大写字母 A ~ Z</Checkbox>
+            </Form.Item>
+            <div className="flex sm:col-span-6">
+              <Form.Item name="symbol" valuePropName="checked" className="basis-20">
+                <Checkbox>符号</Checkbox>
               </Form.Item>
-            </Col>
-            <Col span={4}>
-              <Form.Item name="lowercase" valuePropName="checked">
-                <Checkbox>小写字母 a ~ z</Checkbox>
+              <Form.Item name="symbolChars" className="flex-1">
+                <Input />
               </Form.Item>
-            </Col>
-            <Col span={4}>
-              <Form.Item name="uppercase" valuePropName="checked">
-                <Checkbox>大写字母 A ~ Z</Checkbox>
-              </Form.Item>
-            </Col>
-            <Col span={8}>
-              <Row>
-                <Col span={4}>
-                  <Form.Item name="symbol" valuePropName="checked">
-                    <Checkbox>符号</Checkbox>
-                  </Form.Item>
-                </Col>
-                <Col span={20}>
-                  <Form.Item name="symbolChars">
-                    <Input />
-                  </Form.Item>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24}>
-              <Form.Item name="length" label="长度">
-                <Slider min={6} max={64} step={1} marks={{ 6: '6', 8: '8', 16: '16', 32: '32', 64: '64' }} />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24}>
-              <Form.Item>
-                <Space.Compact block={true}>
-                  <Input value={randomString} />
-                  <ContentCopyButton text={randomString} />
-                </Space.Compact>
-              </Form.Item>
-            </Col>
-          </Row>
+            </div>
+          </div>
+          <div>
+            <Form.Item name="length" label="长度">
+              <Slider min={6} max={64} step={1} marks={{ 6: '6', 8: '8', 16: '16', 32: '32', 64: '64' }} />
+            </Form.Item>
+          </div>
+          <div>
+            <InputCopyable value={randomString} />
+          </div>
         </Card>
       </Form>
     </PageContainer>
