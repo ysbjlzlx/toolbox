@@ -1,6 +1,6 @@
 import { PageContainer } from '@ant-design/pro-components';
 import type { SegmentedProps } from 'antd';
-import { Button, Input, Segmented, Space } from 'antd';
+import { Button, Card, Input, Segmented, Space } from 'antd';
 import { useCallback, useState } from 'react';
 
 import TextResultBox from '@/components/TextResultBox.tsx';
@@ -33,35 +33,37 @@ export default function Page() {
   }, [type, plain]);
 
   return (
-    <PageContainer title={false} className="max-w-screen-md mx-auto pt-4">
-      <Segmented
-        block={true}
-        value={type}
-        options={segmentedOptions}
-        onChange={(value) => {
-          setType(value as BaseType);
-        }}
-      />
-      <div className="mt-4">
-        <Input.TextArea
-          value={plain}
-          onChange={(event) => {
-            setPlain(event.target.value);
+    <PageContainer title={false} className="mx-auto max-w-screen-md pt-4">
+      <Card>
+        <Segmented
+          block={true}
+          value={type}
+          options={segmentedOptions}
+          onChange={(value) => {
+            setType(value as BaseType);
           }}
-          placeholder="文本"
-          autoSize={{ minRows: 5, maxRows: 10 }}
-          showCount
         />
-      </div>
-      <div className="mt-4">
-        <Space.Compact>
-          <Button onClick={encode}>编码</Button>
-          <Button onClick={decode}>解码</Button>
-        </Space.Compact>
-      </div>
-      <div className="mt-4">
-        <TextResultBox title="结果" text={target} />
-      </div>
+        <div className="mt-4">
+          <Input.TextArea
+            value={plain}
+            onChange={(event) => {
+              setPlain(event.target.value);
+            }}
+            placeholder="文本"
+            autoSize={{ minRows: 5, maxRows: 10 }}
+            showCount
+          />
+        </div>
+        <div className="mt-4">
+          <Space.Compact>
+            <Button onClick={encode}>编码</Button>
+            <Button onClick={decode}>解码</Button>
+          </Space.Compact>
+        </div>
+        <div className="mt-4">
+          <TextResultBox title="结果" text={target} />
+        </div>
+      </Card>
     </PageContainer>
   );
 }
