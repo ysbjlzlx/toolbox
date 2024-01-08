@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Vditor from 'vditor';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Card } from 'antd';
 import 'vditor/dist/index.css';
 
 const Markdown: FC = () => {
@@ -57,11 +56,9 @@ const Markdown: FC = () => {
   }, []);
   return (
     <PageContainer title={false} className="p-4">
-      <Card>
-        <div className="h-[calc(100vh-80px)]">
-          <div id="vditor" className="vditor" />
-        </div>
-      </Card>
+      <div className="h-[calc(100dvh-88px)] md:h-[calc(100dvh-32px)]">
+        <div id="vditor" className="vditor" />
+      </div>
     </PageContainer>
   );
 };

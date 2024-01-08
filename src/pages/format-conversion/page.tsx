@@ -93,7 +93,7 @@ const FormatConversionPage = () => {
   };
   return (
     <PageContainer title={false} className="bg-gray-50">
-      <div className="h-[calc(100vh-56px)] md:h-screen max-w-screen-xl mx-auto p-4">
+      <div className="mx-auto h-[calc(100dvh-56px)] max-w-screen-xl p-4 md:h-screen">
         <Card>
           <Row gutter={{ xs: 8, sm: 8, md: 16 }}>
             <Col span={8} sm={6} md={4}>
@@ -129,7 +129,7 @@ const FormatConversionPage = () => {
               theme="monokai"
               width="100%"
               height=""
-              className="h-[calc(100vh-186px)] md:h-[calc(100vh-130px)]"
+              className="h-[calc(100dvh-186px)] md:h-[calc(100dvh-130px)]"
               setOptions={targetAceEditorOptions}
               value={targetValue}
               onChange={setTargetValue}

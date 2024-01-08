@@ -51,7 +51,7 @@ const CodeFormatter = () => {
 
   return (
     <PageContainer title={false}>
-      <div className="h-[calc(100vh-56px)] p-4 md:h-screen">
+      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
         <Card>
           <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
             <div className="grid grid-cols-3 gap-2">
