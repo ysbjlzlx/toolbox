@@ -93,7 +93,7 @@ const FormatConversionPage = () => {
   };
   return (
     <PageContainer title={false} className="bg-gray-50">
-      <div className="mx-auto h-[calc(100dvh-56px)] max-w-screen-xl p-4 md:h-screen">
+      <div className="mx-auto flex h-[calc(100dvh-56px)] max-w-screen-xl flex-col p-4 md:h-screen">
         <Card>
           <Row gutter={{ xs: 8, sm: 8, md: 16 }}>
             <Col span={8} sm={6} md={4}>
@@ -110,32 +110,32 @@ const FormatConversionPage = () => {
             </Col>
           </Row>
         </Card>
-        <Row className="mt-4" gutter={[16, 16]}>
-          <Col span={24} md={12}>
+        <div className="mt-4 grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
             <AceEditor
               mode={sourceType}
               theme="monokai"
               width="100%"
               height=""
-              className="h-[calc(50vh-100px)] md:h-[calc(100vh-130px)]"
+              className="h-full"
               setOptions={options}
               value={sourceValue}
               onChange={setSourceValue}
             />
-          </Col>
-          <Col span={24} md={12}>
+          </div>
+          <div>
             <AceEditor
               mode={targetType}
               theme="monokai"
               width="100%"
               height=""
-              className="h-[calc(50dvh-100px)] md:h-[calc(100dvh-130px)]"
+              className="h-full"
               setOptions={targetAceEditorOptions}
               value={targetValue}
               onChange={setTargetValue}
             />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
     </PageContainer>
   );
