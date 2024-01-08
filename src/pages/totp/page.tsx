@@ -1,6 +1,5 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { useLocalStorageState } from 'ahooks';
-import { Col, Row } from 'antd';
 import * as OTPAuth from 'otpauth';
 
 import AccountList from './AccountList.tsx';
@@ -12,15 +11,15 @@ const Totp = () => {
 
   console.log(OTPAuth.Secret.fromUTF8('ha'));
   return (
-    <PageContainer title={false}>
-      <Row>
-        <Col span={8}>
+    <PageContainer title={false} className="pt-4">
+      <div className="grid grid-cols-3">
+        <div className="col-span-1">
           <AccountList totps={totps} />
-        </Col>
-        <Col span={16}>
+        </div>
+        <div className="col-span-2">
           <DetailInfo />
-        </Col>
-      </Row>
+        </div>
+      </div>
     </PageContainer>
   );
 };

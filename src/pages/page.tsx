@@ -1,4 +1,4 @@
-import { Card, Col, Row } from 'antd';
+import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 
 import type { Application } from '@/models/Apps.tsx';
@@ -8,7 +8,7 @@ const Page = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
-        <Col span={8} key={application.name}>
+        <div key={application.name}>
           <Card
             key={application.name}
             title={application.name}
@@ -20,13 +20,15 @@ const Page = () => {
           >
             {application.desc}
           </Card>
-        </Col>
+        </div>
       );
     });
   };
   return (
     <div className="px-10 py-10">
-      <Row gutter={[16, 8]}>{item({ applications: apps })}</Row>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {item({ applications: apps })}
+      </div>
     </div>
   );
 };
