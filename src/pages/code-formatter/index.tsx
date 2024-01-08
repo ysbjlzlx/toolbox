@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Select } from 'antd';
+import { Button, Card, Checkbox, Form, Select } from 'antd';
 import { useState } from 'react';
 import type { ICommand } from 'react-ace';
 import AceEditor from 'react-ace';
@@ -51,8 +51,8 @@ const CodeFormatter = () => {
 
   return (
     <PageContainer title={false}>
-      <div className="h-[calc(100vh-56px)] md:h-[100vh] ">
-        <div className="py-4 pl-4">
+      <div className="h-[calc(100vh-56px)] p-4 md:h-screen">
+        <Card>
           <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
             <Form.Item label="类型" colon={false}>
               <Select
@@ -86,19 +86,20 @@ const CodeFormatter = () => {
               </Button>
             </Form.Item>
           </Form>
+        </Card>
+        <div className="mt-4 h-[calc(100%-96px)]">
+          <AceEditor
+            width="100%"
+            height="100%"
+            mode={model}
+            onChange={onChange}
+            name="UNIQUE_ID_OF_DIV"
+            setOptions={options}
+            editorProps={{ $blockScrolling: true }}
+            value={code}
+            commands={commands}
+          />
         </div>
-        <AceEditor
-          width="100%"
-          height=""
-          mode={model}
-          onChange={onChange}
-          name="UNIQUE_ID_OF_DIV"
-          setOptions={options}
-          editorProps={{ $blockScrolling: true }}
-          value={code}
-          commands={commands}
-          className="h-[calc(100%-68px)] sm:h-[calc(100%-60px)]"
-        />
       </div>
     </PageContainer>
   );
