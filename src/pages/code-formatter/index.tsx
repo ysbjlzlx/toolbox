@@ -87,7 +87,7 @@ const CodeFormatter = () => {
             </Form.Item>
           </Form>
         </Card>
-        <div className="mt-4 h-[calc(100%-96px)]">
+        <div className="mt-4 h-[calc(100%-96px)] ">
           <AceEditor
             width="100%"
             height="100%"
@@ -98,6 +98,7 @@ const CodeFormatter = () => {
             editorProps={{ $blockScrolling: true }}
             value={code}
             commands={commands}
+            className="rounded-[8px]"
           />
         </div>
       </div>
