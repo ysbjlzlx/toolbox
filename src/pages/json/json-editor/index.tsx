@@ -9,8 +9,6 @@ import { PageContainer } from '@ant-design/pro-components';
 
 import JsonEditor from './JsonEditor.tsx';
 
-import './index.css';
-
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 const Page = () => {
   const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
