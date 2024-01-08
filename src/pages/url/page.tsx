@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Input } from 'antd';
+import { Button, Card, Input, Space } from 'antd';
 import TextResultBox from '../../components/TextResultBox.tsx';
 
 export default function Page() {
@@ -21,27 +21,29 @@ export default function Page() {
   };
 
   return (
-    <PageContainer title={false} className="max-w-screen-lg mx-auto pt-4">
-      <div>
-        <Input.TextArea
-          rows={3}
-          value={uri}
-          placeholder="URL"
-          onChange={(e) => {
-            setUri(e.target.value);
-          }}
-        />
-      </div>
-      <div className="mt-4">
-        <Button.Group>
-          <Button onClick={handleEncodeURI}>链接参数编码</Button>
-          <Button onClick={handleEncodeURIComponent}>全链接编码</Button>
-          <Button onClick={handleDecodeURIComponent}>链接解码</Button>
-        </Button.Group>
-      </div>
-      <div className="mt-4">
-        <TextResultBox title="结果" text={encodedURI} />
-      </div>
+    <PageContainer title={false} className="mx-auto max-w-screen-lg px-4 pt-4">
+      <Card>
+        <div>
+          <Input.TextArea
+            rows={3}
+            value={uri}
+            placeholder="URL"
+            onChange={(e) => {
+              setUri(e.target.value);
+            }}
+          />
+        </div>
+        <div className="mt-4">
+          <Space.Compact>
+            <Button onClick={handleEncodeURI}>链接参数编码</Button>
+            <Button onClick={handleEncodeURIComponent}>全链接编码</Button>
+            <Button onClick={handleDecodeURIComponent}>链接解码</Button>
+          </Space.Compact>
+        </div>
+        <div className="mt-4">
+          <TextResultBox title="结果" text={encodedURI} />
+        </div>
+      </Card>
     </PageContainer>
   );
 }
