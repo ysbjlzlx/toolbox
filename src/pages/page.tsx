@@ -18,7 +18,7 @@ const Page = () => {
               </Link>,
             ]}
           >
-            {application.desc}
+            <div className="h-32">{application.desc}</div>
           </Card>
         </div>
       );
