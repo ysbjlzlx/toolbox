@@ -67,8 +67,8 @@ const Page = () => {
   }, [input, tz]);
 
   return (
-    <PageContainer title={false}>
-      <Card className="max-w-screen-sm mx-auto mt-10">
+    <PageContainer title={false} className="pt-4">
+      <Card className="mx-auto max-w-screen-sm">
         <div>
           <Space.Compact style={{ width: '100%' }}>
             <Input
