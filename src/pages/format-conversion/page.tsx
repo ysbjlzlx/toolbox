@@ -1,6 +1,6 @@
 import { PageContainer } from '@ant-design/pro-components';
 import type { SelectProps } from 'antd';
-import { Button, Card, Col, Row, Select } from 'antd';
+import { Button, Card, Select } from 'antd';
 import XML from 'fast-xml-parser';
 import * as LosslessJSON from 'lossless-json';
 import { useState } from 'react';
@@ -95,20 +95,20 @@ const FormatConversionPage = () => {
     <PageContainer title={false} className="bg-gray-50">
       <div className="mx-auto flex h-[calc(100dvh-56px)] max-w-screen-xl flex-col p-4 md:h-screen">
         <Card>
-          <Row gutter={{ xs: 8, sm: 8, md: 16 }}>
-            <Col span={8} sm={6} md={4}>
+          <div className="flex gap-4">
+            <div className="max-w-[150px] flex-auto">
               <Select options={CodeTypeOptions} value={sourceType} onSelect={setSourceType} className="w-full" />
-            </Col>
-            <Col>
+            </div>
+            <div className="flex-auto flex-shrink-0 flex-grow-0">
               <Button icon={<Iconify icon="material-symbols:sync-alt" />} onClick={onClickSyncAltBtn} />
-            </Col>
-            <Col span={8} sm={6} md={4}>
+            </div>
+            <div className="max-w-[150px] flex-auto">
               <Select options={CodeTypeOptions} value={targetType} onSelect={setTargetType} className="w-full" />
-            </Col>
-            <Col span={4} sm={4} md={2}>
+            </div>
+            <div className="flex-auto">
               <Button onClick={onClickConversionBtn}>转换</Button>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </Card>
         <div className="mt-4 grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
           <div>
