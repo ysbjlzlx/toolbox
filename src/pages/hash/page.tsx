@@ -1,5 +1,6 @@
+import InputCopyable from '@/components/InputCopyable.tsx';
 import { PageContainer } from '@ant-design/pro-components';
-import { Input, Space } from 'antd';
+import { Card, Input } from 'antd';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
 import type { ReactElement } from 'react';
 import { useEffect, useState } from 'react';
@@ -35,22 +36,25 @@ const Page = (): ReactElement => {
     });
   }, [plainText]);
   return (
-    <PageContainer title={false} className="max-w-screen-md mx-auto pt-4">
-      <Space direction="vertical" style={{ display: 'flex' }} size="large">
-        <Input.TextArea
-          value={plainText}
-          rows={2}
-          placeholder="原文"
-          onChange={(event: any) => {
-            setPlainText(event.target.value);
-          }}
-          showCount
-        />
-        <Input value={hashResult?.md5} addonBefore="MD5" showCount />
-        <Input value={hashResult?.sha1} addonBefore="SHA1" showCount />
-        <Input value={hashResult?.sha256} addonBefore="SHA256" showCount />
-        <Input value={hashResult?.sha512} addonBefore="SHA512" showCount />
-      </Space>
+    <PageContainer title={false} className="mx-auto max-w-screen-md pt-4">
+      <Card>
+        <div className="mb-8">
+          <Input.TextArea
+            value={plainText}
+            rows={2}
+            placeholder="原文"
+            onChange={(event: any) => {
+              setPlainText(event.target.value);
+            }}
+            showCount
+          />
+        </div>
+
+        <InputCopyable tag="MD5" value={hashResult?.md5} />
+        <InputCopyable tag="SHA1" value={hashResult?.sha1} />
+        <InputCopyable tag="SHA256" value={hashResult?.sha256} />
+        <InputCopyable tag="SHA512" value={hashResult?.sha512} />
+      </Card>
     </PageContainer>
   );
 };
