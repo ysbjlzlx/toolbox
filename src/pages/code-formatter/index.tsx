@@ -50,11 +50,11 @@ const CodeFormatter = () => {
   };
 
   return (
-    <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
-      <div className="h-[100vh]">
+    <PageContainer title={false}>
+      <div className="h-[calc(100vh-56px)] md:h-[100vh] ">
         <div className="py-4 pl-4">
           <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
-            <Form.Item label="类型">
+            <Form.Item label="类型" colon={false}>
               <Select
                 defaultValue={model}
                 onChange={(value) => {
@@ -67,7 +67,7 @@ const CodeFormatter = () => {
                   { label: 'XML', value: 'xml' },
                   { label: 'Groovy', value: 'groovy' },
                 ]}
-                style={{ width: 100 }}
+                className="w-[100px]"
               />
             </Form.Item>
             <Form.Item name="remember">
@@ -89,7 +89,7 @@ const CodeFormatter = () => {
         </div>
         <AceEditor
           width="100%"
-          height="calc(100% - 56px)"
+          height=""
           mode={model}
           onChange={onChange}
           name="UNIQUE_ID_OF_DIV"
@@ -97,6 +97,7 @@ const CodeFormatter = () => {
           editorProps={{ $blockScrolling: true }}
           value={code}
           commands={commands}
+          className="h-[calc(100%-68px)] sm:h-[calc(100%-60px)]"
         />
       </div>
     </PageContainer>
