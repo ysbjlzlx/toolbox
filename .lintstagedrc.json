@@ -1,6 +1,0 @@
-{
-  "*.{js,jsx}": ["eslint --fix", "prettier --write --ignore-unknown"],
-  "*.{ts,tsx}": ["eslint --fix", "prettier --parser typescript --write --ignore-unknown"],
-  "*.md": "prettier --parser markdown --write --ignore-unknown",
-  "*.css": ["stylelint src/**/*.css", "prettier --write --ignore-unknown"]
-}

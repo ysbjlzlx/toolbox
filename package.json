@@ -8,6 +8,7 @@
     "dev": "vite",
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
+    "lint-staged": "lint-staged",
     "prepare": "husky install",
     "prettier": "prettier --ignore-unknown src ",
     "prettier:fix": "prettier --write --ignore-unknown src",
