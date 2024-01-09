@@ -55,8 +55,8 @@ const Markdown: FC = () => {
     });
   }, []);
   return (
-    <PageContainer title={false} className="p-4">
-      <div className="h-[calc(100dvh-88px)] md:h-[calc(100dvh-32px)]">
+    <PageContainer title={false} className="p-4 pt-10">
+      <div className="h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]">
         <div id="vditor" className="vditor" />
       </div>
     </PageContainer>
