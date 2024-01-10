@@ -1,20 +1,22 @@
-import { useCallback, useState } from 'react';
-
+import { PageContainer } from '@ant-design/pro-components';
+import { Card } from 'antd';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/monokai-sublime.css';
-
+import { useCallback, useState } from 'react';
 import type { ReactQuillProps } from 'react-quill';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 
-import CopyButtonWrapper from '../../components/CopyButtonWrapper.tsx';
+import CopyButtonWrapper from '@/components/CopyButtonWrapper.tsx';
+
+import 'highlight.js/styles/monokai-sublime.css';
+import 'react-quill/dist/quill.snow.css';
 
 const Writer = () => {
   const [value, setValue] = useState<string>('');
 
   const styles = {
     quill: {
-      height: '700px',
+      height: 'calc(100% - 42px)',
+      backgroundColor: 'white',
     },
   };
 
@@ -62,21 +64,23 @@ const Writer = () => {
   };
 
   return (
-    <div>
-      <div>
-        <CopyButtonWrapper text={value}>复制源码</CopyButtonWrapper>
+    <PageContainer title={false}>
+      <div className="m-4 flex h-[calc(100dvh-88px)] flex-col  md:h-[calc(100dvh-32px)]">
+        <Card className="mb-4">
+          <CopyButtonWrapper text={value}>复制源码</CopyButtonWrapper>
+        </Card>
+        <div className="flex-1">
+          <ReactQuill
+            theme="snow"
+            defaultValue={value}
+            modules={quillProps.modules}
+            formats={quillProps.formats}
+            onChange={quillProps.onChange}
+            style={styles.quill}
+          />
+        </div>
       </div>
-      <div>
-        <ReactQuill
-          theme="snow"
-          defaultValue={value}
-          modules={quillProps.modules}
-          formats={quillProps.formats}
-          onChange={quillProps.onChange}
-          style={styles.quill}
-        />
-      </div>
-    </div>
+    </PageContainer>
   );
 };
 export default Writer;
