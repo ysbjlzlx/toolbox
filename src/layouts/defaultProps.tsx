@@ -55,10 +55,21 @@ export const menuData: MenuDataItem[] = [
     icon: <Iconify icon="material-symbols:link" />,
   },
   {
-    name: 'Markdown',
-    desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
-    path: '/markdown',
+    name: '文本编辑器',
     icon: <Iconify icon="material-symbols:contract-edit-outline" />,
+    children: [
+      {
+        name: 'Markdown',
+        desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
+        path: '/markdown',
+      },
+      {
+        name: '富文本编辑器',
+        desc: 'Quill',
+        path: '/writer',
+        icon: <Iconify icon="material-symbols:contract-edit-outline" />,
+      },
+    ],
   },
   {
     name: 'Base 64',
