@@ -18,6 +18,7 @@
     "update": "npx npm-check-updates -u && npm install && npm run build"
   },
   "dependencies": {
+    "@ant-design/colors": "7.0.2",
     "@ant-design/pro-components": "2.6.48",
     "@paralleldrive/cuid2": "2.2.2",
     "@sapphire/snowflake": "3.5.2",

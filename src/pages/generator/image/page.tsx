@@ -21,8 +21,8 @@ const defaultValues = {
   width: 320,
   height: 320,
   suffix: '.png',
-  bgColor: '#CCCCCC',
-  textColor: '#969696',
+  bgColor: '#8c8c8c',
+  textColor: '#f0f0f0',
   text: 'img',
 };
 
@@ -41,7 +41,6 @@ const PlaceholderImg: FC = () => {
 
   useEffect(() => {
     const values = form.getFieldsValue();
-    console.log(form.getFieldsValue());
     setPlaceholderConfig(values);
   }, [bgColor, form, textColor]);
 
