@@ -1,4 +1,12 @@
-import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
+import {
+  FormControlRender,
+  PageContainer,
+  pickControlPropsWithId,
+  ProForm,
+  ProFormDigit,
+  ProFormSelect,
+  ProFormText,
+} from '@ant-design/pro-components';
 import type { TabsProps } from 'antd';
 import { Card, ColorPicker, Form, Tabs } from 'antd';
 import type { FC } from 'react';
@@ -13,7 +21,7 @@ const defaultValues = {
   width: 320,
   height: 320,
   suffix: '.png',
-  bgColor: '#cccccc',
+  bgColor: '#CCCCCC',
   textColor: '#969696',
   text: 'img',
 };
@@ -33,6 +41,7 @@ const PlaceholderImg: FC = () => {
 
   useEffect(() => {
     const values = form.getFieldsValue();
+    console.log(form.getFieldsValue());
     setPlaceholderConfig(values);
   }, [bgColor, form, textColor]);
 
@@ -68,40 +77,52 @@ const PlaceholderImg: FC = () => {
           }}
         >
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            <ProFormDigit label="宽度" name="width" fieldProps={{ className: 'h-12 leading-[3rem]' }} />
-            <ProFormDigit label="高度" name="height" fieldProps={{ className: 'h-12 leading-[3rem]' }} />
-            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} allowClear={false} className="h-12" />
-            <ProFormText
-              label="背景颜色"
-              name="bgColor"
-              fieldProps={{
-                suffix: (
-                  <ColorPicker
-                    value={bgColor}
-                    onChange={(_, hex) => {
-                      form.setFieldValue('bgColor', hex);
-                    }}
-                  />
-                ),
-              }}
+            <ProFormDigit label="宽度" name="width" fieldProps={{ size: 'large' }} />
+            <ProFormDigit label="高度" name="height" fieldProps={{ size: 'large' }} />
+            <ProFormSelect
+              label="后缀名"
+              name="suffix"
+              options={suffixOptions}
               allowClear={false}
+              fieldProps={{ size: 'large' }}
             />
-            <ProFormText
-              label="文本颜色"
-              name="textColor"
-              fieldProps={{
-                suffix: (
-                  <ColorPicker
-                    value={textColor}
-                    onChange={(_, hex) => {
-                      form.setFieldValue('textColor', hex);
-                    }}
-                  />
-                ),
-              }}
-              allowClear={false}
-            />
-            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ rootClassName: 'h-12' }} />
+            <ProForm.Item label="背景颜色" name="bgColor">
+              <FormControlRender>
+                {(itemProps) => {
+                  return (
+                    <ColorPicker
+                      size="large"
+                      showText
+                      disabledAlpha
+                      className="w-full justify-start"
+                      {...pickControlPropsWithId(itemProps)}
+                      onChange={(color) => {
+                        form.setFieldValue('bgColor', color.toHexString());
+                      }}
+                    />
+                  );
+                }}
+              </FormControlRender>
+            </ProForm.Item>
+            <ProForm.Item label="文本颜色" name="textColor">
+              <FormControlRender>
+                {(itemProps) => {
+                  return (
+                    <ColorPicker
+                      size="large"
+                      showText
+                      disabledAlpha
+                      className="w-full justify-start"
+                      {...pickControlPropsWithId(itemProps)}
+                      onChange={(color) => {
+                        form.setFieldValue('textColor', color.toHexString());
+                      }}
+                    />
+                  );
+                }}
+              </FormControlRender>
+            </ProForm.Item>
+            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ size: 'large' }} />
           </div>
         </ProForm>
         <div>
