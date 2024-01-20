@@ -74,7 +74,7 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz",
     "xml-formatter": "3.6.1",
     "yaml": "2.3.4",
-    "zustand": "4.4.7"
+    "zustand": "4.5.0"
   },
   "devDependencies": {
     "@iconify/react": "4.1.1",
