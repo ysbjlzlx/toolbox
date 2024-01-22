@@ -71,7 +71,7 @@
     "vanilla-jsoneditor": "0.21.3",
     "vditor": "3.9.8",
     "web-vitals": "3.5.1",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.1/xlsx-0.20.1.tgz",
     "xml-formatter": "3.6.2",
     "yaml": "2.3.4",
     "zustand": "4.5.0"
