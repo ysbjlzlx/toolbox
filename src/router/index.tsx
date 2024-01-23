@@ -85,7 +85,6 @@ const routes: RouteObject[] = [
       },
       {
         path: '/json',
-        element: lazyLoad(JsonEditor),
         children: [
           {
             index: true,
@@ -128,6 +127,10 @@ const routes: RouteObject[] = [
       {
         path: '/writer',
         element: lazyLoad(Writer),
+      },
+      {
+        path: '/transform',
+        lazy: () => import('@/pages/transform'),
       },
     ],
   },
