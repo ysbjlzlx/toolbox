@@ -101,4 +101,10 @@ export const menuData: MenuDataItem[] = [
     path: '/timestamp',
     icon: <Iconify icon="material-symbols:av-timer" />,
   },
+  {
+    name: '换算（Transform）',
+    desc: '宽带速率',
+    path: '/transform',
+    icon: <Iconify icon="material-symbols:transform" />,
+  },
 ];

@@ -67,6 +67,7 @@
     "react-quill": "2.0.0",
     "react-router-dom": "6.21.3",
     "ulid": "2.3.0",
+    "url": "0.11.3",
     "uuid": "9.0.1",
     "vanilla-jsoneditor": "0.21.3",
     "vditor": "3.9.8",
