@@ -1,8 +1,8 @@
+import { PageContainer } from '@ant-design/pro-components';
+import { Button, Card, Input, Space } from 'antd';
 import type { FC } from 'react';
 import { useState } from 'react';
 
-import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Input, Space } from 'antd';
 import TextResultBox from '../../components/TextResultBox.tsx';
 
 export const Component: FC = () => {
