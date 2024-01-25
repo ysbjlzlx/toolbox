@@ -1,24 +1,8 @@
-import type { FC, LazyExoticComponent } from 'react';
-import { Suspense, lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
 
-import Loading from '@/components/Loading';
 import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
-
-/* eslint-disable react-refresh/only-export-components */
-const Url = lazy(() => import('@/pages/url/page'));
-const Writer = lazy(() => import('@/pages/writer/page'));
-/* eslint-enable react-refresh/only-export-components */
-
-const lazyLoad = (Component: LazyExoticComponent<FC>) => {
-  return (
-    <Suspense fallback={<Loading />}>
-      <Component />
-    </Suspense>
-  );
-};
 
 const routes: RouteObject[] = [
   {
@@ -105,11 +89,11 @@ const routes: RouteObject[] = [
       },
       {
         path: '/url',
-        element: lazyLoad(Url),
+        lazy: () => import('@/pages/url/page'),
       },
       {
         path: '/writer',
-        element: lazyLoad(Writer),
+        lazy: () => import('@/pages/writer/page'),
       },
       {
         path: '/transform',

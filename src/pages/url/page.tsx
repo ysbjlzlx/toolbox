@@ -1,10 +1,11 @@
+import type { FC } from 'react';
 import { useState } from 'react';
 
 import { PageContainer } from '@ant-design/pro-components';
 import { Button, Card, Input, Space } from 'antd';
 import TextResultBox from '../../components/TextResultBox.tsx';
 
-export default function Page() {
+export const Component: FC = () => {
   const [uri, setUri] = useState<string>('');
   const [encodedURI, setEncodedURI] = useState<string>('');
 
@@ -46,4 +47,4 @@ export default function Page() {
       </Card>
     </PageContainer>
   );
-}
+};

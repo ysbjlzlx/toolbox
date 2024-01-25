@@ -1,6 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { Card } from 'antd';
 import hljs from 'highlight.js';
+import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 import type { ReactQuillProps } from 'react-quill';
 import ReactQuill from 'react-quill';
@@ -10,7 +11,7 @@ import CopyButtonWrapper from '@/components/CopyButtonWrapper.tsx';
 import 'highlight.js/styles/monokai-sublime.css';
 import 'react-quill/dist/quill.snow.css';
 
-const Writer = () => {
+export const Component: FC = () => {
   const [value, setValue] = useState<string>('');
 
   const styles = {
@@ -83,4 +84,3 @@ const Writer = () => {
     </PageContainer>
   );
 };
-export default Writer;
