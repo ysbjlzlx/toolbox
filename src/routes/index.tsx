@@ -1,5 +1,4 @@
 import type { RouteObject } from 'react-router-dom';
-import { createBrowserRouter } from 'react-router-dom';
 
 import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
@@ -8,7 +7,7 @@ const routes: RouteObject[] = [
   {
     path: '/',
     index: true,
-    lazy: () => import('@/pages/page'),
+    lazy: () => import('@/pages/page.tsx'),
   },
   {
     path: '/',
@@ -16,7 +15,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/base64',
-        lazy: () => import('@/pages/base64/page'),
+        lazy: () => import('@/pages/base64/page.tsx'),
       },
       {
         path: '/code-formatter',
@@ -24,31 +23,31 @@ const routes: RouteObject[] = [
       },
       {
         path: '/doc-editor',
-        lazy: () => import('@/pages/doc-editor/page'),
+        lazy: () => import('@/pages/doc-editor/page.tsx'),
       },
       {
         path: '/excel',
-        lazy: () => import('@/pages/excel/page'),
+        lazy: () => import('@/pages/excel/page.tsx'),
       },
       {
         path: '/format-conversion',
-        lazy: () => import('@/pages/format-conversion/page'),
+        lazy: () => import('@/pages/format-conversion/page.tsx'),
       },
       {
         path: '/generator/id',
-        lazy: () => import('@/pages/generator/id/page'),
+        lazy: () => import('@/pages/generator/id/page.tsx'),
       },
       {
         path: '/generator/image',
-        lazy: () => import('@/pages/generator/image/page'),
+        lazy: () => import('@/pages/generator/image/page.tsx'),
       },
       {
         path: '/generator/string',
-        lazy: () => import('@/pages/generator/string/page'),
+        lazy: () => import('@/pages/generator/string/page.tsx'),
       },
       {
         path: '/hash',
-        lazy: () => import('@/pages/hash/page'),
+        lazy: () => import('@/pages/hash/page.tsx'),
       },
       {
         path: '/json',
@@ -63,7 +62,7 @@ const routes: RouteObject[] = [
           },
           {
             path: 'json-to-excel',
-            lazy: () => import('@/pages/json/json-to-excel/page'),
+            lazy: () => import('@/pages/json/json-to-excel/page.tsx'),
           },
         ],
       },
@@ -73,27 +72,27 @@ const routes: RouteObject[] = [
       },
       {
         path: '/qrcode',
-        lazy: () => import('@/pages/qrcode/page'),
+        lazy: () => import('@/pages/qrcode/page.tsx'),
       },
       {
         path: '/timestamp',
-        lazy: () => import('@/pages/timestamp/page'),
+        lazy: () => import('@/pages/timestamp/page.tsx'),
       },
       {
         path: '/tiptap',
-        lazy: () => import('@/pages/tiptap/page'),
+        lazy: () => import('@/pages/tiptap/page.tsx'),
       },
       {
         path: '/totp',
-        lazy: () => import('@/pages/totp/page'),
+        lazy: () => import('@/pages/totp/page.tsx'),
       },
       {
         path: '/url',
-        lazy: () => import('@/pages/url/page'),
+        lazy: () => import('@/pages/url/page.tsx'),
       },
       {
         path: '/writer',
-        lazy: () => import('@/pages/writer/page'),
+        lazy: () => import('@/pages/writer/page.tsx'),
       },
       {
         path: '/transform',
@@ -107,5 +106,4 @@ const routes: RouteObject[] = [
   },
 ];
 
-const router = createBrowserRouter(routes);
-export default router;
+export default routes;
