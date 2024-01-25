@@ -8,9 +8,6 @@ import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
 
 /* eslint-disable react-refresh/only-export-components */
-const Excel = lazy(() => import('@/pages/excel/page'));
-const FormatConversion = lazy(() => import('@/pages/format-conversion/page'));
-const GeneratorId = lazy(() => import('@/pages/generator/id/page'));
 const GeneratorImage = lazy(() => import('@/pages/generator/image/page'));
 const GeneratorString = lazy(() => import('@/pages/generator/string/page'));
 const Hash = lazy(() => import('@/pages/hash/page'));
@@ -56,15 +53,15 @@ const routes: RouteObject[] = [
       },
       {
         path: '/excel',
-        element: lazyLoad(Excel),
+        lazy: () => import('@/pages/excel/page'),
       },
       {
         path: '/format-conversion',
-        element: lazyLoad(FormatConversion),
+        lazy: () => import('@/pages/format-conversion/page'),
       },
       {
         path: '/generator/id',
-        element: lazyLoad(GeneratorId),
+        lazy: () => import('@/pages/generator/id/page'),
       },
       {
         path: '/generator/image',

@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import TextResultBox from '../../../components/TextResultBox.tsx';
 
-const UidPage: FC = () => {
+export const Component: FC = () => {
   const [type, setType] = useState<SegmentedValue>('cuid');
   const [result, setResult] = useState<string>('');
   const [counter, { inc }] = useCounter(0);
@@ -57,4 +57,3 @@ const UidPage: FC = () => {
     </PageContainer>
   );
 };
-export default UidPage;

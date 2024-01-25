@@ -17,7 +17,7 @@ const options: AceOptions = {
   wrap: true,
 };
 
-export default function Page() {
+export const Component = () => {
   const [result, setResult] = useState<string>();
 
   const save = () => {
@@ -64,7 +64,7 @@ export default function Page() {
     },
   };
   return (
-    <PageContainer title="Excel 转 JSON" className="max-w-screen-md mx-auto pt-4">
+    <PageContainer title="Excel 转 JSON" className="mx-auto max-w-screen-md pt-4">
       <Space direction="horizontal">
         <Upload {...uploadProps}>
           <Button type="primary">上传 Excel</Button>
@@ -77,4 +77,4 @@ export default function Page() {
       </div>
     </PageContainer>
   );
-}
+};

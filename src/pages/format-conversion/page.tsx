@@ -36,7 +36,7 @@ const targetAceEditorOptions: AceOptions = {
   wrap: true,
   showLineNumbers: true,
 };
-const FormatConversionPage = () => {
+export const Component = () => {
   const [sourceType, setSourceType] = useState<string>('json');
   const [targetType, setTargetType] = useState<string>('yaml');
   const [sourceValue, setSourceValue] = useState<string>('');
@@ -140,5 +140,3 @@ const FormatConversionPage = () => {
     </PageContainer>
   );
 };
-
-export default FormatConversionPage;
