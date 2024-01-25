@@ -1,5 +1,6 @@
 import Iconify from '@/components/Iconify';
 import { PageContainer } from '@ant-design/pro-components';
+import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import Highlight from '@tiptap/extension-highlight';
 import subscript from '@tiptap/extension-subscript';
 import superscript from '@tiptap/extension-superscript';
@@ -7,7 +8,15 @@ import underline from '@tiptap/extension-underline';
 import { BubbleMenu, EditorProvider, FloatingMenu, useCurrentEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { Button, Card, Dropdown, Space } from 'antd';
+import { common, createLowlight } from 'lowlight';
 import type { FC } from 'react';
+import { useMemo } from 'react';
+
+import css from 'highlight.js/lib/languages/css';
+import json from 'highlight.js/lib/languages/json';
+import xml from 'highlight.js/lib/languages/xml';
+
+import 'highlight.js/styles/github-dark.min.css';
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
@@ -93,6 +102,11 @@ const MenuBar = () => {
           type={editor.isActive('underline') ? 'primary' : 'default'}
         />
       </Space.Compact>
+      <Button
+        icon={<Iconify icon="material-symbols:code" />}
+        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+        type={editor.isActive('codeBlock') ? 'primary' : 'default'}
+      />
       <Space.Compact>
         <Button
           icon={<Iconify icon="material-symbols:superscript" />}
@@ -108,23 +122,6 @@ const MenuBar = () => {
     </div>
   );
 };
-
-const extensions = [
-  StarterKit.configure({
-    bulletList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-    orderedList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-  }),
-  Highlight,
-  underline,
-  superscript,
-  subscript,
-];
 
 const content = `
   <h2>
@@ -161,29 +158,55 @@ const content = `
 
 const editorProps = {
   attributes: {
-    class: 'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none',
+    class: 'prose dark:prose-invert focus:outline-none',
   },
 };
 export const Component: FC = () => {
+  const lowlight = useMemo(() => {
+    const lowlight = createLowlight(common);
+    lowlight.register({ json, css, xml });
+    return lowlight;
+  }, []);
+
+  const extensions = [
+    StarterKit.configure({
+      bulletList: {
+        keepMarks: true,
+        keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+      },
+      orderedList: {
+        keepMarks: true,
+        keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+      },
+    }),
+    Highlight,
+    underline,
+    superscript,
+    subscript,
+    CodeBlockLowlight.configure({ lowlight: lowlight }),
+  ];
+
   return (
-    <PageContainer title={false} className="h-[calc(100dvh-56px)] h-dvh">
-      <Card className="m-4">
-        <EditorProvider
-          slotBefore={<MenuBar />}
-          extensions={extensions}
-          editorProps={editorProps}
-          content={content}
-          onUpdate={({ editor }) => {
-            console.log(editor.getJSON());
-            console.log(editor.getHTML());
-            console.log(editor.getText());
-          }}
-        >
-          {null}
-          <FloatingMenu>F</FloatingMenu>
-          <BubbleMenu>B</BubbleMenu>
-        </EditorProvider>
-      </Card>
+    <PageContainer title={false}>
+      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
+        <Card>
+          <EditorProvider
+            slotBefore={<MenuBar />}
+            extensions={extensions}
+            editorProps={editorProps}
+            content={content}
+            onUpdate={({ editor }) => {
+              console.log(editor.getJSON());
+              console.log(editor.getHTML());
+              console.log(editor.getText());
+            }}
+          >
+            {null}
+            <FloatingMenu>F</FloatingMenu>
+            <BubbleMenu>B</BubbleMenu>
+          </EditorProvider>
+        </Card>
+      </div>
     </PageContainer>
   );
 };
