@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 import type { Application } from '@/models/Apps.tsx';
 import { apps } from '@/models/Apps.tsx';
+import type { FC } from 'react';
 
-export const Component = () => {
+export const Component: FC = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
