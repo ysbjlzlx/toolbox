@@ -4,7 +4,7 @@ import type { MenuDataItem } from '@ant-design/pro-components';
 export const menuData: MenuDataItem[] = [
   {
     name: 'JSON',
-    icon: <Iconify icon="material-symbols:data-object" />,
+    icon: <Iconify icon="logos:json" />,
     children: [
       {
         name: 'JSON 编辑器',
@@ -33,7 +33,7 @@ export const menuData: MenuDataItem[] = [
   },
   {
     name: '生成器（Generator）',
-    icon: <Iconify icon="material-symbols:code" />,
+    icon: <Iconify icon="la:dice-three" />,
     children: [
       {
         name: '随机字符串（String）',
