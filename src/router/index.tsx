@@ -8,17 +8,12 @@ import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
 
 /* eslint-disable react-refresh/only-export-components */
-const Index = lazy(() => import('@/pages/page'));
-const Base64 = lazy(() => import('@/pages/base64/page'));
-const CodeFormatter = lazy(() => import('@/pages/code-formatter'));
-const DocEditor = lazy(() => import('@/pages/doc-editor/page'));
 const Excel = lazy(() => import('@/pages/excel/page'));
 const FormatConversion = lazy(() => import('@/pages/format-conversion/page'));
 const GeneratorId = lazy(() => import('@/pages/generator/id/page'));
 const GeneratorImage = lazy(() => import('@/pages/generator/image/page'));
 const GeneratorString = lazy(() => import('@/pages/generator/string/page'));
 const Hash = lazy(() => import('@/pages/hash/page'));
-const JsonEditor = lazy(() => import('@/pages/json/json-editor'));
 const JsonToExcel = lazy(() => import('@/pages/json/json-to-excel/page'));
 const Markdown = lazy(() => import('@/pages/markdown'));
 const Qrcode = lazy(() => import('@/pages/qrcode/page'));
@@ -41,7 +36,7 @@ const routes: RouteObject[] = [
   {
     path: '/',
     index: true,
-    element: lazyLoad(Index),
+    lazy: () => import('@/pages/page'),
   },
   {
     path: '/',
@@ -49,15 +44,15 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/base64',
-        element: lazyLoad(Base64),
+        lazy: () => import('@/pages/base64/page'),
       },
       {
         path: '/code-formatter',
-        element: lazyLoad(CodeFormatter),
+        lazy: () => import('@/pages/code-formatter'),
       },
       {
         path: '/doc-editor',
-        element: lazyLoad(DocEditor),
+        lazy: () => import('@/pages/doc-editor/page'),
       },
       {
         path: '/excel',
@@ -88,11 +83,11 @@ const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: lazyLoad(JsonEditor),
+            lazy: () => import('@/pages/json/json-editor'),
           },
           {
             path: 'json-editor',
-            element: lazyLoad(JsonEditor),
+            lazy: () => import('@/pages/json/json-editor'),
           },
           {
             path: 'json-to-excel',

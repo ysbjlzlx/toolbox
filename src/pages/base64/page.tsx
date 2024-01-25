@@ -7,7 +7,7 @@ import TextResultBox from '@/components/TextResultBox.tsx';
 import type { BaseType } from '@/lib/BaseEncoder.ts';
 import { decode as baseDecode, encode as baseEncode } from '@/lib/BaseEncoder.ts';
 
-export default function Page() {
+export const Component = () => {
   const [type, setType] = useState<BaseType>('base-64');
   const [plain, setPlain] = useState<string>('');
   const [target, setTarget] = useState<string>('');
@@ -66,4 +66,4 @@ export default function Page() {
       </Card>
     </PageContainer>
   );
-}
+};

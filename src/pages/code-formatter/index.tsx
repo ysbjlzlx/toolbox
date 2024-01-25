@@ -16,7 +16,7 @@ import type { parser } from '@/utils/formatter.ts';
 import { format } from '@/utils/formatter.ts';
 import { PageContainer } from '@ant-design/pro-components';
 
-const CodeFormatter = () => {
+export const Component = () => {
   const [options, setOptions] = useState<AceOptions>({
     useWorker: false,
     showLineNumbers: true,
@@ -108,4 +108,3 @@ const CodeFormatter = () => {
     </PageContainer>
   );
 };
-export default CodeFormatter;

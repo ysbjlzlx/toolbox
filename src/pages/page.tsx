@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import type { Application } from '@/models/Apps.tsx';
 import { apps } from '@/models/Apps.tsx';
 
-const Page = () => {
+export const Component = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
@@ -32,5 +32,3 @@ const Page = () => {
     </div>
   );
 };
-
-export default Page;

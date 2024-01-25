@@ -1,6 +1,6 @@
 import { Editor } from '@tinymce/tinymce-react';
 
-const DocEditor = () => {
+export const Component = () => {
   const handleUpdate = (value: any, editor: any) => {
     console.log(value);
     console.log(editor);
@@ -27,5 +27,3 @@ const DocEditor = () => {
     />
   );
 };
-
-export default DocEditor;
