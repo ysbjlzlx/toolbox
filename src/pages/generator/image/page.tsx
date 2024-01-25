@@ -32,7 +32,7 @@ const suffixOptions = [
   { label: '.gif', value: '.gif' },
 ];
 
-const PlaceholderImg: FC = () => {
+export const Component: FC = () => {
   const [form] = Form.useForm();
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
 
@@ -131,5 +131,3 @@ const PlaceholderImg: FC = () => {
     </PageContainer>
   );
 };
-
-export default PlaceholderImg;

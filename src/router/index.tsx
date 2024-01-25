@@ -8,10 +8,6 @@ import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
 
 /* eslint-disable react-refresh/only-export-components */
-const GeneratorImage = lazy(() => import('@/pages/generator/image/page'));
-const GeneratorString = lazy(() => import('@/pages/generator/string/page'));
-const Hash = lazy(() => import('@/pages/hash/page'));
-const JsonToExcel = lazy(() => import('@/pages/json/json-to-excel/page'));
 const Markdown = lazy(() => import('@/pages/markdown'));
 const Qrcode = lazy(() => import('@/pages/qrcode/page'));
 const Timestamp = lazy(() => import('@/pages/timestamp/page'));
@@ -65,15 +61,15 @@ const routes: RouteObject[] = [
       },
       {
         path: '/generator/image',
-        element: lazyLoad(GeneratorImage),
+        lazy: () => import('@/pages/generator/image/page'),
       },
       {
         path: '/generator/string',
-        element: lazyLoad(GeneratorString),
+        lazy: () => import('@/pages/generator/string/page'),
       },
       {
         path: '/hash',
-        element: lazyLoad(Hash),
+        lazy: () => import('@/pages/hash/page'),
       },
       {
         path: '/json',
@@ -88,7 +84,7 @@ const routes: RouteObject[] = [
           },
           {
             path: 'json-to-excel',
-            element: lazyLoad(JsonToExcel),
+            lazy: () => import('@/pages/json/json-to-excel/page'),
           },
         ],
       },

@@ -14,7 +14,7 @@ const initialOptions: GeneratorOptions = {
   symbol: false,
   symbolChars: '!@#$%^&*',
 };
-export default function Page() {
+export const Component = () => {
   const [randomString, setRandomString] = useState<string>('');
 
   useEffect(() => {
@@ -69,4 +69,4 @@ export default function Page() {
       </Form>
     </PageContainer>
   );
-}
+};

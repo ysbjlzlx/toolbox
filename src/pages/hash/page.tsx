@@ -2,7 +2,7 @@ import InputCopyable from '@/components/InputCopyable.tsx';
 import { PageContainer } from '@ant-design/pro-components';
 import { Card, Input } from 'antd';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
-import type { ReactElement } from 'react';
+import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
 interface HashResult {
@@ -12,7 +12,7 @@ interface HashResult {
   sha512?: string;
 }
 
-const Page = (): ReactElement => {
+export const Component: FC = () => {
   const defaultHashResult: HashResult = {
     md5: '',
     sha1: '',
@@ -58,5 +58,3 @@ const Page = (): ReactElement => {
     </PageContainer>
   );
 };
-
-export default Page;

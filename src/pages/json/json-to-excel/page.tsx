@@ -16,7 +16,7 @@ export interface GridElement extends ReactDataSheet.Cell<GridElement, number | s
   value: number | string | null;
 }
 
-const Page = () => {
+export const Component = () => {
   const [json, setJson] = useState<string>('{}');
   const [data, setData] = useState<GridElement[][]>([]);
   const [jsonOptions] = useState<AceOptions>({
@@ -62,7 +62,7 @@ const Page = () => {
 
   return (
     <div>
-      <div className="w-full h-[300px]">
+      <div className="h-[300px] w-full">
         <AceEditor
           theme="textmate"
           placeholder="JSON"
@@ -80,5 +80,3 @@ const Page = () => {
     </div>
   );
 };
-
-export default Page;
