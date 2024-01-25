@@ -18,7 +18,7 @@ interface TimestampVO {
   value: string;
 }
 
-const Page = () => {
+export const Component = () => {
   const [input, setInput] = useState<string>(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   const [timeList, setTimeList] = useState<TimestampVO[]>([]);
   dayjs.extend(utc);
@@ -89,5 +89,3 @@ const Page = () => {
     </PageContainer>
   );
 };
-
-export default Page;

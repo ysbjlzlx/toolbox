@@ -1,12 +1,13 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { useLocalStorageState } from 'ahooks';
 import * as OTPAuth from 'otpauth';
+import type { FC } from 'react';
 
 import AccountList from './AccountList.tsx';
 import DetailInfo from './DetailInfo.tsx';
 import type { TotpI } from './typings';
 
-const Totp = () => {
+export const Component: FC = () => {
   const [totps] = useLocalStorageState<TotpI[]>('totps', { defaultValue: [] });
 
   console.log(OTPAuth.Secret.fromUTF8('ha'));
@@ -23,4 +24,3 @@ const Totp = () => {
     </PageContainer>
   );
 };
-export default Totp;

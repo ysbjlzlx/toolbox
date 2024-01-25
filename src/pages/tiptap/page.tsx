@@ -7,6 +7,7 @@ import underline from '@tiptap/extension-underline';
 import { BubbleMenu, EditorProvider, FloatingMenu, useCurrentEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { Button, Card, Dropdown, Space } from 'antd';
+import type { FC } from 'react';
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
@@ -163,7 +164,7 @@ const editorProps = {
     class: 'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none',
   },
 };
-const Tiptap = () => {
+export const Component: FC = () => {
   return (
     <PageContainer title={false} className="h-[calc(100dvh-56px)] h-dvh">
       <Card className="m-4">
@@ -186,5 +187,3 @@ const Tiptap = () => {
     </PageContainer>
   );
 };
-
-export default Tiptap;

@@ -8,11 +8,6 @@ import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
 
 /* eslint-disable react-refresh/only-export-components */
-const Markdown = lazy(() => import('@/pages/markdown'));
-const Qrcode = lazy(() => import('@/pages/qrcode/page'));
-const Timestamp = lazy(() => import('@/pages/timestamp/page'));
-const Tiptap = lazy(() => import('@/pages/tiptap/page'));
-const Totp = lazy(() => import('@/pages/totp/page'));
 const Url = lazy(() => import('@/pages/url/page'));
 const Writer = lazy(() => import('@/pages/writer/page'));
 /* eslint-enable react-refresh/only-export-components */
@@ -90,23 +85,23 @@ const routes: RouteObject[] = [
       },
       {
         path: '/markdown',
-        element: lazyLoad(Markdown),
+        lazy: () => import('@/pages/markdown'),
       },
       {
         path: '/qrcode',
-        element: lazyLoad(Qrcode),
+        lazy: () => import('@/pages/qrcode/page'),
       },
       {
         path: '/timestamp',
-        element: lazyLoad(Timestamp),
+        lazy: () => import('@/pages/timestamp/page'),
       },
       {
         path: '/tiptap',
-        element: lazyLoad(Tiptap),
+        lazy: () => import('@/pages/tiptap/page'),
       },
       {
         path: '/totp',
-        element: lazyLoad(Totp),
+        lazy: () => import('@/pages/totp/page'),
       },
       {
         path: '/url',

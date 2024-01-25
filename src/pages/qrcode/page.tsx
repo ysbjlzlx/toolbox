@@ -1,9 +1,9 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { Card, Input, QRCode } from 'antd';
-import type { ReactElement } from 'react';
+import type { FC } from 'react';
 import { useState } from 'react';
 
-export default function Page(): ReactElement {
+export const Component: FC = () => {
   const [text, setText] = useState<string>('');
   const { TextArea } = Input;
 
@@ -27,4 +27,4 @@ export default function Page(): ReactElement {
       </Card>
     </PageContainer>
   );
-}
+};

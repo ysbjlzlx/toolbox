@@ -5,7 +5,7 @@ import Vditor from 'vditor';
 import { PageContainer } from '@ant-design/pro-components';
 import 'vditor/dist/index.css';
 
-const Markdown: FC = () => {
+export const Component: FC = () => {
   const [, setVd] = useState<Vditor>();
 
   const toolbar: Array<string | IMenuItem> = [
@@ -62,5 +62,3 @@ const Markdown: FC = () => {
     </PageContainer>
   );
 };
-
-export default Markdown;
