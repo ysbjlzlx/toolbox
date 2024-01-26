@@ -1,4 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import NotFound from '@/components/NotFound';
 import BaseLayout from '@/layouts/BaseLayout.tsx';
@@ -106,4 +107,5 @@ const routes: RouteObject[] = [
   },
 ];
 
-export default routes;
+const router = createBrowserRouter(routes);
+export default router;
