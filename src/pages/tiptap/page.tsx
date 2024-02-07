@@ -1,5 +1,6 @@
 import Iconify from '@/components/Iconify';
 import { PageContainer } from '@ant-design/pro-components';
+import Code from '@tiptap/extension-code';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import Highlight from '@tiptap/extension-highlight';
 import subscript from '@tiptap/extension-subscript';
@@ -84,6 +85,11 @@ const MenuBar = () => {
           onClick={() => editor.chain().focus().toggleItalic().run()}
           type={editor.isActive('italic') ? 'primary' : 'default'}
         />
+        <Button
+          icon={<Iconify icon="material-symbols:code-rounded" />}
+          onClick={() => editor.chain().focus().toggleCode().run()}
+          type={editor.isActive('code') ? 'primary' : 'default'}
+        />
       </Space.Compact>
       <Space.Compact>
         <Button
@@ -102,11 +108,32 @@ const MenuBar = () => {
           type={editor.isActive('underline') ? 'primary' : 'default'}
         />
       </Space.Compact>
-      <Button
-        icon={<Iconify icon="material-symbols:code" />}
+      <Dropdown.Button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
         type={editor.isActive('codeBlock') ? 'primary' : 'default'}
-      />
+        menu={{
+          items: [
+            {
+              key: 1,
+              label: 'CSS',
+              onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'CSS' }).run(),
+            },
+            {
+              key: 2,
+              label: 'JSON',
+              onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'json' }).run(),
+            },
+            {
+              key: 3,
+              label: 'XML',
+              onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'xml' }).run(),
+            },
+          ],
+        }}
+        className="inline"
+      >
+        <Iconify icon="material-symbols:code" />
+      </Dropdown.Button>
       <Space.Compact>
         <Button
           icon={<Iconify icon="material-symbols:superscript" />}
@@ -183,7 +210,8 @@ export const Component: FC = () => {
     underline,
     superscript,
     subscript,
-    CodeBlockLowlight.configure({ lowlight: lowlight }),
+    Code,
+    CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: 'plaintext' }),
   ];
 
   return (
