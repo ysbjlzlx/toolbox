@@ -199,7 +199,7 @@ const content = `
 
 const editorProps = {
   attributes: {
-    class: 'prose dark:prose-invert focus:outline-none',
+    class: 'prose prose-base dark:prose-invert focus:outline-none',
   },
 };
 export const Component: FC = () => {
