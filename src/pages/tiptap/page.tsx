@@ -1,14 +1,14 @@
 import Iconify from '@/components/Iconify';
 import { PageContainer } from '@ant-design/pro-components';
-import Code from '@tiptap/extension-code';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import Highlight from '@tiptap/extension-highlight';
 import subscript from '@tiptap/extension-subscript';
 import superscript from '@tiptap/extension-superscript';
 import underline from '@tiptap/extension-underline';
-import { BubbleMenu, EditorProvider, FloatingMenu, useCurrentEditor } from '@tiptap/react';
+import { EditorProvider, useCurrentEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { Button, Card, Dropdown, Space } from 'antd';
+import { Button, Card, Dropdown, Space, Tooltip } from 'antd';
+import copy from 'copy-text-to-clipboard';
 import { common, createLowlight } from 'lowlight';
 import type { FC } from 'react';
 import { useMemo } from 'react';
@@ -30,6 +30,11 @@ const MenuBar = () => {
     <div>
       <Space.Compact>
         <Button
+          icon={<Iconify icon="material-symbols:format-paragraph" />}
+          onClick={() => editor.chain().focus().setParagraph().run()}
+          type={editor.isActive('paragraph') ? 'primary' : 'default'}
+        />
+        <Button
           icon={<Iconify icon="material-symbols:format-h1" />}
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
           type={editor.isActive('heading', { level: 1 }) ? 'primary' : 'default'}
@@ -44,11 +49,7 @@ const MenuBar = () => {
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
           type={editor.isActive('heading', { level: 3 }) ? 'primary' : 'default'}
         />
-        <Button
-          icon={<Iconify icon="material-symbols:format-paragraph" />}
-          onClick={() => editor.chain().focus().setParagraph().run()}
-          type={editor.isActive('paragraph') ? 'primary' : 'default'}
-        />
+
         <Dropdown
           menu={{
             items: [
@@ -90,6 +91,16 @@ const MenuBar = () => {
           onClick={() => editor.chain().focus().toggleCode().run()}
           type={editor.isActive('code') ? 'primary' : 'default'}
         />
+        <Button
+          icon={<Iconify icon="material-symbols:superscript" />}
+          onClick={() => editor.chain().focus().toggleSuperscript().run()}
+          type={editor.isActive('superscript') ? 'primary' : 'default'}
+        />
+        <Button
+          icon={<Iconify icon="material-symbols:subscript" />}
+          onClick={() => editor.chain().focus().toggleSubscript().run()}
+          type={editor.isActive('subscript') ? 'primary' : 'default'}
+        />
       </Space.Compact>
       <Space.Compact>
         <Button
@@ -108,43 +119,46 @@ const MenuBar = () => {
           type={editor.isActive('underline') ? 'primary' : 'default'}
         />
       </Space.Compact>
-      <Dropdown.Button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        type={editor.isActive('codeBlock') ? 'primary' : 'default'}
-        menu={{
-          items: [
-            {
-              key: 1,
-              label: 'CSS',
-              onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'CSS' }).run(),
-            },
-            {
-              key: 2,
-              label: 'JSON',
-              onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'json' }).run(),
-            },
-            {
-              key: 3,
-              label: 'XML',
-              onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'xml' }).run(),
-            },
-          ],
-        }}
-        className="inline"
-      >
-        <Iconify icon="material-symbols:code" />
-      </Dropdown.Button>
       <Space.Compact>
         <Button
-          icon={<Iconify icon="material-symbols:superscript" />}
-          onClick={() => editor.chain().focus().toggleSuperscript().run()}
-          type={editor.isActive('superscript') ? 'primary' : 'default'}
+          icon={<Iconify icon="material-symbols:format-quote" />}
+          onClick={() => editor.chain().focus().toggleBlockquote().run()}
+          type={editor.isActive('blockquote') ? 'primary' : 'default'}
         />
-        <Button
-          icon={<Iconify icon="material-symbols:subscript" />}
-          onClick={() => editor.chain().focus().toggleSubscript().run()}
-          type={editor.isActive('subscript') ? 'primary' : 'default'}
-        />
+        <Dropdown.Button
+          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+          type={editor.isActive('codeBlock') ? 'primary' : 'default'}
+          menu={{
+            items: [
+              {
+                key: 1,
+                label: 'CSS',
+                onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'CSS' }).run(),
+              },
+              {
+                key: 2,
+                label: 'JSON',
+                onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'json' }).run(),
+              },
+              {
+                key: 3,
+                label: 'XML',
+                onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'xml' }).run(),
+              },
+            ],
+          }}
+          className="inline"
+        >
+          <Iconify icon="material-symbols:code" />
+        </Dropdown.Button>
+      </Space.Compact>
+      <Space.Compact>
+        <Tooltip title="复制 HTML 源码">
+          <Button
+            icon={<Iconify icon="material-symbols-light:content-copy" />}
+            onClick={() => copy(editor?.getHTML())}
+          />
+        </Tooltip>
       </Space.Compact>
     </div>
   );
@@ -205,12 +219,12 @@ export const Component: FC = () => {
         keepMarks: true,
         keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
       },
+      codeBlock: false,
     }),
     Highlight,
     underline,
     superscript,
     subscript,
-    Code,
     CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: 'plaintext' }),
   ];
 
@@ -230,8 +244,6 @@ export const Component: FC = () => {
             }}
           >
             {null}
-            <FloatingMenu>F</FloatingMenu>
-            <BubbleMenu>B</BubbleMenu>
           </EditorProvider>
         </Card>
       </div>
