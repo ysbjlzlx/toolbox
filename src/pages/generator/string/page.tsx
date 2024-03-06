@@ -1,9 +1,9 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Checkbox, Form, Input, Slider } from 'antd';
+import { Button, Card, Checkbox, Form, Input, Slider, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
+import ContentCopyButton from '@/components/ContentCopyButton.tsx';
 import Iconify from '@/components/Iconify';
-import InputCopyable from '@/components/InputCopyable.tsx';
 import type { GeneratorOptions } from '@/scripts/RandomStringUtils.ts';
 import { generator } from '@/scripts/RandomStringUtils.ts';
 
@@ -13,6 +13,7 @@ const initialOptions: GeneratorOptions = {
   uppercase: true,
   symbol: false,
   symbolChars: '!@#$%^&*',
+  length: 8,
 };
 export const Component = () => {
   const [randomString, setRandomString] = useState<string>('');
@@ -37,7 +38,7 @@ export const Component = () => {
   return (
     <PageContainer title={false} className="mx-auto max-w-screen-lg px-4 pt-4">
       <Form layout="horizontal" initialValues={initialOptions} onValuesChange={onValuesChange} onFinish={onFinish}>
-        <Card actions={[<Button key="1" htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />]}>
+        <Card>
           <div className="grid grid-cols-1 sm:grid-cols-12">
             <Form.Item name="numeric" valuePropName="checked" className="sm:col-span-6">
               <Checkbox>数字 0 ～ 9</Checkbox>
@@ -62,8 +63,12 @@ export const Component = () => {
               <Slider min={6} max={64} step={1} marks={{ 6: '6', 8: '8', 16: '16', 32: '32', 64: '64' }} />
             </Form.Item>
           </div>
-          <div>
-            <InputCopyable value={randomString} />
+          <div className="flex">
+            <Input value={randomString} showCount className="mr-2 flex-auto" />
+            <Space.Compact className="flex-none">
+              <Button htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />
+              <ContentCopyButton text={randomString} />
+            </Space.Compact>
           </div>
         </Card>
       </Form>

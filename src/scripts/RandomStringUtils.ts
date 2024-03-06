@@ -1,5 +1,4 @@
-import * as _ from 'lodash';
-import { random as randomInt } from './Random';
+import { customAlphabet } from 'nanoid';
 
 // prettier-ignore
 export const NUMERIC_CHARS: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -78,16 +77,10 @@ const generator = ({
   if (symbol && symbolChars) {
     chars = chars.concat(symbolChars.split(''));
   }
-  if (chars.length < 1) {
+  if (chars.length < 2) {
     return EMPTY_CHAR;
-  } else {
-    _.shuffle(chars);
   }
-  let str = '';
-  for (let i = 0; i < length; i++) {
-    str += chars[randomInt(0, chars.length)];
-  }
-  return str;
+  return customAlphabet(chars.join(''), length)();
 };
 
-export { random, randomAlphabetic, randomNumber, generator };
+export { generator, random, randomAlphabetic, randomNumber };
