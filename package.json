@@ -46,7 +46,7 @@
     "copy-to-clipboard": "3.3.3",
     "crypto-js": "4.2.0",
     "dayjs": "1.11.10",
-    "fast-xml-parser": "4.3.5",
+    "fast-xml-parser": "4.3.6",
     "file-saver": "2.0.5",
     "groovy-beautify": "0.0.17",
     "highlight.js": "11.9.0",
