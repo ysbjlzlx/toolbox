@@ -1,5 +1,5 @@
 import Iconify from '@/components/Iconify';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export interface Application {
   name: string;
@@ -28,9 +28,9 @@ export const apps: Application[] = [
     icon: <Iconify icon="material-symbols:contract-edit-outline" />,
   },
   {
-    name: 'YAML',
-    desc: 'YAML 格式处理',
-    href: '/yaml',
+    name: '格式转换',
+    desc: 'JSON、YAML、XML 代码格式转换',
+    href: '/format-conversion',
     icon: <Iconify icon="material-symbols:sync-alt" />,
   },
   {

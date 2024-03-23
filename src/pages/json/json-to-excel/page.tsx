@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import JSON5 from 'json5';
 import _ from 'lodash';
 import { useEffect, useState } from 'react';
@@ -17,7 +16,7 @@ export interface GridElement extends ReactDataSheet.Cell<GridElement, number | s
   value: number | string | null;
 }
 
-const Page = () => {
+export const Component = () => {
   const [json, setJson] = useState<string>('{}');
   const [data, setData] = useState<GridElement[][]>([]);
   const [jsonOptions] = useState<AceOptions>({
@@ -62,8 +61,8 @@ const Page = () => {
   }, [json]);
 
   return (
-    <Box>
-      <Box sx={{ width: '100%', height: '300px' }}>
+    <div>
+      <div className="h-[300px] w-full">
         <AceEditor
           theme="textmate"
           placeholder="JSON"
@@ -74,12 +73,10 @@ const Page = () => {
           width="100%"
           height="100%"
         />
-      </Box>
-      <Box sx={{ mt: 3, width: '100%' }}>
+      </div>
+      <div className="mt-6 w-full">
         <ReactDataSheet data={data} valueRenderer={(cel) => cel.value} />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
-
-export default Page;

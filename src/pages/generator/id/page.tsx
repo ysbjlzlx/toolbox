@@ -2,7 +2,7 @@ import { PageContainer } from '@ant-design/pro-components';
 import { createId } from '@paralleldrive/cuid2';
 import { TwitterSnowflake } from '@sapphire/snowflake';
 import { useCounter } from 'ahooks';
-import { Button, Col, Row, Segmented } from 'antd';
+import { Button, Card, Segmented } from 'antd';
 import type { SegmentedLabeledOption } from 'antd/es/segmented';
 import ObjectID from 'bson-objectid';
 import { nanoid } from 'nanoid';
@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import TextResultBox from '../../../components/TextResultBox.tsx';
 
-const UidPage: FC = () => {
+export const Component: FC = () => {
   const [type, setType] = useState<SegmentedValue>('cuid');
   const [result, setResult] = useState<string>('');
   const [counter, { inc }] = useCounter(0);
@@ -44,19 +44,16 @@ const UidPage: FC = () => {
     }
   }, [type, counter]);
   return (
-    <PageContainer>
-      <Row justify="center">
-        <Col span={16}>
-          <Segmented block={true} options={options} value={type} onChange={(value) => setType(value)} />
-          <div style={{ marginTop: '10px', marginBottom: '10px' }}>
-            <Button onClick={() => inc()}>刷新</Button>
-          </div>
-          <div style={{ marginTop: '10px' }}>
-            <TextResultBox title="结果" text={result} />
-          </div>
-        </Col>
-      </Row>
+    <PageContainer title={false} className="mx-auto max-w-screen-lg pt-4">
+      <Card>
+        <Segmented block={true} options={options} value={type} onChange={(value) => setType(value)} />
+        <div className="mt-4">
+          <Button onClick={() => inc()}>刷新</Button>
+        </div>
+        <div className="mt-4">
+          <TextResultBox title="结果" text={result} />
+        </div>
+      </Card>
     </PageContainer>
   );
 };
-export default UidPage;

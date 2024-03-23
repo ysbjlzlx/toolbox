@@ -1,6 +1,7 @@
 import { Image } from 'antd';
 import { useEffect, useState } from 'react';
 
+import ImageWrapper from '@/pages/generator/image/ImageWrapper.tsx';
 import type { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
 
@@ -22,11 +23,13 @@ const PlaceholderImage = (input: PlaceholderConfig) => {
   }, [config]);
 
   return (
-    <Image
-      src={imgUrl}
-      style={{ width: `${config.width}px`, height: `${config.height}px` }}
-      alt={config.text || 'placeholder img'}
-    />
+    <ImageWrapper>
+      <Image
+        src={imgUrl}
+        style={{ width: `${config.width}px`, height: `${config.height}px` }}
+        alt={config.text || 'placeholder img'}
+      />
+    </ImageWrapper>
   );
 };
 

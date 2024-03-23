@@ -1,14 +1,13 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
 import type { SegmentedProps } from 'antd';
-import { Button, Input, Segmented, Space } from 'antd';
+import { Button, Card, Input, Segmented, Space } from 'antd';
 import { useCallback, useState } from 'react';
 
 import TextResultBox from '@/components/TextResultBox.tsx';
 import type { BaseType } from '@/lib/BaseEncoder.ts';
 import { decode as baseDecode, encode as baseEncode } from '@/lib/BaseEncoder.ts';
 
-export default function Page() {
+export const Component = () => {
   const [type, setType] = useState<BaseType>('base-64');
   const [plain, setPlain] = useState<string>('');
   const [target, setTarget] = useState<string>('');
@@ -34,8 +33,8 @@ export default function Page() {
   }, [type, plain]);
 
   return (
-    <PageContainer token={{ paddingInlinePageContainerContent: 10, paddingBlockPageContainerContent: 10 }}>
-      <Box sx={{ mt: 2, mb: 2 }}>
+    <PageContainer title={false} className="mx-auto max-w-screen-md pt-4">
+      <Card>
         <Segmented
           block={true}
           value={type}
@@ -44,27 +43,27 @@ export default function Page() {
             setType(value as BaseType);
           }}
         />
-      </Box>
-      <Box sx={{ mt: 2 }}>
-        <Input.TextArea
-          value={plain}
-          onChange={(event) => {
-            setPlain(event.target.value);
-          }}
-          placeholder="文本"
-          autoSize={{ minRows: 5, maxRows: 10 }}
-          showCount
-        />
-      </Box>
-      <Box sx={{ mt: 2 }}>
-        <Space.Compact>
-          <Button onClick={encode}>编码</Button>
-          <Button onClick={decode}>解码</Button>
-        </Space.Compact>
-      </Box>
-      <Box sx={{ mt: 2 }}>
-        <TextResultBox title="结果" text={target} />
-      </Box>
+        <div className="mt-4">
+          <Input.TextArea
+            value={plain}
+            onChange={(event) => {
+              setPlain(event.target.value);
+            }}
+            placeholder="文本"
+            autoSize={{ minRows: 5, maxRows: 10 }}
+            showCount
+          />
+        </div>
+        <div className="mt-4">
+          <Space.Compact>
+            <Button onClick={encode}>编码</Button>
+            <Button onClick={decode}>解码</Button>
+          </Space.Compact>
+        </div>
+        <div className="mt-4">
+          <TextResultBox title="结果" text={target} />
+        </div>
+      </Card>
     </PageContainer>
   );
-}
+};

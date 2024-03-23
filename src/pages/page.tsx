@@ -1,15 +1,15 @@
-import { Container } from '@mui/system';
-import { Card, Col, Row } from 'antd';
+import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 
 import type { Application } from '@/models/Apps.tsx';
 import { apps } from '@/models/Apps.tsx';
+import type { FC } from 'react';
 
-const Page = () => {
+export const Component: FC = () => {
   const item = ({ applications }: { applications: Application[] }) => {
     return applications.map((application) => {
       return (
-        <Col span={8} key={application.name}>
+        <div key={application.name}>
           <Card
             key={application.name}
             title={application.name}
@@ -19,17 +19,17 @@ const Page = () => {
               </Link>,
             ]}
           >
-            {application.desc}
+            <div className="h-32">{application.desc}</div>
           </Card>
-        </Col>
+        </div>
       );
     });
   };
   return (
-    <Container>
-      <Row gutter={[16, 8]}>{item({ applications: apps })}</Row>
-    </Container>
+    <div className="px-10 py-10">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {item({ applications: apps })}
+      </div>
+    </div>
   );
 };
-
-export default Page;

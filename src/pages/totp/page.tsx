@@ -1,27 +1,26 @@
-import { Container } from '@mui/system';
+import { PageContainer } from '@ant-design/pro-components';
 import { useLocalStorageState } from 'ahooks';
-import { Col, Row } from 'antd';
 import * as OTPAuth from 'otpauth';
+import type { FC } from 'react';
 
 import AccountList from './AccountList.tsx';
 import DetailInfo from './DetailInfo.tsx';
 import type { TotpI } from './typings';
 
-const Totp = () => {
+export const Component: FC = () => {
   const [totps] = useLocalStorageState<TotpI[]>('totps', { defaultValue: [] });
 
   console.log(OTPAuth.Secret.fromUTF8('ha'));
   return (
-    <Container>
-      <Row>
-        <Col span={8}>
+    <PageContainer title={false} className="pt-4">
+      <div className="grid grid-cols-3">
+        <div className="col-span-1">
           <AccountList totps={totps} />
-        </Col>
-        <Col span={16}>
+        </div>
+        <div className="col-span-2">
           <DetailInfo />
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </PageContainer>
   );
 };
-export default Totp;

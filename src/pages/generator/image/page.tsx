@@ -1,7 +1,14 @@
-import { PageContainer, ProForm, ProFormDigit, ProFormSelect, ProFormText } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
+import {
+  FormControlRender,
+  PageContainer,
+  pickControlPropsWithId,
+  ProForm,
+  ProFormDigit,
+  ProFormSelect,
+  ProFormText,
+} from '@ant-design/pro-components';
 import type { TabsProps } from 'antd';
-import { Col, ColorPicker, Form, Row, Tabs } from 'antd';
+import { Card, ColorPicker, Form, Tabs } from 'antd';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
@@ -14,8 +21,8 @@ const defaultValues = {
   width: 320,
   height: 320,
   suffix: '.png',
-  bgColor: '#cccccc',
-  textColor: '#969696',
+  bgColor: '#8c8c8c',
+  textColor: '#f0f0f0',
   text: 'img',
 };
 
@@ -25,7 +32,7 @@ const suffixOptions = [
   { label: '.gif', value: '.gif' },
 ];
 
-const PlaceholderImg: FC = () => {
+export const Component: FC = () => {
   const [form] = Form.useForm();
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
 
@@ -58,69 +65,69 @@ const PlaceholderImg: FC = () => {
     ],
   };
   return (
-    <PageContainer>
-      <ProForm
-        submitter={false}
-        form={form}
-        initialValues={defaultValues}
-        onValuesChange={(_, values) => {
-          setPlaceholderConfig(values);
-        }}
-      >
-        <Row gutter={16}>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormDigit label="宽度" name="width" />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormDigit label="高度" name="height" />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormSelect label="后缀名" name="suffix" options={suffixOptions} allowClear={false} />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormText
-              label="背景颜色"
-              name="bgColor"
-              fieldProps={{
-                suffix: (
-                  <ColorPicker
-                    value={bgColor}
-                    onChange={(_, hex) => {
-                      form.setFieldValue('bgColor', hex);
-                    }}
-                  />
-                ),
-              }}
+    <PageContainer title={false} className="mx-auto max-w-screen-lg pt-4">
+      <Card>
+        <ProForm
+          submitter={false}
+          form={form}
+          initialValues={defaultValues}
+          onValuesChange={(_, values) => {
+            setPlaceholderConfig(values);
+          }}
+        >
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <ProFormDigit label="宽度" name="width" fieldProps={{ size: 'large' }} />
+            <ProFormDigit label="高度" name="height" fieldProps={{ size: 'large' }} />
+            <ProFormSelect
+              label="后缀名"
+              name="suffix"
+              options={suffixOptions}
               allowClear={false}
+              fieldProps={{ size: 'large' }}
             />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormText
-              label="文本颜色"
-              name="textColor"
-              fieldProps={{
-                suffix: (
-                  <ColorPicker
-                    value={textColor}
-                    onChange={(_, hex) => {
-                      form.setFieldValue('textColor', hex);
-                    }}
-                  />
-                ),
-              }}
-              allowClear={false}
-            />
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={8}>
-            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ style: { height: '42px' } }} />
-          </Col>
-        </Row>
-      </ProForm>
-      <Box>
-        <Tabs {...tabsProps} />
-      </Box>
+            <ProForm.Item label="背景颜色" name="bgColor">
+              <FormControlRender>
+                {(itemProps) => {
+                  return (
+                    <ColorPicker
+                      size="large"
+                      showText
+                      disabledAlpha
+                      className="w-full justify-start"
+                      {...pickControlPropsWithId(itemProps)}
+                      onChange={(color) => {
+                        form.setFieldValue('bgColor', color.toHexString());
+                      }}
+                    />
+                  );
+                }}
+              </FormControlRender>
+            </ProForm.Item>
+            <ProForm.Item label="文本颜色" name="textColor">
+              <FormControlRender>
+                {(itemProps) => {
+                  return (
+                    <ColorPicker
+                      size="large"
+                      showText
+                      disabledAlpha
+                      className="w-full justify-start"
+                      {...pickControlPropsWithId(itemProps)}
+                      onChange={(color) => {
+                        form.setFieldValue('textColor', color.toHexString());
+                      }}
+                    />
+                  );
+                }}
+              </FormControlRender>
+            </ProForm.Item>
+            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ size: 'large' }} />
+          </div>
+        </ProForm>
+        <div>
+          <Tabs {...tabsProps} />
+        </div>
+      </Card>
     </PageContainer>
   );
 };
-
-export default PlaceholderImg;

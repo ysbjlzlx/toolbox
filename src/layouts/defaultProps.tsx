@@ -4,17 +4,12 @@ import type { MenuDataItem } from '@ant-design/pro-components';
 export const menuData: MenuDataItem[] = [
   {
     name: 'JSON',
-    icon: <Iconify icon="material-symbols:data-object" />,
+    icon: <Iconify icon="logos:json" />,
     children: [
       {
         name: 'JSON 编辑器',
         path: '/json/json-editor',
         key: '/json/json-editor',
-      },
-      {
-        name: 'JSON To YAML',
-        path: '/json/json-to-yaml',
-        key: '/json/json-to-yaml',
       },
       {
         name: 'JSON To Excel',
@@ -24,11 +19,10 @@ export const menuData: MenuDataItem[] = [
       },
     ],
   },
-
   {
-    name: 'YAML',
-    desc: 'YAML 格式处理',
-    path: '/yaml',
+    name: '格式转换',
+    desc: 'JSON, YAML 等格式转换',
+    path: '/format-conversion',
     icon: <Iconify icon="material-symbols:sync-alt" />,
   },
   {
@@ -39,7 +33,7 @@ export const menuData: MenuDataItem[] = [
   },
   {
     name: '生成器（Generator）',
-    icon: <Iconify icon="material-symbols:code" />,
+    icon: <Iconify icon="la:dice-three" />,
     children: [
       {
         name: '随机字符串（String）',
@@ -61,10 +55,21 @@ export const menuData: MenuDataItem[] = [
     icon: <Iconify icon="material-symbols:link" />,
   },
   {
-    name: 'Markdown',
-    desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
-    path: '/markdown',
+    name: '文本编辑器',
     icon: <Iconify icon="material-symbols:contract-edit-outline" />,
+    children: [
+      {
+        name: 'Markdown',
+        desc: 'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。',
+        path: '/markdown',
+      },
+      {
+        name: '富文本编辑器',
+        desc: 'Quill',
+        path: '/writer',
+        icon: <Iconify icon="material-symbols:contract-edit-outline" />,
+      },
+    ],
   },
   {
     name: 'Base 64',
@@ -95,5 +100,11 @@ export const menuData: MenuDataItem[] = [
     desc: '时间戳（Timestamp）',
     path: '/timestamp',
     icon: <Iconify icon="material-symbols:av-timer" />,
+  },
+  {
+    name: '换算（Transform）',
+    desc: '宽带速率',
+    path: '/transform',
+    icon: <Iconify icon="material-symbols:transform" />,
   },
 ];

@@ -44,8 +44,7 @@ const BaseLayout: FC = () => {
     },
     token: {
       pageContainer: {
-        colorBgPageContainer: '#ffffff',
-        paddingInlinePageContainerContent: 10,
+        paddingInlinePageContainerContent: 0,
         paddingBlockPageContainerContent: 0,
       },
     },
@@ -53,9 +52,9 @@ const BaseLayout: FC = () => {
 
   return (
     <ProConfigProvider hashed={false}>
-      <ConfigProvider>
+      <ConfigProvider theme={{ cssVar: true, hashed: false }}>
         <ProLayout {...proLayoutProps} {...settings}>
-          <div style={{ height: '100vh' }}>
+          <div>
             <Outlet />
           </div>
         </ProLayout>

@@ -1,7 +1,6 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
 import type { UploadProps } from 'antd';
-import { Button, Space, Upload } from 'antd';
+import { Button, Card, Space, Upload } from 'antd';
 import FileSaver from 'file-saver';
 import { useState } from 'react';
 import type { AceOptions } from 'react-ace/types';
@@ -18,7 +17,7 @@ const options: AceOptions = {
   wrap: true,
 };
 
-export default function Page() {
+export const Component = () => {
   const [result, setResult] = useState<string>();
 
   const save = () => {
@@ -65,19 +64,19 @@ export default function Page() {
     },
   };
   return (
-    <PageContainer title="Excel 转 JSON">
-      <Box>
+    <PageContainer title="Excel 转 JSON" className="mx-auto max-w-screen-md pt-4">
+      <Card>
         <Space direction="horizontal">
           <Upload {...uploadProps}>
             <Button type="primary">上传 Excel</Button>
           </Upload>
           <Button onClick={save}>下载为 JSON 文件</Button>
         </Space>
-      </Box>
 
-      <Box sx={{ mt: 2 }}>
-        <AceEditor mode="json" theme="monokai" width="100%" setOptions={options} value={result} />
-      </Box>
+        <div className="mt-4">
+          <AceEditor mode="json" theme="monokai" width="100%" setOptions={options} value={result} />
+        </div>
+      </Card>
     </PageContainer>
   );
-}
+};

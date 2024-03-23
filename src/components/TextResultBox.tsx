@@ -1,5 +1,5 @@
 import { Card, Input } from 'antd';
-import { FC } from 'react';
+import type { FC } from 'react';
 import ContentCopyButton from './ContentCopyButton';
 
 interface Props {
@@ -16,7 +16,7 @@ const TextResultBox: FC<Props> = ({ text, title }) => {
       bodyStyle={{ padding: '10px', paddingBottom: '20px' }}
       hoverable={false}
     >
-      <TextArea bordered={true} autoSize={{ minRows: 5, maxRows: 10 }} value={text} showCount />
+      <TextArea variant="outlined" autoSize={{ minRows: 5, maxRows: 10 }} value={text} showCount />
     </Card>
   );
 };

@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 import Vditor from 'vditor';
 
 import { PageContainer } from '@ant-design/pro-components';
-import { Box } from '@mui/system';
 import 'vditor/dist/index.css';
 
-const Markdown: FC = () => {
+export const Component: FC = () => {
   const [, setVd] = useState<Vditor>();
 
   const toolbar: Array<string | IMenuItem> = [
@@ -56,12 +55,10 @@ const Markdown: FC = () => {
     });
   }, []);
   return (
-    <PageContainer title={false} token={{ paddingInlinePageContainerContent: 0 }}>
-      <Box sx={{ mt: 4, height: 'calc(100vh - 32px)' }}>
+    <PageContainer title={false} className="p-4 pt-10">
+      <div className="h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]">
         <div id="vditor" className="vditor" />
-      </Box>
+      </div>
     </PageContainer>
   );
 };
-
-export default Markdown;

@@ -6,17 +6,6 @@ interface Props {
 }
 
 const ImageWrapper: FC<Props> = ({ children }) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'inherit',
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div className="flex w-full justify-center">{children}</div>;
 };
 export default ImageWrapper;
