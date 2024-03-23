@@ -1,0 +1,2 @@
+import{j as o}from"./pro-components-DqS1vNmp.js";import{C as r}from"./ContentCopyButton-BjXZ8JlH.js";import{aI as s,Z as n}from"./antd-2qrym3SB.js";const m=({text:t,title:a})=>{const{TextArea:e}=n;return o.jsx(s,{title:a,extra:o.jsx(r,{text:t}),bodyStyle:{padding:"10px",paddingBottom:"20px"},hoverable:!1,children:o.jsx(e,{variant:"outlined",autoSize:{minRows:5,maxRows:10},value:t,showCount:!0})})};export{m as T};
+//# sourceMappingURL=TextResultBox-mAI1BqhK.js.map

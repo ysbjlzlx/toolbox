@@ -1,2 +1,0 @@
-import{j as o,I as c,bP as r}from"./index-c4fa426a.js";import{m as a}from"./index-12619546.js";import{B as i}from"./button-f219befb.js";function u({text:t}){const[s,n]=a.useMessage();return o.jsxs(o.Fragment,{children:[n,o.jsx(i,{icon:o.jsx(c,{icon:"material-symbols:content-copy-outline"}),onClick:()=>{r(t||"",{format:"text/plain",onCopy:e=>{console.log(e),s.open({type:"success",content:"复制成功"})}})}})]})}export{u as C};
-//# sourceMappingURL=ContentCopyButton-f234c9c9.js.map
