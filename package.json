@@ -31,7 +31,7 @@
     "@tiptap/pm": "2.2.4",
     "@tiptap/react": "2.2.4",
     "@tiptap/starter-kit": "2.2.4",
-    "ace-builds": "1.32.8",
+    "ace-builds": "1.32.9",
     "ahooks": "3.7.10",
     "antd": "5.15.4",
     "ascii85": "1.0.2",
