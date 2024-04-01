@@ -23,10 +23,6 @@ const routes: RouteObject[] = [
         lazy: () => import('@/pages/code-formatter'),
       },
       {
-        path: '/doc-editor',
-        lazy: () => import('@/pages/doc-editor/page.tsx'),
-      },
-      {
         path: '/excel',
         lazy: () => import('@/pages/excel/page.tsx'),
       },
