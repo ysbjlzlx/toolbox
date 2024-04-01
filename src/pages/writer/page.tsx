@@ -1,84 +1,46 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { Card } from 'antd';
-import hljs from 'highlight.js';
+import Quill from 'quill';
 import type { FC } from 'react';
-import { useCallback, useState } from 'react';
-import type { ReactQuillProps } from 'react-quill';
-import ReactQuill from 'react-quill';
+import { useEffect, useRef, useState } from 'react';
 
 import CopyButtonWrapper from '@/components/CopyButtonWrapper.tsx';
 
-import 'highlight.js/styles/monokai-sublime.css';
-import 'react-quill/dist/quill.snow.css';
+import 'quill/dist/quill.snow.css';
 
 export const Component: FC = () => {
   const [value, setValue] = useState<string>('');
+  const quillRef = useRef<HTMLDivElement>(null);
 
-  const styles = {
-    quill: {
-      height: 'calc(100% - 42px)',
-      backgroundColor: 'white',
-    },
-  };
+  let init = 0;
 
-  const quillProps: ReactQuillProps = {
-    // eslint-disable-next-line max-params
-    onChange: (value) => {
-      setValue(value);
-    },
-    modules: {
-      syntax: {
-        highlight: useCallback((text: string) => {
-          return hljs.highlightAuto(text).value;
-        }, []),
-      },
-      toolbar: [
-        [{ header: '1' }, { header: '2' }],
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ color: [] }, { background: [] }],
-        ['blockquote', 'code', 'code-block'],
-        [{ list: 'ordered' }, { list: 'bullet' }],
-        [{ align: [] }],
-        [{ script: 'sub' }, { script: 'super' }],
-        ['link', 'image'],
-      ],
-    },
-    formats: [
-      'header',
-      'bold',
-      'italic',
-      'underline',
-      'strike',
-      'blockquote',
-      'code',
-      'code-block',
-      'list',
-      'bullet',
-      'indent',
-      'link',
-      'image',
-      'script',
-      'background',
-      'color',
-      'align',
-    ],
-  };
+  useEffect(() => {
+    if (quillRef && quillRef.current && init === 0) {
+      init = 1;
+      let quill = new Quill(quillRef.current, {
+        debug: 'info',
+        modules: {
+          toolbar: true,
+        },
+        theme: 'snow',
+      });
+      quill.on('text-change', () => {
+        setValue(quill.getSemanticHTML());
+      });
+    }
+  }, [quillRef]);
 
   return (
     <PageContainer title={false}>
-      <div className="m-4 flex h-[calc(100dvh-88px)] flex-col  md:h-[calc(100dvh-32px)]">
+      <div>
         <Card className="mb-4">
           <CopyButtonWrapper text={value}>复制源码</CopyButtonWrapper>
         </Card>
-        <div className="flex-1">
-          <ReactQuill
-            theme="snow"
-            defaultValue={value}
-            modules={quillProps.modules}
-            formats={quillProps.formats}
-            onChange={quillProps.onChange}
-            style={styles.quill}
-          />
+        <div ref={quillRef}>
+          <h2>Demo Content</h2>
+          <p>
+            Preset build with <code>snow</code> theme, and some common formats.
+          </p>
         </div>
       </div>
     </PageContainer>
