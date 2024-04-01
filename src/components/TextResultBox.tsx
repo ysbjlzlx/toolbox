@@ -13,7 +13,7 @@ const TextResultBox: FC<Props> = ({ text, title }) => {
     <Card
       title={title}
       extra={<ContentCopyButton text={text} />}
-      bodyStyle={{ padding: '10px', paddingBottom: '20px' }}
+      styles={{ body: { padding: '10px', paddingBottom: '20px' } }}
       hoverable={false}
     >
       <TextArea variant="outlined" autoSize={{ minRows: 5, maxRows: 10 }} value={text} showCount />
