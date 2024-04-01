@@ -1,8 +1,7 @@
 import { Button, Card, Checkbox, Form, Select } from 'antd';
 import { useState } from 'react';
-import type { ICommand } from 'react-ace';
+import type { IAceOptions, ICommand } from 'react-ace';
 import AceEditor from 'react-ace';
-import type { AceOptions } from 'react-ace/types';
 
 import 'ace-builds/src-noconflict/ext-searchbox';
 import 'ace-builds/src-noconflict/mode-groovy';
@@ -17,7 +16,7 @@ import { format } from '@/utils/formatter.ts';
 import { PageContainer } from '@ant-design/pro-components';
 
 export const Component = () => {
-  const [options, setOptions] = useState<AceOptions>({
+  const [options, setOptions] = useState<IAceOptions>({
     useWorker: false,
     showLineNumbers: true,
     tabSize: 2,

@@ -3,15 +3,15 @@ import type { UploadProps } from 'antd';
 import { Button, Card, Space, Upload } from 'antd';
 import FileSaver from 'file-saver';
 import { useState } from 'react';
-import type { AceOptions } from 'react-ace/types';
 import * as XLSX from 'xlsx';
 
+import type { IAceOptions } from 'react-ace';
 import AceEditor from 'react-ace';
 
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-const options: AceOptions = {
+const options: IAceOptions = {
   useWorker: false,
   tabSize: 2,
   wrap: true,

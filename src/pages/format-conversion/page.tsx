@@ -4,8 +4,8 @@ import { Button, Card, Select } from 'antd';
 import XML from 'fast-xml-parser';
 import * as LosslessJSON from 'lossless-json';
 import { useState } from 'react';
+import type { IAceOptions } from 'react-ace';
 import AceEditor from 'react-ace';
-import type { AceOptions } from 'react-ace/types';
 import YAML from 'yaml';
 
 import Iconify from '@/components/Iconify';
@@ -23,14 +23,14 @@ const CodeTypeOptions: SelectProps['options'] = [
   { label: 'XML', value: 'xml' },
 ];
 
-const options: AceOptions = {
+const options: IAceOptions = {
   useWorker: false,
   tabSize: 2,
   wrap: true,
   showLineNumbers: true,
 };
 
-const targetAceEditorOptions: AceOptions = {
+const targetAceEditorOptions: IAceOptions = {
   useWorker: false,
   tabSize: 2,
   wrap: true,

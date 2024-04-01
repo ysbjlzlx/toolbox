@@ -1,8 +1,8 @@
 import JSON5 from 'json5';
 import _ from 'lodash';
 import { useEffect, useState } from 'react';
+import type { IAceOptions } from 'react-ace';
 import AceEditor from 'react-ace';
-import type { AceOptions } from 'react-ace/types';
 import ReactDataSheet from 'react-datasheet';
 
 import 'ace-builds/src-noconflict/ext-searchbox';
@@ -19,7 +19,7 @@ export interface GridElement extends ReactDataSheet.Cell<GridElement, number | s
 export const Component = () => {
   const [json, setJson] = useState<string>('{}');
   const [data, setData] = useState<GridElement[][]>([]);
-  const [jsonOptions] = useState<AceOptions>({
+  const [jsonOptions] = useState<IAceOptions>({
     useWorker: false,
     showLineNumbers: true,
     tabSize: 2,
