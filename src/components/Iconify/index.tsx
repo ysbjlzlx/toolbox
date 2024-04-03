@@ -1,14 +1,15 @@
+import type { IconProps } from '@iconify/react';
 import { Icon } from '@iconify/react';
-import { FC } from 'react';
+import type { FC } from 'react';
 
-interface Props {
+interface Props extends IconProps {
   icon: string;
 }
 
-const Iconify: FC<Props> = ({ icon }) => {
+const Iconify: FC<Props> = ({ icon, ...props }) => {
   return (
     <span role="img" className="anticon">
-      <Icon icon={icon} />
+      <Icon icon={icon} {...props} />
     </span>
   );
 };
