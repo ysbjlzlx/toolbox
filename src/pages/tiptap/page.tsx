@@ -7,7 +7,7 @@ import superscript from '@tiptap/extension-superscript';
 import underline from '@tiptap/extension-underline';
 import { EditorProvider, useCurrentEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { Card, Dropdown, Space, Tooltip } from 'antd';
+import { Dropdown, Space, Tooltip } from 'antd';
 import copy from 'copy-text-to-clipboard';
 import { common, createLowlight } from 'lowlight';
 import type { FC } from 'react';
@@ -29,7 +29,7 @@ const MenuBar = () => {
   }
 
   return (
-    <div>
+    <div className="tiptap-menu border-b-8 border-solid">
       <Space>
         <Iconify
           icon="material-symbols:format-paragraph"
@@ -250,7 +250,7 @@ export const Component: FC = () => {
   return (
     <PageContainer title={false}>
       <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
-        <Card>
+        <div className="rounded border-solid p-4">
           <EditorProvider
             slotBefore={<MenuBar />}
             extensions={extensions}
@@ -264,7 +264,7 @@ export const Component: FC = () => {
           >
             {null}
           </EditorProvider>
-        </Card>
+        </div>
       </div>
     </PageContainer>
   );
