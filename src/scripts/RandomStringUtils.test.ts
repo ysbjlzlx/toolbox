@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest';
 import { random, randomAlphabetic, randomNumber } from './RandomStringUtils';
 
 test('RandomStringUtils random', () => {

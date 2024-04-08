@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders learn react link 1`] = `
+<a
+  href="http://antfu.me"
+>
+  Anthony Fu
+</a>
+`;

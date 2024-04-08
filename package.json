@@ -15,6 +15,7 @@
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
+    "test": "vitest",
     "update": "npx npm-check-updates -u && npm install && npm run build"
   },
   "dependencies": {
@@ -93,6 +94,7 @@
     "@types/prettier": "3.0.0",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
+    "@types/react-test-renderer": "18.0.7",
     "@types/uuid": "9.0.8",
     "@vitejs/plugin-react": "4.2.1",
     "autoprefixer": "10.4.19",
@@ -103,18 +105,21 @@
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-react-refresh": "0.4.6",
     "husky": "9.0.11",
+    "jsdom": "24.0.0",
     "lint-staged": "15.2.2",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
     "prettier-plugin-organize-imports": "3.2.4",
     "prettier-plugin-packagejson": "2.4.14",
     "prettier-plugin-tailwindcss": "0.5.13",
+    "react-test-renderer": "18.2.0",
     "stylelint": "16.3.1",
     "stylelint-config-standard": "36.0.0",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.4",
     "vite": "5.2.8",
-    "vite-plugin-pwa": "0.19.8"
+    "vite-plugin-pwa": "0.19.8",
+    "vitest": "1.4.0"
   },
   "overrides": {}
 }
