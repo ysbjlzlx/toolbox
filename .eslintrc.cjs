@@ -1,5 +1,5 @@
 module.exports = {
-  env: { browser: true, es2020: true, node: true },
+  env: {browser: true, es2020: true, node: true, jest: true},
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -9,7 +9,7 @@ module.exports = {
     'alloy/react',
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parserOptions: {ecmaVersion: 'latest', sourceType: 'module'},
   plugins: ['react-refresh', '@typescript-eslint'],
   rules: {
     'react-refresh/only-export-components': 'warn',
