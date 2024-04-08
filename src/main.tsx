@@ -6,7 +6,6 @@ import Loading from '@/components/Loading';
 
 import router from '@/router.tsx';
 
-import '@/config/dayjs.ts';
 import '@/locale';
 
 import 'antd/dist/reset.css';

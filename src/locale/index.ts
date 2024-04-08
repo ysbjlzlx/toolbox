@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import type { InitOptions } from 'i18next';
 import i18next from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
@@ -28,13 +27,5 @@ i18next
   .use(I18nextBrowserLanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init(initOptions);
-
-i18next.on('languageChanged', (lng: string) => {
-  if (lng === 'zh-CN') {
-    dayjs.locale('zh-cn');
-  } else if (lng === 'en') {
-    dayjs.locale('en');
-  }
-});
 
 export default i18next;
