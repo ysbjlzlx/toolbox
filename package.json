@@ -91,7 +91,7 @@
     "@types/lodash": "4.17.0",
     "@types/node": "20.12.5",
     "@types/prettier": "3.0.0",
-    "@types/react": "18.2.74",
+    "@types/react": "18.2.75",
     "@types/react-dom": "18.2.24",
     "@types/uuid": "9.0.8",
     "@vitejs/plugin-react": "4.2.1",
