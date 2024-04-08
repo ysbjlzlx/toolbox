@@ -1,7 +1,7 @@
 import ContentCopyButton from '@/components/ContentCopyButton.tsx';
 import { useCountDown } from 'ahooks';
 import { Form, Input, Progress, Space } from 'antd';
-import dayjs from 'dayjs';
+import { getSeconds } from 'date-fns';
 import type { TOTP } from 'otpauth';
 import { useEffect, useState } from 'react';
 
@@ -16,8 +16,9 @@ const TokenField = ({ totp }: Props) => {
   useEffect(() => {
     setTargetDate(0);
     if (totp) {
-      const second = dayjs().second();
-      const millisecond = dayjs().valueOf();
+      const date = new Date();
+      const second = getSeconds(date);
+      const millisecond = date.getTime();
       const duration = (second >= 30 ? 60 - second : 30 - second) * 1000;
       setTargetDate(millisecond + duration);
       setToken(totp.generate());
@@ -29,8 +30,9 @@ const TokenField = ({ totp }: Props) => {
     onEnd: () => {
       setTargetDate(0);
       if (totp) {
-        const second = dayjs().second();
-        const millisecond = dayjs().valueOf();
+        const date = new Date();
+        const second = getSeconds(date);
+        const millisecond = date.getTime();
         const duration = (second >= 30 ? 60 - second : 30 - second) * 1000;
         setTargetDate(millisecond + duration);
         setToken(totp.generate());
