@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import { isMatch } from 'date-fns';
 import * as JOI from 'joi';
 
 export const isUnixSecond = (num: string | number): boolean => {
@@ -38,5 +38,5 @@ export const isNumber = (num: string | number): boolean => {
 };
 
 export const isDateStr = (str: string, format: string): boolean => {
-  return dayjs(str, format, true).isValid();
+  return isMatch(str, format);
 };
