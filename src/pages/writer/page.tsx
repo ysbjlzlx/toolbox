@@ -4,7 +4,7 @@ import Quill from 'quill';
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 
-import CopyButton from '@/components/CopyButton';
+import CopyTextButton from '@/components/CopyTextButton';
 
 import 'quill/dist/quill.snow.css';
 
@@ -30,9 +30,9 @@ export const Component: FC = () => {
     <PageContainer title={false}>
       <div>
         <Card className="mb-4">
-          <CopyButton text={value} icon={false}>
+          <CopyTextButton text={value} icon={false}>
             复制源码
-          </CopyButton>
+          </CopyTextButton>
         </Card>
         <div ref={quillRef}>
           <h2>Demo Content</h2>

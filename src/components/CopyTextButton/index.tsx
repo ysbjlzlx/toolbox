@@ -10,7 +10,7 @@ interface Props extends ButtonProps {
   children?: React.ReactNode;
 }
 
-const CopyButton: FC<Props> = ({ text, children, ...props }) => {
+const CopyTextButton: FC<Props> = ({ text, children, ...props }) => {
   const [messageApi, contextHolder] = message.useMessage();
   const onClick = () => {
     if (text) {
@@ -32,4 +32,4 @@ const CopyButton: FC<Props> = ({ text, children, ...props }) => {
   );
 };
 
-export default CopyButton;
+export default CopyTextButton;
