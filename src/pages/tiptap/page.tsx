@@ -8,7 +8,7 @@ import underline from '@tiptap/extension-underline';
 import { EditorProvider, useCurrentEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { Dropdown, Space, Tooltip } from 'antd';
-import copy from 'copy-text-to-clipboard';
+import copy from 'copy-to-clipboard';
 import { common, createLowlight } from 'lowlight';
 import type { FC } from 'react';
 import { useMemo, useState } from 'react';

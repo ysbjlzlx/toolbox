@@ -4,7 +4,7 @@ import Quill from 'quill';
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 
-import CopyButtonWrapper from '@/components/CopyButtonWrapper.tsx';
+import CopyButton from '@/components/CopyButton';
 
 import 'quill/dist/quill.snow.css';
 
@@ -14,12 +14,12 @@ export const Component: FC = () => {
   const quillRef = useCallback((node: HTMLElement | null) => {
     if (node) {
       let quill = new Quill(node, {
-        debug: 'info',
         modules: {
           toolbar: true,
         },
         theme: 'snow',
       });
+      setValue(quill.getSemanticHTML());
       quill.on('text-change', () => {
         setValue(quill.getSemanticHTML());
       });
@@ -30,7 +30,9 @@ export const Component: FC = () => {
     <PageContainer title={false}>
       <div>
         <Card className="mb-4">
-          <CopyButtonWrapper text={value}>复制源码</CopyButtonWrapper>
+          <CopyButton text={value} icon={false}>
+            复制源码
+          </CopyButton>
         </Card>
         <div ref={quillRef}>
           <h2>Demo Content</h2>
