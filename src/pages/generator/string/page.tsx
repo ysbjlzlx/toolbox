@@ -2,7 +2,7 @@ import { PageContainer } from '@ant-design/pro-components';
 import { Button, Card, Checkbox, Form, Input, Slider, Space } from 'antd';
 import { useEffect, useState } from 'react';
 
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
+import CopyTextButton from '@/components/CopyTextButton';
 import Iconify from '@/components/Iconify';
 import type { GeneratorOptions } from '@/scripts/RandomStringUtils.ts';
 import { generator } from '@/scripts/RandomStringUtils.ts';
@@ -67,7 +67,7 @@ export const Component = () => {
             <Input value={randomString} showCount className="mr-2 flex-auto" />
             <Space.Compact className="flex-none">
               <Button htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />
-              <ContentCopyButton text={randomString} />
+              <CopyTextButton text={randomString} />
             </Space.Compact>
           </div>
         </Card>

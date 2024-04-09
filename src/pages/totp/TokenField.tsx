@@ -1,4 +1,4 @@
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
+import CopyTextButton from '@/components/CopyTextButton';
 import { useCountDown } from 'ahooks';
 import { Form, Input, Progress, Space } from 'antd';
 import { getSeconds } from 'date-fns';
@@ -58,7 +58,7 @@ const TokenField = ({ totp }: Props) => {
     <Form.Item label="Token">
       <Space.Compact>
         <Input value={token} addonAfter={<TokenProcess />} />
-        <ContentCopyButton text={token} />
+        <CopyTextButton text={token} />
       </Space.Compact>
     </Form.Item>
   );

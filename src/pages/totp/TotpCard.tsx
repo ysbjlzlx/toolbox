@@ -1,7 +1,7 @@
 import { Input, QRCode, Space } from 'antd';
 import type { TOTP } from 'otpauth';
 
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
+import CopyTextButton from '@/components/CopyTextButton';
 import TokenField from './TokenField.tsx';
 
 interface Props {
@@ -21,7 +21,7 @@ const TotpCard = ({ totp }: Props) => {
       <div className="mt-4">
         <Space.Compact className="w-full">
           <Input value={totp?.toString() || ''} />
-          <ContentCopyButton text={totp?.toString()} />
+          <CopyTextButton text={totp?.toString()} />
         </Space.Compact>
       </div>
     </div>

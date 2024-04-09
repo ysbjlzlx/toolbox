@@ -1,6 +1,6 @@
+import CopyTextButton from '@/components/CopyTextButton';
 import { Card, Input } from 'antd';
 import type { FC } from 'react';
-import ContentCopyButton from './ContentCopyButton';
 
 interface Props {
   title: string;
@@ -12,7 +12,7 @@ const TextResultBox: FC<Props> = ({ text, title }) => {
   return (
     <Card
       title={title}
-      extra={<ContentCopyButton text={text} />}
+      extra={<CopyTextButton text={text} />}
       styles={{ body: { padding: '10px', paddingBottom: '20px' } }}
       hoverable={false}
     >
