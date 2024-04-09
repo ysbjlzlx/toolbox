@@ -13,7 +13,10 @@ module.exports = {
   plugins: ['react-refresh', '@typescript-eslint'],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    "@typescript-eslint/no-unused-vars": ['error', {"varsIgnorePattern": "^Component"}]
+    "@typescript-eslint/no-unused-vars": [
+      'error',
+      {"argsIgnorePattern": "^_", "varsIgnorePattern": "^Component"}
+    ]
   },
   settings: {
     react: {

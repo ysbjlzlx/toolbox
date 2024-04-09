@@ -1,6 +1,6 @@
 import Iconify from '@/components/Iconify';
 import type { ButtonProps } from 'antd';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import copy from 'copy-to-clipboard';
 import type { FC } from 'react';
 import React from 'react';
@@ -11,15 +11,24 @@ interface Props extends ButtonProps {
 }
 
 const CopyButton: FC<Props> = ({ text, children, ...props }) => {
+  const [messageApi, contextHolder] = message.useMessage();
   const onClick = () => {
     if (text) {
-      copy(text);
+      copy(text, {
+        format: 'text/plain',
+        onCopy: (_clipboardData: object) => {
+          messageApi.success('复制成功');
+        },
+      });
     }
   };
   return (
-    <Button icon={<Iconify icon="material-symbols:content-copy" />} onClick={onClick} {...props}>
-      {children}
-    </Button>
+    <>
+      {contextHolder}
+      <Button icon={<Iconify icon="material-symbols:content-copy" />} onClick={onClick} {...props}>
+        {children}
+      </Button>
+    </>
   );
 };
 
