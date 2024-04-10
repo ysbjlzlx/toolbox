@@ -69,6 +69,11 @@ export const menuData: MenuDataItem[] = [
         path: '/writer',
         icon: <Iconify icon="material-symbols:contract-edit-outline" />,
       },
+      {
+        name: 'Tiptap',
+        desc: 'Tiptap',
+        path: '/tiptap',
+      },
     ],
   },
   {
