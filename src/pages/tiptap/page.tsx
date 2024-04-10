@@ -19,6 +19,7 @@ import xml from 'highlight.js/lib/languages/xml';
 import { Icon } from '@/components/ui/Icon.tsx';
 import 'highlight.js/styles/github.min.css';
 
+// eslint-disable-next-line complexity
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
   const activeClassName = 'text-sky-500';
@@ -26,14 +27,6 @@ const MenuBar = () => {
   if (!editor) {
     return null;
   }
-
-  const headingDropdownType = () => {
-    return editor.isActive('heading', { level: 4 }) ||
-      editor.isActive('heading', { level: 5 }) ||
-      editor.isActive('heading', { level: 6 })
-      ? 'primary'
-      : 'default';
-  };
 
   return (
     <div className="tiptap-menu  border-l-0 border-r-0 border-t-0 border-solid pb-2">
@@ -85,7 +78,17 @@ const MenuBar = () => {
             },
           }}
         >
-          <Button icon={<Icon name="ChevronDown" />} type={headingDropdownType()} onClick={(e) => e.preventDefault()} />
+          <Button
+            icon={<Icon name="ChevronDown" />}
+            type={
+              editor.isActive('heading', { level: 4 }) ||
+              editor.isActive('heading', { level: 5 }) ||
+              editor.isActive('heading', { level: 6 })
+                ? 'primary'
+                : 'default'
+            }
+            onClick={(e) => e.preventDefault()}
+          />
         </Dropdown>
       </Space.Compact>
       <Space.Compact className="mr-4">
@@ -133,6 +136,16 @@ const MenuBar = () => {
         />
       </Space.Compact>
       <Space.Compact className="mr-4">
+        <Button
+          icon={<Icon name="List" />}
+          type={editor.isActive('bulletList') ? 'primary' : 'default'}
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+        />
+        <Button
+          icon={<Icon name="ListOrdered" />}
+          type={editor.isActive('orderedList') ? 'primary' : 'default'}
+          onClick={() => editor.chain().focus().toggleOrderedList().run()}
+        />
         <Button
           icon={<Icon name="Quote" />}
           type={editor.isActive('blockquote') ? 'primary' : 'default'}
