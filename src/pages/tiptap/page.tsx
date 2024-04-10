@@ -29,8 +29,8 @@ const MenuBar = () => {
   }
 
   return (
-    <div className="tiptap-menu  border-l-0 border-r-0 border-t-0 border-solid pb-2">
-      <Space.Compact className="mr-4">
+    <div className="tiptap-menu my-4 flex flex-wrap gap-x-4 gap-y-2">
+      <Space.Compact>
         <Button
           icon={<Icon name="Pilcrow" />}
           type={editor.isActive('paragraph') ? 'primary' : 'default'}
@@ -91,7 +91,7 @@ const MenuBar = () => {
           />
         </Dropdown>
       </Space.Compact>
-      <Space.Compact className="mr-4">
+      <Space.Compact>
         <Button
           icon={<Icon name="Bold" />}
           onClick={() => editor.chain().focus().toggleBold().run()}
@@ -118,7 +118,7 @@ const MenuBar = () => {
           onClick={() => editor.chain().focus().toggleSubscript().run()}
         />
       </Space.Compact>
-      <Space.Compact className="mr-4">
+      <Space.Compact>
         <Button
           icon={<Icon name="Strikethrough" />}
           type={editor.isActive('strike') ? 'primary' : 'default'}
@@ -135,7 +135,7 @@ const MenuBar = () => {
           onClick={() => editor.chain().focus().toggleUnderline().run()}
         />
       </Space.Compact>
-      <Space.Compact className="mr-4">
+      <Space.Compact>
         <Button
           icon={<Icon name="List" />}
           type={editor.isActive('bulletList') ? 'primary' : 'default'}
@@ -201,7 +201,7 @@ const content = `
 
 const editorProps = {
   attributes: {
-    class: 'prose prose-base dark:prose-invert focus:outline-none',
+    class: 'prose prose-base dark:prose-invert focus:outline-none max-w-full',
   },
 };
 export const Component: FC = () => {
@@ -223,7 +223,7 @@ export const Component: FC = () => {
       },
       codeBlock: false,
     }),
-    Highlight,
+    Highlight.configure({ HTMLAttributes: { class: 'bg-yellow-500' } }),
     underline,
     superscript,
     subscript,
@@ -232,7 +232,7 @@ export const Component: FC = () => {
 
   return (
     <PageContainer title={false}>
-      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
+      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh ">
         <div className="rounded border-solid p-4">
           <EditorProvider
             slotBefore={<MenuBar />}
