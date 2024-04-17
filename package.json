@@ -60,7 +60,7 @@
     "lucide-react": "0.368.0",
     "nanoid": "5.0.7",
     "otpauth": "9.2.3",
-    "quill": "2.0.0-rc.5",
+    "quill": "2.0.0",
     "react": "18.2.0",
     "react-ace": "11.0.1",
     "react-datasheet": "1.4.12",
