@@ -95,6 +95,10 @@ const routes: RouteObject[] = [
         path: '/transform',
         lazy: () => import('@/pages/transform'),
       },
+      {
+        path: '/diff',
+        lazy: () => import('@/pages/diff'),
+      },
     ],
   },
   {
