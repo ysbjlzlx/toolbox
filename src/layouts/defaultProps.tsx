@@ -20,16 +20,25 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
-    name: '格式转换',
-    desc: 'JSON, YAML 等格式转换',
-    path: '/format-conversion',
-    icon: <Iconify icon="material-symbols:sync-alt" />,
-  },
-  {
-    name: 'CodeFormatter',
-    desc: '代码格式化，目前支持：JSON、JSON5',
-    path: '/code-formatter',
-    icon: <Iconify icon="material-symbols:code" />,
+    name: 'Code',
+    icon: <Iconify icon="lucide:code" />,
+    children: [
+      {
+        name: '格式转换',
+        path: '/code/conversion',
+        key: '/code/conversion',
+      },
+      {
+        name: 'Diff',
+        path: '/code/diff',
+        key: '/code/diff',
+      },
+      {
+        name: 'Formatter',
+        path: '/code/formatter',
+        key: '/code/formatter',
+      },
+    ],
   },
   {
     name: '生成器（Generator）',

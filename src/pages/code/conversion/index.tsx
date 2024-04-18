@@ -110,14 +110,14 @@ export const Component = () => {
             </div>
           </div>
         </Card>
-        <div className="mt-4 grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-4 grid flex-1 grid-cols-1 gap-4 md:grid-cols-2 ">
           <div>
             <AceEditor
               mode={sourceType}
               theme="monokai"
               width="100%"
               height=""
-              className="h-full"
+              className="h-full rounded-[8px]"
               setOptions={options}
               value={sourceValue}
               onChange={setSourceValue}
@@ -129,7 +129,7 @@ export const Component = () => {
               theme="monokai"
               width="100%"
               height=""
-              className="h-full"
+              className="h-full rounded-[8px]"
               setOptions={targetAceEditorOptions}
               value={targetValue}
               onChange={setTargetValue}

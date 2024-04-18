@@ -19,16 +19,25 @@ const routes: RouteObject[] = [
         lazy: () => import('@/pages/base64/page.tsx'),
       },
       {
-        path: '/code-formatter',
-        lazy: () => import('@/pages/code-formatter'),
+        path: '/code',
+        children: [
+          {
+            path: 'conversion',
+            lazy: () => import('@/pages/code/conversion'),
+          },
+          {
+            path: 'diff',
+            lazy: () => import('@/pages/code/diff'),
+          },
+          {
+            path: 'formatter',
+            lazy: () => import('@/pages/code/formatter'),
+          },
+        ],
       },
       {
         path: '/excel',
         lazy: () => import('@/pages/excel/page.tsx'),
-      },
-      {
-        path: '/format-conversion',
-        lazy: () => import('@/pages/format-conversion/page.tsx'),
       },
       {
         path: '/generator/id',
@@ -94,10 +103,6 @@ const routes: RouteObject[] = [
       {
         path: '/transform',
         lazy: () => import('@/pages/transform'),
-      },
-      {
-        path: '/diff',
-        lazy: () => import('@/pages/diff'),
       },
     ],
   },
