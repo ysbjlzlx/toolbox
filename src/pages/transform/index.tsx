@@ -1,4 +1,4 @@
-import { PageContainer } from '@ant-design/pro-components';
+import PageContainer from '@/components/ui/PageContainer.tsx';
 import type { SelectProps } from 'antd';
 import { Card, InputNumber, Select, Space } from 'antd';
 import type { FC } from 'react';
@@ -57,8 +57,8 @@ export const Component: FC = () => {
   }, [bitRateValue, bitRateUnit, byteRateUnit]);
 
   return (
-    <PageContainer title={false}>
-      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
+    <PageContainer>
+      <div className="h-full">
         <Card title="下载速度换算">
           <div className="grid max-w-screen-md grid-cols-1 gap-4 md:grid-cols-2">
             <Space.Compact className="w-full">

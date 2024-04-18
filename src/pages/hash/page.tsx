@@ -1,5 +1,5 @@
 import InputCopyable from '@/components/InputCopyable.tsx';
-import { PageContainer } from '@ant-design/pro-components';
+import { PageContainer } from '@/components/ui';
 import { Card, Input } from 'antd';
 import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
 import type { FC } from 'react';
@@ -36,8 +36,8 @@ export const Component: FC = () => {
     });
   }, [plainText]);
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-md pt-4">
-      <Card>
+    <PageContainer>
+      <Card className="mx-auto max-w-screen-md">
         <div className="mb-8">
           <Input.TextArea
             value={plainText}

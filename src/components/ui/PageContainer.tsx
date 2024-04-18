@@ -8,7 +8,7 @@ interface Props {
 }
 
 const PageContainer: FC<Props> = ({ children, className = [] }) => {
-  return <div className={cn('p-4', className)}>{children}</div>;
+  return <div className={cn('h-[calc(100dvh-56px)] p-4 md:h-dvh', className)}>{children}</div>;
 };
 
 export default PageContainer;
