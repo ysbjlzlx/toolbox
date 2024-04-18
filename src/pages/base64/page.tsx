@@ -1,4 +1,4 @@
-import { PageContainer } from '@ant-design/pro-components';
+import PageContainer from '@/components/ui/PageContainer.tsx';
 import type { SegmentedProps } from 'antd';
 import { Button, Card, Input, Segmented, Space } from 'antd';
 import { useCallback, useState } from 'react';
@@ -33,7 +33,7 @@ export const Component = () => {
   }, [type, plain]);
 
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-md pt-4">
+    <PageContainer className="mx-auto max-w-screen-md pt-4">
       <Card>
         <Segmented
           block={true}

@@ -1,4 +1,3 @@
-import { PageContainer } from '@ant-design/pro-components';
 import type { SelectProps } from 'antd';
 import { Button, Card, Select } from 'antd';
 import XML from 'fast-xml-parser';
@@ -9,6 +8,7 @@ import AceEditor from 'react-ace';
 import YAML from 'yaml';
 
 import Iconify from '@/components/Iconify';
+import PageContainer from '@/components/ui/PageContainer.tsx';
 import { format } from '@/utils/formatter.ts';
 
 import 'ace-builds/src-noconflict/ext-searchbox';
@@ -92,8 +92,8 @@ export const Component = () => {
     }
   };
   return (
-    <PageContainer title={false} className="bg-gray-50">
-      <div className="mx-auto flex h-[calc(100dvh-56px)] max-w-screen-xl flex-col p-4 md:h-screen">
+    <PageContainer className="h-[calc(100dvh-56px)] md:h-dvh">
+      <div className="mx-auto flex h-full max-w-screen-xl flex-col">
         <Card>
           <div className="flex gap-4">
             <div className="max-w-[150px] flex-auto">

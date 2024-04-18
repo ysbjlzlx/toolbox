@@ -11,9 +11,9 @@ import 'ace-builds/src-noconflict/mode-xml';
 import 'ace-builds/src-noconflict/mode-yaml';
 import 'ace-builds/src-noconflict/theme-monokai';
 
+import PageContainer from '@/components/ui/PageContainer.tsx';
 import type { parser } from '@/utils/formatter.ts';
 import { format } from '@/utils/formatter.ts';
-import { PageContainer } from '@ant-design/pro-components';
 
 export const Component = () => {
   const [options, setOptions] = useState<IAceOptions>({
@@ -49,8 +49,8 @@ export const Component = () => {
   };
 
   return (
-    <PageContainer title={false}>
-      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
+    <PageContainer className="h-[calc(100dvh-56px)] md:h-dvh">
+      <div className="h-full">
         <Card>
           <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
             <div className="grid grid-cols-3 gap-2">
