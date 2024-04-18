@@ -1,6 +1,6 @@
 import type { MenuDataItem, ProLayoutProps, ProSettings } from '@ant-design/pro-components';
 import { ProConfigProvider, ProLayout } from '@ant-design/pro-components';
-import { ConfigProvider } from 'antd';
+import { App, ConfigProvider } from 'antd';
 import type { FC, ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -53,11 +53,13 @@ const BaseLayout: FC = () => {
   return (
     <ProConfigProvider hashed={false}>
       <ConfigProvider theme={{ cssVar: true, hashed: false }}>
-        <ProLayout {...proLayoutProps} {...settings}>
-          <div>
-            <Outlet />
-          </div>
-        </ProLayout>
+        <App>
+          <ProLayout {...proLayoutProps} {...settings}>
+            <div>
+              <Outlet />
+            </div>
+          </ProLayout>
+        </App>
       </ConfigProvider>
     </ProConfigProvider>
   );

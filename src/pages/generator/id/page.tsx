@@ -44,7 +44,7 @@ export const Component: FC = () => {
     }
   }, [type, counter]);
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-lg pt-4">
+    <PageContainer title={false} className="mx-auto max-w-screen-lg p-4">
       <Card>
         <Segmented block={true} options={options} value={type} onChange={(value) => setType(value)} />
         <div className="mt-4">

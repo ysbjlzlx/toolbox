@@ -65,7 +65,7 @@ export const Component: FC = () => {
     ],
   };
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-lg pt-4">
+    <PageContainer title={false} className="mx-auto max-w-screen-lg p-4">
       <Card>
         <ProForm
           submitter={false}
