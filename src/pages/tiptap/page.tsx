@@ -1,6 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import Highlight from '@tiptap/extension-highlight';
+import ExtensionLink from '@tiptap/extension-link';
 import subscript from '@tiptap/extension-subscript';
 import superscript from '@tiptap/extension-superscript';
 import underline from '@tiptap/extension-underline';
@@ -10,7 +11,7 @@ import { Button, Dropdown, Space, Tooltip } from 'antd';
 import copy from 'copy-to-clipboard';
 import { common, createLowlight } from 'lowlight';
 import type { FC } from 'react';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import css from 'highlight.js/lib/languages/css';
 import json from 'highlight.js/lib/languages/json';
@@ -23,6 +24,29 @@ import 'highlight.js/styles/github.min.css';
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
   const activeClassName = 'text-sky-500';
+
+  const setLink = useCallback(() => {
+    if (!editor) {
+      return;
+    }
+    const previousUrl = editor.getAttributes('link').href;
+    const url = window.prompt('URL', previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === '') {
+      editor.chain().focus().extendMarkRange('link').unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+  }, [editor]);
 
   if (!editor) {
     return null;
@@ -136,6 +160,7 @@ const MenuBar = () => {
         />
       </Space.Compact>
       <Space.Compact>
+        <Button icon={<Icon name="Link" />} type={editor.isActive('link') ? 'primary' : 'default'} onClick={setLink} />
         <Button
           icon={<Icon name="List" />}
           type={editor.isActive('bulletList') ? 'primary' : 'default'}
@@ -228,6 +253,9 @@ export const Component: FC = () => {
     superscript,
     subscript,
     CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: 'plaintext' }),
+    ExtensionLink.configure({
+      openOnClick: false,
+    }),
   ];
 
   return (
