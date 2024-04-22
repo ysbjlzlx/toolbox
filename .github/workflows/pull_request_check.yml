@@ -18,6 +18,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-      - run: pnpm install
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: true
       - run: pnpm run build
