@@ -1,4 +1,4 @@
-import { PlaceholderConfig } from './index';
+import type { PlaceholderConfig } from './index';
 
 const defaultConfig = (): PlaceholderConfig => {
   return {
