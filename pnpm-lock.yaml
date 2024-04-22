@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@typescript-eslint/parser': ^7.7.0
+  '@typescript-eslint/parser': 7.7.0
   rollup: 4.15.0
 
 importers:
@@ -248,7 +248,7 @@ importers:
         specifier: 7.7.0
         version: 7.7.0(@typescript-eslint/parser@7.7.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser':
-        specifier: ^7.7.0
+        specifier: 7.7.0
         version: 7.7.0(eslint@8.57.0)(typescript@5.4.5)
       '@vitejs/plugin-react':
         specifier: 4.2.1
@@ -1999,7 +1999,7 @@ packages:
     resolution: {integrity: sha512-TiZzBSJja/LbhNPvk6yc0JrX9XqhQ0hdh6M2svYfsHGejaKFIAGd9MQ+ERIMzLGlN/kZoYIgdxFV0PuljTKXag==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      '@typescript-eslint/parser': ^7.7.0
+      '@typescript-eslint/parser': 7.7.0
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
       typescript: '*'
     peerDependenciesMeta:
@@ -2010,7 +2010,7 @@ packages:
     resolution: {integrity: sha512-GJWR0YnfrKnsRoluVO3PRb9r5aMZriiMMM/RHj5nnTrBy1/wIgk76XCtCKcnXGjpZQJQRFtGV9/0JJ6n30uwpQ==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
-      '@typescript-eslint/parser': ^7.7.0
+      '@typescript-eslint/parser': 7.7.0
       eslint: ^8.56.0
       typescript: '*'
     peerDependenciesMeta:
@@ -2825,7 +2825,7 @@ packages:
       '@babel/eslint-parser': 7.x
       '@babel/preset-react': 7.x
       '@typescript-eslint/eslint-plugin': '>=5.55.0'
-      '@typescript-eslint/parser': ^7.7.0
+      '@typescript-eslint/parser': 7.7.0
       eslint: '>=8.24.0'
       eslint-plugin-react: '>=7.31.8'
       eslint-plugin-vue: '>=9.5.1'
