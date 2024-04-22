@@ -1,12 +1,12 @@
 import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Vditor from 'vditor';
 
 import { PageContainer } from '@ant-design/pro-components';
 import 'vditor/dist/index.css';
 
 export const Component: FC = () => {
-  const [, setVd] = useState<Vditor>();
+  const editorRef = useRef<HTMLDivElement>(null);
 
   const toolbar: Array<string | IMenuItem> = [
     'headings',
@@ -41,23 +41,25 @@ export const Component: FC = () => {
   ];
 
   useEffect(() => {
-    const vditor = new Vditor('vditor', {
-      height: '100%',
-      mode: 'sv',
-      preview: {
-        mode: 'both',
-      },
-      toolbar: toolbar,
-      after: () => {
-        vditor.setValue('`Vditor` 最小代码示例');
-      },
-    });
-    setVd(vditor);
+    if (editorRef && editorRef.current) {
+      const vditor = new Vditor(editorRef.current, {
+        cache: { id: 'veditor' },
+        height: '100%',
+        mode: 'sv',
+        preview: {
+          mode: 'both',
+        },
+        toolbar: toolbar,
+        after: () => {
+          vditor.setValue('`Vditor` 最小代码示例');
+        },
+      });
+    }
   }, [toolbar]);
   return (
     <PageContainer title={false} className="p-4 pt-10">
       <div className="h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]">
-        <div id="vditor" className="vditor" />
+        <div ref={editorRef} className="vditor" />
       </div>
     </PageContainer>
   );
