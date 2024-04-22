@@ -2,11 +2,10 @@ import { PageContainer } from '@ant-design/pro-components';
 import { createId } from '@paralleldrive/cuid2';
 import { TwitterSnowflake } from '@sapphire/snowflake';
 import { useCounter } from 'ahooks';
+import type { SegmentedProps } from 'antd';
 import { Button, Card, Segmented } from 'antd';
-import type { SegmentedLabeledOption } from 'antd/es/segmented';
 import ObjectID from 'bson-objectid';
 import { nanoid } from 'nanoid';
-import type { SegmentedRawOption, SegmentedValue } from 'rc-segmented';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 import { ulid } from 'ulid';
@@ -15,11 +14,11 @@ import { v4 as uuidv4 } from 'uuid';
 import TextResultBox from '../../../components/TextResultBox.tsx';
 
 export const Component: FC = () => {
-  const [type, setType] = useState<SegmentedValue>('cuid');
+  const [type, setType] = useState<SegmentedProps['value']>('cuid');
   const [result, setResult] = useState<string>('');
   const [counter, { inc }] = useCounter(0);
 
-  const options: (SegmentedRawOption | SegmentedLabeledOption)[] = [
+  const options: SegmentedProps['options'] = [
     { label: 'Cuid2', value: 'cuid' },
     { label: 'BSON ObjectID', value: 'objectid' },
     { label: 'Nano ID', value: 'nanoid' },
