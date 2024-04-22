@@ -41,6 +41,7 @@ next-env.d.ts
 /.next/
 /out/
 /build/
+/dist/
 
 ====== next-pwa ======
 **/public/precache.*.*.js
