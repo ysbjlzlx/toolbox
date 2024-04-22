@@ -50,10 +50,10 @@ export const Component: FC = () => {
       toolbar: toolbar,
       after: () => {
         vditor.setValue('`Vditor` 最小代码示例');
-        setVd(vditor);
       },
     });
-  }, []);
+    setVd(vditor);
+  }, [toolbar]);
   return (
     <PageContainer title={false} className="p-4 pt-10">
       <div className="h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]">
