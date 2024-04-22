@@ -128,7 +128,8 @@
   "packageManager": "pnpm@9.0.5",
   "pnpm": {
     "overrides": {
-      "@typescript-eslint/parser": "^7.7.0"
+      "@typescript-eslint/parser": "7.7.0",
+      "rollup": "4.15.0"
     }
   }
 }
