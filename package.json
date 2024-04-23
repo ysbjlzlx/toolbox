@@ -14,8 +14,7 @@
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
-    "test": "vitest",
-    "update": "npx npm-check-updates -u && npm install && npm run build"
+    "test": "vitest"
   },
   "dependencies": {
     "@ant-design/colors": "7.0.2",
