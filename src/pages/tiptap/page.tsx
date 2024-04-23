@@ -1,4 +1,4 @@
-import { PageContainer } from '@ant-design/pro-components';
+import { PageContainer } from '@/components/ui';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import Highlight from '@tiptap/extension-highlight';
 import ExtensionLink from '@tiptap/extension-link';
@@ -259,23 +259,21 @@ export const Component: FC = () => {
   ];
 
   return (
-    <PageContainer title={false}>
-      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh ">
-        <div className="rounded border-solid p-4">
-          <EditorProvider
-            slotBefore={<MenuBar />}
-            extensions={extensions}
-            editorProps={editorProps}
-            content={content}
-            onUpdate={({ editor }) => {
-              console.log(editor.getJSON());
-              console.log(editor.getHTML());
-              console.log(editor.getText());
-            }}
-          >
-            {null}
-          </EditorProvider>
-        </div>
+    <PageContainer className="flex h-full flex-col">
+      <div className="flex-1 overflow-auto rounded-[8px] border-solid p-4">
+        <EditorProvider
+          slotBefore={<MenuBar />}
+          extensions={extensions}
+          editorProps={editorProps}
+          content={content}
+          onUpdate={({ editor }) => {
+            console.log(editor.getJSON());
+            console.log(editor.getHTML());
+            console.log(editor.getText());
+          }}
+        >
+          {null}
+        </EditorProvider>
       </div>
     </PageContainer>
   );
