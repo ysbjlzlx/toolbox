@@ -70,7 +70,7 @@
     "react-codemirror-merge": "4.21.25",
     "react-datasheet": "1.4.12",
     "react-dom": "18.2.0",
-    "react-i18next": "14.1.0",
+    "react-i18next": "14.1.1",
     "react-router-dom": "6.22.3",
     "tailwind-merge": "2.3.0",
     "ulid": "2.3.0",
