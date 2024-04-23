@@ -8,39 +8,38 @@ import 'vditor/dist/index.css';
 export const Component: FC = () => {
   const editorRef = useRef<HTMLDivElement>(null);
 
-  const toolbar: Array<string | IMenuItem> = [
-    'headings',
-    'bold',
-    'italic',
-    'strike',
-    'link',
-    '|',
-    'list',
-    'ordered-list',
-    'check',
-    'outdent',
-    'indent',
-    '|',
-    'quote',
-    'line',
-    'code',
-    'inline-code',
-    'insert-before',
-    'insert-after',
-    '|',
-    'table',
-    '|',
-    'undo',
-    'redo',
-    '|',
-    'edit-mode',
-    {
-      name: 'more',
-      toolbar: ['both', 'export', 'outline', 'preview', 'devtools', 'info', 'help'],
-    },
-  ];
-
   useEffect(() => {
+    const toolbar: Array<string | IMenuItem> = [
+      'headings',
+      'bold',
+      'italic',
+      'strike',
+      'link',
+      '|',
+      'list',
+      'ordered-list',
+      'check',
+      'outdent',
+      'indent',
+      '|',
+      'quote',
+      'line',
+      'code',
+      'inline-code',
+      'insert-before',
+      'insert-after',
+      '|',
+      'table',
+      '|',
+      'undo',
+      'redo',
+      '|',
+      'edit-mode',
+      {
+        name: 'more',
+        toolbar: ['both', 'export', 'outline', 'preview', 'devtools', 'info', 'help'],
+      },
+    ];
     if (editorRef && editorRef.current) {
       const vditor = new Vditor(editorRef.current, {
         cache: { id: 'veditor' },
@@ -55,7 +54,7 @@ export const Component: FC = () => {
         },
       });
     }
-  }, [toolbar]);
+  }, []);
   return (
     <PageContainer title={false} className="p-4 pt-10">
       <div className="h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]">
