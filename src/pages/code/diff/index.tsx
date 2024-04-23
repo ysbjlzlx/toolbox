@@ -17,7 +17,7 @@ five`;
 export const Component: FC = () => {
   return (
     <PageContainer>
-      <Card className="h-full">
+      <Card className="h-full overflow-auto">
         <CodeMirrorMerge orientation="a-b" revertControls="a-to-b" theme={githubLight} lang="plain">
           <Original value={doc} extensions={[EditorView.editable.of(true), EditorState.readOnly.of(false)]} />
           <Modified

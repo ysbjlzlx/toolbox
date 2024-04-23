@@ -259,21 +259,23 @@ export const Component: FC = () => {
   ];
 
   return (
-    <PageContainer className="flex h-full flex-col">
-      <div className="flex-1 overflow-auto rounded-[8px] border-solid p-4">
-        <EditorProvider
-          slotBefore={<MenuBar />}
-          extensions={extensions}
-          editorProps={editorProps}
-          content={content}
-          onUpdate={({ editor }) => {
-            console.log(editor.getJSON());
-            console.log(editor.getHTML());
-            console.log(editor.getText());
-          }}
-        >
-          {null}
-        </EditorProvider>
+    <PageContainer>
+      <div className="flex h-full flex-col">
+        <div className="flex-1 overflow-auto rounded-[8px] border-solid p-4">
+          <EditorProvider
+            slotBefore={<MenuBar />}
+            extensions={extensions}
+            editorProps={editorProps}
+            content={content}
+            onUpdate={({ editor }) => {
+              console.log(editor.getJSON());
+              console.log(editor.getHTML());
+              console.log(editor.getText());
+            }}
+          >
+            {null}
+          </EditorProvider>
+        </div>
       </div>
     </PageContainer>
   );
