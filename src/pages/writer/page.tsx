@@ -1,4 +1,4 @@
-import { PageContainer } from '@ant-design/pro-components';
+import { PageContainer } from '@/components/ui';
 import { Card } from 'antd';
 import Quill from 'quill';
 import type { FC } from 'react';
@@ -27,8 +27,8 @@ export const Component: FC = () => {
   }, []);
 
   return (
-    <PageContainer title={false}>
-      <div className="flex h-dvh flex-col p-4">
+    <PageContainer>
+      <div className="flex h-full flex-col">
         <div>
           <Card className="mb-4">
             <CopyTextButton text={value} icon={false}>
