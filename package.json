@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
+    "lint": "eslint src/**",
+    "lint:fix": "eslint src/** --fix",
     "prepare": "husky",
     "prettier": "prettier --ignore-unknown src ",
     "prettier:fix": "prettier --write --ignore-unknown src",
