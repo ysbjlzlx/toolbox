@@ -28,13 +28,15 @@ export const Component: FC = () => {
 
   return (
     <PageContainer title={false}>
-      <div>
-        <Card className="mb-4">
-          <CopyTextButton text={value} icon={false}>
-            复制源码
-          </CopyTextButton>
-        </Card>
-        <div ref={quillRef}>
+      <div className="flex h-dvh flex-col p-4">
+        <div>
+          <Card className="mb-4">
+            <CopyTextButton text={value} icon={false}>
+              复制源码
+            </CopyTextButton>
+          </Card>
+        </div>
+        <div ref={quillRef} className="flex-1 overflow-auto rounded-b-[8px] bg-white">
           <h2>Demo Content</h2>
           <p>
             Preset build with <code>snow</code> theme, and some common formats.
