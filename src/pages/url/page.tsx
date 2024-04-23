@@ -9,11 +9,11 @@ export const Component: FC = () => {
   const [uri, setUri] = useState<string>('');
   const [encodedURI, setEncodedURI] = useState<string>('');
 
-  const handleEncodeURIComponent = function () {
+  const handleEncodeURIComponent = () => {
     setEncodedURI(encodeURIComponent(uri));
   };
 
-  const handleDecodeURIComponent = function () {
+  const handleDecodeURIComponent = () => {
     setEncodedURI(decodeURIComponent(uri));
   };
 
