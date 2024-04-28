@@ -198,8 +198,8 @@ importers:
         specifier: 3.6.2
         version: 3.6.2
       yaml:
-        specifier: 2.4.1
-        version: 2.4.1
+        specifier: 2.4.2
+        version: 2.4.2
       zod:
         specifier: 3.23.4
         version: 3.23.4
@@ -5491,8 +5491,8 @@ packages:
     resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
     engines: {node: '>= 14'}
 
-  yaml@2.4.1:
-    resolution: {integrity: sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==}
+  yaml@2.4.2:
+    resolution: {integrity: sha512-B3VqDZ+JAg1nZpaEmWtTXUlBneoGx6CPM9b0TENK6aoSu5t73dItudwdgmi6tHlIZZId4dZ9skcAQ2UbcyAeVA==}
     engines: {node: '>= 14'}
     hasBin: true
 
@@ -9763,7 +9763,7 @@ snapshots:
   postcss-load-config@4.0.2(postcss@8.4.38):
     dependencies:
       lilconfig: 3.1.1
-      yaml: 2.4.1
+      yaml: 2.4.2
     optionalDependencies:
       postcss: 8.4.38
 
@@ -11478,7 +11478,7 @@ snapshots:
 
   yaml@2.3.4: {}
 
-  yaml@2.4.1: {}
+  yaml@2.4.2: {}
 
   yocto-queue@0.1.0: {}
 
