@@ -66,7 +66,7 @@
     "quill": "2.0.0",
     "react": "18.3.1",
     "react-ace": "11.0.1",
-    "react-codemirror-merge": "4.21.25",
+    "react-codemirror-merge": "4.22.0",
     "react-datasheet": "1.4.12",
     "react-dom": "18.3.1",
     "react-i18next": "14.1.1",
