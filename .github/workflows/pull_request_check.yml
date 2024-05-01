@@ -7,7 +7,7 @@ on:
       - develop
 
 jobs:
-  init:
+  lint:
     runs-on: ubuntu-22.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -23,14 +23,22 @@ jobs:
         with:
           version: 9
           run_install: true
-  lint:
-    needs: init
-    runs-on: ubuntu-22.04
-    steps:
       - run: pnpm run lint
   build:
-    needs: init
     runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: true
       - run: pnpm run build
 
