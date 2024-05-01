@@ -64,7 +64,7 @@
     "lucide-react": "0.376.0",
     "nanoid": "5.0.7",
     "otpauth": "9.2.3",
-    "quill": "2.0.0",
+    "quill": "2.0.1",
     "react": "18.3.1",
     "react-ace": "11.0.1",
     "react-codemirror-merge": "4.22.0",
