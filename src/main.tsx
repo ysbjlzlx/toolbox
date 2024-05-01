@@ -6,7 +6,7 @@ import Loading from '@/components/Loading';
 
 import router from '@/router.tsx';
 
-import '@/locale';
+import '@/i18n';
 
 import 'antd/dist/reset.css';
 import './globals.css';
