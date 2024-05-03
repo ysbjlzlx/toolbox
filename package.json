@@ -87,7 +87,7 @@
   "devDependencies": {
     "@iconify/react": "4.1.1",
     "@tailwindcss/typography": "0.5.13",
-    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/jest-dom": "6.4.3",
     "@testing-library/react": "15.0.6",
     "@testing-library/user-event": "14.5.2",
     "@types/crypto-js": "4.2.2",
