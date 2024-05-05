@@ -150,8 +150,8 @@ importers:
         specifier: 5.0.7
         version: 5.0.7
       otpauth:
-        specifier: 9.2.3
-        version: 9.2.3
+        specifier: 9.2.4
+        version: 9.2.4
       quill:
         specifier: 2.0.1
         version: 2.0.1
@@ -3965,8 +3965,8 @@ packages:
   orderedmap@2.1.1:
     resolution: {integrity: sha512-TvAWxi0nDe1j/rtMcWcIj94+Ffe6n7zhow33h40SKxmsmozs6dz/e+EajymfoFcHd7sxNn8yHM8839uixMOV6g==}
 
-  otpauth@9.2.3:
-    resolution: {integrity: sha512-oAG55Ch4MBL5Jdg+RXfKiRCZ2lCwa/UIQKsmSfYbGGLSI4dErY1HPZv0JGPPESIYGyDO3s9iJqM4HU/1IppMoQ==}
+  otpauth@9.2.4:
+    resolution: {integrity: sha512-t0Nioq2Up2ZaT5AbpXZLTjrsNtLc/g/rVSaEThmKLErAuT9mrnAKJryiPOKc3rCH+3ycWBgKpRHYn+DHqfaPiQ==}
 
   p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
@@ -9693,7 +9693,7 @@ snapshots:
 
   orderedmap@2.1.1: {}
 
-  otpauth@9.2.3:
+  otpauth@9.2.4:
     dependencies:
       jssha: 3.3.1
 
