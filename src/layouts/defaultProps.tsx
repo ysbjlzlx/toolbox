@@ -53,13 +53,12 @@ export const menuData: MenuDataItem[] = [
         name: 'QRCode',
         desc: '为字符串生成对应的 QRCode 图片',
         path: '/image/qrcode',
-        icon: <Iconify icon="material-symbols:qr-code" />,
       },
     ],
   },
   {
     name: '生成器（Generator）',
-    icon: <Iconify icon="la:dice-three" />,
+    icon: <Iconify icon="lucide:dices" />,
     children: [
       {
         name: '随机字符串（String）',
@@ -73,7 +72,7 @@ export const menuData: MenuDataItem[] = [
     name: 'URL',
     desc: 'URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。',
     path: '/url',
-    icon: <Iconify icon="material-symbols:link" />,
+    icon: <Iconify icon="lucide:link" />,
   },
   {
     name: '文本编辑器',
@@ -107,19 +106,19 @@ export const menuData: MenuDataItem[] = [
     name: 'Excel',
     desc: 'Excel 转 JSON',
     path: '/excel',
-    icon: <Iconify icon="material-symbols:table-chart-outline" />,
+    icon: <Iconify icon="lucide:sheet" />,
   },
   {
     name: 'Hash',
     desc: '计算 MD5、SHA1、SHA256、SHA512 哈希值',
     path: '/hash',
-    icon: <Iconify icon="material-symbols:tag" />,
+    icon: <Iconify icon="lucide:hash" />,
   },
   {
     name: '时间戳（Timestamp）',
     desc: '时间戳（Timestamp）',
     path: '/timestamp',
-    icon: <Iconify icon="material-symbols:av-timer" />,
+    icon: <Iconify icon="lucide:timer" />,
   },
   {
     name: '换算（Transform）',
