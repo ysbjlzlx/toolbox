@@ -42,6 +42,10 @@ const routes: RouteObject[] = [
             path: 'placeholder',
             lazy: () => import('@/pages/image/placeholder/page.tsx'),
           },
+          {
+            path: 'qrcode',
+            lazy: () => import('@/pages/image/qrcode/page.tsx'),
+          },
         ],
       },
       {
@@ -80,10 +84,6 @@ const routes: RouteObject[] = [
       {
         path: '/markdown',
         lazy: () => import('@/pages/markdown'),
-      },
-      {
-        path: '/qrcode',
-        lazy: () => import('@/pages/qrcode/page.tsx'),
       },
       {
         path: '/timestamp',

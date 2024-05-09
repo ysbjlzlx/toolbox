@@ -49,6 +49,12 @@ export const menuData: MenuDataItem[] = [
         desc: '快速便捷生成占位图',
         path: '/image/placeholder',
       },
+      {
+        name: 'QRCode',
+        desc: '为字符串生成对应的 QRCode 图片',
+        path: '/image/qrcode',
+        icon: <Iconify icon="material-symbols:qr-code" />,
+      },
     ],
   },
   {
@@ -108,12 +114,6 @@ export const menuData: MenuDataItem[] = [
     desc: '计算 MD5、SHA1、SHA256、SHA512 哈希值',
     path: '/hash',
     icon: <Iconify icon="material-symbols:tag" />,
-  },
-  {
-    name: 'QRCode',
-    desc: '为字符串生成对应的 QRCode 图片',
-    path: '/qrcode',
-    icon: <Iconify icon="material-symbols:qr-code" />,
   },
   {
     name: '时间戳（Timestamp）',
