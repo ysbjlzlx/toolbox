@@ -18,6 +18,7 @@ const LocalImage: FC<PlaceholderConfig> = (props) => {
         .attr('version', '1.1')
         .attr('width', props.width)
         .attr('height', props.height)
+        .attr('role', 'img')
         .style('display', 'block');
 
       const g = svg.append('g');
@@ -61,9 +62,11 @@ const LocalImage: FC<PlaceholderConfig> = (props) => {
           下载
         </Button>
       </div>
-      <ImageWrapper>
-        <div ref={containerRef} style={{ display: 'inline-block' }} />
-      </ImageWrapper>
+      <div className="m-4">
+        <ImageWrapper>
+          <div ref={containerRef} style={{ display: 'inline-block' }} />
+        </ImageWrapper>
+      </div>
     </div>
   );
 };

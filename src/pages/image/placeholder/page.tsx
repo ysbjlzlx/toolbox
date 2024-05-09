@@ -1,14 +1,14 @@
-import { gray } from '@ant-design/colors';
+import { cyan, gray, red } from '@ant-design/colors';
 import {
   FormControlRender,
   PageContainer,
-  pickControlPropsWithId,
   ProForm,
   ProFormDigit,
   ProFormSelect,
   ProFormText,
+  pickControlPropsWithId,
 } from '@ant-design/pro-components';
-import type { TabsProps } from 'antd';
+import type { ColorPickerProps, TabsProps } from 'antd';
 import { Card, ColorPicker, Form, Tabs } from 'antd';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
@@ -25,7 +25,7 @@ const defaultValues = {
   suffix: '.png',
   bgColor: '#404040',
   textColor: '#A6A6A6',
-  text: '480x320',
+  text: 'Placeholder',
 };
 
 const suffixOptions = [
@@ -46,6 +46,11 @@ export const Component: FC = () => {
     setPlaceholderConfig(values);
   }, [bgColor, form, textColor]);
 
+  const colorPresets: ColorPickerProps['presets'] = [
+    { label: 'Gray', colors: gray },
+    { label: 'Cyan', colors: cyan },
+    { label: 'Red', colors: red },
+  ];
   const tabsProps: TabsProps = {
     defaultActiveKey: 'LocalImage',
     items: [
@@ -105,7 +110,7 @@ export const Component: FC = () => {
                       onChange={(color) => {
                         form.setFieldValue('bgColor', color.toHexString());
                       }}
-                      presets={[{ label: 'Gray', colors: gray }]}
+                      presets={colorPresets}
                     />
                   );
                 }}
@@ -124,7 +129,7 @@ export const Component: FC = () => {
                       onChange={(color) => {
                         form.setFieldValue('textColor', color.toHexString());
                       }}
-                      presets={[{ label: 'Gray', colors: gray }]}
+                      presets={colorPresets}
                     />
                   );
                 }}
