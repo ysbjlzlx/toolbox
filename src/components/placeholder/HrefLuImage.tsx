@@ -1,4 +1,4 @@
-import ImageWrapper from '@/pages/generator/image/ImageWrapper';
+import ImageWrapper from '@/pages/image/placeholder/ImageWrapper.tsx';
 import { Image } from 'antd';
 import { useEffect, useState } from 'react';
 import type { PlaceholderConfig } from './index';

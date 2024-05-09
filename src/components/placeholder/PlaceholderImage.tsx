@@ -1,7 +1,7 @@
 import { Image } from 'antd';
 import { useEffect, useState } from 'react';
 
-import ImageWrapper from '@/pages/generator/image/ImageWrapper.tsx';
+import ImageWrapper from '@/pages/image/placeholder/ImageWrapper.tsx';
 import type { PlaceholderConfig } from './index';
 import { defaultConfig, resolveConfig } from './util';
 

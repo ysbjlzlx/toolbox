@@ -41,6 +41,17 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
+    name: '图片',
+    icon: <Iconify icon="lucide:image" />,
+    children: [
+      {
+        name: '占位图',
+        desc: '快速便捷生成占位图',
+        path: '/image/placeholder',
+      },
+    ],
+  },
+  {
     name: '生成器（Generator）',
     icon: <Iconify icon="la:dice-three" />,
     children: [
@@ -50,11 +61,6 @@ export const menuData: MenuDataItem[] = [
         path: '/generator/string',
       },
       { name: 'ID', path: '/generator/id' },
-      {
-        name: 'Image',
-        desc: '快速便捷生成占位图',
-        path: '/generator/image',
-      },
     ],
   },
   {

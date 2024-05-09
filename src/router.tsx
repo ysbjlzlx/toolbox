@@ -36,16 +36,21 @@ const routes: RouteObject[] = [
         ],
       },
       {
+        path: '/image',
+        children: [
+          {
+            path: 'placeholder',
+            lazy: () => import('@/pages/image/placeholder/page.tsx'),
+          },
+        ],
+      },
+      {
         path: '/excel',
         lazy: () => import('@/pages/excel/page.tsx'),
       },
       {
         path: '/generator/id',
         lazy: () => import('@/pages/generator/id/page.tsx'),
-      },
-      {
-        path: '/generator/image',
-        lazy: () => import('@/pages/generator/image/page.tsx'),
       },
       {
         path: '/generator/string',
