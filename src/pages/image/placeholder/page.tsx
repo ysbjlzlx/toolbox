@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import type { PlaceholderConfig } from '@/components/placeholder';
 import DummyImage from '@/components/placeholder/DummyImage.tsx';
 import HrefLuImage from '@/components/placeholder/HrefLuImage.tsx';
+import LocalImage from '@/components/placeholder/LocalImage.tsx';
 import PlaceholderImage from '@/components/placeholder/PlaceholderImage.tsx';
 
 const defaultValues = {
@@ -45,8 +46,13 @@ export const Component: FC = () => {
   }, [bgColor, form, textColor]);
 
   const tabsProps: TabsProps = {
-    defaultActiveKey: 'HrefLuImage',
+    defaultActiveKey: 'LocalImage',
     items: [
+      {
+        key: 'LocalImage',
+        label: 'Local',
+        children: <LocalImage {...placeholderConfig} />,
+      },
       {
         key: 'HrefLuImage',
         label: 'iph.href.lu',
