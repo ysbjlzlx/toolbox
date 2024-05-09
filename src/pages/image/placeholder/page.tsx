@@ -1,3 +1,4 @@
+import { gray } from '@ant-design/colors';
 import {
   FormControlRender,
   PageContainer,
@@ -19,12 +20,12 @@ import LocalImage from '@/components/placeholder/LocalImage.tsx';
 import PlaceholderImage from '@/components/placeholder/PlaceholderImage.tsx';
 
 const defaultValues = {
-  width: 320,
+  width: 480,
   height: 320,
   suffix: '.png',
-  bgColor: '#8c8c8c',
-  textColor: '#f0f0f0',
-  text: 'img',
+  bgColor: '#404040',
+  textColor: '#A6A6A6',
+  text: '480x320',
 };
 
 const suffixOptions = [
@@ -104,6 +105,7 @@ export const Component: FC = () => {
                       onChange={(color) => {
                         form.setFieldValue('bgColor', color.toHexString());
                       }}
+                      presets={[{ label: 'Gray', colors: gray }]}
                     />
                   );
                 }}
@@ -122,12 +124,13 @@ export const Component: FC = () => {
                       onChange={(color) => {
                         form.setFieldValue('textColor', color.toHexString());
                       }}
+                      presets={[{ label: 'Gray', colors: gray }]}
                     />
                   );
                 }}
               </FormControlRender>
             </ProForm.Item>
-            <ProFormText label="文本" name="text" allowClear={false} fieldProps={{ size: 'large' }} />
+            <ProFormText label="文本" name="text" allowClear fieldProps={{ size: 'large' }} />
           </div>
         </ProForm>
         <div>
