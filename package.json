@@ -34,7 +34,7 @@
     "@types/d3": "7.4.3",
     "@uiw/codemirror-theme-github": "4.22.0",
     "@uiw/react-codemirror": "4.22.0",
-    "ace-builds": "1.33.1",
+    "ace-builds": "1.33.2",
     "ahooks": "3.7.11",
     "antd": "5.17.0",
     "ascii85": "1.0.2",
