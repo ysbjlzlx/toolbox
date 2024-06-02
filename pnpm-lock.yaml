@@ -159,8 +159,8 @@ importers:
         specifier: 5.0.7
         version: 5.0.7
       otpauth:
-        specifier: 9.2.4
-        version: 9.2.4
+        specifier: 9.3.0
+        version: 9.3.0
       quill:
         specifier: 2.0.2
         version: 2.0.2
@@ -3908,9 +3908,6 @@ packages:
     resolution: {integrity: sha512-89lrxpwp+IEcJ6kwglF0HH3Tl17J08JEpYfXnvvjdp4zV4rjSoGu2NdQHxBs7yTOk3ETjTn9du48pBy8iBqj1w==}
     hasBin: true
 
-  jssha@3.3.1:
-    resolution: {integrity: sha512-VCMZj12FCFMQYcFLPRm/0lOBbLi8uM2BhXPTqw3U4YAfs4AZfiApOoBLoN8cQE60Z50m1MYMTQVCfgF/KaCVhQ==}
-
   jsx-ast-utils@3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
@@ -4235,8 +4232,8 @@ packages:
   orderedmap@2.1.1:
     resolution: {integrity: sha512-TvAWxi0nDe1j/rtMcWcIj94+Ffe6n7zhow33h40SKxmsmozs6dz/e+EajymfoFcHd7sxNn8yHM8839uixMOV6g==}
 
-  otpauth@9.2.4:
-    resolution: {integrity: sha512-t0Nioq2Up2ZaT5AbpXZLTjrsNtLc/g/rVSaEThmKLErAuT9mrnAKJryiPOKc3rCH+3ycWBgKpRHYn+DHqfaPiQ==}
+  otpauth@9.3.0:
+    resolution: {integrity: sha512-415wsVsJmwiOI6/Anjry9gsk23zJ6Sx5o3lIRP3xL+5D3luaB2mBs/eNCyxMpZTPKpmsyiLy1wYcQiKd22LNXg==}
 
   p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
@@ -9972,8 +9969,6 @@ snapshots:
 
   jsonrepair@3.8.0: {}
 
-  jssha@3.3.1: {}
-
   jsx-ast-utils@3.3.5:
     dependencies:
       array-includes: 3.1.8
@@ -10290,9 +10285,9 @@ snapshots:
 
   orderedmap@2.1.1: {}
 
-  otpauth@9.2.4:
+  otpauth@9.3.0:
     dependencies:
-      jssha: 3.3.1
+      '@noble/hashes': 1.4.0
 
   p-limit@3.1.0:
     dependencies:
