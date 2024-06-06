@@ -198,8 +198,8 @@ importers:
         specifier: 9.0.1
         version: 9.0.1
       vanilla-jsoneditor:
-        specifier: 0.23.6
-        version: 0.23.6(@lezer/common@1.2.1)
+        specifier: 0.23.7
+        version: 0.23.7(@lezer/common@1.2.1)
       vditor:
         specifier: 3.10.4
         version: 3.10.4
@@ -5572,8 +5572,8 @@ packages:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
 
-  vanilla-jsoneditor@0.23.6:
-    resolution: {integrity: sha512-+G21YX35bPDQA/bhOJf3gpJ11sjXuuvZ9F3inVnCs/4EwZIL7fmg81VNo89lV93/ai2hqrF27B+fKSXfCAICQg==}
+  vanilla-jsoneditor@0.23.7:
+    resolution: {integrity: sha512-Xss0uWPPc9IigrHGxWgPvJYYxkqvDB+tpOGN6xXXZ2FlRKRgQumKDLn7dZRANZ035siyrjL6Nzbz2O6CY9IkNw==}
 
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
@@ -11897,7 +11897,7 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  vanilla-jsoneditor@0.23.6(@lezer/common@1.2.1):
+  vanilla-jsoneditor@0.23.7(@lezer/common@1.2.1):
     dependencies:
       '@codemirror/autocomplete': 6.16.2(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.27.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.6.0
