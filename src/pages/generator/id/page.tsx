@@ -8,10 +8,9 @@ import ObjectID from 'bson-objectid';
 import { nanoid } from 'nanoid';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
-import { ulid } from 'ulid';
 import { v4 as uuidv4 } from 'uuid';
 
-import TextResultBox from '../../../components/TextResultBox.tsx';
+import TextResultBox from '@/components/TextResultBox.tsx';
 
 export const Component: FC = () => {
   const [type, setType] = useState<SegmentedProps['value']>('cuid');
@@ -22,7 +21,6 @@ export const Component: FC = () => {
     { label: 'Cuid2', value: 'cuid' },
     { label: 'BSON ObjectID', value: 'objectid' },
     { label: 'Nano ID', value: 'nanoid' },
-    { label: 'ULID', value: 'ulid' },
     { label: 'UUID', value: 'uuid' },
     { label: 'Snowflake ID', value: 'snowflakeid' },
   ];
@@ -34,8 +32,6 @@ export const Component: FC = () => {
       setResult(ObjectID().toHexString());
     } else if (type === 'nanoid') {
       setResult(nanoid());
-    } else if (type === 'ulid') {
-      setResult(ulid());
     } else if (type === 'uuid') {
       setResult(uuidv4());
     } else if (type === 'snowflakeid') {
