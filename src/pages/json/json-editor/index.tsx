@@ -18,7 +18,7 @@ export const Component = () => {
     const item: TabsProps['items'] = jsonTabs.map((idx) => {
       return {
         key: idx,
-        label: idx,
+        label: `Tab ${idx}`,
         closable: true,
         children: <JsonEditor idx={idx} />,
         className: 'h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]',
