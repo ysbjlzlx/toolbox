@@ -1,16 +1,12 @@
 export default {
-  'package.json': ['prettier --write'],
-  '**/*.css': ['stylelint --fix', 'prettier --write --ignore-unknown'],
-  '*.md': 'prettier --parser markdown --write --ignore-unknown',
-  '**/*.js?(x)': (filenames) =>
-    filenames
-      .map((filename) => [`eslint --fix '${filename}'`, `prettier --write --ignore-unknown '${filename}'`])
-      .flat(),
-  '**/*.ts?(x)': (filenames) =>
-    filenames
-      .map((filename) => [
-        `eslint --fix '${filename}'`,
-        `prettier --parser typescript --write --ignore-unknown '${filename}'`,
-      ])
-      .flat(),
+  "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+    "biome check --files-ignore-unknown=true", // Check formatting and lint
+    "biome check --write --no-errors-on-unmatched", // Format, sort imports, lint, and apply safe fixes
+    "biome check --write --organize-imports-enabled=false --no-errors-on-unmatched", // format and apply safe fixes
+    "biome check --write --unsafe --no-errors-on-unmatched", // Format, sort imports, lints, apply safe/unsafe fixes
+    "biome format --write --no-errors-on-unmatched", // Format
+    "biome lint --write --no-errors-on-unmatched", // Lint and apply safe fixes
+  ],
+  "package.json": ["prettier --write"],
+  "**/*.css": ["stylelint --fix"],
 };

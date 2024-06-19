@@ -1,25 +1,25 @@
-import PageContainer from '@/components/ui/PageContainer.tsx';
-import type { SegmentedProps } from 'antd';
-import { Button, Card, Input, Segmented, Space } from 'antd';
-import { useCallback, useState } from 'react';
+import PageContainer from "@/components/ui/PageContainer.tsx";
+import type { SegmentedProps } from "antd";
+import { Button, Card, Input, Segmented, Space } from "antd";
+import { useCallback, useState } from "react";
 
-import TextResultBox from '@/components/TextResultBox.tsx';
-import type { BaseType } from '@/lib/BaseEncoder.ts';
-import { decode as baseDecode, encode as baseEncode } from '@/lib/BaseEncoder.ts';
+import TextResultBox from "@/components/TextResultBox.tsx";
+import type { BaseType } from "@/lib/BaseEncoder.ts";
+import { decode as baseDecode, encode as baseEncode } from "@/lib/BaseEncoder.ts";
 
 export const Component = () => {
-  const [type, setType] = useState<BaseType>('base-64');
-  const [plain, setPlain] = useState<string>('');
-  const [target, setTarget] = useState<string>('');
+  const [type, setType] = useState<BaseType>("base-64");
+  const [plain, setPlain] = useState<string>("");
+  const [target, setTarget] = useState<string>("");
 
-  const segmentedOptions: SegmentedProps['options'] = [
-    { label: 'Base16', value: 'base-16' },
-    { label: 'Base32', value: 'base-32', disabled: false },
-    { label: 'Z Base32', value: 'z-base-32', disabled: false },
-    { label: 'Base36', value: 'base-36', disabled: false },
-    { label: 'Base58', value: 'base-58', disabled: false },
-    { label: 'Base58 Check', value: 'base-58-check', disabled: false },
-    { label: 'Base64', value: 'base-64' },
+  const segmentedOptions: SegmentedProps["options"] = [
+    { label: "Base16", value: "base-16" },
+    { label: "Base32", value: "base-32", disabled: false },
+    { label: "Z Base32", value: "z-base-32", disabled: false },
+    { label: "Base36", value: "base-36", disabled: false },
+    { label: "Base58", value: "base-58", disabled: false },
+    { label: "Base58 Check", value: "base-58-check", disabled: false },
+    { label: "Base64", value: "base-64" },
   ];
 
   const encode = useCallback(() => {

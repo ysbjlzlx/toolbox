@@ -88,6 +88,7 @@
     "zustand": "4.5.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.1",
     "@iconify/react": "5.0.1",
     "@tailwindcss/typography": "0.5.13",
     "@testing-library/jest-dom": "6.4.6",
