@@ -7,6 +7,5 @@ export default {
     "biome format --write --no-errors-on-unmatched", // Format
     "biome lint --write --no-errors-on-unmatched", // Lint and apply safe fixes
   ],
-  "package.json": ["prettier --write"],
   "**/*.css": ["stylelint --fix"],
 };
