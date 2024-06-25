@@ -1,10 +1,10 @@
-import { PageContainer } from '@ant-design/pro-components';
-import { Card, Input, QRCode } from 'antd';
-import type { FC } from 'react';
-import { useState } from 'react';
+import { PageContainer } from "@ant-design/pro-components";
+import { Card, Input, QRCode } from "antd";
+import type { FC } from "react";
+import { useState } from "react";
 
 export const Component: FC = () => {
-  const [text, setText] = useState<string>('');
+  const [text, setText] = useState<string>("");
   const { TextArea } = Input;
 
   return (
@@ -21,7 +21,7 @@ export const Component: FC = () => {
             />
           </div>
           <div className="sm:col-span-1">
-            <QRCode value={text || 'toolbox.fanfou.dev'} className="h-full w-full" />
+            <QRCode value={text || "toolbox.fanfou.dev"} className="h-full w-full" />
           </div>
         </div>
       </Card>

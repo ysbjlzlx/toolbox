@@ -1,26 +1,26 @@
-import { PageContainer } from '@/components/ui';
-import { Card } from 'antd';
-import Quill from 'quill';
-import type { FC } from 'react';
-import { useCallback, useState } from 'react';
+import { PageContainer } from "@/components/ui";
+import { Card } from "antd";
+import Quill from "quill";
+import type { FC } from "react";
+import { useCallback, useState } from "react";
 
-import CopyTextButton from '@/components/CopyTextButton';
+import CopyTextButton from "@/components/CopyTextButton";
 
-import 'quill/dist/quill.snow.css';
+import "quill/dist/quill.snow.css";
 
 export const Component: FC = () => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>("");
 
   const quillRef = useCallback((node: HTMLElement | null) => {
     if (node) {
-      let quill = new Quill(node, {
+      const quill = new Quill(node, {
         modules: {
           toolbar: true,
         },
-        theme: 'snow',
+        theme: "snow",
       });
       setValue(quill.getSemanticHTML());
-      quill.on('text-change', () => {
+      quill.on("text-change", () => {
         setValue(quill.getSemanticHTML());
       });
     }

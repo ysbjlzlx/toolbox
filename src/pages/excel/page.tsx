@@ -1,15 +1,15 @@
-import { PageContainer } from '@ant-design/pro-components';
-import type { UploadProps } from 'antd';
-import { Button, Card, Space, Upload } from 'antd';
-import FileSaver from 'file-saver';
-import { useState } from 'react';
-import * as XLSX from 'xlsx';
+import { PageContainer } from "@ant-design/pro-components";
+import type { UploadProps } from "antd";
+import { Button, Card, Space, Upload } from "antd";
+import FileSaver from "file-saver";
+import { useState } from "react";
+import * as XLSX from "xlsx";
 
-import type { IAceOptions } from 'react-ace';
-import AceEditor from 'react-ace';
+import type { IAceOptions } from "react-ace";
+import AceEditor from "react-ace";
 
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/theme-monokai';
+import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/theme-monokai";
 
 const options: IAceOptions = {
   useWorker: false,
@@ -21,17 +21,17 @@ export const Component = () => {
   const [result, setResult] = useState<string>();
 
   const save = () => {
-    if (!result || result === '') {
+    if (!result || result === "") {
       return;
     }
     const t = Date.now();
-    const file = new File([result], t + '.json', {
-      type: 'text/plain;charset=utf-8',
+    const file = new File([result], `${t}.json`, {
+      type: "text/plain;charset=utf-8",
     });
     FileSaver.saveAs(file);
   };
   const uploadProps: UploadProps = {
-    accept: '.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel',
+    accept: ".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel",
     showUploadList: false,
     beforeUpload: async () => {
       return false;
@@ -48,7 +48,7 @@ export const Component = () => {
               }
               let data = e.target.result as ArrayBuffer;
               data = new Uint8Array(data);
-              const workbook = XLSX.read(data, { type: 'array' });
+              const workbook = XLSX.read(data, { type: "array" });
               console.log(workbook);
               const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
               const rows = XLSX.utils.sheet_to_json(firstSheet) || [];

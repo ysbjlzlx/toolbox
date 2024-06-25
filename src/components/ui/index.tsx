@@ -1,1 +1,1 @@
-export { default as PageContainer } from '@/components/ui/PageContainer';
+export { default as PageContainer } from "@/components/ui/PageContainer";

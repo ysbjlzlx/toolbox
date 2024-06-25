@@ -1,4 +1,4 @@
-import { cyan, gray, red } from '@ant-design/colors';
+import { cyan, gray, red } from "@ant-design/colors";
 import {
   FormControlRender,
   PageContainer,
@@ -7,71 +7,71 @@ import {
   ProFormSelect,
   ProFormText,
   pickControlPropsWithId,
-} from '@ant-design/pro-components';
-import type { ColorPickerProps, TabsProps } from 'antd';
-import { Card, ColorPicker, Form, Tabs } from 'antd';
-import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+} from "@ant-design/pro-components";
+import type { ColorPickerProps, TabsProps } from "antd";
+import { Card, ColorPicker, Form, Tabs } from "antd";
+import type { FC } from "react";
+import { useEffect, useState } from "react";
 
-import type { PlaceholderConfig } from '@/components/placeholder';
-import DummyImage from '@/components/placeholder/DummyImage.tsx';
-import HrefLuImage from '@/components/placeholder/HrefLuImage.tsx';
-import LocalImage from '@/components/placeholder/LocalImage.tsx';
-import PlaceholderImage from '@/components/placeholder/PlaceholderImage.tsx';
+import type { PlaceholderConfig } from "@/components/placeholder";
+import DummyImage from "@/components/placeholder/DummyImage.tsx";
+import HrefLuImage from "@/components/placeholder/HrefLuImage.tsx";
+import LocalImage from "@/components/placeholder/LocalImage.tsx";
+import PlaceholderImage from "@/components/placeholder/PlaceholderImage.tsx";
 
 const defaultValues = {
   width: 480,
   height: 320,
-  suffix: '.png',
-  bgColor: '#404040',
-  textColor: '#A6A6A6',
-  text: 'Placeholder',
+  suffix: ".png",
+  bgColor: "#404040",
+  textColor: "#A6A6A6",
+  text: "Placeholder",
 };
 
 const suffixOptions = [
-  { label: '.png', value: '.png' },
-  { label: '.jpg', value: '.jpg' },
-  { label: '.gif', value: '.gif' },
+  { label: ".png", value: ".png" },
+  { label: ".jpg", value: ".jpg" },
+  { label: ".gif", value: ".gif" },
 ];
 
 export const Component: FC = () => {
   const [form] = Form.useForm();
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
 
-  const bgColor = Form.useWatch('bgColor', { form, preserve: true });
-  const textColor = Form.useWatch('textColor', { form, preserve: true });
+  const bgColor = Form.useWatch("bgColor", { form, preserve: true });
+  const textColor = Form.useWatch("textColor", { form, preserve: true });
 
   useEffect(() => {
     const values = form.getFieldsValue();
-    setPlaceholderConfig(values);
+    setPlaceholderConfig({ ...values, bgColor, textColor });
   }, [bgColor, form, textColor]);
 
-  const colorPresets: ColorPickerProps['presets'] = [
-    { label: 'Gray', colors: gray },
-    { label: 'Cyan', colors: cyan },
-    { label: 'Red', colors: red },
+  const colorPresets: ColorPickerProps["presets"] = [
+    { label: "Gray", colors: gray },
+    { label: "Cyan", colors: cyan },
+    { label: "Red", colors: red },
   ];
   const tabsProps: TabsProps = {
-    defaultActiveKey: 'LocalImage',
+    defaultActiveKey: "LocalImage",
     items: [
       {
-        key: 'LocalImage',
-        label: 'Local',
+        key: "LocalImage",
+        label: "Local",
         children: <LocalImage {...placeholderConfig} />,
       },
       {
-        key: 'HrefLuImage',
-        label: 'iph.href.lu',
+        key: "HrefLuImage",
+        label: "iph.href.lu",
         children: <HrefLuImage {...placeholderConfig} />,
       },
       {
-        key: 'PlaceholderImage',
-        label: 'via.placeholder.com',
+        key: "PlaceholderImage",
+        label: "via.placeholder.com",
         children: <PlaceholderImage {...placeholderConfig} />,
       },
       {
-        key: 'DummyImage',
-        label: 'dummyimage.com',
+        key: "DummyImage",
+        label: "dummyimage.com",
         children: <DummyImage {...placeholderConfig} />,
       },
     ],
@@ -88,14 +88,14 @@ export const Component: FC = () => {
           }}
         >
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            <ProFormDigit label="宽度" name="width" fieldProps={{ size: 'large' }} />
-            <ProFormDigit label="高度" name="height" fieldProps={{ size: 'large' }} />
+            <ProFormDigit label="宽度" name="width" fieldProps={{ size: "large" }} />
+            <ProFormDigit label="高度" name="height" fieldProps={{ size: "large" }} />
             <ProFormSelect
               label="后缀名"
               name="suffix"
               options={suffixOptions}
               allowClear={false}
-              fieldProps={{ size: 'large' }}
+              fieldProps={{ size: "large" }}
             />
             <ProForm.Item label="背景颜色" name="bgColor">
               <FormControlRender>
@@ -108,7 +108,7 @@ export const Component: FC = () => {
                       className="w-full justify-start"
                       {...pickControlPropsWithId(itemProps)}
                       onChange={(color) => {
-                        form.setFieldValue('bgColor', color.toHexString());
+                        form.setFieldValue("bgColor", color.toHexString());
                       }}
                       presets={colorPresets}
                     />
@@ -127,7 +127,7 @@ export const Component: FC = () => {
                       className="w-full justify-start"
                       {...pickControlPropsWithId(itemProps)}
                       onChange={(color) => {
-                        form.setFieldValue('textColor', color.toHexString());
+                        form.setFieldValue("textColor", color.toHexString());
                       }}
                       presets={colorPresets}
                     />
@@ -135,7 +135,7 @@ export const Component: FC = () => {
                 }}
               </FormControlRender>
             </ProForm.Item>
-            <ProFormText label="文本" name="text" allowClear fieldProps={{ size: 'large' }} />
+            <ProFormText label="文本" name="text" allowClear fieldProps={{ size: "large" }} />
           </div>
         </ProForm>
         <div>

@@ -1,9 +1,9 @@
-import CopyTextButton from '@/components/CopyTextButton';
-import { useCountDown } from 'ahooks';
-import { Form, Input, Progress, Space } from 'antd';
-import { getSeconds } from 'date-fns';
-import type { TOTP } from 'otpauth';
-import { useEffect, useState } from 'react';
+import CopyTextButton from "@/components/CopyTextButton";
+import { useCountDown } from "ahooks";
+import { Form, Input, Progress, Space } from "antd";
+import { getSeconds } from "date-fns";
+import type { TOTP } from "otpauth";
+import { useEffect, useState } from "react";
 
 interface Props {
   totp?: TOTP;
@@ -11,7 +11,7 @@ interface Props {
 
 const TokenField = ({ totp }: Props) => {
   const [targetDate, setTargetDate] = useState<number>(0);
-  const [token, setToken] = useState<string>('');
+  const [token, setToken] = useState<string>("");
 
   useEffect(() => {
     setTargetDate(0);

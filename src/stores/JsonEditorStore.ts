@@ -1,7 +1,7 @@
-import type { Content } from 'vanilla-jsoneditor';
-import { Mode } from 'vanilla-jsoneditor';
-import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import type { Content } from "vanilla-jsoneditor";
+import { Mode } from "vanilla-jsoneditor";
+import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 interface JsonEditorStore {
   mode: Mode;
@@ -14,7 +14,7 @@ const useJsonEditorStore = create<JsonEditorStore>()(
   persist(
     (set) => ({
       mode: Mode.text,
-      content: { text: '' },
+      content: { text: "" },
       setMode: (val: Mode) =>
         set(() => {
           return { mode: val };
@@ -24,7 +24,7 @@ const useJsonEditorStore = create<JsonEditorStore>()(
           return { content: val };
         }),
     }),
-    { name: 'json-editor-store', storage: createJSONStorage(() => localStorage) },
+    { name: "json-editor-store", storage: createJSONStorage(() => localStorage) },
   ),
 );
 

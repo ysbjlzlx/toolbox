@@ -1,56 +1,56 @@
-import type { FC } from 'react';
-import { useEffect, useRef } from 'react';
-import Vditor from 'vditor';
+import type { FC } from "react";
+import { useEffect, useRef } from "react";
+import Vditor from "vditor";
 
-import { PageContainer } from '@ant-design/pro-components';
-import 'vditor/dist/index.css';
+import { PageContainer } from "@ant-design/pro-components";
+import "vditor/dist/index.css";
 
 export const Component: FC = () => {
   const editorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const toolbar: Array<string | IMenuItem> = [
-      'headings',
-      'bold',
-      'italic',
-      'strike',
-      'link',
-      '|',
-      'list',
-      'ordered-list',
-      'check',
-      'outdent',
-      'indent',
-      '|',
-      'quote',
-      'line',
-      'code',
-      'inline-code',
-      'insert-before',
-      'insert-after',
-      '|',
-      'table',
-      '|',
-      'undo',
-      'redo',
-      '|',
-      'edit-mode',
+      "headings",
+      "bold",
+      "italic",
+      "strike",
+      "link",
+      "|",
+      "list",
+      "ordered-list",
+      "check",
+      "outdent",
+      "indent",
+      "|",
+      "quote",
+      "line",
+      "code",
+      "inline-code",
+      "insert-before",
+      "insert-after",
+      "|",
+      "table",
+      "|",
+      "undo",
+      "redo",
+      "|",
+      "edit-mode",
       {
-        name: 'more',
-        toolbar: ['both', 'export', 'outline', 'preview', 'devtools', 'info', 'help'],
+        name: "more",
+        toolbar: ["both", "export", "outline", "preview", "devtools", "info", "help"],
       },
     ];
-    if (editorRef && editorRef.current) {
+    if (editorRef?.current) {
       const vditor = new Vditor(editorRef.current, {
-        cache: { id: 'veditor' },
-        height: '100%',
-        mode: 'sv',
+        cache: { id: "veditor" },
+        height: "100%",
+        mode: "sv",
         preview: {
-          mode: 'both',
+          mode: "both",
         },
         toolbar: toolbar,
         after: () => {
-          vditor.setValue('`Vditor` 最小代码示例');
+          vditor.setValue("`Vditor` 最小代码示例");
         },
       });
     }

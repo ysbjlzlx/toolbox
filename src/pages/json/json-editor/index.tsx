@@ -1,32 +1,32 @@
-import type { TabsProps } from 'antd';
-import { Tabs } from 'antd';
-import _ from 'lodash';
-import * as React from 'react';
-import { useEffect, useState } from 'react';
+import type { TabsProps } from "antd";
+import { Tabs } from "antd";
+import _ from "lodash";
+import type * as React from "react";
+import { useEffect, useState } from "react";
 
-import useJsonTabStore from '@/stores/JsonTabStore.ts';
-import { PageContainer } from '@ant-design/pro-components';
+import useJsonTabStore from "@/stores/JsonTabStore.ts";
+import { PageContainer } from "@ant-design/pro-components";
 
-import JsonEditor from './JsonEditor.tsx';
+import JsonEditor from "./JsonEditor.tsx";
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
 export const Component = () => {
   const { jsonTabs, activeKey, addJsonTab, removeJsonTab, setActiveKey } = useJsonTabStore();
-  const [items, setItems] = useState<TabsProps['items']>([]);
+  const [items, setItems] = useState<TabsProps["items"]>([]);
 
   useEffect(() => {
-    const item: TabsProps['items'] = jsonTabs.map((idx) => {
+    const item: TabsProps["items"] = jsonTabs.map((idx) => {
       return {
         key: idx,
         label: `Tab ${idx}`,
         closable: true,
         children: <JsonEditor idx={idx} />,
-        className: 'h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]',
+        className: "h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]",
       };
     });
     if (_.indexOf(jsonTabs, activeKey) === -1) {
       const lastItem = _.last(item);
-      setActiveKey(lastItem?.key || '0');
+      setActiveKey(lastItem?.key || "0");
     }
 
     setItems(item);
@@ -35,8 +35,8 @@ export const Component = () => {
   const onChange = (activeKey: string) => {
     setActiveKey(activeKey);
   };
-  const onEdit = (targetKey: React.MouseEvent | React.KeyboardEvent | string, action: 'add' | 'remove') => {
-    if (action === 'add') {
+  const onEdit = (targetKey: React.MouseEvent | React.KeyboardEvent | string, action: "add" | "remove") => {
+    if (action === "add") {
       add();
     } else {
       remove(targetKey);
@@ -44,7 +44,7 @@ export const Component = () => {
   };
 
   const add = () => {
-    let newActiveKey = '0';
+    let newActiveKey = "0";
     if (jsonTabs && jsonTabs.length > 0) {
       const keys = jsonTabs.map((i) => {
         return Number(i);
@@ -61,7 +61,7 @@ export const Component = () => {
     removeJsonTab(String(targetKey));
     localStorage.removeItem(`json-${targetKey}`);
     if (jsonTabs && jsonTabs.length <= 1) {
-      addJsonTab('0');
+      addJsonTab("0");
     }
   };
 

@@ -1,8 +1,8 @@
-import { Input, QRCode, Space } from 'antd';
-import type { TOTP } from 'otpauth';
+import { Input, QRCode, Space } from "antd";
+import type { TOTP } from "otpauth";
 
-import CopyTextButton from '@/components/CopyTextButton';
-import TokenField from './TokenField.tsx';
+import CopyTextButton from "@/components/CopyTextButton";
+import TokenField from "./TokenField.tsx";
 
 interface Props {
   totp?: TOTP;
@@ -12,7 +12,7 @@ const TotpCard = ({ totp }: Props) => {
   return (
     <div>
       <div>
-        <QRCode value={totp?.toString() || '-'} style={{ width: 128, height: 128 }} />
+        <QRCode value={totp?.toString() || "-"} style={{ width: 128, height: 128 }} />
       </div>
       <div className="mt-4">
         <TokenField totp={totp} />
@@ -20,7 +20,7 @@ const TotpCard = ({ totp }: Props) => {
 
       <div className="mt-4">
         <Space.Compact className="w-full">
-          <Input value={totp?.toString() || ''} />
+          <Input value={totp?.toString() || ""} />
           <CopyTextButton text={totp?.toString()} />
         </Space.Compact>
       </div>

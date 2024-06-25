@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
-import { icons } from 'lucide-react';
-import { memo } from 'react';
+import { cn } from "@/lib/utils";
+import { icons } from "lucide-react";
+import { memo } from "react";
 
 export interface IconProps {
   name: keyof typeof icons;
@@ -18,7 +18,7 @@ export const Icon = memo(({ name, className, strokeWidth, onClick }: IconProps) 
 
   return (
     <span role="img" className="anticon">
-      <IconComponent className={cn('h-4 w-4', className)} strokeWidth={strokeWidth || 2.5} onClick={onClick} />
+      <IconComponent className={cn("h-4 w-4", className)} strokeWidth={strokeWidth || 2.5} onClick={onClick} />
     </span>
   );
 });

@@ -1,26 +1,26 @@
-import type { SelectProps } from 'antd';
-import { Button, Card, Select } from 'antd';
-import XML from 'fast-xml-parser';
-import * as LosslessJSON from 'lossless-json';
-import { useState } from 'react';
-import type { IAceOptions } from 'react-ace';
-import AceEditor from 'react-ace';
-import YAML from 'yaml';
+import type { SelectProps } from "antd";
+import { Button, Card, Select } from "antd";
+import XML from "fast-xml-parser";
+import * as LosslessJSON from "lossless-json";
+import { useState } from "react";
+import type { IAceOptions } from "react-ace";
+import AceEditor from "react-ace";
+import YAML from "yaml";
 
-import Iconify from '@/components/Iconify';
-import PageContainer from '@/components/ui/PageContainer.tsx';
-import { format } from '@/utils/formatter.ts';
+import Iconify from "@/components/Iconify";
+import PageContainer from "@/components/ui/PageContainer.tsx";
+import { format } from "@/utils/formatter.ts";
 
-import 'ace-builds/src-noconflict/ext-searchbox';
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/mode-xml';
-import 'ace-builds/src-noconflict/mode-yaml';
-import 'ace-builds/src-noconflict/theme-monokai';
+import "ace-builds/src-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/mode-xml";
+import "ace-builds/src-noconflict/mode-yaml";
+import "ace-builds/src-noconflict/theme-monokai";
 
-const CodeTypeOptions: SelectProps['options'] = [
-  { label: 'JSON', value: 'json' },
-  { label: 'YAML', value: 'yaml' },
-  { label: 'XML', value: 'xml' },
+const CodeTypeOptions: SelectProps["options"] = [
+  { label: "JSON", value: "json" },
+  { label: "YAML", value: "yaml" },
+  { label: "XML", value: "xml" },
 ];
 
 const options: IAceOptions = {
@@ -37,10 +37,10 @@ const targetAceEditorOptions: IAceOptions = {
   showLineNumbers: true,
 };
 export const Component = () => {
-  const [sourceType, setSourceType] = useState<string>('json');
-  const [targetType, setTargetType] = useState<string>('yaml');
-  const [sourceValue, setSourceValue] = useState<string>('');
-  const [targetValue, setTargetValue] = useState<string>('');
+  const [sourceType, setSourceType] = useState<string>("json");
+  const [targetType, setTargetType] = useState<string>("yaml");
+  const [sourceValue, setSourceValue] = useState<string>("");
+  const [targetValue, setTargetValue] = useState<string>("");
 
   const onClickSyncAltBtn = () => {
     const targetTypeTmp = targetType;
@@ -48,7 +48,7 @@ export const Component = () => {
     setSourceType(targetTypeTmp);
   };
   const onClickConversionBtn = () => {
-    if (sourceValue === undefined || sourceValue === '') {
+    if (sourceValue === undefined || sourceValue === "") {
       return;
     }
 
@@ -56,11 +56,11 @@ export const Component = () => {
 
     // 解析 source
     try {
-      if (sourceType === 'json') {
+      if (sourceType === "json") {
         sourceObj = LosslessJSON.parse(sourceValue, null, LosslessJSON.parseNumberAndBigInt);
-      } else if (sourceType === 'yaml') {
+      } else if (sourceType === "yaml") {
         sourceObj = YAML.parse(sourceValue, { intAsBigInt: true });
-      } else if (sourceType === 'xml') {
+      } else if (sourceType === "xml") {
         const xmlParser = new XML.XMLParser();
         sourceObj = xmlParser.parse(sourceValue);
       }
@@ -70,15 +70,15 @@ export const Component = () => {
 
     // 设置 target
     try {
-      if (targetType === 'yaml') {
-        format(YAML.stringify(sourceObj), 'yaml').then((val) => {
+      if (targetType === "yaml") {
+        format(YAML.stringify(sourceObj), "yaml").then((val) => {
           setTargetValue(val);
         });
-      } else if (targetType === 'json') {
-        format(LosslessJSON.stringify(sourceObj) || '', 'json').then((val) => {
+      } else if (targetType === "json") {
+        format(LosslessJSON.stringify(sourceObj) || "", "json").then((val) => {
           setTargetValue(val);
         });
-      } else if (targetType === 'xml') {
+      } else if (targetType === "xml") {
         const xmlBuilder = new XML.XMLBuilder({
           ignoreAttributes: false,
           format: true,

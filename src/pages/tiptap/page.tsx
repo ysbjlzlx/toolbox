@@ -1,36 +1,36 @@
-import { PageContainer } from '@/components/ui';
-import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
-import Highlight from '@tiptap/extension-highlight';
-import ExtensionLink from '@tiptap/extension-link';
-import subscript from '@tiptap/extension-subscript';
-import superscript from '@tiptap/extension-superscript';
-import underline from '@tiptap/extension-underline';
-import { EditorProvider, useCurrentEditor } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
-import { Button, Dropdown, Space, Tooltip } from 'antd';
-import copy from 'copy-to-clipboard';
-import { common, createLowlight } from 'lowlight';
-import type { FC } from 'react';
-import { useCallback, useMemo } from 'react';
+import { PageContainer } from "@/components/ui";
+import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
+import Highlight from "@tiptap/extension-highlight";
+import ExtensionLink from "@tiptap/extension-link";
+import subscript from "@tiptap/extension-subscript";
+import superscript from "@tiptap/extension-superscript";
+import underline from "@tiptap/extension-underline";
+import { EditorProvider, useCurrentEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import { Button, Dropdown, Space, Tooltip } from "antd";
+import copy from "copy-to-clipboard";
+import { common, createLowlight } from "lowlight";
+import type { FC } from "react";
+import { useCallback, useMemo } from "react";
 
-import css from 'highlight.js/lib/languages/css';
-import json from 'highlight.js/lib/languages/json';
-import xml from 'highlight.js/lib/languages/xml';
+import css from "highlight.js/lib/languages/css";
+import json from "highlight.js/lib/languages/json";
+import xml from "highlight.js/lib/languages/xml";
 
-import { Icon } from '@/components/ui/Icon.tsx';
-import 'highlight.js/styles/github.min.css';
+import { Icon } from "@/components/ui/Icon.tsx";
+import "highlight.js/styles/github.min.css";
 
 // eslint-disable-next-line complexity
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
-  const activeClassName = 'text-sky-500';
+  const activeClassName = "text-sky-500";
 
   const setLink = useCallback(() => {
     if (!editor) {
       return;
     }
-    const previousUrl = editor.getAttributes('link').href;
-    const url = window.prompt('URL', previousUrl);
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
 
     // cancelled
     if (url === null) {
@@ -38,14 +38,14 @@ const MenuBar = () => {
     }
 
     // empty
-    if (url === '') {
-      editor.chain().focus().extendMarkRange('link').unsetLink().run();
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
 
       return;
     }
 
     // update link
-    editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
   }, [editor]);
 
   if (!editor) {
@@ -57,46 +57,46 @@ const MenuBar = () => {
       <Space.Compact>
         <Button
           icon={<Icon name="Pilcrow" />}
-          type={editor.isActive('paragraph') ? 'primary' : 'default'}
+          type={editor.isActive("paragraph") ? "primary" : "default"}
           onClick={() => editor.chain().focus().setParagraph().run()}
         />
         <Button
           icon={<span>H1</span>}
-          type={editor.isActive('heading', { level: 1 }) ? 'primary' : 'default'}
+          type={editor.isActive("heading", { level: 1 }) ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
         />
         <Button
           icon={<span>H2</span>}
-          type={editor.isActive('heading', { level: 2 }) ? 'primary' : 'default'}
+          type={editor.isActive("heading", { level: 2 }) ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
         />
         <Button
           icon={<span>H3</span>}
-          type={editor.isActive('heading', { level: 3 }) ? 'primary' : 'default'}
+          type={editor.isActive("heading", { level: 3 }) ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
         />
         <Dropdown
           menu={{
             items: [
               {
-                key: 'h4',
-                label: <h4 className={editor.isActive('heading', { level: 4 }) ? activeClassName : ''}>H4</h4>,
+                key: "h4",
+                label: <h4 className={editor.isActive("heading", { level: 4 }) ? activeClassName : ""}>H4</h4>,
               },
               {
-                key: 'h5',
-                label: <h5 className={editor.isActive('heading', { level: 5 }) ? activeClassName : ''}>H5</h5>,
+                key: "h5",
+                label: <h5 className={editor.isActive("heading", { level: 5 }) ? activeClassName : ""}>H5</h5>,
               },
               {
-                key: 'h6',
-                label: <h6 className={editor.isActive('heading', { level: 6 }) ? activeClassName : ''}>H6</h6>,
+                key: "h6",
+                label: <h6 className={editor.isActive("heading", { level: 6 }) ? activeClassName : ""}>H6</h6>,
               },
             ],
             onClick: (info) => {
-              if (info.key === 'h4') {
+              if (info.key === "h4") {
                 editor.chain().focus().toggleHeading({ level: 4 }).run();
-              } else if (info.key === 'h5') {
+              } else if (info.key === "h5") {
                 editor.chain().focus().toggleHeading({ level: 5 }).run();
-              } else if (info.key === 'h6') {
+              } else if (info.key === "h6") {
                 editor.chain().focus().toggleHeading({ level: 6 }).run();
               }
             },
@@ -105,11 +105,11 @@ const MenuBar = () => {
           <Button
             icon={<Icon name="ChevronDown" />}
             type={
-              editor.isActive('heading', { level: 4 }) ||
-              editor.isActive('heading', { level: 5 }) ||
-              editor.isActive('heading', { level: 6 })
-                ? 'primary'
-                : 'default'
+              editor.isActive("heading", { level: 4 }) ||
+              editor.isActive("heading", { level: 5 }) ||
+              editor.isActive("heading", { level: 6 })
+                ? "primary"
+                : "default"
             }
             onClick={(e) => e.preventDefault()}
           />
@@ -119,66 +119,66 @@ const MenuBar = () => {
         <Button
           icon={<Icon name="Bold" />}
           onClick={() => editor.chain().focus().toggleBold().run()}
-          type={editor.isActive('bold') ? 'primary' : 'default'}
+          type={editor.isActive("bold") ? "primary" : "default"}
         />
         <Button
           icon={<Icon name="Italic" />}
-          type={editor.isActive('italic') ? 'primary' : 'default'}
+          type={editor.isActive("italic") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleItalic().run()}
         />
         <Button
           icon={<Icon name="Code" />}
-          type={editor.isActive('code') ? 'primary' : 'default'}
+          type={editor.isActive("code") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleCode().run()}
         />
         <Button
           icon={<Icon name="Superscript" />}
-          type={editor.isActive('superscript') ? 'primary' : 'default'}
+          type={editor.isActive("superscript") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleSuperscript().run()}
         />
         <Button
           icon={<Icon name="Subscript" />}
-          type={editor.isActive('subscript') ? 'primary' : 'default'}
+          type={editor.isActive("subscript") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleSubscript().run()}
         />
       </Space.Compact>
       <Space.Compact>
         <Button
           icon={<Icon name="Strikethrough" />}
-          type={editor.isActive('strike') ? 'primary' : 'default'}
+          type={editor.isActive("strike") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleStrike().run()}
         />
         <Button
           icon={<Icon name="Highlighter" />}
-          type={editor.isActive('highlight') ? 'primary' : 'default'}
+          type={editor.isActive("highlight") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHighlight().run()}
         />
         <Button
           icon={<Icon name="Underline" />}
-          type={editor.isActive('underline') ? 'primary' : 'default'}
+          type={editor.isActive("underline") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleUnderline().run()}
         />
       </Space.Compact>
       <Space.Compact>
-        <Button icon={<Icon name="Link" />} type={editor.isActive('link') ? 'primary' : 'default'} onClick={setLink} />
+        <Button icon={<Icon name="Link" />} type={editor.isActive("link") ? "primary" : "default"} onClick={setLink} />
         <Button
           icon={<Icon name="List" />}
-          type={editor.isActive('bulletList') ? 'primary' : 'default'}
+          type={editor.isActive("bulletList") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleBulletList().run()}
         />
         <Button
           icon={<Icon name="ListOrdered" />}
-          type={editor.isActive('orderedList') ? 'primary' : 'default'}
+          type={editor.isActive("orderedList") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
         />
         <Button
           icon={<Icon name="Quote" />}
-          type={editor.isActive('blockquote') ? 'primary' : 'default'}
+          type={editor.isActive("blockquote") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
         />
         <Button
           icon={<Icon name="CodeXml" />}
-          type={editor.isActive('codeBlock') ? 'primary' : 'default'}
+          type={editor.isActive("codeBlock") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
         />
       </Space.Compact>
@@ -226,7 +226,7 @@ const content = `
 
 const editorProps = {
   attributes: {
-    class: 'prose prose-base dark:prose-invert focus:outline-none max-w-full',
+    class: "prose prose-base dark:prose-invert focus:outline-none max-w-full",
   },
 };
 export const Component: FC = () => {
@@ -248,11 +248,11 @@ export const Component: FC = () => {
       },
       codeBlock: false,
     }),
-    Highlight.configure({ HTMLAttributes: { class: 'bg-yellow-500' } }),
+    Highlight.configure({ HTMLAttributes: { class: "bg-yellow-500" } }),
     underline,
     superscript,
     subscript,
-    CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: 'plaintext' }),
+    CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: "plaintext" }),
     ExtensionLink.configure({
       openOnClick: false,
     }),

@@ -1,5 +1,5 @@
-import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Input, Space } from 'antd';
+import { PageContainer } from "@ant-design/pro-components";
+import { Button, Card, Input, Space } from "antd";
 import {
   formatISO,
   formatISO9075,
@@ -9,13 +9,13 @@ import {
   getUnixTime,
   parse,
   parseISO,
-} from 'date-fns';
-import type { ChangeEvent } from 'react';
-import { useEffect, useState } from 'react';
+} from "date-fns";
+import type { ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 
-import Iconify from '@/components/Iconify';
-import InputCopyable from '@/components/InputCopyable.tsx';
-import { isDateStr, isMillisecond, isNumber, isUnixSecond } from '@/utils/validator.ts';
+import Iconify from "@/components/Iconify";
+import InputCopyable from "@/components/InputCopyable.tsx";
+import { isDateStr, isMillisecond, isNumber, isUnixSecond } from "@/utils/validator.ts";
 
 interface TimestampVO {
   tag: string;
@@ -35,7 +35,7 @@ export const Component = () => {
   };
 
   useEffect(() => {
-    if (input === null || input === undefined || input === '') {
+    if (input === null || input === undefined || input === "") {
       return;
     }
     let instance: Date;
@@ -45,21 +45,21 @@ export const Component = () => {
       instance = new Date(Number.parseInt(input, 10));
     } else if (isNumber(input)) {
       instance = fromUnixTime(Number.parseInt(input, 10));
-    } else if (isDateStr(input, 'yyyy-MM-dd HH:mm:ss')) {
-      instance = parse(input, 'yyyy-MM-dd HH:mm:ss', new Date());
-    } else if (isDateStr(input, 'yyyy-MM-dd')) {
-      instance = parse(input, 'yyyy-MM-dd', new Date());
+    } else if (isDateStr(input, "yyyy-MM-dd HH:mm:ss")) {
+      instance = parse(input, "yyyy-MM-dd HH:mm:ss", new Date());
+    } else if (isDateStr(input, "yyyy-MM-dd")) {
+      instance = parse(input, "yyyy-MM-dd", new Date());
     } else {
       instance = parseISO(input);
     }
     console.log(instance.toISOString());
     setTimeList([
-      { tag: 'Unix timestamp (Second)', value: getUnixTime(instance).toString() },
-      { tag: 'Timestamp (Millisecond)', value: instance.valueOf().toString() },
-      { tag: 'ISO 8601', value: formatISO(instance) },
-      { tag: 'ISO 9075', value: formatISO9075(instance) },
-      { tag: 'RFC 3339', value: formatRFC3339(instance) },
-      { tag: 'RFC 7231', value: formatRFC7231(instance) },
+      { tag: "Unix timestamp (Second)", value: getUnixTime(instance).toString() },
+      { tag: "Timestamp (Millisecond)", value: instance.valueOf().toString() },
+      { tag: "ISO 8601", value: formatISO(instance) },
+      { tag: "ISO 9075", value: formatISO9075(instance) },
+      { tag: "RFC 3339", value: formatRFC3339(instance) },
+      { tag: "RFC 7231", value: formatRFC7231(instance) },
     ]);
   }, [input]);
 
@@ -67,7 +67,7 @@ export const Component = () => {
     <PageContainer title={false} className="pt-4">
       <Card className="mx-auto max-w-screen-sm">
         <div>
-          <Space.Compact style={{ width: '100%' }}>
+          <Space.Compact style={{ width: "100%" }}>
             <Input
               value={input}
               onChange={inputOnChange}

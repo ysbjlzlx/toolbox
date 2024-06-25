@@ -1,19 +1,19 @@
-import { Button, Card, Checkbox, Form, Select } from 'antd';
-import { useState } from 'react';
-import type { IAceOptions, ICommand } from 'react-ace';
-import AceEditor from 'react-ace';
+import { Button, Card, Checkbox, Form, Select } from "antd";
+import { useState } from "react";
+import type { IAceOptions, ICommand } from "react-ace";
+import AceEditor from "react-ace";
 
-import 'ace-builds/src-noconflict/ext-searchbox';
-import 'ace-builds/src-noconflict/mode-groovy';
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/mode-json5';
-import 'ace-builds/src-noconflict/mode-xml';
-import 'ace-builds/src-noconflict/mode-yaml';
-import 'ace-builds/src-noconflict/theme-monokai';
+import "ace-builds/src-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/mode-groovy";
+import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/mode-json5";
+import "ace-builds/src-noconflict/mode-xml";
+import "ace-builds/src-noconflict/mode-yaml";
+import "ace-builds/src-noconflict/theme-monokai";
 
-import PageContainer from '@/components/ui/PageContainer.tsx';
-import type { parser } from '@/utils/formatter.ts';
-import { format } from '@/utils/formatter.ts';
+import PageContainer from "@/components/ui/PageContainer.tsx";
+import type { parser } from "@/utils/formatter.ts";
+import { format } from "@/utils/formatter.ts";
 
 export const Component = () => {
   const [options, setOptions] = useState<IAceOptions>({
@@ -22,15 +22,15 @@ export const Component = () => {
     tabSize: 2,
     wrap: true,
     fontSize: 14,
-    theme: 'ace/theme/monokai',
+    theme: "ace/theme/monokai",
   });
-  const [code, setCode] = useState<string>('');
-  const [model, setModel] = useState<string>('json');
+  const [code, setCode] = useState<string>("");
+  const [model, setModel] = useState<string>("json");
 
   const commands: ICommand[] = [
     {
-      name: 'formatter',
-      bindKey: { win: 'Ctrl-Alt-L', mac: 'Command-Option-L' },
+      name: "formatter",
+      bindKey: { win: "Ctrl-Alt-L", mac: "Command-Option-L" },
       exec: (editor) => {
         format(editor.getValue(), model as parser).then((result: string) => {
           setCode(result);
@@ -61,11 +61,11 @@ export const Component = () => {
                     setModel(value);
                   }}
                   options={[
-                    { label: 'JSON', value: 'json' },
-                    { label: 'JSON5', value: 'json5' },
-                    { label: 'YAML', value: 'yaml' },
-                    { label: 'XML', value: 'xml' },
-                    { label: 'Groovy', value: 'groovy' },
+                    { label: "JSON", value: "json" },
+                    { label: "JSON5", value: "json5" },
+                    { label: "YAML", value: "yaml" },
+                    { label: "XML", value: "xml" },
+                    { label: "Groovy", value: "groovy" },
                   ]}
                   className="w-full"
                 />

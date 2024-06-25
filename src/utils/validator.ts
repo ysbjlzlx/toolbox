@@ -1,5 +1,5 @@
-import { isMatch } from 'date-fns';
-import z from 'zod';
+import { isMatch } from "date-fns";
+import z from "zod";
 
 export const isUnixSecond = (num: string | number): boolean => {
   const schema = z.union([z.string().regex(/^[0-9]{10}$/), z.number().int().min(0)]);

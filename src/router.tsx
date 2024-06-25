@@ -1,118 +1,118 @@
-import type { RouteObject } from 'react-router-dom';
-import { createBrowserRouter } from 'react-router-dom';
+import type { RouteObject } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import NotFound from '@/components/NotFound';
-import BaseLayout from '@/layouts/BaseLayout.tsx';
+import NotFound from "@/components/NotFound";
+import BaseLayout from "@/layouts/BaseLayout.tsx";
 
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: "/",
     index: true,
-    lazy: () => import('@/pages/page.tsx'),
+    lazy: () => import("@/pages/page.tsx"),
   },
   {
-    path: '/',
+    path: "/",
     element: <BaseLayout />,
     children: [
       {
-        path: '/base64',
-        lazy: () => import('@/pages/base64/page.tsx'),
+        path: "/base64",
+        lazy: () => import("@/pages/base64/page.tsx"),
       },
       {
-        path: '/code',
+        path: "/code",
         children: [
           {
-            path: 'conversion',
-            lazy: () => import('@/pages/code/conversion'),
+            path: "conversion",
+            lazy: () => import("@/pages/code/conversion"),
           },
           {
-            path: 'diff',
-            lazy: () => import('@/pages/code/diff'),
+            path: "diff",
+            lazy: () => import("@/pages/code/diff"),
           },
           {
-            path: 'formatter',
-            lazy: () => import('@/pages/code/formatter'),
+            path: "formatter",
+            lazy: () => import("@/pages/code/formatter"),
           },
         ],
       },
       {
-        path: '/image',
+        path: "/image",
         children: [
           {
-            path: 'placeholder',
-            lazy: () => import('@/pages/image/placeholder/page.tsx'),
+            path: "placeholder",
+            lazy: () => import("@/pages/image/placeholder/page.tsx"),
           },
           {
-            path: 'qrcode',
-            lazy: () => import('@/pages/image/qrcode/page.tsx'),
+            path: "qrcode",
+            lazy: () => import("@/pages/image/qrcode/page.tsx"),
           },
         ],
       },
       {
-        path: '/excel',
-        lazy: () => import('@/pages/excel/page.tsx'),
+        path: "/excel",
+        lazy: () => import("@/pages/excel/page.tsx"),
       },
       {
-        path: '/generator/id',
-        lazy: () => import('@/pages/generator/id/page.tsx'),
+        path: "/generator/id",
+        lazy: () => import("@/pages/generator/id/page.tsx"),
       },
       {
-        path: '/generator/string',
-        lazy: () => import('@/pages/generator/string/page.tsx'),
+        path: "/generator/string",
+        lazy: () => import("@/pages/generator/string/page.tsx"),
       },
       {
-        path: '/hash',
-        lazy: () => import('@/pages/hash/page.tsx'),
+        path: "/hash",
+        lazy: () => import("@/pages/hash/page.tsx"),
       },
       {
-        path: '/json',
+        path: "/json",
         children: [
           {
             index: true,
-            lazy: () => import('@/pages/json/json-editor'),
+            lazy: () => import("@/pages/json/json-editor"),
           },
           {
-            path: 'json-editor',
-            lazy: () => import('@/pages/json/json-editor'),
+            path: "json-editor",
+            lazy: () => import("@/pages/json/json-editor"),
           },
           {
-            path: 'json-to-excel',
-            lazy: () => import('@/pages/json/json-to-excel/page.tsx'),
+            path: "json-to-excel",
+            lazy: () => import("@/pages/json/json-to-excel/page.tsx"),
           },
         ],
       },
       {
-        path: '/markdown',
-        lazy: () => import('@/pages/markdown'),
+        path: "/markdown",
+        lazy: () => import("@/pages/markdown"),
       },
       {
-        path: '/timestamp',
-        lazy: () => import('@/pages/timestamp/page.tsx'),
+        path: "/timestamp",
+        lazy: () => import("@/pages/timestamp/page.tsx"),
       },
       {
-        path: '/tiptap',
-        lazy: () => import('@/pages/tiptap/page.tsx'),
+        path: "/tiptap",
+        lazy: () => import("@/pages/tiptap/page.tsx"),
       },
       {
-        path: '/totp',
-        lazy: () => import('@/pages/totp/page.tsx'),
+        path: "/totp",
+        lazy: () => import("@/pages/totp/page.tsx"),
       },
       {
-        path: '/url',
-        lazy: () => import('@/pages/url/page.tsx'),
+        path: "/url",
+        lazy: () => import("@/pages/url/page.tsx"),
       },
       {
-        path: '/writer',
-        lazy: () => import('@/pages/writer/page.tsx'),
+        path: "/writer",
+        lazy: () => import("@/pages/writer/page.tsx"),
       },
       {
-        path: '/transform',
-        lazy: () => import('@/pages/transform'),
+        path: "/transform",
+        lazy: () => import("@/pages/transform"),
       },
     ],
   },
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
 ];

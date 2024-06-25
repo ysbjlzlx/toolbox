@@ -1,6 +1,6 @@
-import _ from 'lodash';
-import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import _ from "lodash";
+import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 interface JsonTabStore {
   jsonTabs: string[];
@@ -13,8 +13,8 @@ interface JsonTabStore {
 const useJsonTabStore = create<JsonTabStore>()(
   persist(
     (set, get) => ({
-      jsonTabs: ['0'],
-      activeKey: '0',
+      jsonTabs: ["0"],
+      activeKey: "0",
 
       addJsonTab: (key: string) =>
         set(() => {
@@ -29,7 +29,7 @@ const useJsonTabStore = create<JsonTabStore>()(
           return { activeKey: key };
         }),
     }),
-    { name: 'json-tab-store', storage: createJSONStorage(() => localStorage) },
+    { name: "json-tab-store", storage: createJSONStorage(() => localStorage) },
   ),
 );
 
