@@ -57,6 +57,14 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
+    name: "字符串",
+    icon: <Iconify icon="lucide:whole-word" />,
+    children: [
+      { name: "Base-X", path: "/base64" },
+      { name: "Hashing", path: "/hash" },
+    ],
+  },
+  {
     name: "生成器（Generator）",
     icon: <Iconify icon="lucide:dices" />,
     children: [
@@ -97,22 +105,10 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
-    name: "Base 64",
-    desc: "Base64 编码、解码",
-    path: "/base64",
-    icon: <Iconify icon="material-symbols:compress" />,
-  },
-  {
     name: "Excel",
     desc: "Excel 转 JSON",
     path: "/excel",
     icon: <Iconify icon="lucide:sheet" />,
-  },
-  {
-    name: "Hash",
-    desc: "计算 MD5、SHA1、SHA256、SHA512 哈希值",
-    path: "/hash",
-    icon: <Iconify icon="lucide:hash" />,
   },
   {
     name: "时间戳（Timestamp）",

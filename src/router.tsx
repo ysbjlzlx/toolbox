@@ -49,6 +49,10 @@ const routes: RouteObject[] = [
         ],
       },
       {
+        path: "/string",
+        children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
+      },
+      {
         path: "/excel",
         lazy: () => import("@/pages/excel/page.tsx"),
       },
