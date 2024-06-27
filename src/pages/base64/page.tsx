@@ -15,10 +15,8 @@ export const Component = () => {
   const segmentedOptions: SegmentedProps["options"] = [
     { label: "Base16", value: "base-16" },
     { label: "Base32", value: "base-32", disabled: false },
-    { label: "Z Base32", value: "z-base-32", disabled: false },
     { label: "Base36", value: "base-36", disabled: false },
     { label: "Base58", value: "base-58", disabled: false },
-    { label: "Base58 Check", value: "base-58-check", disabled: false },
     { label: "Base64", value: "base-64" },
   ];
 

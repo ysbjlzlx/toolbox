@@ -29,6 +29,9 @@ importers:
       '@sapphire/snowflake':
         specifier: 3.5.3
         version: 3.5.3
+      '@scure/base':
+        specifier: 1.1.7
+        version: 1.1.7
       '@tiptap/extension-code-block-lowlight':
         specifier: 2.4.0
         version: 2.4.0(@tiptap/core@2.4.0(@tiptap/pm@2.4.0))(@tiptap/extension-code-block@2.4.0(@tiptap/core@2.4.0(@tiptap/pm@2.4.0))(@tiptap/pm@2.4.0))(@tiptap/pm@2.4.0)
@@ -1612,6 +1615,9 @@ packages:
   '@sapphire/snowflake@3.5.3':
     resolution: {integrity: sha512-jjmJywLAFoWeBi1W7994zZyiNWPIiqRRNAmSERxyg93xRGzNYvGjlZ0gR6x0F4gPRi2+0O6S71kOZYyr3cxaIQ==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+
+  '@scure/base@1.1.7':
+    resolution: {integrity: sha512-PPNYBslrLNNUQ/Yad37MHYsNQtK67EhWb6WtSvNLLPo7SdVZgkUjD6Dg+5On7zNwmskf8OX7I7Nx5oN+MIWE0g==}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -6398,6 +6404,8 @@ snapshots:
     optional: true
 
   '@sapphire/snowflake@3.5.3': {}
+
+  '@scure/base@1.1.7': {}
 
   '@sinclair/typebox@0.27.8': {}
 
