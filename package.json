@@ -36,7 +36,7 @@
     "@uiw/react-codemirror": "4.22.2",
     "ace-builds": "1.35.1",
     "ahooks": "3.8.0",
-    "antd": "5.18.3",
+    "antd": "5.19.0",
     "ascii85": "1.0.2",
     "axios": "1.7.2",
     "base-x": "5.0.0",
