@@ -15,7 +15,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@ant-design/colors": "7.0.2",
+    "@ant-design/colors": "7.1.0",
     "@ant-design/cssinjs": "1.21.0",
     "@ant-design/pro-components": "2.7.10",
     "@codemirror/state": "6.4.1",
