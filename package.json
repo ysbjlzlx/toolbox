@@ -32,7 +32,7 @@
     "@tiptap/react": "2.4.0",
     "@tiptap/starter-kit": "2.4.0",
     "@types/d3": "7.4.3",
-    "@uiw/codemirror-theme-github": "4.22.2",
+    "@uiw/codemirror-theme-github": "4.23.0",
     "@uiw/react-codemirror": "4.22.2",
     "ace-builds": "1.35.2",
     "ahooks": "3.8.0",
