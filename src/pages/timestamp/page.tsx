@@ -74,7 +74,7 @@ export const Component = () => {
               placeholder="请输入 10 位数字（秒）、13 位数字（毫秒）或者 YYYY-MM-DD HH:mm:ss 格式字符串"
               showCount
             />
-            <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshInputDate} />
+            <Button icon={<Iconify icon="lucide:refresh-ccw" />} onClick={refreshInputDate} />
           </Space.Compact>
         </div>
         <div className="mt-8">

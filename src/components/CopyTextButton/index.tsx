@@ -24,7 +24,7 @@ const CopyTextButton: FC<Props> = ({ text, children, ...props }) => {
   };
   return (
     <>
-      <Button icon={<Iconify icon="material-symbols:content-copy" />} onClick={onClick} {...props}>
+      <Button icon={<Iconify icon="lucide:copy" />} onClick={onClick} {...props}>
         {children}
       </Button>
     </>

@@ -66,7 +66,7 @@ export const Component = () => {
           <div className="flex">
             <Input value={randomString} showCount className="mr-2 flex-auto" />
             <Space.Compact className="flex-none">
-              <Button htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />
+              <Button htmlType="submit" icon={<Iconify icon="lucide:refresh-ccw" />} />
               <CopyTextButton text={randomString} />
             </Space.Compact>
           </div>

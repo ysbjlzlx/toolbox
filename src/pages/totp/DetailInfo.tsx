@@ -38,7 +38,7 @@ const DetailInfo = () => {
               <ProForm.Item label="Secret Key" name="secret" required>
                 <Space.Compact style={{ width: "100%" }}>
                   <Input value={form.getFieldValue("secret")} showCount />
-                  <Button icon={<Iconify icon="material-symbols:refresh" />} onClick={refreshSecret} />
+                  <Button icon={<Iconify icon="lucide:refresh-ccw" />} onClick={refreshSecret} />
                 </Space.Compact>
               </ProForm.Item>
             );
