@@ -1,12 +1,12 @@
-import type { TabsProps } from "antd";
-import { Tabs } from "antd";
+import { PageContainer } from "@ant-design/pro-components";
+import { Button, Dropdown, Space, Tabs } from "antd";
+import type { MenuProps, TabsProps } from "antd";
 import _ from "lodash";
-import type * as React from "react";
+import type React from "react";
 import { useEffect, useState } from "react";
 
+import Iconify from "@/components/Iconify";
 import useJsonTabStore from "@/stores/JsonTabStore.ts";
-import { PageContainer } from "@ant-design/pro-components";
-
 import JsonEditor from "./JsonEditor.tsx";
 
 type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
@@ -65,9 +65,57 @@ export const Component = () => {
     }
   };
 
+  const uploadMenu: MenuProps = {
+    items: [
+      {
+        key: 1,
+        label: <div>上传 JSON 文件</div>,
+      },
+      {
+        key: 2,
+        label: <div>上传 Excel 文件</div>,
+      },
+    ],
+  };
+
+  const downloadMenu: MenuProps = {
+    items: [
+      {
+        key: 1,
+        label: <div>下载为 JSON 文件</div>,
+      },
+      {
+        key: 2,
+        label: <div>下载为 Excel 文件</div>,
+      },
+    ],
+  };
+  const tabBarExtraContent: TabsProps["tabBarExtraContent"] = {
+    left: (
+      <div className="mx-4 hidden">
+        <Space.Compact>
+          <Dropdown menu={uploadMenu}>
+            <Button icon={<Iconify icon="lucide:upload" />}>上传</Button>
+          </Dropdown>
+          <Dropdown menu={downloadMenu}>
+            <Button icon={<Iconify icon="lucide:download" />}>下载</Button>
+          </Dropdown>
+        </Space.Compact>
+      </div>
+    ),
+  };
+
   return (
     <PageContainer title={false} className="w-full">
-      <Tabs type="editable-card" size="small" onChange={onChange} activeKey={activeKey} onEdit={onEdit} items={items} />
+      <Tabs
+        type="editable-card"
+        size="small"
+        onChange={onChange}
+        activeKey={activeKey}
+        onEdit={onEdit}
+        items={items}
+        tabBarExtraContent={tabBarExtraContent}
+      />
     </PageContainer>
   );
 };
