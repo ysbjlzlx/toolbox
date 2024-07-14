@@ -138,8 +138,8 @@ importers:
         specifier: 11.10.0
         version: 11.10.0
       i18next:
-        specifier: 23.11.5
-        version: 23.11.5
+        specifier: 23.12.1
+        version: 23.12.1
       i18next-browser-languagedetector:
         specifier: 8.0.0
         version: 8.0.0
@@ -193,7 +193,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-i18next:
         specifier: 14.1.2
-        version: 14.1.2(i18next@23.11.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 14.1.2(i18next@23.12.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom:
         specifier: 6.24.1
         version: 6.24.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3005,8 +3005,8 @@ packages:
   i18next-resources-to-backend@1.2.1:
     resolution: {integrity: sha512-okHbVA+HZ7n1/76MsfhPqDou0fptl2dAlhRDu2ideXloRRduzHsqDOznJBef+R3DFZnbvWoBW+KxJ7fnFjd6Yw==}
 
-  i18next@23.11.5:
-    resolution: {integrity: sha512-41pvpVbW9rhZPk5xjCX2TPJi2861LEig/YRhUkY+1FQ2IQPS0bKUDYnEqY8XPPbB48h1uIwLnP9iiEfuSl20CA==}
+  i18next@23.12.1:
+    resolution: {integrity: sha512-l4y291ZGRgUhKuqVSiqyuU2DDzxKStlIWSaoNBR4grYmh0X+pRYbFpTMs3CnJ5ECKbOI8sQcJ3PbTUfLgPRaMA==}
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -7996,9 +7996,9 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.5
 
-  i18next@23.11.5:
+  i18next@23.12.1:
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.24.7
 
   iconv-lite@0.6.3:
     dependencies:
@@ -9147,11 +9147,11 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
-  react-i18next@14.1.2(i18next@23.11.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-i18next@14.1.2(i18next@23.12.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.24.5
       html-parse-stringify: 3.0.1
-      i18next: 23.11.5
+      i18next: 23.12.1
       react: 18.3.1
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
