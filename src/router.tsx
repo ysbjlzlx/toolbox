@@ -1,10 +1,9 @@
-import type { RouteObject } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 
 import NotFound from "@/components/NotFound";
-import BaseLayout from "@/layouts/BaseLayout.tsx";
+import BaseLayout from "@/layouts/BaseLayout";
 
-const routes: RouteObject[] = [
+const router = createBrowserRouter([
   {
     path: "/",
     index: true,
@@ -119,7 +118,6 @@ const routes: RouteObject[] = [
     path: "*",
     element: <NotFound />,
   },
-];
+]);
 
-const router = createBrowserRouter(routes);
 export default router;

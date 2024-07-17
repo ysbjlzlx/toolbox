@@ -35,7 +35,7 @@ const BaseLayout: FC = () => {
     if (isMobile) return [];
     return [
       <Link to="https://github.com/ysbjlzlx/toolbox/tree/develop" aria-label="GitHub" target="_blank" key="GitHub">
-        <Iconify icon="lucide:github" fontSize={24} color="#000" />
+        <Iconify icon="logos:github-icon" fontSize={24} color="#000" />
       </Link>,
     ];
   };
