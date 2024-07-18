@@ -72,8 +72,8 @@ importers:
         specifier: 4.23.0
         version: 4.23.0(@babel/runtime@7.24.8)(@codemirror/autocomplete@6.16.2(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.5)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.5)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ace-builds:
-        specifier: 1.35.2
-        version: 1.35.2
+        specifier: 1.35.3
+        version: 1.35.3
       ahooks:
         specifier: 3.8.0
         version: 3.8.0(react@18.3.1)
@@ -2153,8 +2153,8 @@ packages:
   '@vitest/utils@2.0.3':
     resolution: {integrity: sha512-c/UdELMuHitQbbc/EVctlBaxoYAwQPQdSNwv7z/vHyBKy2edYZaFgptE27BRueZB7eW8po+cllotMNTDpL3HWg==}
 
-  ace-builds@1.35.2:
-    resolution: {integrity: sha512-06d00u4jDZx+ieI0jLlgy/uefx8kcgz7lhI0mCIFEu8NVWirH00U5IEP7tePHy4sjPsRcJUH4VbJZacoit2Hng==}
+  ace-builds@1.35.3:
+    resolution: {integrity: sha512-4cHLy+4L3FHOTis4IrDYsHZYhyYrIqtmA4HRiRXcxLTpmjQMbJ6Vutoc3c2uC9xS11g/rDwqcw+3zXHPSHD/qw==}
 
   acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
@@ -7208,7 +7208,7 @@ snapshots:
       loupe: 3.1.1
       tinyrainbow: 1.2.0
 
-  ace-builds@1.35.2: {}
+  ace-builds@1.35.3: {}
 
   acorn@8.11.3: {}
 
@@ -9383,7 +9383,7 @@ snapshots:
 
   react-ace@12.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      ace-builds: 1.35.2
+      ace-builds: 1.35.3
       diff-match-patch: 1.0.5
       lodash.get: 4.4.2
       lodash.isequal: 4.5.0
