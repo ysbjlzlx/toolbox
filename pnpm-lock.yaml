@@ -207,8 +207,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0
       vanilla-jsoneditor:
-        specifier: 0.23.7
-        version: 0.23.7(@lezer/common@1.2.1)
+        specifier: 0.23.8
+        version: 0.23.8(@lezer/common@1.2.1)
       vditor:
         specifier: 3.10.4
         version: 3.10.4
@@ -2134,11 +2134,6 @@ packages:
 
   ace-builds@1.35.4:
     resolution: {integrity: sha512-r0KQclhZ/uk5a4zOqRYQkJuQuu4vFMiA6VTj54Tk4nI1TUR3iEMMppZkWbNoWEgWwv4ciDloObb9Rf4V55Qgjw==}
-
-  acorn@8.11.3:
-    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
 
   acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
@@ -4753,8 +4748,8 @@ packages:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
     hasBin: true
 
-  vanilla-jsoneditor@0.23.7:
-    resolution: {integrity: sha512-Xss0uWPPc9IigrHGxWgPvJYYxkqvDB+tpOGN6xXXZ2FlRKRgQumKDLn7dZRANZ035siyrjL6Nzbz2O6CY9IkNw==}
+  vanilla-jsoneditor@0.23.8:
+    resolution: {integrity: sha512-ly5wmhnICxYhLunBVKbe0jEkPLjDeEGWPV1Lpt7HzzsPCFOmpIs05Go2XgXErmID2nWRp2s5DkT2hBVE4B+rmA==}
 
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
@@ -7204,8 +7199,6 @@ snapshots:
 
   ace-builds@1.35.4: {}
 
-  acorn@8.11.3: {}
-
   acorn@8.12.1: {}
 
   add-dom-event-listener@1.1.0:
@@ -7557,7 +7550,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
       '@types/estree': 1.0.5
-      acorn: 8.11.3
+      acorn: 8.12.1
       estree-walker: 3.0.3
       periscopic: 3.1.0
 
@@ -9864,7 +9857,7 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.4.15
       '@jridgewell/trace-mapping': 0.3.25
       '@types/estree': 1.0.5
-      acorn: 8.11.3
+      acorn: 8.12.1
       aria-query: 5.3.0
       axobject-query: 4.0.0
       code-red: 1.0.4
@@ -10102,7 +10095,7 @@ snapshots:
 
   uuid@10.0.0: {}
 
-  vanilla-jsoneditor@0.23.7(@lezer/common@1.2.1):
+  vanilla-jsoneditor@0.23.8(@lezer/common@1.2.1):
     dependencies:
       '@codemirror/autocomplete': 6.16.2(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.29.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.6.0
@@ -10116,7 +10109,7 @@ snapshots:
       '@fortawesome/free-solid-svg-icons': 6.5.2
       '@lezer/highlight': 1.2.0
       '@replit/codemirror-indentation-markers': 6.5.2(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.29.0)
-      ajv: 8.16.0
+      ajv: 8.17.1
       codemirror-wrapped-line-indent: 1.0.8(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.29.0)
       diff-sequences: 29.6.3
       immutable-json-patch: 6.0.1
