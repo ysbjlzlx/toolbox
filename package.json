@@ -19,7 +19,7 @@
     "@ant-design/cssinjs": "1.21.0",
     "@ant-design/pro-components": "2.7.15",
     "@codemirror/state": "6.4.1",
-    "@codemirror/view": "6.30.0",
+    "@codemirror/view": "6.31.0",
     "@paralleldrive/cuid2": "2.2.2",
     "@sapphire/snowflake": "3.5.3",
     "@scure/base": "1.1.7",
