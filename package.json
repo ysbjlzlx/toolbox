@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@ant-design/colors": "7.1.0",
-    "@ant-design/cssinjs": "1.21.0",
+    "@ant-design/cssinjs": "1.21.1",
     "@ant-design/pro-components": "2.7.15",
     "@codemirror/state": "6.4.1",
     "@codemirror/view": "6.32.0",
