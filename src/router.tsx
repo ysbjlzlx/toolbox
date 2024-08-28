@@ -10,6 +10,10 @@ const router = createBrowserRouter([
     lazy: () => import("@/pages/page.tsx"),
   },
   {
+    path: "/playground",
+    lazy: () => import("@/pages/playground/index.tsx"),
+  },
+  {
     path: "/",
     element: <BaseLayout />,
     children: [

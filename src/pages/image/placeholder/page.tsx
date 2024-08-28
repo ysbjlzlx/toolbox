@@ -1,4 +1,3 @@
-import { cyan, gray, red } from "@ant-design/colors";
 import {
   FormControlRender,
   PageContainer,
@@ -8,9 +7,11 @@ import {
   ProFormText,
   pickControlPropsWithId,
 } from "@ant-design/pro-components";
+import { colors } from "@repo/colors/tailwindcss";
 import type { ColorPickerProps, TabsProps } from "antd";
 import { Card, ColorPicker, Form, Tabs } from "antd";
-import type { FC } from "react";
+import { values } from "lodash-es";
+import { type FC, useMemo } from "react";
 import { useEffect, useState } from "react";
 
 import type { PlaceholderConfig } from "@/components/placeholder";
@@ -23,8 +24,8 @@ const defaultValues = {
   width: 480,
   height: 320,
   suffix: ".png",
-  bgColor: "#404040",
-  textColor: "#A6A6A6",
+  bgColor: "#083344",
+  textColor: "#9CA3AF",
   text: "Placeholder",
 };
 
@@ -46,11 +47,13 @@ export const Component: FC = () => {
     setPlaceholderConfig({ ...values, bgColor, textColor });
   }, [bgColor, form, textColor]);
 
-  const colorPresets: ColorPickerProps["presets"] = [
-    { label: "Gray", colors: gray },
-    { label: "Cyan", colors: cyan },
-    { label: "Red", colors: red },
-  ];
+  const colorPresets: ColorPickerProps["presets"] = useMemo(() => {
+    return [
+      { label: "Gray", colors: values(colors.gray) },
+      { label: "Cyan", colors: values(colors.cyan) },
+      { label: "Red", colors: values(colors.red) },
+    ];
+  }, []);
   const tabsProps: TabsProps = {
     defaultActiveKey: "LocalImage",
     items: [

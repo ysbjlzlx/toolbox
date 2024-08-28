@@ -47,7 +47,7 @@ const LocalImage: FC<PlaceholderConfig> = (props) => {
   }, [props.bgColor, props.height, props.text, props.textColor, props.width]);
   const onClickDownloadBtn = () => {
     if (containerRef?.current) {
-      d3ToPng(containerRef.current, `${props.width}x${props.height}-${props.text}`, {
+      d3ToPng(containerRef.current, `${props.text}-${props.width}x${props.height}`, {
         quality: 1,
         background: "white",
       }).then((fileData) => {
