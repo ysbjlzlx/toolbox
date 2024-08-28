@@ -92,7 +92,7 @@
     "@biomejs/biome": "1.8.3",
     "@iconify/react": "5.0.2",
     "@swc/core": "1.7.21",
-    "@tailwindcss/typography": "0.5.14",
+    "@tailwindcss/typography": "0.5.15",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.0",
     "@testing-library/user-event": "14.5.2",
