@@ -15,7 +15,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@ant-design/colors": "7.1.0",
     "@ant-design/cssinjs": "1.21.1",
     "@ant-design/pro-components": "2.7.15",
     "@codemirror/state": "6.4.1",
@@ -83,7 +82,7 @@
     "uuid": "10.0.0",
     "vanilla-jsoneditor": "0.23.8",
     "vditor": "3.10.5",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "xml-formatter": "3.6.3",
     "yaml": "2.5.0",
     "zod": "3.23.8",
