@@ -109,6 +109,10 @@ const router = createBrowserRouter([
         lazy: () => import("@/pages/url/page.tsx"),
       },
       {
+        path: "/user-pass",
+        lazy: () => import("@/pages/user-pass/index.tsx"),
+      },
+      {
         path: "/writer",
         lazy: () => import("@/pages/writer/page.tsx"),
       },
