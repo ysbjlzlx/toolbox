@@ -1,5 +1,5 @@
 import JSON5 from "json5";
-import _ from "lodash";
+import { uniqWith } from "lodash-es";
 import { useEffect, useState } from "react";
 import type { IAceOptions } from "react-ace";
 import AceEditor from "react-ace";
@@ -38,7 +38,7 @@ export const Component = () => {
             columns.push({ value: key, readOnly: true });
           });
         });
-        columns = _.uniqWith(columns, (a, b) => {
+        columns = uniqWith(columns, (a, b) => {
           return a.value === b.value;
         });
 

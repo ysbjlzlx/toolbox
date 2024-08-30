@@ -1,7 +1,7 @@
 import { PageContainer } from "@ant-design/pro-components";
 import { Button, Dropdown, Space, Tabs } from "antd";
 import type { MenuProps, TabsProps } from "antd";
-import _ from "lodash";
+import { indexOf, last } from "lodash-es";
 import type React from "react";
 import { useEffect, useState } from "react";
 
@@ -24,8 +24,8 @@ export const Component = () => {
         className: "h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]",
       };
     });
-    if (_.indexOf(jsonTabs, activeKey) === -1) {
-      const lastItem = _.last(item);
+    if (indexOf(jsonTabs, activeKey) === -1) {
+      const lastItem = last(item);
       setActiveKey(lastItem?.key || "0");
     }
 

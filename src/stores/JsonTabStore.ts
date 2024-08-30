@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { concat, without } from "lodash-es";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
@@ -18,11 +18,11 @@ const useJsonTabStore = create<JsonTabStore>()(
 
       addJsonTab: (key: string) =>
         set(() => {
-          return { jsonTabs: _.concat(get().jsonTabs, key) };
+          return { jsonTabs: concat(get().jsonTabs, key) };
         }),
       removeJsonTab: (key: string) =>
         set(() => {
-          return { jsonTabs: _.without(get().jsonTabs, key) };
+          return { jsonTabs: without(get().jsonTabs, key) };
         }),
       setActiveKey: (key: string) =>
         set(() => {
