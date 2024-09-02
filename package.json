@@ -108,7 +108,7 @@
     "husky": "9.1.5",
     "jsdom": "25.0.0",
     "lint-staged": "15.2.10",
-    "postcss": "8.4.42",
+    "postcss": "8.4.43",
     "stylelint": "16.9.0",
     "stylelint-config-standard": "36.0.1",
     "tailwindcss": "3.4.10",
