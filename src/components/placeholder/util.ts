@@ -1,13 +1,13 @@
-import { PlaceholderConfig } from './index';
+import type { PlaceholderConfig } from "./index";
 
 const defaultConfig = (): PlaceholderConfig => {
   return {
     width: 150,
     height: 150,
-    suffix: '.png',
-    bgColor: '#cccccc',
-    textColor: '#969696',
-    text: '',
+    suffix: ".png",
+    bgColor: "#cccccc",
+    textColor: "#969696",
+    text: "",
   };
 };
 
@@ -28,7 +28,7 @@ const resolveConfig = (input: PlaceholderConfig): PlaceholderConfig => {
   if (input.textColor) {
     config.textColor = input.textColor;
   }
-  if (input.text && input.text !== '') {
+  if (input.text && input.text !== "") {
     config.text = input.text;
   }
   return config;

@@ -1,5 +1,5 @@
-import { PageContainer } from '@ant-design/pro-components';
-import { Typography } from 'antd';
+import PageContainer from "@/components/ui/PageContainer.tsx";
+import { Typography } from "antd";
 
 const NotFound = () => {
   return (

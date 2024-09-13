@@ -1,9 +1,9 @@
-import InputCopyable from '@/components/InputCopyable.tsx';
-import { PageContainer } from '@ant-design/pro-components';
-import { Card, Input } from 'antd';
-import { MD5, SHA1, SHA256, SHA512 } from 'crypto-js';
-import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import InputCopyable from "@/components/InputCopyable.tsx";
+import { PageContainer } from "@/components/ui";
+import { Card, Input } from "antd";
+import { MD5, SHA1, SHA256, SHA512 } from "crypto-js";
+import type { FC } from "react";
+import { useEffect, useState } from "react";
 
 interface HashResult {
   md5?: string;
@@ -14,16 +14,16 @@ interface HashResult {
 
 export const Component: FC = () => {
   const defaultHashResult: HashResult = {
-    md5: '',
-    sha1: '',
-    sha256: '',
-    sha512: '',
+    md5: "",
+    sha1: "",
+    sha256: "",
+    sha512: "",
   };
 
-  const [plainText, setPlainText] = useState<string>('');
+  const [plainText, setPlainText] = useState<string>("");
   const [hashResult, setHashResult] = useState<HashResult | null>(defaultHashResult);
   useEffect(() => {
-    if (!plainText || plainText === '') {
+    if (!plainText || plainText === "") {
       setHashResult((defaultHashResult) => defaultHashResult);
       return;
     }
@@ -36,14 +36,14 @@ export const Component: FC = () => {
     });
   }, [plainText]);
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-md pt-4">
-      <Card>
+    <PageContainer>
+      <Card className="mx-auto max-w-screen-md">
         <div className="mb-8">
           <Input.TextArea
             value={plainText}
             rows={2}
             placeholder="原文"
-            onChange={(event: any) => {
+            onChange={(event) => {
               setPlainText(event.target.value);
             }}
             showCount

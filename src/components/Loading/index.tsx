@@ -1,9 +1,9 @@
-import { Spin } from 'antd';
+import { Spin } from "antd";
 
 export default function Loading() {
   return (
     <Spin tip="加载中...">
-      <div className="w-full h-[100vh]" />
+      <div className="h-[100vh] w-full" />
     </Spin>
   );
 }

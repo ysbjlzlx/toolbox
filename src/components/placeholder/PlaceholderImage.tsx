@@ -1,12 +1,12 @@
-import { Image } from 'antd';
-import { useEffect, useState } from 'react';
+import { Image } from "antd";
+import { useEffect, useState } from "react";
 
-import ImageWrapper from '@/pages/generator/image/ImageWrapper.tsx';
-import type { PlaceholderConfig } from './index';
-import { defaultConfig, resolveConfig } from './util';
+import ImageWrapper from "@/pages/image/placeholder/ImageWrapper.tsx";
+import type { PlaceholderConfig } from "./index";
+import { defaultConfig, resolveConfig } from "./util";
 
 const PlaceholderImage = (input: PlaceholderConfig) => {
-  const [imgUrl, setImgUrl] = useState<string>('');
+  const [imgUrl, setImgUrl] = useState<string>("");
   const [config, setConfig] = useState<PlaceholderConfig>(defaultConfig());
 
   useEffect(() => {
@@ -14,11 +14,7 @@ const PlaceholderImage = (input: PlaceholderConfig) => {
   }, [input]);
 
   useEffect(() => {
-    const url =
-      `https://via.placeholder.com/${config.width}x${config.height}` +
-      `/${config.bgColor?.substring(1)}/${config.textColor?.substring(1)}` +
-      `?text=${encodeURIComponent(config.text || 'img')}` +
-      config.suffix;
+    const url = `https://via.placeholder.com/${config.width}x${config.height}/${config.bgColor?.substring(1)}/${config.textColor?.substring(1)}?text=${encodeURIComponent(config.text || "img")}${config.suffix}`;
     setImgUrl(url);
   }, [config]);
 
@@ -27,7 +23,7 @@ const PlaceholderImage = (input: PlaceholderConfig) => {
       <Image
         src={imgUrl}
         style={{ width: `${config.width}px`, height: `${config.height}px` }}
-        alt={config.text || 'placeholder img'}
+        alt={config.text || "placeholder img"}
       />
     </ImageWrapper>
   );

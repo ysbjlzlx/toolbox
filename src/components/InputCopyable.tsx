@@ -1,5 +1,5 @@
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
-import { Input, Space } from 'antd';
+import CopyTextButton from "@/components/CopyTextButton";
+import { Input, Space } from "antd";
 
 export interface Props {
   value?: string;
@@ -10,8 +10,8 @@ const InputCopyable = (props: Props) => {
   return (
     <div className="my-4">
       <Space.Compact block>
-        <Input value={props.value || ''} addonBefore={props.tag} showCount />
-        <ContentCopyButton text={props.value || ''} />
+        <Input value={props.value || ""} addonBefore={props.tag} showCount />
+        <CopyTextButton text={props.value} />
       </Space.Compact>
     </div>
   );

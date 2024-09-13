@@ -1,5 +1,5 @@
-import { List } from 'antd';
-import type { TotpI } from './typings';
+import { List } from "antd";
+import type { TotpI } from "./typings";
 
 interface Props {
   totps?: TotpI[];

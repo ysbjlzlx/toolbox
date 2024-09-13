@@ -1,9 +1,9 @@
-import { useLocalStorageState } from 'ahooks';
-import type { FC } from 'react';
-import type { Content } from 'vanilla-jsoneditor';
-import { Mode } from 'vanilla-jsoneditor';
+import { useLocalStorageState } from "ahooks";
+import type { FC } from "react";
+import type { Content } from "vanilla-jsoneditor";
+import { Mode } from "vanilla-jsoneditor";
 
-import VanillaJSONEditor from '@/components/VanillaJSONEditor.tsx';
+import VanillaJSONEditor from "@/components/VanillaJSONEditor.tsx";
 
 interface Props {
   idx?: string;
@@ -11,12 +11,12 @@ interface Props {
 
 const JSONBeta: FC<Props> = (props) => {
   const defaultValue = {
-    mode: 'text',
+    mode: "text",
     content: {
-      text: '',
+      text: "",
     },
   };
-  const idx = props?.idx || '0';
+  const idx = props?.idx || "0";
   const [jsonStorage, setJsonStorage] = useLocalStorageState<any>(`json-${idx}`, { defaultValue });
 
   const resolveMode = (): Mode | undefined => {

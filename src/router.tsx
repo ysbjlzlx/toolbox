@@ -1,111 +1,131 @@
-import type { RouteObject } from 'react-router-dom';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from "react-router-dom";
 
-import NotFound from '@/components/NotFound';
-import BaseLayout from '@/layouts/BaseLayout.tsx';
+import NotFound from "@/components/NotFound";
+import BaseLayout from "@/layouts/BaseLayout";
 
-const routes: RouteObject[] = [
+const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     index: true,
-    lazy: () => import('@/pages/page.tsx'),
+    lazy: () => import("@/pages/page.tsx"),
   },
   {
-    path: '/',
+    path: "/playground",
+    lazy: () => import("@/pages/playground/index.tsx"),
+  },
+  {
+    path: "/",
     element: <BaseLayout />,
     children: [
       {
-        path: '/base64',
-        lazy: () => import('@/pages/base64/page.tsx'),
+        path: "/base64",
+        lazy: () => import("@/pages/base64/page.tsx"),
       },
       {
-        path: '/code-formatter',
-        lazy: () => import('@/pages/code-formatter'),
-      },
-      {
-        path: '/doc-editor',
-        lazy: () => import('@/pages/doc-editor/page.tsx'),
-      },
-      {
-        path: '/excel',
-        lazy: () => import('@/pages/excel/page.tsx'),
-      },
-      {
-        path: '/format-conversion',
-        lazy: () => import('@/pages/format-conversion/page.tsx'),
-      },
-      {
-        path: '/generator/id',
-        lazy: () => import('@/pages/generator/id/page.tsx'),
-      },
-      {
-        path: '/generator/image',
-        lazy: () => import('@/pages/generator/image/page.tsx'),
-      },
-      {
-        path: '/generator/string',
-        lazy: () => import('@/pages/generator/string/page.tsx'),
-      },
-      {
-        path: '/hash',
-        lazy: () => import('@/pages/hash/page.tsx'),
-      },
-      {
-        path: '/json',
+        path: "/code",
         children: [
           {
-            index: true,
-            lazy: () => import('@/pages/json/json-editor'),
+            path: "conversion",
+            lazy: () => import("@/pages/code/conversion"),
           },
           {
-            path: 'json-editor',
-            lazy: () => import('@/pages/json/json-editor'),
+            path: "diff",
+            lazy: () => import("@/pages/code/diff"),
           },
           {
-            path: 'json-to-excel',
-            lazy: () => import('@/pages/json/json-to-excel/page.tsx'),
+            path: "formatter",
+            lazy: () => import("@/pages/code/formatter"),
           },
         ],
       },
       {
-        path: '/markdown',
-        lazy: () => import('@/pages/markdown'),
+        path: "/image",
+        children: [
+          {
+            path: "placeholder",
+            lazy: () => import("@/pages/image/placeholder/page.tsx"),
+          },
+          {
+            path: "qrcode",
+            lazy: () => import("@/pages/image/qrcode/page.tsx"),
+          },
+        ],
       },
       {
-        path: '/qrcode',
-        lazy: () => import('@/pages/qrcode/page.tsx'),
+        path: "/string",
+        children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
       },
       {
-        path: '/timestamp',
-        lazy: () => import('@/pages/timestamp/page.tsx'),
+        path: "/excel",
+        lazy: () => import("@/pages/excel/page.tsx"),
       },
       {
-        path: '/tiptap',
-        lazy: () => import('@/pages/tiptap/page.tsx'),
+        path: "/generator/id",
+        lazy: () => import("@/pages/generator/id/page.tsx"),
       },
       {
-        path: '/totp',
-        lazy: () => import('@/pages/totp/page.tsx'),
+        path: "/generator/string",
+        lazy: () => import("@/pages/generator/string/page.tsx"),
       },
       {
-        path: '/url',
-        lazy: () => import('@/pages/url/page.tsx'),
+        path: "/hash",
+        lazy: () => import("@/pages/hash/page.tsx"),
       },
       {
-        path: '/writer',
-        lazy: () => import('@/pages/writer/page.tsx'),
+        path: "/json",
+        children: [
+          {
+            index: true,
+            lazy: () => import("@/pages/json/json-editor"),
+          },
+          {
+            path: "json-editor",
+            lazy: () => import("@/pages/json/json-editor"),
+          },
+          {
+            path: "json-to-excel",
+            lazy: () => import("@/pages/json/json-to-excel/page.tsx"),
+          },
+        ],
       },
       {
-        path: '/transform',
-        lazy: () => import('@/pages/transform'),
+        path: "/markdown",
+        lazy: () => import("@/pages/markdown"),
+      },
+      {
+        path: "/timestamp",
+        lazy: () => import("@/pages/timestamp/page.tsx"),
+      },
+      {
+        path: "/tiptap",
+        lazy: () => import("@/pages/tiptap/page.tsx"),
+      },
+      {
+        path: "/totp",
+        lazy: () => import("@/pages/totp/page.tsx"),
+      },
+      {
+        path: "/url",
+        lazy: () => import("@/pages/url/page.tsx"),
+      },
+      {
+        path: "/user-pass",
+        lazy: () => import("@/pages/user-pass/index.tsx"),
+      },
+      {
+        path: "/writer",
+        lazy: () => import("@/pages/writer/page.tsx"),
+      },
+      {
+        path: "/transform",
+        lazy: () => import("@/pages/transform"),
       },
     ],
   },
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
-];
+]);
 
-const router = createBrowserRouter(routes);
 export default router;

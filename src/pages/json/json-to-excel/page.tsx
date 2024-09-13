@@ -1,25 +1,25 @@
-import JSON5 from 'json5';
-import _ from 'lodash';
-import { useEffect, useState } from 'react';
-import AceEditor from 'react-ace';
-import type { AceOptions } from 'react-ace/types';
-import ReactDataSheet from 'react-datasheet';
+import JSON5 from "json5";
+import { uniqWith } from "lodash-es";
+import { useEffect, useState } from "react";
+import type { IAceOptions } from "react-ace";
+import AceEditor from "react-ace";
+import ReactDataSheet from "react-datasheet";
 
-import 'ace-builds/src-noconflict/ext-searchbox';
-import 'ace-builds/src-noconflict/mode-json5';
-import 'ace-builds/src-noconflict/mode-yaml';
-import 'ace-builds/src-noconflict/theme-textmate';
+import "ace-builds/src-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/mode-json5";
+import "ace-builds/src-noconflict/mode-yaml";
+import "ace-builds/src-noconflict/theme-textmate";
 
-import 'react-datasheet/lib/react-datasheet.css';
+import "react-datasheet/lib/react-datasheet.css";
 
 export interface GridElement extends ReactDataSheet.Cell<GridElement, number | string | null> {
   value: number | string | null;
 }
 
 export const Component = () => {
-  const [json, setJson] = useState<string>('{}');
+  const [json, setJson] = useState<string>("{}");
   const [data, setData] = useState<GridElement[][]>([]);
-  const [jsonOptions] = useState<AceOptions>({
+  const [jsonOptions] = useState<IAceOptions>({
     useWorker: false,
     showLineNumbers: true,
     tabSize: 2,
@@ -38,7 +38,7 @@ export const Component = () => {
             columns.push({ value: key, readOnly: true });
           });
         });
-        columns = _.uniqWith(columns, (a, b) => {
+        columns = uniqWith(columns, (a, b) => {
           return a.value === b.value;
         });
 

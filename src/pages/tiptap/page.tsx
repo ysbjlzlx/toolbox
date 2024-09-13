@@ -1,165 +1,192 @@
-import Iconify from '@/components/Iconify';
-import { PageContainer } from '@ant-design/pro-components';
-import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
-import Highlight from '@tiptap/extension-highlight';
-import subscript from '@tiptap/extension-subscript';
-import superscript from '@tiptap/extension-superscript';
-import underline from '@tiptap/extension-underline';
-import { EditorProvider, useCurrentEditor } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
-import { Button, Card, Dropdown, Space, Tooltip } from 'antd';
-import copy from 'copy-text-to-clipboard';
-import { common, createLowlight } from 'lowlight';
-import type { FC } from 'react';
-import { useMemo } from 'react';
+import { PageContainer } from "@/components/ui";
+import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
+import Highlight from "@tiptap/extension-highlight";
+import ExtensionLink from "@tiptap/extension-link";
+import subscript from "@tiptap/extension-subscript";
+import superscript from "@tiptap/extension-superscript";
+import underline from "@tiptap/extension-underline";
+import { EditorProvider, useCurrentEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import { Button, Dropdown, Space, Tooltip } from "antd";
+import copy from "copy-to-clipboard";
+import { common, createLowlight } from "lowlight";
+import type { FC } from "react";
+import { useCallback, useMemo } from "react";
 
-import css from 'highlight.js/lib/languages/css';
-import json from 'highlight.js/lib/languages/json';
-import xml from 'highlight.js/lib/languages/xml';
+import css from "highlight.js/lib/languages/css";
+import json from "highlight.js/lib/languages/json";
+import xml from "highlight.js/lib/languages/xml";
 
-import 'highlight.js/styles/github-dark.min.css';
+import { Icon } from "@/components/ui/Icon.tsx";
+import "highlight.js/styles/github.min.css";
 
+// eslint-disable-next-line complexity
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
+  const activeClassName = "text-sky-500";
+
+  const setLink = useCallback(() => {
+    if (!editor) {
+      return;
+    }
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+  }, [editor]);
 
   if (!editor) {
     return null;
   }
 
   return (
-    <div>
+    <div className="tiptap-menu my-4 flex flex-wrap gap-x-4 gap-y-2">
       <Space.Compact>
         <Button
-          icon={<Iconify icon="material-symbols:format-paragraph" />}
+          icon={<Icon name="Pilcrow" />}
+          type={editor.isActive("paragraph") ? "primary" : "default"}
           onClick={() => editor.chain().focus().setParagraph().run()}
-          type={editor.isActive('paragraph') ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:format-h1" />}
+          icon={<span>H1</span>}
+          type={editor.isActive("heading", { level: 1 }) ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          type={editor.isActive('heading', { level: 1 }) ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:format-h2" />}
+          icon={<span>H2</span>}
+          type={editor.isActive("heading", { level: 2 }) ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          type={editor.isActive('heading', { level: 2 }) ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:format-h3" />}
+          icon={<span>H3</span>}
+          type={editor.isActive("heading", { level: 3 }) ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          type={editor.isActive('heading', { level: 3 }) ? 'primary' : 'default'}
         />
-
         <Dropdown
           menu={{
             items: [
               {
-                key: '1',
-                icon: <Iconify icon="material-symbols:format-h4" />,
-                onClick: () => editor.chain().focus().toggleHeading({ level: 4 }).run(),
+                key: "h4",
+                label: <h4 className={editor.isActive("heading", { level: 4 }) ? activeClassName : ""}>H4</h4>,
               },
               {
-                key: '2',
-                icon: <Iconify icon="material-symbols:format-h5" />,
-                onClick: () => editor.chain().focus().toggleHeading({ level: 5 }).run(),
+                key: "h5",
+                label: <h5 className={editor.isActive("heading", { level: 5 }) ? activeClassName : ""}>H5</h5>,
               },
               {
-                key: '3',
-                icon: <Iconify icon="material-symbols:format-h6" />,
-                onClick: () => editor.chain().focus().toggleHeading({ level: 6 }).run(),
+                key: "h6",
+                label: <h6 className={editor.isActive("heading", { level: 6 }) ? activeClassName : ""}>H6</h6>,
               },
             ],
+            onClick: (info) => {
+              if (info.key === "h4") {
+                editor.chain().focus().toggleHeading({ level: 4 }).run();
+              } else if (info.key === "h5") {
+                editor.chain().focus().toggleHeading({ level: 5 }).run();
+              } else if (info.key === "h6") {
+                editor.chain().focus().toggleHeading({ level: 6 }).run();
+              }
+            },
           }}
         >
-          <Button icon={<Iconify icon="material-symbols:more-horiz" />} />
+          <Button
+            icon={<Icon name="ChevronDown" />}
+            type={
+              editor.isActive("heading", { level: 4 }) ||
+              editor.isActive("heading", { level: 5 }) ||
+              editor.isActive("heading", { level: 6 })
+                ? "primary"
+                : "default"
+            }
+            onClick={(e) => e.preventDefault()}
+          />
         </Dropdown>
       </Space.Compact>
       <Space.Compact>
         <Button
-          icon={<Iconify icon="material-symbols:format-bold" />}
+          icon={<Icon name="Bold" />}
           onClick={() => editor.chain().focus().toggleBold().run()}
-          disabled={!editor.can().chain().focus().toggleBold().run()}
-          type={editor.isActive('bold') ? 'primary' : 'default'}
+          type={editor.isActive("bold") ? "primary" : "default"}
         />
         <Button
-          icon={<Iconify icon="material-symbols:format-italic" />}
+          icon={<Icon name="Italic" />}
+          type={editor.isActive("italic") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          type={editor.isActive('italic') ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:code-rounded" />}
+          icon={<Icon name="Code" />}
+          type={editor.isActive("code") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleCode().run()}
-          type={editor.isActive('code') ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:superscript" />}
+          icon={<Icon name="Superscript" />}
+          type={editor.isActive("superscript") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleSuperscript().run()}
-          type={editor.isActive('superscript') ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:subscript" />}
+          icon={<Icon name="Subscript" />}
+          type={editor.isActive("subscript") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleSubscript().run()}
-          type={editor.isActive('subscript') ? 'primary' : 'default'}
         />
       </Space.Compact>
       <Space.Compact>
         <Button
-          icon={<Iconify icon="material-symbols:format-strikethrough" />}
+          icon={<Icon name="Strikethrough" />}
+          type={editor.isActive("strike") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleStrike().run()}
-          type={editor.isActive('strike') ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:format-ink-highlighter-outline" />}
+          icon={<Icon name="Highlighter" />}
+          type={editor.isActive("highlight") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleHighlight().run()}
-          type={editor.isActive('highlight') ? 'primary' : 'default'}
         />
         <Button
-          icon={<Iconify icon="material-symbols:format-underlined" />}
+          icon={<Icon name="Underline" />}
+          type={editor.isActive("underline") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleUnderline().run()}
-          type={editor.isActive('underline') ? 'primary' : 'default'}
         />
       </Space.Compact>
       <Space.Compact>
+        <Button icon={<Icon name="Link" />} type={editor.isActive("link") ? "primary" : "default"} onClick={setLink} />
         <Button
-          icon={<Iconify icon="material-symbols:format-quote" />}
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          type={editor.isActive('blockquote') ? 'primary' : 'default'}
+          icon={<Icon name="List" />}
+          type={editor.isActive("bulletList") ? "primary" : "default"}
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
         />
-        <Dropdown.Button
+        <Button
+          icon={<Icon name="ListOrdered" />}
+          type={editor.isActive("orderedList") ? "primary" : "default"}
+          onClick={() => editor.chain().focus().toggleOrderedList().run()}
+        />
+        <Button
+          icon={<Icon name="Quote" />}
+          type={editor.isActive("blockquote") ? "primary" : "default"}
+          onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        />
+        <Button
+          icon={<Icon name="CodeXml" />}
+          type={editor.isActive("codeBlock") ? "primary" : "default"}
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-          type={editor.isActive('codeBlock') ? 'primary' : 'default'}
-          menu={{
-            items: [
-              {
-                key: 1,
-                label: 'CSS',
-                onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'CSS' }).run(),
-              },
-              {
-                key: 2,
-                label: 'JSON',
-                onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'json' }).run(),
-              },
-              {
-                key: 3,
-                label: 'XML',
-                onClick: () => editor.chain().focus().toggleCodeBlock({ language: 'xml' }).run(),
-              },
-            ],
-          }}
-          className="inline"
-        >
-          <Iconify icon="material-symbols:code" />
-        </Dropdown.Button>
+        />
       </Space.Compact>
-      <Space.Compact>
+      <Space>
         <Tooltip title="复制 HTML 源码">
-          <Button
-            icon={<Iconify icon="material-symbols-light:content-copy" />}
-            onClick={() => copy(editor?.getHTML())}
-          />
+          <Button icon={<Icon name="Copy" />} onClick={() => copy(editor?.getHTML())} />
         </Tooltip>
-      </Space.Compact>
+      </Space>
     </div>
   );
 };
@@ -199,7 +226,7 @@ const content = `
 
 const editorProps = {
   attributes: {
-    class: 'prose prose-base dark:prose-invert focus:outline-none',
+    class: "prose prose-base dark:prose-invert focus:outline-none max-w-full",
   },
 };
 export const Component: FC = () => {
@@ -221,17 +248,20 @@ export const Component: FC = () => {
       },
       codeBlock: false,
     }),
-    Highlight,
+    Highlight.configure({ HTMLAttributes: { class: "bg-yellow-500" } }),
     underline,
     superscript,
     subscript,
-    CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: 'plaintext' }),
+    CodeBlockLowlight.configure({ lowlight: lowlight, defaultLanguage: "plaintext" }),
+    ExtensionLink.configure({
+      openOnClick: false,
+    }),
   ];
 
   return (
-    <PageContainer title={false}>
-      <div className="h-[calc(100dvh-56px)] p-4 md:h-dvh">
-        <Card>
+    <PageContainer>
+      <div className="flex h-full flex-col">
+        <div className="flex-1 overflow-auto rounded-[8px] border-solid p-4">
           <EditorProvider
             slotBefore={<MenuBar />}
             extensions={extensions}
@@ -245,7 +275,7 @@ export const Component: FC = () => {
           >
             {null}
           </EditorProvider>
-        </Card>
+        </div>
       </div>
     </PageContainer>
   );

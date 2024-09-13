@@ -1,22 +1,22 @@
-import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Checkbox, Form, Input, Slider, Space } from 'antd';
-import { useEffect, useState } from 'react';
+import { type FormProps, PageContainer } from "@ant-design/pro-components";
+import { Button, Card, Checkbox, Form, Input, Slider, Space } from "antd";
+import { useEffect, useState } from "react";
 
-import ContentCopyButton from '@/components/ContentCopyButton.tsx';
-import Iconify from '@/components/Iconify';
-import type { GeneratorOptions } from '@/scripts/RandomStringUtils.ts';
-import { generator } from '@/scripts/RandomStringUtils.ts';
+import CopyTextButton from "@/components/CopyTextButton";
+import Iconify from "@/components/Iconify";
+import type { GeneratorOptions } from "@/scripts/RandomStringUtils.ts";
+import { generator } from "@/scripts/RandomStringUtils.ts";
 
 const initialOptions: GeneratorOptions = {
   numeric: true,
   lowercase: true,
   uppercase: true,
   symbol: false,
-  symbolChars: '!@#$%^&*',
+  symbolChars: "!@#$%^&*",
   length: 8,
 };
 export const Component = () => {
-  const [randomString, setRandomString] = useState<string>('');
+  const [randomString, setRandomString] = useState<string>("");
 
   useEffect(() => {
     refresh();
@@ -27,8 +27,8 @@ export const Component = () => {
     setRandomString(varchar);
   };
 
-  const onValuesChange = (_: any, allValues: GeneratorOptions) => {
-    refresh(allValues);
+  const onValuesChange: FormProps["onValuesChange"] = (_, values: GeneratorOptions) => {
+    refresh(values);
   };
 
   const onFinish = (values: GeneratorOptions) => {
@@ -60,14 +60,14 @@ export const Component = () => {
           </div>
           <div>
             <Form.Item name="length" label="长度">
-              <Slider min={6} max={64} step={1} marks={{ 6: '6', 8: '8', 16: '16', 32: '32', 64: '64' }} />
+              <Slider min={6} max={64} step={1} marks={{ 6: "6", 8: "8", 16: "16", 32: "32", 64: "64" }} />
             </Form.Item>
           </div>
           <div className="flex">
             <Input value={randomString} showCount className="mr-2 flex-auto" />
             <Space.Compact className="flex-none">
-              <Button htmlType="submit" icon={<Iconify icon="material-symbols:refresh" />} />
-              <ContentCopyButton text={randomString} />
+              <Button htmlType="submit" icon={<Iconify icon="lucide:refresh-ccw" />} />
+              <CopyTextButton text={randomString} />
             </Space.Compact>
           </div>
         </Card>
