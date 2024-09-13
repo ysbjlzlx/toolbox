@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@ant-design/cssinjs": "1.21.1",
