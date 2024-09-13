@@ -107,6 +107,7 @@
     "autoprefixer": "10.4.20",
     "husky": "9.1.6",
     "jsdom": "25.0.0",
+    "lefthook": "1.7.15",
     "lint-staged": "15.2.10",
     "postcss": "8.4.45",
     "stylelint": "16.9.0",
