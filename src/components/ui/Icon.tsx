@@ -17,7 +17,7 @@ export const Icon = memo(({ name, className, strokeWidth, onClick }: IconProps) 
   }
 
   return (
-    <span role="img" className="anticon">
+    <span className="anticon">
       <IconComponent className={cn("h-4 w-4", className)} strokeWidth={strokeWidth || 2.5} onClick={onClick} />
     </span>
   );
