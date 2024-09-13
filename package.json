@@ -8,7 +8,6 @@
     "dev": "vite",
     "lint": "biome check src",
     "lint:fix": "biome check --write --unsafe src",
-    "prepare": "lefthook install",
     "preview": "vite preview",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
