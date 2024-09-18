@@ -62,7 +62,7 @@
     "i18next-resources-to-backend": "1.2.1",
     "json5": "2.2.3",
     "lodash-es": "4.17.21",
-    "lossless-json": "4.0.1",
+    "lossless-json": "4.0.2",
     "lowlight": "3.1.0",
     "lucide-react": "0.441.0",
     "nanoid": "5.0.7",
