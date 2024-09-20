@@ -119,7 +119,7 @@
     "vitest": "2.1.1",
     "workbox-window": "7.1.0"
   },
-  "packageManager": "pnpm@9.10.0",
+  "packageManager": "pnpm@9.11.0",
   "pnpm": {
     "overrides": {
       "rc-field-form": "2.4.0"
