@@ -107,7 +107,7 @@
     "@vitejs/plugin-react": "4.3.1",
     "autoprefixer": "10.4.20",
     "jsdom": "25.0.1",
-    "lefthook": "1.7.15",
+    "lefthook": "1.7.16",
     "postcss": "8.4.47",
     "stylelint": "16.9.0",
     "stylelint-config-standard": "36.0.1",
