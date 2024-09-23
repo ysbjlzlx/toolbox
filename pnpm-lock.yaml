@@ -162,8 +162,8 @@ importers:
         specifier: 5.0.7
         version: 5.0.7
       otpauth:
-        specifier: 9.3.2
-        version: 9.3.2
+        specifier: 9.3.3
+        version: 9.3.3
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -1647,6 +1647,10 @@ packages:
   '@noble/hashes@1.4.0':
     resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
     engines: {node: '>= 16'}
+
+  '@noble/hashes@1.5.0':
+    resolution: {integrity: sha512-1j6kQFb7QRru7eKN3ZDvRcP13rugwdxZqCjbiAVZfIJwgj2A65UmT4TgARXGlXgnRkORLTDTrO19ZErt7+QXgA==}
+    engines: {node: ^14.21.3 || >=16}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3981,8 +3985,8 @@ packages:
   orderedmap@2.1.1:
     resolution: {integrity: sha512-TvAWxi0nDe1j/rtMcWcIj94+Ffe6n7zhow33h40SKxmsmozs6dz/e+EajymfoFcHd7sxNn8yHM8839uixMOV6g==}
 
-  otpauth@9.3.2:
-    resolution: {integrity: sha512-KixtXWN9RGdS8WHPfDo7qsOYiivCbl+VeLBT+7HBTtJebBO6aXr/bpZXr+TwY2COecdY82VeBghm31mLYQVZlQ==}
+  otpauth@9.3.3:
+    resolution: {integrity: sha512-4w8X5BqWsnt/w0knrr94Eho+gY0m6Wr2J1lfi2J0GnJkF/iauqZ2X3QA4wou7efhzT590jcZBRW8Y9EdQPGFRw==}
 
   p-limit@4.0.0:
     resolution: {integrity: sha512-5b0R4txpzjPWVw/cXXUResoD4hb6U/x9BH08L7nw+GN1sezDzPdxeRvpc9c433fZhBan/wusjbCsqwqm4EIBIQ==}
@@ -6960,6 +6964,8 @@ snapshots:
 
   '@noble/hashes@1.4.0': {}
 
+  '@noble/hashes@1.5.0': {}
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -9384,9 +9390,9 @@ snapshots:
 
   orderedmap@2.1.1: {}
 
-  otpauth@9.3.2:
+  otpauth@9.3.3:
     dependencies:
-      '@noble/hashes': 1.4.0
+      '@noble/hashes': 1.5.0
 
   p-limit@4.0.0:
     dependencies:
