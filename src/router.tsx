@@ -93,6 +93,10 @@ const router = createBrowserRouter([
         lazy: () => import("@/pages/markdown"),
       },
       {
+        path: "/password",
+        lazy: () => import("@/pages/password"),
+      },
+      {
         path: "/timestamp",
         lazy: () => import("@/pages/timestamp/page.tsx"),
       },
