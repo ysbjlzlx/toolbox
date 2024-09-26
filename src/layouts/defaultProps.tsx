@@ -122,4 +122,16 @@ export const menuData: MenuDataItem[] = [
     path: "/transform",
     icon: <Iconify icon="material-symbols:transform" />,
   },
+  {
+    name: "用户名与密码",
+    desc: "为你生成安全的用户名和密码",
+    icon: <Iconify icon="lucide:shield-check" />,
+    children: [
+      {
+        name: "密码",
+        desc: "生成密码",
+        path: "/password",
+      },
+    ],
+  },
 ];
