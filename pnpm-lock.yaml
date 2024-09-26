@@ -207,8 +207,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0
       vanilla-jsoneditor:
-        specifier: 1.0.2
-        version: 1.0.2(@lezer/common@1.2.1)
+        specifier: 1.0.3
+        version: 1.0.3(@lezer/common@1.2.1)
       vditor:
         specifier: 3.10.6
         version: 3.10.6
@@ -5176,8 +5176,8 @@ packages:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
     hasBin: true
 
-  vanilla-jsoneditor@1.0.2:
-    resolution: {integrity: sha512-22G1bC2Vfcwvusuv7y5PeIITGVZkdy8V0j5emg+ab3Cc3HL4re7MhhAvX3LXE7gmXurkfc7Un8kn03cd5Fty1w==}
+  vanilla-jsoneditor@1.0.3:
+    resolution: {integrity: sha512-ocAFkQIIuv3yRThup8MP6hmsBz+Mi652ywoa1urGcZHUEkG264yNo7pEgJDF50qSn7Mr+AX25HF0bSjvdUSxlw==}
 
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
@@ -6602,7 +6602,7 @@ snapshots:
       '@codemirror/state': 6.4.1
       '@codemirror/view': 6.34.0
       '@lezer/common': 1.2.1
-      '@lezer/highlight': 1.2.0
+      '@lezer/highlight': 1.2.1
       '@lezer/lr': 1.4.0
       style-mod: 4.1.2
 
@@ -10822,7 +10822,7 @@ snapshots:
 
   uuid@10.0.0: {}
 
-  vanilla-jsoneditor@1.0.2(@lezer/common@1.2.1):
+  vanilla-jsoneditor@1.0.3(@lezer/common@1.2.1):
     dependencies:
       '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.6.2
