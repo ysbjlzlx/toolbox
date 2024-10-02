@@ -33,7 +33,7 @@
     "@tiptap/react": "2.8.0",
     "@tiptap/starter-kit": "2.8.0",
     "@uiw/codemirror-theme-github": "4.23.4",
-    "@uiw/react-codemirror": "4.23.3",
+    "@uiw/react-codemirror": "4.23.4",
     "ace-builds": "1.36.2",
     "ahooks": "3.8.1",
     "antd": "5.21.2",
