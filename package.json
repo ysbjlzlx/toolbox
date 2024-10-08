@@ -80,7 +80,7 @@
     "url": "0.11.4",
     "usehooks-ts": "3.1.0",
     "uuid": "10.0.0",
-    "vanilla-jsoneditor": "1.0.4",
+    "vanilla-jsoneditor": "1.0.6",
     "vditor": "3.10.6",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "xml-formatter": "3.6.3",
@@ -125,6 +125,9 @@
   "pnpm": {
     "overrides": {
       "rc-field-form": "2.4.0"
+    },
+    "patchedDependencies": {
+      "vanilla-jsoneditor": "patches/vanilla-jsoneditor.patch"
     }
   }
 }
