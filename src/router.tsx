@@ -64,10 +64,6 @@ const router = createBrowserRouter([
         lazy: () => import("@/pages/generator/id/page.tsx"),
       },
       {
-        path: "/generator/string",
-        lazy: () => import("@/pages/generator/string/page.tsx"),
-      },
-      {
         path: "/hash",
         lazy: () => import("@/pages/hash/page.tsx"),
       },

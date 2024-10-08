@@ -15,7 +15,7 @@ const initialOptions: GeneratorOptions = {
   symbolChars: "!@#$%^&*",
   length: 8,
 };
-export const Component = () => {
+export const Random = () => {
   const [randomString, setRandomString] = useState<string>("");
 
   useEffect(() => {
