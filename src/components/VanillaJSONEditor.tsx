@@ -1,15 +1,15 @@
 import * as LosslessJSON from "lossless-json";
 import { useEffect, useRef } from "react";
-import type { JSONEditorPropsOptional } from "vanilla-jsoneditor";
-import { JSONEditor, javascriptQueryLanguage, lodashQueryLanguage } from "vanilla-jsoneditor";
+import type { JSONEditorPropsOptional, JsonEditor } from "vanilla-jsoneditor";
+import { createJSONEditor, javascriptQueryLanguage, lodashQueryLanguage } from "vanilla-jsoneditor";
 
 const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const editorRef = useRef<JSONEditor>();
+  const editorRef = useRef<JsonEditor>();
 
   useEffect(() => {
     if (containerRef?.current) {
-      editorRef.current = new JSONEditor({
+      editorRef.current = createJSONEditor({
         target: containerRef.current,
         props: { parser: LosslessJSON, queryLanguages: [javascriptQueryLanguage, lodashQueryLanguage] },
       });
