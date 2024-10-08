@@ -67,14 +67,7 @@ export const menuData: MenuDataItem[] = [
   {
     name: "生成器（Generator）",
     icon: <Iconify icon="lucide:dices" />,
-    children: [
-      {
-        name: "随机字符串（String）",
-        desc: "生成包含数字、小写字母、大写字母、符号的随机字符串",
-        path: "/generator/string",
-      },
-      { name: "ID", path: "/generator/id" },
-    ],
+    children: [{ name: "ID", path: "/generator/id" }],
   },
   {
     name: "URL",
