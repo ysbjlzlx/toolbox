@@ -93,7 +93,7 @@
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@iconify/react": "5.0.2",
-    "@swc/core": "1.7.28",
+    "@swc/core": "1.7.35",
     "@tailwindcss/typography": "0.5.15",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
