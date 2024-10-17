@@ -65,11 +65,6 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
-    name: "生成器（Generator）",
-    icon: <Iconify icon="lucide:dices" />,
-    children: [{ name: "ID", path: "/generator/id" }],
-  },
-  {
     name: "URL",
     desc: "URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。",
     path: "/url",
@@ -116,10 +111,11 @@ export const menuData: MenuDataItem[] = [
     icon: <Iconify icon="material-symbols:transform" />,
   },
   {
-    name: "用户名与密码",
-    desc: "为你生成安全的用户名和密码",
+    name: "安全",
+    desc: "随机 ID，随机用户名，随机密码",
     icon: <Iconify icon="lucide:shield-check" />,
     children: [
+      { name: "ID", path: "/generator/id" },
       {
         name: "密码",
         desc: "生成密码",
