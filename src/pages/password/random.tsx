@@ -1,9 +1,8 @@
 import { CheckCard, PageContainer } from "@ant-design/pro-components";
-import { Button, Divider, Input, InputNumber, Slider, Space } from "antd";
+import { Divider, InputNumber, Slider } from "antd";
 import { useEffect, useState } from "react";
 
-import CopyTextButton from "@/components/CopyTextButton";
-import Iconify from "@/components/Iconify";
+import { RandomTextResult } from "@/components/RandomTextResult";
 import type { GeneratorOptions } from "@/scripts/RandomStringUtils.ts";
 import { generator } from "@/scripts/RandomStringUtils.ts";
 
@@ -31,7 +30,8 @@ export const Random = () => {
     <PageContainer title={false} className="mx-auto max-w-screen-lg px-4 pt-4">
       <div>
         <CheckCard
-          title="数字 0 ～ 9"
+          title="数字"
+          description="0 ~ 9"
           size={"small"}
           defaultChecked
           onChange={(checked) => {
@@ -39,7 +39,8 @@ export const Random = () => {
           }}
         />
         <CheckCard
-          title="小写字母 a ~ z"
+          title="小写字母"
+          description="a ~ z"
           size={"small"}
           defaultChecked
           onChange={(checked) => {
@@ -47,7 +48,8 @@ export const Random = () => {
           }}
         />
         <CheckCard
-          title="大写字母 A ~ Z"
+          title="大写字母"
+          description="A ~ Z"
           size={"small"}
           defaultChecked
           onChange={(checked) => {
@@ -55,7 +57,8 @@ export const Random = () => {
           }}
         />
         <CheckCard
-          title="符号 ! @ # $ % ^ & *"
+          title="符号"
+          description="! @ # $ % ^ & *"
           size={"small"}
           onChange={(checked) => {
             setGeneratorOptions({ ...generatorOptions, symbol: checked });
@@ -86,17 +89,15 @@ export const Random = () => {
           </div>
         </div>
         <Divider />
-        <div className="flex">
-          <Input value={randomString} showCount className="mr-2 flex-auto" />
-          <Space.Compact className="flex-none">
-            <Button
-              icon={<Iconify icon="lucide:refresh-ccw" />}
-              onClick={() => {
-                refresh(generatorOptions);
-              }}
-            />
-            <CopyTextButton text={randomString} />
-          </Space.Compact>
+        <div>
+          <RandomTextResult
+            text={randomString}
+            copyBtnText="复制密码"
+            refreshBtnText="刷新密码"
+            onClickRefreshBtn={() => {
+              refresh(generatorOptions);
+            }}
+          />
         </div>
       </div>
     </PageContainer>
