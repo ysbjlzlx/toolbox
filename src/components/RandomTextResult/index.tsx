@@ -19,7 +19,7 @@ export const RandomTextResult: FC<Props> = ({ text, onClickRefreshBtn, ...props 
         setTrue();
         setTimeout(() => {
           setFalse();
-        }, 1000);
+        }, 2000);
       });
     }
   };
