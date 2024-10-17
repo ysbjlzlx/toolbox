@@ -1,8 +1,9 @@
 import { PageContainer } from "@ant-design/pro-components";
 import { Card } from "antd";
 import type { CardProps } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type React from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Iconify from "@/components/Iconify";
 import { Pin } from "./pin";
@@ -22,6 +23,14 @@ const tabList: CardProps["tabList"] = [
 
 export const Component = () => {
   const [activeTabKey, setActiveTabKey] = useState<string>("pin");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const tab = searchParams?.get("tab");
+    if (tab && tab.length > 0) {
+      setActiveTabKey(tab);
+    }
+  }, [searchParams]);
 
   const contentList: Record<string, React.ReactNode> = {
     pin: <Pin />,
@@ -30,6 +39,10 @@ export const Component = () => {
 
   const onTabChange: CardProps["onTabChange"] = (key) => {
     setActiveTabKey(key);
+
+    const params = new URLSearchParams(searchParams);
+    params.set("tab", key);
+    setSearchParams(params);
   };
 
   return (
