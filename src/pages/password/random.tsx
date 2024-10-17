@@ -3,27 +3,27 @@ import { Divider, InputNumber, Slider } from "antd";
 import { useEffect, useState } from "react";
 
 import { RandomTextResult } from "@/components/RandomTextResult";
-import type { GeneratorOptions } from "@/scripts/RandomStringUtils.ts";
-import { generator } from "@/scripts/RandomStringUtils.ts";
+import { type GeneratePasswordOptions, generatePassword } from "@/lib/random-string-utils.ts";
 
-const initialOptions: GeneratorOptions = {
-  numeric: true,
+const initialOptions: GeneratePasswordOptions = {
+  length: 12,
+  numbers: true,
   lowercase: true,
   uppercase: true,
-  symbol: false,
-  symbolChars: "!@#$%^&*",
-  length: 12,
+  symbols: false,
+  nolookalikes: true,
+  includeAllTypes: true,
 };
 export const Random = () => {
-  const [generatorOptions, setGeneratorOptions] = useState<GeneratorOptions>(initialOptions);
+  const [generatorOptions, setGeneratorOptions] = useState<GeneratePasswordOptions>(initialOptions);
   const [randomString, setRandomString] = useState<string>("");
 
   useEffect(() => {
     refresh(generatorOptions);
   }, [generatorOptions]);
 
-  const refresh = (options: GeneratorOptions = initialOptions) => {
-    const varchar = generator(options);
+  const refresh = (options = initialOptions) => {
+    const varchar = generatePassword(options);
     setRandomString(varchar);
   };
   return (
@@ -35,7 +35,7 @@ export const Random = () => {
           size={"small"}
           defaultChecked
           onChange={(checked) => {
-            setGeneratorOptions({ ...generatorOptions, numeric: checked });
+            setGeneratorOptions({ ...generatorOptions, numbers: checked });
           }}
         />
         <CheckCard
@@ -58,10 +58,29 @@ export const Random = () => {
         />
         <CheckCard
           title="符号"
-          description="! @ # $ % ^ & *"
+          description="! @ # $ % & * ( ) ."
           size={"small"}
           onChange={(checked) => {
-            setGeneratorOptions({ ...generatorOptions, symbol: checked });
+            setGeneratorOptions({ ...generatorOptions, symbols: checked });
+          }}
+        />
+        <Divider />
+        <CheckCard
+          title="排除相似的字符"
+          description="0 1 2 5 l o s u v I O S Z"
+          size={"small"}
+          defaultChecked
+          onChange={(checked) => {
+            setGeneratorOptions({ ...generatorOptions, nolookalikes: checked });
+          }}
+        />
+        <CheckCard
+          title="包含每一种字符"
+          description="-"
+          size={"small"}
+          defaultChecked
+          onChange={(checked) => {
+            setGeneratorOptions({ ...generatorOptions, includeAllTypes: checked });
           }}
         />
         <Divider />
