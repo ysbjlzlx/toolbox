@@ -56,6 +56,10 @@ const router = createBrowserRouter([
         children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
       },
       {
+        path: "/template",
+        children: [{ index: true, lazy: () => import("@/pages/template/index.tsx") }],
+      },
+      {
         path: "/excel",
         lazy: () => import("@/pages/excel/page.tsx"),
       },
