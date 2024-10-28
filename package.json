@@ -129,9 +129,6 @@
   "pnpm": {
     "overrides": {
       "rc-field-form": "2.4.0"
-    },
-    "patchedDependencies": {
-      "vanilla-jsoneditor": "patches/vanilla-jsoneditor.patch"
     }
   }
 }

@@ -7,11 +7,6 @@ settings:
 overrides:
   rc-field-form: 2.4.0
 
-patchedDependencies:
-  vanilla-jsoneditor:
-    hash: 7ttr4sv22avdtw7vjieglmej6i
-    path: patches/vanilla-jsoneditor.patch
-
 importers:
 
   .:
@@ -225,7 +220,7 @@ importers:
         version: 11.0.1
       vanilla-jsoneditor:
         specifier: 1.1.2
-        version: 1.1.2(patch_hash=7ttr4sv22avdtw7vjieglmej6i)(@lezer/common@1.2.1)
+        version: 1.1.2(@lezer/common@1.2.1)
       vditor:
         specifier: 3.10.7
         version: 3.10.7
@@ -11278,7 +11273,7 @@ snapshots:
 
   uuid@11.0.1: {}
 
-  vanilla-jsoneditor@1.1.2(patch_hash=7ttr4sv22avdtw7vjieglmej6i)(@lezer/common@1.2.1):
+  vanilla-jsoneditor@1.1.2(@lezer/common@1.2.1):
     dependencies:
       '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.1)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.7.1
