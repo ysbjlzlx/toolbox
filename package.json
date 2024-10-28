@@ -84,13 +84,13 @@
     "url": "0.11.4",
     "usehooks-ts": "3.1.0",
     "uuid": "11.0.1",
-    "vanilla-jsoneditor": "1.1.2",
+    "vanilla-jsoneditor": "2.0.0",
     "vditor": "3.10.7",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "xml-formatter": "3.6.3",
     "yaml": "2.6.0",
     "zod": "3.23.8",
-    "zustand": "4.5.5"
+    "zustand": "5.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
