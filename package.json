@@ -123,7 +123,7 @@
     "vite": "5.4.10",
     "vite-plugin-pwa": "0.20.5",
     "vitest": "2.1.4",
-    "workbox-window": "7.1.0"
+    "workbox-window": "7.3.0"
   },
   "packageManager": "pnpm@9.12.3",
   "pnpm": {
