@@ -189,8 +189,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       react-ace:
-        specifier: 12.0.0
-        version: 12.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 13.0.0
+        version: 13.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-codemirror-merge:
         specifier: 4.23.6
         version: 4.23.6(@babel/runtime@7.25.6)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.1)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.1)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4746,8 +4746,8 @@ packages:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
 
-  react-ace@12.0.0:
-    resolution: {integrity: sha512-PstU6CSMfYIJknb4su2Fa0WgLXzq2ufQgR6fjcSWuGT1hGTHkBzuKw+SncV8PuLCdSJBJc1VehPhyeXlWByG/g==}
+  react-ace@13.0.0:
+    resolution: {integrity: sha512-PPk2O/ArHzDtbnK82QImfHYXwuiitRgHJf5AxwMQh9zciojbWsPmKJm1tMgWOYLCtGEz8/Dh3MxRxrXe7QcstQ==}
     peerDependencies:
       react: ^0.13.0 || ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
       react-dom: ^0.13.0 || ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
@@ -10507,7 +10507,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  react-ace@12.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-ace@13.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       ace-builds: 1.36.3
       diff-match-patch: 1.0.5
