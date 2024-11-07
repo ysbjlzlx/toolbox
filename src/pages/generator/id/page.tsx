@@ -1,6 +1,6 @@
 import { PageContainer } from "@ant-design/pro-components";
 import { createId } from "@paralleldrive/cuid2";
-import { TwitterSnowflake } from "@sapphire/snowflake";
+import * as snowflake from "@sapphire/snowflake";
 import type { SegmentedProps } from "antd";
 import { Button, Card, Segmented } from "antd";
 import ObjectID from "bson-objectid";
@@ -8,6 +8,8 @@ import { nanoid } from "nanoid";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
+const { TwitterSnowflake } = snowflake;
 
 import TextResultBox from "@/components/TextResultBox.tsx";
 
