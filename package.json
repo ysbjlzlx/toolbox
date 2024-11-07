@@ -22,7 +22,7 @@
     "@codemirror/view": "6.34.2",
     "@paralleldrive/cuid2": "2.2.2",
     "@repo/colors": "workspace:@repo/colors@*",
-    "@sapphire/snowflake": "3.5.3",
+    "@sapphire/snowflake": "3.5.4",
     "@scure/base": "1.1.9",
     "@tiptap/extension-code-block-lowlight": "2.9.1",
     "@tiptap/extension-highlight": "2.9.1",
