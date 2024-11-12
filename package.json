@@ -97,6 +97,7 @@
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@iconify/react": "5.0.2",
+    "@mdxeditor/editor": "3.18.0",
     "@swc/core": "1.9.2",
     "@tailwindcss/typography": "0.5.15",
     "@testing-library/jest-dom": "6.6.3",

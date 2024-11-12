@@ -122,7 +122,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/writer",
-        lazy: () => import("@/pages/writer/page.tsx"),
+        children: [
+          { index: true, lazy: () => import("@/pages/writer/page.tsx") },
+          {
+            path: "new",
+            lazy: () => import("@/routes/writer/index.tsx"),
+          },
+        ],
       },
       {
         path: "/transform",
