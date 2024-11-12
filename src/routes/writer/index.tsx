@@ -49,8 +49,10 @@ export const Component: FC = () => {
     imagePlugin(),
     tablePlugin(),
     thematicBreakPlugin(),
-    codeBlockPlugin({ defaultCodeBlockLanguage: "js" }),
-    codeMirrorPlugin({ codeBlockLanguages: { js: "JavaScript", css: "CSS", json: "JSON" } }),
+    codeBlockPlugin({ defaultCodeBlockLanguage: "txt" }),
+    codeMirrorPlugin({
+      codeBlockLanguages: { js: "JavaScript", css: "CSS", json: "JSON", txt: "TEXT", tsx: "TypeScript" },
+    }),
     directivesPlugin({ directiveDescriptors: [AdmonitionDirectiveDescriptor] }),
     diffSourcePlugin({ viewMode: "rich-text" }),
     toolbarPlugin({
@@ -94,7 +96,12 @@ export const Component: FC = () => {
           <Button onClick={() => console.log(editorRef.current?.getMarkdown())}>Get markdown</Button>
         </div>
 
-        <MDXEditor ref={editorRef} markdown="# Hello world" plugins={plugins} />
+        <MDXEditor
+          ref={editorRef}
+          contentEditableClassName="prose max-full"
+          markdown="# Hello world"
+          plugins={plugins}
+        />
       </ProCard>
     </div>
   );
