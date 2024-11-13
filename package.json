@@ -122,11 +122,12 @@
     "tsup": "8.3.5",
     "typescript": "5.6.3",
     "vite": "5.4.11",
-    "vite-plugin-pwa": "0.20.5",
+    "vite-plugin-pwa": "0.21.0",
     "vitest": "2.1.4",
+    "workbox-build": "7.3.0",
     "workbox-window": "7.3.0"
   },
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@9.13.0",
   "pnpm": {
     "overrides": {
       "rc-field-form": "2.5.1"
