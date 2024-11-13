@@ -15,9 +15,15 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
           parser: LosslessJSON,
           queryLanguages: [javascriptQueryLanguage, lodashQueryLanguage],
           onRenderMenu: (items, context) => {
-            items.push({ type: "separator" });
+            const showParseBtn =
+              !context.readOnly &&
+              Mode.text === context.mode &&
+              (editorRef.current?.get() as TextContent).text.startsWith('"') &&
+              (editorRef.current?.get() as TextContent).text.endsWith('"');
+
             items.push({
               type: "button",
+              title: "JSON.parse",
               icon: {
                 prefix: "fas",
                 icon: [
@@ -30,16 +36,11 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
                 iconName: "code-compare",
               },
               onClick: () => {
-                LosslessJSON.parse((editorRef.current?.get() as TextContent).text);
                 editorRef.current?.updateProps({
                   content: { text: LosslessJSON.parse((editorRef.current?.get() as TextContent).text) as string },
                 });
-                console.log(editorRef.current?.get());
               },
-              disabled:
-                context.readOnly ||
-                Mode.text !== context.mode ||
-                !(editorRef.current?.get() as TextContent).text.startsWith('"'),
+              disabled: !showParseBtn,
             });
 
             return items;
@@ -58,9 +59,7 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
   }, []);
 
   useEffect(() => {
-    if (editorRef.current) {
-      editorRef.current?.updateProps({ ...props });
-    }
+    editorRef.current?.updateProps({ ...props });
   }, [props]);
 
   return <div className="h-full w-full" ref={containerRef} />;
