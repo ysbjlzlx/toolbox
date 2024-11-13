@@ -129,7 +129,7 @@
   "packageManager": "pnpm@9.12.3",
   "pnpm": {
     "overrides": {
-      "rc-field-form": "2.5.0"
+      "rc-field-form": "2.5.1"
     }
   }
 }
