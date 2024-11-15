@@ -127,7 +127,7 @@
     "workbox-build": "7.3.0",
     "workbox-window": "7.3.0"
   },
-  "packageManager": "pnpm@9.13.1",
+  "packageManager": "pnpm@9.13.2",
   "pnpm": {
     "overrides": {
       "rc-field-form": "2.5.1"
