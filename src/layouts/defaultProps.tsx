@@ -12,6 +12,11 @@ export const menuData: MenuDataItem[] = [
         key: "/json/json-editor",
       },
       {
+        name: "JSON Formatter",
+        path: "/json/formatter",
+        key: "/json/formatter",
+      },
+      {
         name: "JSON To Excel",
         path: "/json/json-to-excel",
         key: "/json/json-to-excel",
