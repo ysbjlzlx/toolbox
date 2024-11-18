@@ -14,7 +14,7 @@ export const Component: FC = () => {
 
   const handleEditorChange: OnChange = (value, _event) => {
     console.log(value);
-    editorRef.current?.getAction("editor.action.formatDocument")?.run();
+    // editorRef.current?.getAction("editor.action.formatDocument")?.run();
   };
 
   return (
@@ -22,7 +22,7 @@ export const Component: FC = () => {
       <Editor
         height="100dvh"
         defaultLanguage="json"
-        options={{ tabSize: 2 }}
+        options={{ tabSize: 2, formatOnPaste: true, formatOnType: true }}
         theme="vs-dark"
         defaultValue="// some comment"
         onMount={handleEditorDidMount}
