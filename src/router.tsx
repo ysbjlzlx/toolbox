@@ -79,6 +79,10 @@ const router = createBrowserRouter([
             lazy: () => import("@/pages/json/json-editor"),
           },
           {
+            path: "formatter",
+            lazy: () => import("@/routes/json/formatter"),
+          },
+          {
             path: "json-editor",
             lazy: () => import("@/pages/json/json-editor"),
           },
