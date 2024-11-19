@@ -43,8 +43,7 @@ export const Component: FC = () => {
           stickyTabStops: true,
           stickyScroll: {
             enabled: true,
-            maxLineCount: 15,
-            scrollWithEditor: true,
+            maxLineCount: 10,
             defaultModel: "foldingProviderModel",
           },
         }}
