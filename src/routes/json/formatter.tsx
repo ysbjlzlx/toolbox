@@ -21,7 +21,6 @@ export const Component: FC = () => {
     monacoRef.current = monaco;
 
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-      validate: true,
       allowComments: true,
     });
   };
@@ -37,6 +36,7 @@ export const Component: FC = () => {
         height="100dvh"
         defaultLanguage="json"
         options={{
+          automaticLayout: true,
           tabSize: 2,
           formatOnPaste: true,
           formatOnType: true,
