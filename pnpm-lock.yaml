@@ -228,8 +228,8 @@ importers:
         specifier: 11.0.3
         version: 11.0.3
       vanilla-jsoneditor:
-        specifier: 2.0.2
-        version: 2.0.2(@lezer/common@1.2.1)
+        specifier: 2.1.0
+        version: 2.1.0(@lezer/common@1.2.1)
       vditor:
         specifier: 3.10.7
         version: 3.10.7
@@ -6324,8 +6324,8 @@ packages:
     resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
     hasBin: true
 
-  vanilla-jsoneditor@2.0.2:
-    resolution: {integrity: sha512-/qsSp2B/sQsyW7SO8wq7vvEeq4Wqs5JT1j5SSfqlID7CPB9S95+vhzUjrKMpUk0YtxsySlxDecAcXK5Lzg22Sw==}
+  vanilla-jsoneditor@2.1.0:
+    resolution: {integrity: sha512-2KXye9BssRr0qo9WiiuIKOtkt2NZKAEWYlBpo7+mcJzEVdGoZOWIWvQ2krgGpFatBP7Nc+0kJG3h+94IEzGvcg==}
 
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
@@ -8829,6 +8829,7 @@ snapshots:
       '@parcel/watcher-win32-arm64': 2.4.1
       '@parcel/watcher-win32-ia32': 2.4.1
       '@parcel/watcher-win32-x64': 2.4.1
+    optional: true
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -10749,7 +10750,8 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  detect-libc@1.0.3: {}
+  detect-libc@1.0.3:
+    optional: true
 
   detect-node-es@1.1.0: {}
 
@@ -11290,7 +11292,8 @@ snapshots:
 
   immutable-json-patch@6.0.1: {}
 
-  immutable@4.3.5: {}
+  immutable@4.3.5:
+    optional: true
 
   import-fresh@3.3.0:
     dependencies:
@@ -12166,7 +12169,8 @@ snapshots:
 
   next-tick@1.1.0: {}
 
-  node-addon-api@7.1.1: {}
+  node-addon-api@7.1.1:
+    optional: true
 
   node-releases@2.0.18: {}
 
@@ -13081,6 +13085,7 @@ snapshots:
       chokidar: 4.0.1
       immutable: 4.3.5
       source-map-js: 1.2.1
+    optional: true
 
   saxes@6.0.0:
     dependencies:
@@ -13662,7 +13667,7 @@ snapshots:
 
   uuid@11.0.3: {}
 
-  vanilla-jsoneditor@2.0.2(@lezer/common@1.2.1):
+  vanilla-jsoneditor@2.1.0(@lezer/common@1.2.1):
     dependencies:
       '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.3)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.7.1
@@ -13688,7 +13693,6 @@ snapshots:
       lodash-es: 4.17.21
       memoize-one: 6.0.0
       natural-compare-lite: 1.4.0
-      sass: 1.80.4
       svelte: 4.2.17
       vanilla-picker: 2.12.3
     transitivePeerDependencies:
