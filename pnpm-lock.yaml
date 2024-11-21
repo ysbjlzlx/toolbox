@@ -262,8 +262,8 @@ importers:
         specifier: 5.0.2
         version: 5.0.2(react@18.3.1)
       '@mdxeditor/editor':
-        specifier: 3.19.0
-        version: 3.19.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
+        specifier: 3.19.2
+        version: 3.19.2(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
       '@swc/core':
         specifier: 1.9.2
         version: 1.9.2
@@ -1881,8 +1881,8 @@ packages:
   '@lezer/yaml@1.0.3':
     resolution: {integrity: sha512-GuBLekbw9jDBDhGur82nuwkxKQ+a3W5H0GfaAthDXcAu+XdpS43VlnxA9E9hllkpSP5ellRDKjLLj7Lu9Wr6xA==}
 
-  '@mdxeditor/editor@3.19.0':
-    resolution: {integrity: sha512-NN8CgSSVAj1O0ezypJuO8XT/jCGcOlbTLYzdOXNtqYnqTy+aLFR5YMwJbDJX4POcmT2rpvYfYEchUOiv8GBPFg==}
+  '@mdxeditor/editor@3.19.2':
+    resolution: {integrity: sha512-9p7qSXPmVa3TjQOHjMqmzlhVclhZjGIJzpOApB0FWwbxtuAVTdqyD0rvUzyTV7cdyOCNYnO5TyMLQcq9zbYxwg==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>= 18 || >= 19'
@@ -8670,7 +8670,7 @@ snapshots:
       '@lezer/highlight': 1.2.1
       '@lezer/lr': 1.4.0
 
-  '@mdxeditor/editor@3.19.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
+  '@mdxeditor/editor@3.19.2(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
     dependencies:
       '@codemirror/lang-markdown': 6.3.1
       '@codemirror/language-data': 6.5.1(@codemirror/view@6.34.3)
