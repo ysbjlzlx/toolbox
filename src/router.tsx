@@ -25,11 +25,11 @@ const router = createBrowserRouter([
     HydrateFallback: Loading,
     children: [
       {
-        path: "/base64",
+        path: "base64",
         lazy: () => import("@/pages/base64/page.tsx"),
       },
       {
-        path: "/code",
+        path: "code",
         children: [
           {
             path: "conversion",
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/image",
+        path: "image",
         children: [
           {
             path: "placeholder",
@@ -59,27 +59,32 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/string",
+        path: "string",
         children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
       },
       {
-        path: "/template",
+        path: "template",
         children: [{ index: true, lazy: () => import("@/pages/template/index.tsx") }],
       },
       {
-        path: "/excel",
+        path: "excel",
         lazy: () => import("@/pages/excel/page.tsx"),
       },
       {
-        path: "/generator/id",
-        lazy: () => import("@/pages/generator/id/page.tsx"),
+        path: "generator",
+        children: [
+          {
+            path: "id",
+            lazy: () => import("@/pages/generator/id/page.tsx"),
+          },
+        ],
       },
       {
-        path: "/hash",
+        path: "hash",
         lazy: () => import("@/pages/hash/page.tsx"),
       },
       {
-        path: "/json",
+        path: "json",
         children: [
           {
             index: true,
@@ -100,39 +105,39 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/markdown",
+        path: "markdown",
         lazy: () => import("@/pages/markdown"),
       },
       {
-        path: "/password",
+        path: "password",
         lazy: () => import("@/pages/password"),
       },
       {
-        path: "/timestamp",
+        path: "timestamp",
         lazy: () => import("@/pages/timestamp/page.tsx"),
       },
       {
-        path: "/tiptap",
+        path: "tiptap",
         lazy: () => import("@/pages/tiptap/page.tsx"),
       },
       {
-        path: "/totp",
+        path: "totp",
         lazy: () => import("@/pages/totp/page.tsx"),
       },
       {
-        path: "/url",
+        path: "url",
         lazy: () => import("@/pages/url/page.tsx"),
       },
       {
-        path: "/user-pass",
+        path: "user-pass",
         lazy: () => import("@/pages/user-pass/index.tsx"),
       },
       {
-        path: "/username",
+        path: "username",
         lazy: () => import("@/pages/username/index.tsx"),
       },
       {
-        path: "/writer",
+        path: "writer",
         children: [
           { index: true, lazy: () => import("@/pages/writer/page.tsx") },
           {
@@ -142,7 +147,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/transform",
+        path: "transform",
         lazy: () => import("@/pages/transform"),
       },
     ],
