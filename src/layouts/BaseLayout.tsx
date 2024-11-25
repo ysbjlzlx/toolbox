@@ -3,7 +3,7 @@ import { ProConfigProvider, ProLayout } from "@ant-design/pro-components";
 import { useBoolean } from "ahooks";
 import { App, Button, ConfigProvider } from "antd";
 import type { FC, ReactNode } from "react";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router";
 
 import Iconify from "@/components/Iconify";
 import { menuData } from "@/layouts/defaultProps";

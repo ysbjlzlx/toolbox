@@ -1,21 +1,28 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 
+import Loading from "@/components/Loading";
 import NotFound from "@/components/NotFound";
 import BaseLayout from "@/layouts/BaseLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    index: true,
-    lazy: () => import("@/pages/page.tsx"),
-  },
-  {
-    path: "/playground",
-    lazy: () => import("@/pages/playground/index.tsx"),
+    HydrateFallback: Loading,
+    children: [
+      {
+        index: true,
+        lazy: () => import("@/pages/page.tsx"),
+      },
+      {
+        path: "playground",
+        lazy: () => import("@/pages/playground/index.tsx"),
+      },
+    ],
   },
   {
     path: "/",
     element: <BaseLayout />,
+    HydrateFallback: Loading,
     children: [
       {
         path: "/base64",
@@ -142,6 +149,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
+    HydrateFallback: Loading,
     element: <NotFound />,
   },
 ]);

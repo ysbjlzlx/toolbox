@@ -2,9 +2,7 @@ import { registerSW } from "virtual:pwa-register";
 import { StyleProvider } from "@ant-design/cssinjs";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-
-import Loading from "@/components/Loading";
+import { RouterProvider } from "react-router";
 
 import router from "@/router.tsx";
 
@@ -17,7 +15,7 @@ registerSW({ immediate: true });
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <StyleProvider layer>
-      <RouterProvider router={router} fallbackElement={<Loading />} />
+      <RouterProvider router={router} />
     </StyleProvider>
   </StrictMode>,
 );

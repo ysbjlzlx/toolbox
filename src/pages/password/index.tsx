@@ -3,7 +3,7 @@ import { Card } from "antd";
 import type { CardProps } from "antd";
 import { useEffect, useState } from "react";
 import type React from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 
 import Iconify from "@/components/Iconify";
 import { Pin } from "./pin";
