@@ -1,10 +1,10 @@
 /// <reference types="vitest" />
 
-import path from "node:path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import type { VitePWAOptions } from "vite-plugin-pwa";
 import { VitePWA } from "vite-plugin-pwa";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const pwaOptions: Partial<VitePWAOptions> = {
   injectRegister: "auto",
@@ -62,12 +62,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   },
 };
 export default defineConfig({
-  plugins: [react(), VitePWA(pwaOptions)],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
+  plugins: [react(), tsconfigPaths(), VitePWA(pwaOptions)],
   build: {
     sourcemap: false,
     rollupOptions: {
