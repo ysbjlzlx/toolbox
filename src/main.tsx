@@ -2,15 +2,17 @@ import { registerSW } from "virtual:pwa-register";
 import { StyleProvider } from "@ant-design/cssinjs";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router";
+import { RouterProvider, createBrowserRouter } from "react-router";
 
-import router from "@/router.tsx";
+import { routes } from "@/routes.tsx";
 
 import "@/i18n";
 
 import "./globals.css";
 
 registerSW({ immediate: true });
+
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>

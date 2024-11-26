@@ -1,10 +1,10 @@
-import { createBrowserRouter } from "react-router";
+import type { RouteObject } from "react-router";
 
 import Loading from "@/components/Loading";
 import NotFound from "@/components/NotFound";
 import BaseLayout from "@/layouts/BaseLayout";
 
-const router = createBrowserRouter([
+export const routes: RouteObject[] = [
   {
     path: "/",
     HydrateFallback: Loading,
@@ -157,6 +157,4 @@ const router = createBrowserRouter([
     HydrateFallback: Loading,
     element: <NotFound />,
   },
-]);
-
-export default router;
+];
