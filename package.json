@@ -75,7 +75,7 @@
     "nanoid-dictionary": "5.0.0-beta.1",
     "otpauth": "9.3.5",
     "prettier": "3.4.1",
-    "quill": "2.0.2",
+    "quill": "2.0.3",
     "react": "18.3.1",
     "react-ace": "13.0.0",
     "react-codemirror-merge": "4.23.6",
