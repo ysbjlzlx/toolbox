@@ -102,6 +102,10 @@ export const routes: RouteObject[] = [
             path: "json-to-excel",
             lazy: () => import("@/pages/json/json-to-excel/page.tsx"),
           },
+          {
+            path: "json-diff",
+            lazy: () => import("@/pages/json/json-diff/index.tsx"),
+          },
         ],
       },
       {

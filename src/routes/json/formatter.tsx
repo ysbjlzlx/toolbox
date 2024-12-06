@@ -1,8 +1,8 @@
 "use client";
 
+import { FullContainer } from "@/components/FullContainer.tsx";
 import { cn } from "@/lib/utils.ts";
 import useJSONFormatterStore from "@/stores/JSONFormatterStore.ts";
-import { PageContainer } from "@ant-design/pro-components";
 import type { Monaco, OnChange, OnMount, OnValidate } from "@monaco-editor/react";
 import { Editor } from "@monaco-editor/react";
 import { Divider } from "antd";
@@ -45,37 +45,35 @@ export const Component: FC = () => {
   };
 
   return (
-    <PageContainer title={false}>
-      <div className="h-[calc(100dvh-56px)] md:h-dvh">
-        <Editor
-          height="calc(100% - 22px)"
-          defaultLanguage={editorStatus.language}
-          options={{
-            automaticLayout: true,
-            tabSize: editorStatus.tabSize,
-            formatOnPaste: true,
-            formatOnType: true,
-            stickyTabStops: true,
-            stickyScroll: {
-              enabled: true,
-              maxLineCount: 10,
-              defaultModel: "foldingProviderModel",
-            },
-          }}
-          theme="light"
-          defaultValue={value || "// some json"}
-          onMount={handleEditorDidMount}
-          onChange={handleEditorChange}
-          onValidate={handleEditorValidate}
-        />
-        <div className={cn("h-[22px] px-4 text-sm tabular-nums")}>
-          <span>{`Ln ${editorStatus.lineNumber}, Col ${editorStatus.column}`}</span>
-          <Divider type={"vertical"} />
-          <span>{`Space ${editorStatus.tabSize}`}</span>
-          <Divider type={"vertical"} />
-          <span>JSON with Comments</span>
-        </div>
+    <FullContainer>
+      <Editor
+        height="calc(100% - 22px)"
+        defaultLanguage={editorStatus.language}
+        options={{
+          automaticLayout: true,
+          tabSize: editorStatus.tabSize,
+          formatOnPaste: true,
+          formatOnType: true,
+          stickyTabStops: true,
+          stickyScroll: {
+            enabled: true,
+            maxLineCount: 10,
+            defaultModel: "foldingProviderModel",
+          },
+        }}
+        theme="light"
+        defaultValue={value || "// some json"}
+        onMount={handleEditorDidMount}
+        onChange={handleEditorChange}
+        onValidate={handleEditorValidate}
+      />
+      <div className={cn("h-[22px] px-4 text-sm tabular-nums")}>
+        <span>{`Ln ${editorStatus.lineNumber}, Col ${editorStatus.column}`}</span>
+        <Divider type={"vertical"} />
+        <span>{`Space ${editorStatus.tabSize}`}</span>
+        <Divider type={"vertical"} />
+        <span>JSON with Comments</span>
       </div>
-    </PageContainer>
+    </FullContainer>
   );
 };

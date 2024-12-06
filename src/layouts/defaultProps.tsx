@@ -17,6 +17,11 @@ export const menuData: MenuDataItem[] = [
         key: "/json/formatter",
       },
       {
+        name: "JSON Diff",
+        path: "/json/json-diff",
+        key: "/json/json-diff",
+      },
+      {
         name: "JSON To Excel",
         path: "/json/json-to-excel",
         key: "/json/json-to-excel",
