@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import type { VitePWAOptions } from "vite-plugin-pwa";
@@ -78,11 +76,5 @@ export default defineConfig({
   },
   server: {
     host: true,
-  },
-  test: {
-    environment: "jsdom",
-    globals: true,
-    setupFiles: "./src/setupTests.ts",
-    css: true,
   },
 });
