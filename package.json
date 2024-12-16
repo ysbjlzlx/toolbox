@@ -35,7 +35,7 @@
     "@tiptap/pm": "2.10.3",
     "@tiptap/react": "2.10.3",
     "@tiptap/starter-kit": "2.10.3",
-    "@uiw/codemirror-theme-github": "4.23.6",
+    "@uiw/codemirror-theme-github": "4.23.7",
     "@uiw/codemirror-theme-vscode": "4.23.6",
     "@uiw/react-codemirror": "4.23.6",
     "@xiechao/codemirror-lang-handlebars": "1.0.4",

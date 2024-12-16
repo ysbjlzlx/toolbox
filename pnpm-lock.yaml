@@ -72,8 +72,8 @@ importers:
         specifier: 2.10.3
         version: 2.10.3
       '@uiw/codemirror-theme-github':
-        specifier: 4.23.6
-        version: 4.23.6(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)
+        specifier: 4.23.7
+        version: 4.23.7(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)
       '@uiw/codemirror-theme-vscode':
         specifier: 4.23.6
         version: 4.23.6(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)
@@ -3023,14 +3023,21 @@ packages:
       '@codemirror/state': '>=6.0.0'
       '@codemirror/view': '>=6.0.0'
 
-  '@uiw/codemirror-theme-github@4.23.6':
-    resolution: {integrity: sha512-p74sbyuDo7JsYlGWNtyNyJSyr9N4niCPGqYreQhoAk2C6c4JXi0sGwZRlHd8KyynsxCdSA9L727SADOuukD1Ug==}
+  '@uiw/codemirror-theme-github@4.23.7':
+    resolution: {integrity: sha512-r9SstBZD7Ow1sQ8F0EpsRGx9b11K552M2FayvyLWTkal64YJmQMKW0S2KcWykgCMKLWhmDFi7LX+h8cg6nek8g==}
 
   '@uiw/codemirror-theme-vscode@4.23.6':
     resolution: {integrity: sha512-xUo1ic+Kk5hnv5gy+cXU12GZVSnDjic8s8weKq8loPHF1dSR1e6gkKVIKZRnvoOZ302taKRk7phWpBUaWIuKQg==}
 
   '@uiw/codemirror-themes@4.23.6':
     resolution: {integrity: sha512-0dpuLQW+V6zrKvfvor/eo71V3tpr2L2Hsu8QZAdtSzksjWABxTOzH3ShaBRxCEsrz6sU9sa9o7ShwBMMDz59bQ==}
+    peerDependencies:
+      '@codemirror/language': '>=6.0.0'
+      '@codemirror/state': '>=6.0.0'
+      '@codemirror/view': '>=6.0.0'
+
+  '@uiw/codemirror-themes@4.23.7':
+    resolution: {integrity: sha512-UNf1XOx1hG9OmJnrtT86PxKcdcwhaNhbrcD+nsk8WxRJ3n5c8nH6euDvgVPdVLPwbizsaQcZTILACgA/FjRpVg==}
     peerDependencies:
       '@codemirror/language': '>=6.0.0'
       '@codemirror/state': '>=6.0.0'
@@ -9794,9 +9801,9 @@ snapshots:
       '@codemirror/state': 6.5.0
       '@codemirror/view': 6.35.3
 
-  '@uiw/codemirror-theme-github@4.23.6(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)':
+  '@uiw/codemirror-theme-github@4.23.7(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)':
     dependencies:
-      '@uiw/codemirror-themes': 4.23.6(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)
+      '@uiw/codemirror-themes': 4.23.7(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)
     transitivePeerDependencies:
       - '@codemirror/language'
       - '@codemirror/state'
@@ -9811,6 +9818,12 @@ snapshots:
       - '@codemirror/view'
 
   '@uiw/codemirror-themes@4.23.6(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)':
+    dependencies:
+      '@codemirror/language': 6.10.3
+      '@codemirror/state': 6.5.0
+      '@codemirror/view': 6.35.3
+
+  '@uiw/codemirror-themes@4.23.7(@codemirror/language@6.10.3)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.0
