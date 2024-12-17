@@ -21,7 +21,14 @@ export const Component: FC = () => {
   return (
     <FullContainer>
       <ProCard className="h-full" bodyStyle={{ height: "100%" }}>
-        <MarkdownEditor reportMode height="100%" width="100%" toolBar={{ enable: true }} onChange={onChange} />
+        <MarkdownEditor
+          reportMode
+          height="100%"
+          width="100%"
+          toolBar={{ enable: true, min: false }}
+          toc={true}
+          onChange={onChange}
+        />
       </ProCard>
     </FullContainer>
   );
