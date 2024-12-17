@@ -85,11 +85,6 @@ export const menuData: MenuDataItem[] = [
     icon: <Iconify icon="material-symbols:contract-edit-outline" />,
     children: [
       {
-        name: "Markdown",
-        desc: "Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。",
-        path: "/markdown",
-      },
-      {
         name: "富文本编辑器",
         desc: "Quill",
         path: "/writer",
@@ -100,6 +95,16 @@ export const menuData: MenuDataItem[] = [
         desc: "Tiptap",
         path: "/tiptap",
       },
+    ],
+  },
+  {
+    name: "Markdown",
+    desc: "Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。",
+    icon: <Iconify icon="lucide:pen" />,
+    children: [
+      { name: "md-editor", path: "/markdown/md-editor" },
+      { name: "mdx-editor", path: "/markdown/mdx-editor" },
+      { name: "Vditor", path: "/markdown/vditor" },
     ],
   },
   {

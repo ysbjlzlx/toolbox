@@ -110,7 +110,14 @@ export const routes: RouteObject[] = [
       },
       {
         path: "markdown",
-        lazy: () => import("@/pages/markdown"),
+        children: [
+          { path: "md-editor", lazy: () => import("@/pages/markdown/md-editor") },
+          {
+            path: "mdx-editor",
+            lazy: () => import("src/pages/markdown/mdx-editor"),
+          },
+          { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
+        ],
       },
       {
         path: "password",
@@ -142,13 +149,7 @@ export const routes: RouteObject[] = [
       },
       {
         path: "writer",
-        children: [
-          { index: true, lazy: () => import("@/pages/writer/page.tsx") },
-          {
-            path: "new",
-            lazy: () => import("@/routes/writer/index.tsx"),
-          },
-        ],
+        children: [{ index: true, lazy: () => import("@/pages/writer/page.tsx") }],
       },
       {
         path: "transform",
