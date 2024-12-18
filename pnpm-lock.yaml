@@ -17,8 +17,8 @@ importers:
         specifier: 1.22.1
         version: 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/md-editor':
-        specifier: 1.12.2
-        version: 1.12.2(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+        specifier: 1.12.5
+        version: 1.12.5(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/pro-components':
         specifier: 2.8.2
         version: 2.8.2(antd@5.22.5(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -433,8 +433,8 @@ packages:
       react: '18'
       react-dom: '>=16.0.0'
 
-  '@ant-design/md-editor@1.12.2':
-    resolution: {integrity: sha512-VXvMgdDPwsiEDu/jX4Kp4a9eyWCaV1XJXXAkBvYh0F8UbR/tHEnlYBgKsRf2kjlyWavntFbgqE7fzRxT5GLh+w==}
+  '@ant-design/md-editor@1.12.5':
+    resolution: {integrity: sha512-Tg5YcGYLxVUMdChvGCUfNxP41lytEk/q4+bkM5ofHHtjWHNnLS347zcAJIxl2Aum5N3VcMiXKBFwOLXGB+5mtQ==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.9.0'
@@ -7868,7 +7868,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/md-editor@1.12.2(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/md-editor@1.12.5(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@ant-design/charts': 2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/cssinjs': 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
