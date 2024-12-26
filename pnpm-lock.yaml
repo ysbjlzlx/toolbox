@@ -18,7 +18,7 @@ importers:
         version: 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/md-editor':
         specifier: 1.12.12
-        version: 1.12.12(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+        version: 1.12.12(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/pro-components':
         specifier: 2.8.2
         version: 2.8.2(antd@5.22.6(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -270,8 +270,8 @@ importers:
         specifier: 3.20.0
         version: 3.20.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
       '@swc/core':
-        specifier: 1.10.1
-        version: 1.10.1(@swc/helpers@0.5.1)
+        specifier: 1.10.2
+        version: 1.10.2(@swc/helpers@0.5.1)
       '@tailwindcss/typography':
         specifier: 0.5.15
         version: 0.5.15(tailwindcss@3.4.17)
@@ -334,7 +334,7 @@ importers:
         version: 3.4.17
       tsup:
         specifier: 8.3.5
-        version: 8.3.5(@swc/core@1.10.1(@swc/helpers@0.5.1))(jiti@2.4.1)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1)
+        version: 8.3.5(@swc/core@1.10.2(@swc/helpers@0.5.1))(jiti@2.4.1)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1)
       typescript:
         specifier: 5.7.2
         version: 5.7.2
@@ -2879,68 +2879,68 @@ packages:
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
-  '@swc/core-darwin-arm64@1.10.1':
-    resolution: {integrity: sha512-NyELPp8EsVZtxH/mEqvzSyWpfPJ1lugpTQcSlMduZLj1EASLO4sC8wt8hmL1aizRlsbjCX+r0PyL+l0xQ64/6Q==}
+  '@swc/core-darwin-arm64@1.10.2':
+    resolution: {integrity: sha512-xPDbCUfGdVjA/0yhRFVSyog73wO3/W3JNgx1PkOcCc+0OgZtgAnt4YD8QbSsUE+euc5bQJs/7HfJQ3305+HWVA==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@swc/core-darwin-x64@1.10.1':
-    resolution: {integrity: sha512-L4BNt1fdQ5ZZhAk5qoDfUnXRabDOXKnXBxMDJ+PWLSxOGBbWE6aJTnu4zbGjJvtot0KM46m2LPAPY8ttknqaZA==}
+  '@swc/core-darwin-x64@1.10.2':
+    resolution: {integrity: sha512-Dm4R9ffQw4yrGjvdYxxuO5RViwkRkSsn64WF7YGYZIlhkyFoseibPnQlOsx5qnjquc8f3h1C8/806XG+y3rMaQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [darwin]
 
-  '@swc/core-linux-arm-gnueabihf@1.10.1':
-    resolution: {integrity: sha512-Y1u9OqCHgvVp2tYQAJ7hcU9qO5brDMIrA5R31rwWQIAKDkJKtv3IlTHF0hrbWk1wPR0ZdngkQSJZple7G+Grvw==}
+  '@swc/core-linux-arm-gnueabihf@1.10.2':
+    resolution: {integrity: sha512-aXTqgel7AueM7CcCOFFUq6+gJyD/A3rFBWxPT6wA34IC7oQ0IIFpJjBLl8zN6/0aZ4OQ1ExlQ7zoKaTlk5tBug==}
     engines: {node: '>=10'}
     cpu: [arm]
     os: [linux]
 
-  '@swc/core-linux-arm64-gnu@1.10.1':
-    resolution: {integrity: sha512-tNQHO/UKdtnqjc7o04iRXng1wTUXPgVd8Y6LI4qIbHVoVPwksZydISjMcilKNLKIwOoUQAkxyJ16SlOAeADzhQ==}
+  '@swc/core-linux-arm64-gnu@1.10.2':
+    resolution: {integrity: sha512-HYFag6ULpnVMnHuKKAFuZH3kco/2eKKZ24I+gI2M4JlIW4soDmP8Oc2eAADIloln4SfQXzADX34m6merCWp65g==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-arm64-musl@1.10.1':
-    resolution: {integrity: sha512-x0L2Pd9weQ6n8dI1z1Isq00VHFvpBClwQJvrt3NHzmR+1wCT/gcYl1tp9P5xHh3ldM8Cn4UjWCw+7PaUgg8FcQ==}
+  '@swc/core-linux-arm64-musl@1.10.2':
+    resolution: {integrity: sha512-N8es+V+M9GijYsxfiIG3NJ+lHgoZosX+yjblc5eOx0xrBDeqH3kNLhJpctOczrJk0rUjN+zX5x+8H8qurcEAaw==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-x64-gnu@1.10.1':
-    resolution: {integrity: sha512-yyYEwQcObV3AUsC79rSzN9z6kiWxKAVJ6Ntwq2N9YoZqSPYph+4/Am5fM1xEQYf/kb99csj0FgOelomJSobxQA==}
+  '@swc/core-linux-x64-gnu@1.10.2':
+    resolution: {integrity: sha512-fI4rxJkWQaNeG4UcuqKJrc1JM+nAwIzzFba9+A4Aohc6z0EgPokrA1v7WmPUObO+cdZjVXdMpDGkhGQhbok1aQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-linux-x64-musl@1.10.1':
-    resolution: {integrity: sha512-tcaS43Ydd7Fk7sW5ROpaf2Kq1zR+sI5K0RM+0qYLYYurvsJruj3GhBCaiN3gkzd8m/8wkqNqtVklWaQYSDsyqA==}
+  '@swc/core-linux-x64-musl@1.10.2':
+    resolution: {integrity: sha512-ycDOxBgII/2xkusMgq2S9n81IQ8SeWk1FU0zuUsZrUkaXEq/78+nHFo/0IStPLrtRxzG2gJ0JZvfaa6jMxr79Q==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-win32-arm64-msvc@1.10.1':
-    resolution: {integrity: sha512-D3Qo1voA7AkbOzQ2UGuKNHfYGKL6eejN8VWOoQYtGHHQi1p5KK/Q7V1ku55oxXBsj79Ny5FRMqiRJpVGad7bjQ==}
+  '@swc/core-win32-arm64-msvc@1.10.2':
+    resolution: {integrity: sha512-s7/UrbdfYGdUar+Nj8jxNeXaFdryWnKuJU5udDONgk9gb1xp7K5TPxBL9j7EtCrAenM2sR9Bd84ZemwzyZ/VLw==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [win32]
 
-  '@swc/core-win32-ia32-msvc@1.10.1':
-    resolution: {integrity: sha512-WalYdFoU3454Og+sDKHM1MrjvxUGwA2oralknXkXL8S0I/8RkWZOB++p3pLaGbTvOO++T+6znFbQdR8KRaa7DA==}
+  '@swc/core-win32-ia32-msvc@1.10.2':
+    resolution: {integrity: sha512-sz8f+dmrzb816Ji25G+vs8HMq6zHq1IMKF4hVUnSJKdNr2k789+qRjF1fnv3YDcz5kkeYSvolXqVS1mCezDebg==}
     engines: {node: '>=10'}
     cpu: [ia32]
     os: [win32]
 
-  '@swc/core-win32-x64-msvc@1.10.1':
-    resolution: {integrity: sha512-JWobfQDbTnoqaIwPKQ3DVSywihVXlQMbDuwik/dDWlj33A8oEHcjPOGs4OqcA3RHv24i+lfCQpM3Mn4FAMfacA==}
+  '@swc/core-win32-x64-msvc@1.10.2':
+    resolution: {integrity: sha512-XXYHuc5KdhuLx1nP8cEKW+5Kakxy+iq/jcuJ52+27E2uB+xxzLeXvbPvz645je3Cti5nQ4la2HIn6tpST5ufSw==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [win32]
 
-  '@swc/core@1.10.1':
-    resolution: {integrity: sha512-rQ4dS6GAdmtzKiCRt3LFVxl37FaY1cgL9kSUTnhQ2xc3fmHOd7jdJK/V4pSZMG1ruGTd0bsi34O2R0Olg9Zo/w==}
+  '@swc/core@1.10.2':
+    resolution: {integrity: sha512-d3reIYowBL6gbp4jC6FRZ3hE0eWcWwqh0XcHd6k5rKF/oZA6jLb7gxIRduJhrn+jyLz/HCC8WyfomUkEcs7iZQ==}
     engines: {node: '>=10'}
     peerDependencies:
       '@swc/helpers': '*'
@@ -7968,9 +7968,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/charts@2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/charts@2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      '@ant-design/graphs': 2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@ant-design/graphs': 2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/plots': 2.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lodash: 4.17.21
       react: 18.3.1
@@ -8006,12 +8006,12 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.0
 
-  '@ant-design/graphs@2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/graphs@2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@ant-design/charts-util': 0.0.1-alpha.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
-      '@antv/g6-extension-react': 0.1.10(@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@antv/graphin': 3.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6-extension-react': 0.1.10(@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@antv/graphin': 3.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       lodash: 4.17.21
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -8031,9 +8031,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/md-editor@1.12.12(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/md-editor@1.12.12(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.8(@types/node@22.10.2)(jsdom@25.0.1)(less@4.2.1)(lightningcss@1.22.1)(sass@1.80.4)(terser@5.36.0))(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      '@ant-design/charts': 2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@ant-design/charts': 2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/cssinjs': 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/icons': 5.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/pro-components': 2.8.2(antd@5.22.6(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8482,16 +8482,16 @@ snapshots:
       fmin: 0.0.2
       pdfast: 0.2.0
 
-  '@antv/g6-extension-react@0.1.10(@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@antv/g6-extension-react@0.1.10(@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@antv/g': 6.1.14
       '@antv/g-svg': 2.0.27
-      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@antv/react-g': 2.0.30(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@antv/algorithm': 0.1.26
       '@antv/component': 2.1.2
@@ -8501,7 +8501,7 @@ snapshots:
       '@antv/g-plugin-dragndrop': 2.0.25
       '@antv/graphlib': 2.0.4
       '@antv/hierarchy': 0.6.14
-      '@antv/layout': 1.2.14-beta.9(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/layout': 1.2.14-beta.9(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@antv/util': 3.3.10
       bubblesets-js: 2.3.4
       hull.js: 1.0.6
@@ -8516,9 +8516,9 @@ snapshots:
       '@antv/g-web-animations-api': 2.1.14
       '@babel/runtime': 7.26.0
 
-  '@antv/graphin@3.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@antv/graphin@3.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
@@ -8530,12 +8530,12 @@ snapshots:
 
   '@antv/hierarchy@0.6.14': {}
 
-  '@antv/layout@1.2.14-beta.9(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@antv/layout@1.2.14-beta.9(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@antv/event-emitter': 0.1.3
       '@antv/graphlib': 2.0.4
       '@antv/util': 3.3.10
-      '@naoak/workerize-transferable': 0.1.0(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@naoak/workerize-transferable': 0.1.0(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       comlink: 4.4.2
       d3-force: 3.0.0
       d3-force-3d: 3.0.5
@@ -10433,9 +10433,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@naoak/workerize-transferable@0.1.0(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@naoak/workerize-transferable@0.1.0(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      workerize-loader: 2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0))
+      workerize-loader: 2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0))
 
   '@noble/hashes@1.4.0': {}
 
@@ -11112,51 +11112,51 @@ snapshots:
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.11
 
-  '@swc/core-darwin-arm64@1.10.1':
+  '@swc/core-darwin-arm64@1.10.2':
     optional: true
 
-  '@swc/core-darwin-x64@1.10.1':
+  '@swc/core-darwin-x64@1.10.2':
     optional: true
 
-  '@swc/core-linux-arm-gnueabihf@1.10.1':
+  '@swc/core-linux-arm-gnueabihf@1.10.2':
     optional: true
 
-  '@swc/core-linux-arm64-gnu@1.10.1':
+  '@swc/core-linux-arm64-gnu@1.10.2':
     optional: true
 
-  '@swc/core-linux-arm64-musl@1.10.1':
+  '@swc/core-linux-arm64-musl@1.10.2':
     optional: true
 
-  '@swc/core-linux-x64-gnu@1.10.1':
+  '@swc/core-linux-x64-gnu@1.10.2':
     optional: true
 
-  '@swc/core-linux-x64-musl@1.10.1':
+  '@swc/core-linux-x64-musl@1.10.2':
     optional: true
 
-  '@swc/core-win32-arm64-msvc@1.10.1':
+  '@swc/core-win32-arm64-msvc@1.10.2':
     optional: true
 
-  '@swc/core-win32-ia32-msvc@1.10.1':
+  '@swc/core-win32-ia32-msvc@1.10.2':
     optional: true
 
-  '@swc/core-win32-x64-msvc@1.10.1':
+  '@swc/core-win32-x64-msvc@1.10.2':
     optional: true
 
-  '@swc/core@1.10.1(@swc/helpers@0.5.1)':
+  '@swc/core@1.10.2(@swc/helpers@0.5.1)':
     dependencies:
       '@swc/counter': 0.1.3
       '@swc/types': 0.1.17
     optionalDependencies:
-      '@swc/core-darwin-arm64': 1.10.1
-      '@swc/core-darwin-x64': 1.10.1
-      '@swc/core-linux-arm-gnueabihf': 1.10.1
-      '@swc/core-linux-arm64-gnu': 1.10.1
-      '@swc/core-linux-arm64-musl': 1.10.1
-      '@swc/core-linux-x64-gnu': 1.10.1
-      '@swc/core-linux-x64-musl': 1.10.1
-      '@swc/core-win32-arm64-msvc': 1.10.1
-      '@swc/core-win32-ia32-msvc': 1.10.1
-      '@swc/core-win32-x64-msvc': 1.10.1
+      '@swc/core-darwin-arm64': 1.10.2
+      '@swc/core-darwin-x64': 1.10.2
+      '@swc/core-linux-arm-gnueabihf': 1.10.2
+      '@swc/core-linux-arm64-gnu': 1.10.2
+      '@swc/core-linux-arm64-musl': 1.10.2
+      '@swc/core-linux-x64-gnu': 1.10.2
+      '@swc/core-linux-x64-musl': 1.10.2
+      '@swc/core-win32-arm64-msvc': 1.10.2
+      '@swc/core-win32-ia32-msvc': 1.10.2
+      '@swc/core-win32-x64-msvc': 1.10.2
       '@swc/helpers': 0.5.1
 
   '@swc/counter@0.1.3': {}
@@ -16245,16 +16245,16 @@ snapshots:
       type-fest: 0.16.0
       unique-string: 2.0.0
 
-  terser-webpack-plugin@5.3.11(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)):
+  terser-webpack-plugin@5.3.11(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
       terser: 5.36.0
-      webpack: 5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)
+      webpack: 5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)
     optionalDependencies:
-      '@swc/core': 1.10.1(@swc/helpers@0.5.1)
+      '@swc/core': 1.10.2(@swc/helpers@0.5.1)
       esbuild: 0.24.0
 
   terser@5.36.0:
@@ -16351,7 +16351,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsup@8.3.5(@swc/core@1.10.1(@swc/helpers@0.5.1))(jiti@2.4.1)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1):
+  tsup@8.3.5(@swc/core@1.10.2(@swc/helpers@0.5.1))(jiti@2.4.1)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.24.0)
       cac: 6.7.14
@@ -16370,7 +16370,7 @@ snapshots:
       tinyglobby: 0.2.10
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.10.1(@swc/helpers@0.5.1)
+      '@swc/core': 1.10.2(@swc/helpers@0.5.1)
       postcss: 8.4.49
       typescript: 5.7.2
     transitivePeerDependencies:
@@ -16734,7 +16734,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0):
+  webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.6
@@ -16756,7 +16756,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.11(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0))
+      terser-webpack-plugin: 5.3.11(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0))
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -16929,10 +16929,10 @@ snapshots:
       '@types/trusted-types': 2.0.7
       workbox-core: 7.3.0
 
-  workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)):
+  workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)):
     dependencies:
       loader-utils: 2.0.4
-      webpack: 5.97.1(@swc/core@1.10.1(@swc/helpers@0.5.1))(esbuild@0.24.0)
+      webpack: 5.97.1(@swc/core@1.10.2(@swc/helpers@0.5.1))(esbuild@0.24.0)
 
   wrap-ansi@7.0.0:
     dependencies:
