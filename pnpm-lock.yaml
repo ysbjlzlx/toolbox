@@ -17,8 +17,8 @@ importers:
         specifier: 1.22.1
         version: 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/md-editor':
-        specifier: 1.12.18
-        version: 1.12.18(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+        specifier: 1.12.21
+        version: 1.12.21(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/pro-components':
         specifier: 2.8.2
         version: 2.8.2(antd@5.22.7(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -392,8 +392,8 @@ packages:
       react: '18'
       react-dom: '>=16.8.4'
 
-  '@ant-design/charts@2.2.5':
-    resolution: {integrity: sha512-3N8CmlkxoN7lWDtl7WShJnw3M/vKI74FnWD9znJszioZkQWShgOfW6AbK/EYk18BWDyu0JLRuQknRftS9HC+NQ==}
+  '@ant-design/charts@2.2.6':
+    resolution: {integrity: sha512-pkzdIkc+TdHejOkjnizIXleCQ3psqNQSStllhHul4Ep82IU/qfTbGZ9iaVGJoFOc0+uHBO9Y65RVS47TPMBerQ==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.8.4'
@@ -417,8 +417,8 @@ packages:
     resolution: {integrity: sha512-y2217gk4NqL35giHl72o6Zzqji9O7vHh9YmhUVkPtAOpoTCH4uWxo/pr4VE8t0+ChEPs0qo4eJRC5Q1eXWo3vA==}
     engines: {node: '>=8.x'}
 
-  '@ant-design/graphs@2.0.3':
-    resolution: {integrity: sha512-Wn0oIUJwCpa66e6HqM/i5UwsSE8vIXiIrhCAGNDWylq/R0TzMI4fNAGNnTiakU9PG575TDgl+Pii+VKfmXaHiQ==}
+  '@ant-design/graphs@2.0.4':
+    resolution: {integrity: sha512-8Os7/it/auQt7NWUA+Ml+NjVYz2VsRjaGJYGxlUnfT4w0KiW6A9aYgixjVqWYjsdNBK0J3lHtrlME5RLiJ5DTw==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.8.4'
@@ -433,8 +433,8 @@ packages:
       react: '18'
       react-dom: '>=16.0.0'
 
-  '@ant-design/md-editor@1.12.18':
-    resolution: {integrity: sha512-w4Ft1bhhgIhlkqR4KuA99FTtFuO8pDFH11AFKjJoIpFDsXQWzmbAWKtoaPoTIm6Ref/7GE9EoRFz5yzcAmg7ZA==}
+  '@ant-design/md-editor@1.12.21':
+    resolution: {integrity: sha512-RoN7z69zeKdcJX+A9JyFbVceU/yMv2fx5+h2syiPuwGbWUreYGGApEt529rB29MqCgsJ5GHrNCWAKDwEZMTCgw==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.9.0'
@@ -592,15 +592,15 @@ packages:
   '@antv/g2@5.2.10':
     resolution: {integrity: sha512-ewJx9eeDuiMYRq+iy6jKnTJuxfmzHPKDQ+EHWLc+F0GhPs2UrGY+A27p2Wb3jbdZI42agnkwtvI6WgDGC3ZXlw==}
 
-  '@antv/g6-extension-react@0.1.10':
-    resolution: {integrity: sha512-/Dv1cVAz2z+SUP4Jo+6wfjdxeR4CiEfBo/hMRIOl3xzdEnqDhMcqzIpuJ7G+TSf2dFC22CGTTubOf8r4p6OosA==}
+  '@antv/g6-extension-react@0.1.14':
+    resolution: {integrity: sha512-PUKWdjbrkgwUGlx4UH4OpIiZsUGLZvdxsn97fhAodPcwWtNaGnUSZcqheoeHYeJuIj8xCoHXgqa9i662ze4Uvw==}
     peerDependencies:
-      '@antv/g6': ^5.0.35
+      '@antv/g6': ^5.0.39
       react: '18'
       react-dom: '>=16.8'
 
-  '@antv/g6@5.0.35':
-    resolution: {integrity: sha512-0A35HFAOshsUHG75GNu3N8Q2vIkOPBU6h8GxSu/fZmmIuPNx9EtswH1Nl71RUJtE2cJv5sZlbGSl/R4F+1/JqQ==}
+  '@antv/g6@5.0.39':
+    resolution: {integrity: sha512-2uhI2Kf6n4xdgRdTx5BFTQ8I5Pg4xPwdU6qleqRyXhrx3Q3lE0GTgWlqFzUlnbJvtH/DUU4qd/3XyYqVL62S9g==}
 
   '@antv/g@6.1.14':
     resolution: {integrity: sha512-57kCuT5gutH4aSaBahaJ6OE9ZSkC02L+gdSFMRU+nWWDrFwXsEEgsJ2Mtg08L+zlhoiQCLu12HND65iPe53nKQ==}
@@ -2851,20 +2851,26 @@ packages:
   '@scure/base@1.2.1':
     resolution: {integrity: sha512-DGmGtC8Tt63J5GfHgfl5CuAXh96VF/LD8K9Hr/Gv0J2lAoRGlPOMpqMpMbCTOoOJMZCk2Xt+DskdDyn6dEFdzQ==}
 
-  '@shikijs/core@1.24.2':
-    resolution: {integrity: sha512-BpbNUSKIwbKrRRA+BQj0BEWSw+8kOPKDJevWeSE/xIqGX7K0xrCZQ9kK0nnEQyrzsUoka1l81ZtJ2mGaCA32HQ==}
+  '@shikijs/core@1.26.1':
+    resolution: {integrity: sha512-yeo7sG+WZQblKPclUOKRPwkv1PyoHYkJ4gP9DzhFJbTdueKR7wYTI1vfF/bFi1NTgc545yG/DzvVhZgueVOXMA==}
 
-  '@shikijs/engine-javascript@1.24.2':
-    resolution: {integrity: sha512-EqsmYBJdLEwEiO4H+oExz34a5GhhnVp+jH9Q/XjPjmBPc6TE/x4/gD0X3i0EbkKKNqXYHHJTJUpOLRQNkEzS9Q==}
+  '@shikijs/engine-javascript@1.26.1':
+    resolution: {integrity: sha512-CRhA0b8CaSLxS0E9A4Bzcb3LKBNpykfo9F85ozlNyArxjo2NkijtiwrJZ6eHa+NT5I9Kox2IXVdjUsP4dilsmw==}
 
-  '@shikijs/engine-oniguruma@1.24.2':
-    resolution: {integrity: sha512-ZN6k//aDNWRJs1uKB12pturKHh7GejKugowOFGAuG7TxDRLod1Bd5JhpOikOiFqPmKjKEPtEA6mRCf7q3ulDyQ==}
+  '@shikijs/engine-oniguruma@1.26.1':
+    resolution: {integrity: sha512-F5XuxN1HljLuvfXv7d+mlTkV7XukC1cawdtOo+7pKgPD83CAB1Sf8uHqP3PK0u7njFH0ZhoXE1r+0JzEgAQ+kg==}
 
-  '@shikijs/types@1.24.2':
-    resolution: {integrity: sha512-bdeWZiDtajGLG9BudI0AHet0b6e7FbR0EsE4jpGaI0YwHm/XJunI9+3uZnzFtX65gsyJ6ngCIWUfA4NWRPnBkQ==}
+  '@shikijs/langs@1.26.1':
+    resolution: {integrity: sha512-oz/TQiIqZejEIZbGtn68hbJijAOTtYH4TMMSWkWYozwqdpKR3EXgILneQy26WItmJjp3xVspHdiUxUCws4gtuw==}
 
-  '@shikijs/vscode-textmate@9.3.1':
-    resolution: {integrity: sha512-79QfK1393x9Ho60QFyLti+QfdJzRQCVLFb97kOIV7Eo9vQU/roINgk7m24uv0a7AUvN//RDH36FLjjK48v0s9g==}
+  '@shikijs/themes@1.26.1':
+    resolution: {integrity: sha512-JDxVn+z+wgLCiUhBGx2OQrLCkKZQGzNH3nAxFir4PjUcYiyD8Jdms9izyxIogYmSwmoPTatFTdzyrRKbKlSfPA==}
+
+  '@shikijs/types@1.26.1':
+    resolution: {integrity: sha512-d4B00TKKAMaHuFYgRf3L0gwtvqpW4hVdVwKcZYbBfAAQXspgkbWqnFfuFl3MDH6gLbsubOcr+prcnsqah3ny7Q==}
+
+  '@shikijs/vscode-textmate@10.0.1':
+    resolution: {integrity: sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==}
 
   '@sphinxxxx/color-conversion@2.2.2':
     resolution: {integrity: sha512-XExJS3cLqgrmNBIP3bBw6+1oQ1ksGjFh0+oClDKFYpCCqx/hlqwWO5KO/S63fzUo67SxI9dMrF0y5T/Ey7h8Zw==}
@@ -5941,8 +5947,8 @@ packages:
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
-  oniguruma-to-es@0.7.0:
-    resolution: {integrity: sha512-HRaRh09cE0gRS3+wi2zxekB+I5L8C/gN60S+vb11eADHUaB/q4u8wGGOX3GvwvitG8ixaeycZfeoyruKQzUgNg==}
+  oniguruma-to-es@0.10.0:
+    resolution: {integrity: sha512-zapyOUOCJxt+xhiNRPPMtfJkHGsZ98HHB9qJEkdT8BGytO/+kpe4m1Ngf0MzbzTmhacn11w9yGeDP6tzDhnCdg==}
 
   orderedmap@2.1.1:
     resolution: {integrity: sha512-TvAWxi0nDe1j/rtMcWcIj94+Ffe6n7zhow33h40SKxmsmozs6dz/e+EajymfoFcHd7sxNn8yHM8839uixMOV6g==}
@@ -6708,14 +6714,14 @@ packages:
   regenerator-transform@0.15.2:
     resolution: {integrity: sha512-hfMp2BoF0qOk3uc5V20ALGDS2ddjQaLrdl7xrGXvAIow7qeWRM2VA2HuCHkUKk9slq3VwEwLNK3DFBqDfPGYtg==}
 
-  regex-recursion@4.3.0:
-    resolution: {integrity: sha512-5LcLnizwjcQ2ALfOj95MjcatxyqF5RPySx9yT+PaXu3Gox2vyAtLDjHB8NTJLtMGkvyau6nI3CfpwFCjPUIs/A==}
+  regex-recursion@5.1.1:
+    resolution: {integrity: sha512-ae7SBCbzVNrIjgSbh7wMznPcQel1DNlDtzensnFxpiNpXt1U2ju/bHugH422r+4LAVS1FpW1YCwilmnNsjum9w==}
 
   regex-utilities@2.3.0:
     resolution: {integrity: sha512-8VhliFJAWRaUiVvREIiW2NXXTmHs4vMNnSzuJVhscgmGav3g9VDxLrQndI3dZZVVdp0ZO/5v0xmX516/7M9cng==}
 
-  regex@5.0.2:
-    resolution: {integrity: sha512-/pczGbKIQgfTMRV0XjABvc5RzLqQmwqxLHdQao2RTXPk+pmTXB2P0IaUHYdYyk412YLwUIkaeMd5T+RzVgTqnQ==}
+  regex@5.1.1:
+    resolution: {integrity: sha512-dN5I359AVGPnwzJm2jN1k0W9LPZ+ePvoOeVMMfqIMFz53sSwXkxaJoxr50ptnsC771lK95BnTrVSZxq0b9yCGw==}
 
   regexp.prototype.flags@1.5.3:
     resolution: {integrity: sha512-vqlC04+RQoFalODCbCumG2xIOvapzVMHwsyIGM/SIE8fRhFFsXeH8/QQ+s0T0kDAhKc4k30s73/0ydkHQz6HlQ==}
@@ -6914,8 +6920,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@1.24.2:
-    resolution: {integrity: sha512-TR1fi6mkRrzW+SKT5G6uKuc32Dj2EEa7Kj0k8kGqiBINb+C1TiflVOiT9ta6GqOJtC4fraxO5SLUaKBcSY38Fg==}
+  shiki@1.26.1:
+    resolution: {integrity: sha512-Gqg6DSTk3wYqaZ5OaYtzjcdxcBvX5kCy24yvRJEgjT5U+WHlmqCThLuBUx0juyxQBi+6ug53IGeuQS07DWwpcw==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -7925,9 +7931,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/charts@2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/charts@2.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      '@ant-design/graphs': 2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@ant-design/graphs': 2.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/plots': 2.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lodash: 4.17.21
       react: 18.3.1
@@ -7963,11 +7969,11 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.0
 
-  '@ant-design/graphs@2.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/graphs@2.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@ant-design/charts-util': 0.0.1-alpha.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
-      '@antv/g6-extension-react': 0.1.10(@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@antv/g6': 5.0.39(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6-extension-react': 0.1.14(@antv/g6@5.0.39(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@antv/graphin': 3.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       lodash: 4.17.21
       react: 18.3.1
@@ -7988,9 +7994,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/md-editor@1.12.18(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/md-editor@1.12.21(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      '@ant-design/charts': 2.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@ant-design/charts': 2.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/cssinjs': 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/icons': 5.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/pro-components': 2.8.2(antd@5.22.7(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8021,7 +8027,7 @@ snapshots:
       remark-parse: 11.0.0
       reveal.js: 5.1.0
       rxjs: 7.8.1
-      shiki: 1.24.2
+      shiki: 1.26.1
       slash2: 2.0.0
       slate: 0.103.0
       slate-history: 0.100.0(slate@0.103.0)
@@ -8437,16 +8443,16 @@ snapshots:
       fmin: 0.0.2
       pdfast: 0.2.0
 
-  '@antv/g6-extension-react@0.1.10(@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@antv/g6-extension-react@0.1.14(@antv/g6@5.0.39(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0))))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@antv/g': 6.1.14
       '@antv/g-svg': 2.0.27
-      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6': 5.0.39(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@antv/react-g': 2.0.30(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@antv/g6@5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@antv/g6@5.0.39(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@antv/algorithm': 0.1.26
       '@antv/component': 2.1.2
@@ -8473,7 +8479,7 @@ snapshots:
 
   '@antv/graphin@3.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
-      '@antv/g6': 5.0.35(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+      '@antv/g6': 5.0.39(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
@@ -11027,32 +11033,40 @@ snapshots:
 
   '@scure/base@1.2.1': {}
 
-  '@shikijs/core@1.24.2':
+  '@shikijs/core@1.26.1':
     dependencies:
-      '@shikijs/engine-javascript': 1.24.2
-      '@shikijs/engine-oniguruma': 1.24.2
-      '@shikijs/types': 1.24.2
-      '@shikijs/vscode-textmate': 9.3.1
+      '@shikijs/engine-javascript': 1.26.1
+      '@shikijs/engine-oniguruma': 1.26.1
+      '@shikijs/types': 1.26.1
+      '@shikijs/vscode-textmate': 10.0.1
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.4
 
-  '@shikijs/engine-javascript@1.24.2':
+  '@shikijs/engine-javascript@1.26.1':
     dependencies:
-      '@shikijs/types': 1.24.2
-      '@shikijs/vscode-textmate': 9.3.1
-      oniguruma-to-es: 0.7.0
+      '@shikijs/types': 1.26.1
+      '@shikijs/vscode-textmate': 10.0.1
+      oniguruma-to-es: 0.10.0
 
-  '@shikijs/engine-oniguruma@1.24.2':
+  '@shikijs/engine-oniguruma@1.26.1':
     dependencies:
-      '@shikijs/types': 1.24.2
-      '@shikijs/vscode-textmate': 9.3.1
+      '@shikijs/types': 1.26.1
+      '@shikijs/vscode-textmate': 10.0.1
 
-  '@shikijs/types@1.24.2':
+  '@shikijs/langs@1.26.1':
     dependencies:
-      '@shikijs/vscode-textmate': 9.3.1
+      '@shikijs/types': 1.26.1
+
+  '@shikijs/themes@1.26.1':
+    dependencies:
+      '@shikijs/types': 1.26.1
+
+  '@shikijs/types@1.26.1':
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.1
       '@types/hast': 3.0.4
 
-  '@shikijs/vscode-textmate@9.3.1': {}
+  '@shikijs/vscode-textmate@10.0.1': {}
 
   '@sphinxxxx/color-conversion@2.2.2': {}
 
@@ -14582,11 +14596,11 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  oniguruma-to-es@0.7.0:
+  oniguruma-to-es@0.10.0:
     dependencies:
       emoji-regex-xs: 1.0.0
-      regex: 5.0.2
-      regex-recursion: 4.3.0
+      regex: 5.1.1
+      regex-recursion: 5.1.1
 
   orderedmap@2.1.1: {}
 
@@ -15471,13 +15485,14 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.0
 
-  regex-recursion@4.3.0:
+  regex-recursion@5.1.1:
     dependencies:
+      regex: 5.1.1
       regex-utilities: 2.3.0
 
   regex-utilities@2.3.0: {}
 
-  regex@5.0.2:
+  regex@5.1.1:
     dependencies:
       regex-utilities: 2.3.0
 
@@ -15726,13 +15741,15 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@1.24.2:
+  shiki@1.26.1:
     dependencies:
-      '@shikijs/core': 1.24.2
-      '@shikijs/engine-javascript': 1.24.2
-      '@shikijs/engine-oniguruma': 1.24.2
-      '@shikijs/types': 1.24.2
-      '@shikijs/vscode-textmate': 9.3.1
+      '@shikijs/core': 1.26.1
+      '@shikijs/engine-javascript': 1.26.1
+      '@shikijs/engine-oniguruma': 1.26.1
+      '@shikijs/langs': 1.26.1
+      '@shikijs/themes': 1.26.1
+      '@shikijs/types': 1.26.1
+      '@shikijs/vscode-textmate': 10.0.1
       '@types/hast': 3.0.4
 
   side-channel@1.0.6:
