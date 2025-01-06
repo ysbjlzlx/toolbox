@@ -1,6 +1,7 @@
 "use client";
 
 import { FullContainer } from "@/components/FullContainer.tsx";
+import { LanguageSelect } from "@/components/monaco-editor/LanguageSelect.tsx";
 import { cn } from "@/lib/utils.ts";
 import useJSONFormatterStore from "@/stores/JSONFormatterStore.ts";
 import type { Monaco, OnChange, OnMount, OnValidate } from "@monaco-editor/react";
@@ -10,7 +11,12 @@ import type { editor } from "monaco-editor";
 import { type FC, useEffect, useRef, useState } from "react";
 
 export const Component: FC = () => {
-  const [editorStatus, setEditorStatus] = useState({ lineNumber: 0, column: 0, tabSize: 2, language: "json" });
+  const [editorStatus, setEditorStatus] = useState({
+    lineNumber: 0,
+    column: 0,
+    tabSize: 2,
+    language: "json",
+  });
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const monacoRef = useRef<Monaco>();
   const { value, setValue, options } = useJSONFormatterStore();
@@ -19,6 +25,12 @@ export const Component: FC = () => {
     editorRef.current?.updateOptions(options);
   }, [options]);
 
+  const setLanguage = (value: string) => {
+    setEditorStatus((val) => {
+      return { ...val, language: value };
+    });
+  };
+
   const handleEditorDidMount: OnMount = (editor, monaco) => {
     editorRef.current = editor;
     monacoRef.current = monaco;
@@ -26,13 +38,25 @@ export const Component: FC = () => {
     // 光标变化
     editor.onDidChangeCursorPosition((event) => {
       setEditorStatus((oldVal) => {
-        return { ...oldVal, lineNumber: event.position.lineNumber, column: event.position.column };
+        return {
+          ...oldVal,
+          lineNumber: event.position.lineNumber,
+          column: event.position.column,
+        };
       });
     });
 
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       allowComments: true,
     });
+
+    monaco.languages.html.registerHTMLLanguageService(
+      "xml",
+      {},
+      {
+        documentFormattingEdits: true,
+      },
+    );
   };
 
   const handleEditorChange: OnChange = (value, _event) => {
@@ -46,13 +70,16 @@ export const Component: FC = () => {
 
   return (
     <FullContainer>
+      <div className="h-[48px] p-2">
+        <LanguageSelect value={editorStatus.language} onChange={setLanguage} />
+      </div>
       <Editor
-        height="calc(100% - 22px)"
-        defaultLanguage={editorStatus.language}
+        height="calc(100% - 70px)"
+        language={editorStatus.language}
         options={{
           automaticLayout: true,
           tabSize: editorStatus.tabSize,
-          formatOnPaste: true,
+          //  formatOnPaste: true,
           formatOnType: true,
           stickyTabStops: true,
           stickyScroll: {
