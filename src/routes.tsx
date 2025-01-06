@@ -92,7 +92,7 @@ export const routes: RouteObject[] = [
           },
           {
             path: "formatter",
-            lazy: () => import("@/routes/json/formatter"),
+            lazy: () => import("@/pages/json/json-formatter"),
           },
           {
             path: "json-editor",
