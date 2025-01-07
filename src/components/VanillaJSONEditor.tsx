@@ -5,7 +5,7 @@ import { createJSONEditor, javascriptQueryLanguage, lodashQueryLanguage } from "
 
 const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const editorRef = useRef<JsonEditor>();
+  const editorRef = useRef<JsonEditor>(undefined);
 
   useEffect(() => {
     if (containerRef?.current) {
