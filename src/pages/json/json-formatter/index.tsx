@@ -15,21 +15,14 @@ export const Component: FC = () => {
     lineNumber: 0,
     column: 0,
     tabSize: 2,
-    language: "json",
   });
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const monacoRef = useRef<Monaco>();
-  const { value, setValue, options } = useJSONFormatterStore();
+  const { value, setValue, options, language, setLanguage } = useJSONFormatterStore();
 
   useEffect(() => {
     editorRef.current?.updateOptions(options);
   }, [options]);
-
-  const setLanguage = (value: string) => {
-    setEditorStatus((val) => {
-      return { ...val, language: value };
-    });
-  };
 
   const handleEditorDidMount: OnMount = (editor, monaco) => {
     editorRef.current = editor;
@@ -71,11 +64,11 @@ export const Component: FC = () => {
   return (
     <FullContainer>
       <div className="h-[48px] p-2">
-        <LanguageSelect value={editorStatus.language} onChange={setLanguage} />
+        <LanguageSelect value={language} onChange={setLanguage} />
       </div>
       <Editor
         height="calc(100% - 70px)"
-        language={editorStatus.language}
+        language={language}
         options={{
           automaticLayout: true,
           tabSize: editorStatus.tabSize,
