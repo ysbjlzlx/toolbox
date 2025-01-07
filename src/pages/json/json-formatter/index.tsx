@@ -15,8 +15,8 @@ export const Component: FC = () => {
     lineNumber: 0,
     column: 0,
   });
-  const editorRef = useRef<editor.IStandaloneCodeEditor>();
-  const monacoRef = useRef<Monaco>();
+  const editorRef = useRef<editor.IStandaloneCodeEditor>(undefined);
+  const monacoRef = useRef<Monaco>(undefined);
   const { value, setValue, options, language, setLanguage } = useJSONFormatterStore();
 
   useEffect(() => {

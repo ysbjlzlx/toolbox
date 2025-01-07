@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils.ts";
 import useJsonDiffStore from "@/stores/JsonDiffStore.ts";
 
 export const Component: FC = () => {
-  const editorRef = useRef<editor.IStandaloneDiffEditor>();
-  const monacoRef = useRef<Monaco>();
+  const editorRef = useRef<editor.IStandaloneDiffEditor>(undefined);
+  const monacoRef = useRef<Monaco>(undefined);
   const { original, modified, language, setOriginal, setModified, setLanguage } = useJsonDiffStore();
 
   const onMount: DiffOnMount = (editor, monaco) => {
