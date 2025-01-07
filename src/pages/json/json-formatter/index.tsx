@@ -14,7 +14,6 @@ export const Component: FC = () => {
   const [editorStatus, setEditorStatus] = useState({
     lineNumber: 0,
     column: 0,
-    tabSize: 2,
   });
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const monacoRef = useRef<Monaco>();
@@ -71,7 +70,7 @@ export const Component: FC = () => {
         language={language}
         options={{
           automaticLayout: true,
-          tabSize: editorStatus.tabSize,
+          tabSize: options.tabSize,
           //  formatOnPaste: true,
           formatOnType: true,
           stickyTabStops: true,
@@ -82,7 +81,7 @@ export const Component: FC = () => {
           },
         }}
         theme="light"
-        defaultValue={value || "// some json"}
+        defaultValue={value}
         onMount={handleEditorDidMount}
         onChange={handleEditorChange}
         onValidate={handleEditorValidate}
@@ -90,7 +89,7 @@ export const Component: FC = () => {
       <div className={cn("h-[22px] px-4 text-sm tabular-nums")}>
         <span>{`Ln ${editorStatus.lineNumber}, Col ${editorStatus.column}`}</span>
         <Divider type={"vertical"} />
-        <span>{`Space ${editorStatus.tabSize}`}</span>
+        <span>{`Space ${options.tabSize}`}</span>
         <Divider type={"vertical"} />
         <span>JSON with Comments</span>
       </div>

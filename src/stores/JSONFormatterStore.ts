@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
 interface JSONFormatterStore {
-  value: string | null;
+  value: string;
   options: editor.IEditorOptions & editor.IGlobalEditorOptions;
   language: string;
   setValue: (value: string) => void;
@@ -14,21 +14,12 @@ interface JSONFormatterStore {
 const useJSONFormatterStore = create<JSONFormatterStore>()(
   persist(
     (set) => ({
-      value: null,
-      options: {},
+      value: "// some code here",
+      options: { tabSize: 2 },
       language: "json",
-      setValue: (value: string) =>
-        set(() => {
-          return { value: value };
-        }),
-      setOptions: (options) =>
-        set(() => {
-          return { ...options };
-        }),
-      setLanguage: (language: string) =>
-        set(() => {
-          return { language };
-        }),
+      setValue: (value: string) => set(() => ({ value: value })),
+      setOptions: (options) => set(() => ({ options })),
+      setLanguage: (language: string) => set(() => ({ language })),
     }),
     { name: "json-formatter", storage: createJSONStorage(() => localStorage) },
   ),
