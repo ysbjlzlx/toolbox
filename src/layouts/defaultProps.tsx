@@ -104,6 +104,7 @@ export const menuData: MenuDataItem[] = [
     children: [
       { name: "md-editor", path: "/markdown/md-editor" },
       { name: "mdx-editor", path: "/markdown/mdx-editor" },
+      { name: "Milkdown", path: "/markdown/milkdown" },
       { name: "Vditor", path: "/markdown/vditor" },
     ],
   },

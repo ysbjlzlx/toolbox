@@ -114,8 +114,9 @@ export const routes: RouteObject[] = [
           { path: "md-editor", lazy: () => import("@/pages/markdown/md-editor") },
           {
             path: "mdx-editor",
-            lazy: () => import("src/pages/markdown/mdx-editor"),
+            lazy: () => import("@/pages/markdown/mdx-editor"),
           },
+          { path: "milkdown", lazy: () => import("@/pages/markdown/milkdown") },
           { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
         ],
       },
