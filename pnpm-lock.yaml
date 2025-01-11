@@ -17,8 +17,8 @@ importers:
         specifier: 1.22.1
         version: 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/md-editor':
-        specifier: 1.12.30
-        version: 1.12.30(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.7(@swc/helpers@0.5.1))(esbuild@0.24.0)))
+        specifier: 1.12.31
+        version: 1.12.31(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.7(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/pro-components':
         specifier: 2.8.2
         version: 2.8.2(antd@5.23.0(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -461,8 +461,8 @@ packages:
       react: '18'
       react-dom: '>=16.0.0'
 
-  '@ant-design/md-editor@1.12.30':
-    resolution: {integrity: sha512-pjA0FY7LN0sC4UeZFH7lDhhWEMaq9fXfw49WHbs+jI4w8hKxVT38Cjn1qRjCsv5TU5TwotY2e/ph/H9Pfuwjbw==}
+  '@ant-design/md-editor@1.12.31':
+    resolution: {integrity: sha512-l8/hF9uQNNnT736aH23lzzZDmhiVoAdADvN55K1+4F/J/ghKtj9olkAEIOnMRc5lO8KPmeMLBZ4XaIUnXRzL7g==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.9.0'
@@ -8378,7 +8378,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/md-editor@1.12.30(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.7(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
+  '@ant-design/md-editor@1.12.31(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.7(@swc/helpers@0.5.1))(esbuild@0.24.0)))':
     dependencies:
       '@ant-design/charts': 2.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(workerize-loader@2.0.2(webpack@5.97.1(@swc/core@1.10.7(@swc/helpers@0.5.1))(esbuild@0.24.0)))
       '@ant-design/cssinjs': 1.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
