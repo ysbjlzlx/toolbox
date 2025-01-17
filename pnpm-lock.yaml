@@ -95,8 +95,8 @@ importers:
         specifier: 1.0.4
         version: 1.0.4
       ace-builds:
-        specifier: 1.37.4
-        version: 1.37.4
+        specifier: 1.37.5
+        version: 1.37.5
       ahooks:
         specifier: 3.8.4
         version: 3.8.4(react@18.3.1)
@@ -3741,8 +3741,8 @@ packages:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
     hasBin: true
 
-  ace-builds@1.37.4:
-    resolution: {integrity: sha512-niaXM/b7Nm6l/GKpc/jtG0jjExBOkqRN1pZbyV/ngb3GrQQF5fCB2032n5qaaAr7hWSGbc+PGfZ3C0LsmYQptA==}
+  ace-builds@1.37.5:
+    resolution: {integrity: sha512-VMJ4Cnhq6L9dwvOCyuyyvQuiVTSwdZC7zDKJBBBJJax0wGQ7MvzQZFoi0gMmCm2I4Zuv/ZbtwU/dlglIhCNLhw==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -12143,7 +12143,7 @@ snapshots:
       jsonparse: 1.3.1
       through: 2.3.8
 
-  ace-builds@1.37.4: {}
+  ace-builds@1.37.5: {}
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
@@ -15552,7 +15552,7 @@ snapshots:
 
   react-ace@13.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      ace-builds: 1.37.4
+      ace-builds: 1.37.5
       diff-match-patch: 1.0.5
       lodash.get: 4.4.2
       lodash.isequal: 4.5.0
