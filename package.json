@@ -17,7 +17,7 @@
   "dependencies": {
     "@ant-design/cssinjs": "1.22.1",
     "@ant-design/md-editor": "1.14.5",
-    "@ant-design/pro-components": "2.8.4",
+    "@ant-design/pro-components": "2.8.2",
     "@codemirror/lang-javascript": "6.2.2",
     "@codemirror/state": "6.5.1",
     "@codemirror/view": "6.36.2",
