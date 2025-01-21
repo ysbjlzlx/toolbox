@@ -7,10 +7,6 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
-    },
-    {
-      "matchPackageNames": ["@ant-design/pro-components"],
-      "allowedVersions": "/^!2\\.8\\.3$/"
     }
   ]
 }
