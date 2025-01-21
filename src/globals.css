@@ -1,4 +1,4 @@
-@layer tailwind-base, antd;
+@layer tailwind-base, antd, antd-pro;
 
 @layer tailwind-base {
   @tailwind base;
