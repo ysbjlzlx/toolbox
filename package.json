@@ -93,7 +93,7 @@
     "vanilla-jsoneditor": "2.3.3",
     "vditor": "3.10.8",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
-    "xml-formatter": "3.6.3",
+    "xml-formatter": "3.6.4",
     "yaml": "2.7.0",
     "zod": "3.24.1",
     "zustand": "5.0.3"
