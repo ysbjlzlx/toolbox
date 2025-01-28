@@ -22,8 +22,8 @@ importers:
         specifier: 1.23.0
         version: 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/md-editor':
-        specifier: 1.14.7
-        version: 1.14.7(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.14.10
+        version: 1.14.10(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/pro-components':
         specifier: 2.8.4
         version: 2.8.4(antd@5.23.2(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -442,8 +442,8 @@ packages:
       react: '18'
       react-dom: '>=16.0.0'
 
-  '@ant-design/md-editor@1.14.7':
-    resolution: {integrity: sha512-39hbuGaH87nLxYGhAQe5u0i14zEHsV4iFMoofWpsRyVHO9aQswSKcFabfB/1fNcMp2LCCIFHwj2OUK/3Jn/+zA==}
+  '@ant-design/md-editor@1.14.10':
+    resolution: {integrity: sha512-T+j5XefZicsZn7k15k22QlG97zlTe/EJDiYcvmi9NXA/wX0IITfdoQLxmpkuvL5n/adAEhuq13lQFpIJzIovww==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.9.0'
@@ -7876,7 +7876,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/md-editor@1.14.7(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@ant-design/md-editor@1.14.10(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@ant-design/cssinjs': 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/icons': 5.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
