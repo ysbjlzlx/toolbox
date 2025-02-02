@@ -86,7 +86,7 @@
     "react-dom": "18.3.1",
     "react-i18next": "15.4.0",
     "react-router": "7.1.5",
-    "tailwind-merge": "2.6.0",
+    "tailwind-merge": "3.0.1",
     "url": "0.11.4",
     "usehooks-ts": "3.1.0",
     "uuid": "11.0.5",
