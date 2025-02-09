@@ -22,8 +22,8 @@ importers:
         specifier: 1.23.0
         version: 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/md-editor':
-        specifier: 1.15.4
-        version: 1.15.4(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.15.6
+        version: 1.15.6(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/pro-components':
         specifier: 2.8.4
         version: 2.8.4(antd@5.23.4(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -442,8 +442,15 @@ packages:
       react: '18'
       react-dom: '>=16.0.0'
 
-  '@ant-design/md-editor@1.15.4':
-    resolution: {integrity: sha512-9cXoe4me6Ds+Aw5Xoip2o5GxUAmU5y7BrisXQQFOLEgMcxzJQ9DtebAkW7a6clOf83F0+tRwBJgqcCI05uRlfQ==}
+  '@ant-design/icons@5.6.1':
+    resolution: {integrity: sha512-0/xS39c91WjPAZOWsvi1//zjx6kAp4kxWwctR6kuU6p133w8RU0D2dSCvZC19uQyharg/sAvYxGYWl01BbZZfg==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      react: '18'
+      react-dom: '>=16.0.0'
+
+  '@ant-design/md-editor@1.15.6':
+    resolution: {integrity: sha512-uQGhlO3Ii/IPXKG3ivVlFymdbWqAZ6TdZ2D/pUcSCPypCgzbe/ViHINyXSL6ZHxGnn+HwM6R5RaiOrqSDlqMHw==}
     peerDependencies:
       react: '18'
       react-dom: '>=16.9.0'
@@ -5921,8 +5928,8 @@ packages:
       react-native:
         optional: true
 
-  mobx@6.13.5:
-    resolution: {integrity: sha512-/HTWzW2s8J1Gqt+WmUj5Y0mddZk+LInejADc79NJadrWla3rHzmRHki/mnEUH1AvOmbNTZ1BRbKxr8DSgfdjMA==}
+  mobx@6.13.6:
+    resolution: {integrity: sha512-r19KNV0uBN4b+ER8Z0gA4y+MzDYIQ2SvOmn3fUrqPnWXdQfakd9yfbPBDBF/p5I+bd3N5Rk1fHONIvMay+bJGA==}
 
   mock-property@1.0.3:
     resolution: {integrity: sha512-2emPTb1reeLLYwHxyVx993iYyCHEiRRO+y8NFXFPL5kl5q14sgTK76cXyEKkeKCHeRw35SfdkUJ10Q1KfHuiIQ==}
@@ -7983,10 +7990,20 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ant-design/md-editor@1.15.4(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@ant-design/icons@5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@ant-design/colors': 7.2.0
+      '@ant-design/icons-svg': 4.4.2
+      '@babel/runtime': 7.26.7
+      classnames: 2.5.1
+      rc-util: 5.44.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@ant-design/md-editor@1.15.6(@emotion/is-prop-valid@1.2.2)(date-fns@4.1.0)(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@ant-design/cssinjs': 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@ant-design/icons': 5.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@ant-design/icons': 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/pro-components': 2.8.4(antd@5.23.4(date-fns@4.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@antv/g2': 5.2.10
       '@babel/runtime': 7.26.7
@@ -8004,8 +8021,8 @@ snapshots:
       is-plain-object: 5.0.0
       json5: 2.2.3
       lodash: 4.17.21
-      mobx: 6.13.5
-      mobx-react: 9.2.0(mobx@6.13.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      mobx: 6.13.6
+      mobx-react: 9.2.0(mobx@6.13.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       motion: 11.18.2(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       nanoid: 5.0.9
       partial-json-parser: 1.2.2
@@ -14677,23 +14694,23 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  mobx-react-lite@4.1.0(mobx@6.13.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  mobx-react-lite@4.1.0(mobx@6.13.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      mobx: 6.13.5
+      mobx: 6.13.6
       react: 18.3.1
       use-sync-external-store: 1.4.0(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  mobx-react@9.2.0(mobx@6.13.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  mobx-react@9.2.0(mobx@6.13.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      mobx: 6.13.5
-      mobx-react-lite: 4.1.0(mobx@6.13.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      mobx: 6.13.6
+      mobx-react-lite: 4.1.0(mobx@6.13.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  mobx@6.13.5: {}
+  mobx@6.13.6: {}
 
   mock-property@1.0.3:
     dependencies:
