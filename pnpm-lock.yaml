@@ -250,8 +250,8 @@ importers:
         specifier: 2.3.3
         version: 2.3.3(@lezer/common@1.2.1)
       vditor:
-        specifier: 3.10.8
-        version: 3.10.8
+        specifier: 3.10.9
+        version: 3.10.9
       xlsx:
         specifier: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
         version: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
@@ -7457,8 +7457,8 @@ packages:
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
 
-  vditor@3.10.8:
-    resolution: {integrity: sha512-u9npjvMuGJVk0QGbpqiGAmvgiR4QvMVpNQYrvFYZ/yWDtTFLZrHmLxuUbtswotR6KY10u5kVuaoSEoBGGWQGjQ==}
+  vditor@3.10.9:
+    resolution: {integrity: sha512-cJE/pMv/kg3dW9TIoAe2VBM4CI1JuTEjsD8YhveqYZm8h4pjcXSmYtu/0QVqH6/KA2BeUXvZilryOXlwho2QZg==}
 
   vfile-message@4.0.2:
     resolution: {integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==}
@@ -16438,7 +16438,7 @@ snapshots:
     dependencies:
       '@sphinxxxx/color-conversion': 2.2.2
 
-  vditor@3.10.8:
+  vditor@3.10.9:
     dependencies:
       diff-match-patch: 1.0.5
 
