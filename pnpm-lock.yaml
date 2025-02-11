@@ -148,8 +148,8 @@ importers:
         specifier: 7.9.0
         version: 7.9.0
       d3-svg-to-png:
-        specifier: 0.3.1
-        version: 0.3.1
+        specifier: 0.3.2
+        version: 0.3.2
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
@@ -4185,8 +4185,8 @@ packages:
     resolution: {integrity: sha512-SaLBuwGm3MOViRq2ABk3eLoxwZELpH6zhl3FbAoJ7Vm1gofKx6El1Ib5z23NUEhF9AsGl7y+dzLe5Cw2AArGTA==}
     engines: {node: '>=12'}
 
-  d3-svg-to-png@0.3.1:
-    resolution: {integrity: sha512-93+xgPo5Jrl/OvZRrxy0eD+K9/PzIZ2fTZv/CJRKdKTIUMav5EtdGRj62wrhQnZlHiEr5aMFK3A1nt2/b5L1mA==}
+  d3-svg-to-png@0.3.2:
+    resolution: {integrity: sha512-VPoxfCEOZ3rmw4uQexq7c76S/PnrL74iAN3y2KTgIWV6Q9mH//IV5ojtfGqeNjThy2mU1f9yv4Axoo+KqgD22Q==}
 
   d3-time-format@4.1.0:
     resolution: {integrity: sha512-dJxPBlzC7NugB2PDLwo9Q8JiTR3M3e4/XANkreKSUxF8vvXKqm1Yfq4Q5dl8budlunRVlUUaDUgFt7eA8D6NLg==}
@@ -12548,7 +12548,7 @@ snapshots:
     dependencies:
       d3-path: 3.1.0
 
-  d3-svg-to-png@0.3.1: {}
+  d3-svg-to-png@0.3.2: {}
 
   d3-time-format@4.1.0:
     dependencies:
