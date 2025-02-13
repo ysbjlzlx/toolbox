@@ -137,7 +137,6 @@
   "packageManager": "pnpm@10.3.0",
   "pnpm": {
     "overrides": {
-      "rc-field-form": "2.7.0",
       "@ant-design/md-editor>dumi-theme-antd-style": "-",
       "react": "18"
     },

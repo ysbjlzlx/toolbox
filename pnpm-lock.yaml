@@ -5,7 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  rc-field-form: 2.7.0
   '@ant-design/md-editor>dumi-theme-antd-style': '-'
   react: '18'
 
@@ -477,7 +476,7 @@ packages:
     resolution: {integrity: sha512-LTFx29c2LvO5m1PWsiI9C0VH78/b9fzC4EldD8OH6hy9dcH1bmKZdrVZogQKD1Y8m4yU43kDNzoPbizow6SdKQ==}
     peerDependencies:
       antd: ^4.24.15 || ^5.11.2
-      rc-field-form: 2.7.0
+      rc-field-form: '>=1.22.0'
       react: '18'
       react-dom: '>=17.0.0'
 
@@ -513,7 +512,7 @@ packages:
     resolution: {integrity: sha512-LejqPfHnTL8aKIbh8uOY8BcKAP7OZZlD0UwxPU631OYixuEB5J++ayhZh6Yj3Yye62t3A7lXN9+Tc8pab9Golw==}
     peerDependencies:
       antd: ^4.24.15 || ^5.11.2
-      rc-field-form: 2.7.0
+      rc-field-form: '>=1.22.0'
       react: '18'
       react-dom: '>=17.0.0'
 
