@@ -120,7 +120,6 @@
     "@types/react-dom": "18.3.5",
     "@types/uuid": "10.0.0",
     "@vitejs/plugin-react": "4.3.4",
-    "autoprefixer": "10.4.20",
     "jsdom": "26.0.0",
     "lefthook": "1.10.10",
     "postcss": "8.5.2",
