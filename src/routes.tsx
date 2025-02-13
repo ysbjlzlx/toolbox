@@ -36,10 +36,6 @@ export const routes: RouteObject[] = [
             lazy: () => import("@/pages/code/conversion"),
           },
           {
-            path: "diff",
-            lazy: () => import("@/pages/code/diff"),
-          },
-          {
             path: "formatter",
             lazy: () => import("@/pages/code/formatter"),
           },

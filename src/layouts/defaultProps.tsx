@@ -39,11 +39,6 @@ export const menuData: MenuDataItem[] = [
         key: "/code/conversion",
       },
       {
-        name: "Diff",
-        path: "/code/diff",
-        key: "/code/diff",
-      },
-      {
         name: "Formatter",
         path: "/code/formatter",
         key: "/code/formatter",
