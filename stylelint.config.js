@@ -6,9 +6,10 @@ export default {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen'],
+        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen', 'plugin', 'theme'],
       },
     ],
     'no-empty-source': null,
+    'custom-property-pattern':'breakpoint-.+'
   },
 };
