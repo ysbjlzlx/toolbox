@@ -277,8 +277,8 @@ importers:
         specifier: 5.2.0
         version: 5.2.0(react@18.3.1)
       '@mdxeditor/editor':
-        specifier: 3.21.5
-        version: 3.21.5(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
+        specifier: 3.22.1
+        version: 3.22.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
       '@swc/core':
         specifier: 1.10.16
         version: 1.10.16(@swc/helpers@0.5.1)
@@ -1985,8 +1985,8 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mdxeditor/editor@3.21.5':
-    resolution: {integrity: sha512-heKZQNk/nbTaAm8RopnAeO4mAicXyYT2kpQ6ARZ9U7dPExZYhybV03YNz2xc4WphpHxXMfx1oHbRmZ0gFScBnQ==}
+  '@mdxeditor/editor@3.22.1':
+    resolution: {integrity: sha512-mMhJjxuam5FsdKoNIXI21IZK5hMjqAFRj0y4FBxSgJCFOuOJqUCcP7pN2sCTdsi1uS60225RkrwdqjeloCTuCQ==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '18'
@@ -10166,7 +10166,7 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mdxeditor/editor@3.21.5(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
+  '@mdxeditor/editor@3.22.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
     dependencies:
       '@codemirror/lang-markdown': 6.3.1
       '@codemirror/language-data': 6.5.1(@codemirror/view@6.36.2)
@@ -14486,7 +14486,7 @@ snapshots:
   micromark@4.0.1:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.7
+      debug: 4.4.0
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.2
