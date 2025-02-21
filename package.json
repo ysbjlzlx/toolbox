@@ -59,7 +59,7 @@
     "d3": "7.9.0",
     "d3-svg-to-png": "0.3.2",
     "date-fns": "4.1.0",
-    "fast-xml-parser": "4.5.2",
+    "fast-xml-parser": "4.5.3",
     "file-saver": "2.0.5",
     "groovy-beautify": "0.0.17",
     "handlebars": "4.7.8",
