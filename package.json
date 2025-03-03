@@ -18,6 +18,7 @@
     "@ant-design/cssinjs": "1.23.0",
     "@ant-design/md-editor": "1.15.18",
     "@ant-design/pro-components": "2.8.6",
+    "@ant-design/pro-provider": "2.15.3",
     "@codemirror/lang-javascript": "6.2.3",
     "@codemirror/state": "6.5.2",
     "@codemirror/view": "6.36.3",
