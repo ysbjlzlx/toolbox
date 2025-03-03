@@ -1,6 +1,6 @@
 import type { SelectProps } from "antd";
 import { Button, Card, Select } from "antd";
-import XML from "fast-xml-parser";
+import { XMLBuilder, XMLParser } from "fast-xml-parser";
 import * as LosslessJSON from "lossless-json";
 import { useState } from "react";
 import type { IAceOptions } from "react-ace";
@@ -61,7 +61,7 @@ export const Component = () => {
       } else if (sourceType === "yaml") {
         sourceObj = YAML.parse(sourceValue, { intAsBigInt: true });
       } else if (sourceType === "xml") {
-        const xmlParser = new XML.XMLParser();
+        const xmlParser = new XMLParser();
         sourceObj = xmlParser.parse(sourceValue);
       }
     } catch (e) {
@@ -79,7 +79,7 @@ export const Component = () => {
           setTargetValue(val);
         });
       } else if (targetType === "xml") {
-        const xmlBuilder = new XML.XMLBuilder({
+        const xmlBuilder = new XMLBuilder({
           ignoreAttributes: false,
           format: true,
           oneListGroup: true,
