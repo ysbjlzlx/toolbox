@@ -1,7 +1,7 @@
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
-import type { VitePWAOptions } from "vite-plugin-pwa";
-import { VitePWA } from "vite-plugin-pwa";
+import {defineConfig} from "vite";
+import type {VitePWAOptions} from "vite-plugin-pwa";
+import {VitePWA} from "vite-plugin-pwa";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 const pwaOptions: Partial<VitePWAOptions> = {
@@ -58,6 +58,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
       },
     ],
   },
+  workbox: {
+    maximumFileSizeToCacheInBytes: 8 * 1024 * 1024
+  }
 };
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), VitePWA(pwaOptions)],
@@ -70,7 +73,7 @@ export default defineConfig({
           "pro-components": ["@ant-design/pro-components"],
           ace: ["ace-builds", "react-ace"],
           "json-editor": ["vanilla-jsoneditor"],
-          "md-editor":["@ant-design/md-editor"]
+          "md-editor": ["@ant-design/md-editor"]
         },
       },
     },
