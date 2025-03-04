@@ -1,0 +1,1 @@
+import{af as o}from"./pro-components-L2sDkqQs.js";import{N as t}from"./index-0oxnn2GF.js";import"./antd-Bzy0GL_f.js";import"./json-editor-CBqK5HSN.js";const s=()=>o.jsx(t,{to:"/json/json-editor",replace:!0});export{s as Component};

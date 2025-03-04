@@ -1,0 +1,1 @@
+import{af as e,al as s}from"./pro-components-L2sDkqQs.js";import{bw as a,aj as t}from"./antd-Bzy0GL_f.js";const n=[{label:"Base-X",value:"base-x"}],i=()=>e.jsx(s,{title:!1,className:"p-4",children:e.jsx(a,{children:e.jsx(t,{options:n})})});export{i as Component};

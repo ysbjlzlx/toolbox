@@ -1,1 +1,0 @@
-import{r as t}from"./pro-components-D4VvMrwW.js";import{C as o}from"./index-DdNLxTL1.js";import{S as a,U as r}from"./antd-DeG7bo76.js";const n=e=>t.jsx("div",{className:"my-4",children:t.jsxs(a.Compact,{block:!0,children:[t.jsx(r,{value:e.value||"",addonBefore:e.tag,showCount:!0}),t.jsx(o,{text:e.value})]})});export{n as I};
