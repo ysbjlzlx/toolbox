@@ -1,1 +1,0 @@
-import{af as a,al as r}from"./pro-components-L2sDkqQs.js";import{c as t}from"./index-0oxnn2GF.js";const o=({children:s})=>a.jsx(r,{title:!1,children:a.jsx("div",{className:t("h-[calc(100dvh-56px)]","md:h-dvh"),children:s})});export{o as F};

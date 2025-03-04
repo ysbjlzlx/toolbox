@@ -1,0 +1,1 @@
+import{af as o}from"./pro-components-CPZIsSOc.js";import{c as r}from"./colors-CYqFURhN.js";import{v as t}from"./json-editor-D3HpTOiY.js";import"./antd-Cl3cKmq-.js";const{gray:s}=r,a=()=>o.jsx("div",{children:t(s)});export{a as Component};
