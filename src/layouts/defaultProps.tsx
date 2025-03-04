@@ -12,6 +12,16 @@ export const menuData: MenuDataItem[] = [
         key: "/json/json-editor",
       },
       {
+        name: "JSON Formatter",
+        path: "/json/formatter",
+        key: "/json/formatter",
+      },
+      {
+        name: "JSON Diff",
+        path: "/json/json-diff",
+        key: "/json/json-diff",
+      },
+      {
         name: "JSON To Excel",
         path: "/json/json-to-excel",
         key: "/json/json-to-excel",
@@ -27,11 +37,6 @@ export const menuData: MenuDataItem[] = [
         name: "格式转换",
         path: "/code/conversion",
         key: "/code/conversion",
-      },
-      {
-        name: "Diff",
-        path: "/code/diff",
-        key: "/code/diff",
       },
       {
         name: "Formatter",
@@ -65,18 +70,6 @@ export const menuData: MenuDataItem[] = [
     ],
   },
   {
-    name: "生成器（Generator）",
-    icon: <Iconify icon="lucide:dices" />,
-    children: [
-      {
-        name: "随机字符串（String）",
-        desc: "生成包含数字、小写字母、大写字母、符号的随机字符串",
-        path: "/generator/string",
-      },
-      { name: "ID", path: "/generator/id" },
-    ],
-  },
-  {
     name: "URL",
     desc: "URL(Uniform Resource Locator) 统一资源定位符，俗称网页地址，简称网址，是因特网上标准的资源的地址（Address），如同在网络上的门牌。",
     path: "/url",
@@ -86,11 +79,6 @@ export const menuData: MenuDataItem[] = [
     name: "文本编辑器",
     icon: <Iconify icon="material-symbols:contract-edit-outline" />,
     children: [
-      {
-        name: "Markdown",
-        desc: "Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。",
-        path: "/markdown",
-      },
       {
         name: "富文本编辑器",
         desc: "Quill",
@@ -102,6 +90,17 @@ export const menuData: MenuDataItem[] = [
         desc: "Tiptap",
         path: "/tiptap",
       },
+    ],
+  },
+  {
+    name: "Markdown",
+    desc: "Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。",
+    icon: <Iconify icon="lucide:pen" />,
+    children: [
+      { name: "md-editor", path: "/markdown/md-editor" },
+      { name: "mdx-editor", path: "/markdown/mdx-editor" },
+      { name: "Milkdown", path: "/markdown/milkdown" },
+      { name: "Vditor", path: "/markdown/vditor" },
     ],
   },
   {
@@ -121,5 +120,18 @@ export const menuData: MenuDataItem[] = [
     desc: "宽带速率",
     path: "/transform",
     icon: <Iconify icon="material-symbols:transform" />,
+  },
+  {
+    name: "安全",
+    desc: "随机 ID，随机用户名，随机密码",
+    icon: <Iconify icon="lucide:shield-check" />,
+    children: [
+      { name: "ID", path: "/generator/id" },
+      {
+        name: "密码",
+        desc: "生成密码",
+        path: "/password",
+      },
+    ],
   },
 ];

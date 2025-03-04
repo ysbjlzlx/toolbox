@@ -1,7 +1,7 @@
 import { PageContainer } from "@ant-design/pro-components";
 import { sampleSize, toNumber } from "lodash-es";
 import { type FC, useCallback, useEffect, useState } from "react";
-import { type LoaderFunction, type URLSearchParamsInit, useLoaderData, useSearchParams } from "react-router-dom";
+import { type LoaderFunction, type URLSearchParamsInit, useLoaderData, useSearchParams } from "react-router";
 
 interface LoaderData {
   orchardStreetMedium: string[];

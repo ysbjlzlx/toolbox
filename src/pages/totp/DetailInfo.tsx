@@ -1,6 +1,6 @@
 import type { ProFormProps } from "@ant-design/pro-components";
 import { ProForm, ProFormText } from "@ant-design/pro-components";
-import { Button, Form, Input, Space } from "antd";
+import { Button, Form, type FormInstance, Input, Space } from "antd";
 import * as OTPAuth from "otpauth";
 import { useState } from "react";
 
@@ -33,7 +33,7 @@ const DetailInfo = () => {
         <ProFormText label="Issuer" name="issuer" required />
         <ProFormText label="Account" name="account" />
         <ProForm.Item shouldUpdate>
-          {(form) => {
+          {(form: FormInstance) => {
             return (
               <ProForm.Item label="Secret Key" name="secret" required>
                 <Space.Compact style={{ width: "100%" }}>

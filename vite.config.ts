@@ -1,10 +1,8 @@
-/// <reference types="vitest" />
-
-import path from "node:path";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
-import type { VitePWAOptions } from "vite-plugin-pwa";
-import { VitePWA } from "vite-plugin-pwa";
+import {defineConfig} from "vite";
+import type {VitePWAOptions} from "vite-plugin-pwa";
+import {VitePWA} from "vite-plugin-pwa";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const pwaOptions: Partial<VitePWAOptions> = {
   injectRegister: "auto",
@@ -60,14 +58,12 @@ const pwaOptions: Partial<VitePWAOptions> = {
       },
     ],
   },
+  workbox: {
+    maximumFileSizeToCacheInBytes: 8 * 1024 * 1024
+  }
 };
 export default defineConfig({
-  plugins: [react(), VitePWA(pwaOptions)],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
+  plugins: [react(), tsconfigPaths(), VitePWA(pwaOptions)],
   build: {
     sourcemap: false,
     rollupOptions: {
@@ -76,18 +72,13 @@ export default defineConfig({
           antd: ["antd"],
           "pro-components": ["@ant-design/pro-components"],
           ace: ["ace-builds", "react-ace"],
-          jsoneditor: ["vanilla-jsoneditor"],
+          "json-editor": ["vanilla-jsoneditor"],
+          "md-editor": ["@ant-design/md-editor"]
         },
       },
     },
   },
   server: {
     host: true,
-  },
-  test: {
-    environment: "jsdom",
-    globals: true,
-    setupFiles: "./src/setupTests.ts",
-    css: true,
   },
 });

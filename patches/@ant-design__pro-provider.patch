@@ -1,0 +1,13 @@
+diff --git a/es/useStyle/index.js b/es/useStyle/index.js
+index 25aa5973249d6fd452e348d222e9df21ebeb5084..d563d5096c2a8aec444b45f4418474590ce7ab46 100644
+--- a/es/useStyle/index.js
++++ b/es/useStyle/index.js
+@@ -98,7 +98,7 @@ export function useStyle(componentName, styleFn) {
+       nonce: csp === null || csp === void 0 ? void 0 : csp.nonce,
+       layer: {
+         name: 'antd-pro',
+-        dependencies: ['antd']
++        dependencies: []
+       }
+     }, function () {
+       return styleFn(token);
