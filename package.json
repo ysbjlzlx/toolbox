@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@ant-design/cssinjs": "1.23.0",
-    "@ant-design/md-editor": "1.16.4",
     "@ant-design/pro-components": "2.8.6",
     "@ant-design/pro-provider": "2.15.3",
     "@codemirror/lang-javascript": "6.2.3",
@@ -137,7 +136,6 @@
   "packageManager": "pnpm@10.5.2",
   "pnpm": {
     "overrides": {
-      "@ant-design/md-editor>dumi-theme-antd-style": "-",
       "react": "18"
     },
     "patchedDependencies": {
