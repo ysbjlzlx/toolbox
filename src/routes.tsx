@@ -107,7 +107,6 @@ export const routes: RouteObject[] = [
       {
         path: "markdown",
         children: [
-          { path: "md-editor", lazy: () => import("@/pages/markdown/md-editor") },
           {
             path: "mdx-editor",
             lazy: () => import("@/pages/markdown/mdx-editor"),
