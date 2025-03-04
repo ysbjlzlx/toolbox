@@ -69,7 +69,8 @@ export default defineConfig({
           antd: ["antd"],
           "pro-components": ["@ant-design/pro-components"],
           ace: ["ace-builds", "react-ace"],
-          jsoneditor: ["vanilla-jsoneditor"],
+          "json-editor": ["vanilla-jsoneditor"],
+          "md-editor":["@ant-design/md-editor"]
         },
       },
     },
