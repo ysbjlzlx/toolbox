@@ -99,8 +99,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@commitlint/cli": "19.7.1",
-    "@commitlint/config-conventional": "19.7.1",
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
     "@iconify/react": "5.2.0",
     "@mdxeditor/editor": "3.25.1",
     "@swc/core": "1.11.8",
