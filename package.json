@@ -21,7 +21,7 @@
     "@codemirror/lang-javascript": "6.2.3",
     "@codemirror/state": "6.5.2",
     "@codemirror/view": "6.36.4",
-    "@milkdown/crepe": "7.6.3",
+    "@milkdown/crepe": "7.6.4",
     "@milkdown/kit": "7.6.3",
     "@monaco-editor/loader": "1.5.0",
     "@monaco-editor/react": "4.7.0",
