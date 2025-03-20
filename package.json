@@ -133,7 +133,7 @@
     "workbox-build": "7.3.0",
     "workbox-window": "7.3.0"
   },
-  "packageManager": "pnpm@10.6.4",
+  "packageManager": "pnpm@10.6.5",
   "pnpm": {
     "overrides": {
       "react": "18"
