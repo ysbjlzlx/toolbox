@@ -42,7 +42,7 @@
     "@uiw/codemirror-theme-vscode": "4.23.10",
     "@uiw/react-codemirror": "4.23.10",
     "@xiechao/codemirror-lang-handlebars": "1.0.4",
-    "ace-builds": "1.39.0",
+    "ace-builds": "1.39.1",
     "ahooks": "3.8.4",
     "antd": "5.24.4",
     "ascii85": "1.0.2",
