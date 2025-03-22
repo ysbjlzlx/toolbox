@@ -248,8 +248,8 @@ importers:
         specifier: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
         version: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
       xml-formatter:
-        specifier: 3.6.4
-        version: 3.6.4
+        specifier: 3.6.5
+        version: 3.6.5
       yaml:
         specifier: 2.7.0
         version: 2.7.0
@@ -7060,8 +7060,8 @@ packages:
     engines: {node: '>=0.8'}
     hasBin: true
 
-  xml-formatter@3.6.4:
-    resolution: {integrity: sha512-vkvTNw4u9mp72lMmJHw771NE9EJLX0kfwIcP+ZEo9eJ6HmotX23vmykyROyIQ9Y3a+ckdUdhxIE2ZO66rYuPrg==}
+  xml-formatter@3.6.5:
+    resolution: {integrity: sha512-5Dvux87y+abquO3Om8zRyOUdYkc22BnSS3zMhL2UgeCC+3lz9FbSBpAhzxmk+/qfTO3ypLRwTxJvByoG+FjTMA==}
     engines: {node: '>= 16'}
 
   xml-name-validator@5.0.0:
@@ -15216,7 +15216,7 @@ snapshots:
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz: {}
 
-  xml-formatter@3.6.4:
+  xml-formatter@3.6.5:
     dependencies:
       xml-parser-xo: 4.1.2
 
