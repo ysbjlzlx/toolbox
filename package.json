@@ -103,7 +103,7 @@
     "@commitlint/config-conventional": "19.8.0",
     "@iconify/react": "5.2.0",
     "@mdxeditor/editor": "3.29.1",
-    "@swc/core": "1.11.11",
+    "@swc/core": "1.11.12",
     "@tailwindcss/postcss": "4.0.15",
     "@tailwindcss/typography": "0.5.16",
     "@testing-library/jest-dom": "6.6.3",
