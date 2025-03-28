@@ -84,7 +84,7 @@
     "react-datasheet": "1.4.12",
     "react-dom": "18.3.1",
     "react-i18next": "15.4.1",
-    "react-router": "7.4.0",
+    "react-router": "7.4.1",
     "tailwind-merge": "3.0.2",
     "url": "0.11.4",
     "usehooks-ts": "3.1.1",
