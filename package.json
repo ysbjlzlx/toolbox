@@ -20,7 +20,7 @@
     "@ant-design/pro-provider": "2.15.3",
     "@codemirror/lang-javascript": "6.2.3",
     "@codemirror/state": "6.5.2",
-    "@codemirror/view": "6.36.4",
+    "@codemirror/view": "6.36.5",
     "@milkdown/crepe": "7.6.4",
     "@milkdown/kit": "7.6.4",
     "@monaco-editor/loader": "1.5.0",
