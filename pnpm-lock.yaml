@@ -23,8 +23,8 @@ importers:
         specifier: 2.8.7
         version: 2.8.7(antd@5.24.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/pro-provider':
-        specifier: 2.15.3
-        version: 2.15.3(patch_hash=fcd2b56d97500c66af7d0032d390ad06d9325db78c227f57457ba9cd93bdeeca)(antd@5.24.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 2.15.4
+        version: 2.15.4(patch_hash=fcd2b56d97500c66af7d0032d390ad06d9325db78c227f57457ba9cd93bdeeca)(antd@5.24.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@codemirror/lang-javascript':
         specifier: 6.2.3
         version: 6.2.3
@@ -479,13 +479,6 @@ packages:
 
   '@ant-design/pro-list@2.6.7':
     resolution: {integrity: sha512-6k/En7pioMgepho/1HMf2DAnkSTZiat1lDg2ggCok2lhSgqXzir7x22ewJQRgPvEiVb6/qqaFQNd7a8dnrFj1w==}
-    peerDependencies:
-      antd: ^4.24.15 || ^5.11.2
-      react: '18'
-      react-dom: '>=17.0.0'
-
-  '@ant-design/pro-provider@2.15.3':
-    resolution: {integrity: sha512-jUBCuRrhAXNMumSZ++704/zEg/7U1k2N3jMVBgtirvVaCAk5O9iZQKK4W3O3LRFc+D8yO16sXjsxhawvdGL4cA==}
     peerDependencies:
       antd: ^4.24.15 || ^5.11.2
       react: '18'
@@ -7304,18 +7297,6 @@ snapshots:
     transitivePeerDependencies:
       - rc-field-form
 
-  '@ant-design/pro-provider@2.15.3(patch_hash=fcd2b56d97500c66af7d0032d390ad06d9325db78c227f57457ba9cd93bdeeca)(antd@5.24.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@ant-design/cssinjs': 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@babel/runtime': 7.26.7
-      '@ctrl/tinycolor': 3.6.1
-      antd: 5.24.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      dayjs: 1.11.13
-      rc-util: 5.44.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      swr: 2.2.5(react@18.3.1)
-
   '@ant-design/pro-provider@2.15.4(patch_hash=fcd2b56d97500c66af7d0032d390ad06d9325db78c227f57457ba9cd93bdeeca)(antd@5.24.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@ant-design/cssinjs': 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -13960,7 +13941,7 @@ snapshots:
 
   rc-util@5.44.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.26.7
+      '@babel/runtime': 7.26.10
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-is: 18.3.1
