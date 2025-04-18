@@ -22,7 +22,7 @@
     "@codemirror/state": "6.5.2",
     "@codemirror/view": "6.36.5",
     "@milkdown/crepe": "7.9.0",
-    "@milkdown/kit": "7.8.0",
+    "@milkdown/kit": "7.9.0",
     "@monaco-editor/loader": "1.5.0",
     "@monaco-editor/react": "4.7.0",
     "@paralleldrive/cuid2": "2.2.2",
