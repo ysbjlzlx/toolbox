@@ -28,7 +28,7 @@
     "@paralleldrive/cuid2": "2.2.2",
     "@repo/colors": "workspace:@repo/colors@*",
     "@sapphire/snowflake": "3.5.5",
-    "@scure/base": "1.2.4",
+    "@scure/base": "1.2.5",
     "@tiptap/extension-code-block-lowlight": "2.11.7",
     "@tiptap/extension-highlight": "2.11.7",
     "@tiptap/extension-link": "2.11.7",
