@@ -93,7 +93,7 @@
     "vditor": "3.11.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "xml-formatter": "3.6.6",
-    "yaml": "2.7.1",
+    "yaml": "2.8.0",
     "zod": "3.24.4",
     "zustand": "5.0.4"
   },
