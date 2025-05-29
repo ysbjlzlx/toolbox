@@ -32,14 +32,14 @@ importers:
         specifier: 6.5.2
         version: 6.5.2
       '@codemirror/view':
-        specifier: 6.36.8
-        version: 6.36.8
+        specifier: 6.37.0
+        version: 6.37.0
       '@milkdown/crepe':
         specifier: 7.11.1
         version: 7.11.1(@lezer/common@1.2.1)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(typescript@5.8.3)
       '@milkdown/kit':
         specifier: 7.11.1
-        version: 7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(typescript@5.8.3)
+        version: 7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(typescript@5.8.3)
       '@monaco-editor/loader':
         specifier: 1.5.0
         version: 1.5.0
@@ -87,13 +87,13 @@ importers:
         version: 2.12.0
       '@uiw/codemirror-theme-github':
         specifier: 4.23.12
-        version: 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+        version: 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
       '@uiw/codemirror-theme-vscode':
         specifier: 4.23.12
-        version: 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+        version: 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
       '@uiw/react-codemirror':
         specifier: 4.23.12
-        version: 4.23.12(@babel/runtime@7.26.10)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.36.8)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.23.12(@babel/runtime@7.26.10)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.37.0)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@xiechao/codemirror-lang-handlebars':
         specifier: 1.0.4
         version: 1.0.4
@@ -1251,8 +1251,8 @@ packages:
   '@codemirror/theme-one-dark@6.1.2':
     resolution: {integrity: sha512-F+sH0X16j/qFLMAfbciKTxVOwkdAS336b7AXTKOZhy8BR3eH/RelsnLgLFINrpST63mmN2OuwUt0W2ndUgYwUA==}
 
-  '@codemirror/view@6.36.8':
-    resolution: {integrity: sha512-yoRo4f+FdnD01fFt4XpfpMCcCAo9QvZOtbrXExn4SqzH32YC6LgzqxfLZw/r6Ge65xyY03mK/UfUqrVw1gFiFg==}
+  '@codemirror/view@6.37.0':
+    resolution: {integrity: sha512-ghHIeRGfWB8h9Tc3sMdr7D5zp4sZvlCzG36Xjdh2ymmfAwvSaCJAAsL3HLyLEnHcE953+5Uox1bx5OS+YCW/7Q==}
 
   '@codesandbox/nodebox@0.1.8':
     resolution: {integrity: sha512-2VRS6JDSk+M+pg56GA6CryyUSGPjBEe8Pnae0QL3jJF1mJZJVMDKr93gJRtBbLkfZN6LD/DwMtf+2L0bpWrjqg==}
@@ -8074,32 +8074,32 @@ snapshots:
       reactcss: 1.2.3(react@18.3.1)
       tinycolor2: 1.6.0
 
-  '@codemirror/autocomplete@6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)':
+  '@codemirror/autocomplete@6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)':
     dependencies:
       '@codemirror/language': 6.10.1
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
 
-  '@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)':
+  '@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
 
   '@codemirror/commands@6.5.0':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
 
   '@codemirror/commands@6.7.1':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
 
   '@codemirror/lang-angular@0.1.3':
@@ -8116,9 +8116,9 @@ snapshots:
       '@codemirror/language': 6.10.3
       '@lezer/cpp': 1.1.2
 
-  '@codemirror/lang-css@6.3.0(@codemirror/view@6.36.8)':
+  '@codemirror/lang-css@6.3.0(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
       '@lezer/common': 1.2.1
@@ -8126,9 +8126,9 @@ snapshots:
     transitivePeerDependencies:
       - '@codemirror/view'
 
-  '@codemirror/lang-go@6.0.1(@codemirror/view@6.36.8)':
+  '@codemirror/lang-go@6.0.1(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
       '@lezer/common': 1.2.1
@@ -8138,12 +8138,12 @@ snapshots:
 
   '@codemirror/lang-html@6.4.9':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
-      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.36.8)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
+      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.37.0)
       '@codemirror/lang-javascript': 6.2.4
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/css': 1.1.9
       '@lezer/html': 1.3.10
@@ -8155,11 +8155,11 @@ snapshots:
 
   '@codemirror/lang-javascript@6.2.4':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/lint': 6.8.2
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/javascript': 1.4.19
 
@@ -8168,9 +8168,9 @@ snapshots:
       '@codemirror/language': 6.10.3
       '@lezer/json': 1.0.2
 
-  '@codemirror/lang-less@6.0.2(@codemirror/view@6.36.8)':
+  '@codemirror/lang-less@6.0.2(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.36.8)
+      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.37.0)
       '@codemirror/language': 6.10.3
       '@lezer/common': 1.2.1
       '@lezer/highlight': 1.2.1
@@ -8180,22 +8180,22 @@ snapshots:
 
   '@codemirror/lang-liquid@6.2.1':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/lang-html': 6.4.9
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/highlight': 1.2.1
       '@lezer/lr': 1.4.0
 
   '@codemirror/lang-markdown@6.3.1':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/lang-html': 6.4.9
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/markdown': 1.3.2
 
@@ -8207,9 +8207,9 @@ snapshots:
       '@lezer/common': 1.2.1
       '@lezer/php': 1.0.2
 
-  '@codemirror/lang-python@6.1.6(@codemirror/view@6.36.8)':
+  '@codemirror/lang-python@6.1.6(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
       '@lezer/common': 1.2.1
@@ -8222,9 +8222,9 @@ snapshots:
       '@codemirror/language': 6.10.3
       '@lezer/rust': 1.0.2
 
-  '@codemirror/lang-sass@6.0.2(@codemirror/view@6.36.8)':
+  '@codemirror/lang-sass@6.0.2(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.36.8)
+      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.37.0)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
       '@lezer/common': 1.2.1
@@ -8232,9 +8232,9 @@ snapshots:
     transitivePeerDependencies:
       - '@codemirror/view'
 
-  '@codemirror/lang-sql@6.8.0(@codemirror/view@6.36.8)':
+  '@codemirror/lang-sql@6.8.0(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
       '@lezer/common': 1.2.1
@@ -8261,16 +8261,16 @@ snapshots:
 
   '@codemirror/lang-xml@6.1.0':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/xml': 1.0.5
 
-  '@codemirror/lang-yaml@6.1.1(@codemirror/view@6.36.8)':
+  '@codemirror/lang-yaml@6.1.1(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
       '@lezer/common': 1.2.1
@@ -8279,28 +8279,28 @@ snapshots:
     transitivePeerDependencies:
       - '@codemirror/view'
 
-  '@codemirror/language-data@6.5.1(@codemirror/view@6.36.8)':
+  '@codemirror/language-data@6.5.1(@codemirror/view@6.37.0)':
     dependencies:
       '@codemirror/lang-angular': 0.1.3
       '@codemirror/lang-cpp': 6.0.2
-      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.36.8)
-      '@codemirror/lang-go': 6.0.1(@codemirror/view@6.36.8)
+      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.37.0)
+      '@codemirror/lang-go': 6.0.1(@codemirror/view@6.37.0)
       '@codemirror/lang-html': 6.4.9
       '@codemirror/lang-java': 6.0.1
       '@codemirror/lang-javascript': 6.2.4
       '@codemirror/lang-json': 6.0.1
-      '@codemirror/lang-less': 6.0.2(@codemirror/view@6.36.8)
+      '@codemirror/lang-less': 6.0.2(@codemirror/view@6.37.0)
       '@codemirror/lang-liquid': 6.2.1
       '@codemirror/lang-markdown': 6.3.1
       '@codemirror/lang-php': 6.0.1
-      '@codemirror/lang-python': 6.1.6(@codemirror/view@6.36.8)
+      '@codemirror/lang-python': 6.1.6(@codemirror/view@6.37.0)
       '@codemirror/lang-rust': 6.0.1
-      '@codemirror/lang-sass': 6.0.2(@codemirror/view@6.36.8)
-      '@codemirror/lang-sql': 6.8.0(@codemirror/view@6.36.8)
+      '@codemirror/lang-sass': 6.0.2(@codemirror/view@6.37.0)
+      '@codemirror/lang-sql': 6.8.0(@codemirror/view@6.37.0)
       '@codemirror/lang-vue': 0.1.3
       '@codemirror/lang-wast': 6.0.2
       '@codemirror/lang-xml': 6.1.0
-      '@codemirror/lang-yaml': 6.1.1(@codemirror/view@6.36.8)
+      '@codemirror/lang-yaml': 6.1.1(@codemirror/view@6.37.0)
       '@codemirror/language': 6.10.3
       '@codemirror/legacy-modes': 6.4.2
     transitivePeerDependencies:
@@ -8309,7 +8309,7 @@ snapshots:
   '@codemirror/language@6.10.1':
     dependencies:
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/highlight': 1.2.0
       '@lezer/lr': 1.4.0
@@ -8318,7 +8318,7 @@ snapshots:
   '@codemirror/language@6.10.3':
     dependencies:
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/common': 1.2.1
       '@lezer/highlight': 1.2.1
       '@lezer/lr': 1.4.0
@@ -8331,27 +8331,27 @@ snapshots:
   '@codemirror/lint@6.7.0':
     dependencies:
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       crelt: 1.0.6
 
   '@codemirror/lint@6.8.2':
     dependencies:
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       crelt: 1.0.6
 
   '@codemirror/merge@6.6.1':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/highlight': 1.2.1
       style-mod: 4.1.2
 
   '@codemirror/search@6.5.6':
     dependencies:
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       crelt: 1.0.6
 
   '@codemirror/state@6.5.2':
@@ -8362,10 +8362,10 @@ snapshots:
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/highlight': 1.2.1
 
-  '@codemirror/view@6.36.8':
+  '@codemirror/view@6.37.0':
     dependencies:
       '@codemirror/state': 6.5.2
       style-mod: 4.1.2
@@ -8387,14 +8387,14 @@ snapshots:
 
   '@codesandbox/sandpack-react@2.20.0(@lezer/common@1.2.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.7.1
-      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.36.8)
+      '@codemirror/lang-css': 6.3.0(@codemirror/view@6.37.0)
       '@codemirror/lang-html': 6.4.9
       '@codemirror/lang-javascript': 6.2.4
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@codesandbox/sandpack-client': 2.19.8
       '@lezer/highlight': 1.2.1
       '@react-hook/intersection-observer': 3.1.2(react@18.3.1)
@@ -8997,10 +8997,10 @@ snapshots:
   '@mdxeditor/editor@3.33.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
     dependencies:
       '@codemirror/lang-markdown': 6.3.1
-      '@codemirror/language-data': 6.5.1(@codemirror/view@6.36.8)
+      '@codemirror/language-data': 6.5.1(@codemirror/view@6.37.0)
       '@codemirror/merge': 6.6.1
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@codesandbox/sandpack-react': 2.20.0(@lezer/common@1.2.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/clipboard': 0.27.1
       '@lexical/link': 0.27.1
@@ -9022,7 +9022,7 @@ snapshots:
       '@radix-ui/react-toolbar': 1.1.7(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-tooltip': 1.2.4(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       classnames: 2.5.1
-      cm6-theme-basic-light: 0.2.0(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/highlight@1.2.1)
+      cm6-theme-basic-light: 0.2.0(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/highlight@1.2.1)
       codemirror: 6.0.1(@lezer/common@1.2.1)
       downshift: 7.6.2(react@18.3.1)
       js-yaml: 4.1.0
@@ -9065,11 +9065,11 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@milkdown/components@7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(typescript@5.8.3)':
+  '@milkdown/components@7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(typescript@5.8.3)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@floating-ui/dom': 1.6.12
       '@milkdown/core': 7.11.1
       '@milkdown/ctx': 7.11.1
@@ -9111,11 +9111,11 @@ snapshots:
     dependencies:
       '@codemirror/commands': 6.7.1
       '@codemirror/language': 6.10.3
-      '@codemirror/language-data': 6.5.1(@codemirror/view@6.36.8)
+      '@codemirror/language-data': 6.5.1(@codemirror/view@6.37.0)
       '@codemirror/state': 6.5.2
       '@codemirror/theme-one-dark': 6.1.2
-      '@codemirror/view': 6.36.8
-      '@milkdown/kit': 7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(typescript@5.8.3)
+      '@codemirror/view': 6.37.0
+      '@milkdown/kit': 7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(typescript@5.8.3)
       clsx: 2.1.1
       codemirror: 6.0.1(@lezer/common@1.2.1)
       katex: 0.16.20
@@ -9142,9 +9142,9 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@milkdown/kit@7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(typescript@5.8.3)':
+  '@milkdown/kit@7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(typescript@5.8.3)':
     dependencies:
-      '@milkdown/components': 7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(typescript@5.8.3)
+      '@milkdown/components': 7.11.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(typescript@5.8.3)
       '@milkdown/core': 7.11.1
       '@milkdown/ctx': 7.11.1
       '@milkdown/plugin-block': 7.11.1
@@ -9903,11 +9903,11 @@ snapshots:
 
   '@remirror/core-constants@3.0.0': {}
 
-  '@replit/codemirror-indentation-markers@6.5.3(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)':
+  '@replit/codemirror-indentation-markers@6.5.3(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
 
   '@rolldown/pluginutils@1.0.0-beta.9': {}
 
@@ -10616,46 +10616,46 @@ snapshots:
 
   '@types/uuid@10.0.0': {}
 
-  '@uiw/codemirror-extensions-basic-setup@4.23.12(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1))(@codemirror/commands@6.7.1)(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)':
+  '@uiw/codemirror-extensions-basic-setup@4.23.12(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1))(@codemirror/commands@6.7.1)(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)':
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.7.1
       '@codemirror/language': 6.10.3
       '@codemirror/lint': 6.8.2
       '@codemirror/search': 6.5.6
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
 
-  '@uiw/codemirror-theme-github@4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)':
+  '@uiw/codemirror-theme-github@4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)':
     dependencies:
-      '@uiw/codemirror-themes': 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+      '@uiw/codemirror-themes': 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
     transitivePeerDependencies:
       - '@codemirror/language'
       - '@codemirror/state'
       - '@codemirror/view'
 
-  '@uiw/codemirror-theme-vscode@4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)':
+  '@uiw/codemirror-theme-vscode@4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)':
     dependencies:
-      '@uiw/codemirror-themes': 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+      '@uiw/codemirror-themes': 4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
     transitivePeerDependencies:
       - '@codemirror/language'
       - '@codemirror/state'
       - '@codemirror/view'
 
-  '@uiw/codemirror-themes@4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)':
+  '@uiw/codemirror-themes@4.23.12(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
 
-  '@uiw/react-codemirror@4.23.12(@babel/runtime@7.26.10)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.36.8)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@uiw/react-codemirror@4.23.12(@babel/runtime@7.26.10)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.37.0)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.26.10
       '@codemirror/commands': 6.7.1
       '@codemirror/state': 6.5.2
       '@codemirror/theme-one-dark': 6.1.2
-      '@codemirror/view': 6.36.8
-      '@uiw/codemirror-extensions-basic-setup': 4.23.12(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1))(@codemirror/commands@6.7.1)(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+      '@codemirror/view': 6.37.0
+      '@uiw/codemirror-extensions-basic-setup': 4.23.12(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1))(@codemirror/commands@6.7.1)(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
       codemirror: 6.0.1(@lezer/common@1.2.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -11133,28 +11133,28 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  cm6-theme-basic-light@0.2.0(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/highlight@1.2.1):
+  cm6-theme-basic-light@0.2.0(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/highlight@1.2.1):
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@lezer/highlight': 1.2.1
 
-  codemirror-wrapped-line-indent@1.0.8(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8):
+  codemirror-wrapped-line-indent@1.0.8(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0):
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
 
   codemirror@6.0.1(@lezer/common@1.2.1):
     dependencies:
-      '@codemirror/autocomplete': 6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.5.0
       '@codemirror/language': 6.10.1
       '@codemirror/lint': 6.7.0
       '@codemirror/search': 6.5.6
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
     transitivePeerDependencies:
       - '@lezer/common'
 
@@ -14733,21 +14733,21 @@ snapshots:
 
   vanilla-jsoneditor@3.5.0(@lezer/common@1.2.1):
     dependencies:
-      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)(@lezer/common@1.2.1)
+      '@codemirror/autocomplete': 6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.7.1
       '@codemirror/lang-json': 6.0.1
       '@codemirror/language': 6.10.3
       '@codemirror/lint': 6.8.2
       '@codemirror/search': 6.5.6
       '@codemirror/state': 6.5.2
-      '@codemirror/view': 6.36.8
+      '@codemirror/view': 6.37.0
       '@fortawesome/free-regular-svg-icons': 6.6.0
       '@fortawesome/free-solid-svg-icons': 6.6.0
       '@jsonquerylang/jsonquery': 3.1.1
       '@lezer/highlight': 1.2.1
-      '@replit/codemirror-indentation-markers': 6.5.3(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+      '@replit/codemirror-indentation-markers': 6.5.3(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
       ajv: 8.17.1
-      codemirror-wrapped-line-indent: 1.0.8(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.36.8)
+      codemirror-wrapped-line-indent: 1.0.8(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.0)
       diff-sequences: 29.6.3
       immutable-json-patch: 6.0.1
       jmespath: 0.16.0
