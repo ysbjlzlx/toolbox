@@ -273,8 +273,8 @@ importers:
         specifier: 5.2.1
         version: 5.2.1(react@18.3.1)
       '@mdxeditor/editor':
-        specifier: 3.33.0
-        version: 3.33.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
+        specifier: 3.35.0
+        version: 3.35.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
       '@swc/core':
         specifier: 1.11.29
         version: 1.11.29
@@ -1778,8 +1778,8 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mdxeditor/editor@3.33.0':
-    resolution: {integrity: sha512-Y5PzjZ6aF9KAFwFrsluT/GedXeR+1L9X1T3iB3QQv5KbkG+cNfjYifhWr2D4rrANZaKPUAMnjTFMmrlcFUBnww==}
+  '@mdxeditor/editor@3.35.0':
+    resolution: {integrity: sha512-BCVMenprkS3Fx2504vFp6AaqW7viM2LiSI9v5Jp4dcVbduljiLzJo46rzJk7BHkHaq+got09hrfd5muxlSW8fQ==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '18'
@@ -7411,7 +7411,7 @@ snapshots:
       '@babel/core': 7.26.0
       '@babel/helper-compilation-targets': 7.27.0
       '@babel/helper-plugin-utils': 7.25.9
-      debug: 4.4.0
+      debug: 4.4.1
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -9009,8 +9009,9 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mdxeditor/editor@3.33.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
+  '@mdxeditor/editor@3.35.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
     dependencies:
+      '@codemirror/commands': 6.7.1
       '@codemirror/lang-markdown': 6.3.1
       '@codemirror/language-data': 6.5.1(@codemirror/view@6.37.1)
       '@codemirror/merge': 6.6.1
@@ -13052,7 +13053,7 @@ snapshots:
   micromark@4.0.1:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.0
+      debug: 4.4.1
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.2
