@@ -93,7 +93,7 @@ importers:
         version: 4.23.13(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.2)
       '@uiw/react-codemirror':
         specifier: 4.23.13
-        version: 4.23.13(@babel/runtime@7.26.10)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.37.2)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.23.13(@babel/runtime@7.27.6)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.37.2)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@xiechao/codemirror-lang-handlebars':
         specifier: 1.0.4
         version: 1.0.4
@@ -221,8 +221,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-i18next:
-        specifier: 15.5.2
-        version: 15.5.2(i18next@24.2.3(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
+        specifier: 15.5.3
+        version: 15.5.3(i18next@24.2.3(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
       react-router:
         specifier: 7.6.2
         version: 7.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1109,6 +1109,10 @@ packages:
 
   '@babel/runtime@7.26.10':
     resolution: {integrity: sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.27.6':
+    resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.25.9':
@@ -6020,8 +6024,8 @@ packages:
     peerDependencies:
       react: '18'
 
-  react-i18next@15.5.2:
-    resolution: {integrity: sha512-ePODyXgmZQAOYTbZXQn5rRsSBu3Gszo69jxW6aKmlSgxKAI1fOhDwSu6bT4EKHciWPKQ7v7lPrjeiadR6Gi+1A==}
+  react-i18next@15.5.3:
+    resolution: {integrity: sha512-ypYmOKOnjqPEJZO4m1BI0kS8kWqkBNsKYyhVUfij0gvjy9xJNoG/VcGkxq5dRlVwzmrmY1BQMAmpbbUBLwC4Kw==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '18'
@@ -8137,6 +8141,8 @@ snapshots:
   '@babel/runtime@7.26.10':
     dependencies:
       regenerator-runtime: 0.14.1
+
+  '@babel/runtime@7.27.6': {}
 
   '@babel/template@7.25.9':
     dependencies:
@@ -10350,7 +10356,7 @@ snapshots:
   '@testing-library/dom@10.1.0':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.6
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -10832,9 +10838,9 @@ snapshots:
       '@codemirror/state': 6.5.2
       '@codemirror/view': 6.37.2
 
-  '@uiw/react-codemirror@4.23.13(@babel/runtime@7.26.10)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.37.2)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@uiw/react-codemirror@4.23.13(@babel/runtime@7.27.6)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.37.2)(@lezer/common@1.2.1))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.5.2)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.37.2)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.6
       '@codemirror/commands': 6.7.1
       '@codemirror/state': 6.5.2
       '@codemirror/theme-one-dark': 6.1.2
@@ -14058,9 +14064,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-i18next@15.5.2(i18next@24.2.3(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3):
+  react-i18next@15.5.3(i18next@24.2.3(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3):
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.6
       html-parse-stringify: 3.0.1
       i18next: 24.2.3(typescript@5.8.3)
       react: 18.3.1
