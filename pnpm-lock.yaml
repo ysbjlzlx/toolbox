@@ -273,8 +273,8 @@ importers:
         specifier: 5.2.1
         version: 5.2.1(react@18.3.1)
       '@mdxeditor/editor':
-        specifier: 3.35.1
-        version: 3.35.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
+        specifier: 3.36.0
+        version: 3.36.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
       '@swc/core':
         specifier: 1.12.1
         version: 1.12.1
@@ -1841,8 +1841,8 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mdxeditor/editor@3.35.1':
-    resolution: {integrity: sha512-JUZC0KbQFL1h6nU4QZ5UOPfT0z0WJYxTDygVjj+KE77mFK275o5l9MCFVVMEKKPi/JaLhj8/U4Lba6cQ/V/siA==}
+  '@mdxeditor/editor@3.36.0':
+    resolution: {integrity: sha512-e0PIKGpLHf/vSdqRqJu++1/jrLMLA8U4bGq6Ghff7mFRVR0gnFN4w0zwGC6BOSLCbpWrwx0/pxWB2a9/VETV5Q==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '18'
@@ -9156,7 +9156,7 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mdxeditor/editor@3.35.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
+  '@mdxeditor/editor@3.36.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
     dependencies:
       '@codemirror/commands': 6.7.1
       '@codemirror/lang-markdown': 6.3.1
@@ -11717,7 +11717,7 @@ snapshots:
 
   downshift@7.6.2(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.6
       compute-scroll-into-view: 2.0.4
       prop-types: 15.8.1
       react: 18.3.1
