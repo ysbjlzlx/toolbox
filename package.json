@@ -43,7 +43,7 @@
     "@uiw/react-codemirror": "4.23.14",
     "@xiechao/codemirror-lang-handlebars": "1.0.4",
     "ace-builds": "1.43.0",
-    "ahooks": "3.8.5",
+    "ahooks": "3.9.0",
     "antd": "5.26.2",
     "ascii85": "1.0.2",
     "axios": "1.10.0",
