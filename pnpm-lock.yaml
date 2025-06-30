@@ -270,8 +270,8 @@ importers:
         specifier: 19.8.1
         version: 19.8.1
       '@iconify/react':
-        specifier: 5.2.1
-        version: 5.2.1(react@18.3.1)
+        specifier: 6.0.0
+        version: 6.0.0(react@18.3.1)
       '@mdxeditor/editor':
         specifier: 3.38.0
         version: 3.38.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
@@ -1623,8 +1623,8 @@ packages:
     resolution: {integrity: sha512-IYv/2skhEDFc2WGUcqvFJkeK39Q+HyPf5GHUrT/l2pKbtgEIv1al1TKd6qStR5OIwQdN1GZP54ci3y4mroJWjA==}
     engines: {node: '>=6'}
 
-  '@iconify/react@5.2.1':
-    resolution: {integrity: sha512-37GDR3fYDZmnmUn9RagyaX+zca24jfVOMY8E1IXTqJuE8pxNtN51KWPQe3VODOWvuUurq7q9uUu3CFrpqj5Iqg==}
+  '@iconify/react@6.0.0':
+    resolution: {integrity: sha512-eqNscABVZS8eCpZLU/L5F5UokMS9mnCf56iS1nM9YYHdH8ZxqZL9zyjSwW60IOQFsXZkilbBiv+1paMXBhSQnw==}
     peerDependencies:
       react: '18'
 
@@ -8767,7 +8767,7 @@ snapshots:
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.6.0
 
-  '@iconify/react@5.2.1(react@18.3.1)':
+  '@iconify/react@6.0.0(react@18.3.1)':
     dependencies:
       '@iconify/types': 2.0.0
       react: 18.3.1
