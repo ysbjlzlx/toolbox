@@ -40,7 +40,7 @@
     "@tiptap/starter-kit": "2.26.1",
     "@uiw/codemirror-theme-github": "4.24.1",
     "@uiw/codemirror-theme-vscode": "4.24.1",
-    "@uiw/react-codemirror": "4.24.0",
+    "@uiw/react-codemirror": "4.24.1",
     "@xiechao/codemirror-lang-handlebars": "1.0.4",
     "ace-builds": "1.43.1",
     "ahooks": "3.9.0",
