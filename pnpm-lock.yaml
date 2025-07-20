@@ -273,8 +273,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0(react@18.3.1)
       '@mdxeditor/editor':
-        specifier: 3.39.1
-        version: 3.39.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
+        specifier: 3.40.0
+        version: 3.40.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)
       '@swc/core':
         specifier: 1.13.1
         version: 1.13.1
@@ -1821,8 +1821,8 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mdxeditor/editor@3.39.1':
-    resolution: {integrity: sha512-z9w8HUzAgN0DRHM0xQBNxhstwEAKU1VFf+E0JeJxK3d3YmcwBTS0LoC9tuiTgFtRhUITrfcQzPx4+tOZ9eWDZg==}
+  '@mdxeditor/editor@3.40.0':
+    resolution: {integrity: sha512-yNwnXEhhIvk0ElhAHuaksnk8WxBkKDGxm+SsKAf6aI2OmDfz4lxY4/zqElvb89XtwyyqHuqi8wCCDGANWIQR1Q==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '18'
@@ -9209,7 +9209,7 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mdxeditor/editor@3.39.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
+  '@mdxeditor/editor@3.40.0(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.20)':
     dependencies:
       '@codemirror/commands': 6.7.1
       '@codemirror/lang-markdown': 6.3.1
