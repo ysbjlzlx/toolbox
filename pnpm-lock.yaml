@@ -224,8 +224,8 @@ importers:
         specifier: 15.6.1
         version: 15.6.1(i18next@25.3.2(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
       react-router:
-        specifier: 7.7.0
-        version: 7.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.7.1
+        version: 7.7.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: 3.3.1
         version: 3.3.1
@@ -6189,8 +6189,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-router@7.7.0:
-    resolution: {integrity: sha512-3FUYSwlvB/5wRJVTL/aavqHmfUKe0+Xm9MllkYgGo9eDwNdkvwlJGjpPxono1kCycLt6AnDTgjmXvK3/B4QGuw==}
+  react-router@7.7.1:
+    resolution: {integrity: sha512-jVKHXoWRIsD/qS6lvGveckwb862EekvapdHJN/cGmzw40KnJH5gg53ujOJ4qX6EKIK9LSBfFed/xiQ5yeXNrUA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '18'
@@ -14290,7 +14290,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.23
 
-  react-router@7.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router@7.7.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       cookie: 1.0.2
       react: 18.3.1
