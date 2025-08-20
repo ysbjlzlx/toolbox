@@ -96,7 +96,7 @@
     "xml-formatter": "3.6.6",
     "yaml": "2.8.1",
     "zod": "4.0.17",
-    "zustand": "5.0.7"
+    "zustand": "5.0.8"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
