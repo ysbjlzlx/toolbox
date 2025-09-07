@@ -34,10 +34,10 @@ importers:
         version: 6.38.1
       '@milkdown/crepe':
         specifier: 7.15.5
-        version: 7.15.5(@lezer/common@1.2.1)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(typescript@5.8.3)
+        version: 7.15.5(@lezer/common@1.2.1)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(typescript@5.9.2)
       '@milkdown/kit':
         specifier: 7.15.5
-        version: 7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.8.3)
+        version: 7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.9.2)
       '@monaco-editor/loader':
         specifier: 1.5.0
         version: 1.5.0
@@ -163,7 +163,7 @@ importers:
         version: 11.11.1
       i18next:
         specifier: 25.4.2
-        version: 25.4.2(typescript@5.8.3)
+        version: 25.4.2(typescript@5.9.2)
       i18next-browser-languagedetector:
         specifier: 8.2.0
         version: 8.2.0
@@ -220,7 +220,7 @@ importers:
         version: 19.1.1(react@19.1.1)
       react-i18next:
         specifier: 15.7.3
-        version: 15.7.3(i18next@25.4.2(typescript@5.8.3))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.8.3)
+        version: 15.7.3(i18next@25.4.2(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
       react-router:
         specifier: 7.8.2
         version: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -263,7 +263,7 @@ importers:
         version: 2.2.3
       '@commitlint/cli':
         specifier: 19.8.1
-        version: 19.8.1(@types/node@22.18.0)(typescript@5.8.3)
+        version: 19.8.1(@types/node@22.18.0)(typescript@5.9.2)
       '@commitlint/config-conventional':
         specifier: 19.8.1
         version: 19.8.1
@@ -329,19 +329,19 @@ importers:
         version: 8.5.6
       stylelint:
         specifier: 16.23.1
-        version: 16.23.1(typescript@5.8.3)
+        version: 16.23.1(typescript@5.9.2)
       stylelint-config-standard:
         specifier: 39.0.0
-        version: 39.0.0(stylelint@16.23.1(typescript@5.8.3))
+        version: 39.0.0(stylelint@16.23.1(typescript@5.9.2))
       tailwindcss:
         specifier: 4.1.12
         version: 4.1.12
       tsup:
         specifier: 8.5.0
-        version: 8.5.0(@swc/core@1.13.5)(jiti@2.5.1)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@swc/core@1.13.5)(jiti@2.5.1)(postcss@8.5.6)(typescript@5.9.2)(yaml@2.8.1)
       typescript:
-        specifier: 5.8.3
-        version: 5.8.3
+        specifier: 5.9.2
+        version: 5.9.2
       vite:
         specifier: 7.1.4
         version: 7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1)
@@ -350,7 +350,7 @@ importers:
         version: 1.0.3(vite@7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0)
       vite-tsconfig-paths:
         specifier: 5.1.4
-        version: 5.1.4(typescript@5.8.3)(vite@7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1))
+        version: 5.1.4(typescript@5.9.2)(vite@7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1))
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@22.18.0)(jiti@2.5.1)(jsdom@26.1.0)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1)
@@ -368,8 +368,8 @@ importers:
         version: 3.4.17
     devDependencies:
       typescript:
-        specifier: 5.8.3
-        version: 5.8.3
+        specifier: 5.9.2
+        version: 5.9.2
 
   packages/random-string:
     dependencies:
@@ -390,8 +390,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
       typescript:
-        specifier: 5.8.3
-        version: 5.8.3
+        specifier: 5.9.2
+        version: 5.9.2
 
 packages:
 
@@ -6796,8 +6796,8 @@ packages:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -8695,11 +8695,11 @@ snapshots:
     transitivePeerDependencies:
       - '@lezer/common'
 
-  '@commitlint/cli@19.8.1(@types/node@22.18.0)(typescript@5.8.3)':
+  '@commitlint/cli@19.8.1(@types/node@22.18.0)(typescript@5.9.2)':
     dependencies:
       '@commitlint/format': 19.8.1
       '@commitlint/lint': 19.8.1
-      '@commitlint/load': 19.8.1(@types/node@22.18.0)(typescript@5.8.3)
+      '@commitlint/load': 19.8.1(@types/node@22.18.0)(typescript@5.9.2)
       '@commitlint/read': 19.8.1
       '@commitlint/types': 19.8.1
       tinyexec: 1.0.1
@@ -8746,15 +8746,15 @@ snapshots:
       '@commitlint/rules': 19.8.1
       '@commitlint/types': 19.8.1
 
-  '@commitlint/load@19.8.1(@types/node@22.18.0)(typescript@5.8.3)':
+  '@commitlint/load@19.8.1(@types/node@22.18.0)(typescript@5.9.2)':
     dependencies:
       '@commitlint/config-validator': 19.8.1
       '@commitlint/execute-rule': 19.8.1
       '@commitlint/resolve-extends': 19.8.1
       '@commitlint/types': 19.8.1
       chalk: 5.3.0
-      cosmiconfig: 9.0.0(typescript@5.8.3)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.18.0)(cosmiconfig@9.0.0(typescript@5.8.3))(typescript@5.8.3)
+      cosmiconfig: 9.0.0(typescript@5.9.2)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.18.0)(cosmiconfig@9.0.0(typescript@5.9.2))(typescript@5.9.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -9368,7 +9368,7 @@ snapshots:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
-  '@milkdown/components@7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.8.3)':
+  '@milkdown/components@7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.9.2)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.5.2
@@ -9390,7 +9390,7 @@ snapshots:
       nanoid: 5.1.5
       tslib: 2.8.1
       unist-util-visit: 5.0.0
-      vue: 3.5.18(typescript@5.8.3)
+      vue: 3.5.18(typescript@5.9.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -9408,7 +9408,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@milkdown/crepe@7.15.5(@lezer/common@1.2.1)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(typescript@5.8.3)':
+  '@milkdown/crepe@7.15.5(@lezer/common@1.2.1)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(typescript@5.9.2)':
     dependencies:
       '@codemirror/commands': 6.7.1
       '@codemirror/language': 6.10.3
@@ -9417,7 +9417,7 @@ snapshots:
       '@codemirror/theme-one-dark': 6.1.2
       '@codemirror/view': 6.38.1
       '@floating-ui/dom': 1.6.12
-      '@milkdown/kit': 7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.8.3)
+      '@milkdown/kit': 7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.9.2)
       '@types/lodash-es': 4.17.12
       clsx: 2.1.1
       codemirror: 6.0.2(@lezer/common@1.2.1)
@@ -9428,7 +9428,7 @@ snapshots:
       remark-math: 6.0.0
       tslib: 2.8.1
       unist-util-visit: 5.0.0
-      vue: 3.5.18(typescript@5.8.3)
+      vue: 3.5.18(typescript@5.9.2)
     transitivePeerDependencies:
       - '@lezer/common'
       - prosemirror-model
@@ -9446,9 +9446,9 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@milkdown/kit@7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.8.3)':
+  '@milkdown/kit@7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.9.2)':
     dependencies:
-      '@milkdown/components': 7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.8.3)
+      '@milkdown/components': 7.15.5(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.1)(typescript@5.9.2)
       '@milkdown/core': 7.15.5
       '@milkdown/ctx': 7.15.5
       '@milkdown/plugin-block': 7.15.5
@@ -11144,11 +11144,11 @@ snapshots:
       '@vue/shared': 3.5.18
       csstype: 3.1.3
 
-  '@vue/server-renderer@3.5.18(vue@3.5.18(typescript@5.8.3))':
+  '@vue/server-renderer@3.5.18(vue@3.5.18(typescript@5.9.2))':
     dependencies:
       '@vue/compiler-ssr': 3.5.18
       '@vue/shared': 3.5.18
-      vue: 3.5.18(typescript@5.8.3)
+      vue: 3.5.18(typescript@5.9.2)
 
   '@vue/shared@3.5.18': {}
 
@@ -11604,21 +11604,21 @@ snapshots:
     dependencies:
       browserslist: 4.24.2
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.18.0)(cosmiconfig@9.0.0(typescript@5.8.3))(typescript@5.8.3):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@22.18.0)(cosmiconfig@9.0.0(typescript@5.9.2))(typescript@5.9.2):
     dependencies:
       '@types/node': 22.18.0
-      cosmiconfig: 9.0.0(typescript@5.8.3)
+      cosmiconfig: 9.0.0(typescript@5.9.2)
       jiti: 2.4.2
-      typescript: 5.8.3
+      typescript: 5.9.2
 
-  cosmiconfig@9.0.0(typescript@5.8.3):
+  cosmiconfig@9.0.0(typescript@5.9.2):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   crelt@1.0.6: {}
 
@@ -12460,11 +12460,11 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.5
 
-  i18next@25.4.2(typescript@5.8.3):
+  i18next@25.4.2(typescript@5.9.2):
     dependencies:
       '@babel/runtime': 7.27.6
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   iconv-lite@0.6.3:
     dependencies:
@@ -14305,15 +14305,15 @@ snapshots:
     dependencies:
       react: 19.1.1
 
-  react-i18next@15.7.3(i18next@25.4.2(typescript@5.8.3))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.8.3):
+  react-i18next@15.7.3(i18next@25.4.2(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2):
     dependencies:
       '@babel/runtime': 7.27.6
       html-parse-stringify: 3.0.1
-      i18next: 25.4.2(typescript@5.8.3)
+      i18next: 25.4.2(typescript@5.9.2)
       react: 19.1.1
     optionalDependencies:
       react-dom: 19.1.1(react@19.1.1)
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   react-is@16.13.1: {}
 
@@ -14770,16 +14770,16 @@ snapshots:
 
   style-mod@4.1.2: {}
 
-  stylelint-config-recommended@17.0.0(stylelint@16.23.1(typescript@5.8.3)):
+  stylelint-config-recommended@17.0.0(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
-      stylelint: 16.23.1(typescript@5.8.3)
+      stylelint: 16.23.1(typescript@5.9.2)
 
-  stylelint-config-standard@39.0.0(stylelint@16.23.1(typescript@5.8.3)):
+  stylelint-config-standard@39.0.0(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
-      stylelint: 16.23.1(typescript@5.8.3)
-      stylelint-config-recommended: 17.0.0(stylelint@16.23.1(typescript@5.8.3))
+      stylelint: 16.23.1(typescript@5.9.2)
+      stylelint-config-recommended: 17.0.0(stylelint@16.23.1(typescript@5.9.2))
 
-  stylelint@16.23.1(typescript@5.8.3):
+  stylelint@16.23.1(typescript@5.9.2):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
@@ -14788,7 +14788,7 @@ snapshots:
       '@dual-bundle/import-meta-resolve': 4.1.0
       balanced-match: 2.0.0
       colord: 2.9.3
-      cosmiconfig: 9.0.0(typescript@5.8.3)
+      cosmiconfig: 9.0.0(typescript@5.9.2)
       css-functions-list: 3.2.3
       css-tree: 3.1.0
       debug: 4.4.1
@@ -15009,13 +15009,13 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.4(typescript@5.8.3):
+  tsconfck@3.1.4(typescript@5.9.2):
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   tslib@2.8.1: {}
 
-  tsup@8.5.0(@swc/core@1.13.5)(jiti@2.5.1)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.5.0(@swc/core@1.13.5)(jiti@2.5.1)(postcss@8.5.6)(typescript@5.9.2)(yaml@2.8.1):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.25.0)
       cac: 6.7.14
@@ -15037,7 +15037,7 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.13.5
       postcss: 8.5.6
-      typescript: 5.8.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -15080,7 +15080,7 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typescript@5.8.3: {}
+  typescript@5.9.2: {}
 
   uc.micro@2.1.0: {}
 
@@ -15288,11 +15288,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-tsconfig-paths@5.1.4(typescript@5.8.3)(vite@7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.9.2)(vite@7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1)):
     dependencies:
       debug: 4.3.7
       globrex: 0.1.2
-      tsconfck: 3.1.4(typescript@5.8.3)
+      tsconfck: 3.1.4(typescript@5.9.2)
     optionalDependencies:
       vite: 7.1.4(@types/node@22.18.0)(jiti@2.5.1)(less@4.2.1)(lightningcss@1.30.1)(sass@1.80.4)(terser@5.36.0)(yaml@2.8.1)
     transitivePeerDependencies:
@@ -15362,15 +15362,15 @@ snapshots:
 
   void-elements@3.1.0: {}
 
-  vue@3.5.18(typescript@5.8.3):
+  vue@3.5.18(typescript@5.9.2):
     dependencies:
       '@vue/compiler-dom': 3.5.18
       '@vue/compiler-sfc': 3.5.18
       '@vue/runtime-dom': 3.5.18
-      '@vue/server-renderer': 3.5.18(vue@3.5.18(typescript@5.8.3))
+      '@vue/server-renderer': 3.5.18(vue@3.5.18(typescript@5.9.2))
       '@vue/shared': 3.5.18
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   w3c-keyname@2.2.8: {}
 
