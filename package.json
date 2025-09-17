@@ -103,7 +103,7 @@
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@iconify/react": "6.0.2",
-    "@mdxeditor/editor": "3.45.1",
+    "@mdxeditor/editor": "3.46.0",
     "@swc/core": "1.13.5",
     "@tailwindcss/postcss": "4.1.13",
     "@tailwindcss/typography": "0.5.16",
