@@ -95,7 +95,7 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "xml-formatter": "3.6.6",
     "yaml": "2.8.1",
-    "zod": "4.1.8",
+    "zod": "4.1.9",
     "zustand": "5.0.8"
   },
   "devDependencies": {
