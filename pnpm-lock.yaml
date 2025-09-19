@@ -246,8 +246,8 @@ importers:
         specifier: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
         version: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
       xml-formatter:
-        specifier: 3.6.6
-        version: 3.6.6
+        specifier: 3.6.7
+        version: 3.6.7
       yaml:
         specifier: 2.8.1
         version: 2.8.1
@@ -7208,16 +7208,16 @@ packages:
     engines: {node: '>=0.8'}
     hasBin: true
 
-  xml-formatter@3.6.6:
-    resolution: {integrity: sha512-yfofQht42x2sN1YThT6Er6GFXiQinfDAsMTNvMPi2uZw5/Vtc2PYHfvALR8U+b2oN2ekBxLd2tGWV06rAM8nQA==}
+  xml-formatter@3.6.7:
+    resolution: {integrity: sha512-IsfFYJQuoDqtUlKhm4EzeoBOb+fQwzQVeyxxAQ0sThn/nFnQmyLPTplqq4yRhaOENH/tAyujD2TBfIYzUKB6hg==}
     engines: {node: '>= 16'}
 
   xml-name-validator@5.0.0:
     resolution: {integrity: sha512-EvGK8EJ3DhaHfbRlETOWAS5pO9MZITeauHKJyb8wyajUfQUenkIg2MvLDTZ4T/TgIcm3HU0TFBgWWboAZ30UHg==}
     engines: {node: '>=18'}
 
-  xml-parser-xo@4.1.4:
-    resolution: {integrity: sha512-wo+yWDNeMwd1ctzH4CsiGXaAappDsxuR+VnmPewOzHk/zvefksT2ZlcWpAePl11THOWgnIZM4GjvumevurNWZw==}
+  xml-parser-xo@4.1.5:
+    resolution: {integrity: sha512-TxyRxk9sTOUg3glxSIY6f0nfuqRll2OEF8TspLgh5mZkLuBgheCn3zClcDSGJ58TvNmiwyCCuat4UajPud/5Og==}
     engines: {node: '>= 16'}
 
   xmlchars@2.2.0:
@@ -15621,13 +15621,13 @@ snapshots:
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz: {}
 
-  xml-formatter@3.6.6:
+  xml-formatter@3.6.7:
     dependencies:
-      xml-parser-xo: 4.1.4
+      xml-parser-xo: 4.1.5
 
   xml-name-validator@5.0.0: {}
 
-  xml-parser-xo@4.1.4: {}
+  xml-parser-xo@4.1.5: {}
 
   xmlchars@2.2.0: {}
 
