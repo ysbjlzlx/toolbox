@@ -13,7 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/lodash-es": "4.17.12",
-    "nanoid": "5.1.5",
+    "nanoid": "5.1.6",
     "nanoid-dictionary": "5.0.0",
     "typescript": "5.8.3"
   },
