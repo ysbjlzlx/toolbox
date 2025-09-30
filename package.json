@@ -100,8 +100,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
+    "@commitlint/cli": "20.1.0",
+    "@commitlint/config-conventional": "20.0.0",
     "@iconify/react": "6.0.2",
     "@mdxeditor/editor": "3.46.1",
     "@swc/core": "1.13.20",
