@@ -15,7 +15,7 @@
     "@types/lodash-es": "4.17.12",
     "nanoid": "5.1.6",
     "nanoid-dictionary": "5.0.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.3"
   },
   "dependencies": {
     "lodash-es": "4.17.21",
