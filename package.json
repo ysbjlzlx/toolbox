@@ -71,7 +71,7 @@
     "i18next-resources-to-backend": "1.2.1",
     "json5": "2.2.3",
     "lodash-es": "4.17.21",
-    "lossless-json": "4.2.0",
+    "lossless-json": "4.3.0",
     "lowlight": "3.3.0",
     "lucide-react": "0.544.0",
     "monaco-editor": "0.53.0",
