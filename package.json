@@ -21,7 +21,7 @@
     "@ant-design/v5-patch-for-react-19": "1.0.3",
     "@codemirror/lang-javascript": "6.2.4",
     "@codemirror/state": "6.5.2",
-    "@codemirror/view": "6.38.6",
+    "@codemirror/view": "6.38.7",
     "@milkdown/crepe": "7.17.1",
     "@milkdown/kit": "7.17.1",
     "@monaco-editor/loader": "1.6.1",
