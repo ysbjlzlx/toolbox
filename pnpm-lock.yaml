@@ -271,8 +271,8 @@ importers:
         specifier: 6.0.2
         version: 6.0.2(react@19.2.0)
       '@mdxeditor/editor':
-        specifier: 3.49.1
-        version: 3.49.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(yjs@13.6.20)
+        specifier: 3.49.2
+        version: 3.49.2(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(yjs@13.6.20)
       '@swc/core':
         specifier: 1.15.2
         version: 1.15.2
@@ -1990,8 +1990,8 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mdxeditor/editor@3.49.1':
-    resolution: {integrity: sha512-EZ2eejkJoxjWtqn2t9pai9m+iIEyef+kJxqHXw8y4dWorlJ2TdE+hsuHnBygeMdCUBgtuzUzxxcjwDAIJvbBEg==}
+  '@mdxeditor/editor@3.49.2':
+    resolution: {integrity: sha512-dZdSEAQ49Ed1MCcviI2xYBPCCkcOB9CCMfXv3f+jE4CuhAqDb+nozoqnsVCGE6JT7A+eEIOyUerX7oyVPJt48Q==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '19'
@@ -4923,6 +4923,10 @@ packages:
 
   js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+    hasBin: true
+
+  js-yaml@4.1.1:
+    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
   jsbn@1.1.0:
@@ -9370,7 +9374,7 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mdxeditor/editor@3.49.1(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(yjs@13.6.20)':
+  '@mdxeditor/editor@3.49.2(@codemirror/language@6.10.3)(@lezer/common@1.2.1)(@lezer/highlight@1.2.1)(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(yjs@13.6.20)':
     dependencies:
       '@codemirror/commands': 6.7.1
       '@codemirror/lang-markdown': 6.3.1
@@ -9402,7 +9406,7 @@ snapshots:
       cm6-theme-basic-light: 0.2.0(@codemirror/language@6.10.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.7)(@lezer/highlight@1.2.1)
       codemirror: 6.0.2(@lezer/common@1.2.1)
       downshift: 7.6.2(react@19.2.0)
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       lexical: 0.35.0
       mdast-util-directive: 3.0.0
       mdast-util-from-markdown: 2.0.2
@@ -12665,6 +12669,10 @@ snapshots:
   js-tokens@4.0.0: {}
 
   js-yaml@4.1.0:
+    dependencies:
+      argparse: 2.0.1
+
+  js-yaml@4.1.1:
     dependencies:
       argparse: 2.0.1
 
