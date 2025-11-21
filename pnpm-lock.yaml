@@ -325,11 +325,11 @@ importers:
         specifier: 8.5.6
         version: 8.5.6
       stylelint:
-        specifier: 16.25.0
-        version: 16.25.0(typescript@5.9.3)
+        specifier: 16.26.0
+        version: 16.26.0(typescript@5.9.3)
       stylelint-config-standard:
         specifier: 39.0.1
-        version: 39.0.1(stylelint@16.25.0(typescript@5.9.3))
+        version: 39.0.1(stylelint@16.26.0(typescript@5.9.3))
       tailwindcss:
         specifier: 4.1.17
         version: 4.1.17
@@ -1126,6 +1126,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@cacheable/memory@2.0.5':
+    resolution: {integrity: sha512-fkiAxCvssEyJZ5fxX4tcdZFRmW9JehSTGvvqmXn6rTzG5cH6V/3C4ad8yb01vOjp2xBydHkHrgpW0qeGtzt6VQ==}
+
+  '@cacheable/utils@2.3.1':
+    resolution: {integrity: sha512-38NJXjIr4W1Sghun8ju+uYWD8h2c61B4dKwfnQHVDFpAJ9oS28RpfqZQJ6Dgd3RceGkILDY9YT+72HJR3LoeSQ==}
+
   '@chenshuai2144/sketch-color@1.0.9':
     resolution: {integrity: sha512-obzSy26cb7Pm7OprWyVpgMpIlrZpZ0B7vbrU0RMbvRg0YAI890S5Xy02Aj1Nhl4+KTbi1lVYHt6HQP8Hm9s+1w==}
     peerDependencies:
@@ -1792,8 +1798,14 @@ packages:
     resolution: {integrity: sha512-P6Qo5egd3W8TBpqQsqaZtZ9lPO7oXBM21QdkYamCAYZHv9VCPXiI8NeIuSoXdoe5zKVZPUWmqaI14uacJLmcNw==}
     hasBin: true
 
-  '@keyv/serialize@1.1.0':
-    resolution: {integrity: sha512-RlDgexML7Z63Q8BSaqhXdCYNBy/JQnqYIwxofUrNLGCblOMHp+xux2Q8nLMLlPpgHQPoU0Do8Z6btCpRBEqZ8g==}
+  '@keyv/bigmap@1.3.0':
+    resolution: {integrity: sha512-KT01GjzV6AQD5+IYrcpoYLkCu1Jod3nau1Z7EsEuViO3TZGRacSbO9MfHmbJ1WaOXFtWLxPVj169cn2WNKPkIg==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      keyv: ^5.5.4
+
+  '@keyv/serialize@1.1.1':
+    resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
   '@lexical/clipboard@0.35.0':
     resolution: {integrity: sha512-ko7xSIIiayvDiqjNDX6fgH9RlcM6r9vrrvJYTcfGVBor5httx16lhIi0QJZ4+RNPvGtTjyFv4bwRmsixRRwImg==}
@@ -3652,8 +3664,8 @@ packages:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
 
-  cacheable@1.10.4:
-    resolution: {integrity: sha512-Gd7ccIUkZ9TE2odLQVS+PDjIvQCdJKUlLdJRVvZu0aipj07Qfx+XIej7hhDrKGGoIxV5m5fT/kOJNJPQhQneRg==}
+  cacheable@2.2.0:
+    resolution: {integrity: sha512-LEJxRqfeomiiRd2t0uON6hxAtgOoWDfY3fugebbz+J3vDLO+SkdfFChQcOHTZhj9SYa9iwE9MGYNX72dKiOE4w==}
 
   call-bind-apply-helpers@1.0.2:
     resolution: {integrity: sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==}
@@ -4348,8 +4360,8 @@ packages:
       picomatch:
         optional: true
 
-  file-entry-cache@10.1.4:
-    resolution: {integrity: sha512-5XRUFc0WTtUbjfGzEwXc42tiGxQHBmtbUG1h9L2apu4SulCGN3Hqm//9D6FAolf8MYNL7f/YlJl9vy08pj5JuA==}
+  file-entry-cache@11.1.1:
+    resolution: {integrity: sha512-TPVFSDE7q91Dlk1xpFLvFllf8r0HyOMOlnWy7Z2HBku5H3KhIeOGInexrIeg2D64DosVB/JXkrrk6N/7Wriq4A==}
 
   file-saver@2.0.5:
     resolution: {integrity: sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==}
@@ -4368,8 +4380,8 @@ packages:
   fix-dts-default-cjs-exports@1.0.1:
     resolution: {integrity: sha512-pVIECanWFC61Hzl2+oOCtoJ3F17kglZC/6N94eRWycFgBH35hHx0Li604ZIzhseh97mf2p0cv7vVrOZGoqhlEg==}
 
-  flat-cache@6.1.13:
-    resolution: {integrity: sha512-gmtS2PaUjSPa4zjObEIn4WWliKyZzYljgxODBfxugpK6q6HU9ClXzgCJ+nlcPKY9Bt090ypTOLIFWkV0jbKFjw==}
+  flat-cache@6.1.19:
+    resolution: {integrity: sha512-l/K33newPTZMTGAnnzaiqSl6NnH7Namh8jBNjrgjprWxGmZUuxx/sJNIRaijOh3n7q7ESbhNZC+pvVZMFdeU4A==}
 
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
@@ -4541,6 +4553,10 @@ packages:
     resolution: {integrity: sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==}
     engines: {node: '>= 0.4'}
 
+  hashery@1.2.0:
+    resolution: {integrity: sha512-43XJKpwle72Ik5Zpam7MuzRWyNdwwdf6XHlh8wCj2PggvWf+v/Dm5B0dxGZOmddidgeO6Ofu9As/o231Ti/9PA==}
+    engines: {node: '>=20'}
+
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
@@ -4549,8 +4565,8 @@ packages:
     resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
     engines: {node: '>=12.0.0'}
 
-  hookified@1.11.0:
-    resolution: {integrity: sha512-aDdIN3GyU5I6wextPplYdfmWCo+aLmjjVbntmX6HLD5RCi/xKsivYEBhnRD+d9224zFf008ZpLMPlWF0ZodYZw==}
+  hookified@1.13.0:
+    resolution: {integrity: sha512-6sPYUY8olshgM/1LDNW4QZQN0IqgKhtl/1C8koNZBJrKLBk3AZl6chQtNwpNztvfiApHMEwMHek5rv993PRbWw==}
 
   html-encoding-sniffer@4.0.0:
     resolution: {integrity: sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==}
@@ -4842,10 +4858,6 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  js-yaml@4.1.0:
-    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
-    hasBin: true
-
   js-yaml@4.1.1:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
@@ -4915,8 +4927,8 @@ packages:
     resolution: {integrity: sha512-jjuLaMGD/7P8jUTpdKhA9IoqnH+yMFB3sdAFtq5QdAqeP2PjiSbnC3EaguKPNtv6dXXanHxp1ckwvF4a86LBig==}
     hasBin: true
 
-  keyv@5.5.0:
-    resolution: {integrity: sha512-QG7qR2tijh1ftOvClut4YKKg1iW6cx3GZsKoGyJPxHkGWK9oJhG9P3j5deP0QQOGDowBMVQFaP+Vm4NpGYvmIQ==}
+  keyv@5.5.4:
+    resolution: {integrity: sha512-eohl3hKTiVyD1ilYdw9T0OiB4hnjef89e3dMYKz+mVKDzj+5IteTseASUsOB+EU9Tf6VNTCjDePcP6wkDGmLKQ==}
 
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -5810,6 +5822,10 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  qified@0.5.2:
+    resolution: {integrity: sha512-7gJ6mxcQb9vUBOtbKm5mDevbe2uRcOEVp1g4gb/Q+oLntB3HY8eBhOYRxFI2mlDFlY1e4DOSCptzxarXRvzxCA==}
+    engines: {node: '>=20'}
+
   qs@6.12.3:
     resolution: {integrity: sha512-AWJm14H1vVaO/iNZ4/hO+HyaTehuy9nRqVdkTqlJt0HWvBiBIEXFmb4C0DGeYo3Xes9rrEW+TxHsaigCbN5ICQ==}
     engines: {node: '>=0.6'}
@@ -6509,8 +6525,8 @@ packages:
     peerDependencies:
       stylelint: ^16.23.0
 
-  stylelint@16.25.0:
-    resolution: {integrity: sha512-Li0avYWV4nfv1zPbdnxLYBGq4z8DVZxbRgx4Kn6V+Uftz1rMoF1qiEI3oL4kgWqyYgCgs7gT5maHNZ82Gk03vQ==}
+  stylelint@16.26.0:
+    resolution: {integrity: sha512-Y/3AVBefrkqqapVYH3LBF5TSDZ1kw+0XpdKN2KchfuhMK6lQ85S4XOG4lIZLcrcS4PWBmvcY6eS2kCQFz0jukQ==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -8181,6 +8197,18 @@ snapshots:
   '@biomejs/cli-win32-x64@2.3.7':
     optional: true
 
+  '@cacheable/memory@2.0.5':
+    dependencies:
+      '@cacheable/utils': 2.3.1
+      '@keyv/bigmap': 1.3.0(keyv@5.5.4)
+      hookified: 1.13.0
+      keyv: 5.5.4
+
+  '@cacheable/utils@2.3.1':
+    dependencies:
+      hashery: 1.2.0
+      keyv: 5.5.4
+
   '@chenshuai2144/sketch-color@1.0.9(react@19.2.0)':
     dependencies:
       react: 19.2.0
@@ -8923,7 +8951,13 @@ snapshots:
 
   '@jsonquerylang/jsonquery@3.1.1': {}
 
-  '@keyv/serialize@1.1.0': {}
+  '@keyv/bigmap@1.3.0(keyv@5.5.4)':
+    dependencies:
+      hashery: 1.2.0
+      hookified: 1.13.0
+      keyv: 5.5.4
+
+  '@keyv/serialize@1.1.1': {}
 
   '@lexical/clipboard@0.35.0':
     dependencies:
@@ -11208,10 +11242,13 @@ snapshots:
 
   cac@6.7.14: {}
 
-  cacheable@1.10.4:
+  cacheable@2.2.0:
     dependencies:
-      hookified: 1.11.0
-      keyv: 5.5.0
+      '@cacheable/memory': 2.0.5
+      '@cacheable/utils': 2.3.1
+      hookified: 1.13.0
+      keyv: 5.5.4
+      qified: 0.5.2
 
   call-bind-apply-helpers@1.0.2:
     dependencies:
@@ -11386,7 +11423,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.9.3
@@ -11982,9 +12019,9 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.3
 
-  file-entry-cache@10.1.4:
+  file-entry-cache@11.1.1:
     dependencies:
-      flat-cache: 6.1.13
+      flat-cache: 6.1.19
 
   file-saver@2.0.5: {}
 
@@ -12008,11 +12045,11 @@ snapshots:
       mlly: 1.7.4
       rollup: 4.44.1
 
-  flat-cache@6.1.13:
+  flat-cache@6.1.19:
     dependencies:
-      cacheable: 1.10.4
+      cacheable: 2.2.0
       flatted: 3.3.3
-      hookified: 1.11.0
+      hookified: 1.13.0
 
   flatted@3.3.3: {}
 
@@ -12200,13 +12237,17 @@ snapshots:
     dependencies:
       has-symbols: 1.1.0
 
+  hashery@1.2.0:
+    dependencies:
+      hookified: 1.13.0
+
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
 
   highlight.js@11.11.1: {}
 
-  hookified@1.11.0: {}
+  hookified@1.13.0: {}
 
   html-encoding-sniffer@4.0.0:
     dependencies:
@@ -12456,10 +12497,6 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-yaml@4.1.0:
-    dependencies:
-      argparse: 2.0.1
-
   js-yaml@4.1.1:
     dependencies:
       argparse: 2.0.1
@@ -12534,9 +12571,9 @@ snapshots:
     dependencies:
       commander: 8.3.0
 
-  keyv@5.5.0:
+  keyv@5.5.4:
     dependencies:
-      '@keyv/serialize': 1.1.0
+      '@keyv/serialize': 1.1.1
 
   kind-of@6.0.3: {}
 
@@ -13688,6 +13725,10 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  qified@0.5.2:
+    dependencies:
+      hookified: 1.13.0
+
   qs@6.12.3:
     dependencies:
       side-channel: 1.0.6
@@ -14522,16 +14563,16 @@ snapshots:
 
   style-mod@4.1.2: {}
 
-  stylelint-config-recommended@17.0.0(stylelint@16.25.0(typescript@5.9.3)):
+  stylelint-config-recommended@17.0.0(stylelint@16.26.0(typescript@5.9.3)):
     dependencies:
-      stylelint: 16.25.0(typescript@5.9.3)
+      stylelint: 16.26.0(typescript@5.9.3)
 
-  stylelint-config-standard@39.0.1(stylelint@16.25.0(typescript@5.9.3)):
+  stylelint-config-standard@39.0.1(stylelint@16.26.0(typescript@5.9.3)):
     dependencies:
-      stylelint: 16.25.0(typescript@5.9.3)
-      stylelint-config-recommended: 17.0.0(stylelint@16.25.0(typescript@5.9.3))
+      stylelint: 16.26.0(typescript@5.9.3)
+      stylelint-config-recommended: 17.0.0(stylelint@16.26.0(typescript@5.9.3))
 
-  stylelint@16.25.0(typescript@5.9.3):
+  stylelint@16.26.0(typescript@5.9.3):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
@@ -14546,7 +14587,7 @@ snapshots:
       debug: 4.4.3
       fast-glob: 3.3.3
       fastest-levenshtein: 1.0.16
-      file-entry-cache: 10.1.4
+      file-entry-cache: 11.1.1
       global-modules: 2.0.0
       globby: 11.1.0
       globjoin: 0.1.4
