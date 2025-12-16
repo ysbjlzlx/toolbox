@@ -177,8 +177,8 @@ importers:
         specifier: 2.2.3
         version: 2.2.3
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.17.22
+        version: 4.17.22
       lossless-json:
         specifier: 4.3.0
         version: 4.3.0
@@ -371,8 +371,8 @@ importers:
   packages/random-string:
     dependencies:
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.17.22
+        version: 4.17.22
       zod:
         specifier: 4.1.13
         version: 4.1.13
@@ -4947,8 +4947,8 @@ packages:
     resolution: {integrity: sha512-gvVijfZvn7R+2qyPX8mAuKcFGDf6Nc61GdvGafQsHL0sBIxfKzA+usWn4GFC/bk+QdwPUD4kWFJLhElipq+0VA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+  lodash-es@4.17.22:
+    resolution: {integrity: sha512-XEawp1t0gxSi9x01glktRZ5HDy0HXqrM0x5pXQM98EaI0NxO6jVM7omDOxsuEo5UIASAnm2bRp1Jt/e0a2XU8Q==}
 
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -6964,7 +6964,7 @@ packages:
         optional: true
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
-    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
     version: 0.20.3
     engines: {node: '>=0.8'}
     hasBin: true
@@ -7165,7 +7165,7 @@ snapshots:
       classnames: 2.5.1
       dayjs: 1.11.13
       lodash: 4.17.21
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       rc-util: 5.44.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       swr: 2.2.5(react@19.2.3)
@@ -7185,7 +7185,7 @@ snapshots:
       classnames: 2.5.1
       dayjs: 1.11.13
       lodash: 4.17.21
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       rc-field-form: 2.7.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       rc-resize-observer: 1.4.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       rc-util: 5.44.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7204,7 +7204,7 @@ snapshots:
       antd: 5.29.2(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       classnames: 2.5.1
       lodash: 4.17.21
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       path-to-regexp: 8.2.0
       rc-resize-observer: 1.4.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       rc-util: 5.44.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7269,7 +7269,7 @@ snapshots:
       classnames: 2.5.1
       dayjs: 1.11.13
       lodash: 4.17.21
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       rc-field-form: 2.7.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       rc-resize-observer: 1.4.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       rc-util: 5.44.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7285,7 +7285,7 @@ snapshots:
       classnames: 2.5.1
       dayjs: 1.11.13
       lodash: 4.17.21
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       rc-util: 5.44.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
@@ -9062,7 +9062,7 @@ snapshots:
       '@types/lodash-es': 4.17.12
       clsx: 2.1.1
       dompurify: 3.2.7
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       nanoid: 5.1.6
       unist-util-visit: 5.0.0
       vue: 3.5.21(typescript@5.9.3)
@@ -9095,7 +9095,7 @@ snapshots:
       clsx: 2.1.1
       codemirror: 6.0.2(@lezer/common@1.2.1)
       katex: 0.16.20
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       prosemirror-virtual-cursor: 0.4.2(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       remark-math: 6.0.0
       unist-util-visit: 5.0.0
@@ -9149,7 +9149,7 @@ snapshots:
       '@milkdown/prose': 7.17.3
       '@milkdown/utils': 7.17.3
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
     transitivePeerDependencies:
       - supports-color
 
@@ -9194,7 +9194,7 @@ snapshots:
       '@milkdown/ctx': 7.17.3
       '@milkdown/prose': 7.17.3
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
     transitivePeerDependencies:
       - supports-color
 
@@ -9205,7 +9205,7 @@ snapshots:
       '@milkdown/prose': 7.17.3
       '@milkdown/utils': 7.17.3
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
     transitivePeerDependencies:
       - supports-color
 
@@ -9216,7 +9216,7 @@ snapshots:
       '@milkdown/prose': 7.17.3
       '@milkdown/utils': 7.17.3
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
     transitivePeerDependencies:
       - supports-color
 
@@ -12459,7 +12459,7 @@ snapshots:
     dependencies:
       p-locate: 6.0.0
 
-  lodash-es@4.17.21: {}
+  lodash-es@4.17.22: {}
 
   lodash.camelcase@4.3.0: {}
 
@@ -13493,7 +13493,7 @@ snapshots:
   quill@2.0.3:
     dependencies:
       eventemitter3: 5.0.1
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       parchment: 3.0.0
       quill-delta: 5.1.0
 
@@ -14760,7 +14760,7 @@ snapshots:
       json-source-map: 0.6.1
       jsonpath-plus: 10.3.0
       jsonrepair: 3.9.0
-      lodash-es: 4.17.21
+      lodash-es: 4.17.22
       memoize-one: 6.0.0
       natural-compare-lite: 1.4.0
       svelte: 5.23.2
