@@ -252,8 +252,8 @@ importers:
         specifier: 2.8.2
         version: 2.8.2
       zod:
-        specifier: 4.3.3
-        version: 4.3.3
+        specifier: 4.3.4
+        version: 4.3.4
       zustand:
         specifier: 5.0.9
         version: 5.0.9(@types/react@19.2.7)(immer@10.1.1)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))
@@ -374,8 +374,8 @@ importers:
         specifier: 4.17.22
         version: 4.17.22
       zod:
-        specifier: 4.3.3
-        version: 4.3.3
+        specifier: 4.3.4
+        version: 4.3.4
     devDependencies:
       '@types/lodash-es':
         specifier: 4.17.12
@@ -7016,8 +7016,8 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
-  zod@4.3.3:
-    resolution: {integrity: sha512-bQ7Rxwfn04DCrTjjRfD9SavY2vWdmf3REjs/mkc1LdwI1KkcHClBRJmnvmA/6epGeqlHePtIRF1J4SrMMlW7IA==}
+  zod@4.3.4:
+    resolution: {integrity: sha512-Zw/uYiiyF6pUT1qmKbZziChgNPRu+ZRneAsMUDU6IwmXdWt5JwcUfy2bvLOCUtz5UniaN/Zx5aFttZYbYc7O/A==}
 
   zustand@5.0.9:
     resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
@@ -15108,7 +15108,7 @@ snapshots:
 
   zimmerframe@1.1.2: {}
 
-  zod@4.3.3: {}
+  zod@4.3.4: {}
 
   zustand@5.0.9(@types/react@19.2.7)(immer@10.1.1)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3)):
     optionalDependencies:
