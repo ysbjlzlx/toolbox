@@ -15,7 +15,7 @@
     "prepare": "lefthook install"
   },
   "dependencies": {
-    "@ant-design/cssinjs": "2.0.1",
+    "@ant-design/cssinjs": "2.0.2",
     "@ant-design/pro-components": "2.8.10",
     "@ant-design/pro-provider": "2.16.2",
     "@ant-design/v5-patch-for-react-19": "1.0.3",
