@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "lodash-es": "4.17.23",
-    "zod": "4.3.5"
+    "zod": "4.3.6"
   }
 }
