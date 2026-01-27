@@ -45,7 +45,7 @@
     "@xiechao/codemirror-lang-handlebars": "1.0.4",
     "ace-builds": "1.43.6",
     "ahooks": "3.9.6",
-    "antd": "5.29.3",
+    "antd": "6.2.2",
     "ascii85": "1.0.2",
     "axios": "1.13.3",
     "base-x": "5.0.1",
