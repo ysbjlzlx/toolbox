@@ -1,0 +1,1 @@
+import{o as e,w as s}from"./pro-components-BOkVpLWp.js";import{ak as a,al as t}from"./antd-GvwNVChT.js";const o=[{label:"Base-X",value:"base-x"}],i=()=>e.jsx(s,{title:!1,className:"p-4",children:e.jsx(a,{children:e.jsx(t,{options:o})})});export{i as Component};
