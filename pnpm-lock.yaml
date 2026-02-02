@@ -16,7 +16,7 @@ importers:
         version: 2.0.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@ant-design/pro-components':
         specifier: 3.1.2-0
-        version: 3.1.2-0(antd@6.2.2(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 3.1.2-0(antd@6.2.3(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@codemirror/lang-javascript':
         specifier: 6.2.4
         version: 6.2.4
@@ -90,8 +90,8 @@ importers:
         specifier: 3.9.6
         version: 3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       antd:
-        specifier: 6.2.2
-        version: 6.2.2(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 6.2.3
+        version: 6.2.3(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       ascii85:
         specifier: 1.0.2
         version: 1.0.2
@@ -3617,8 +3617,8 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
-  antd@6.2.2:
-    resolution: {integrity: sha512-f5RvWnhjt2gZTpBMW3msHwA3IeaCJBHDwVyEsskYGp0EXcRhhklWrltkybDki0ysBNywkjLPp3wuuWhIKfplcQ==}
+  antd@6.2.3:
+    resolution: {integrity: sha512-q92r7/hcQAR2iv6CCysdz7c2Pdl/3nhslc3azF9e6AEl4knO6v+nlaeor1oF2jBanZ/tiw2m3NprOVUgPDvyhg==}
     peerDependencies:
       react: '19'
       react-dom: '>=18.0.0'
@@ -6932,7 +6932,7 @@ packages:
         optional: true
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
-    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
     version: 0.20.3
     engines: {node: '>=0.8'}
     hasBin: true
@@ -7057,7 +7057,7 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@ant-design/pro-components@3.1.2-0(antd@6.2.2(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@ant-design/pro-components@3.1.2-0(antd@6.2.3(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@ant-design/cssinjs': 2.0.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@ant-design/icons': 6.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -7074,7 +7074,7 @@ snapshots:
       '@rc-component/util': 1.8.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@umijs/route-utils': 4.0.3
       '@umijs/use-params': 1.0.9(react@19.2.4)
-      antd: 6.2.2(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      antd: 6.2.3(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
       dayjs: 1.11.19
       lodash-es: 4.17.23
@@ -10348,7 +10348,7 @@ snapshots:
 
   '@testing-library/dom@10.1.0':
     dependencies:
-      '@babel/code-frame': 7.28.6
+      '@babel/code-frame': 7.29.0
       '@babel/runtime': 7.28.4
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
@@ -11015,7 +11015,7 @@ snapshots:
 
   ansi-styles@6.2.1: {}
 
-  antd@6.2.2(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  antd@6.2.3(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       '@ant-design/colors': 8.0.1
       '@ant-design/cssinjs': 2.0.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
