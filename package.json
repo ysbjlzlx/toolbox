@@ -15,7 +15,7 @@
     "prepare": "lefthook install"
   },
   "dependencies": {
-    "@ant-design/cssinjs": "2.0.3",
+    "@ant-design/cssinjs": "2.1.0",
     "@ant-design/pro-components": "3.1.2-0",
     "@codemirror/lang-javascript": "6.2.4",
     "@codemirror/state": "6.5.4",
