@@ -135,8 +135,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       fast-xml-parser:
-        specifier: 5.3.5
-        version: 5.3.5
+        specifier: 5.3.6
+        version: 5.3.6
       file-saver:
         specifier: 2.0.5
         version: 2.0.5
@@ -4417,8 +4417,8 @@ packages:
   fast-uri@3.0.1:
     resolution: {integrity: sha512-MWipKbbYiYI0UC7cl8m/i/IWTqfC8YXsqjzybjddLsFjStroQzsHXkc73JutMvBiXmOvapk+axIl79ig5t55Bw==}
 
-  fast-xml-parser@5.3.5:
-    resolution: {integrity: sha512-JeaA2Vm9ffQKp9VjvfzObuMCjUYAp5WDYhRYL5LrBPY/jUDlUtOvDfot0vKSkB9tuX885BDHjtw4fZadD95wnA==}
+  fast-xml-parser@5.3.6:
+    resolution: {integrity: sha512-QNI3sAvSvaOiaMl8FYU4trnEzCwiRr8XMWgAHzlrWpTSj+QaCSvOf1h82OEP1s4hiAXhnbXSyFWCf4ldZzZRVA==}
     hasBin: true
 
   fastest-levenshtein@1.0.16:
@@ -11954,7 +11954,7 @@ snapshots:
 
   fast-uri@3.0.1: {}
 
-  fast-xml-parser@5.3.5:
+  fast-xml-parser@5.3.6:
     dependencies:
       strnum: 2.1.2
 
