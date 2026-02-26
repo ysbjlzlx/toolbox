@@ -129,7 +129,7 @@
     "workbox-build": "7.4.0",
     "workbox-window": "7.4.0"
   },
-  "packageManager": "pnpm@10.30.2",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": "24"
   },
