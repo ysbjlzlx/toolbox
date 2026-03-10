@@ -135,8 +135,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       fast-xml-parser:
-        specifier: 5.4.2
-        version: 5.4.2
+        specifier: 5.5.1
+        version: 5.5.1
       file-saver:
         specifier: 2.0.5
         version: 2.0.5
@@ -4430,11 +4430,11 @@ packages:
   fast-uri@3.0.1:
     resolution: {integrity: sha512-MWipKbbYiYI0UC7cl8m/i/IWTqfC8YXsqjzybjddLsFjStroQzsHXkc73JutMvBiXmOvapk+axIl79ig5t55Bw==}
 
-  fast-xml-builder@1.0.0:
-    resolution: {integrity: sha512-fpZuDogrAgnyt9oDDz+5DBz0zgPdPZz6D4IR7iESxRXElrlGTRkHJ9eEt+SACRJwT0FNFrt71DFQIUFBJfX/uQ==}
+  fast-xml-builder@1.1.0:
+    resolution: {integrity: sha512-7mtITW/we2/wTUZqMyBOR2F8xP4CRxMiSEcQxPIqdRWdO2L/HZSOlzoNyghmyDwNB8BDxePooV1ZTJpkOUhdRg==}
 
-  fast-xml-parser@5.4.2:
-    resolution: {integrity: sha512-pw/6pIl4k0CSpElPEJhDppLzaixDEuWui2CUQQBH/ECDf7+y6YwA4Gf7Tyb0Rfe4DIMuZipYj4AEL0nACKglvQ==}
+  fast-xml-parser@5.5.1:
+    resolution: {integrity: sha512-JTpMz8P5mDoNYzXTmTT/xzWjFiCWi0U+UQTJtrFH9muXsr2RqtXZPbnCW5h2mKsOd4u3XcPWCvDSrnaBPlUcMQ==}
     hasBin: true
 
   fastest-levenshtein@1.0.16:
@@ -5666,6 +5666,10 @@ packages:
 
   parse5@8.0.0:
     resolution: {integrity: sha512-9m4m5GSgXjL4AjumKzq1Fgfp3Z8rsvjRNbnkVwfu2ImRqE5D0LnY2QfDen18FSY9C573YU5XxSapdHZTZ2WolA==}
+
+  path-expression-matcher@1.1.2:
+    resolution: {integrity: sha512-LXWqJmcpp2BKOEmgt4CyuESFmBfPuhJlAHKJsFzuJU6CxErWk75BrO+Ni77M9OxHN6dCYKM4vj+21Z6cOL96YQ==}
+    engines: {node: '>=14.0.0'}
 
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -6938,7 +6942,7 @@ packages:
     engines: {node: ^20.17.0 || >=22.9.0}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
-    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
     version: 0.20.3
     engines: {node: '>=0.8'}
     hasBin: true
@@ -11985,11 +11989,14 @@ snapshots:
 
   fast-uri@3.0.1: {}
 
-  fast-xml-builder@1.0.0: {}
-
-  fast-xml-parser@5.4.2:
+  fast-xml-builder@1.1.0:
     dependencies:
-      fast-xml-builder: 1.0.0
+      path-expression-matcher: 1.1.2
+
+  fast-xml-parser@5.5.1:
+    dependencies:
+      fast-xml-builder: 1.1.0
+      path-expression-matcher: 1.1.2
       strnum: 2.1.2
 
   fastest-levenshtein@1.0.16: {}
@@ -13435,6 +13442,8 @@ snapshots:
   parse5@8.0.0:
     dependencies:
       entities: 6.0.1
+
+  path-expression-matcher@1.1.2: {}
 
   path-key@3.1.1: {}
 
