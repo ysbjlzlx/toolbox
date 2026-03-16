@@ -180,8 +180,8 @@ importers:
         specifier: 0.55.1
         version: 0.55.1
       nanoid:
-        specifier: 5.1.6
-        version: 5.1.6
+        specifier: 5.1.7
+        version: 5.1.7
       nanoid-dictionary:
         specifier: 5.0.0
         version: 5.0.0
@@ -369,8 +369,8 @@ importers:
         specifier: 4.17.12
         version: 4.17.12
       nanoid:
-        specifier: 5.1.6
-        version: 5.1.6
+        specifier: 5.1.7
+        version: 5.1.7
       nanoid-dictionary:
         specifier: 5.0.0
         version: 5.0.0
@@ -5589,8 +5589,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@5.1.6:
-    resolution: {integrity: sha512-c7+7RQ+dMB5dPwwCp4ee1/iV/q2P6aK1mTZcfr1BTuVlyW9hJYiMPybJCcnBlQtuSmTIWNeazm/zqNoZSSElBg==}
+  nanoid@5.1.7:
+    resolution: {integrity: sha512-ua3NDgISf6jdwezAheMOk4mbE1LXjm1DfMUDMuJf4AqxLFK3ccGpgWizwa5YV7Yz9EpXwEaWoRXSb/BnV0t5dQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
 
@@ -6946,7 +6946,7 @@ packages:
     engines: {node: ^20.17.0 || >=22.9.0}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
-    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
     version: 0.20.3
     engines: {node: '>=0.8'}
     hasBin: true
@@ -9035,7 +9035,7 @@ snapshots:
       clsx: 2.1.1
       dompurify: 3.2.7
       lodash-es: 4.17.23
-      nanoid: 5.1.6
+      nanoid: 5.1.7
       unist-util-visit: 5.0.0
       vue: 3.5.21(typescript@5.9.3)
     transitivePeerDependencies:
@@ -9271,7 +9271,7 @@ snapshots:
       '@milkdown/exception': 7.19.0
       '@milkdown/prose': 7.19.0
       '@milkdown/transformer': 7.19.0
-      nanoid: 5.1.6
+      nanoid: 5.1.7
     transitivePeerDependencies:
       - supports-color
 
@@ -13385,7 +13385,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@5.1.6: {}
+  nanoid@5.1.7: {}
 
   natural-compare-lite@1.4.0: {}
 
