@@ -72,8 +72,8 @@ importers:
         specifier: 3.20.5
         version: 3.20.5
       '@uiw/codemirror-theme-github':
-        specifier: 4.25.8
-        version: 4.25.8(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)
+        specifier: 4.25.9
+        version: 4.25.9(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)
       '@uiw/codemirror-theme-vscode':
         specifier: 4.25.8
         version: 4.25.8(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)
@@ -3507,14 +3507,21 @@ packages:
       '@codemirror/state': '>=6.0.0'
       '@codemirror/view': '>=6.0.0'
 
-  '@uiw/codemirror-theme-github@4.25.8':
-    resolution: {integrity: sha512-kTZsf2PmOCHBuudB50BX1kAODmErzks6lxxhbHj76KQ+p4eizu0giowV1LoyY/FCLLqRjIe77tE31hvo8agasg==}
+  '@uiw/codemirror-theme-github@4.25.9':
+    resolution: {integrity: sha512-AGpTamNiySKNzq3Jc7QjpwgQRVaHUaBtmOKiUDghYSfEGjsc5uW4NUW70sSU3BnkGv+lCTUnF3175KM24BWZbw==}
 
   '@uiw/codemirror-theme-vscode@4.25.8':
     resolution: {integrity: sha512-J4fNBFBQK1R1VV4nY+gJ4RRzGDUufe3JDtbeZVehjx34OAbqux8GsD08CTMQReyxJr5DHXcQ/eszQKbESP1J6Q==}
 
   '@uiw/codemirror-themes@4.25.8':
     resolution: {integrity: sha512-U6ZSO9A+nsN8zvNddtwhxxpi33J9okb4Li9HdhAItApKjYM22IgC8XSpGfs+ABGfsp1u6NhDSfBR9vAh3oTWXg==}
+    peerDependencies:
+      '@codemirror/language': '>=6.0.0'
+      '@codemirror/state': '>=6.0.0'
+      '@codemirror/view': '>=6.0.0'
+
+  '@uiw/codemirror-themes@4.25.9':
+    resolution: {integrity: sha512-DAHKb/L9ELwjY4nCf/MP/mIllHOn4GQe7RR4x8AMJuNeh9nGRRoo1uPxrxMmUL/bKqe6kDmDbIZ2AlhlqyIJuw==}
     peerDependencies:
       '@codemirror/language': '>=6.0.0'
       '@codemirror/state': '>=6.0.0'
@@ -6973,7 +6980,7 @@ packages:
     engines: {node: ^20.17.0 || >=22.9.0}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
-    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
     version: 0.20.3
     engines: {node: '>=0.8'}
     hasBin: true
@@ -10900,9 +10907,9 @@ snapshots:
       '@codemirror/state': 6.6.0
       '@codemirror/view': 6.40.0
 
-  '@uiw/codemirror-theme-github@4.25.8(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)':
+  '@uiw/codemirror-theme-github@4.25.9(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)':
     dependencies:
-      '@uiw/codemirror-themes': 4.25.8(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)
+      '@uiw/codemirror-themes': 4.25.9(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)
     transitivePeerDependencies:
       - '@codemirror/language'
       - '@codemirror/state'
@@ -10917,6 +10924,12 @@ snapshots:
       - '@codemirror/view'
 
   '@uiw/codemirror-themes@4.25.8(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)':
+    dependencies:
+      '@codemirror/language': 6.10.3
+      '@codemirror/state': 6.6.0
+      '@codemirror/view': 6.40.0
+
+  '@uiw/codemirror-themes@4.25.9(@codemirror/language@6.10.3)(@codemirror/state@6.6.0)(@codemirror/view@6.40.0)':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.6.0
