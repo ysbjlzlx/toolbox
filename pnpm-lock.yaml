@@ -165,8 +165,8 @@ importers:
         specifier: 2.2.3
         version: 2.2.3
       lodash-es:
-        specifier: 4.17.23
-        version: 4.17.23
+        specifier: 4.18.1
+        version: 4.18.1
       lossless-json:
         specifier: 4.3.0
         version: 4.3.0
@@ -359,8 +359,8 @@ importers:
   packages/random-string:
     dependencies:
       lodash-es:
-        specifier: 4.17.23
-        version: 4.17.23
+        specifier: 4.18.1
+        version: 4.18.1
       zod:
         specifier: 4.3.6
         version: 4.3.6
@@ -5212,8 +5212,8 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  lodash-es@4.17.23:
-    resolution: {integrity: sha512-kVI48u3PZr38HdYz98UmfPnXl2DXrpdctLrFLCd3kOx1xUkOmpFPx7gCWWM5MPkL/fD8zb+Ph0QzjGFs4+hHWg==}
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -7100,7 +7100,7 @@ snapshots:
       antd: 6.3.5(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
       dayjs: 1.11.19
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       path-to-regexp: 8.2.0
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -9045,7 +9045,7 @@ snapshots:
       '@types/lodash-es': 4.17.12
       clsx: 2.1.1
       dompurify: 3.2.7
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       nanoid: 5.1.7
       unist-util-visit: 5.0.0
       vue: 3.5.21(typescript@5.9.3)
@@ -9078,7 +9078,7 @@ snapshots:
       clsx: 2.1.1
       codemirror: 6.0.2(@lezer/common@1.2.1)
       katex: 0.16.20
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       prosemirror-virtual-cursor: 0.4.2(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       remark-math: 6.0.0
       unist-util-visit: 5.0.0
@@ -9132,7 +9132,7 @@ snapshots:
       '@milkdown/prose': 7.20.0
       '@milkdown/utils': 7.20.0
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9177,7 +9177,7 @@ snapshots:
       '@milkdown/ctx': 7.20.0
       '@milkdown/prose': 7.20.0
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9188,7 +9188,7 @@ snapshots:
       '@milkdown/prose': 7.20.0
       '@milkdown/utils': 7.20.0
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9199,7 +9199,7 @@ snapshots:
       '@milkdown/prose': 7.20.0
       '@milkdown/utils': 7.20.0
       '@types/lodash-es': 4.17.12
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
     transitivePeerDependencies:
       - supports-color
 
@@ -12712,7 +12712,7 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  lodash-es@4.17.23: {}
+  lodash-es@4.18.1: {}
 
   lodash.camelcase@4.3.0: {}
 
@@ -13730,7 +13730,7 @@ snapshots:
   quill@2.0.3:
     dependencies:
       eventemitter3: 5.0.1
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       parchment: 3.0.0
       quill-delta: 5.1.0
 
@@ -14655,7 +14655,7 @@ snapshots:
       json-source-map: 0.6.1
       jsonpath-plus: 10.3.0
       jsonrepair: 3.9.0
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       memoize-one: 6.0.0
       natural-compare-lite: 1.4.0
       svelte: 5.23.2
