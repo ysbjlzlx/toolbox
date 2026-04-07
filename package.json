@@ -114,7 +114,7 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.2.0",
-    "jsdom": "29.0.1",
+    "jsdom": "29.0.2",
     "lefthook": "2.1.5",
     "postcss": "8.5.8",
     "stylelint": "17.6.0",
