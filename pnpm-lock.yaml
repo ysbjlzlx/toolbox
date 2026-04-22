@@ -48,8 +48,8 @@ importers:
         specifier: 3.5.5
         version: 3.5.5
       '@scure/base':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.2.0
+        version: 2.2.0
       '@tiptap/extension-code-block-lowlight':
         specifier: 3.22.4
         version: 3.22.4(@tiptap/core@3.22.4(@tiptap/pm@3.22.4))(@tiptap/extension-code-block@3.22.4(@tiptap/core@3.22.4(@tiptap/pm@3.22.4))(@tiptap/pm@3.22.4))(@tiptap/pm@3.22.4)(highlight.js@11.11.1)(lowlight@3.3.0)
@@ -2896,8 +2896,8 @@ packages:
     resolution: {integrity: sha512-xzvBr1Q1c4lCe7i6sRnrofxeO1QTP/LKQ6A6qy0iB4x5yfiSfARMEQEghojzTNALDTcv8En04qYNIco9/K9eZQ==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
-  '@scure/base@2.0.0':
-    resolution: {integrity: sha512-3E1kpuZginKkek01ovG8krQ0Z44E3DHPjc5S2rjJw9lZn3KSQOs8S7wqikF/AH7iRanHypj85uGyxk0XAyC37w==}
+  '@scure/base@2.2.0':
+    resolution: {integrity: sha512-b8XEupJibegiXV+tDUseI8oLQc8ei3d/4Jkb2RpbHh3MfE054ov3uIz2dhFkB3FI8iwYkEh0gGCApkrYggkPNg==}
 
   '@simple-libs/child-process-utils@1.0.2':
     resolution: {integrity: sha512-/4R8QKnd/8agJynkNdJmNw2MBxuFTRcNFnE5Sg/G+jkSsV8/UBgULMzhizWWW42p8L5H7flImV2ATi79Ove2Tw==}
@@ -10245,7 +10245,7 @@ snapshots:
 
   '@sapphire/snowflake@3.5.5': {}
 
-  '@scure/base@2.0.0': {}
+  '@scure/base@2.2.0': {}
 
   '@simple-libs/child-process-utils@1.0.2':
     dependencies:
