@@ -16,7 +16,7 @@ importers:
         version: 2.1.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@ant-design/pro-components':
         specifier: 3.1.2-0
-        version: 3.1.2-0(antd@6.3.6(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 3.1.2-0(antd@6.3.7(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@codemirror/lang-javascript':
         specifier: 6.2.5
         version: 6.2.5
@@ -90,8 +90,8 @@ importers:
         specifier: 3.9.7
         version: 3.9.7(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       antd:
-        specifier: 6.3.6
-        version: 6.3.6(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 6.3.7
+        version: 6.3.7(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       ascii85:
         specifier: 1.0.2
         version: 1.0.2
@@ -2457,8 +2457,8 @@ packages:
       react: '19'
       react-dom: '>=16.9.0'
 
-  '@rc-component/form@1.8.0':
-    resolution: {integrity: sha512-eUD5KKYnIZWmJwRA0vnyO/ovYUfHGU1svydY1OrqU5fw8Oz9Tdqvxvrlh0wl6xI/EW69dT7II49xpgOWzK3T5A==}
+  '@rc-component/form@1.8.1':
+    resolution: {integrity: sha512-8O7TB55Fi2mWIGvSnwZjk8jFqVNYyKDAswglwGShcbndxqzKz4cHwNtNaLjZlAeRge9wcB0LL8IWsC/Bl18raQ==}
     engines: {node: '>=8.x'}
     peerDependencies:
       react: '19'
@@ -2680,12 +2680,6 @@ packages:
     peerDependencies:
       react: '19'
       react-dom: '>=16.9.0'
-
-  '@rc-component/util@1.10.0':
-    resolution: {integrity: sha512-aY9GLBuiUdpyfIUpAWSYer4Tu3mVaZCo5A0q9NtXcazT3MRiI3/WNHCR+DUn5VAtR6iRRf0ynCqQUcHli5UdYw==}
-    peerDependencies:
-      react: '19'
-      react-dom: '>=18.0.0'
 
   '@rc-component/util@1.10.1':
     resolution: {integrity: sha512-q++9S6rUa5Idb/xIBNz6jtvumw5+O5YV5V0g4iK9mn9jWs4oGJheE3ZN1kAnE723AXyaD8v95yeOASmdk8Jnng==}
@@ -3665,8 +3659,8 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
-  antd@6.3.6:
-    resolution: {integrity: sha512-zdCYjusrTUn4gNxEg4PH8MWlfuXYbKfuGOkjgZ0Rg6DpWbIVmG/MwvsZ5yvG6z3Y6UI/gzYpaQ82iTt4KdbeaA==}
+  antd@6.3.7:
+    resolution: {integrity: sha512-WTHi4bHVNKpYXLHESzU0Tts7rRNQeL84Bph9dfI3Qw7mHbTulExDcYKNHny5CTXcrBBOpraXbU9miBAwUR5vaw==}
     peerDependencies:
       react: '19'
       react-dom: '>=18.0.0'
@@ -7045,7 +7039,7 @@ snapshots:
     dependencies:
       '@ant-design/colors': 8.0.1
       '@ant-design/icons-svg': 4.4.2
-      '@rc-component/util': 1.10.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@rc-component/util': 1.10.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       clsx: 2.1.1
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
@@ -7059,7 +7053,7 @@ snapshots:
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  '@ant-design/pro-components@3.1.2-0(antd@6.3.6(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@ant-design/pro-components@3.1.2-0(antd@6.3.7(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@ant-design/cssinjs': 2.1.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@ant-design/icons': 6.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -7076,7 +7070,7 @@ snapshots:
       '@rc-component/util': 1.8.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@umijs/route-utils': 4.0.3
       '@umijs/use-params': 1.0.9(react@19.2.5)
-      antd: 6.3.6(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      antd: 6.3.7(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       clsx: 2.1.1
       dayjs: 1.11.19
       lodash-es: 4.18.1
@@ -9810,12 +9804,12 @@ snapshots:
   '@rc-component/form@1.6.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@rc-component/async-validator': 5.1.0
-      '@rc-component/util': 1.10.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@rc-component/util': 1.10.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       clsx: 2.1.1
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  '@rc-component/form@1.8.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@rc-component/form@1.8.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@rc-component/async-validator': 5.1.0
       '@rc-component/util': 1.10.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -9952,7 +9946,7 @@ snapshots:
 
   '@rc-component/resize-observer@1.1.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@rc-component/util': 1.10.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@rc-component/util': 1.10.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
@@ -10083,13 +10077,6 @@ snapshots:
       clsx: 2.1.1
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
-
-  '@rc-component/util@1.10.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
-    dependencies:
-      is-mobile: 5.0.0
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
-      react-is: 18.3.1
 
   '@rc-component/util@1.10.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
@@ -11066,7 +11053,7 @@ snapshots:
 
   ansi-styles@6.2.1: {}
 
-  antd@6.3.6(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  antd@6.3.7(date-fns@4.1.0)(moment@2.30.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@ant-design/colors': 8.0.1
       '@ant-design/cssinjs': 2.1.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -11082,7 +11069,7 @@ snapshots:
       '@rc-component/dialog': 1.8.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@rc-component/drawer': 1.4.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@rc-component/dropdown': 1.0.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
-      '@rc-component/form': 1.8.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@rc-component/form': 1.8.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@rc-component/image': 1.9.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@rc-component/input': 1.1.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@rc-component/input-number': 1.6.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
