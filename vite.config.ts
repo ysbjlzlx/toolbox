@@ -65,6 +65,30 @@ export default defineConfig({
   plugins: [react(), VitePWA(pwaOptions)],
   build: {
     sourcemap: false,
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+              test: /node_modules\/antd/,
+              name: "antd",
+            },
+            {
+              test: /node_modules\/vanilla-jsoneditor/,
+              name: "json-editor",
+            },
+            {
+              test: /node_modules\/ace-builds|node_modules\/react-ace/,
+              name: "ace",
+            },
+            {
+              test: /node_modules\/@ant-design\/pro-components/,
+              name: "pro-components",
+            },
+          ],
+        },
+      },
+    },
     // https://rolldown.rs/in-depth/manual-code-splitting
     // rollupOptions: {
     //   output: {
@@ -80,7 +104,7 @@ export default defineConfig({
   server: {
     host: true,
   },
-  resolve:{
-    tsconfigPaths: true
-  }
+  resolve: {
+    tsconfigPaths: true,
+  },
 });
