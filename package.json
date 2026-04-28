@@ -135,7 +135,7 @@
   "pnpm": {
     "overrides": {
       "react": "19",
-      "vite-plugin-pwa>vite": "8"
+      "vite-plugin-pwa>vite": "$vite"
     }
   }
 }
