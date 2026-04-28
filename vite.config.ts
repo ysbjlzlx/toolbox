@@ -2,7 +2,6 @@ import react from "@vitejs/plugin-react";
 import {defineConfig} from "vite";
 import type {VitePWAOptions} from "vite-plugin-pwa";
 import {VitePWA} from "vite-plugin-pwa";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 const pwaOptions: Partial<VitePWAOptions> = {
   injectRegister: "auto",
@@ -63,21 +62,25 @@ const pwaOptions: Partial<VitePWAOptions> = {
   }
 };
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), VitePWA(pwaOptions)],
+  plugins: [react(), VitePWA(pwaOptions)],
   build: {
     sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          antd: ["antd"],
-          "pro-components": ["@ant-design/pro-components"],
-          ace: ["ace-builds", "react-ace"],
-          "json-editor": ["vanilla-jsoneditor"]
-        },
-      },
-    },
+    // https://rolldown.rs/in-depth/manual-code-splitting
+    // rollupOptions: {
+    //   output: {
+    //     manualChunks: {
+    //       antd: ["antd"],
+    //       "pro-components": ["@ant-design/pro-components"],
+    //       ace: ["ace-builds", "react-ace"],
+    //       "json-editor": ["vanilla-jsoneditor"]
+    //     },
+    //   },
+    // },
   },
   server: {
     host: true,
   },
+  resolve:{
+    tsconfigPaths: true
+  }
 });
