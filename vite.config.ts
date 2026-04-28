@@ -67,6 +67,7 @@ export default defineConfig({
     sourcemap: false,
     rolldownOptions: {
       output: {
+        // https://rolldown.rs/in-depth/manual-code-splitting
         codeSplitting: {
           groups: [
             {
@@ -89,17 +90,6 @@ export default defineConfig({
         },
       },
     },
-    // https://rolldown.rs/in-depth/manual-code-splitting
-    // rollupOptions: {
-    //   output: {
-    //     manualChunks: {
-    //       antd: ["antd"],
-    //       "pro-components": ["@ant-design/pro-components"],
-    //       ace: ["ace-builds", "react-ace"],
-    //       "json-editor": ["vanilla-jsoneditor"]
-    //     },
-    //   },
-    // },
   },
   server: {
     host: true,
