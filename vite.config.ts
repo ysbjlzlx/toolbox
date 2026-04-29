@@ -63,6 +63,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
 };
 export default defineConfig({
   plugins: [react(), VitePWA(pwaOptions)],
+  legacy: {
+    inconsistentCjsInterop: true,
+  },
   build: {
     sourcemap: false,
     rolldownOptions: {
