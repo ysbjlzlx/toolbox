@@ -139,8 +139,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       fast-xml-builder:
-        specifier: 1.1.8
-        version: 1.1.8
+        specifier: 1.1.9
+        version: 1.1.9
       fast-xml-parser:
         specifier: 5.7.3
         version: 5.7.3
@@ -4643,8 +4643,8 @@ packages:
   fast-uri@3.0.1:
     resolution: {integrity: sha512-MWipKbbYiYI0UC7cl8m/i/IWTqfC8YXsqjzybjddLsFjStroQzsHXkc73JutMvBiXmOvapk+axIl79ig5t55Bw==}
 
-  fast-xml-builder@1.1.8:
-    resolution: {integrity: sha512-sDVBc2gg8pSKvcbE8rBmOyjSGQf0AdsbqvHeIOv3D/uYNoV4eCReQXyDF8Pdv8+m1FHazACypSz2hR7O2S1LLw==}
+  fast-xml-builder@1.1.9:
+    resolution: {integrity: sha512-jcyKVSEX13iseJqg7n/KWw+xnu/7fdrZ333Fac54KjHDIELVCfDDJXYIm6DTJ0Su4gSzrhqiK0DzY/wZbF40mw==}
 
   fast-xml-parser@5.7.3:
     resolution: {integrity: sha512-C0AaNuC+mscy6vrAQKAc/rMq+zAPHodfHGZu4sGVehvAQt/JLG1O5zEcYcXSY5zSqr4YVgxsB+pHXTq0i7eDlg==}
@@ -7164,7 +7164,7 @@ packages:
     engines: {node: ^20.17.0 || >=22.9.0}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz:
-    resolution: {integrity: sha512-oLDq3jw7AcLqKWH2AhCpVTZl8mf6X2YReP+Neh0SJUzV/BdZYjth94tG5toiMB1PPrYtxOCfaoUCkvtuH+3AJA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
+    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz}
     version: 0.20.3
     engines: {node: '>=0.8'}
     hasBin: true
@@ -12239,14 +12239,14 @@ snapshots:
 
   fast-uri@3.0.1: {}
 
-  fast-xml-builder@1.1.8:
+  fast-xml-builder@1.1.9:
     dependencies:
       path-expression-matcher: 1.5.0
 
   fast-xml-parser@5.7.3:
     dependencies:
       '@nodable/entities': 2.1.0
-      fast-xml-builder: 1.1.8
+      fast-xml-builder: 1.1.9
       path-expression-matcher: 1.5.0
       strnum: 2.2.3
 
