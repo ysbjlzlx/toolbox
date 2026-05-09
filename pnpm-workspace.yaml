@@ -4,3 +4,5 @@ savePrefix: ~
 publicHoistPattern:
   - "style-inject"
   - "*jest*"
+allowBuilds:
+  "@swc/core": true
