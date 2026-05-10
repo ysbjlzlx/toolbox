@@ -1,8 +1,7 @@
 import type { MenuDataItem, ProLayoutProps, ProSettings } from "@ant-design/pro-components";
 import { ProConfigProvider, ProLayout } from "@ant-design/pro-components";
-import { useBoolean } from "ahooks";
 import { App, Button } from "antd";
-import type { FC, ReactNode } from "react";
+import { type FC, type ReactNode, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router";
 
 import Iconify from "@/components/Iconify";
@@ -28,7 +27,7 @@ const menuItemRender = (item: MenuDataItem, dom: ReactNode) => {
 const BaseLayout: FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [collapsed, { toggle }] = useBoolean(false);
+  const [collapsed, setToggle] = useState<boolean>(false);
 
   const actionsRender: ProLayoutProps["actionsRender"] = (props) => {
     const { isMobile } = props;
@@ -44,11 +43,21 @@ const BaseLayout: FC = () => {
     return (
       <>
         {collapsed ? (
-          <Button ghost onClick={toggle}>
+          <Button
+            ghost
+            onClick={() => {
+              setToggle(false);
+            }}
+          >
             <Iconify icon="lucide:chevrons-right" fontSize={24} color="#000" />
           </Button>
         ) : (
-          <Button ghost onClick={toggle}>
+          <Button
+            ghost
+            onClick={() => {
+              setToggle(true);
+            }}
+          >
             <Iconify icon="lucide:chevrons-left" fontSize={24} color="#000" />
           </Button>
         )}
@@ -67,7 +76,9 @@ const BaseLayout: FC = () => {
     onMenuHeaderClick,
     actionsRender,
     collapsedButtonRender,
-    onCollapse: toggle,
+    onCollapse: (collapsed) => {
+      setToggle(collapsed);
+    },
     location: location,
     menu: {
       request: async () => {
