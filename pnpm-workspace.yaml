@@ -1,8 +1,9 @@
 packages:
   - 'packages/*'
-savePrefix: ~
 publicHoistPattern:
   - "style-inject"
   - "*jest*"
 allowBuilds:
   "@swc/core": true
+  esbuild: true
+  lefthook: true
