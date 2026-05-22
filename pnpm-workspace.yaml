@@ -7,3 +7,6 @@ allowBuilds:
   "@swc/core": true
   esbuild: true
   lefthook: true
+overrides:
+  "react": "19"
+  "vite-plugin-pwa>vite": "$vite"
