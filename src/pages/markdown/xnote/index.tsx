@@ -1,19 +1,25 @@
-import { Editor } from "@textbus/xnote";
+import { PageContainer } from "@ant-design/pro-components";
+import { Editor, InlineToolbarPlugin } from "@textbus/xnote";
 import { type FC, useEffect, useRef } from "react";
 
 import "katex/dist/katex.min.css";
-import { PageContainer } from "@ant-design/pro-components";
 
 export const Component: FC = () => {
   const editorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const editor = new Editor({
+      plugins: [new InlineToolbarPlugin({ theme: "dark" })],
+    });
     if (editorRef?.current) {
-      const editor = new Editor();
       editor.mount(editorRef.current).then(() => {
         console.log("编辑器准备完成。");
       });
     }
+    return () => {
+      console.log(editor.getHTML());
+      editor.destroy();
+    };
   }, []);
 
   return (
