@@ -100,6 +100,7 @@ export const menuData: MenuDataItem[] = [
       { name: "mdx-editor", path: "/markdown/mdx-editor" },
       { name: "Milkdown", path: "/markdown/milkdown" },
       { name: "Vditor", path: "/markdown/vditor" },
+      { name: "XNote", path: "/markdown/xnote" },
     ],
   },
   {

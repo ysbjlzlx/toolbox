@@ -113,6 +113,7 @@ export const routes: RouteObject[] = [
           },
           { path: "milkdown", lazy: () => import("@/pages/markdown/milkdown") },
           { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
+          { path: "xnote", lazy: () => import("@/pages/markdown/xnote") },
         ],
       },
       {
