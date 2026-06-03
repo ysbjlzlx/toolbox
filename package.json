@@ -29,7 +29,7 @@
     "@repo/colors": "workspace:@repo/colors@*",
     "@sapphire/snowflake": "3.5.5",
     "@scure/base": "2.2.0",
-    "@textbus/xnote": "1.5.0",
+    "@textbus/xnote": "1.5.1",
     "@tiptap/core": "3.24.0",
     "@tiptap/extension-blockquote": "3.24.0",
     "@tiptap/extension-bold": "3.24.0",
