@@ -55,8 +55,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
       '@textbus/xnote':
-        specifier: 1.5.0
-        version: 1.5.0(@textbus/adapter-viewfly@5.5.1)(@textbus/collaborate@5.5.1(y-protocols@1.0.7(yjs@13.6.31)))(@textbus/core@5.5.1)(@textbus/platform-browser@5.5.1)(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6)
+        specifier: 1.5.1
+        version: 1.5.1(@textbus/adapter-viewfly@5.5.1)(@textbus/collaborate@5.5.1(y-protocols@1.0.7(yjs@13.6.31)))(@textbus/core@5.5.1)(@textbus/platform-browser@5.5.1)(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6)
       '@tiptap/core':
         specifier: 3.24.0
         version: 3.24.0(@tiptap/pm@3.24.0)
@@ -3170,8 +3170,8 @@ packages:
   '@textbus/platform-node@5.5.1':
     resolution: {integrity: sha512-bsY7CGiUnAxBNLvIxnO0TwIqpVqEQSnVdJ9yM9O8xZTGHtpuY6z9kwUhIe5S1KT0sq4Yf/Bchs01YzkL7Fnyqw==}
 
-  '@textbus/xnote@1.5.0':
-    resolution: {integrity: sha512-Bsy8kvAbBfXFjlSNybwO8S81J8CYCChJduU70S3lkaHbOAiw3XfHqi9DLlC7drIgivIG4v3V1vRDjqFYa6lM/g==}
+  '@textbus/xnote@1.5.1':
+    resolution: {integrity: sha512-CzBeMZswA2fWYeeh8fLwGTt2SgTzakA5rLiRCGIeuJqtldrcbOPLgsnvWrriCSf9Dj/ZRkXuQc59e0rnwoxvvA==}
     peerDependencies:
       '@textbus/adapter-viewfly': ^5.4.3
       '@textbus/collaborate': ^5.4.3
@@ -10371,7 +10371,7 @@ snapshots:
       '@viewfly/core': 3.0.6
       '@viewfly/platform-browser': 3.0.6
 
-  '@textbus/xnote@1.5.0(@textbus/adapter-viewfly@5.5.1)(@textbus/collaborate@5.5.1(y-protocols@1.0.7(yjs@13.6.31)))(@textbus/core@5.5.1)(@textbus/platform-browser@5.5.1)(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6)':
+  '@textbus/xnote@1.5.1(@textbus/adapter-viewfly@5.5.1)(@textbus/collaborate@5.5.1(y-protocols@1.0.7(yjs@13.6.31)))(@textbus/core@5.5.1)(@textbus/platform-browser@5.5.1)(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6)':
     dependencies:
       '@tanbo/color': 0.1.1
       '@textbus/adapter-viewfly': 5.5.1
