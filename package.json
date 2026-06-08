@@ -131,7 +131,7 @@
     "@mdxeditor/editor": "4.0.2",
     "@swc/core": "1.15.40",
     "@tailwindcss/postcss": "4.3.0",
-    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@testing-library/user-event": "14.6.1",
