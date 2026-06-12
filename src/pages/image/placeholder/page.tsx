@@ -10,6 +10,7 @@ import {
 import { colors } from "@repo/colors/tailwindcss";
 import type { ColorPickerProps, TabsProps } from "antd";
 import { Card, ColorPicker, Form, Tabs } from "antd";
+import { formatHex } from "culori";
 import { values } from "lodash-es";
 import { type FC, useEffect, useMemo, useState } from "react";
 
@@ -48,9 +49,18 @@ export const Component: FC = () => {
 
   const colorPresets: ColorPickerProps["presets"] = useMemo(() => {
     return [
-      { label: "Gray", colors: values(colors.gray) },
-      { label: "Cyan", colors: values(colors.cyan) },
-      { label: "Red", colors: values(colors.red) },
+      {
+        label: "Gray",
+        colors: values(colors.gray).map((c) => formatHex(c) || ""),
+      },
+      {
+        label: "Cyan",
+        colors: values(colors.cyan).map((c) => formatHex(c) || ""),
+      },
+      {
+        label: "Red",
+        colors: values(colors.red).map((c) => formatHex(c) || ""),
+      },
     ];
   }, []);
   const tabsProps: TabsProps = {
