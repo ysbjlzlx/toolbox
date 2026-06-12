@@ -207,9 +207,6 @@ importers:
       crypto-js:
         specifier: 4.2.0
         version: 4.2.0
-      culori:
-        specifier: 4.0.2
-        version: 4.0.2
       d3:
         specifier: 7.9.0
         version: 7.9.0
@@ -373,9 +370,6 @@ importers:
       '@types/crypto-js':
         specifier: 4.2.2
         version: 4.2.2
-      '@types/culori':
-        specifier: 4.0.1
-        version: 4.0.1
       '@types/d3':
         specifier: 7.4.3
         version: 7.4.3
@@ -439,10 +433,16 @@ importers:
 
   packages/colors:
     dependencies:
+      culori:
+        specifier: 4.0.2
+        version: 4.0.2
       tailwindcss:
         specifier: 4.3.0
         version: 4.3.0
     devDependencies:
+      '@types/culori':
+        specifier: 4.0.1
+        version: 4.0.1
       typescript:
         specifier: 6.0.3
         version: 6.0.3

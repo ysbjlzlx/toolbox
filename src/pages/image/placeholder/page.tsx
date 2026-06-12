@@ -7,10 +7,9 @@ import {
   ProFormText,
   pickControlPropsWithId,
 } from "@ant-design/pro-components";
-import { colors } from "@repo/colors/tailwindcss";
+import { colors, culori } from "@repo/colors/tailwindcss";
 import type { ColorPickerProps, TabsProps } from "antd";
 import { Card, ColorPicker, Form, Tabs } from "antd";
-import { formatHex } from "culori";
 import { values } from "lodash-es";
 import { type FC, useEffect, useMemo, useState } from "react";
 
@@ -36,6 +35,7 @@ const suffixOptions = [
 ];
 
 export const Component: FC = () => {
+  const { formatHex } = culori;
   const [form] = Form.useForm();
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
 
