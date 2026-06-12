@@ -128,7 +128,7 @@
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
     "@iconify/react": "6.0.2",
-    "@mdxeditor/editor": "4.0.2",
+    "@mdxeditor/editor": "4.0.3",
     "@swc/core": "1.15.41",
     "@tailwindcss/postcss": "4.3.0",
     "@tailwindcss/typography": "0.5.20",
