@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "culori": "4.0.2",
-    "tailwindcss": "4.3.0"
+    "tailwindcss": "4.3.1"
   }
 }
