@@ -10,3 +10,4 @@ allowBuilds:
 overrides:
   "react": "19"
   "vite-plugin-pwa>vite": "$vite"
+minimumReleaseAge: 1440
