@@ -9,5 +9,5 @@ allowBuilds:
   lefthook: true
 overrides:
   "react": "19"
-  "vite-plugin-pwa>vite": "$vite"
+  "vite-plugin-pwa>vite": "npm:vite"
 minimumReleaseAge: 1440
