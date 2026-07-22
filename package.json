@@ -146,7 +146,7 @@
     "jsdom": "29.1.1",
     "lefthook": "2.1.10",
     "postcss": "8.5.19",
-    "stylelint": "17.14.0",
+    "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
     "tailwindcss": "4.3.3",
     "tsup": "8.5.1",
