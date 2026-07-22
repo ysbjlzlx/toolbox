@@ -108,7 +108,7 @@
     "react": "19.2.8",
     "react-ace": "14.0.1",
     "react-datasheet": "1.4.12",
-    "react-dom": "19.2.7",
+    "react-dom": "19.2.8",
     "react-i18next": "17.0.10",
     "react-router": "8.1.0",
     "tailwind-merge": "3.6.0",
