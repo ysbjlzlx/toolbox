@@ -241,8 +241,8 @@ importers:
         specifier: 8.2.1
         version: 8.2.1
       i18next-chained-backend:
-        specifier: 5.0.5
-        version: 5.0.5
+        specifier: 5.0.6
+        version: 5.0.6
       i18next-resources-to-backend:
         specifier: 1.2.1
         version: 1.2.1
@@ -4918,8 +4918,8 @@ packages:
   i18next-browser-languagedetector@8.2.1:
     resolution: {integrity: sha512-bZg8+4bdmaOiApD7N7BPT9W8MLZG+nPTOFlLiJiT8uzKXFjhxw4v2ierCXOwB5sFDMtuA5G4kgYZ0AznZxQ/cw==}
 
-  i18next-chained-backend@5.0.5:
-    resolution: {integrity: sha512-ThdtKUcNdk/zrSuzQyz2t4uH1McomKXP/t7GOf9Cm1oabDlJ6ZbQQJkLB9VlUErL9+45baFHv/ipzgi9MOotUg==}
+  i18next-chained-backend@5.0.6:
+    resolution: {integrity: sha512-oYo86EnjkKs1+osKHCFyIi3Yw7UebEHxMgVOJ1OpgmpL4y9s46Zr9pJHpqWwlxK8Vt//cER9Sx2Tfmx3awrJQA==}
 
   i18next-resources-to-backend@1.2.1:
     resolution: {integrity: sha512-okHbVA+HZ7n1/76MsfhPqDou0fptl2dAlhRDu2ideXloRRduzHsqDOznJBef+R3DFZnbvWoBW+KxJ7fnFjd6Yw==}
@@ -12368,7 +12368,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.29.7
 
-  i18next-chained-backend@5.0.5:
+  i18next-chained-backend@5.0.6:
     dependencies:
       '@babel/runtime': 7.29.7
 
