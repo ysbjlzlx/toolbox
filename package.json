@@ -145,7 +145,7 @@
     "@vitejs/plugin-react": "6.0.5",
     "jsdom": "29.1.1",
     "lefthook": "2.1.10",
-    "postcss": "8.5.23",
+    "postcss": "8.5.25",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
     "tailwindcss": "4.3.3",
