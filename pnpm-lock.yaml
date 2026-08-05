@@ -347,8 +347,8 @@ importers:
         specifier: 6.0.2
         version: 6.0.2(react@19.2.8)
       '@mdxeditor/editor':
-        specifier: 4.1.1
-        version: 4.1.1(@codemirror/language@6.12.3)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@6.0.3)(yjs@13.6.31)
+        specifier: 4.2.0
+        version: 4.2.0(@codemirror/language@6.12.3)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@6.0.3)(yjs@13.6.31)
       '@swc/core':
         specifier: 1.15.47
         version: 1.15.47
@@ -1954,8 +1954,8 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mdxeditor/editor@4.1.1':
-    resolution: {integrity: sha512-rKv28Qlv0hB+SA5tmbUdwTY9tztjD3oOBz3aGvJMM67moJhpS0J/NoGvgylaRY3T5ydaL97W3ouZlsKdMRSDow==}
+  '@mdxeditor/editor@4.2.0':
+    resolution: {integrity: sha512-S/IPY8AjWTV2v1TGbEy5lsbQ5w+J2M2j2QDeswxP4FpNh2B49OPkpSqHbbX5GbV0YBlhfXJxtzwBJv/sQACufw==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '19'
@@ -5180,10 +5180,6 @@ packages:
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
-
-  js-yaml@4.2.0:
-    resolution: {integrity: sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==}
-    hasBin: true
 
   js-yaml@4.3.0:
     resolution: {integrity: sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q==}
@@ -9115,7 +9111,7 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mdxeditor/editor@4.1.1(@codemirror/language@6.12.3)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@6.0.3)(yjs@13.6.31)':
+  '@mdxeditor/editor@4.2.0(@codemirror/language@6.12.3)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@6.0.3)(yjs@13.6.31)':
     dependencies:
       '@codemirror/commands': 6.10.3
       '@codemirror/lang-markdown': 6.5.0
@@ -11692,7 +11688,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
-      js-yaml: 4.2.0
+      js-yaml: 4.3.0
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 6.0.3
@@ -12685,10 +12681,6 @@ snapshots:
   js-cookie@3.0.8: {}
 
   js-tokens@4.0.0: {}
-
-  js-yaml@4.2.0:
-    dependencies:
-      argparse: 2.0.1
 
   js-yaml@4.3.0:
     dependencies:
