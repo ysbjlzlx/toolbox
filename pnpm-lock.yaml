@@ -286,8 +286,8 @@ importers:
         specifier: '19'
         version: 19.2.8
       react-ace:
-        specifier: 14.0.1
-        version: 14.0.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 14.1.0
+        version: 14.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react-datasheet:
         specifier: 1.4.12
         version: 1.4.12(prop-types@15.8.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -5513,10 +5513,6 @@ packages:
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
-  lodash.get@4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
-
   lodash.isequal@4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
     deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
@@ -6125,8 +6121,8 @@ packages:
     resolution: {integrity: sha512-xEYQBqfYx/sfb33VJiKnSJp8ehloavImQ2A6564GAbqG55PGw1dAWUn1MUbQB62t0azawUS2CZZhWCjO8gRvTw==}
     engines: {npm: '>=8.2.3'}
 
-  react-ace@14.0.1:
-    resolution: {integrity: sha512-z6YAZ20PNf/FqmYEic//G/UK6uw0rn21g58ASgHJHl9rfE4nITQLqthr9rHMVQK4ezwohJbp2dGrZpkq979PYQ==}
+  react-ace@14.1.0:
+    resolution: {integrity: sha512-H+Tuw1oa3uP6zRoLBOayPVaMy5Le4G33OpEmLOfSVks75ajmrmFGbyWWEHfBYLCCpu5KfyFlod9jCEUc7i5ekw==}
     peerDependencies:
       react: '19'
       react-dom: ^0.13.0 || ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -12920,8 +12916,6 @@ snapshots:
 
   lodash.debounce@4.0.8: {}
 
-  lodash.get@4.4.2: {}
-
   lodash.isequal@4.5.0: {}
 
   lodash.sortby@4.7.0: {}
@@ -13849,12 +13843,11 @@ snapshots:
       parchment: 3.0.0
       quill-delta: 5.1.0
 
-  react-ace@14.0.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-ace@14.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       ace-builds: 1.44.0
       diff-match-patch: 1.0.5
-      lodash.get: 4.4.2
-      lodash.isequal: 4.5.0
+      fast-equals: 5.4.0
       prop-types: 15.8.1
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
