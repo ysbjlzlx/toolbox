@@ -106,7 +106,7 @@
     "prettier": "3.9.6",
     "quill": "2.0.3",
     "react": "19.2.8",
-    "react-ace": "14.1.0",
+    "react-ace": "15.0.0",
     "react-datasheet": "1.4.12",
     "react-dom": "19.2.8",
     "react-i18next": "17.0.11",
