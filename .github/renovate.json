@@ -7,6 +7,10 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
+    },
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "1 day"
     }
   ]
 }
