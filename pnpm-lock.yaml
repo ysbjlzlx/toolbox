@@ -316,8 +316,8 @@ importers:
         specifier: 3.13.0
         version: 3.13.0
       vditor:
-        specifier: 3.11.2
-        version: 3.11.2
+        specifier: 3.11.3
+        version: 3.11.3
       xlsx:
         specifier: file:vendor/xlsx-0.20.3.tgz
         version: file:vendor/xlsx-0.20.3.tgz
@@ -7014,8 +7014,8 @@ packages:
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
 
-  vditor@3.11.2:
-    resolution: {integrity: sha512-8QguQQUPWbBFocnfQmWjz4jiykQnvsmCuhOomGIVVK7vc+dQq2h8w9qQQuEjUTZpnZT5fEdYbj4aLr1NGdAZaA==}
+  vditor@3.11.3:
+    resolution: {integrity: sha512-9SXqM81fFbQJoOiRIxYj7TJmIhh1nfNyZ4fpAlicL+zc4DvGKhfppIhlVN0rN/Ks3uthjy8VaQqh2Dw1HTXUCA==}
 
   vfile-message@4.0.3:
     resolution: {integrity: sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==}
@@ -15018,7 +15018,7 @@ snapshots:
     dependencies:
       '@sphinxxxx/color-conversion': 2.2.2
 
-  vditor@3.11.2:
+  vditor@3.11.3:
     dependencies:
       diff-match-patch: 1.0.5
 
