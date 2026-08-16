@@ -80,7 +80,7 @@ importers:
         version: 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
       '@tiptap/extension-code-block-lowlight':
         specifier: 3.29.2
-        version: 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/extension-code-block@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(highlight.js@11.11.1)(lowlight@3.3.0)
+        version: 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/extension-code-block@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(highlight.js@11.12.0)(lowlight@3.3.0)
       '@tiptap/extension-document':
         specifier: 3.29.2
         version: 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
@@ -232,8 +232,8 @@ importers:
         specifier: 4.7.9
         version: 4.7.9
       highlight.js:
-        specifier: 11.11.1
-        version: 11.11.1
+        specifier: 11.12.0
+        version: 11.12.0
       i18next:
         specifier: 26.3.6
         version: 26.3.6(typescript@7.0.2)
@@ -5031,6 +5031,10 @@ packages:
 
   highlight.js@11.11.1:
     resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+
+  highlight.js@11.12.0:
+    resolution: {integrity: sha512-nbfWpyRMcMrPMmDwJB+dhX/eiaPKtc2RB+0QZskqJ3WjRA/FDS0e9hZrx8EC/lbEv8gXy98FcDbNa/dspAaJMg==}
     engines: {node: '>=12.0.0'}
 
   hookified@1.15.1:
@@ -10816,7 +10820,7 @@ snapshots:
       '@viewfly/platform-browser': 3.0.6
       '@viewfly/ui-components': 0.0.27(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6)(@viewfly/ui-icons@0.0.27(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6))
       '@viewfly/ui-icons': 0.0.27(@viewfly/core@3.0.6)(@viewfly/platform-browser@3.0.6)
-      highlight.js: 11.11.1
+      highlight.js: 11.12.0
       katex: 0.16.47
       markdown-it: 14.2.0
       mermaid: 11.15.0
@@ -10845,12 +10849,12 @@ snapshots:
     dependencies:
       '@tiptap/extension-list': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
 
-  '@tiptap/extension-code-block-lowlight@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/extension-code-block@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(highlight.js@11.11.1)(lowlight@3.3.0)':
+  '@tiptap/extension-code-block-lowlight@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/extension-code-block@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(highlight.js@11.12.0)(lowlight@3.3.0)':
     dependencies:
       '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
       '@tiptap/extension-code-block': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
       '@tiptap/pm': 3.29.2
-      highlight.js: 11.11.1
+      highlight.js: 11.12.0
       lowlight: 3.3.0
 
   '@tiptap/extension-code-block@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)':
@@ -12628,6 +12632,8 @@ snapshots:
       function-bind: 1.1.2
 
   highlight.js@11.11.1: {}
+
+  highlight.js@11.12.0: {}
 
   hookified@1.15.1: {}
 
