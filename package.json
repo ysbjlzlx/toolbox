@@ -46,7 +46,7 @@
     "@xiechao/codemirror-lang-handlebars": "1.0.4",
     "ace-builds": "1.44.0",
     "ahooks": "3.9.7",
-    "antd": "6.6.0",
+    "antd": "6.6.1",
     "base-x": "5.0.1",
     "bson-objectid": "2.0.4",
     "clsx": "2.1.1",
