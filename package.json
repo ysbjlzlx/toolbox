@@ -96,7 +96,7 @@
     "zustand": "5.0.15"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.9",
+    "@biomejs/biome": "2.5.10",
     "@commitlint/cli": "21.2.2",
     "@commitlint/config-conventional": "21.2.2",
     "@iconify/react": "6.0.2",
