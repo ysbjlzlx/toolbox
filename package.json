@@ -105,7 +105,7 @@
     "@tailwindcss/postcss": "4.3.3",
     "@tailwindcss/typography": "0.5.20",
     "@testing-library/jest-dom": "7.0.1",
-    "@testing-library/react": "16.3.2",
+    "@testing-library/react": "16.3.3",
     "@testing-library/user-event": "14.6.6",
     "@types/crypto-js": "4.2.2",
     "@types/d3": "7.4.3",
