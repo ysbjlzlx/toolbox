@@ -29,7 +29,7 @@
     "@paralleldrive/cuid2": "3.3.0",
     "@repo/colors": "workspace:@repo/colors@*",
     "@sapphire/snowflake": "3.5.5",
-    "@scure/base": "2.3.0",
+    "@scure/base": "2.4.0",
     "@textbus/xnote": "1.5.1",
     "@tiptap/core": "3.30.5",
     "@tiptap/extension-code-block": "3.30.5",
