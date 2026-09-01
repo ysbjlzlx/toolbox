@@ -117,7 +117,7 @@
     "@vitejs/plugin-react": "6.1.0",
     "jsdom": "30.0.1",
     "knip": "6.32.3",
-    "lefthook": "2.1.10",
+    "lefthook": "2.1.12",
     "postcss": "8.5.26",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
