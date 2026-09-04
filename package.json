@@ -116,7 +116,7 @@
     "@types/react-dom": "19.2.5",
     "@vitejs/plugin-react": "6.1.1",
     "jsdom": "30.0.1",
-    "knip": "6.32.3",
+    "knip": "6.34.0",
     "lefthook": "2.1.12",
     "postcss": "8.5.26",
     "stylelint": "17.14.1",
