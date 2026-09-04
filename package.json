@@ -118,7 +118,7 @@
     "jsdom": "30.0.1",
     "knip": "6.34.0",
     "lefthook": "2.1.12",
-    "postcss": "8.5.26",
+    "postcss": "8.5.28",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
     "tailwindcss": "4.3.3",
