@@ -92,7 +92,7 @@
     "xlsx": "file:vendor/xlsx-0.20.3.tgz",
     "xml-formatter": "3.7.0",
     "yaml": "2.9.0",
-    "zod": "4.4.3",
+    "zod": "4.5.4",
     "zustand": "5.0.15"
   },
   "devDependencies": {
