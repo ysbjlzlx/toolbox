@@ -9,7 +9,7 @@
       "automerge": true
     },
     {
-      "matchDatasources": ["npm", "pnpm"],
+      "matchDatasources": ["npm"],
       "minimumReleaseAge": "1 day"
     }
   ]
