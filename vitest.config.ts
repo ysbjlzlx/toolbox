@@ -9,7 +9,6 @@ const vitestConfig = defineConfig({
         test:{
           environment: "jsdom",
           globals: true,
-          setupFiles: "./src/setupTests.ts",
           css: true,
           include: [
             'tests/unit/**/*.{test,spec}.ts',
@@ -21,9 +20,8 @@ const vitestConfig = defineConfig({
           // an example of file based convention,
           // you don't have to follow it
           include: [
-            'tests/browser/**/*.{test,spec}.ts',
-            'tests/browser/**/*.browser.{test,spec}.ts',
-            '**/*.browser.{test,spec}.tsx',
+            'tests/browser/**/*.{test,spec}.{ts,tsx}',
+            'tests/browser/**/*.browser.{test,spec}.{ts,tsx}',
           ],
           name: 'browser',
           browser: {
