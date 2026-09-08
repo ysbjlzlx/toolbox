@@ -26,6 +26,7 @@
     "@milkdown/kit": "7.22.1",
     "@monaco-editor/loader": "1.7.0",
     "@monaco-editor/react": "4.7.0",
+    "@noble/hashes": "^2.4.0",
     "@paralleldrive/cuid2": "3.3.0",
     "@repo/colors": "workspace:@repo/colors@*",
     "@sapphire/snowflake": "3.5.5",

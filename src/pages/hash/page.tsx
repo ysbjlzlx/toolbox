@@ -1,5 +1,7 @@
+import { md5 as MD5 } from "@noble/hashes/legacy.js";
+import { bytesToHex } from "@noble/hashes/utils.js";
 import { Card, Input } from "antd";
-import { MD5, SHA1, SHA256, SHA512 } from "crypto-js";
+import { SHA1, SHA256, SHA512 } from "crypto-js";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import InputCopyable from "@/components/InputCopyable.tsx";
@@ -27,7 +29,7 @@ export const Component: FC = () => {
       setHashResult((defaultHashResult) => defaultHashResult);
       return;
     }
-    const md5 = MD5(plainText).toString();
+    const md5 = bytesToHex(MD5(new TextEncoder().encode(plainText)));
     const sha1 = SHA1(plainText).toString();
     const sha256 = SHA256(plainText).toString();
     const sha512 = SHA512(plainText).toString();
