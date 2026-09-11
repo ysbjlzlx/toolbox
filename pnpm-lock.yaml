@@ -358,8 +358,8 @@ importers:
         specifier: 6.0.2
         version: 6.0.2(react@19.2.8)
       '@mdxeditor/editor':
-        specifier: 4.2.3
-        version: 4.2.3(@codemirror/language@6.12.4)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.7(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.32)
+        specifier: 4.2.4
+        version: 4.2.4(@codemirror/language@6.12.4)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.7(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.32)
       '@swc/core':
         specifier: 1.16.2
         version: 1.16.2
@@ -1956,8 +1956,8 @@ packages:
   '@marijn/find-cluster-break@1.0.4':
     resolution: {integrity: sha512-Wy0V7+SGUjnF9/TkiM1hKVDPj7jKXduPNboMVtHTA8dySMURWqfg/JZ9E2Sq8JgSJmkl7k7Qe9FLeMSrSraWmQ==}
 
-  '@mdxeditor/editor@4.2.3':
-    resolution: {integrity: sha512-5uz0vjZ8YhFFk2k23BJKPZyvAmV6dHXW3vJ9YzDeM6o7gz0G7V0Dpjj3ngmuez/9+lkx6wRlnaRfLWRqzQopAA==}
+  '@mdxeditor/editor@4.2.4':
+    resolution: {integrity: sha512-qKcpICeT4eTsHp1sRU8lU4YL7vXFi2xADhMz3IaMMjThl0lzzFoQhuUSIXWS98jB/XWRj/5+ObVX/PlqxjRX7A==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '19'
@@ -9490,7 +9490,7 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.4': {}
 
-  '@mdxeditor/editor@4.2.3(@codemirror/language@6.12.4)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.7(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.32)':
+  '@mdxeditor/editor@4.2.4(@codemirror/language@6.12.4)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.7(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.32)':
     dependencies:
       '@codemirror/commands': 6.11.0
       '@codemirror/lang-markdown': 6.5.2
