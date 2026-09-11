@@ -112,7 +112,7 @@
     "@vitejs/plugin-react": "6.1.1",
     "@vitest/browser-playwright": "^5.0.0",
     "jsdom": "30.0.1",
-    "knip": "6.34.0",
+    "knip": "6.35.1",
     "lefthook": "2.1.12",
     "playwright": "^1.63.0",
     "postcss": "8.5.28",
