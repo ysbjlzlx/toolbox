@@ -1,6 +1,7 @@
 import type { SelectProps } from "antd";
 import { Button, Card, Select } from "antd";
-import { XMLBuilder, XMLParser } from "fast-xml-parser";
+import XMLBuilder from "fast-xml-builder";
+import { XMLParser } from "fast-xml-parser";
 import * as LosslessJSON from "lossless-json";
 import { useState } from "react";
 import type { IAceOptions } from "react-ace";

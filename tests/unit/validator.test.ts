@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isMillisecond, isUnixSecond } from "@/utils/validator.ts";
+import { isMillisecond, isUnixSecond } from "../../src/utils/validator.ts";
 
 describe("isUnixSecond", () => {
   it("normal number", () => {

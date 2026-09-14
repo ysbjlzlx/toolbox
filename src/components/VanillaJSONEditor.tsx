@@ -25,8 +25,9 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
             const showParseBtn =
               !context.readOnly &&
               Mode.text === context.mode &&
-              (editorRef.current?.get() as TextContent).text.startsWith('"') &&
-              (editorRef.current?.get() as TextContent).text.endsWith('"');
+              editorRef.current &&
+              (editorRef.current.get() as TextContent).text.startsWith('"') &&
+              (editorRef.current.get() as TextContent).text.endsWith('"');
 
             items.push({
               type: "button",
@@ -44,7 +45,7 @@ const VanillaJSONEditor = (props: JSONEditorPropsOptional) => {
               },
               onClick: () => {
                 editorRef.current?.updateProps({
-                  content: { text: LosslessJSON.parse((editorRef.current?.get() as TextContent).text) as string },
+                  content: { text: LosslessJSON.parse((editorRef.current.get() as TextContent).text) as string },
                 });
               },
               disabled: !showParseBtn,

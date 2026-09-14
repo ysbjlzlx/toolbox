@@ -7,7 +7,7 @@ import {
   ProFormText,
   pickControlPropsWithId,
 } from "@ant-design/pro-components";
-import { colors } from "@repo/colors/tailwindcss";
+import { colors, culori } from "@repo/colors/tailwindcss";
 import type { ColorPickerProps, TabsProps } from "antd";
 import { Card, ColorPicker, Form, Tabs } from "antd";
 import { values } from "lodash-es";
@@ -35,6 +35,7 @@ const suffixOptions = [
 ];
 
 export const Component: FC = () => {
+  const { formatHex } = culori;
   const [form] = Form.useForm();
   const [placeholderConfig, setPlaceholderConfig] = useState<PlaceholderConfig>(defaultValues);
 
@@ -48,9 +49,18 @@ export const Component: FC = () => {
 
   const colorPresets: ColorPickerProps["presets"] = useMemo(() => {
     return [
-      { label: "Gray", colors: values(colors.gray) },
-      { label: "Cyan", colors: values(colors.cyan) },
-      { label: "Red", colors: values(colors.red) },
+      {
+        label: "Gray",
+        colors: values(colors.gray).map((c) => formatHex(c) || ""),
+      },
+      {
+        label: "Cyan",
+        colors: values(colors.cyan).map((c) => formatHex(c) || ""),
+      },
+      {
+        label: "Red",
+        colors: values(colors.red).map((c) => formatHex(c) || ""),
+      },
     ];
   }, []);
   const tabsProps: TabsProps = {

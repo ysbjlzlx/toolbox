@@ -12,9 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "5.9.3"
+    "@types/culori": "4.0.1",
+    "typescript": "7.0.2"
   },
   "dependencies": {
-    "tailwindcss": "3.4.19"
+    "culori": "4.0.2",
+    "tailwindcss": "4.3.3"
   }
 }
