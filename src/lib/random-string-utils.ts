@@ -1,4 +1,4 @@
-import { shuffle } from "lodash-es";
+import { isEmpty, shuffle } from "lodash-es";
 import { customAlphabet } from "nanoid";
 
 const numbers = "0123456789";
@@ -47,6 +47,9 @@ const generatePassword = (options?: GeneratePasswordOptions) => {
   }
   if (opts.symbols) {
     chars.push(symbols);
+  }
+  if (isEmpty(chars)) {
+    chars.push(lowercase);
   }
 
   let result = "";

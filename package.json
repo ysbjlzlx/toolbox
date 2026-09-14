@@ -21,6 +21,8 @@
     "@codemirror/lang-javascript": "6.2.5",
     "@codemirror/state": "6.7.4",
     "@codemirror/view": "6.43.11",
+    "@hugeicons/core-free-icons": "^4.3.2",
+    "@hugeicons/react": "^1.1.10",
     "@milkdown/crepe": "7.22.1",
     "@milkdown/kit": "7.22.1",
     "@monaco-editor/loader": "1.7.0",
