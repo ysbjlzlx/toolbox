@@ -1,1 +1,0 @@
-import{h as e}from"./pro-components-CvuBTs76.js";import{a as t}from"./index-Ducg07Q6.js";var n=e(),r=()=>(0,n.jsx)(t,{to:`/json/json-editor`,replace:!0});export{r as Component};
