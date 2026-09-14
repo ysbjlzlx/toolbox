@@ -1,0 +1,1 @@
+import{h as e,x as t}from"./antd-BaWf7MUf.js";import{h as n}from"./pro-components-DNWOc9Yn.js";import{t as r}from"./CopyTextButton-Cyi12xOO.js";var i=n(),a=n=>(0,i.jsx)(`div`,{className:`my-4`,children:(0,i.jsxs)(t.Compact,{block:!0,children:[(0,i.jsx)(t.Addon,{children:n.tag}),(0,i.jsx)(e,{value:n.value||``,showCount:!0}),(0,i.jsx)(r,{text:n.value})]})});export{a as t};
