@@ -1,0 +1,1 @@
+import{P as e,W as t}from"./antd-B1ri5wIT.js";import{h as n}from"./pro-components-CvuBTs76.js";import{r,t as i}from"./copy-DqbdfMsK.js";var a=n(),o=({text:n,children:o,...s})=>{let{message:c}=t.useApp();return(0,a.jsx)(e,{icon:(0,a.jsx)(i,{size:16}),onClick:()=>{n&&r(n,{format:`text/plain`,onCopy:e=>{c.success(`复制成功`)}})},...s,children:o})};export{o as t};

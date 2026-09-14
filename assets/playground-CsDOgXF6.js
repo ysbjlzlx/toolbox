@@ -1,0 +1,1 @@
+import{sn as e}from"./json-editor-YI50bk91.js";import{h as t}from"./pro-components-CvuBTs76.js";import{n}from"./tailwindcss-B837TYGV.js";var r=t(),{gray:i}=n,a=()=>(0,r.jsx)(`div`,{children:e(i)});export{a as Component};

@@ -1,1 +1,0 @@
-import{E as e,j as t}from"./antd-BaWf7MUf.js";import{h as n,n as r}from"./pro-components-DNWOc9Yn.js";var i=n(),a=[{label:`Base-X`,value:`base-x`}],o=()=>(0,i.jsx)(r,{title:!1,className:`p-4`,children:(0,i.jsx)(t,{children:(0,i.jsx)(e,{options:a})})});export{o as Component};
