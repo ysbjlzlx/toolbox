@@ -3,14 +3,14 @@ import { createRoutesStub } from "react-router";
 import { describe, expect, test } from "vitest";
 
 import { Component as JSONEditor } from "../../src/pages/json/json-editor";
-import { Component } from "../../src/pages/page.tsx";
+import IndexPageComponent from "../../src/pages/page.tsx";
 
 test("app",async () => {
 
   const Stub = createRoutesStub([
     {
       path: "/",
-      Component: Component,
+      Component: IndexPageComponent,
     },
     { path: "/json/json-editor", Component: JSONEditor },
   ]);
