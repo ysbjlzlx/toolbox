@@ -3,6 +3,7 @@ import type { RouteObject } from "react-router";
 import Loading from "@/components/Loading";
 import NotFound from "@/components/NotFound";
 import BaseLayout from "@/layouts/BaseLayout";
+import IndexPage from "@/pages/page.tsx";
 
 export const routes: RouteObject[] = [
   {
@@ -11,7 +12,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        lazy: () => import("@/pages/page.tsx"),
+        Component: IndexPage,
       },
       {
         path: "playground",

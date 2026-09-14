@@ -1,6 +1,6 @@
 {
   "name": "toolbox",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -91,7 +91,7 @@
     "xlsx": "file:vendor/xlsx-0.20.3.tgz",
     "xml-formatter": "3.7.0",
     "yaml": "2.9.1",
-    "zod": "4.6.2",
+    "zod": "4.6.4",
     "zustand": "5.0.15"
   },
   "devDependencies": {
