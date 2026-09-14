@@ -8,6 +8,6 @@ allowBuilds:
   esbuild: true
   lefthook: true
 overrides:
-  "react": "19"
+  "react": "npm:react"
   "vite-plugin-pwa>vite": "npm:vite"
 minimumReleaseAge: 1440
