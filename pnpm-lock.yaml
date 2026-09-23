@@ -187,7 +187,7 @@ importers:
         version: 6.43.12
       '@hugeicons/core-free-icons':
         specifier: ^4.3.2
-        version: 4.3.4
+        version: 4.3.5
       '@hugeicons/react':
         specifier: ^1.1.10
         version: 1.1.10(react@19.3.0)
@@ -1717,8 +1717,8 @@ packages:
       y-protocols: ^1.0.6
       yjs: ^13.6.8
 
-  '@hugeicons/core-free-icons@4.3.4':
-    resolution: {integrity: sha512-TMbzqGFD4XnEyVYut4sTzT7Wpq+Mghe7ChGd+R3bkyhJc31tcsfxtX8gmgrV3zIqn5dumsNJhvsX+h3OPjLMGQ==}
+  '@hugeicons/core-free-icons@4.3.5':
+    resolution: {integrity: sha512-Sv+NjHRPnQk+yZsGCMcGznCHdTfJR9PMMOEKcJYAQU4gy90dmlc9PwdtvYOImBZIjiheMsTLL5eMn2DmHxUiUg==}
 
   '@hugeicons/react@1.1.10':
     resolution: {integrity: sha512-9tAsd92yMVVGP+E+d8cM+wc0VnXuYZHNbWQi7TOe8k2neawmhiaFmVFbzyruejhOMa197/LbgvSED32ayUo3ZA==}
@@ -9190,7 +9190,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@hugeicons/core-free-icons@4.3.4': {}
+  '@hugeicons/core-free-icons@4.3.5': {}
 
   '@hugeicons/react@1.1.10(react@19.3.0)':
     dependencies:
