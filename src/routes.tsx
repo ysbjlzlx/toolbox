@@ -156,6 +156,15 @@ export const routes: RouteObject[] = [
     ],
   },
   {
+    path: "/next",
+    children: [
+      {
+        index: true,
+        lazy: () => import("@/app/page"),
+      },
+    ],
+  },
+  {
     path: "*",
     HydrateFallback: Loading,
     element: <NotFound />,
