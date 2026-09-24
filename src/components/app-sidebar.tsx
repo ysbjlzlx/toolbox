@@ -9,8 +9,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { menuData } from "@/layouts/defaultProps";
-import type { MenuObject } from "@/typing";
+import { menuData } from "@/layouts/next-menu-data";
 import { NavMain } from "./nav-main";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -33,7 +32,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain menuData={menuData as MenuObject[]} />
+        <NavMain menuData={menuData} />
         {/*{menuData.map((item) =>
           isEmpty(item?.children) ? (
             <SidebarMenuItemRender menuData={item as MenuObject} key={item.name} />

@@ -4,4 +4,7 @@ export type MenuObject = {
   isActive?: boolean;
   path?: string;
   children?: MenuObject[];
+  key?: string;
+  disabled?: boolean;
+  desc?: string;
 };
