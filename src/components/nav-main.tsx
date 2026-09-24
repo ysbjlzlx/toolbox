@@ -3,7 +3,6 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuAction,
   SidebarMenuButton,
@@ -17,7 +16,6 @@ import type { MenuObject } from "@/typing";
 export function NavMain({ menuData }: { menuData: MenuObject[] }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
       <SidebarMenu>
         {menuData.map((item) => (
           <Collapsible key={item.name} defaultOpen={item.isActive} render={<SidebarMenuItem />}>
