@@ -2,6 +2,7 @@ import react from "@vitejs/plugin-react";
 import {defineConfig} from "vite";
 import type {VitePWAOptions} from "vite-plugin-pwa";
 import {VitePWA} from "vite-plugin-pwa";
+import tailwindcss from "@tailwindcss/vite";
 
 const pwaOptions: Partial<VitePWAOptions> = {
   injectRegister: "auto",
@@ -62,7 +63,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   }
 };
 export default defineConfig({
-  plugins: [react(), VitePWA(pwaOptions)],
+  plugins: [react(), tailwindcss(), VitePWA(pwaOptions)],
   legacy: {
     inconsistentCjsInterop: true,
   },
