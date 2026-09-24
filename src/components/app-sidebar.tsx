@@ -1,23 +1,15 @@
+import { isEmpty } from "lodash-es";
 import type * as React from "react";
+import { Link } from "react-router";
+import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from "@/components/ui/sidebar";
 
-import { SearchForm } from "@/components/search-form";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarRail,
-} from "@/components/ui/sidebar";
-import { VersionSwitcher } from "@/components/version-switcher";
+import { menuData } from "@/layouts/defaultProps";
+import type { MenuObject } from "@/typing";
+import { SidebarGroupMenuRender } from "./sidebar-group-menu-render";
+import { SidebarMenuItemRender } from "./sidebar-menu-item-render";
 
 // This is sample data.
-const data = {
-  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
+const _data = {
   navMain: [
     {
       title: "Getting Started",
@@ -150,26 +142,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0]} />
-        <SearchForm />
+        <div>
+          <Link to="/">Toolbox</Link>
+        </div>
       </SidebarHeader>
       <SidebarContent>
-        {data.navMain.map((item) => (
-          <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton isActive={item.isActive} render={<a href={item.url} />}>
-                      {item.title}
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
+        {menuData.map((item) =>
+          isEmpty(item?.children) ? (
+            <SidebarMenuItemRender menuData={item as MenuObject} key={item.name} />
+          ) : (
+            <SidebarGroupMenuRender menuData={item as MenuObject} key={item.name} />
+          ),
+        )}
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
