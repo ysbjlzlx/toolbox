@@ -19,7 +19,7 @@ export function NavMain({ menuData }: { menuData: MenuObject[] }) {
       <SidebarMenu>
         {menuData.map((item) => (
           <Collapsible key={item.name} defaultOpen={item.isActive} render={<SidebarMenuItem />}>
-            <SidebarMenuButton tooltip={item.name} render={<a href={item.path} />}>
+            <SidebarMenuButton tooltip={item.name} render={<a href={item.path} />} isActive={item.isActive}>
               {item.icon}
               <span>{item.name}</span>
             </SidebarMenuButton>

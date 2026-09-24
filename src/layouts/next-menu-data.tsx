@@ -5,11 +5,13 @@ export const menuData: MenuObject[] = [
   {
     name: "JSON",
     icon: <Iconify icon="logos:json" />,
+    isActive: true,
     children: [
       {
         name: "JSON 编辑器",
         path: "/next/json/json-editor",
         key: "/next/json/json-editor",
+        isActive: true,
       },
       {
         name: "JSON Formatter",
