@@ -6,10 +6,16 @@ export default {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen', 'plugin', 'theme'],
+        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen', 'plugin', 'theme', 'custom-variant'],
       },
     ],
     'no-empty-source': null,
-    'custom-property-pattern':'breakpoint-.+'
+    "selector-class-pattern": null,
+    "import-notation": "string",
+    "lightness-notation": "number",
+    "hue-degree-notation": "number",
+    "at-rule-prelude-no-invalid": null,
+    "custom-property-pattern": null
+
   },
 };

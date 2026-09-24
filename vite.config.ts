@@ -63,7 +63,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   }
 };
 export default defineConfig({
-  plugins: [react(), tailwindcss(), VitePWA(pwaOptions)],
+  plugins: [tailwindcss(), react(), VitePWA(pwaOptions)],
   legacy: {
     inconsistentCjsInterop: true,
   },

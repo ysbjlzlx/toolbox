@@ -5,7 +5,7 @@ pre-commit:
       run: npx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
     stylelint:
       glob: "*.{css}"
-      run: stylelint --fix {staged_files}
+      run: pnpm run stylelint --fix {staged_files}
 commit-msg:
   commands:
     commitlint:
