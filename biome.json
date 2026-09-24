@@ -1,7 +1,15 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "includes": ["src/**", "package.json", "biome.json", ".ncurc.json", "!src/globals.css", "!.zed"]
+    "includes": [
+      "src/**",
+      "package.json",
+      "biome.json",
+      ".ncurc.json",
+      "!src/globals.css",
+      "!.zed",
+      "!src/components/ui"
+    ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
