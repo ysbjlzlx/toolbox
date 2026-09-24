@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { routes } from "@/routes.tsx";
 
 import "@/i18n";
@@ -18,7 +19,9 @@ const router = createBrowserRouter(routes);
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <StyleProvider layer>
-      <RouterProvider router={router} />
+      <TooltipProvider>
+        <RouterProvider router={router} />
+      </TooltipProvider>
     </StyleProvider>
   </StrictMode>,
 );
