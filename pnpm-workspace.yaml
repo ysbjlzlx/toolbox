@@ -11,3 +11,4 @@ overrides:
   "react": "npm:react"
   "vite-plugin-pwa>vite": "npm:vite"
 minimumReleaseAge: 1440
+savePrefix: ''
