@@ -3,6 +3,7 @@ import type { RouteObject } from "react-router";
 import Loading from "@/components/Loading";
 import NotFound from "@/components/NotFound";
 import BaseLayout from "@/layouts/BaseLayout";
+import { FullContainer } from "@/layouts/full-container";
 import NextLayout from "@/layouts/next-layout";
 import IndexPage from "@/pages/page.tsx";
 
@@ -90,7 +91,13 @@ export const routes: RouteObject[] = [
           },
           {
             path: "formatter",
-            lazy: () => import("@/pages/json/json-formatter"),
+            element: <FullContainer />,
+            children: [
+              {
+                index: true,
+                lazy: () => import("@/pages/json/json-formatter"),
+              },
+            ],
           },
           {
             path: "json-editor",

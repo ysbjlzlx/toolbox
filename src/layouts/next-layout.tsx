@@ -32,7 +32,7 @@ const NextLayouot: FC = () => {
             </BreadcrumbList>
           </Breadcrumb>
         </header>
-        <main>
+        <main className="h-full">
           <Outlet />
         </main>
       </SidebarInset>

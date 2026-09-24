@@ -5,7 +5,6 @@ import { Editor } from "@monaco-editor/react";
 import { Divider } from "antd";
 import type { editor } from "monaco-editor";
 import { type FC, useEffect, useRef, useState } from "react";
-import { FullContainer } from "@/components/FullContainer.tsx";
 import { LanguageSelect } from "@/components/monaco-editor/LanguageSelect.tsx";
 import { cn } from "@/lib/utils.ts";
 import useJSONFormatterStore from "@/stores/JSONFormatterStore.ts";
@@ -61,7 +60,7 @@ export const Component: FC = () => {
   };
 
   return (
-    <FullContainer>
+    <div className="h-full">
       <div className="h-[48px] p-2">
         <LanguageSelect value={language} onChange={setLanguage} />
       </div>
@@ -93,6 +92,6 @@ export const Component: FC = () => {
         <Divider orientation={"vertical"} />
         <span>JSON with Comments</span>
       </div>
-    </FullContainer>
+    </div>
   );
 };
