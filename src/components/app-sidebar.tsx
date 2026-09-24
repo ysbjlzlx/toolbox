@@ -23,7 +23,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <img src="/logo.png" alt="logo" className="bg-white" />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <Link to="/">
+                <Link to="/next/json/json-editor">
                   <span className="truncate font-medium">Toobox</span>
                 </Link>
               </div>

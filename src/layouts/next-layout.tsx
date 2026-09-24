@@ -32,7 +32,7 @@ const NextLayouot: FC = () => {
             </BreadcrumbList>
           </Breadcrumb>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 pt-0">
+        <main>
           <Outlet />
         </main>
       </SidebarInset>
