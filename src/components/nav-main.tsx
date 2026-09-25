@@ -1,6 +1,6 @@
 import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
@@ -12,15 +12,18 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { isActive } from "@/lib/utils";
 import type { MenuObject } from "@/typing";
 
 export function NavMain({ menuData }: { menuData: MenuObject[] }) {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <SidebarGroup>
       <SidebarMenu>
         {menuData.map((item) => (
-          <Collapsible key={item.name} defaultOpen={item.isActive} render={<SidebarMenuItem />}>
-            <SidebarMenuButton tooltip={item.name} render={<Link to={item.path || "#"} />} isActive={item.isActive}>
+          <Collapsible key={item.name} defaultOpen={isActive(location.pathname, item)} render={<SidebarMenuItem />}>
+            <SidebarMenuButton tooltip={item.name} render={<Link to={item.path || "#"} />}>
               {item.icon}
               <span>{item.name}</span>
             </SidebarMenuButton>

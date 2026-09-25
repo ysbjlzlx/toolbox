@@ -33,13 +33,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain menuData={menuData} />
-        {/*{menuData.map((item) =>
-          isEmpty(item?.children) ? (
-            <SidebarMenuItemRender menuData={item as MenuObject} key={item.name} />
-          ) : (
-            <SidebarGroupMenuRender menuData={item as MenuObject} key={item.name} />
-          ),
-        )}*/}
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
