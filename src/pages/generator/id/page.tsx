@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import { createId } from "@paralleldrive/cuid2";
 import { TwitterSnowflake } from "@sapphire/snowflake";
 import type { SegmentedProps } from "antd";
@@ -51,7 +50,7 @@ export const Component: FC = () => {
     }
   }, [type]);
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-lg p-4">
+    <div className="mx-auto max-w-screen-lg p-4">
       <Card>
         <Segmented block={true} options={options} value={type} onChange={(value) => setType(value)} />
         <div className="mt-4">
@@ -61,6 +60,6 @@ export const Component: FC = () => {
           <TextResultBox title="结果" text={result} />
         </div>
       </Card>
-    </PageContainer>
+    </div>
   );
 };

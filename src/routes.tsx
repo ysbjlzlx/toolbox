@@ -64,6 +64,67 @@ export const routes: RouteObject[] = [
             path: "base64",
             lazy: () => import("@/pages/base64/page.tsx"),
           },
+          {
+            path: "string",
+            children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
+          },
+          {
+            path: "template",
+            children: [{ index: true, lazy: () => import("@/pages/template/index.tsx") }],
+          },
+          {
+            path: "excel",
+            lazy: () => import("@/pages/excel/page.tsx"),
+          },
+          {
+            path: "generator",
+            children: [
+              {
+                path: "id",
+                lazy: () => import("@/pages/generator/id/page.tsx"),
+              },
+            ],
+          },
+          {
+            path: "hash",
+            lazy: () => import("@/pages/hash/page.tsx"),
+          },
+          {
+            path: "password",
+            lazy: () => import("@/pages/password"),
+          },
+          {
+            path: "timestamp",
+            lazy: () => import("@/pages/timestamp/page.tsx"),
+          },
+          {
+            path: "tiptap",
+            lazy: () => import("@/pages/tiptap/page.tsx"),
+          },
+          {
+            path: "totp",
+            lazy: () => import("@/pages/totp/page.tsx"),
+          },
+          {
+            path: "url",
+            lazy: () => import("@/pages/url/page.tsx"),
+          },
+          {
+            path: "user-pass",
+            lazy: () => import("@/pages/user-pass/index.tsx"),
+          },
+          {
+            path: "username",
+            lazy: () => import("@/pages/username/index.tsx"),
+          },
+          {
+            path: "writer",
+            children: [{ index: true, lazy: () => import("@/pages/writer/page.tsx") }],
+          },
+          {
+            path: "transform",
+            lazy: () => import("@/pages/transform"),
+          },
         ],
       },
     ],
@@ -73,31 +134,6 @@ export const routes: RouteObject[] = [
     element: <BaseLayout />,
     HydrateFallback: Loading,
     children: [
-      {
-        path: "string",
-        children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
-      },
-      {
-        path: "template",
-        children: [{ index: true, lazy: () => import("@/pages/template/index.tsx") }],
-      },
-      {
-        path: "excel",
-        lazy: () => import("@/pages/excel/page.tsx"),
-      },
-      {
-        path: "generator",
-        children: [
-          {
-            path: "id",
-            lazy: () => import("@/pages/generator/id/page.tsx"),
-          },
-        ],
-      },
-      {
-        path: "hash",
-        lazy: () => import("@/pages/hash/page.tsx"),
-      },
       {
         path: "json",
         children: [
@@ -131,42 +167,6 @@ export const routes: RouteObject[] = [
           { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
           { path: "xnote", lazy: () => import("@/pages/markdown/xnote") },
         ],
-      },
-      {
-        path: "password",
-        lazy: () => import("@/pages/password"),
-      },
-      {
-        path: "timestamp",
-        lazy: () => import("@/pages/timestamp/page.tsx"),
-      },
-      {
-        path: "tiptap",
-        lazy: () => import("@/pages/tiptap/page.tsx"),
-      },
-      {
-        path: "totp",
-        lazy: () => import("@/pages/totp/page.tsx"),
-      },
-      {
-        path: "url",
-        lazy: () => import("@/pages/url/page.tsx"),
-      },
-      {
-        path: "user-pass",
-        lazy: () => import("@/pages/user-pass/index.tsx"),
-      },
-      {
-        path: "username",
-        lazy: () => import("@/pages/username/index.tsx"),
-      },
-      {
-        path: "writer",
-        children: [{ index: true, lazy: () => import("@/pages/writer/page.tsx") }],
-      },
-      {
-        path: "transform",
-        lazy: () => import("@/pages/transform"),
       },
     ],
   },

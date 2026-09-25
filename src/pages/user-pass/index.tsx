@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import { sampleSize, toNumber } from "lodash-es";
 import { type FC, useCallback, useEffect, useState } from "react";
 import { type LoaderFunction, type URLSearchParamsInit, useLoaderData, useSearchParams } from "react-router";
@@ -44,7 +43,7 @@ export const Component: FC = () => {
   );
 
   return (
-    <PageContainer title={false}>
+    <div>
       {randomWords(length)}
       {loaderData.orchardStreetMedium.map((word) => {
         return (
@@ -53,6 +52,6 @@ export const Component: FC = () => {
           </div>
         );
       })}
-    </PageContainer>
+    </div>
   );
 };

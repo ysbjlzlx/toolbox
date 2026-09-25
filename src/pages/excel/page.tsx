@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import type { UploadProps } from "antd";
 import { Button, Card, Space, Upload } from "antd";
 import FileSaver from "file-saver";
@@ -60,7 +59,7 @@ export const Component = () => {
     },
   };
   return (
-    <PageContainer title="Excel 转 JSON" className="mx-auto max-w-screen-md pt-4">
+    <div className="mx-auto max-w-screen-md pt-4">
       <Card>
         <Space orientation="horizontal">
           <Upload {...uploadProps}>
@@ -73,6 +72,6 @@ export const Component = () => {
           <AceEditor mode="json" theme="monokai" width="100%" setOptions={options} value={result} />
         </div>
       </Card>
-    </PageContainer>
+    </div>
   );
 };

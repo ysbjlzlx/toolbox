@@ -5,7 +5,6 @@ import { Card, Input } from "antd";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import InputCopyable from "@/components/InputCopyable.tsx";
-import { PageContainer } from "@/components/ui";
 
 interface HashResult {
   md5?: string;
@@ -38,25 +37,23 @@ export const Component: FC = () => {
     });
   }, [plainText]);
   return (
-    <PageContainer>
-      <Card className="mx-auto max-w-screen-md">
-        <div className="mb-8">
-          <Input.TextArea
-            value={plainText}
-            rows={2}
-            placeholder="原文"
-            onChange={(event) => {
-              setPlainText(event.target.value);
-            }}
-            showCount
-          />
-        </div>
+    <Card className="mx-auto max-w-screen-md">
+      <div className="mb-8">
+        <Input.TextArea
+          value={plainText}
+          rows={2}
+          placeholder="原文"
+          onChange={(event) => {
+            setPlainText(event.target.value);
+          }}
+          showCount
+        />
+      </div>
 
-        <InputCopyable tag="MD5" value={hashResult?.md5} />
-        <InputCopyable tag="SHA1" value={hashResult?.sha1} />
-        <InputCopyable tag="SHA256" value={hashResult?.sha256} />
-        <InputCopyable tag="SHA512" value={hashResult?.sha512} />
-      </Card>
-    </PageContainer>
+      <InputCopyable tag="MD5" value={hashResult?.md5} />
+      <InputCopyable tag="SHA1" value={hashResult?.sha1} />
+      <InputCopyable tag="SHA256" value={hashResult?.sha256} />
+      <InputCopyable tag="SHA512" value={hashResult?.sha512} />
+    </Card>
   );
 };

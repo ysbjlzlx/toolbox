@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import { useLocalStorageState } from "ahooks";
 import * as OTPAuth from "otpauth";
 import type { FC } from "react";
@@ -12,7 +11,7 @@ export const Component: FC = () => {
 
   console.log(OTPAuth.Secret.fromUTF8("ha"));
   return (
-    <PageContainer title={false} className="pt-4">
+    <div className="pt-4">
       <div className="grid grid-cols-3">
         <div className="col-span-1">
           <AccountList totps={totps} />
@@ -21,6 +20,6 @@ export const Component: FC = () => {
           <DetailInfo />
         </div>
       </div>
-    </PageContainer>
+    </div>
   );
 };

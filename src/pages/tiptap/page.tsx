@@ -12,7 +12,6 @@ import xml from "highlight.js/lib/languages/xml";
 import { common, createLowlight } from "lowlight";
 import type { FC } from "react";
 import { useCallback, useMemo } from "react";
-import { PageContainer } from "@/components/ui";
 
 import { Icon } from "@/components/ui/Icon.tsx";
 import "highlight.js/styles/github.min.css";
@@ -255,24 +254,22 @@ export const Component: FC = () => {
   ];
 
   return (
-    <PageContainer>
-      <div className="flex h-full flex-col">
-        <div className="flex-1 overflow-auto rounded-[8px] border-solid p-4">
-          <EditorProvider
-            slotBefore={<MenuBar />}
-            extensions={extensions}
-            editorProps={editorProps}
-            content={content}
-            onUpdate={({ editor }) => {
-              console.log(editor.getJSON());
-              console.log(editor.getHTML());
-              console.log(editor.getText());
-            }}
-          >
-            {null}
-          </EditorProvider>
-        </div>
+    <div className="flex h-full flex-col">
+      <div className="flex-1 overflow-auto rounded-[8px] border-solid p-4">
+        <EditorProvider
+          slotBefore={<MenuBar />}
+          extensions={extensions}
+          editorProps={editorProps}
+          content={content}
+          onUpdate={({ editor }) => {
+            console.log(editor.getJSON());
+            console.log(editor.getHTML());
+            console.log(editor.getText());
+          }}
+        >
+          {null}
+        </EditorProvider>
       </div>
-    </PageContainer>
+    </div>
   );
 };

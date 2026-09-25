@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import { Button, Card, Input, Space } from "antd";
 import {
   formatISO,
@@ -64,7 +63,7 @@ export const Component = () => {
   }, [input]);
 
   return (
-    <PageContainer title={false} className="pt-4">
+    <div className="pt-4">
       <Card className="mx-auto max-w-screen-sm">
         <div>
           <Space.Compact style={{ width: "100%" }}>
@@ -83,6 +82,6 @@ export const Component = () => {
           })}
         </div>
       </Card>
-    </PageContainer>
+    </div>
   );
 };

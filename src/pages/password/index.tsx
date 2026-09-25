@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import type { CardProps } from "antd";
 import { Card } from "antd";
 import type React from "react";
@@ -46,10 +45,10 @@ export const Component = () => {
   };
 
   return (
-    <PageContainer title="密码" className="p-4">
+    <div className="p-4">
       <Card tabList={tabList} onTabChange={onTabChange} activeTabKey={activeTabKey}>
         {contentList[activeTabKey]}
       </Card>
-    </PageContainer>
+    </div>
   );
 };

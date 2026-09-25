@@ -1,7 +1,6 @@
 import { Card, InputNumber, Select, type SelectProps, Space } from "antd";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
-import PageContainer from "@/components/ui/PageContainer.tsx";
 
 const bitRateUnitOptions: SelectProps["options"] = [
   { label: "bps (bit/s)", value: "bps" },
@@ -56,32 +55,30 @@ export const Component: FC = () => {
   }, [bitRateValue, bitRateUnit, byteRateUnit]);
 
   return (
-    <PageContainer>
-      <div className="h-full">
-        <Card title="下载速度换算">
-          <div className="grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2">
-            <Space.Compact className="w-full">
-              <Space.Addon>宽带大小</Space.Addon>
-              <InputNumber
-                type="number"
-                value={bitRateValue}
-                onChange={(val) => {
-                  if (val) {
-                    setBitRateValue(val);
-                  }
-                }}
-                className="w-full"
-              />
-              <Select value={bitRateUnit} options={bitRateUnitOptions} onChange={setBitRateUnit} />
-            </Space.Compact>
-            <Space.Compact className="w-full">
-              <Space.Addon>下载速度</Space.Addon>
-              <InputNumber type="number" value={byteRateValue} readOnly className="w-full" />
-              <Select value={byteRateUnit} options={byteRateUnitOptions} onChange={setByteRateUnit} />
-            </Space.Compact>
-          </div>
-        </Card>
-      </div>
-    </PageContainer>
+    <div className="h-full">
+      <Card title="下载速度换算">
+        <div className="grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2">
+          <Space.Compact className="w-full">
+            <Space.Addon>宽带大小</Space.Addon>
+            <InputNumber
+              type="number"
+              value={bitRateValue}
+              onChange={(val) => {
+                if (val) {
+                  setBitRateValue(val);
+                }
+              }}
+              className="w-full"
+            />
+            <Select value={bitRateUnit} options={bitRateUnitOptions} onChange={setBitRateUnit} />
+          </Space.Compact>
+          <Space.Compact className="w-full">
+            <Space.Addon>下载速度</Space.Addon>
+            <InputNumber type="number" value={byteRateValue} readOnly className="w-full" />
+            <Select value={byteRateUnit} options={byteRateUnitOptions} onChange={setByteRateUnit} />
+          </Space.Compact>
+        </div>
+      </Card>
+    </div>
   );
 };
