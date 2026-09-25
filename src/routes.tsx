@@ -28,6 +28,22 @@ export const routes: RouteObject[] = [
     HydrateFallback: Loading,
     children: [
       {
+        element: <FullContainer />,
+        children: [
+          {
+            path: "json/formatter",
+            lazy: () => import("@/pages/json/json-formatter"),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <BaseLayout />,
+    HydrateFallback: Loading,
+    children: [
+      {
         path: "base64",
         lazy: () => import("@/pages/base64/page.tsx"),
       },
@@ -89,16 +105,7 @@ export const routes: RouteObject[] = [
             index: true,
             lazy: () => import("@/pages/json/json-editor"),
           },
-          {
-            path: "formatter",
-            element: <FullContainer />,
-            children: [
-              {
-                index: true,
-                lazy: () => import("@/pages/json/json-formatter"),
-              },
-            ],
-          },
+
           {
             path: "json-editor",
             lazy: () => import("@/pages/json/json-editor"),
