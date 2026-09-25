@@ -9,4 +9,4 @@ pre-commit:
 commit-msg:
   commands:
     commitlint:
-      run: pnpm dlx commitlint --edit
+      run: pnpx commitlint --edit {1}
