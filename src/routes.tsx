@@ -125,6 +125,18 @@ export const routes: RouteObject[] = [
             path: "transform",
             lazy: () => import("@/pages/transform"),
           },
+          {
+            path: "markdown",
+            children: [
+              {
+                path: "mdx-editor",
+                lazy: () => import("@/pages/markdown/mdx-editor"),
+              },
+              { path: "milkdown", lazy: () => import("@/pages/markdown/milkdown") },
+              { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
+              { path: "xnote", lazy: () => import("@/pages/markdown/xnote") },
+            ],
+          },
         ],
       },
     ],
@@ -154,18 +166,6 @@ export const routes: RouteObject[] = [
             path: "json-diff",
             lazy: () => import("@/pages/json/json-diff/index.tsx"),
           },
-        ],
-      },
-      {
-        path: "markdown",
-        children: [
-          {
-            path: "mdx-editor",
-            lazy: () => import("@/pages/markdown/mdx-editor"),
-          },
-          { path: "milkdown", lazy: () => import("@/pages/markdown/milkdown") },
-          { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
-          { path: "xnote", lazy: () => import("@/pages/markdown/xnote") },
         ],
       },
     ],

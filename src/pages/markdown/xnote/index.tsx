@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import { Editor, InlineToolbarPlugin, LeftToolbarPlugin } from "@textbus/xnote";
 import { type FC, useEffect, useRef } from "react";
 
@@ -24,7 +23,7 @@ export const Component: FC = () => {
   }, []);
 
   return (
-    <PageContainer title={false} className="p-4 pt-10">
+    <div className="p-4 pt-10">
       <div className="editor-main">
         <div className="editor-center">
           <div className="editor-card">
@@ -34,6 +33,6 @@ export const Component: FC = () => {
           </div>
         </div>
       </div>
-    </PageContainer>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import type { FC } from "react";
 import { useEffect, useRef } from "react";
 import Vditor from "vditor";
@@ -55,10 +54,10 @@ export const Component: FC = () => {
     }
   }, []);
   return (
-    <PageContainer title={false} className="p-4 pt-10">
+    <div className="p-4 pt-10">
       <div className="h-[calc(100dvh-112px)] md:h-[calc(100dvh-56px)]">
         <div ref={editorRef} className="vditor" />
       </div>
-    </PageContainer>
+    </div>
   );
 };
