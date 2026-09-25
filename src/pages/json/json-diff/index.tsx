@@ -2,7 +2,6 @@ import { DiffEditor, type DiffOnMount, type Monaco } from "@monaco-editor/react"
 import type { editor } from "monaco-editor";
 import { type FC, useRef } from "react";
 
-import { FullContainer } from "@/components/FullContainer.tsx";
 import { LanguageSelect } from "@/components/monaco-editor/LanguageSelect.tsx";
 import { cn } from "@/lib/utils.ts";
 import useJsonDiffStore from "@/stores/JsonDiffStore.ts";
@@ -33,15 +32,13 @@ export const Component: FC = () => {
   };
 
   return (
-    <FullContainer>
-      <div className={cn("h-full")}>
-        <div className="h-[48px] p-2">
-          <LanguageSelect value={language} onChange={setLanguage} />
-        </div>
-        <div className="h-[calc(100%-48px)]">
-          <DiffEditor language={language} onMount={onMount} options={{ originalEditable: true, readOnly: false }} />
-        </div>
+    <div className={cn("h-full")}>
+      <div className="h-[48px] p-2">
+        <LanguageSelect value={language} onChange={setLanguage} />
       </div>
-    </FullContainer>
+      <div className="h-[calc(100%-48px)]">
+        <DiffEditor language={language} onMount={onMount} options={{ originalEditable: true, readOnly: false }} />
+      </div>
+    </div>
   );
 };

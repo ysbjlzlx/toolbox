@@ -31,6 +31,31 @@ export const routes: RouteObject[] = [
         element: <FullContainer />,
         children: [
           {
+            path: "json",
+            children: [
+              {
+                index: true,
+                lazy: () => import("@/pages/json/json-editor"),
+              },
+              {
+                path: "formatter",
+                lazy: () => import("@/pages/json/json-formatter"),
+              },
+              {
+                path: "json-editor",
+                lazy: () => import("@/pages/json/json-editor"),
+              },
+              {
+                path: "json-to-excel",
+                lazy: () => import("@/pages/json/json-to-excel/page.tsx"),
+              },
+              {
+                path: "json-diff",
+                lazy: () => import("@/pages/json/json-diff/index.tsx"),
+              },
+            ],
+          },
+          {
             path: "code",
             children: [
               {
@@ -55,10 +80,6 @@ export const routes: RouteObject[] = [
                 lazy: () => import("@/pages/image/qrcode/page.tsx"),
               },
             ],
-          },
-          {
-            path: "json/formatter",
-            lazy: () => import("@/pages/json/json-formatter"),
           },
           {
             path: "base64",
@@ -136,35 +157,6 @@ export const routes: RouteObject[] = [
               { path: "vditor", lazy: () => import("@/pages/markdown/vditor") },
               { path: "xnote", lazy: () => import("@/pages/markdown/xnote") },
             ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: <BaseLayout />,
-    HydrateFallback: Loading,
-    children: [
-      {
-        path: "json",
-        children: [
-          {
-            index: true,
-            lazy: () => import("@/pages/json/json-editor"),
-          },
-
-          {
-            path: "json-editor",
-            lazy: () => import("@/pages/json/json-editor"),
-          },
-          {
-            path: "json-to-excel",
-            lazy: () => import("@/pages/json/json-to-excel/page.tsx"),
-          },
-          {
-            path: "json-diff",
-            lazy: () => import("@/pages/json/json-diff/index.tsx"),
           },
         ],
       },

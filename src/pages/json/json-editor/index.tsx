@@ -1,4 +1,3 @@
-import { PageContainer } from "@ant-design/pro-components";
 import type { MenuProps, TabsProps } from "antd";
 import { Button, Dropdown, Space, Tabs } from "antd";
 import { indexOf, last } from "lodash-es";
@@ -106,7 +105,7 @@ export const Component = () => {
   };
 
   return (
-    <PageContainer title={false} className="w-full">
+    <div className="w-full">
       <Tabs
         type="editable-card"
         size="small"
@@ -116,6 +115,6 @@ export const Component = () => {
         items={items}
         tabBarExtraContent={tabBarExtraContent}
       />
-    </PageContainer>
+    </div>
   );
 };
