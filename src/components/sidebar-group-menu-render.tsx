@@ -20,7 +20,7 @@ export const SidebarGroupMenuRender: FC<{ menuData: MenuObject }> = ({ menuData 
 
       <SidebarGroupContent>
         <SidebarMenu>
-          {menuData.children.map((item) => (
+          {menuData?.children?.map((item) => (
             <SidebarMenuItem key={item.name}>
               <SidebarMenuButton isActive={item.isActive} render={<a href={item.path} />}>
                 {item.name}
