@@ -31,6 +31,19 @@ export const routes: RouteObject[] = [
         element: <FullContainer />,
         children: [
           {
+            path: "code",
+            children: [
+              {
+                path: "conversion",
+                lazy: () => import("@/pages/code/conversion"),
+              },
+              {
+                path: "formatter",
+                lazy: () => import("@/pages/code/formatter"),
+              },
+            ],
+          },
+          {
             path: "json/formatter",
             lazy: () => import("@/pages/json/json-formatter"),
           },
@@ -47,19 +60,6 @@ export const routes: RouteObject[] = [
     element: <BaseLayout />,
     HydrateFallback: Loading,
     children: [
-      {
-        path: "code",
-        children: [
-          {
-            path: "conversion",
-            lazy: () => import("@/pages/code/conversion"),
-          },
-          {
-            path: "formatter",
-            lazy: () => import("@/pages/code/formatter"),
-          },
-        ],
-      },
       {
         path: "image",
         children: [

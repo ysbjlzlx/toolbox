@@ -9,7 +9,6 @@ import AceEditor from "react-ace";
 import YAML from "yaml";
 
 import Iconify from "@/components/Iconify";
-import PageContainer from "@/components/ui/PageContainer.tsx";
 import { format } from "@/utils/formatter.ts";
 
 import "ace-builds/src-noconflict/ext-searchbox";
@@ -93,51 +92,49 @@ export const Component = () => {
     }
   };
   return (
-    <PageContainer className="h-[calc(100dvh-56px)] md:h-dvh">
-      <div className="mx-auto flex h-full max-w-screen-xl flex-col">
-        <Card>
-          <div className="flex gap-4">
-            <div className="max-w-[150px] flex-auto">
-              <Select options={CodeTypeOptions} value={sourceType} onSelect={setSourceType} className="w-full" />
-            </div>
-            <div className="flex-auto flex-shrink-0 flex-grow-0">
-              <Button icon={<Iconify icon="material-symbols:sync-alt" />} onClick={onClickSyncAltBtn} />
-            </div>
-            <div className="max-w-[150px] flex-auto">
-              <Select options={CodeTypeOptions} value={targetType} onSelect={setTargetType} className="w-full" />
-            </div>
-            <div className="flex-auto">
-              <Button onClick={onClickConversionBtn}>转换</Button>
-            </div>
+    <div className="mx-auto flex h-full max-w-screen-xl flex-col">
+      <Card>
+        <div className="flex gap-4">
+          <div className="max-w-[150px] flex-auto">
+            <Select options={CodeTypeOptions} value={sourceType} onSelect={setSourceType} className="w-full" />
           </div>
-        </Card>
-        <div className="mt-4 grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
-          <div>
-            <AceEditor
-              mode={sourceType}
-              theme="monokai"
-              width="100%"
-              height=""
-              className="h-full rounded-[8px]"
-              setOptions={options}
-              value={sourceValue}
-              onChange={setSourceValue}
-            />
+          <div className="flex-auto flex-shrink-0 flex-grow-0">
+            <Button icon={<Iconify icon="material-symbols:sync-alt" />} onClick={onClickSyncAltBtn} />
           </div>
-          <div>
-            <AceEditor
-              mode={targetType}
-              theme="monokai"
-              width="100%"
-              height=""
-              className="h-full rounded-[8px]"
-              setOptions={targetAceEditorOptions}
-              value={targetValue}
-              onChange={setTargetValue}
-            />
+          <div className="max-w-[150px] flex-auto">
+            <Select options={CodeTypeOptions} value={targetType} onSelect={setTargetType} className="w-full" />
+          </div>
+          <div className="flex-auto">
+            <Button onClick={onClickConversionBtn}>转换</Button>
           </div>
         </div>
+      </Card>
+      <div className="mt-4 grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
+        <div>
+          <AceEditor
+            mode={sourceType}
+            theme="monokai"
+            width="100%"
+            height=""
+            className="h-full rounded-[8px]"
+            setOptions={options}
+            value={sourceValue}
+            onChange={setSourceValue}
+          />
+        </div>
+        <div>
+          <AceEditor
+            mode={targetType}
+            theme="monokai"
+            width="100%"
+            height=""
+            className="h-full rounded-[8px]"
+            setOptions={targetAceEditorOptions}
+            value={targetValue}
+            onChange={setTargetValue}
+          />
+        </div>
       </div>
-    </PageContainer>
+    </div>
   );
 };
