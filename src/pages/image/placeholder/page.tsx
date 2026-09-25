@@ -1,6 +1,5 @@
 import {
   FormControlRender,
-  PageContainer,
   ProForm,
   ProFormDigit,
   ProFormSelect,
@@ -89,7 +88,7 @@ export const Component: FC = () => {
     ],
   };
   return (
-    <PageContainer title={false} className="mx-auto max-w-screen-lg p-4">
+    <div className="mx-auto max-w-screen-lg p-4">
       <Card>
         <ProForm
           submitter={false}
@@ -156,6 +155,6 @@ export const Component: FC = () => {
           <Tabs {...tabsProps} />
         </div>
       </Card>
-    </PageContainer>
+    </div>
   );
 };

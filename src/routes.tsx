@@ -44,6 +44,19 @@ export const routes: RouteObject[] = [
             ],
           },
           {
+            path: "image",
+            children: [
+              {
+                path: "placeholder",
+                lazy: () => import("@/pages/image/placeholder/page.tsx"),
+              },
+              {
+                path: "qrcode",
+                lazy: () => import("@/pages/image/qrcode/page.tsx"),
+              },
+            ],
+          },
+          {
             path: "json/formatter",
             lazy: () => import("@/pages/json/json-formatter"),
           },
@@ -60,19 +73,6 @@ export const routes: RouteObject[] = [
     element: <BaseLayout />,
     HydrateFallback: Loading,
     children: [
-      {
-        path: "image",
-        children: [
-          {
-            path: "placeholder",
-            lazy: () => import("@/pages/image/placeholder/page.tsx"),
-          },
-          {
-            path: "qrcode",
-            lazy: () => import("@/pages/image/qrcode/page.tsx"),
-          },
-        ],
-      },
       {
         path: "string",
         children: [{ index: true, lazy: () => import("@/pages/string/index.tsx") }],
