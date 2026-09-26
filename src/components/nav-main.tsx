@@ -1,7 +1,6 @@
 import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { useLocation } from "react-router";
-import { SidebarMenuButtonRender } from "@/components/sidebar-menu-button-render";
+import { Link, useLocation } from "react-router";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
@@ -24,10 +23,7 @@ export function NavMain({ menuData }: { menuData: MenuObject[] }) {
       <SidebarMenu>
         {menuData.map((item) => (
           <Collapsible key={item.name} defaultOpen={isActive(location.pathname, item)} render={<SidebarMenuItem />}>
-            <SidebarMenuButton
-              tooltip={item.name}
-              render={<SidebarMenuButtonRender path={item.path || "#"} name={item.name} />}
-            >
+            <SidebarMenuButton tooltip={item.name} render={<Link to={item.path || "#"} />}>
               {item.icon}
               <span>{item.name}</span>
             </SidebarMenuButton>
@@ -41,9 +37,9 @@ export function NavMain({ menuData }: { menuData: MenuObject[] }) {
                   <SidebarMenuSub>
                     {item.children?.map((subItem) => (
                       <SidebarMenuSubItem key={subItem.name}>
-                        <SidebarMenuSubButton
-                          render={<SidebarMenuButtonRender path={subItem.path || "#"} name={subItem.name} />}
-                        />
+                        <SidebarMenuSubButton render={<Link to={subItem.path || "#"} />}>
+                          <span>{subItem.name}</span>
+                        </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     ))}
                   </SidebarMenuSub>
