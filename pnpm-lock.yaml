@@ -255,8 +255,8 @@ importers:
         specifier: 3.31.3
         version: 3.31.3
       '@uiw/codemirror-theme-github':
-        specifier: 4.25.11
-        version: 4.25.11(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)
+        specifier: 4.25.12
+        version: 4.25.12(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)
       '@uiw/codemirror-theme-vscode':
         specifier: 4.25.11
         version: 4.25.11(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)
@@ -4207,14 +4207,21 @@ packages:
       '@codemirror/state': '>=6.0.0'
       '@codemirror/view': '>=6.0.0'
 
-  '@uiw/codemirror-theme-github@4.25.11':
-    resolution: {integrity: sha512-3s0LK3gX2mvGI996z3G0tEHZqshbeJRly+QMRsKGAI1Tfr1V475bfaW9NvnoDdINuQHt+RB+ri6q57+WWF8d+A==}
+  '@uiw/codemirror-theme-github@4.25.12':
+    resolution: {integrity: sha512-ZEdyK7WEmV91HwRs6Twgae63GtE1C2QfS40NlnRvs6vHHTQjyz+wI1Hkpf1uTpWxtrNVUrc35k9KUUXWTmViFg==}
 
   '@uiw/codemirror-theme-vscode@4.25.11':
     resolution: {integrity: sha512-fTQ5676L9iV3Y6UyDBDd8Wt9Gewh55aC5rqnCtIpwyVFb6zJEHJScI4g43lzAD2IKhY7HlozB1ucrS3UqBFNEQ==}
 
   '@uiw/codemirror-themes@4.25.11':
     resolution: {integrity: sha512-SBNCOgRsCtewGNocRbmjbCkltGXlFcPJsvhxQ351VynQjnWUiPbUrFcEU/haQ3HanROdAAjWXZJPk5bMBxl2jw==}
+    peerDependencies:
+      '@codemirror/language': '>=6.0.0'
+      '@codemirror/state': '>=6.0.0'
+      '@codemirror/view': '>=6.0.0'
+
+  '@uiw/codemirror-themes@4.25.12':
+    resolution: {integrity: sha512-3bLX6C+gstr82SmY2FAj2TfHXnl2SnC+whRZJmRsv82wMhG8RZlZVy+o0rLuGRIPD9acuY0gpouHVRNUnzBj3g==}
     peerDependencies:
       '@codemirror/language': '>=6.0.0'
       '@codemirror/state': '>=6.0.0'
@@ -10514,33 +10521,6 @@ snapshots:
     dependencies:
       '@chevrotain/types': 11.1.2
 
-  '@milkdown/components@7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.5)(@codemirror/view@6.43.12)(supports-color@10.2.2)(typescript@7.0.2)':
-    dependencies:
-      '@codemirror/language': 6.12.4
-      '@codemirror/state': 6.7.5
-      '@codemirror/view': 6.43.12
-      '@floating-ui/dom': 1.8.0
-      '@milkdown/core': 7.22.2(supports-color@10.2.2)
-      '@milkdown/ctx': 7.22.2
-      '@milkdown/exception': 7.22.2
-      '@milkdown/plugin-diff': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-tooltip': 7.22.2(supports-color@10.2.2)
-      '@milkdown/preset-commonmark': 7.22.2(supports-color@10.2.2)
-      '@milkdown/preset-gfm': 7.22.2(supports-color@10.2.2)
-      '@milkdown/prose': 7.22.2
-      '@milkdown/transformer': 7.22.2(supports-color@10.2.2)
-      '@milkdown/utils': 7.22.2(supports-color@10.2.2)
-      '@types/lodash-es': 4.17.12
-      clsx: 2.1.1
-      dompurify: 3.4.15
-      lodash-es: 4.18.1
-      nanoid: 6.0.1
-      unist-util-visit: 5.1.0
-      vue: 3.5.42(typescript@7.0.2)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
   '@milkdown/components@7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)(supports-color@10.2.2)(typescript@7.0.2)':
     dependencies:
       '@codemirror/language': 6.12.4
@@ -10585,10 +10565,10 @@ snapshots:
       '@codemirror/commands': 6.11.0
       '@codemirror/language': 6.12.4
       '@codemirror/language-data': 6.5.2
-      '@codemirror/state': 6.7.5
+      '@codemirror/state': 6.7.6
       '@codemirror/theme-one-dark': 6.1.3
-      '@codemirror/view': 6.43.12
-      '@milkdown/kit': 7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.5)(@codemirror/view@6.43.12)(supports-color@10.2.2)(typescript@7.0.2)
+      '@codemirror/view': 6.43.13
+      '@milkdown/kit': 7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)(supports-color@10.2.2)(typescript@7.0.2)
       '@types/lodash-es': 4.17.12
       clsx: 2.1.1
       codemirror: 6.0.2
@@ -10611,36 +10591,6 @@ snapshots:
       '@milkdown/exception': 7.22.2
 
   '@milkdown/exception@7.22.2': {}
-
-  '@milkdown/kit@7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.5)(@codemirror/view@6.43.12)(supports-color@10.2.2)(typescript@7.0.2)':
-    dependencies:
-      '@milkdown/components': 7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.5)(@codemirror/view@6.43.12)(supports-color@10.2.2)(typescript@7.0.2)
-      '@milkdown/core': 7.22.2(supports-color@10.2.2)
-      '@milkdown/ctx': 7.22.2
-      '@milkdown/exception': 7.22.2
-      '@milkdown/plugin-block': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-clipboard': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-cursor': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-diff': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-history': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-indent': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-listener': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-slash': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-streaming': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-tooltip': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-trailing': 7.22.2(supports-color@10.2.2)
-      '@milkdown/plugin-upload': 7.22.2(supports-color@10.2.2)
-      '@milkdown/preset-commonmark': 7.22.2(supports-color@10.2.2)
-      '@milkdown/preset-gfm': 7.22.2(supports-color@10.2.2)
-      '@milkdown/prose': 7.22.2
-      '@milkdown/transformer': 7.22.2(supports-color@10.2.2)
-      '@milkdown/utils': 7.22.2(supports-color@10.2.2)
-    transitivePeerDependencies:
-      - '@codemirror/language'
-      - '@codemirror/state'
-      - '@codemirror/view'
-      - supports-color
-      - typescript
 
   '@milkdown/kit@7.22.2(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)(supports-color@10.2.2)(typescript@7.0.2)':
     dependencies:
@@ -12630,9 +12580,11 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.13
 
-  '@uiw/codemirror-theme-github@4.25.11(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)':
+  '@uiw/codemirror-theme-github@4.25.12(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)':
     dependencies:
-      '@uiw/codemirror-themes': 4.25.11(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)
+      '@babel/runtime': 7.29.7
+      '@lezer/highlight': 1.2.3
+      '@uiw/codemirror-themes': 4.25.12(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)
     transitivePeerDependencies:
       - '@codemirror/language'
       - '@codemirror/state'
@@ -12647,6 +12599,12 @@ snapshots:
       - '@codemirror/view'
 
   '@uiw/codemirror-themes@4.25.11(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)':
+    dependencies:
+      '@codemirror/language': 6.12.4
+      '@codemirror/state': 6.7.6
+      '@codemirror/view': 6.43.13
+
+  '@uiw/codemirror-themes@4.25.12(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)':
     dependencies:
       '@codemirror/language': 6.12.4
       '@codemirror/state': 6.7.6
