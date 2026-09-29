@@ -136,7 +136,7 @@
     "workbox-build": "7.4.1",
     "workbox-window": "7.4.1"
   },
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.8.1",
   "devEngines": {
     "runtime": {
       "name": "node",
