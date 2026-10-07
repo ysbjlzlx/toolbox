@@ -357,8 +357,8 @@ importers:
         specifier: 0.57.0
         version: 0.57.0
       nanoid:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 6.0.2
+        version: 6.0.2
       nanoid-dictionary:
         specifier: 5.0.0
         version: 5.0.0
@@ -555,8 +555,8 @@ importers:
         specifier: 4.17.12
         version: 4.17.12
       nanoid:
-        specifier: 6.0.1
-        version: 6.0.1
+        specifier: 6.0.2
+        version: 6.0.2
       nanoid-dictionary:
         specifier: 5.0.0
         version: 5.0.0
@@ -6700,8 +6700,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@6.0.1:
-    resolution: {integrity: sha512-3wVS3i51pE2pi1k5FFL/95BGfVS0kSsvDVuGXHOtxox/TywUmtgq+3qiTOTbs9J7KfHaXPiN171k/A6dBnaXFw==}
+  nanoid@6.0.2:
+    resolution: {integrity: sha512-hIvVOb9Qr1p/9CNNLOe0OlWvgx/ziTsVwKN/GDSsuArN2K0wDiafP3s0SWmsm7o2BdnyS8Z9Z64NFBUbn6ziBg==}
     engines: {node: ^22 || ^24 || >=26}
     hasBin: true
 
@@ -10576,7 +10576,7 @@ snapshots:
       clsx: 2.1.1
       dompurify: 3.4.15
       lodash-es: 4.18.1
-      nanoid: 6.0.1
+      nanoid: 6.0.2
       unist-util-visit: 5.1.0
       vue: 3.5.42(typescript@7.0.2)
     transitivePeerDependencies:
@@ -10835,7 +10835,7 @@ snapshots:
       '@milkdown/exception': 7.22.2
       '@milkdown/prose': 7.22.2
       '@milkdown/transformer': 7.22.2(supports-color@10.2.2)
-      nanoid: 6.0.1
+      nanoid: 6.0.2
     transitivePeerDependencies:
       - supports-color
 
@@ -15500,7 +15500,7 @@ snapshots:
 
   nanoid@3.3.19: {}
 
-  nanoid@6.0.1: {}
+  nanoid@6.0.2: {}
 
   natural-compare-lite@1.4.1: {}
 
