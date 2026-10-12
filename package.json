@@ -25,7 +25,7 @@
     "@codemirror/view": "6.43.14",
     "@hugeicons/core-free-icons": "^4.3.2",
     "@hugeicons/react": "^1.1.10",
-    "@milkdown/crepe": "7.22.2",
+    "@milkdown/crepe": "7.22.3",
     "@milkdown/kit": "7.22.2",
     "@monaco-editor/loader": "1.7.0",
     "@monaco-editor/react": "4.7.0",
