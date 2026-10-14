@@ -158,6 +158,10 @@ export const routes: RouteObject[] = [
               { path: "xnote", lazy: () => import("@/pages/markdown/xnote") },
             ],
           },
+          {
+            path: "editorcn",
+            children: [{ index: true, lazy: () => import("@/pages/editorcn/page.tsx") }],
+          },
         ],
       },
     ],

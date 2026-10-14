@@ -8,7 +8,8 @@
       ".ncurc.json",
       "!src/globals.css",
       "!.zed",
-      "!src/components/ui"
+      "!src/components/ui",
+      "!src/components/editor"
     ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
