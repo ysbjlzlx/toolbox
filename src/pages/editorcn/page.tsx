@@ -17,14 +17,14 @@ export function MyEditor() {
     extensions: [
       StarterKit.configure({ heading: { levels: [1, 2, 3, 4, 5, 6] }, link: false }),
       TextAlign.configure({ types: ["heading", "paragraph"] }),
-      Placeholder.configure({ placeholder: "Start typing..." }),
+      Placeholder.configure({ placeholder: "请输入……" }),
       CharacterCount,
       TextStyle,
       Link,
       Color,
       Highlight.configure({ multicolor: true }),
     ],
-    content: "<p>Start typing...</p>",
+    content: "",
   });
 
   return (
