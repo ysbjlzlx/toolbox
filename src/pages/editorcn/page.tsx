@@ -4,7 +4,6 @@ import Highlight from "@tiptap/extension-highlight";
 import Placeholder from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
 import { TextStyle } from "@tiptap/extension-text-style";
-import Underline from "@tiptap/extension-underline";
 import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import type { FC } from "react";
@@ -16,13 +15,12 @@ export function MyEditor() {
     immediatelyRender: false,
     shouldRerenderOnTransaction: false,
     extensions: [
-      StarterKit.configure({ heading: { levels: [1, 2, 3, 4, 5, 6] } }),
-      Link,
-      Underline,
+      StarterKit.configure({ heading: { levels: [1, 2, 3, 4, 5, 6] }, link: false }),
       TextAlign.configure({ types: ["heading", "paragraph"] }),
       Placeholder.configure({ placeholder: "Start typing..." }),
       CharacterCount,
       TextStyle,
+      Link,
       Color,
       Highlight.configure({ multicolor: true }),
     ],

@@ -164,6 +164,7 @@ settings:
 
 overrides:
   vite-plugin-pwa>vite: npm:vite
+  '@milkdown/crepe>prosemirror-model': npm:prosemirror-model
 
 importers:
 
@@ -198,7 +199,7 @@ importers:
         version: 1.1.10(react@19.3.0)
       '@milkdown/crepe':
         specifier: 7.22.3
-        version: 7.22.3(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)(supports-color@10.2.2)(typescript@7.0.2)
+        version: 7.22.3(prosemirror-model@1.25.12)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)(supports-color@10.2.2)(typescript@7.0.2)
       '@milkdown/kit':
         specifier: 7.22.3
         version: 7.22.3(@codemirror/language@6.12.4)(@codemirror/state@6.7.6)(@codemirror/view@6.43.14)(supports-color@10.2.2)(typescript@7.0.2)
@@ -388,6 +389,9 @@ importers:
       prettier:
         specifier: 3.9.10
         version: 3.9.10
+      prosemirror-model:
+        specifier: 1.25.12
+        version: 1.25.12
       quill:
         specifier: 2.0.3
         version: 2.0.3
@@ -7215,9 +7219,6 @@ packages:
   prosemirror-keymap@1.2.3:
     resolution: {integrity: sha512-4HucRlpiLd1IPQQXNqeo81BGtkY8Ai5smHhKW9jjPKRc2wQIxksg7Hl1tTI2IfT2B/LgX6bfYvXxEpJl7aKYKw==}
 
-  prosemirror-model@1.25.11:
-    resolution: {integrity: sha512-QWg9RhnpLlogAmp3p96uEFrE5txQpFynd4vhBAELkwgOCWQs/X0yCzB3/hrHqiPwf91RG5KyWq6553zs9JqIOQ==}
-
   prosemirror-model@1.25.12:
     resolution: {integrity: sha512-Ue2gTmXMa7EhpLNhC7J+h4+ykD8ha12K6rrZFFKKJHBForfIStw5gJ6Zrf1mqqAa9NmpmEB4wp9bKmA4eUVjWg==}
 
@@ -10646,7 +10647,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@milkdown/crepe@7.22.3(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)(supports-color@10.2.2)(typescript@7.0.2)':
+  '@milkdown/crepe@7.22.3(prosemirror-model@1.25.12)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)(supports-color@10.2.2)(typescript@7.0.2)':
     dependencies:
       '@codemirror/commands': 6.11.0
       '@codemirror/language': 6.12.4
@@ -10661,7 +10662,7 @@ snapshots:
       dompurify: 3.4.15
       katex: 0.19.0
       lodash-es: 4.18.1
-      prosemirror-virtual-cursor: 0.4.2(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)
+      prosemirror-virtual-cursor: 0.4.2(prosemirror-model@1.25.12)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3)
       remark-math: 6.0.0(supports-color@10.2.2)
       unist-util-visit: 5.1.0
       vue: 3.5.42(typescript@7.0.2)
@@ -10863,7 +10864,7 @@ snapshots:
       prosemirror-history: 1.5.0
       prosemirror-inputrules: 1.5.1
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-schema-list: 1.5.1
       prosemirror-state: 1.4.4
       prosemirror-tables: 1.8.5
@@ -15882,14 +15883,14 @@ snapshots:
 
   prosemirror-commands@1.7.2:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.1
 
   prosemirror-drop-indicator@0.1.4:
     dependencies:
       '@ocavue/utils': 1.8.0
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.3
 
@@ -15908,7 +15909,7 @@ snapshots:
   prosemirror-gapcursor@1.4.1:
     dependencies:
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.3
 
@@ -15936,10 +15937,6 @@ snapshots:
       prosemirror-state: 1.4.4
       w3c-keyname: 2.2.8
 
-  prosemirror-model@1.25.11:
-    dependencies:
-      orderedmap: 2.1.1
-
   prosemirror-model@1.25.12:
     dependencies:
       orderedmap: 2.1.1
@@ -15951,35 +15948,35 @@ snapshots:
 
   prosemirror-schema-list@1.5.1:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.1
 
   prosemirror-state@1.4.4:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-transform: 1.12.2
       prosemirror-view: 1.42.3
 
   prosemirror-tables@1.8.5:
     dependencies:
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.1
       prosemirror-view: 1.42.3
 
   prosemirror-transform@1.12.1:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
 
   prosemirror-transform@1.12.2:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
 
   prosemirror-view@1.42.3:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.2
 
@@ -15989,9 +15986,9 @@ snapshots:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.1
 
-  prosemirror-virtual-cursor@0.4.2(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3):
+  prosemirror-virtual-cursor@0.4.2(prosemirror-model@1.25.12)(prosemirror-state@1.4.4)(prosemirror-view@1.42.3):
     optionalDependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.12
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.3
 

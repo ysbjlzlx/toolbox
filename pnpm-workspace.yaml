@@ -9,5 +9,6 @@ allowBuilds:
   lefthook: true
 overrides:
   "vite-plugin-pwa>vite": "npm:vite"
+  "@milkdown/crepe>prosemirror-model": "npm:prosemirror-model"
 minimumReleaseAge: 1440
 savePrefix: ''
