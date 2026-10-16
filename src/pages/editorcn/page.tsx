@@ -30,7 +30,7 @@ export function MyEditor() {
   });
 
   return (
-    <RichTextEditor editor={editor}>
+    <RichTextEditor editor={editor} variant="default">
       <RichTextEditor.Toolbar sticky>
         <RichTextEditor.ControlsGroup>
           <RichTextEditor.Bold />
@@ -70,8 +70,6 @@ export function MyEditor() {
           <RichTextEditor.Redo />
         </RichTextEditor.ControlsGroup>
       </RichTextEditor.Toolbar>
-
-      <RichTextEditor.BubbleMenu editor={editor} />
 
       <RichTextEditor.Content />
       <RichTextEditor.Footer showWordCount />
