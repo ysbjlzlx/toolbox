@@ -432,8 +432,8 @@ importers:
         specifier: 3.13.0
         version: 3.13.0
       vditor:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.0.1
+        version: 4.0.1
       xlsx:
         specifier: file:vendor/xlsx-0.20.3.tgz
         version: file:vendor/xlsx-0.20.3.tgz
@@ -8303,8 +8303,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vditor@4.0.0:
-    resolution: {integrity: sha512-JUeSmmNNxXaq4j29F6OZ/vLgyM/Wt/SpSK4o/gyrc02uTsS+iTeC0ofajxbW29WSJ4LFMec4nrywVul51PrLvg==}
+  vditor@4.0.1:
+    resolution: {integrity: sha512-CyajvPNE8fjCgEAzAaSxVEEWwQMJ5FTIVkNn3k+5IRaldqGwPRr8Dx2QLALHGCby8L/AJ6pQXjXiSPUGhHGmDw==}
 
   vfile-message@4.0.3:
     resolution: {integrity: sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==}
@@ -17361,7 +17361,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vditor@4.0.0:
+  vditor@4.0.1:
     dependencies:
       diff-match-patch: 1.0.5
 

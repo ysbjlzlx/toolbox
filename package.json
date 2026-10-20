@@ -103,7 +103,7 @@
     "usehooks-ts": "3.1.1",
     "uuid": "14.0.3",
     "vanilla-jsoneditor": "3.13.0",
-    "vditor": "4.0.0",
+    "vditor": "4.0.1",
     "xlsx": "file:vendor/xlsx-0.20.3.tgz",
     "xml-formatter": "3.7.0",
     "yaml": "2.9.1",
