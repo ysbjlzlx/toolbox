@@ -175,7 +175,7 @@ importers:
         version: 2.1.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@ant-design/pro-components':
         specifier: 3.1.12-0
-        version: 3.1.12-0(antd@6.6.6(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
+        version: 3.1.12-0(antd@6.6.7(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@base-ui/react':
         specifier: ^1.9.0
         version: 1.9.0(@types/react@19.3.0)(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -294,8 +294,8 @@ importers:
         specifier: 3.10.0
         version: 3.10.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       antd:
-        specifier: 6.6.6
-        version: 6.6.6(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: 6.6.7
+        version: 6.6.7(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       base-x:
         specifier: 5.0.1
         version: 5.0.1
@@ -3204,6 +3204,12 @@ packages:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
 
+  '@rc-component/util@1.14.0':
+    resolution: {integrity: sha512-qFpkGBCiyN3NNAU+FOnZdcdz7A/rXCg3JdQk+bujUKAExZgRqzf2yy1f4YN63Lwctic5FcK9rgjQ6aWbykqwEw==}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+
   '@rc-component/virtual-list@1.5.1':
     resolution: {integrity: sha512-boqHxdtyWC88u8quYgEO49bcBy5fzRiOcnBge+N4nLzs2k8hUQ/yw7JE9dM6yCBE4jSm5YSHVCVMS+suBuJGKA==}
     engines: {node: '>=8.x'}
@@ -4599,8 +4605,8 @@ packages:
     resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
-  antd@6.6.6:
-    resolution: {integrity: sha512-+x4M755a6kyZyxkN2vpfm3HbYkyytPBPSncXHKPHU2ZPs3Z1ctrWwWApe/4ek4O0eUGKNFCpb461yficetktYQ==}
+  antd@6.6.7:
+    resolution: {integrity: sha512-6D9oSAot26LIHYmR0ZyquOZY4WIcgRurZ/9//1GEJoo/vWvKV3E1PJPmB3orGkRlmGxArX3vSJFxQfRKr5qHZA==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -8702,7 +8708,7 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
-  '@ant-design/pro-components@3.1.12-0(antd@6.6.6(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
+  '@ant-design/pro-components@3.1.12-0(antd@6.6.7(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@ant-design/cssinjs': 2.1.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@ant-design/icons': 6.3.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -8719,7 +8725,7 @@ snapshots:
       '@rc-component/util': 1.13.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@umijs/route-utils': 4.0.3
       '@umijs/use-params': 1.0.9(react@19.3.1)
-      antd: 6.6.6(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      antd: 6.6.7(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       clsx: 2.1.1
       dayjs: 1.11.23
       lodash-es: 4.18.1
@@ -11918,6 +11924,13 @@ snapshots:
       react-dom: 19.3.1(react@19.3.1)
       react-is: 19.3.0
 
+  '@rc-component/util@1.14.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+    dependencies:
+      is-mobile: 5.0.0
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      react-is: 19.3.0
+
   '@rc-component/virtual-list@1.5.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@babel/runtime': 8.0.5
@@ -13163,7 +13176,7 @@ snapshots:
 
   ansi-styles@6.2.3: {}
 
-  antd@6.6.6(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
+  antd@6.6.7(date-fns@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       '@ant-design/colors': 8.0.1
       '@ant-design/cssinjs': 2.1.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -13208,7 +13221,7 @@ snapshots:
       '@rc-component/tree-select': 1.16.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@rc-component/trigger': 3.10.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@rc-component/upload': 1.1.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@rc-component/util': 1.13.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@rc-component/util': 1.14.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       clsx: 2.1.1
       dayjs: 1.11.23
       react: 19.3.1
