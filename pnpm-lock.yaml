@@ -460,8 +460,8 @@ importers:
         specifier: 21.2.4
         version: 21.2.4
       '@iconify/react':
-        specifier: 6.0.3
-        version: 6.0.3(react@19.3.1)
+        specifier: 6.0.4
+        version: 6.0.4(react@19.3.1)
       '@mdxeditor/editor':
         specifier: 4.3.4
         version: 4.3.4(@codemirror/language@6.12.4)(@lezer/highlight@1.2.3)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(typescript@7.0.2)(yjs@13.6.32)
@@ -1846,8 +1846,8 @@ packages:
     peerDependencies:
       react: '>=16.0.0'
 
-  '@iconify/react@6.0.3':
-    resolution: {integrity: sha512-2x7gVs+tpUG75aXYo/0c5wPOqrFy75YSGKmuJZyuHyrHMydzXpI/+i9/USIzWXJL9WWc2BCgPVnGY2FhbeiiDQ==}
+  '@iconify/react@6.0.4':
+    resolution: {integrity: sha512-7nKd1eF52E1QGIl46eDWfMNPuTQHUxsXoK2Evgtu5jr386jCWTuWFLHM9vfsTNbUcKp+uq6ao+3skNUalDhH/w==}
     peerDependencies:
       react: '>=18.0.0'
 
@@ -10048,7 +10048,7 @@ snapshots:
     dependencies:
       react: 19.3.1
 
-  '@iconify/react@6.0.3(react@19.3.1)':
+  '@iconify/react@6.0.4(react@19.3.1)':
     dependencies:
       '@iconify/types': 2.0.0
       react: 19.3.1
