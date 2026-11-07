@@ -134,7 +134,7 @@
     "postcss": "8.5.32",
     "stylelint": "18.0.0",
     "stylelint-config-standard": "40.0.0",
-    "tailwindcss": "4.3.4",
+    "tailwindcss": "4.3.5",
     "tsup": "9.0.0",
     "typescript": "7.0.2",
     "vite": "8.3.6",
