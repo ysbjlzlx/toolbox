@@ -25,8 +25,8 @@ export const RandomTextResult: FC<Props> = ({ text, onClickRefreshBtn, ...props 
   };
   return (
     <div>
-      <div className="mt-2 break-words rounded-md border p-5 text-center">
-        <span className="font-bold text-blue-500 text-lg">{text}</span>
+      <div className="mt-2 rounded-md border p-5 text-center break-words">
+        <span className="text-lg font-bold text-blue-500">{text}</span>
       </div>
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>

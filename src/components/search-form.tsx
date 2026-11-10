@@ -15,7 +15,7 @@ export function SearchForm({ ...props }: React.ComponentProps<"form">) {
           <HugeiconsIcon
             icon={SearchIcon}
             strokeWidth={2}
-            className="pointer-events-none absolute top-1/2 left-2 size-4 -translate-y-1/2 select-none opacity-50"
+            className="pointer-events-none absolute top-1/2 left-2 size-4 -translate-y-1/2 opacity-50 select-none"
           />
         </SidebarGroupContent>
       </SidebarGroup>

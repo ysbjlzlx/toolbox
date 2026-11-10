@@ -42,7 +42,7 @@ const TokenField = ({ totp }: Props) => {
     },
   });
 
-  // eslint-disable-next-line react/no-unstable-nested-components
+  // biome-ignore-start lint: Do not define component TokenProcess inside a function.
   const TokenProcess = () => {
     return (
       <Progress
@@ -55,6 +55,7 @@ const TokenField = ({ totp }: Props) => {
       />
     );
   };
+  // biome-ignore-end lint: Do not define component TokenProcess inside a function.
 
   return (
     <Form.Item label="Token">

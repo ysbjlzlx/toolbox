@@ -113,7 +113,7 @@ const MenuBar = () => {
       </Space.Compact>
       <Space.Compact>
         <Button
-          icon={<Icon name="Bold" />}
+          icon={<Icon name="LetterB" />}
           onClick={() => editor.chain().focus().toggleBold().run()}
           type={editor.isActive("bold") ? "primary" : "default"}
         />

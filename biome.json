@@ -23,7 +23,7 @@
     "rules": {
       "preset": "recommended",
       "nursery": {
-        "useSortedClasses": "warn"
+        "useTailwindSortedClasses": "warn"
       },
       "suspicious": {
         "noExplicitAny": "off",
