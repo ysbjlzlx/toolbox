@@ -429,8 +429,8 @@ importers:
         specifier: 14.0.3
         version: 14.0.3
       vanilla-jsoneditor:
-        specifier: 3.13.0
-        version: 3.13.0
+        specifier: 3.13.1
+        version: 3.13.1
       vditor:
         specifier: 4.0.1
         version: 4.0.1
@@ -7873,8 +7873,8 @@ packages:
     resolution: {integrity: sha512-hVDIBwsRruT73PbK7uP5ebUt+ezEtCmzZz3F59BSr2F6OVFnJ/6h8liuvdLrQ88Xmnk6/+xGGuq+pG9WwTuy3A==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  vanilla-jsoneditor@3.13.0:
-    resolution: {integrity: sha512-u9C+D8Ocgr39Gnsfu7USjilfKssqbDqZehMdE0qbwIFnZFdNwkU4iKeEvJxvYbmlVi/sMLxMTrU14PhtXVyiZg==}
+  vanilla-jsoneditor@3.13.1:
+    resolution: {integrity: sha512-6U/eD+clhhqlbt/G3CSEg6xn76cNKAAKh9ucUcLFbPRC7pG5igqcmp08TzpU1j77Kvp7TESABdTFzHekan0g1Q==}
 
   vanilla-picker@2.12.3:
     resolution: {integrity: sha512-qVkT1E7yMbUsB2mmJNFmaXMWE2hF8ffqzMMwe9zdAikd8u2VfnsVY2HQcOUi2F38bgbxzlJBEdS1UUhOXdF9GQ==}
@@ -16421,7 +16421,7 @@ snapshots:
 
   validate-npm-package-name@7.0.2: {}
 
-  vanilla-jsoneditor@3.13.0:
+  vanilla-jsoneditor@3.13.1:
     dependencies:
       '@codemirror/autocomplete': 6.20.3
       '@codemirror/commands': 6.11.0
