@@ -32,7 +32,7 @@
     "@noble/hashes": "^2.4.0",
     "@paralleldrive/cuid2": "3.3.0",
     "@repo/colors": "workspace:@repo/colors@*",
-    "@sapphire/snowflake": "3.5.5",
+    "@sapphire/snowflake": "4.0.0",
     "@scure/base": "2.4.0",
     "@textbus/xnote": "1.5.1",
     "@tiptap/core": "3.34.0",

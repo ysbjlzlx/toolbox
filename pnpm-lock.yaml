@@ -228,8 +228,8 @@ importers:
         specifier: workspace:@repo/colors@*
         version: link:packages/colors
       '@sapphire/snowflake':
-        specifier: 3.5.5
-        version: 3.5.5
+        specifier: 4.0.0
+        version: 4.0.0
       '@scure/base':
         specifier: 2.4.0
         version: 2.4.0
@@ -3594,9 +3594,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sapphire/snowflake@3.5.5':
-    resolution: {integrity: sha512-xzvBr1Q1c4lCe7i6sRnrofxeO1QTP/LKQ6A6qy0iB4x5yfiSfARMEQEghojzTNALDTcv8En04qYNIco9/K9eZQ==}
-    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+  '@sapphire/snowflake@4.0.0':
+    resolution: {integrity: sha512-R/oVZIaTYqv3a2Y2GTHOKDLXSZuWyLKSFUQ+WGGIpTNv4Yz45iPOz6fSUtgFMKwVC3uK3NRBtCS4K5cmyVTMnA==}
+    engines: {node: '>=v24.0.0', npm: '>=11.0.0'}
 
   '@scure/base@2.4.0':
     resolution: {integrity: sha512-thZ1TuJwFwBblOhgsjDKvvGirBxNp+wSvY/DR6tJBJOTDhdAAcHJ8Vbr2eFnqaxeca4+t0i9KBf+uHYGWwZORg==}
@@ -11682,7 +11682,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.64.7':
     optional: true
 
-  '@sapphire/snowflake@3.5.5': {}
+  '@sapphire/snowflake@4.0.0': {}
 
   '@scure/base@2.4.0': {}
 
