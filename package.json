@@ -105,7 +105,7 @@
     "vanilla-jsoneditor": "3.13.1",
     "vditor": "4.0.1",
     "xlsx": "file:vendor/xlsx-0.20.3.tgz",
-    "xml-formatter": "3.7.0",
+    "xml-formatter": "3.7.1",
     "yaml": "2.9.1",
     "zod": "4.6.7",
     "zustand": "5.1.0"
