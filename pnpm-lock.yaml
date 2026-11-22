@@ -363,8 +363,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       i18next-resources-to-backend:
-        specifier: 1.2.4
-        version: 1.2.4
+        specifier: 1.3.0
+        version: 1.3.0
       json5:
         specifier: 2.2.3
         version: 2.2.3
@@ -5675,8 +5675,8 @@ packages:
   i18next-chained-backend@5.1.0:
     resolution: {integrity: sha512-KlxphGMnG9sslq1Psbpry5twFJBuWNEtCXN0NOEtuDwGVHc8f2GAjGJiwAB3Cn/E9JoMbmPSi1bQvQwos8Ts6w==}
 
-  i18next-resources-to-backend@1.2.4:
-    resolution: {integrity: sha512-NV0bCktHrBNyEnjS5sq5k6J8HL3A+iR2MORcSJ7ZbQOnRwizrRmq+8K9WsdYy9mJv/Vki3VPnspBcFmF97UsQw==}
+  i18next-resources-to-backend@1.3.0:
+    resolution: {integrity: sha512-tpSsuGjgK146b9XkCZuaZCDHRc2UMudpNpFFD8grJLUq7vIz1AkXrSlZhaWCtjvgMnGmAXNBuzcUFm0i71O/pA==}
 
   i18next@27.2.2:
     resolution: {integrity: sha512-1/AJgz/bpE/YL6tqekQlZAzDhkmrUBbgU8+Xon/Lwv6c5WdYuyFZ9mb86OVfR2C2XujUDT7Rz23Ydaq4l981lA==}
@@ -13918,7 +13918,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.29.7
 
-  i18next-resources-to-backend@1.2.4:
+  i18next-resources-to-backend@1.3.0:
     dependencies:
       '@babel/runtime': 7.29.7
 
