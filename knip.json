@@ -5,5 +5,8 @@
   ],
   "workspaces": {
     ".": {}
-  }
+  },
+  "ignore": [
+    "src/components/ui/**"
+  ]
 }
