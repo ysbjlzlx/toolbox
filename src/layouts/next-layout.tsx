@@ -1,18 +1,11 @@
 import type { FC } from "react";
 import { Outlet } from "react-router";
 import { AppSidebar } from "@/components/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
-const NextLayouot: FC = () => {
+const NextLayout: FC = () => {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -23,11 +16,7 @@ const NextLayouot: FC = () => {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="md:block">
-                <BreadcrumbLink href="/next/json/json-editor">Toolbox</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                <BreadcrumbLink href="/json/json-editor">Toolbox</BreadcrumbLink>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -39,4 +28,4 @@ const NextLayouot: FC = () => {
     </SidebarProvider>
   );
 };
-export default NextLayouot;
+export default NextLayout;
