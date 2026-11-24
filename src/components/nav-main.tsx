@@ -1,11 +1,11 @@
 import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { isEmpty } from "lodash-es";
 import { Link, useLocation } from "react-router";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
@@ -21,18 +21,27 @@ export function NavMain({ menuData }: { menuData: MenuObject[] }) {
   return (
     <SidebarGroup>
       <SidebarMenu>
-        {menuData.map((item) => (
-          <Collapsible key={item.name} defaultOpen={isActive(location.pathname, item)} render={<SidebarMenuItem />}>
-            <SidebarMenuButton tooltip={item.name} render={<Link to={item.path || "#"} />}>
-              {item.icon}
-              <span>{item.name}</span>
-            </SidebarMenuButton>
-            {item?.children?.length ? (
-              <>
-                <CollapsibleTrigger render={<SidebarMenuAction className="aria-expanded:rotate-90" />}>
-                  <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} />
-                  <span className="sr-only">Toggle</span>
-                </CollapsibleTrigger>
+        {menuData.map((item) =>
+          isEmpty(item?.children) ? (
+            <SidebarMenuItem key={item.name}>
+              <SidebarMenuButton tooltip={item.name} render={<Link to={item.path || "#"} />}>
+                {item.icon}
+                <span>{item.name}</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ) : (
+            <Collapsible key={item.name} defaultOpen={isActive(location.pathname, item)}>
+              <SidebarMenuItem>
+                <CollapsibleTrigger
+                  render={
+                    <SidebarMenuButton tooltip={item.name} className="w-full">
+                      {item.icon}
+                      <span>{item.name}</span>
+                      <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} className="ml-auto" />
+                    </SidebarMenuButton>
+                  }
+                />
+
                 <CollapsibleContent>
                   <SidebarMenuSub>
                     {item.children?.map((subItem) => (
@@ -44,10 +53,10 @@ export function NavMain({ menuData }: { menuData: MenuObject[] }) {
                     ))}
                   </SidebarMenuSub>
                 </CollapsibleContent>
-              </>
-            ) : null}
-          </Collapsible>
-        ))}
+              </SidebarMenuItem>
+            </Collapsible>
+          ),
+        )}
       </SidebarMenu>
     </SidebarGroup>
   );
