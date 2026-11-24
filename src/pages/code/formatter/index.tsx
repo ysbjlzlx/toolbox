@@ -48,46 +48,48 @@ export const Component = () => {
   };
 
   return (
-    <div className="h-full">
+    <div className="flex h-full flex-col">
       <Card>
-        <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
-          <div className="grid grid-cols-3 gap-2">
-            <div>
-              <Select
-                defaultValue={model}
-                onChange={(value) => {
-                  setModel(value);
-                }}
-                options={[
-                  { label: "JSON", value: "json" },
-                  { label: "JSON5", value: "json5" },
-                  { label: "YAML", value: "yaml" },
-                  { label: "XML", value: "xml" },
-                  { label: "Groovy", value: "groovy" },
-                ]}
-                className="w-full"
-              />
-            </div>
-            <div className="leading-8">
-              <Checkbox
-                checked={options.wrap}
-                onChange={(event) => {
-                  setOptions({ ...options, wrap: event.target.checked });
-                }}
-              >
-                自动换行
-              </Checkbox>
-            </div>
+        <div className="flex">
+          <Form onFinish={onPrettier} initialValues={{ remember: true }} layout="inline">
+            <div className="grid grid-cols-3 gap-2">
+              <div>
+                <Select
+                  defaultValue={model}
+                  onChange={(value) => {
+                    setModel(value);
+                  }}
+                  options={[
+                    { label: "JSON", value: "json" },
+                    { label: "JSON5", value: "json5" },
+                    { label: "YAML", value: "yaml" },
+                    { label: "XML", value: "xml" },
+                    { label: "Groovy", value: "groovy" },
+                  ]}
+                  className="w-full"
+                />
+              </div>
+              <div className="leading-8">
+                <Checkbox
+                  checked={options.wrap}
+                  onChange={(event) => {
+                    setOptions({ ...options, wrap: event.target.checked });
+                  }}
+                >
+                  自动换行
+                </Checkbox>
+              </div>
 
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                格式化
-              </Button>
-            </Form.Item>
-          </div>
-        </Form>
+              <Form.Item>
+                <Button type="primary" htmlType="submit">
+                  格式化
+                </Button>
+              </Form.Item>
+            </div>
+          </Form>
+        </div>
       </Card>
-      <div className="mt-4 h-[calc(100%-96px)]">
+      <div className="mt-4 flex-1">
         <AceEditor
           width="100%"
           height="100%"
