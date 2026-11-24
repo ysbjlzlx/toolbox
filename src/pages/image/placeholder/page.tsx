@@ -9,7 +9,7 @@ import {
 import { colors, culori } from "@repo/colors/tailwindcss";
 import type { ColorPickerProps, TabsProps } from "antd";
 import { Card, ColorPicker, Form, Tabs } from "antd";
-import { values } from "lodash-es";
+import { values } from "es-toolkit/compat";
 import { type FC, useEffect, useMemo, useState } from "react";
 
 import type { PlaceholderConfig } from "@/components/placeholder";

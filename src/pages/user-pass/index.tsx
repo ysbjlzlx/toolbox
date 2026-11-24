@@ -1,4 +1,5 @@
-import { sampleSize, toNumber } from "lodash-es";
+import { sampleSize } from "es-toolkit";
+import { toNumber } from "es-toolkit/compat";
 import { type FC, useCallback, useEffect, useState } from "react";
 import { type LoaderFunction, type URLSearchParamsInit, useLoaderData, useSearchParams } from "react-router";
 

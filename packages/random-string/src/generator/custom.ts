@@ -1,4 +1,4 @@
-import { difference, sampleSize, shuffle, uniq } from "lodash-es";
+import { difference, sampleSize, shuffle, uniq } from "es-toolkit";
 import { customAlphabet } from "nanoid";
 import { z } from "zod";
 import type { CustomOptions } from "../index.ts";

@@ -1,4 +1,5 @@
-import { concat, without } from "lodash-es";
+import { without } from "es-toolkit";
+import { concat } from "es-toolkit/compat";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 

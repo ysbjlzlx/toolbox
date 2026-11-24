@@ -1,5 +1,5 @@
+import { uniqWith } from "es-toolkit";
 import JSON5 from "json5";
-import { uniqWith } from "lodash-es";
 import { useEffect, useState } from "react";
 import type { IAceOptions } from "react-ace";
 import AceEditor from "react-ace";

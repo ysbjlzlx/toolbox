@@ -1,4 +1,4 @@
-import { isEmpty } from "lodash-es";
+import { isEmpty } from "es-toolkit/compat";
 import type { MenuObject } from "@/typing";
 
 export { cn } from "cn";

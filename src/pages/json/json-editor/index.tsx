@@ -1,6 +1,7 @@
 import type { MenuProps, TabsProps } from "antd";
 import { Button, Dropdown, Space, Tabs } from "antd";
-import { indexOf, last } from "lodash-es";
+import { last } from "es-toolkit";
+import { indexOf } from "es-toolkit/compat";
 import type React from "react";
 import { useEffect, useState } from "react";
 

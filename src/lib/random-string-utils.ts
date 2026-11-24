@@ -1,4 +1,5 @@
-import { isEmpty, shuffle } from "lodash-es";
+import { shuffle } from "es-toolkit";
+import { isEmpty } from "es-toolkit/compat";
 import { customAlphabet } from "nanoid";
 
 const numbers = "0123456789";
