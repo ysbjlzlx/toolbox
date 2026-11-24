@@ -28,7 +28,7 @@ import {
   Underline,
   Undo2,
 } from "lucide-react";
-import type React from "react";
+import React from "react";
 
 import type { RichTextEditorIcons } from "./icon-types";
 import { DEFAULT_LANGUAGE_ICONS } from "./language-icons";

@@ -32,7 +32,11 @@ export const Footer = ({
       });
     };
 
-    const handleTransaction = ({ transaction }: { transaction: { docChanged: boolean } }) => {
+    const handleTransaction = ({
+      transaction,
+    }: {
+      transaction: { docChanged: boolean };
+    }) => {
       if (transaction.docChanged) {
         scheduleUpdate();
       }
@@ -54,7 +58,8 @@ export const Footer = ({
       return null;
     }
 
-    const count = (editor.storage as unknown as Record<string, unknown>).characterCount as
+    const count = (editor.storage as unknown as Record<string, unknown>)
+      .characterCount as
       | { words: () => number; characters: () => number }
       | undefined;
     const words = count?.words() ?? 0;
@@ -62,7 +67,12 @@ export const Footer = ({
 
     return { characters, words };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [editor, showWordCount, editor?.state.doc.content.size]);
+  }, [
+    editor,
+    showWordCount,
+    wordCountFormatter,
+    editor?.state.doc.content.size,
+  ]);
 
   if (!showWordCount && !children) {
     return null;
@@ -74,7 +84,7 @@ export const Footer = ({
         "rte-footer",
         variant !== "default" && `rte-footer--${variant}`,
         sticky && "sticky z-10",
-        className,
+        className
       )}
       data-sticky={sticky ? "" : undefined}
       style={sticky ? { bottom: stickyOffset } : undefined}
@@ -86,12 +96,19 @@ export const Footer = ({
           ) : (
             <>
               <span className="rte-footer-word-count-stat">
-                <span className="rte-footer-word-count-number">{wordCount.words}</span>
+                <span className="rte-footer-word-count-number">
+                  {wordCount.words}
+                </span>
                 <span className="rte-footer-word-count-unit">words</span>
               </span>
-              <span className="rte-footer-word-count-separator" aria-hidden="true" />
+              <span
+                className="rte-footer-word-count-separator"
+                aria-hidden="true"
+              />
               <span className="rte-footer-word-count-stat">
-                <span className="rte-footer-word-count-number">{wordCount.characters}</span>
+                <span className="rte-footer-word-count-number">
+                  {wordCount.characters}
+                </span>
                 <span className="rte-footer-word-count-unit">characters</span>
               </span>
             </>

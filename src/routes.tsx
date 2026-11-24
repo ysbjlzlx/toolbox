@@ -43,6 +43,10 @@ export const routes: RouteObject[] = [
         ],
       },
       {
+        path: "editorcn",
+        lazy: () => import("@/pages/editorcn/page.tsx"),
+      },
+      {
         path: "image",
         children: [
           {

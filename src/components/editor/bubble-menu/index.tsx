@@ -5,30 +5,26 @@ import { useCallback } from "react";
 
 import { RteSeparator } from "../ui";
 import { ColorSelector } from "./color-selector";
-import { LanguageSelector } from "./language-selector";
-import { TextButtons } from "./text-buttons";
-import { shallowEqual, useEditorState } from "./utils";
+import { TextButtons, getTextItems } from "./text-buttons";
 
 export interface BubbleMenuProps {
   editor: Editor | null;
 }
 
 export const BubbleMenu = ({ editor }: BubbleMenuProps) => {
-  const editorState = useEditorState(
-    editor,
-    (ed) => ({
-      isCodeBlock: ed.isActive("codeBlock"),
-    }),
-    shallowEqual,
-  );
-
   const shouldShow = useCallback(
-    ({ editor: ed, state }: { editor: Editor; state: { selection: { empty: boolean } } }) => {
+    ({
+      editor: ed,
+      state,
+    }: {
+      editor: Editor;
+      state: { selection: { empty: boolean } };
+    }) => {
       const { selection } = state;
       if (!ed.isEditable) {
         return false;
       }
-      if (selection.empty && !ed.isActive("codeBlock")) {
+      if (selection.empty || ed.isActive("codeBlock")) {
         return false;
       }
       if (!selection.empty && !isTextSelection(selection)) {
@@ -36,27 +32,32 @@ export const BubbleMenu = ({ editor }: BubbleMenuProps) => {
       }
       return true;
     },
-    [],
+    []
   );
 
   if (!editor) {
     return null;
   }
 
-  const isCodeBlockActive = editorState?.isCodeBlock ?? false;
+  const hasText = getTextItems(editor).length > 0;
+  const hasColor = editor.extensionManager.extensions.some(
+    (ext) => ext.name === "color" || ext.name === "highlight"
+  );
+
+  if (!(hasText || hasColor)) {
+    return null;
+  }
 
   return (
-    <TiptapBubbleMenu editor={editor} options={{ offset: 8, placement: "top" }} shouldShow={shouldShow}>
+    <TiptapBubbleMenu
+      editor={editor}
+      options={{ offset: 8, placement: "top" }}
+      shouldShow={shouldShow}
+    >
       <div className="rte-bubble-menu">
-        {isCodeBlockActive ? (
-          <LanguageSelector editor={editor} />
-        ) : (
-          <>
-            <TextButtons editor={editor} />
-            <RteSeparator />
-            <ColorSelector editor={editor} />
-          </>
-        )}
+        {hasText && <TextButtons editor={editor} />}
+        {hasText && hasColor && <RteSeparator />}
+        {hasColor && <ColorSelector editor={editor} />}
       </div>
     </TiptapBubbleMenu>
   );

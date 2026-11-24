@@ -7,15 +7,19 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Toggle } from "../ui/toggle";
+import { TooltipTrigger } from "../ui/tooltip";
 
 export const LinkControl = () => {
-  const { editor, labels, icons } = useRichTextEditorContext();
+  const { editor, icons, labels, tooltip } = useRichTextEditorContext();
   const [url, setUrl] = useState("");
   const [open, setOpen] = useState(false);
 
   const active = useEditorState({
     editor: editor ?? null,
-    selector: (ctx) => (ctx.editor && !ctx.editor.isDestroyed ? ctx.editor.isActive("link") : false),
+    selector: (ctx) =>
+      ctx.editor && !ctx.editor.isDestroyed
+        ? ctx.editor.isActive("link")
+        : false,
   });
 
   const handleOpen = useCallback(
@@ -28,7 +32,7 @@ export const LinkControl = () => {
       }
       setOpen(isOpen);
     },
-    [editor],
+    [editor]
   );
 
   const handleSave = () => {
@@ -38,13 +42,20 @@ export const LinkControl = () => {
     if (url === "") {
       editor.chain().focus().extendMarkRange("link").unsetLink().run();
     } else {
-      editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+      editor
+        .chain()
+        .focus()
+        .extendMarkRange("link")
+        .setLink({ href: url })
+        .run();
     }
     setOpen(false);
     setUrl("");
   };
 
-  const handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void = (e) => {
+  const handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void = (
+    e
+  ) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleSave();
@@ -59,20 +70,25 @@ export const LinkControl = () => {
 
   return (
     <Popover open={open} onOpenChange={handleOpen}>
-      <PopoverTrigger
+      <TooltipTrigger
+        handle={tooltip}
+        payload={labels.linkControlLabel}
         render={
-          <Toggle
-            size="sm"
-            pressed={active ?? false}
-            aria-label={labels.linkControlLabel}
-            title={labels.linkControlLabel}
-            className="p-0"
-          />
+          <PopoverTrigger
+            render={
+              <Toggle
+                size="sm"
+                pressed={active ?? false}
+                aria-label={labels.linkControlLabel}
+                className="p-0"
+              />
+            }
+            onMouseDown={(e: React.MouseEvent) => e.preventDefault()}
+          >
+            {icons.linkControlIcon}
+          </PopoverTrigger>
         }
-        onMouseDown={(e: React.MouseEvent) => e.preventDefault()}
-      >
-        {icons.linkControlIcon}
-      </PopoverTrigger>
+      />
       <PopoverContent className="w-72 p-3">
         <div className="rte-link-editor">
           <Input
@@ -84,7 +100,12 @@ export const LinkControl = () => {
             onKeyDown={handleKeyDown}
             className="rte-link-editor-input h-8 text-sm"
           />
-          <Button size="sm" variant="default" onClick={handleSave} className="rte-link-editor-save h-8">
+          <Button
+            size="sm"
+            variant="default"
+            onClick={handleSave}
+            className="rte-link-editor-save h-8"
+          >
             {labels.linkEditorSave}
           </Button>
         </div>

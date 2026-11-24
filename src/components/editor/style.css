@@ -1,11 +1,17 @@
-.rte-root {
-  position: relative;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background-color: var(--background);
-  transition:
-    border-color 150ms ease-out,
-    box-shadow 150ms ease-out;
+@layer theme, base, components, utilities;
+
+/* ── Main Editor Wrapper ── */
+@layer components {
+  .rte-root {
+    --rte-hairline: color-mix(in srgb, var(--border) 60%, transparent);
+    --rte-strip: color-mix(in srgb, var(--muted) 50%, var(--background));
+    --rte-float-shadow: 0 8px 30px -12px rgb(0 0 0 / 0.15);
+    position: relative;
+    border-radius: calc(var(--radius) + 4px);
+    border: 1px solid var(--rte-hairline);
+    background-color: var(--background);
+    transition: border-color 150ms ease-out;
+  }
 }
 
 .rte-editor-icon {
@@ -21,6 +27,7 @@ button.rte-control-button {
   height: 2rem;
   min-width: 2rem;
   padding: 0;
+  border-radius: calc(var(--radius) - 2px);
   transition:
     background-color 150ms ease-out,
     color 150ms ease-out,
@@ -70,12 +77,11 @@ button.rte-control-button:active {
 
 .rte-content .ProseMirror h1 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.025em;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
 }
-
 .rte-content .ProseMirror h1:first-child {
   margin-top: 0;
 }
@@ -87,7 +93,6 @@ button.rte-control-button:active {
   margin-bottom: 0.75rem;
   margin-top: 1.25rem;
 }
-
 .rte-content .ProseMirror h2:first-child {
   margin-top: 0;
 }
@@ -98,7 +103,6 @@ button.rte-control-button:active {
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
-
 .rte-content .ProseMirror h3:first-child {
   margin-top: 0;
 }
@@ -109,7 +113,6 @@ button.rte-control-button:active {
   margin-bottom: 0.5rem;
   margin-top: 0.75rem;
 }
-
 .rte-content .ProseMirror h4:first-child {
   margin-top: 0;
 }
@@ -120,7 +123,6 @@ button.rte-control-button:active {
   margin-bottom: 0.5rem;
   margin-top: 0.75rem;
 }
-
 .rte-content .ProseMirror h5:first-child {
   margin-top: 0;
 }
@@ -131,7 +133,6 @@ button.rte-control-button:active {
   margin-bottom: 0.5rem;
   margin-top: 0.75rem;
 }
-
 .rte-content .ProseMirror h6:first-child {
   margin-top: 0;
 }
@@ -162,7 +163,7 @@ button.rte-control-button:active {
 }
 
 .rte-content .ProseMirror blockquote {
-  border-left: 3px solid var(--border);
+  border-left: 2px solid var(--border);
   padding-left: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -170,18 +171,11 @@ button.rte-control-button:active {
   font-style: italic;
 }
 
-.rte-content .ProseMirror pre code {
-  color: inherit;
-  background: none;
-  padding: 0;
-  font-weight: 400;
-}
-
-.rte-content .ProseMirror pre {
-  background: #1e1e2e;
-  color: #cdd6f4;
+.rte-content .ProseMirror :where(pre) {
+  background: color-mix(in srgb, var(--muted) 50%, var(--background));
+  color: var(--foreground);
   border-radius: var(--radius);
-  border: 1px solid var(--border);
+  border: 1px solid var(--rte-hairline, var(--border));
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -190,11 +184,12 @@ button.rte-control-button:active {
   font-size: 0.875rem;
 }
 
-.rte-content .ProseMirror pre code {
+.rte-content .ProseMirror :where(pre) code {
   background: none;
   color: inherit;
   border: none;
   font-size: 0.875rem;
+  font-weight: 400;
   padding: 0;
 }
 
@@ -221,102 +216,6 @@ button.rte-control-button:active {
   text-decoration-color: color-mix(in srgb, var(--primary) 80%, transparent);
 }
 
-/* Syntax Highlighting */
-.rte-content .ProseMirror pre .hljs-comment,
-.rte-content .ProseMirror pre .hljs-quote {
-  color: #6c7086;
-}
-
-.rte-content .ProseMirror pre .hljs-variable,
-.rte-content .ProseMirror pre .hljs-template-variable,
-.rte-content .ProseMirror pre .hljs-attribute,
-.rte-content .ProseMirror pre .hljs-tag,
-.rte-content .ProseMirror pre .hljs-regexp,
-.rte-content .ProseMirror pre .hljs-link,
-.rte-content .ProseMirror pre .hljs-name,
-.rte-content .ProseMirror pre .hljs-selector-id,
-.rte-content .ProseMirror pre .hljs-selector-class {
-  color: #89b4fa;
-}
-
-.rte-content .ProseMirror pre .hljs-number,
-.rte-content .ProseMirror pre .hljs-meta,
-.rte-content .ProseMirror pre .hljs-built_in,
-.rte-content .ProseMirror pre .hljs-builtin-name,
-.rte-content .ProseMirror pre .hljs-literal,
-.rte-content .ProseMirror pre .hljs-type,
-.rte-content .ProseMirror pre .hljs-params {
-  color: #fab387;
-}
-
-.rte-content .ProseMirror pre .hljs-string,
-.rte-content .ProseMirror pre .hljs-symbol,
-.rte-content .ProseMirror pre .hljs-bullet {
-  color: #a6e3a1;
-}
-
-.rte-content .ProseMirror pre .hljs-title,
-.rte-content .ProseMirror pre .hljs-section {
-  color: #f9e2af;
-}
-
-.rte-content .ProseMirror pre .hljs-keyword,
-.rte-content .ProseMirror pre .hljs-selector-tag {
-  color: #cba6f7;
-}
-
-/* Object/JSON keys & HTML/XML attribute names (previously missing) */
-.rte-content .ProseMirror pre .hljs-attr {
-  color: #89b4fa;
-}
-
-/* JSDoc-style tags, e.g. @param, @returns */
-.rte-content .ProseMirror pre .hljs-doctag {
-  color: #f38ba8;
-  font-weight: 600;
-}
-
-/* Operators & punctuation (finer-grained grammars) */
-.rte-content .ProseMirror pre .hljs-operator,
-.rte-content .ProseMirror pre .hljs-punctuation {
-  color: #9399b2;
-}
-
-/* CSS selector attributes/pseudo-classes, e.g. [type="text"], :hover */
-.rte-content .ProseMirror pre .hljs-selector-attr,
-.rte-content .ProseMirror pre .hljs-selector-pseudo {
-  color: #94e2d5;
-}
-
-/* Language-level variables, e.g. this, super */
-.rte-content .ProseMirror pre .hljs-variable.language_ {
-  color: #cba6f7;
-  font-style: italic;
-}
-
-/* Template literal substitutions, e.g. ${...} */
-.rte-content .ProseMirror pre .hljs-subst {
-  color: #cdd6f4;
-}
-
-.rte-content .ProseMirror pre .hljs-emphasis {
-  font-style: italic;
-}
-
-.rte-content .ProseMirror pre .hljs-strong {
-  font-weight: 700;
-}
-
-.rte-content .ProseMirror pre .hljs-addition {
-  color: #a6e3a1;
-  background-color: color-mix(in srgb, #a6e3a1 10%, transparent);
-}
-
-.rte-content .ProseMirror pre .hljs-deletion {
-  color: #f38ba8;
-  background-color: color-mix(in srgb, #f38ba8 10%, transparent);
-}
-
 .rte-content .ProseMirror code {
   font-size: 0.875em;
   font-weight: 500;
@@ -332,34 +231,21 @@ button.rte-control-button:active {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  top: var(--rte-sticky-offset, 0);
-  background-color: color-mix(in srgb, var(--muted) 35%, var(--background));
+  gap: 0.25rem;
+  top: var(--rte-sticky-offset, 0px);
+  background-color: var(--rte-strip);
   z-index: 1;
-  border-start-end-radius: var(--radius);
-  border-start-start-radius: var(--radius);
-  border-bottom: 1px solid var(--border);
-  padding: 0.5rem 0.75rem;
-  transition:
-    box-shadow 150ms ease-out,
-    background-color 150ms ease-out;
+  border-start-end-radius: calc(var(--radius) + 3px);
+  border-start-start-radius: calc(var(--radius) + 3px);
+  border-bottom: 1px solid var(--rte-hairline);
+  padding: 0.375rem 0.5rem;
+  transition: background-color 150ms ease-out;
 }
 
 .rte-toolbar[data-sticky] {
   position: sticky;
-  background-color: color-mix(in srgb, var(--background) 85%, transparent);
-  backdrop-filter: blur(8px);
-  box-shadow:
-    0 0 0 1px oklch(0 0 0 / 4%),
-    0 4px 12px 0 oklch(0 0 0 / 5%);
-}
-
-@media (prefers-color-scheme: dark) {
-  .rte-toolbar[data-sticky] {
-    box-shadow:
-      0 0 0 1px oklch(1 0 0 / 6%),
-      0 4px 12px 0 oklch(0 0 0 / 30%);
-  }
+  background-color: color-mix(in srgb, var(--rte-strip) 80%, transparent);
+  backdrop-filter: blur(16px);
 }
 
 .rte-footer {
@@ -368,12 +254,13 @@ button.rte-control-button:active {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
-  background-color: var(--background);
+  min-height: 2.25rem;
+  background-color: var(--rte-strip);
   z-index: 1;
-  border-end-end-radius: var(--radius);
-  border-end-start-radius: var(--radius);
-  border-top: 1px solid var(--border);
-  padding: 0.5rem 0.75rem;
+  border-end-end-radius: calc(var(--radius) + 3px);
+  border-end-start-radius: calc(var(--radius) + 3px);
+  border-top: 1px solid var(--rte-hairline);
+  padding: 0.375rem 0.75rem;
   font-size: 0.75rem;
   color: var(--muted-foreground);
 }
@@ -381,19 +268,8 @@ button.rte-control-button:active {
 .rte-footer[data-sticky] {
   position: sticky;
   bottom: 0;
-  background-color: color-mix(in srgb, var(--background) 85%, transparent);
-  backdrop-filter: blur(8px);
-  box-shadow:
-    0 0 0 1px oklch(0 0 0 / 4%),
-    0 -4px 12px 0 oklch(0 0 0 / 5%);
-}
-
-@media (prefers-color-scheme: dark) {
-  .rte-footer[data-sticky] {
-    box-shadow:
-      0 0 0 1px oklch(1 0 0 / 6%),
-      0 -4px 12px 0 oklch(0 0 0 / 30%);
-  }
+  background-color: color-mix(in srgb, var(--rte-strip) 80%, transparent);
+  backdrop-filter: blur(16px);
 }
 
 .rte-footer-word-count {
@@ -402,7 +278,6 @@ button.rte-control-button:active {
   gap: 0.375rem;
   white-space: nowrap;
   font-size: 0.75rem;
-  letter-spacing: 0.01em;
 }
 
 .rte-footer-word-count-stat {
@@ -412,7 +287,7 @@ button.rte-control-button:active {
 }
 
 .rte-footer-word-count-number {
-  font-weight: 600;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
   color: var(--foreground);
 }
@@ -426,18 +301,14 @@ button.rte-control-button:active {
   height: 3px;
   flex-shrink: 0;
   border-radius: 9999px;
-  background-color: color-mix(in srgb, var(--muted-foreground) 45%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--muted-foreground) 45%,
+    transparent
+  );
 }
 
-.rte-toolbar--subtle + .rte-content + .rte-footer {
-  background-color: var(--muted);
-}
-
-.rte-toolbar--compact + .rte-content + .rte-footer {
-  background-color: var(--muted);
-}
-
-@media (width <= 640px) {
+@media (max-width: 640px) {
   .rte-toolbar {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -445,9 +316,7 @@ button.rte-control-button:active {
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
-
     --rte-toolbar-fade-end: 1.5rem;
-
     mask-image: linear-gradient(
       to right,
       transparent,
@@ -456,15 +325,12 @@ button.rte-control-button:active {
       transparent
     );
   }
-
   .rte-toolbar::-webkit-scrollbar {
     display: none;
   }
-
   @supports (animation-timeline: scroll()) {
     .rte-toolbar {
       --rte-toolbar-fade-end: 0px;
-
       animation: rte-toolbar-fade linear both;
       animation-timeline: scroll(self inline);
     }
@@ -474,62 +340,82 @@ button.rte-control-button:active {
 @property --rte-toolbar-fade-start {
   syntax: "<length>";
   inherits: false;
-  initial-value: 0;
+  initial-value: 0px;
 }
 
 @property --rte-toolbar-fade-end {
   syntax: "<length>";
   inherits: false;
-  initial-value: 0;
+  initial-value: 0px;
 }
 
 @keyframes rte-toolbar-fade {
-  0% {
+  from {
     --rte-toolbar-fade-start: 0px;
     --rte-toolbar-fade-end: 1.5rem;
   }
-
   10%,
   90% {
     --rte-toolbar-fade-start: 1.5rem;
     --rte-toolbar-fade-end: 1.5rem;
   }
-
-  100% {
+  to {
     --rte-toolbar-fade-start: 1.5rem;
     --rte-toolbar-fade-end: 0px;
   }
 }
 
-.rte-root[data-variant="default"] {
-  box-shadow: 0 1px 2px oklch(0 0 0 / 4%);
+@layer components {
+  .rte-root[data-variant="default"] {
+    padding: 0.25rem;
+    background-color: var(--rte-strip);
+  }
 }
-
 .rte-root[data-variant="default"] .rte-toolbar {
   gap: 0.25rem;
-  padding: 0.375rem 0.5rem;
-  background-color: var(--background);
+  padding: 0 0 0.25rem;
+  border-bottom: none;
+  border-radius: 0;
+  background-color: transparent;
 }
-
+.rte-root[data-variant="default"] .rte-toolbar[data-sticky] {
+  margin-inline: -0.25rem;
+  margin-top: -0.25rem;
+  padding: 0.25rem 0.25rem 0.25rem;
+  border-start-start-radius: calc(var(--radius) + 3px);
+  border-start-end-radius: calc(var(--radius) + 3px);
+  background-color: color-mix(in srgb, var(--rte-strip) 85%, transparent);
+}
+.rte-root[data-variant="default"] .rte-content {
+  border: 1px solid var(--rte-hairline);
+  border-radius: var(--radius);
+  background-color: var(--card, var(--background));
+}
 .rte-root[data-variant="default"] .rte-content .ProseMirror {
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
 }
-
+.rte-root[data-variant="default"] .rte-footer {
+  min-height: 2rem;
+  padding: 0.25rem 0.5rem 0;
+  border-top: none;
+  border-radius: 0;
+  background-color: transparent;
+}
 .rte-root[data-variant="default"] .rte-controls-group {
   display: flex;
   align-items: center;
   gap: 0.125rem;
 }
-
-.rte-root[data-variant="default"] .rte-controls-group + .rte-controls-group::before {
+.rte-root[data-variant="default"]
+  .rte-controls-group
+  + .rte-controls-group::before {
   content: "";
   width: 1px;
-  height: 1.25rem;
+  height: 1rem;
   margin-inline: 0.25rem;
   background-color: var(--border);
   flex-shrink: 0;
 }
-
 .rte-root[data-variant="default"] .rte-controls-group > button {
   border: none;
   border-radius: calc(var(--radius) - 2px);
@@ -541,52 +427,42 @@ button.rte-control-button:active {
     background-color 150ms ease-out,
     color 150ms ease-out;
 }
-
-.rte-root[data-variant="default"] .rte-controls-group > button:hover:not(:disabled) {
-  background-color: var(--muted);
+.rte-root[data-variant="default"]
+  .rte-controls-group
+  > button:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+  color: var(--foreground);
 }
-
 .rte-root[data-variant="default"] .rte-controls-group > button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
-
 .rte-root[data-variant="default"] .rte-controls-group > button:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--primary) 40%, transparent);
+  outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
   outline-offset: 1px;
 }
-
 .rte-root[data-variant="default"] .rte-controls-group > button[data-state="on"],
-.rte-root[data-variant="default"] .rte-controls-group > button[aria-pressed="true"] {
-  background-color: var(--accent);
-  color: var(--accent-foreground);
-}
-
-/* ── Subtle variant: elevated card with soft toolbar ── */
-.rte-root[data-variant="subtle"] {
-  border-color: transparent;
-  box-shadow:
-    0 1px 3px rgb(0 0 0 / 6%),
-    0 1px 2px rgb(0 0 0 / 4%);
+.rte-root[data-variant="default"]
+  .rte-controls-group
+  > button[aria-pressed="true"] {
+  background-color: color-mix(in srgb, var(--foreground) 8%, transparent);
+  color: var(--foreground);
 }
 
 .rte-toolbar--subtle {
-  border-bottom: 1px solid var(--border);
-  padding: 0.375rem 0.5rem;
-  gap: 0.375rem;
-  background-color: var(--muted);
+  padding: 0.25rem 0.375rem;
+  gap: 0.25rem;
 }
-
 .rte-root[data-variant="subtle"] .rte-content .ProseMirror {
   padding: 0.875rem;
 }
-
 .rte-root[data-variant="subtle"] .rte-controls-group {
   display: flex;
   align-items: center;
 }
-
-.rte-root[data-variant="subtle"] .rte-controls-group + .rte-controls-group::before {
+.rte-root[data-variant="subtle"]
+  .rte-controls-group
+  + .rte-controls-group::before {
   content: "";
   width: 1px;
   height: 1rem;
@@ -594,7 +470,6 @@ button.rte-control-button:active {
   background-color: var(--border);
   flex-shrink: 0;
 }
-
 .rte-root[data-variant="subtle"] .rte-controls-group > button {
   border: none;
   border-radius: calc(var(--radius) - 2px);
@@ -606,49 +481,55 @@ button.rte-control-button:active {
     background-color 150ms ease-out,
     color 150ms ease-out;
 }
-
 .rte-root[data-variant="subtle"] .rte-controls-group > button:hover {
-  background-color: var(--accent);
-  color: var(--accent-foreground);
+  background-color: var(--muted);
+  color: var(--foreground);
 }
-
 .rte-root[data-variant="subtle"] .rte-controls-group > button:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--primary) 40%, transparent);
+  outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
   outline-offset: 1px;
-  background-color: var(--accent);
-  color: var(--accent-foreground);
 }
-
 .rte-root[data-variant="subtle"] .rte-controls-group > button[data-state="on"],
-.rte-root[data-variant="subtle"] .rte-controls-group > button[aria-pressed="true"] {
-  background-color: color-mix(in srgb, var(--primary) 12%, transparent);
-  color: var(--primary);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 25%, transparent);
+.rte-root[data-variant="subtle"]
+  .rte-controls-group
+  > button[aria-pressed="true"] {
+  background-color: var(--muted);
+  color: var(--foreground);
 }
 
 /* ── Compact variant: inline fused toolbar-content ── */
-.rte-root[data-variant="compact"] {
-  border-radius: var(--radius);
+@layer components {
+  .rte-root[data-variant="compact"] {
+    border-radius: var(--radius);
+  }
 }
-
+.rte-root[data-variant="compact"] .rte-toolbar,
+.rte-root[data-variant="compact"] .rte-footer {
+  border-radius: 0;
+}
+.rte-root[data-variant="compact"] .rte-toolbar:first-child {
+  border-start-start-radius: calc(var(--radius) - 1px);
+  border-start-end-radius: calc(var(--radius) - 1px);
+}
+.rte-root[data-variant="compact"] .rte-footer:last-child {
+  border-end-start-radius: calc(var(--radius) - 1px);
+  border-end-end-radius: calc(var(--radius) - 1px);
+}
 .rte-toolbar--compact {
   padding: 0.25rem 0.375rem;
-  gap: 0.25rem;
-  border-bottom: none;
-  background-color: var(--muted);
+  gap: 0.125rem;
 }
-
 .rte-root[data-variant="compact"] .rte-content .ProseMirror {
   padding: 0.5rem 0.625rem;
   min-height: 100px;
 }
-
 .rte-root[data-variant="compact"] .rte-controls-group {
   display: flex;
   align-items: center;
 }
-
-.rte-root[data-variant="compact"] .rte-controls-group + .rte-controls-group::before {
+.rte-root[data-variant="compact"]
+  .rte-controls-group
+  + .rte-controls-group::before {
   content: "";
   width: 1px;
   height: 0.875rem;
@@ -656,38 +537,32 @@ button.rte-control-button:active {
   background-color: var(--border);
   flex-shrink: 0;
 }
-
 .rte-root[data-variant="compact"] .rte-controls-group > button {
   border: none;
-  border-radius: calc(var(--radius) - 3px);
-  min-width: 1.5rem;
-  height: 1.5rem;
+  border-radius: calc(var(--radius) - 4px);
+  min-width: 1.75rem;
+  height: 1.75rem;
   background-color: transparent;
   color: var(--muted-foreground);
   transition:
     background-color 150ms ease-out,
     color 150ms ease-out;
 }
-
 .rte-root[data-variant="compact"] .rte-controls-group > button:hover {
-  background-color: var(--accent);
-  color: var(--accent-foreground);
+  background-color: var(--muted);
+  color: var(--foreground);
 }
-
 .rte-root[data-variant="compact"] .rte-controls-group > button:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--primary) 40%, transparent);
+  outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
   outline-offset: 1px;
-  background-color: var(--accent);
-  color: var(--accent-foreground);
 }
-
 .rte-root[data-variant="compact"] .rte-controls-group > button[data-state="on"],
-.rte-root[data-variant="compact"] .rte-controls-group > button[aria-pressed="true"] {
-  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
-  color: var(--primary);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 25%, transparent);
+.rte-root[data-variant="compact"]
+  .rte-controls-group
+  > button[aria-pressed="true"] {
+  background-color: var(--muted);
+  color: var(--foreground);
 }
-
 .rte-root[data-variant="compact"] .rte-editor-icon {
   height: 0.875rem;
   width: 0.875rem;
@@ -697,6 +572,11 @@ button.rte-control-button:active {
 .rte-controls-group {
   display: flex;
   align-items: center;
+}
+
+.rte-root .rte-controls-group:empty,
+.rte-root[data-variant] .rte-controls-group:empty {
+  display: none;
 }
 
 .rte-link-editor {
@@ -759,10 +639,10 @@ button.rte-control-button:active {
 .rte-task-list input[type="checkbox"] {
   cursor: pointer;
   appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 1px solid var(--border);
-  border-radius: calc(var(--radius) - 2px);
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--input, var(--border));
+  border-radius: calc(var(--radius) - 6px);
   background-color: var(--background);
   vertical-align: middle;
   position: relative;
@@ -784,12 +664,11 @@ button.rte-control-button:active {
 
 @keyframes checkmark-in {
   0% {
-    transform: scale(0.5) rotate(-15deg);
+    transform: scale(0.8);
     opacity: 0;
   }
-
   100% {
-    transform: scale(1) rotate(0);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -798,11 +677,12 @@ button.rte-control-button:active {
   position: absolute;
   content: "";
   inset: 0;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxMCA3Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNCA0LjU4NkwxLjcwNyAyLjI5M0ExIDEgMCAxMC4yOTMgMy43MDdsMyAzYS45OTcuOTk3IDAgMDAxLjQxNCAwbDUtNUExIDEgMCAxMDguMjkzLjI5M0w0IDQuNTg2eiIvPjwvc3ZnPg==");
-  background-repeat: no-repeat;
-  background-size: 10px;
-  background-position: center;
-  animation: checkmark-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  background-color: var(--primary-foreground);
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxMCA3Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNCA0LjU4NkwxLjcwNyAyLjI5M0ExIDEgMCAxMC4yOTMgMy43MDdsMyAzYS45OTcuOTk3IDAgMDAxLjQxNCAwbDUtNUExIDEgMCAxMDguMjkzLjI5M0w0IDQuNTg2eiIvPjwvc3ZnPg==");
+  mask-repeat: no-repeat;
+  mask-size: 9px;
+  mask-position: center;
+  animation: checkmark-in 150ms ease-out forwards;
 }
 
 /* ── Embed nodes ── */
@@ -820,22 +700,19 @@ button.rte-control-button:active {
   justify-content: flex-start;
   text-align: left;
 }
-
 .rte-embed-wrapper[data-align="center"] {
   justify-content: center;
   text-align: center;
 }
-
 .rte-embed-wrapper[data-align="right"] {
   justify-content: flex-end;
   text-align: right;
 }
 
 .rte-embed-wrapper[data-selected] .rte-embed {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--ring);
   outline-offset: 2px;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
 .rte-embed {
@@ -844,9 +721,7 @@ button.rte-control-button:active {
   border-radius: var(--radius);
   background: var(--muted);
   display: inline-block;
-  transition:
-    outline-color 150ms ease-out,
-    box-shadow 150ms ease-out;
+  transition: outline-color 150ms ease-out;
 }
 
 .rte-embed-iframe {
@@ -870,7 +745,6 @@ button.rte-control-button:active {
   100% {
     opacity: 1;
   }
-
   50% {
     opacity: 0.5;
   }
@@ -885,15 +759,15 @@ button.rte-control-button:active {
   z-index: 50;
   display: flex;
   align-items: center;
-  height: 2.25rem;
+  height: 2.5rem;
   background: var(--popover);
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 4px 16px rgb(0 0 0 / 14%);
-  padding: 0 0.375rem;
+  box-shadow: 0 8px 30px -12px rgb(0 0 0 / 0.15);
+  padding: 0 0.25rem;
   gap: 0.25rem;
   white-space: nowrap;
-  animation: rte-bubble-pop-in 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: rte-bubble-pop-in 180ms ease-out forwards;
   pointer-events: auto;
 }
 
@@ -905,7 +779,7 @@ button.rte-control-button:active {
 
 .rte-embed-selector-divider {
   width: 1px;
-  height: 1.25rem;
+  height: 1rem;
   background: var(--border);
   margin: 0 0.125rem;
   flex-shrink: 0;
@@ -915,9 +789,9 @@ button.rte-control-button:active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 1.75rem;
-  min-width: 1.75rem;
-  padding: 0 0.375rem;
+  height: 2rem;
+  min-width: 2rem;
+  padding: 0 0.5rem;
   border: none;
   border-radius: calc(var(--radius) - 4px);
   background: transparent;
@@ -932,8 +806,13 @@ button.rte-control-button:active {
 }
 
 .rte-embed-selector-btn:hover {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.rte-embed-selector-btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
+  outline-offset: -2px;
 }
 
 .rte-embed-selector-btn:active {
@@ -941,14 +820,14 @@ button.rte-control-button:active {
 }
 
 .rte-embed-selector-btn--active {
-  color: var(--primary);
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--foreground);
+  background: var(--muted);
 }
 
 .rte-embed-selector-btn--preset {
-  font-weight: 600;
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .rte-embed-selector-btn--danger:hover {
@@ -961,9 +840,8 @@ button.rte-control-button:active {
   color: var(--primary-foreground);
   padding: 0 0.5rem;
 }
-
 .rte-embed-selector-btn--save:hover {
-  background: color-mix(in srgb, var(--primary) 90%, black);
+  background: color-mix(in srgb, var(--primary) 85%, transparent);
   color: var(--primary-foreground);
 }
 
@@ -974,19 +852,23 @@ button.rte-control-button:active {
 }
 
 .rte-embed-selector-input {
-  height: 1.75rem;
+  height: 2rem;
   width: 220px;
-  padding: 0 0.5rem;
-  font-size: 0.75rem;
-  border-radius: calc(var(--radius) - 4px);
-  border: 1px solid var(--border);
+  padding: 0 0.625rem;
+  font-size: 0.8125rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid var(--input, var(--border));
   background: var(--background);
   color: var(--foreground);
   outline: none;
+  transition:
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out;
 }
 
 .rte-embed-selector-input:focus {
-  border-color: var(--primary);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
 }
 
 .rte-embed-resize-badge {
@@ -994,12 +876,13 @@ button.rte-control-button:active {
   bottom: 8px;
   right: 8px;
   z-index: 40;
-  background: rgb(0 0 0 / 75%);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 600;
+  background: color-mix(in srgb, var(--foreground) 85%, transparent);
+  color: var(--background);
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: calc(var(--radius) - 4px);
   pointer-events: none;
   backdrop-filter: blur(4px);
   font-family: var(--font-mono, monospace);
@@ -1104,7 +987,7 @@ button.rte-control-button:active {
   height: 12px;
   background: var(--primary);
   border: 2px solid var(--background);
-  border-radius: 2px;
+  border-radius: 3px;
   transition: transform 150ms ease-out;
 }
 
@@ -1121,16 +1004,15 @@ button.rte-control-button:active {
 }
 
 .rte-resize-handle--corner:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 /* ── Bubble Menu ── */
 @keyframes rte-bubble-pop-in {
   0% {
     opacity: 0;
-    transform: scale(0.98) translateY(6px);
+    transform: scale(0.98) translateY(4px);
   }
-
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1140,24 +1022,25 @@ button.rte-control-button:active {
 .rte-bubble-menu {
   display: flex;
   align-items: center;
-  height: 2.25rem;
+  height: 2.5rem;
   background: var(--popover);
-  border: 1px solid var(--border);
+  color: var(--popover-foreground);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+  box-shadow: 0 8px 30px -12px rgb(0 0 0 / 0.15);
   padding: 0 0.25rem;
-  animation: rte-bubble-pop-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: rte-bubble-pop-in 180ms ease-out forwards;
 }
 
 .rte-bubble-group {
   display: flex;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
 }
 
 .rte-bubble-separator {
   width: 1px;
-  height: 1.25rem;
+  height: 1rem;
   background: var(--border);
   margin: 0 0.125rem;
   flex-shrink: 0;
@@ -1167,14 +1050,17 @@ button.rte-control-button:active {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  height: 1.75rem;
-  padding: 0 0.375rem;
+  height: 2rem;
+  min-width: 2rem;
+  justify-content: center;
+  padding: 0 0.5rem;
   border: none;
-  border-radius: calc(var(--radius) - 4px);
+  border-radius: calc(var(--radius) - 2px);
   background: transparent;
   color: var(--popover-foreground);
   cursor: pointer;
   font-size: 0.8125rem;
+  font-weight: 500;
   white-space: nowrap;
   transition:
     background-color 150ms ease-out,
@@ -1183,8 +1069,13 @@ button.rte-control-button:active {
 }
 
 .rte-bubble-btn:hover {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.rte-bubble-btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
+  outline-offset: -2px;
 }
 
 .rte-bubble-btn:active {
@@ -1192,8 +1083,8 @@ button.rte-control-button:active {
 }
 
 .rte-bubble-btn--active {
-  color: var(--primary);
-  background: var(--accent);
+  color: var(--foreground);
+  background: var(--muted);
 }
 
 .rte-bubble-btn-icon {
@@ -1227,15 +1118,16 @@ button.rte-control-button:active {
   top: 100%;
   left: 0;
   z-index: 1000;
-  min-width: 150px;
+  min-width: 160px;
   background: var(--popover);
-  border: 1px solid var(--border);
+  color: var(--popover-foreground);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   border-radius: var(--radius);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+  box-shadow: 0 8px 30px -12px rgb(0 0 0 / 0.15);
   padding: 0.25rem;
-  margin-top: 4px;
+  margin-top: 6px;
   transform-origin: top left;
-  animation: rte-bubble-pop-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: rte-bubble-pop-in 180ms ease-out forwards;
 }
 
 .rte-bubble-dropdown--language {
@@ -1253,7 +1145,8 @@ button.rte-control-button:active {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 0.375rem 0.5rem;
+  height: 2rem;
+  padding: 0 0.5rem;
   font-size: 0.8125rem;
   color: var(--muted-foreground);
   background: transparent;
@@ -1261,9 +1154,10 @@ button.rte-control-button:active {
   border-radius: calc(var(--radius) - 4px);
   cursor: pointer;
   text-align: left;
+  outline: none;
   transition:
-    background-color 100ms ease-out,
-    color 100ms ease-out;
+    background-color 150ms ease-out,
+    color 150ms ease-out;
 }
 
 .rte-bubble-dropdown-item:hover,
@@ -1278,13 +1172,13 @@ button.rte-control-button:active {
   z-index: 0;
   pointer-events: none;
   border-radius: calc(var(--radius) - 4px);
-  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  background: var(--muted);
   opacity: 0;
   transition:
-    top 220ms cubic-bezier(0.22, 1, 0.36, 1),
-    left 220ms cubic-bezier(0.22, 1, 0.36, 1),
-    width 220ms cubic-bezier(0.22, 1, 0.36, 1),
-    height 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    top 180ms ease-out,
+    left 180ms ease-out,
+    width 180ms ease-out,
+    height 180ms ease-out,
     opacity 150ms ease-out;
 }
 
@@ -1293,8 +1187,9 @@ button.rte-control-button:active {
 }
 
 .rte-bubble-dropdown-item--active {
-  color: var(--primary);
-  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+  color: var(--foreground);
+  font-weight: 500;
+  background-color: var(--muted);
 }
 
 .rte-bubble-dropdown-icon {
@@ -1312,14 +1207,15 @@ button.rte-control-button:active {
   height: 100%;
 }
 
+.rte-bubble-dropdown-item:hover .rte-bubble-dropdown-icon,
 .rte-bubble-dropdown-item--active .rte-bubble-dropdown-icon {
-  color: var(--primary);
+  color: var(--foreground);
 }
 
 .rte-bubble-dropdown-divider {
   height: 1px;
-  background: var(--border);
-  margin: 0.25rem 0;
+  background: color-mix(in srgb, var(--border) 60%, transparent);
+  margin: 0.25rem -0.25rem;
 }
 
 .rte-bubble-dropdown--color {
@@ -1328,7 +1224,7 @@ button.rte-control-button:active {
 }
 
 .rte-bubble-dropdown--color .rte-bubble-dropdown-divider {
-  margin: 0.5rem 0 0.375rem;
+  margin: 0.625rem -0.5rem 0.5rem;
 }
 
 .rte-bubble-color-section {
@@ -1341,7 +1237,7 @@ button.rte-control-button:active {
   padding: 0 0.125rem;
   color: var(--muted-foreground);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -1366,19 +1262,16 @@ button.rte-control-button:active {
   width: 1.5rem;
   height: 1.5rem;
   padding: 0;
-  border-radius: 999px;
+  border-radius: calc(var(--radius) - 4px);
   border: 1px solid transparent;
   cursor: pointer;
   transition:
-    transform 120ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    background-color 100ms ease-out,
-    border-color 100ms ease-out,
-    color 100ms ease-out,
-    box-shadow 120ms ease-out;
+    transform 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .rte-bubble-color-swatch:hover {
-  transform: scale(1.1);
+  opacity: 0.85;
 }
 
 .rte-bubble-color-swatch:active {
@@ -1386,7 +1279,7 @@ button.rte-control-button:active {
 }
 
 .rte-bubble-color-swatch:focus-visible {
-  outline: 2px solid var(--ring);
+  outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
   outline-offset: 1px;
 }
 
@@ -1409,12 +1302,13 @@ button.rte-control-button:active {
 }
 
 .rte-bubble-color-swatch--highlight.rte-bubble-color-swatch--active {
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--swatch-color) 55%, var(--popover-foreground));
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--swatch-color) 55%, var(--popover-foreground));
 }
 
 .rte-bubble-color-glyph {
-  font-size: 0.625rem;
-  font-weight: 700;
+  font-size: 0.6875rem;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -1436,5 +1330,15 @@ button.rte-control-button:active {
 .rte-theme-transitioning *,
 .rte-theme-transitioning *::before,
 .rte-theme-transitioning *::after {
-  transition: none;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rte-root *,
+  .rte-bubble-menu,
+  .rte-bubble-dropdown,
+  .rte-embed-selector {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
 }

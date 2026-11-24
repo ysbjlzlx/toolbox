@@ -4,15 +4,28 @@ export interface RteDropdownItemProps extends React.ButtonHTMLAttributes<HTMLBut
   active?: boolean;
 }
 
-const RteDropdownItem = React.forwardRef<HTMLButtonElement, RteDropdownItemProps>(
-  ({ className = "", active = false, ...props }, ref) => {
-    const cls = ["rte-bubble-dropdown-item", active ? "rte-bubble-dropdown-item--active" : "", className]
-      .filter(Boolean)
-      .join(" ");
+const RteDropdownItem = React.forwardRef<
+  HTMLButtonElement,
+  RteDropdownItemProps
+>(({ className = "", active = false, ...props }, ref) => {
+  const cls = [
+    "rte-bubble-dropdown-item",
+    active ? "rte-bubble-dropdown-item--active" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-    return <button ref={ref} type="button" data-dropdown-item className={cls} {...props} />;
-  },
-);
+  return (
+    <button
+      ref={ref}
+      type="button"
+      data-dropdown-item
+      className={cls}
+      {...props}
+    />
+  );
+});
 RteDropdownItem.displayName = "RteDropdownItem";
 
 export { RteDropdownItem };

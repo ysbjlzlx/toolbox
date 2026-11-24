@@ -3,7 +3,10 @@ import { useCallback, useEffect, useRef, useSyncExternalStore } from "react";
 
 const defaultEqual = <T>(a: T, b: T) => a === b;
 
-export const shallowEqual = <T extends Record<string, unknown>>(a: T, b: T): boolean => {
+export const shallowEqual = <T extends Record<string, unknown>>(
+  a: T,
+  b: T
+): boolean => {
   if (a === b) {
     return true;
   }
@@ -21,7 +24,7 @@ export const shallowEqual = <T extends Record<string, unknown>>(a: T, b: T): boo
 export const useEditorState = <T>(
   editor: Editor | null,
   selector: (e: Editor) => T,
-  isEqual: (a: T, b: T) => boolean = defaultEqual,
+  isEqual: (a: T, b: T) => boolean = defaultEqual
 ): T => {
   const selectorRef = useRef(selector);
   const isEqualRef = useRef(isEqual);
@@ -40,7 +43,10 @@ export const useEditorState = <T>(
       return;
     }
     const next = selectorRef.current(editor);
-    if (snapshotRef.current && isEqualRef.current(snapshotRef.current.value, next)) {
+    if (
+      snapshotRef.current &&
+      isEqualRef.current(snapshotRef.current.value, next)
+    ) {
       return;
     }
     snapshotRef.current = { value: next };
@@ -64,60 +70,10 @@ export const useEditorState = <T>(
         editor.off("transaction", update);
       };
     },
-    [editor, updateSnapshot],
+    [editor, updateSnapshot]
   );
 
   const getSnapshot = useCallback((): T => snapshotRef.current.value, []);
 
   return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
 };
-
-export const CODE_BLOCK_LANGUAGES = [
-  "javascript",
-  "typescript",
-  "html",
-  "css",
-  "json",
-  "python",
-  "rust",
-  "go",
-  "java",
-  "c",
-  "cpp",
-  "ruby",
-  "php",
-  "swift",
-  "kotlin",
-  "sql",
-  "bash",
-  "markdown",
-  "yaml",
-  "xml",
-  "plaintext",
-] as const;
-
-export const CODE_BLOCK_LANGUAGE_LABELS: Record<string, string> = {
-  bash: "Bash",
-  c: "C",
-  cpp: "C++",
-  css: "CSS",
-  go: "Go",
-  html: "HTML",
-  java: "Java",
-  javascript: "JavaScript",
-  json: "JSON",
-  kotlin: "Kotlin",
-  markdown: "Markdown",
-  php: "PHP",
-  plaintext: "Plain Text",
-  python: "Python",
-  ruby: "Ruby",
-  rust: "Rust",
-  sql: "SQL",
-  swift: "Swift",
-  typescript: "TypeScript",
-  xml: "XML",
-  yaml: "YAML",
-};
-
-export const getLanguageLabel = (lang: string): string => CODE_BLOCK_LANGUAGE_LABELS[lang] ?? lang;

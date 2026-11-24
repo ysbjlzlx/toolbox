@@ -12,7 +12,10 @@ const variantClass: Record<string, string> = {
 };
 
 const RteDropdown = React.forwardRef<HTMLDivElement, RteDropdownProps>(
-  ({ className = "", variant = "default", children, onMouseLeave, ...props }, ref) => {
+  (
+    { className = "", variant = "default", children, onMouseLeave, ...props },
+    ref
+  ) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [pill, setPill] = useState<{
       height: number;
@@ -22,7 +25,9 @@ const RteDropdown = React.forwardRef<HTMLDivElement, RteDropdownProps>(
     } | null>(null);
 
     const handleItemEnter = useCallback((target: EventTarget | null) => {
-      const item = (target as HTMLElement).closest<HTMLElement>("[data-dropdown-item]");
+      const item = (target as HTMLElement).closest<HTMLElement>(
+        "[data-dropdown-item]"
+      );
       if (!item) {
         return;
       }
@@ -38,14 +43,14 @@ const RteDropdown = React.forwardRef<HTMLDivElement, RteDropdownProps>(
       (event: React.MouseEvent<HTMLDivElement>) => {
         handleItemEnter(event.target);
       },
-      [handleItemEnter],
+      [handleItemEnter]
     );
 
     const handleFocus = useCallback(
       (event: React.FocusEvent<HTMLDivElement>) => {
         handleItemEnter(event.target);
       },
-      [handleItemEnter],
+      [handleItemEnter]
     );
 
     const handleMouseLeaveFn = useCallback(
@@ -53,10 +58,12 @@ const RteDropdown = React.forwardRef<HTMLDivElement, RteDropdownProps>(
         setPill(null);
         onMouseLeave?.(event);
       },
-      [onMouseLeave],
+      [onMouseLeave]
     );
 
-    const cls = ["rte-bubble-dropdown", variantClass[variant], className].filter(Boolean).join(" ");
+    const cls = ["rte-bubble-dropdown", variantClass[variant], className]
+      .filter(Boolean)
+      .join(" ");
 
     return (
       <div
@@ -76,7 +83,10 @@ const RteDropdown = React.forwardRef<HTMLDivElement, RteDropdownProps>(
       >
         <div
           aria-hidden="true"
-          className={["rte-bubble-dropdown-pill", pill ? "rte-bubble-dropdown-pill--visible" : ""]
+          className={[
+            "rte-bubble-dropdown-pill",
+            pill ? "rte-bubble-dropdown-pill--visible" : "",
+          ]
             .filter(Boolean)
             .join(" ")}
           style={
@@ -93,7 +103,7 @@ const RteDropdown = React.forwardRef<HTMLDivElement, RteDropdownProps>(
         {children}
       </div>
     );
-  },
+  }
 );
 RteDropdown.displayName = "RteDropdown";
 

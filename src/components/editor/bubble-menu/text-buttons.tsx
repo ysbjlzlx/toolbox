@@ -1,9 +1,15 @@
 import type { Editor } from "@tiptap/react";
 
 import { RteButton, RteButtonGroup, RteIcon } from "../ui";
-import { shallowEqual, useEditorState } from "./utils";
+import { useEditorState, shallowEqual } from "./utils";
 
-const Svg = ({ children, strokeWidth = 2 }: { children: React.ReactNode; strokeWidth?: number }) => (
+const Svg = ({
+  children,
+  strokeWidth = 2,
+}: {
+  children: React.ReactNode;
+  strokeWidth?: number;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -18,7 +24,9 @@ const Svg = ({ children, strokeWidth = 2 }: { children: React.ReactNode; strokeW
   </svg>
 );
 
-const Icon = ({ children }: { children: React.ReactNode }) => <RteIcon>{children}</RteIcon>;
+const Icon = ({ children }: { children: React.ReactNode }) => (
+  <RteIcon>{children}</RteIcon>
+);
 
 interface TextSelectorResult {
   isBold: boolean;
@@ -39,7 +47,8 @@ interface ToggleableChain {
 
 const textItems = [
   {
-    command: (e: Editor) => (e.chain().focus() as unknown as ToggleableChain).toggleBold().run(),
+    command: (e: Editor) =>
+      (e.chain().focus() as unknown as ToggleableChain).toggleBold().run(),
     icon: (
       <Icon>
         <Svg>
@@ -49,9 +58,11 @@ const textItems = [
       </Icon>
     ),
     isActive: (s: TextSelectorResult) => s.isBold,
+    mark: "bold",
   },
   {
-    command: (e: Editor) => (e.chain().focus() as unknown as ToggleableChain).toggleItalic().run(),
+    command: (e: Editor) =>
+      (e.chain().focus() as unknown as ToggleableChain).toggleItalic().run(),
     icon: (
       <Icon>
         <Svg>
@@ -62,9 +73,11 @@ const textItems = [
       </Icon>
     ),
     isActive: (s: TextSelectorResult) => s.isItalic,
+    mark: "italic",
   },
   {
-    command: (e: Editor) => (e.chain().focus() as unknown as ToggleableChain).toggleUnderline().run(),
+    command: (e: Editor) =>
+      (e.chain().focus() as unknown as ToggleableChain).toggleUnderline().run(),
     icon: (
       <Icon>
         <Svg>
@@ -74,9 +87,11 @@ const textItems = [
       </Icon>
     ),
     isActive: (s: TextSelectorResult) => s.isUnderline,
+    mark: "underline",
   },
   {
-    command: (e: Editor) => (e.chain().focus() as unknown as ToggleableChain).toggleStrike().run(),
+    command: (e: Editor) =>
+      (e.chain().focus() as unknown as ToggleableChain).toggleStrike().run(),
     icon: (
       <Icon>
         <Svg>
@@ -87,9 +102,11 @@ const textItems = [
       </Icon>
     ),
     isActive: (s: TextSelectorResult) => s.isStrike,
+    mark: "strike",
   },
   {
-    command: (e: Editor) => (e.chain().focus() as unknown as ToggleableChain).toggleCode().run(),
+    command: (e: Editor) =>
+      (e.chain().focus() as unknown as ToggleableChain).toggleCode().run(),
     icon: (
       <Icon>
         <Svg>
@@ -99,8 +116,12 @@ const textItems = [
       </Icon>
     ),
     isActive: (s: TextSelectorResult) => s.isCode,
+    mark: "code",
   },
 ];
+
+export const getTextItems = (editor: Editor) =>
+  textItems.filter((item) => Boolean(editor.schema.marks[item.mark]));
 
 export const TextButtons = ({ editor }: { editor: Editor }) => {
   const editorState = useEditorState(
@@ -112,14 +133,14 @@ export const TextButtons = ({ editor }: { editor: Editor }) => {
       isStrike: ed.isActive("strike"),
       isUnderline: ed.isActive("underline"),
     }),
-    shallowEqual,
+    shallowEqual
   );
 
   return (
     <RteButtonGroup>
-      {textItems.map((item, i) => (
+      {getTextItems(editor).map((item) => (
         <RteButton
-          key={i}
+          key={item.mark}
           active={item.isActive(editorState)}
           onMouseDown={(e) => e.preventDefault()}
           onClick={() => item.command(editor)}

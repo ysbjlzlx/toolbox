@@ -1,22 +1,27 @@
 "use client";
 
-import { Node, nodeInputRule } from "@tiptap/core";
-import type { NodeViewProps } from "@tiptap/react";
+import {
+  createAtomBlockMarkdownSpec,
+  Node,
+  nodeInputRule,
+  parseAttributes,
+} from "@tiptap/core";
 import { ReactNodeViewRenderer, useEditorState } from "@tiptap/react";
-import { useCallback, useState } from "react";
+import type { NodeViewProps } from "@tiptap/react";
+import { useState, useCallback } from "react";
 
 import { RichTextEditorControl } from "../controls/rte-control";
 import { ResizableNodeView } from "../extensions/resizable-node-view";
 import { useRichTextEditorContext } from "../rte-context";
 import {
   Dialog,
-  DialogClose,
+  DialogTrigger,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
 } from "../ui/dialog";
 import { Input } from "../ui/input";
 
@@ -54,7 +59,9 @@ const YouTubeNodeView = (props: NodeViewProps) => {
   const videoId = getYouTubeId(rawSrc) || rawSrc;
   let watchUrl: string | undefined;
   if (videoId) {
-    watchUrl = videoId.startsWith("http") ? videoId : `https://www.youtube.com/watch?v=${videoId}`;
+    watchUrl = videoId.startsWith("http")
+      ? videoId
+      : `https://www.youtube.com/watch?v=${videoId}`;
   }
 
   return (
@@ -80,6 +87,20 @@ const YouTubeNodeView = (props: NodeViewProps) => {
 };
 
 export const YouTubeEmbed = Node.create({
+  ...createAtomBlockMarkdownSpec({
+    allowedAttributes: ["src", "width", "height", "align"],
+    nodeName: "youtube",
+    parseAttributes: (text) => {
+      const attrs = parseAttributes(text);
+      for (const key of ["width", "height"]) {
+        if (key in attrs) {
+          attrs[key] = Number(attrs[key]);
+        }
+      }
+      return attrs;
+    },
+    requiredAttributes: ["src"],
+  }),
   addAttributes() {
     return {
       align: {
@@ -91,7 +112,8 @@ export const YouTubeEmbed = Node.create({
       },
       height: {
         default: 315,
-        parseHTML: (el: HTMLElement) => (el.dataset.height ? Number(el.dataset.height) : 315),
+        parseHTML: (el: HTMLElement) =>
+          el.dataset.height ? Number(el.dataset.height) : 315,
         renderHTML: (attrs: Record<string, unknown>) => ({
           "data-height": attrs.height,
         }),
@@ -105,7 +127,8 @@ export const YouTubeEmbed = Node.create({
       },
       width: {
         default: 560,
-        parseHTML: (el: HTMLElement) => (el.dataset.width ? Number(el.dataset.width) : 560),
+        parseHTML: (el: HTMLElement) =>
+          el.dataset.width ? Number(el.dataset.width) : 560,
         renderHTML: (attrs: Record<string, unknown>) => ({
           "data-width": attrs.width,
         }),
@@ -164,7 +187,10 @@ export const YouTubeEmbedControl = ({ className }: { className?: string }) => {
   const { active } = useEditorState({
     editor: editor ?? null,
     selector: (ctx) => ({
-      active: ctx.editor && !ctx.editor.isDestroyed ? ctx.editor.isActive("youtube") : false,
+      active:
+        ctx.editor && !ctx.editor.isDestroyed
+          ? ctx.editor.isActive("youtube")
+          : false,
     }),
   }) ?? { active: false };
 
@@ -204,7 +230,9 @@ export const YouTubeEmbedControl = ({ className }: { className?: string }) => {
       <DialogContent showCloseButton={false}>
         <DialogHeader>
           <DialogTitle>Embed YouTube video</DialogTitle>
-          <DialogDescription>Paste a YouTube video URL or ID.</DialogDescription>
+          <DialogDescription>
+            Paste a YouTube video URL or ID.
+          </DialogDescription>
         </DialogHeader>
         <Input
           value={url}
@@ -221,7 +249,7 @@ export const YouTubeEmbedControl = ({ className }: { className?: string }) => {
           <DialogClose>Cancel</DialogClose>
           <DialogClose
             disabled={!url}
-            className="rounded-md bg-primary px-3 py-1.5 text-primary-foreground text-sm transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="rounded-md bg-primary px-3 py-1.5 text-sm text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
             onClick={handleInsert}
           >
             Insert

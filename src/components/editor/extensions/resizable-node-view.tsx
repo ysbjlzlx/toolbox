@@ -1,10 +1,15 @@
 "use client";
 
-import type { NodeViewProps } from "@tiptap/react";
 import { NodeViewWrapper } from "@tiptap/react";
+import type { NodeViewProps } from "@tiptap/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { AlignIcon, DeleteEmbedIcon, EditUrlIcon, OpenInYouTubeIcon } from "../icons";
+import {
+  AlignIcon,
+  DeleteEmbedIcon,
+  EditUrlIcon,
+  OpenInYouTubeIcon,
+} from "../icons";
 
 interface ResizableNodeViewProps extends NodeViewProps {
   children: React.ReactNode;
@@ -68,10 +73,18 @@ const EmbedToolbar = ({
             }
           }}
         />
-        <button type="button" onClick={handleSaveUrl} className="rte-embed-selector-btn rte-embed-selector-btn--save">
+        <button
+          type="button"
+          onClick={handleSaveUrl}
+          className="rte-embed-selector-btn rte-embed-selector-btn--save"
+        >
           Save
         </button>
-        <button type="button" onClick={() => setIsEditingUrl(false)} className="rte-embed-selector-btn">
+        <button
+          type="button"
+          onClick={() => setIsEditingUrl(false)}
+          className="rte-embed-selector-btn"
+        >
           Cancel
         </button>
       </div>
@@ -193,7 +206,10 @@ export const ResizableNodeView = ({
   const height = node.attrs.height as number | undefined;
   const align = (node.attrs.align as string) || "center";
 
-  const getEditorWidth = useCallback(() => view?.dom?.parentElement?.offsetWidth ?? 800, [view]);
+  const getEditorWidth = useCallback(
+    () => view?.dom?.parentElement?.offsetWidth ?? 800,
+    [view]
+  );
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -216,15 +232,37 @@ export const ResizableNodeView = ({
       let newHeight = resize.startHeight;
 
       if (resize.direction === "right" || resize.direction === "corner-br") {
-        newWidth = Math.max(minWidth, Math.min(effectiveMax, resize.startWidth + (e.clientX - resize.startX)));
-      } else if (resize.direction === "left" || resize.direction === "corner-bl") {
-        newWidth = Math.max(minWidth, Math.min(effectiveMax, resize.startWidth - (e.clientX - resize.startX)));
+        newWidth = Math.max(
+          minWidth,
+          Math.min(
+            effectiveMax,
+            resize.startWidth + (e.clientX - resize.startX)
+          )
+        );
+      } else if (
+        resize.direction === "left" ||
+        resize.direction === "corner-bl"
+      ) {
+        newWidth = Math.max(
+          minWidth,
+          Math.min(
+            effectiveMax,
+            resize.startWidth - (e.clientX - resize.startX)
+          )
+        );
       }
 
-      if (resize.direction === "bottom" || resize.direction === "corner-br" || resize.direction === "corner-bl") {
+      if (
+        resize.direction === "bottom" ||
+        resize.direction === "corner-br" ||
+        resize.direction === "corner-bl"
+      ) {
         newHeight = Math.max(
           Math.round(minWidth / aspectRatio),
-          Math.min(Math.round(effectiveMax / aspectRatio), resize.startHeight + (e.clientY - resize.startY)),
+          Math.min(
+            Math.round(effectiveMax / aspectRatio),
+            resize.startHeight + (e.clientY - resize.startY)
+          )
         );
       }
 
@@ -247,7 +285,7 @@ export const ResizableNodeView = ({
       }
       setCurrentDimensions({ h: newHeight, w: newWidth });
     },
-    [lockAspect, aspectRatio, minWidth, maxWidth],
+    [lockAspect, aspectRatio, minWidth, maxWidth]
   );
 
   const handleMouseUp = useCallback(
@@ -272,7 +310,7 @@ export const ResizableNodeView = ({
       setIsResizing(false);
       setCurrentDimensions(null);
     },
-    [handleMouseMove, updateAttributes],
+    [handleMouseMove, updateAttributes]
   );
 
   const handleMouseDown = useCallback(
@@ -281,7 +319,10 @@ export const ResizableNodeView = ({
       e.stopPropagation();
 
       const editorWidth = getEditorWidth();
-      const startWidth = containerRef.current?.offsetWidth ?? width ?? Math.min(560, editorWidth);
+      const startWidth =
+        containerRef.current?.offsetWidth ??
+        width ??
+        Math.min(560, editorWidth);
       const startHeight = containerRef.current?.offsetHeight ?? height ?? 315;
 
       resizingRef.current = {
@@ -309,7 +350,7 @@ export const ResizableNodeView = ({
       document.body.style.cursor = cursors[direction];
       document.body.style.userSelect = "none";
     },
-    [width, height, getEditorWidth, handleMouseMove, handleMouseUp],
+    [width, height, getEditorWidth, handleMouseMove, handleMouseUp]
   );
 
   useEffect(
@@ -319,12 +360,14 @@ export const ResizableNodeView = ({
       document.body.style.cursor = "";
       document.body.style.userSelect = "";
     },
-    [handleMouseMove, handleMouseUp],
+    [handleMouseMove, handleMouseUp]
   );
 
   const handleApplyPreset = (percent: number) => {
     const editorW = getEditorWidth() || 800;
-    const targetW = Math.round(Math.max(minWidth, Math.min(maxWidth, (editorW * percent) / 100)));
+    const targetW = Math.round(
+      Math.max(minWidth, Math.min(maxWidth, (editorW * percent) / 100))
+    );
     updateAttributes({
       height: Math.round(targetW / aspectRatio),
       width: targetW,
@@ -343,7 +386,11 @@ export const ResizableNodeView = ({
   const isEditable = editor ? editor.isEditable : true;
 
   return (
-    <NodeViewWrapper className="rte-embed-wrapper" data-selected={selected || undefined} data-align={align}>
+    <NodeViewWrapper
+      className="rte-embed-wrapper"
+      data-selected={selected || undefined}
+      data-align={align}
+    >
       <div
         ref={containerRef}
         className="rte-embed"

@@ -116,14 +116,16 @@ export const UnlinkControl = createControl({
 
 export const UndoControl = createControl({
   iconKey: "undoControlIcon",
-  isDisabled: (editor) => !(editor.can() as unknown as HistoryCanCommands).undo(),
+  isDisabled: (editor) =>
+    !(editor.can() as unknown as HistoryCanCommands).undo(),
   label: "undoControlLabel",
   operation: { name: "undo" },
 });
 
 export const RedoControl = createControl({
   iconKey: "redoControlIcon",
-  isDisabled: (editor) => !(editor.can() as unknown as HistoryCanCommands).redo(),
+  isDisabled: (editor) =>
+    !(editor.can() as unknown as HistoryCanCommands).redo(),
   label: "redoControlLabel",
   operation: { name: "redo" },
 });

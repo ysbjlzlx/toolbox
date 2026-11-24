@@ -30,7 +30,9 @@ const RteColorSwatch = React.forwardRef<HTMLButtonElement, RteColorSwatchProps>(
         title={label}
         className={[
           "rte-bubble-color-swatch",
-          variant === "text" ? "rte-bubble-color-swatch--text" : "rte-bubble-color-swatch--highlight",
+          variant === "text"
+            ? "rte-bubble-color-swatch--text"
+            : "rte-bubble-color-swatch--highlight",
           active ? "rte-bubble-color-swatch--active" : "",
         ]
           .filter(Boolean)
@@ -66,7 +68,7 @@ const RteColorSwatch = React.forwardRef<HTMLButtonElement, RteColorSwatchProps>(
         ) : null}
       </button>
     );
-  },
+  }
 );
 RteColorSwatch.displayName = "RteColorSwatch";
 

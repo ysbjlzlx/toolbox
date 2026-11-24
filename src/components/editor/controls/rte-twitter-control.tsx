@@ -1,9 +1,14 @@
 "use client";
 
-import { Node, nodeInputRule } from "@tiptap/core";
-import type { NodeViewProps } from "@tiptap/react";
+import {
+  createAtomBlockMarkdownSpec,
+  Node,
+  nodeInputRule,
+  parseAttributes,
+} from "@tiptap/core";
 import { ReactNodeViewRenderer, useEditorState } from "@tiptap/react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import type { NodeViewProps } from "@tiptap/react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 import { RichTextEditorControl } from "../controls/rte-control";
 import { ResizableNodeView } from "../extensions/resizable-node-view";
@@ -39,7 +44,9 @@ const loadTwitterScript = (): Promise<void> => {
 
   // eslint-disable-next-line promise/avoid-new
   twitterScriptPromise = new Promise<void>((resolve, reject) => {
-    let script = document.querySelector<HTMLScriptElement>(`script[src="${WIDGET_SCRIPT_URL}"]`);
+    let script = document.querySelector<HTMLScriptElement>(
+      `script[src="${WIDGET_SCRIPT_URL}"]`
+    );
     const isNewScript = !script;
     if (!script) {
       script = document.createElement("script");
@@ -100,7 +107,7 @@ const loadTwitterScript = (): Promise<void> => {
           }
           // If widgets isn't attached yet, the poll above will pick it up.
         },
-        { once: true },
+        { once: true }
       );
     }
 
@@ -114,7 +121,10 @@ declare global {
   interface Window {
     twttr?: {
       widgets?: {
-        createTweet: (tweetId: string, container: HTMLElement) => Promise<unknown>;
+        createTweet: (
+          tweetId: string,
+          container: HTMLElement
+        ) => Promise<unknown>;
       };
     };
   }
@@ -138,14 +148,18 @@ const TwitterNodeView = (props: NodeViewProps) => {
   const activeRenderIdRef = useRef(0);
 
   const retryToken = useRef(0);
-  const [_retryCount, setRetryCount] = useState(0);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
     if (!containerRef.current || !tweetId) {
       return;
     }
 
-    if (renderedTweetIdRef.current === tweetId && containerRef.current.children.length > 0 && !failed) {
+    if (
+      renderedTweetIdRef.current === tweetId &&
+      containerRef.current.children.length > 0 &&
+      !failed
+    ) {
       setLoading(false);
       return;
     }
@@ -159,7 +173,11 @@ const TwitterNodeView = (props: NodeViewProps) => {
     const render = async () => {
       try {
         await loadTwitterScript();
-        if (isCancelled || renderId !== activeRenderIdRef.current || !containerRef.current) {
+        if (
+          isCancelled ||
+          renderId !== activeRenderIdRef.current ||
+          !containerRef.current
+        ) {
           return;
         }
 
@@ -169,9 +187,16 @@ const TwitterNodeView = (props: NodeViewProps) => {
         }
 
         containerRef.current.innerHTML = "";
-        const el = await twttr.widgets.createTweet(tweetId, containerRef.current);
+        const el = await twttr.widgets.createTweet(
+          tweetId,
+          containerRef.current
+        );
 
-        if (isCancelled || renderId !== activeRenderIdRef.current || !containerRef.current) {
+        if (
+          isCancelled ||
+          renderId !== activeRenderIdRef.current ||
+          !containerRef.current
+        ) {
           if (el && typeof (el as HTMLElement).remove === "function") {
             (el as HTMLElement).remove();
           } else if (containerRef.current) {
@@ -207,7 +232,7 @@ const TwitterNodeView = (props: NodeViewProps) => {
     return () => {
       isCancelled = true;
     };
-  }, [tweetId, failed]);
+  }, [tweetId, retryCount, failed]);
 
   const handleRetry = useCallback(() => {
     retryToken.current += 1;
@@ -215,7 +240,12 @@ const TwitterNodeView = (props: NodeViewProps) => {
   }, []);
 
   return (
-    <ResizableNodeView {...props} lockAspect={false} minWidth={300} maxWidth={1200}>
+    <ResizableNodeView
+      {...props}
+      lockAspect={false}
+      minWidth={300}
+      maxWidth={1200}
+    >
       {loading && <div className="rte-embed-loading">Loading tweet...</div>}
       {!loading && failed && (
         <div className="rte-embed-error">
@@ -231,6 +261,20 @@ const TwitterNodeView = (props: NodeViewProps) => {
 };
 
 export const TwitterEmbed = Node.create({
+  ...createAtomBlockMarkdownSpec({
+    allowedAttributes: ["tweetId", "width", "height", "align"],
+    nodeName: "twitter",
+    parseAttributes: (text) => {
+      const attrs = parseAttributes(text);
+      for (const key of ["width", "height"]) {
+        if (key in attrs) {
+          attrs[key] = Number(attrs[key]);
+        }
+      }
+      return attrs;
+    },
+    requiredAttributes: ["tweetId"],
+  }),
   addAttributes() {
     return {
       align: {
@@ -242,7 +286,8 @@ export const TwitterEmbed = Node.create({
       },
       height: {
         default: 400,
-        parseHTML: (el: HTMLElement) => (el.dataset.height ? Number(el.dataset.height) : 400),
+        parseHTML: (el: HTMLElement) =>
+          el.dataset.height ? Number(el.dataset.height) : 400,
         renderHTML: (attrs: Record<string, unknown>) => ({
           "data-height": attrs.height,
         }),
@@ -256,7 +301,8 @@ export const TwitterEmbed = Node.create({
       },
       width: {
         default: 550,
-        parseHTML: (el: HTMLElement) => (el.dataset.width ? Number(el.dataset.width) : 550),
+        parseHTML: (el: HTMLElement) =>
+          el.dataset.width ? Number(el.dataset.width) : 550,
         renderHTML: (attrs: Record<string, unknown>) => ({
           "data-width": attrs.width,
         }),
@@ -309,7 +355,9 @@ export const TwitterEmbed = Node.create({
 
 const extractTweetId = (input: string): string | null => {
   const clean = input.trim();
-  const match = clean.match(/(?:twitter\.com|x\.com)\/(?:\w+\/status\/|i\/web\/status\/)(\d+)/);
+  const match = clean.match(
+    /(?:twitter\.com|x\.com)\/(?:\w+\/status\/|i\/web\/status\/)(\d+)/
+  );
   if (match) {
     return match[1] ?? null;
   }
@@ -325,7 +373,10 @@ export const TwitterEmbedControl = ({ className }: { className?: string }) => {
   const { active } = useEditorState({
     editor: editor ?? null,
     selector: (ctx) => ({
-      active: ctx.editor && !ctx.editor.isDestroyed ? ctx.editor.isActive("twitter") : false,
+      active:
+        ctx.editor && !ctx.editor.isDestroyed
+          ? ctx.editor.isActive("twitter")
+          : false,
     }),
   }) ?? { active: false };
 
@@ -359,8 +410,18 @@ export const TwitterEmbedControl = ({ className }: { className?: string }) => {
     >
       <DialogTrigger
         render={
-          <RichTextEditorControl active={active} className={className} title="Embed Tweet" aria-label="Embed Tweet">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="rte-editor-icon">
+          <RichTextEditorControl
+            active={active}
+            className={className}
+            title="Embed Tweet"
+            aria-label="Embed Tweet"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="rte-editor-icon"
+            >
               <path d="M18.2 3.2h3.3l-7.2 8.2 8.5 11.2h-6.6l-5.2-6.8-6 6.8H2.7l7.7-8.8L2.3 3.2h6.8l4.7 6.2 5.4-6.2zm-1.2 17.3h1.8L7 4.8H5.1l11.9 15.7z" />
             </svg>
           </RichTextEditorControl>
@@ -398,7 +459,7 @@ export const TwitterEmbedControl = ({ className }: { className?: string }) => {
           <button
             type="button"
             disabled={!url}
-            className="rounded-md bg-primary px-3 py-1.5 text-primary-foreground text-sm transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="rounded-md bg-primary px-3 py-1.5 text-sm text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
             onClick={() => {
               if (handleInsert()) {
                 setOpen(false);

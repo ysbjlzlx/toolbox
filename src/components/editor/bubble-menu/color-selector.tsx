@@ -1,8 +1,15 @@
 import type { Editor } from "@tiptap/react";
 import { useState } from "react";
 
-import { RteButton, RteColorSwatch, RteDropdown, RteDropdownDivider, RteIcon, RteOverlay } from "../ui";
-import { shallowEqual, useEditorState } from "./utils";
+import {
+  RteButton,
+  RteColorSwatch,
+  RteDropdown,
+  RteDropdownDivider,
+  RteIcon,
+  RteOverlay,
+} from "../ui";
+import { useEditorState, shallowEqual } from "./utils";
 
 type SwatchType = "text" | "highlight";
 
@@ -83,13 +90,19 @@ export const ColorSelector = ({ editor }: { editor: Editor }) => {
       highlightColor: ed.isActive("highlight")
         ? (ed.getAttributes("highlight").color as string | undefined)
         : undefined,
-      textColor: ed.isActive("textStyle") ? (ed.getAttributes("textStyle").color as string | undefined) : undefined,
+      textColor: ed.isActive("textStyle")
+        ? (ed.getAttributes("textStyle").color as string | undefined)
+        : undefined,
     }),
-    shallowEqual,
+    shallowEqual
   );
 
-  const hasColor = editor.extensionManager.extensions.some((ext) => ext.name === "color");
-  const hasHighlight = editor.extensionManager.extensions.some((ext) => ext.name === "highlight");
+  const hasColor = editor.extensionManager.extensions.some(
+    (ext) => ext.name === "color"
+  );
+  const hasHighlight = editor.extensionManager.extensions.some(
+    (ext) => ext.name === "highlight"
+  );
 
   const remember = (type: SwatchType, color: string, label: string): void => {
     setRecent((prev) => {
@@ -116,7 +129,9 @@ export const ColorSelector = ({ editor }: { editor: Editor }) => {
     if (highlightColor === color) {
       (editor.chain().focus() as unknown as ColorChain).unsetHighlight().run();
     } else {
-      (editor.chain().focus() as unknown as ColorChain).setHighlight({ color }).run();
+      (editor.chain().focus() as unknown as ColorChain)
+        .setHighlight({ color })
+        .run();
     }
   };
 
@@ -170,7 +185,11 @@ export const ColorSelector = ({ editor }: { editor: Editor }) => {
                       variant={item.type}
                       color={item.color}
                       label={item.label}
-                      active={item.type === "text" ? textColor === item.color : highlightColor === item.color}
+                      active={
+                        item.type === "text"
+                          ? textColor === item.color
+                          : highlightColor === item.color
+                      }
                       onSelect={() =>
                         item.type === "text"
                           ? selectText(item.color, item.label)
@@ -205,7 +224,9 @@ export const ColorSelector = ({ editor }: { editor: Editor }) => {
               <>
                 {(recent.length > 0 || hasColor) && <RteDropdownDivider />}
                 <div className="rte-bubble-color-section">
-                  <span className="rte-bubble-color-label">Highlight Color</span>
+                  <span className="rte-bubble-color-label">
+                    Highlight Color
+                  </span>
                   <div className="rte-bubble-color-grid">
                     {HIGHLIGHT_COLORS.map((item) => (
                       <RteColorSwatch

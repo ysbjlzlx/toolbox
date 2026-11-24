@@ -1,19 +1,25 @@
 import type { ChainedCommands, Editor } from "@tiptap/core";
 import { useEditorState } from "@tiptap/react";
-import type React from "react";
+import React, { useContext } from "react";
 
 import type { RichTextEditorIcons } from "../icon-types";
 import type { RichTextEditorLabels } from "../labels";
-import { useRichTextEditorContext } from "../rte-context";
+import {
+  RichTextEditorContext,
+  useRichTextEditorContext,
+} from "../rte-context";
 import type { RichTextEditorControlProps } from "../types";
 import { Toggle } from "../ui/toggle";
+import { TooltipTrigger } from "../ui/tooltip";
 import { cn } from "../ui/utils";
 
 type IsActiveConfig =
   | { name: string; attributes?: Record<string, unknown> | string }
   | { attrs: Record<string, unknown> };
 
-type ChainCommand = (attributes?: Record<string, unknown> | string) => Pick<ChainedCommands, "run">;
+type ChainCommand = (
+  attributes?: Record<string, unknown> | string
+) => Pick<ChainedCommands, "run">;
 
 interface CreateControlProps {
   label: keyof RichTextEditorLabels;
@@ -22,6 +28,20 @@ interface CreateControlProps {
   isDisabled?: (editor: Editor) => boolean;
   operation: { name: string; attributes?: Record<string, unknown> | string };
 }
+
+export const RichTextEditorTooltip = ({
+  children,
+  label,
+}: {
+  children: React.ReactElement;
+  label: string;
+}) => {
+  const tooltip = useContext(RichTextEditorContext)?.tooltip;
+  if (!tooltip) {
+    return children;
+  }
+  return <TooltipTrigger handle={tooltip} payload={label} render={children} />;
+};
 
 export const RichTextEditorControl = ({
   active = false,
@@ -32,30 +52,42 @@ export const RichTextEditorControl = ({
   onClick,
   disabled,
   ...props
-}: RichTextEditorControlProps) => (
-  <Toggle
-    size="sm"
-    pressed={active}
-    disabled={disabled}
-    aria-label={props["aria-label"]}
-    title={props.title}
-    className={cn("rte-control-button", className)}
-    onMouseDown={(e) => {
-      e.preventDefault();
-      onMouseDown?.(e);
-    }}
-    onPressedChange={() => onClick?.({} as React.MouseEvent<HTMLButtonElement>)}
-  >
-    {children}
-  </Toggle>
-);
+}: RichTextEditorControlProps) => {
+  const toggle = (
+    <Toggle
+      size="sm"
+      pressed={active}
+      disabled={disabled}
+      aria-label={props["aria-label"]}
+      className={cn("rte-control-button", className)}
+      onMouseDown={(e) => {
+        e.preventDefault();
+        onMouseDown?.(e);
+      }}
+      onPressedChange={() =>
+        onClick?.({} as React.MouseEvent<HTMLButtonElement>)
+      }
+    >
+      {children}
+    </Toggle>
+  );
+
+  return props.title ? (
+    <RichTextEditorTooltip label={props.title}>{toggle}</RichTextEditorTooltip>
+  ) : (
+    toggle
+  );
+};
 
 type EditorStateSelector = (ctx: { editor: Editor | null }) => {
   active: boolean;
   disabled: boolean;
 };
 
-const resolveIsActive = (editor: Editor | null, config?: IsActiveConfig): boolean => {
+const resolveIsActive = (
+  editor: Editor | null,
+  config?: IsActiveConfig
+): boolean => {
   if (!editor || !config) {
     return false;
   }
@@ -66,9 +98,13 @@ const resolveIsActive = (editor: Editor | null, config?: IsActiveConfig): boolea
 };
 
 const createSelector =
-  (isActive?: IsActiveConfig, isDisabled?: (editor: Editor) => boolean): EditorStateSelector =>
+  (
+    isActive?: IsActiveConfig,
+    isDisabled?: (editor: Editor) => boolean
+  ): EditorStateSelector =>
   (ctx) => {
-    const safeEditor = ctx.editor && !ctx.editor.isDestroyed ? ctx.editor : null;
+    const safeEditor =
+      ctx.editor && !ctx.editor.isDestroyed ? ctx.editor : null;
 
     return {
       active: resolveIsActive(safeEditor, isActive),
@@ -76,7 +112,13 @@ const createSelector =
     };
   };
 
-export const createControl = ({ label, iconKey, isActive, isDisabled, operation }: CreateControlProps) => {
+export const createControl = ({
+  label,
+  iconKey,
+  isActive,
+  isDisabled,
+  operation,
+}: CreateControlProps) => {
   const Control = ({ className }: { className?: string }) => {
     const { editor, labels, icons } = useRichTextEditorContext();
     const ariaLabel = labels[label] as string;
@@ -96,7 +138,10 @@ export const createControl = ({ label, iconKey, isActive, isDisabled, operation 
           if (!editor || editor.isDestroyed) {
             return;
           }
-          const commands = editor.chain().focus() as unknown as Record<string, ChainCommand>;
+          const commands = editor.chain().focus() as unknown as Record<
+            string,
+            ChainCommand
+          >;
           commands[operation.name]?.(operation.attributes).run();
         }}
       >
