@@ -1,4 +1,3 @@
-import { ProCard } from "@ant-design/pro-components";
 import {
   AdmonitionDirectiveDescriptor,
   BlockTypeSelect,
@@ -32,10 +31,12 @@ import {
   toolbarPlugin,
   UndoRedo,
 } from "@mdxeditor/editor";
+import { Button } from "antd";
 import { type FC, useRef } from "react";
 
+import { Card, CardHeader } from "@/components/ui/card";
+
 import "@mdxeditor/editor/style.css";
-import { Button } from "antd";
 
 export const Component: FC = () => {
   const editorRef = useRef<MDXEditorMethods>(null);
@@ -88,13 +89,15 @@ export const Component: FC = () => {
   ];
   return (
     <div>
-      <ProCard>
-        <div className="mt-4 mb-4 flex gap-4">
-          <Button onClick={() => editorRef.current?.insertMarkdown("new markdown to insert")}>
-            Insert new markdown
-          </Button>
-          <Button onClick={() => console.log(editorRef.current?.getMarkdown())}>Get markdown</Button>
-        </div>
+      <Card>
+        <CardHeader>
+          <div className="mt-4 mb-4 flex gap-4">
+            <Button onClick={() => editorRef.current?.insertMarkdown("new markdown to insert")}>
+              Insert new markdown
+            </Button>
+            <Button onClick={() => console.log(editorRef.current?.getMarkdown())}>Get markdown</Button>
+          </div>
+        </CardHeader>
 
         <MDXEditor
           ref={editorRef}
@@ -102,7 +105,7 @@ export const Component: FC = () => {
           markdown="# Hello world"
           plugins={plugins}
         />
-      </ProCard>
+      </Card>
     </div>
   );
 };
