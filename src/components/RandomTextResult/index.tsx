@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "antd";
 import type { FC } from "react";
 import { useBoolean, useCopyToClipboard } from "usehooks-ts";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   text: string | undefined;
@@ -25,17 +25,17 @@ export const RandomTextResult: FC<Props> = ({ text, onClickRefreshBtn, ...props 
   };
   return (
     <div>
-      <div className="mt-2 rounded-md border p-5 text-center break-words">
-        <span className="text-lg font-bold text-blue-500">{text}</span>
+      <div className="mt-2 rounded-md border p-5 text-center wrap-break-word">
+        <span className="text-black-500 text-lg font-bold">{text}</span>
       </div>
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
-          <Button type="primary" onClick={onClickCopyBtn} block>
+          <Button variant="default" onClick={onClickCopyBtn} className="w-full">
             {copied ? "已复制" : props.copyBtnText || "复制"}
           </Button>
         </div>
         <div>
-          <Button block onClick={onClickRefreshBtn}>
+          <Button variant="outline" onClick={onClickRefreshBtn} className="w-full">
             {props.refreshBtnText || "刷新"}
           </Button>
         </div>
