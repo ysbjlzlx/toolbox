@@ -1,11 +1,10 @@
 import { Typography } from "antd";
-import PageContainer from "@/components/ui/PageContainer.tsx";
 
 const NotFound = () => {
   return (
-    <PageContainer>
+    <div>
       <Typography>Page Not Found.</Typography>
-    </PageContainer>
+    </div>
   );
 };
 
