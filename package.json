@@ -128,7 +128,7 @@
     "@vitest/browser-playwright": "^5.0.0",
     "jsdom": "31.0.1",
     "knip": "6.48.0",
-    "lefthook": "2.2.2",
+    "lefthook": "2.2.4",
     "playwright": "^1.63.0",
     "postcss": "8.5.33",
     "stylelint": "18.1.0",
