@@ -530,8 +530,8 @@ importers:
         specifier: ^1.63.0
         version: 1.65.1
       postcss:
-        specifier: 8.5.33
-        version: 8.5.33
+        specifier: 8.5.34
+        version: 8.5.34
       stylelint:
         specifier: 18.1.0
         version: 18.1.0
@@ -543,7 +543,7 @@ importers:
         version: 4.3.5
       tsup:
         specifier: 9.0.0
-        version: 9.0.0(@swc/core@1.16.22)(jiti@2.7.0)(postcss@8.5.33)(typescript@7.0.2)(yaml@2.9.1)
+        version: 9.0.0(@swc/core@1.16.22)(jiti@2.7.0)(postcss@8.5.34)(typescript@7.0.2)(yaml@2.9.1)
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -6984,8 +6984,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.33:
-    resolution: {integrity: sha512-RVHEU9/Pp1Fnjr/MpAJsZoADukCKhfIi15OunEYiGktIkYLkPVvC1sioWolGDS7XByMTx9m/IGbro0Js13zhnQ==}
+  postcss@8.5.34:
+    resolution: {integrity: sha512-P1Qzj0XXZjMda74C7qiVnBG90UKNbyNUAOeQRBW8X63RsIMV57gevRqjnkELdwtZ/S2/uQFksJhmwuN8xShLPw==}
     engines: {node: ^10 || ^12 || >=14}
 
   powershell-utils@0.1.0:
@@ -7457,6 +7457,10 @@ packages:
   source-map-js@1.2.2:
     resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
     engines: {node: '>=0.10.0'}
+
+  source-map-js@1.2.4:
+    resolution: {integrity: sha512-J7ZjMvHd9O1fcT/5V09QWaaSl2BbWx3F6O08spde82Namf9UB0GxRVIPiNbVsdKkoizHiSpTodo3vp2bAy91MA==}
+    engines: {node: '>=6.0.0'}
 
   source-map-support@0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
@@ -11754,7 +11758,7 @@ snapshots:
       fuzzysort: 3.1.0
       kleur: 4.1.5
       ora: 8.2.0
-      postcss: 8.5.33
+      postcss: 8.5.34
       prompts: 2.4.2
       recast: 0.23.21
       socks: 2.8.10
@@ -12632,7 +12636,7 @@ snapshots:
       '@vue/shared': 3.5.42
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.33
+      postcss: 8.5.34
       source-map-js: 1.2.2
 
   '@vue/compiler-ssr@3.5.42':
@@ -15322,17 +15326,17 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.33)(yaml@2.9.1):
+  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.34)(yaml@2.9.1):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
       jiti: 2.7.0
-      postcss: 8.5.33
+      postcss: 8.5.34
       yaml: 2.9.1
 
-  postcss-safe-parser@7.1.0(postcss@8.5.33):
+  postcss-safe-parser@7.1.0(postcss@8.5.34):
     dependencies:
-      postcss: 8.5.33
+      postcss: 8.5.34
 
   postcss-selector-parser@6.0.10:
     dependencies:
@@ -15345,11 +15349,11 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.33:
+  postcss@8.5.34:
     dependencies:
       nanoid: 3.3.20
       picocolors: 1.1.1
-      source-map-js: 1.2.2
+      source-map-js: 1.2.4
 
   powershell-utils@0.1.0: {}
 
@@ -15907,7 +15911,7 @@ snapshots:
       kleur: 4.1.5
       open: 11.0.4
       ora: 8.2.0
-      postcss: 8.5.33
+      postcss: 8.5.34
       postcss-selector-parser: 7.2.1
       prompts: 2.4.2
       recast: 0.23.21
@@ -15980,6 +15984,8 @@ snapshots:
       smart-buffer: 4.2.0
 
   source-map-js@1.2.2: {}
+
+  source-map-js@1.2.4: {}
 
   source-map-support@0.5.21:
     dependencies:
@@ -16123,8 +16129,8 @@ snapshots:
       ignore: 7.0.14
       import-meta-resolve: 4.2.0
       picomatch: 4.0.7
-      postcss: 8.5.33
-      postcss-safe-parser: 7.1.0(postcss@8.5.33)
+      postcss: 8.5.34
+      postcss-safe-parser: 7.1.0(postcss@8.5.34)
       postcss-selector-parser: 7.2.1
       postcss-value-parser: 4.2.0
       tinyglobby: 0.2.17
@@ -16265,7 +16271,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@9.0.0(@swc/core@1.16.22)(jiti@2.7.0)(postcss@8.5.33)(typescript@7.0.2)(yaml@2.9.1):
+  tsup@9.0.0(@swc/core@1.16.22)(jiti@2.7.0)(postcss@8.5.34)(typescript@7.0.2)(yaml@2.9.1):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.28.2)
       cac: 7.1.0
@@ -16276,7 +16282,7 @@ snapshots:
       joycon: 3.1.1
       obug: 3.0.0
       picocolors: 1.1.1
-      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.33)(yaml@2.9.1)
+      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.34)(yaml@2.9.1)
       resolve-from: 5.0.0
       rollup: 4.64.7
       source-map-js: 1.2.2
@@ -16286,7 +16292,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       '@swc/core': 1.16.22
-      postcss: 8.5.33
+      postcss: 8.5.34
       typescript: 7.0.2
     transitivePeerDependencies:
       - jiti
@@ -16555,7 +16561,7 @@ snapshots:
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
-      postcss: 8.5.33
+      postcss: 8.5.34
       rolldown: 1.2.18
       tinyglobby: 0.2.17
     optionalDependencies:
